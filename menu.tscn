@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://hxlbodxn7xym"]
+
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="1_lti8b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Menucard" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(569, 313)
+scale = Vector2(3.78125, 3.91798)
+texture = ExtResource("1_lti8b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0.0445055, 0.0028923, 0.119582, 1)
