@@ -1,16 +1,225 @@
-[gd_scene load_steps=2 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=13 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="1_lti8b"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="4_ytr4m"]
+[ext_resource type="Script" uid="uid://ds0cqe4afyhdh" path="res://menu_banner_2.gd" id="5_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="5_l48gv"]
+[ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://menu_banner.gd" id="5_ytr4m"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="6_l48gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l48gv"]
+size = Vector2(209.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecwwl"]
+size = Vector2(208, 49)
+
+[sub_resource type="Animation" id="Animation_kk3ma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ecwwl"]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.133333, 3.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrnbx"]
+_data = {
+&"RESET": SubResource("Animation_kk3ma"),
+&"fade_in": SubResource("Animation_ecwwl")
+}
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Menucard" type="Sprite2D" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="Play" type="Area2D" parent="Node"]
 z_index = 1
-position = Vector2(569, 313)
-scale = Vector2(3.78125, 3.91798)
+position = Vector2(114, -1)
+script = ExtResource("5_ytr4m")
+normal_texture = ExtResource("4_ytr4m")
+hover_texture = ExtResource("5_l48gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Play"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("4_ytr4m")
+
+[node name="Label" type="Label" parent="Node/Play"]
+z_index = 1
+offset_left = 450.0
+offset_top = 378.0
+offset_right = 518.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("2_ouk20")
+text = "Play "
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Play"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_l48gv")
+
+[node name="Music" type="Area2D" parent="Node"]
+z_index = 1
+position = Vector2(114, -1)
+script = ExtResource("5_ecwwl")
+normal_texture = ExtResource("4_ytr4m")
+hover_texture = ExtResource("5_l48gv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Music"]
+z_index = 1
+position = Vector2(475, 444)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("4_ytr4m")
+
+[node name="Label" type="Label" parent="Node/Music"]
+z_index = 1
+offset_left = 414.0
+offset_top = 450.0
+offset_right = 532.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("2_ouk20")
+text = "Music On"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Music"]
+z_index = 1
+position = Vector2(475, 458.5)
+shape = SubResource("RectangleShape2D_ecwwl")
+
+[node name="Menucard" type="Sprite2D" parent="Node"]
+z_index = 1
+position = Vector2(590, 323)
+scale = Vector2(4.69922, 4.86914)
 texture = ExtResource("1_lti8b")
 
+[node name="Title" type="Node" parent="Node"]
+
+[node name="Label" type="Label" parent="Node/Title"]
+z_index = 1
+offset_left = 371.0
+offset_top = 207.0
+offset_right = 836.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 40
+text = "Before I
+Fade"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Node/Title"]
+z_index = 1
+offset_left = 413.0
+offset_top = 207.0
+offset_right = 785.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 40
+text = "Before I
+Fade"
+horizontal_alignment = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 644.0
+offset_right = 1156.0
+offset_bottom = 646.0
+mouse_filter = 2
 color = Color(0.0445055, 0.0028923, 0.119582, 1)
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="Title2" type="Node" parent="Node2"]
+
+[node name="Label" type="Label" parent="Node2/Title2"]
+visible = false
+z_index = 1
+offset_left = 371.0
+offset_top = 207.0
+offset_right = 836.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 40
+text = "Warning"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Node2/Title2"]
+visible = false
+z_index = 1
+offset_left = 413.0
+offset_top = 207.0
+offset_right = 785.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 40
+text = "Warning"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="Node2"]
+z_index = 1
+offset_left = 468.0
+offset_top = 320.0
+offset_right = 717.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("6_l48gv")
+theme_override_font_sizes/font_size = 8
+text = "This game is best played on PC/Computer"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2"]
+root_node = NodePath("Label")
+libraries = {
+&"": SubResource("AnimationLibrary_nrnbx")
+}
+
+[node name="Label" type="Label" parent="Node2/AnimationPlayer"]
+z_index = 2
+offset_left = 400.0
+offset_top = 273.0
+offset_right = 778.0
+offset_bottom = 335.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("6_l48gv")
+theme_override_font_sizes/font_size = 16
+text = "This game discusses topics
+about death,murder, and blood"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]
+[connection signal="mouse_entered" from="Node/Play" to="Node/Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node/Play" to="." method="_on_menu_banner_mouse_exited"]
+[connection signal="mouse_exited" from="Node/Play" to="Node/Play" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="Node/Play" to="Node/Play" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="Node/Music" to="." method="_on_menu_banner_mouse_entered"]
+[connection signal="mouse_entered" from="Node/Music" to="Node/Play" method="_on_menu_banner_2_mouse_entered"]
+[connection signal="mouse_entered" from="Node/Music" to="Node/Music" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node/Music" to="." method="_on_menu_banner_mouse_exited"]
+[connection signal="mouse_exited" from="Node/Music" to="Node/Music" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="Node/Music" to="Node/Music" method="_on_mouse_shape_exited"]
