@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddnbl1leq11wi"]
+
+[ext_resource type="Script" uid="uid://b5e3kb0umj1fm" path="res://scripts/blob_ghost_player.gd" id="1_0wiv0"]
+[ext_resource type="Texture2D" uid="uid://6wkfdp2pxgit" path="res://assets/pixel-characters/ghost.png" id="1_5vdww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wiv0"]
+atlas = ExtResource("1_5vdww")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8srdi"]
+atlas = ExtResource("1_5vdww")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptdhe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wiv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8srdi")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 2.0
+}]
+
+[node name="blobGhostPlayer" type="CharacterBody2D"]
+script = ExtResource("1_0wiv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ptdhe")
+animation = &"forward"
+autoplay = "forward"
+frame_progress = 0.220772
