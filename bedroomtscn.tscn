@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="8_wx2xb"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="9_wx2xb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
+size = Vector2(1409, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2xb"]
+size = Vector2(63.3333, 874.333)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3ncq"]
 texture = ExtResource("1_j7co6")
 0:0/size_in_atlas = Vector2i(8, 8)
@@ -18,19 +24,13 @@ texture = ExtResource("1_j7co6")
 [sub_resource type="TileSet" id="TileSet_wx2xb"]
 sources/0 = SubResource("TileSetAtlasSource_u3ncq")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a1xj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx2xb"]
 texture = ExtResource("2_08kss")
 0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ecit3"]
-sources/0 = SubResource("TileSetAtlasSource_1a1xj")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2xb"]
-size = Vector2(63.3333, 874.333)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1409, 112.667)
+sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
 [node name="Node2D" type="Node2D"]
 
@@ -40,6 +40,21 @@ offset_bottom = 1291.0
 mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1146.25, 1202.25)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_rggls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40.5, 640.5)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_wx2xb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2252, 631.25)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_wx2xb")
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(19.11, 53.39)
@@ -54,18 +69,6 @@ scale = Vector2(1.5, 1.5)
 tile_set = SubResource("TileSet_ecit3")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 1572935, 0, 0, 1572943, 0, 0, 1572951, 0, 0, 1048583, 0, 0, 1048591, 0, 0, 1048599, 0, 0, 1048607, 0, 0, 1048615, 0, 0, 1048623, 0, 0, 1048631, 0, 0, 1048639, 0, 0, 1048647, 0, 0, 1048655, 0, 0, 1048663, 0, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap"]
-position = Vector2(21.6667, 391.407)
-shape = SubResource("RectangleShape2D_wx2xb")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap"]
-position = Vector2(1496, 385.24)
-shape = SubResource("RectangleShape2D_wx2xb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/CollisionShape2D2"]
-position = Vector2(-737.167, 381.833)
-shape = SubResource("RectangleShape2D_rggls")
 
 [node name="Desk" type="Sprite2D" parent="."]
 position = Vector2(1978, 629)
