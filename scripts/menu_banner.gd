@@ -43,3 +43,8 @@ func add_screen():
 	$"../../Node2/Title2/Label2".visible=true
 	$"../../Node2/AnimationPlayer/Label".visible=true
 	$"../../Node2/AnimationPlayer".play("fade_in")
+	$"../../Timer".start()
+
+
+func _on_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/bedroom.tscn")

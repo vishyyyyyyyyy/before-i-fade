@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckpshlp5x5m0"]
+[gd_scene load_steps=20 format=3 uid="uid://ckpshlp5x5m0"]
 
 [ext_resource type="Script" uid="uid://dmm51h1rkp4s6" path="res://scripts/girl_ghost.gd" id="1_trk3j"]
 [ext_resource type="Texture2D" uid="uid://cuykqcrun8clk" path="res://assets/pixel-characters/girlghostforward.png" id="1_vikeb"]
@@ -119,13 +119,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_trk3j"]
+radius = 17.0
+height = 134.0
+
 [node name="girlGhost" type="CharacterBody2D"]
 script = ExtResource("1_trk3j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k5wx1")
 animation = &"walkSideways"
 autoplay = "default"
-frame_progress = 0.690649
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_trk3j")

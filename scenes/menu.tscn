@@ -53,6 +53,10 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [node name="Node" type="Node" parent="."]
 
 [node name="Play" type="Area2D" parent="Node"]
@@ -204,9 +208,9 @@ libraries = {
 
 [node name="Label" type="Label" parent="Node2/AnimationPlayer"]
 z_index = 2
-offset_left = 1027.0
+offset_left = 953.0
 offset_top = 568.0
-offset_right = 1405.0
+offset_right = 1331.0
 offset_bottom = 630.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
@@ -218,6 +222,7 @@ visible_characters = 0
 visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
+[connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]
 [connection signal="mouse_entered" from="Node/Play" to="Node/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Play" to="." method="_on_menu_banner_mouse_exited"]

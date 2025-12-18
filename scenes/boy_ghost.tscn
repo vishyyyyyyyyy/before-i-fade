@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1an58xev4lqi"]
+[gd_scene load_steps=20 format=3 uid="uid://b1an58xev4lqi"]
 
 [ext_resource type="Script" uid="uid://docxw02iwf5ug" path="res://scripts/boy_ghost.gd" id="1_4alcu"]
 [ext_resource type="Texture2D" uid="uid://2y6xcwng0a1n" path="res://assets/pixel-characters/boyghostbackward.png" id="2_emg6k"]
@@ -119,13 +119,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4alcu"]
+radius = 17.0
+height = 134.0
+
 [node name="boyGhost" type="CharacterBody2D"]
 script = ExtResource("1_4alcu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7kqq1")
 animation = &"walkBackward"
 autoplay = "default"
 frame_progress = 0.468723
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_4alcu")
