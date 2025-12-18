@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://ddnbl1leq11wi"]
+[gd_scene load_steps=38 format=3 uid="uid://ddnbl1leq11wi"]
 
 [ext_resource type="Script" uid="uid://b5e3kb0umj1fm" path="res://scripts/blob_ghost_player.gd" id="1_0wiv0"]
 [ext_resource type="Texture2D" uid="uid://b3ignrcxjpdvq" path="res://assets/pixel-characters/ghost.png" id="1_5vdww"]
 [ext_resource type="Texture2D" uid="uid://2y6xcwng0a1n" path="res://assets/pixel-characters/boyghostbackward.png" id="3_dbbco"]
 [ext_resource type="Texture2D" uid="uid://hf0i78s42lyv" path="res://assets/pixel-characters/boyghostforward.png" id="4_bk85j"]
+[ext_resource type="Texture2D" uid="uid://dp4yucybuk2hp" path="res://assets/pixel-characters/boyghostside.png" id="5_bk85j"]
 [ext_resource type="Texture2D" uid="uid://cuykqcrun8clk" path="res://assets/pixel-characters/girlghostforward.png" id="5_pss1l"]
 [ext_resource type="Texture2D" uid="uid://pt145wujmyx3" path="res://assets/pixel-characters/girlghostforward2.png" id="6_1s1oc"]
 [ext_resource type="Texture2D" uid="uid://b1jrjxquji2m1" path="res://assets/pixel-characters/girlghostside.png" id="7_305ux"]
@@ -51,6 +52,22 @@ region = Rect2(600, 0, 200, 200)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhd53"]
 atlas = ExtResource("3_dbbco")
 region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pss1l"]
+atlas = ExtResource("5_bk85j")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s1oc"]
+atlas = ExtResource("5_bk85j")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_305ux"]
+atlas = ExtResource("5_bk85j")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45mba"]
+atlas = ExtResource("5_bk85j")
+region = Rect2(600, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1duga"]
 atlas = ExtResource("5_pss1l")
@@ -159,7 +176,19 @@ animations = [{
 "name": &"boyGhost_idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pss1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s1oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_305ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45mba")
+}],
 "loop": true,
 "name": &"boyGhost_sideways",
 "speed": 5.0
@@ -231,5 +260,5 @@ script = ExtResource("1_0wiv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ptdhe")
-animation = &"girlGhost_idle"
+animation = &"boyGhost_sideways"
 autoplay = "blob_forward"
