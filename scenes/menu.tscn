@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://hxlbodxn7xym"]
 
-[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="1_lti8b"]
-[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="2_ouk20"]
-[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="4_ytr4m"]
-[ext_resource type="Script" uid="uid://ds0cqe4afyhdh" path="res://menu_banner_2.gd" id="5_ecwwl"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="5_l48gv"]
-[ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://menu_banner.gd" id="5_ytr4m"]
-[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="6_l48gv"]
+[ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="2_13sgg"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="3_i6lef"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="4_70i5f"]
+[ext_resource type="Script" uid="uid://ds0cqe4afyhdh" path="res://scripts/menu_banner_2.gd" id="5_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="6_ufwb2"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="7_6cdou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l48gv"]
 size = Vector2(209.5, 49)
@@ -59,15 +59,15 @@ _data = {
 z_index = 1
 position = Vector2(277, 13)
 scale = Vector2(2, 2)
-script = ExtResource("5_ytr4m")
-normal_texture = ExtResource("4_ytr4m")
-hover_texture = ExtResource("5_l48gv")
+script = ExtResource("1_v86rl")
+normal_texture = ExtResource("2_13sgg")
+hover_texture = ExtResource("3_i6lef")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Play"]
 z_index = 1
 position = Vector2(475, 372)
 scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("4_ytr4m")
+texture = ExtResource("2_13sgg")
 
 [node name="Label" type="Label" parent="Node/Play"]
 z_index = 1
@@ -75,7 +75,7 @@ offset_left = 450.0
 offset_top = 378.0
 offset_right = 518.0
 offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 text = "Play "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Play"]
@@ -87,15 +87,15 @@ shape = SubResource("RectangleShape2D_l48gv")
 z_index = 1
 position = Vector2(277, 13)
 scale = Vector2(2, 2)
-script = ExtResource("5_ecwwl")
-normal_texture = ExtResource("4_ytr4m")
-hover_texture = ExtResource("5_l48gv")
+script = ExtResource("5_mj5lg")
+normal_texture = ExtResource("2_13sgg")
+hover_texture = ExtResource("3_i6lef")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Music"]
 z_index = 1
 position = Vector2(475, 444)
 scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("4_ytr4m")
+texture = ExtResource("2_13sgg")
 
 [node name="Label" type="Label" parent="Node/Music"]
 z_index = 1
@@ -103,7 +103,7 @@ offset_left = 414.0
 offset_top = 450.0
 offset_right = 532.0
 offset_bottom = 472.0
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 text = "Music On"
 metadata/_edit_use_anchors_ = true
 
@@ -116,7 +116,7 @@ shape = SubResource("RectangleShape2D_ecwwl")
 z_index = 1
 position = Vector2(1226, 642)
 scale = Vector2(9.88086, 10.2381)
-texture = ExtResource("1_lti8b")
+texture = ExtResource("6_ufwb2")
 
 [node name="Title" type="Node" parent="Node"]
 
@@ -127,7 +127,7 @@ offset_top = 349.0
 offset_right = 1495.0
 offset_bottom = 496.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 theme_override_font_sizes/font_size = 72
 text = "Before I
 Fade"
@@ -140,7 +140,7 @@ offset_top = 353.0
 offset_right = 1486.0
 offset_bottom = 500.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 theme_override_font_sizes/font_size = 72
 text = "Before I
 Fade"
@@ -153,7 +153,7 @@ offset_top = 575.0
 offset_right = 1516.0
 offset_bottom = 626.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("6_l48gv")
+theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 24
 text = "This game is best played with
 a keyboard and mouse"
@@ -178,7 +178,7 @@ offset_top = 349.0
 offset_right = 1495.0
 offset_bottom = 496.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 theme_override_font_sizes/font_size = 72
 text = "Warning"
 horizontal_alignment = 1
@@ -191,7 +191,7 @@ offset_top = 353.0
 offset_right = 1486.0
 offset_bottom = 500.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("2_ouk20")
+theme_override_fonts/font = ExtResource("4_70i5f")
 theme_override_font_sizes/font_size = 72
 text = "Warning"
 horizontal_alignment = 1
@@ -209,7 +209,7 @@ offset_top = 568.0
 offset_right = 1405.0
 offset_bottom = 630.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("6_l48gv")
+theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 24
 text = "This game discusses topics
 about death, murder, and blood"

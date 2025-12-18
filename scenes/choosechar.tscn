@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://h3f06hju35pr"]
 
-[ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="1_70nf4"]
-[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="2_ctwvh"]
-[ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://choosechar.gd" id="2_o1lt1"]
-[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="3_o1lt1"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="4_qt34r"]
+[ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="1_iy07t"]
+[ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://scripts/choosechar.gd" id="2_bvee0"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="3_nfheo"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="4_10l4d"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="5_g8o3b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt34r"]
 size = Vector2(1409, 115)
@@ -24,6 +24,22 @@ mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
+[node name="boy" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.031
+offset_left = 922.0
+offset_top = 295.0
+offset_right = 1391.0
+offset_bottom = 377.979
+
+[node name="girl" type="TextureButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 578.0
+offset_right = 1397.0
+offset_bottom = 705.0
+
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(1146.25, 1202.25)
 scale = Vector2(1.5, 1.5)
@@ -42,29 +58,30 @@ shape = SubResource("RectangleShape2D_33m4b")
 [node name="Mirror" type="Sprite2D" parent="."]
 position = Vector2(1156, 503)
 scale = Vector2(17.3281, 17.3281)
-texture = ExtResource("1_70nf4")
+texture = ExtResource("1_iy07t")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1153, 319)
 scale = Vector2(3.83789, 3.83789)
-script = ExtResource("2_o1lt1")
-normal_texture = ExtResource("2_ctwvh")
-hover_texture = ExtResource("4_qt34r")
+script = ExtResource("2_bvee0")
+normal_texture = ExtResource("3_nfheo")
+hover_texture = ExtResource("4_10l4d")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
-texture = ExtResource("2_ctwvh")
+texture = ExtResource("3_nfheo")
 
 [node name="Label" type="Label" parent="Area2D"]
 z_index = 1
-offset_left = -29.085
-offset_top = -4.85291
-offset_right = 38.915
-offset_bottom = 17.1471
+offset_left = -47.0
+offset_top = -8.0
+offset_right = -5.0
+offset_bottom = 9.0
 scale = Vector2(2.26111, 2.26111)
-theme_override_fonts/font = ExtResource("3_o1lt1")
-text = "hi"
+theme_override_fonts/font = ExtResource("5_g8o3b")
+theme_override_font_sizes/font_size = 13
+text = "boy"
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
@@ -79,20 +96,24 @@ scale = Vector2(3.83789, 3.83789)
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
-texture = ExtResource("2_ctwvh")
+texture = ExtResource("3_nfheo")
 
 [node name="Label" type="Label" parent="Area2D2"]
 z_index = 1
-offset_left = -29.085
-offset_top = -4.85291
-offset_right = 38.915
-offset_bottom = 17.1471
+offset_left = -49.5064
+offset_top = -3.64784
+offset_right = 11.4936
+offset_bottom = 16.3522
 scale = Vector2(2.26111, 2.26111)
-theme_override_fonts/font = ExtResource("3_o1lt1")
-text = "hi"
+theme_override_fonts/font = ExtResource("5_g8o3b")
+theme_override_font_sizes/font_size = 11
+text = "girl"
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D2"]
 z_index = 1
 position = Vector2(0, 9.82243)
 scale = Vector2(0.582257, 1.03181)
 shape = SubResource("RectangleShape2D_neuhm")
+
+[connection signal="pressed" from="ColorRect/boy" to="Area2D" method="_on_boy_pressed"]
+[connection signal="pressed" from="ColorRect/girl" to="Area2D" method="_on_girl_pressed"]

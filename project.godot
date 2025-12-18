@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 MusicManager="*res://scripts/musicmanager.gd"
+Global="*res://scripts/global.gd"
 
 [display]
 

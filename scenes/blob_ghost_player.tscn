@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddnbl1leq11wi"]
+[gd_scene load_steps=33 format=3 uid="uid://ddnbl1leq11wi"]
 
 [ext_resource type="Script" uid="uid://b5e3kb0umj1fm" path="res://scripts/blob_ghost_player.gd" id="1_0wiv0"]
 [ext_resource type="Texture2D" uid="uid://b3ignrcxjpdvq" path="res://assets/pixel-characters/ghost.png" id="1_5vdww"]
+[ext_resource type="Texture2D" uid="uid://2y6xcwng0a1n" path="res://assets/pixel-characters/boyghostbackward.png" id="3_dbbco"]
+[ext_resource type="Texture2D" uid="uid://hf0i78s42lyv" path="res://assets/pixel-characters/boyghostforward.png" id="4_bk85j"]
+[ext_resource type="Texture2D" uid="uid://cuykqcrun8clk" path="res://assets/pixel-characters/girlghostforward.png" id="5_pss1l"]
+[ext_resource type="Texture2D" uid="uid://pt145wujmyx3" path="res://assets/pixel-characters/girlghostforward2.png" id="6_1s1oc"]
+[ext_resource type="Texture2D" uid="uid://b1jrjxquji2m1" path="res://assets/pixel-characters/girlghostside.png" id="7_305ux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wiv0"]
 atlas = ExtResource("1_5vdww")
@@ -10,6 +15,94 @@ region = Rect2(0, 0, 200, 200)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8srdi"]
 atlas = ExtResource("1_5vdww")
 region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjm1r"]
+atlas = ExtResource("3_dbbco")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osgyp"]
+atlas = ExtResource("3_dbbco")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hepy8"]
+atlas = ExtResource("3_dbbco")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3sb5"]
+atlas = ExtResource("3_dbbco")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb52e"]
+atlas = ExtResource("4_bk85j")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd7pw"]
+atlas = ExtResource("4_bk85j")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikbkf"]
+atlas = ExtResource("4_bk85j")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ivk"]
+atlas = ExtResource("4_bk85j")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhd53"]
+atlas = ExtResource("3_dbbco")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1duga"]
+atlas = ExtResource("5_pss1l")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdrgc"]
+atlas = ExtResource("5_pss1l")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvwxm"]
+atlas = ExtResource("5_pss1l")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phxwd"]
+atlas = ExtResource("5_pss1l")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds6at"]
+atlas = ExtResource("6_1s1oc")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcvgj"]
+atlas = ExtResource("6_1s1oc")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhh6o"]
+atlas = ExtResource("6_1s1oc")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7fgj"]
+atlas = ExtResource("6_1s1oc")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8n7"]
+atlas = ExtResource("5_pss1l")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sie0o"]
+atlas = ExtResource("7_305ux")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i1bq"]
+atlas = ExtResource("7_305ux")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8dc"]
+atlas = ExtResource("7_305ux")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16jxr"]
+atlas = ExtResource("7_305ux")
+region = Rect2(600, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ptdhe"]
 animations = [{
@@ -21,8 +114,114 @@ animations = [{
 "texture": SubResource("AtlasTexture_8srdi")
 }],
 "loop": true,
-"name": &"forward",
+"name": &"blob_forward",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjm1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osgyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hepy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3sb5")
+}],
+"loop": true,
+"name": &"boyGhost_backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb52e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd7pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikbkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ivk")
+}],
+"loop": true,
+"name": &"boyGhost_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhd53")
+}],
+"loop": true,
+"name": &"boyGhost_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"boyGhost_sideways",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1duga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdrgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvwxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phxwd")
+}],
+"loop": true,
+"name": &"girlGhost_backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds6at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcvgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhh6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7fgj")
+}],
+"loop": true,
+"name": &"girlGhost_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn8n7")
+}],
+"loop": true,
+"name": &"girlGhost_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sie0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i1bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16jxr")
+}],
+"loop": true,
+"name": &"girlGhost_sideways",
+"speed": 5.0
 }]
 
 [node name="blobGhostPlayer" type="CharacterBody2D"]
@@ -32,6 +231,5 @@ script = ExtResource("1_0wiv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ptdhe")
-animation = &"forward"
-autoplay = "forward"
-frame_progress = 0.220772
+animation = &"girlGhost_idle"
+autoplay = "blob_forward"

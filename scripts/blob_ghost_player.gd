@@ -1,15 +1,22 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 200
 var current_dir = "none"
+var currentChar = Global.character
 
 func _ready():
-	$AnimatedSprite2D.play("default")
+	if (currentChar == "blob"):
+		$AnimatedSprite2D.play("blob_forward")
+	else:
+		$AnimatedSprite2D.play(currentChar + "_idle")
 
 func _physics_process(delta):
-	player_movement(delta)
+	if (currentChar == "blob"):
+		player_movement_blob(delta)
+	else:
+		player_movement(delta)
 
-func player_movement(delta):
+func player_movement_blob(delta):
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		velocity.x = speed
@@ -32,3 +39,59 @@ func player_movement(delta):
 		
 	move_and_slide()
 	
+func player_movement(delta):
+	if Input.is_action_pressed("ui_right"):
+		current_dir = "right"
+		play_anim(1)
+		velocity.x = speed
+		velocity.y = 0
+	elif Input.is_action_pressed("ui_left"):
+		current_dir = "left"
+		play_anim(1)
+		velocity.x = -speed
+		velocity.y = 0
+	elif Input.is_action_pressed("ui_down"):
+		current_dir = "down"
+		play_anim(1)
+		velocity.x = 0
+		velocity.y = speed
+	elif Input.is_action_pressed("ui_up"):
+		current_dir = "up"
+		play_anim(1)
+		velocity.x = 0
+		velocity.y = -speed
+	else:
+		play_anim(0)
+		velocity.x = 0
+		velocity.y = 0
+		
+	move_and_slide()
+	
+func play_anim(movement):
+	var dir = current_dir
+	var anim = $AnimatedSprite2D
+	
+	if dir == "right":
+		anim.flip_h = false
+		if movement == 1:
+			anim.play(currentChar + "_sideways")
+		elif movement == 0:
+			anim.play(currentChar + "_idle")
+	elif dir == "left":
+		anim.flip_h = true
+		if movement == 1:
+			anim.play(currentChar + "_sideways")
+		elif movement == 0:
+			anim.play(currentChar + "_idle")
+	elif dir == "down":
+		anim.flip_h = false
+		if movement == 1:
+			anim.play(currentChar + "_backward")
+		elif movement == 0:
+			anim.play(currentChar + "_idle")
+	elif dir == "up":
+		anim.flip_h = false
+		if movement == 1:
+			anim.play(currentChar + "_forward")
+		elif movement == 0:
+			anim.play(currentChar + "_idle")

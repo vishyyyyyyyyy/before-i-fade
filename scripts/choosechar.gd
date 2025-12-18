@@ -17,4 +17,12 @@ func _on_mouse_exited():
 	sprite.texture = normal_texture
 	print("exited")
 	
+
+func _on_boy_pressed() -> void:
+	Global.character = "boyGhost"
+	get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")
 	
+
+func _on_girl_pressed() -> void:
+	Global.character = "girlGhost"
+	get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")
