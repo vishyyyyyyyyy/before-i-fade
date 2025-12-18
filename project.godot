@@ -21,6 +21,8 @@ MusicManager="*res://scripts/musicmanager.gd"
 
 [display]
 
+window/size/viewport_width=2304
+window/size/viewport_height=1296
 window/stretch/mode="viewport"
 
 [input]

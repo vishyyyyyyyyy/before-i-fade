@@ -57,7 +57,8 @@ _data = {
 
 [node name="Play" type="Area2D" parent="Node"]
 z_index = 1
-position = Vector2(114, -1)
+position = Vector2(277, 13)
+scale = Vector2(2, 2)
 script = ExtResource("5_ytr4m")
 normal_texture = ExtResource("4_ytr4m")
 hover_texture = ExtResource("5_l48gv")
@@ -84,7 +85,8 @@ shape = SubResource("RectangleShape2D_l48gv")
 
 [node name="Music" type="Area2D" parent="Node"]
 z_index = 1
-position = Vector2(114, -1)
+position = Vector2(277, 13)
+scale = Vector2(2, 2)
 script = ExtResource("5_ecwwl")
 normal_texture = ExtResource("4_ytr4m")
 hover_texture = ExtResource("5_l48gv")
@@ -103,6 +105,7 @@ offset_right = 532.0
 offset_bottom = 472.0
 theme_override_fonts/font = ExtResource("2_ouk20")
 text = "Music On"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Music"]
 z_index = 1
@@ -111,43 +114,57 @@ shape = SubResource("RectangleShape2D_ecwwl")
 
 [node name="Menucard" type="Sprite2D" parent="Node"]
 z_index = 1
-position = Vector2(590, 323)
-scale = Vector2(4.69922, 4.86914)
+position = Vector2(1226, 642)
+scale = Vector2(9.88086, 10.2381)
 texture = ExtResource("1_lti8b")
 
 [node name="Title" type="Node" parent="Node"]
 
 [node name="Label" type="Label" parent="Node/Title"]
 z_index = 1
-offset_left = 371.0
-offset_top = 207.0
-offset_right = 836.0
-offset_bottom = 290.0
+offset_left = 982.0
+offset_top = 349.0
+offset_right = 1495.0
+offset_bottom = 496.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("2_ouk20")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 72
 text = "Before I
 Fade"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Node/Title"]
 z_index = 1
-offset_left = 413.0
-offset_top = 207.0
-offset_right = 785.0
-offset_bottom = 290.0
+offset_left = 973.0
+offset_top = 353.0
+offset_right = 1486.0
+offset_bottom = 500.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("2_ouk20")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 72
 text = "Before I
 Fade"
 horizontal_alignment = 1
 
+[node name="subtitle" type="Label" parent="."]
+z_index = 2
+offset_left = 970.0
+offset_top = 575.0
+offset_right = 1516.0
+offset_bottom = 626.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("6_l48gv")
+theme_override_font_sizes/font_size = 24
+text = "This game is best played with
+a keyboard and mouse"
+horizontal_alignment = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1156.0
-offset_bottom = 646.0
+offset_right = 2303.0
+offset_bottom = 1291.0
 mouse_filter = 2
-color = Color(0.0445055, 0.0028923, 0.119582, 1)
+color = Color(0.117182, 0.0425973, 0.151198, 1)
+metadata/_edit_lock_ = true
 
 [node name="Node2" type="Node" parent="."]
 
@@ -156,39 +173,27 @@ color = Color(0.0445055, 0.0028923, 0.119582, 1)
 [node name="Label" type="Label" parent="Node2/Title2"]
 visible = false
 z_index = 1
-offset_left = 371.0
-offset_top = 207.0
-offset_right = 836.0
-offset_bottom = 290.0
+offset_left = 982.0
+offset_top = 349.0
+offset_right = 1495.0
+offset_bottom = 496.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("2_ouk20")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 72
 text = "Warning"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Node2/Title2"]
 visible = false
 z_index = 1
-offset_left = 413.0
-offset_top = 207.0
-offset_right = 785.0
-offset_bottom = 290.0
+offset_left = 973.0
+offset_top = 353.0
+offset_right = 1486.0
+offset_bottom = 500.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("2_ouk20")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 72
 text = "Warning"
-horizontal_alignment = 1
-
-[node name="subtitle" type="Label" parent="Node2"]
-z_index = 1
-offset_left = 468.0
-offset_top = 320.0
-offset_right = 717.0
-offset_bottom = 332.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("6_l48gv")
-theme_override_font_sizes/font_size = 8
-text = "This game is best played on PC/Computer"
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2"]
@@ -199,18 +204,19 @@ libraries = {
 
 [node name="Label" type="Label" parent="Node2/AnimationPlayer"]
 z_index = 2
-offset_left = 400.0
-offset_top = 273.0
-offset_right = 778.0
-offset_bottom = 335.0
+offset_left = 1027.0
+offset_top = 568.0
+offset_right = 1405.0
+offset_bottom = 630.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("6_l48gv")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
 text = "This game discusses topics
-about death,murder, and blood"
+about death, murder, and blood"
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]
 [connection signal="mouse_entered" from="Node/Play" to="Node/Play" method="_on_mouse_entered"]

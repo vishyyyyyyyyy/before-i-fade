@@ -34,7 +34,7 @@ func clear_screen():
 	$"../Title/Label2".visible=false
 	$"../Music/CollisionShape2D".disabled =true
 	$CollisionShape2D.disabled=true
-	$"../../Node2/subtitle".visible=false
+	$"../../subtitle".visible=false
 	# or load next scene
 	# get_tree().change_scene_to_file("res://scenes/bedroom.tscn")
 
