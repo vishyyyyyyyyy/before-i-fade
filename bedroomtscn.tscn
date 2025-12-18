@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tosd2lbj70hu"]
+[gd_scene load_steps=16 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_08kss"]
@@ -26,6 +26,12 @@ texture = ExtResource("2_08kss")
 [sub_resource type="TileSet" id="TileSet_ecit3"]
 sources/0 = SubResource("TileSetAtlasSource_1a1xj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2xb"]
+size = Vector2(63.3333, 874.333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
+size = Vector2(1409, 112.667)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -48,6 +54,18 @@ scale = Vector2(1.5, 1.5)
 tile_set = SubResource("TileSet_ecit3")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 1572935, 0, 0, 1572943, 0, 0, 1572951, 0, 0, 1048583, 0, 0, 1048591, 0, 0, 1048599, 0, 0, 1048607, 0, 0, 1048615, 0, 0, 1048623, 0, 0, 1048631, 0, 0, 1048639, 0, 0, 1048647, 0, 0, 1048655, 0, 0, 1048663, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap"]
+position = Vector2(21.6667, 391.407)
+shape = SubResource("RectangleShape2D_wx2xb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap"]
+position = Vector2(1496, 385.24)
+shape = SubResource("RectangleShape2D_wx2xb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/CollisionShape2D2"]
+position = Vector2(-737.167, 381.833)
+shape = SubResource("RectangleShape2D_rggls")
 
 [node name="Desk" type="Sprite2D" parent="."]
 position = Vector2(1978, 629)
