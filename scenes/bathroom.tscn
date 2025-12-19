@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://hktmcl6xg08u"]
+
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_gknyc"]
+[ext_resource type="Texture2D" uid="uid://6krf88o8e158" path="res://assets/tiles2.png" id="2_j2cwc"]
+[ext_resource type="Texture2D" uid="uid://cdmb7pkjcgu60" path="res://assets/mirror2.png" id="3_q0btg"]
+[ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="4_c3o6o"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="5_hq5ij"]
+[ext_resource type="Texture2D" uid="uid://b6f8ffxthgceb" path="res://assets/pinkrug.png" id="6_c0g1v"]
+[ext_resource type="Texture2D" uid="uid://c2fb3iih86b4x" path="res://assets/toliet.png" id="7_ym42y"]
+[ext_resource type="Texture2D" uid="uid://bpoi2xwk8svwu" path="res://assets/bathtub.png" id="8_hq5ij"]
+[ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_c0g1v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
+texture = ExtResource("1_gknyc")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qfxnf"]
+sources/0 = SubResource("TileSetAtlasSource_82jhl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ouov"]
+texture = ExtResource("2_j2cwc")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_q0btg"]
+sources/0 = SubResource("TileSetAtlasSource_3ouov")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
+size = Vector2(1534.67, 118)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(-70.895, 53.39)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_qfxnf")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 327685, 0, 0, 131121, 0, 0, 851973, 0, 0, 655373, 0, 0, 655381, 0, 0, 655389, 0, 0, 655397, 0, 0, 655405, 0, 0, 1179661, 0, 0, 1179669, 0, 0, 1179677, 0, 0, 1179685, 0, 0, 1179693, 0, 0, 655413, 0, 0, 1179701, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(21, -740)
+scale = Vector2(2.5, 2.5)
+tile_set = SubResource("TileSet_q0btg")
+format = 2
+layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752539, 0, 0, 2752547, 0, 0, 2752555, 0, 0, 2752563, 0, 0, 2752571, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1151, 1204.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_m8av8")
+
+[node name="Mirror2" type="Sprite2D" parent="."]
+position = Vector2(2030, 280)
+scale = Vector2(6.67188, 6.67188)
+texture = ExtResource("3_q0btg")
+
+[node name="Sink" type="Sprite2D" parent="."]
+position = Vector2(2036, 656)
+scale = Vector2(5.34375, 5.34375)
+texture = ExtResource("4_c3o6o")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(-4, 965.677)
+rotation = 1.5708
+scale = Vector2(3.08318, 3.5)
+texture = ExtResource("5_hq5ij")
+
+[node name="Pinkrug" type="Sprite2D" parent="."]
+position = Vector2(1349, 926)
+scale = Vector2(5.43164, 1.99804)
+texture = ExtResource("6_c0g1v")
+
+[node name="Toliet" type="Sprite2D" parent="."]
+position = Vector2(1349, 593)
+scale = Vector2(4.95508, 4.95508)
+texture = ExtResource("7_ym42y")
+
+[node name="Bathtub" type="Sprite2D" parent="."]
+position = Vector2(499, 700)
+scale = Vector2(6.35938, 6.35938)
+texture = ExtResource("8_hq5ij")
+
+[node name="Flowerpainting" type="Sprite2D" parent="."]
+position = Vector2(982, 265)
+scale = Vector2(3.10156, 3.10156)
+texture = ExtResource("9_c0g1v")
