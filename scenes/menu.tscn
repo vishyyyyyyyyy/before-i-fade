@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=19 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="2_13sgg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="10_i42df"]
 [ext_resource type="Texture2D" uid="uid://dh1r0kfl87ugx" path="res://assets/rightarrow.png" id="11_7jp70"]
 [ext_resource type="Texture2D" uid="uid://c4s7qsieuj4n2" path="res://assets/mouse.png" id="12_mxgkd"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="13_6cdou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l48gv"]
 size = Vector2(209.5, 49)
@@ -308,6 +309,35 @@ theme_override_font_sizes/font_size = 16
 text = "Use left click/hold
 to interact with objects"
 horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 1066.0
+offset_top = 992.0
+offset_right = 1406.0
+offset_bottom = 1027.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 16
+text = "Pass through doors to move
+between rooms"
+horizontal_alignment = 1
+
+[node name="Door" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1240, 1120)
+scale = Vector2(3, 3)
+texture = ExtResource("13_6cdou")
+
+[node name="Door2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.0941176, 0.321569, 0.278431, 1)
+z_index = 2
+position = Vector2(1241, 1186)
+scale = Vector2(3, 3)
+texture = ExtResource("13_6cdou")
 
 [connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]

@@ -24,7 +24,7 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		clear_screen()
 		add_screen()
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(10).timeout
 		clear_screen2()
 		add_screen2()
 
@@ -50,6 +50,9 @@ func clear_screen2():
 	$"../../Mouse".visible=false
 	$"../../Label".visible=false
 	$"../../Label2".visible=false
+	$"../../Label3".visible=false
+	$"../../Door".visible=false
+	$"../../Door2".visible=false
 	
 func add_screen():
 	$"../../Node3/Title/Label".visible=true
@@ -61,6 +64,9 @@ func add_screen():
 	$"../../Mouse".visible=true
 	$"../../Label".visible=true
 	$"../../Label2".visible=true
+	$"../../Label3".visible=true
+	$"../../Door".visible=true
+	$"../../Door2".visible=true
 	
 func add_screen2():
 	$"../../Node2/Title2/Label".visible=true

@@ -4,7 +4,11 @@ extends Node2D
 @onready var narration_label: Label = $Label3
 @onready var explore_node: Node2D = $explore 
 
+var clicked_objects := {} 
+
 func _ready():
+	$Deskcloseup.visible=false
+	$Label3.visible=false
 	narration_label.visible = false
 	$explore/safe/CollisionShape2D.disabled=true
 	$explore/bed/CollisionShape2D.disabled=true
@@ -53,16 +57,62 @@ func modulate():
 
 		
 func unlock_explore():
-	$explore/safe/CollisionShape2D.disabled=false
-	$explore/bed/CollisionShape2D.disabled=false
-	$explore/window/CollisionShape2D.disabled=false
-	$explore/calendar/CollisionShape2D.disabled=false
-	$explore/desk/CollisionShape2D.disabled=false
-	$explore/rug/CollisionShape2D.disabled=false
-	for area in explore_node.get_children():
-		if area is Area2D:
-			area.clicked.connect(_on_object_clicked)
+	# Enable collisions
+	$explore/safe/CollisionShape2D.disabled = false
+	$explore/bed/CollisionShape2D.disabled = false
+	$explore/window/CollisionShape2D.disabled = false
+	$explore/calendar/CollisionShape2D.disabled = false
+	$explore/desk/CollisionShape2D.disabled = false
+	$explore/rug/CollisionShape2D.disabled = false
 
-func _on_object_clicked(text: String):
+	# Connect Area2D clicked signals
+	var areas = {
+		"safe": $explore/safe,
+		"bed": $explore/bed,
+		"window": $explore/window,
+		"calendar": $explore/calendar,
+		"rug": $explore/rug,
+		"desk": $explore/desk
+	}
+
+	for name in areas.keys():
+		var area_node = areas[name]
+		if area_node is Area2D:
+			area_node.clicked.connect(func(text):
+				_on_object_clicked(text, name)
+			)
+func _on_object_clicked(text: String, area_name: String):
+	# If desk clicked before finishing others
+	if area_name == "desk" and not all_non_desk_clicked():
+		narration_label.text = "Let's finish looking at everything else first."
+		narration_label.visible = true
+		return
+	
+	# Mark this area as clicked
+	clicked_objects[area_name] = true
+
+	# Update label
 	narration_label.text = text
 	narration_label.visible = true
+
+	# If desk clicked after everything else, trigger scene change
+	if area_name == "desk" and all_non_desk_clicked():
+		diaryOverlay()
+		
+func all_non_desk_clicked() -> bool:
+	var non_desk = ["safe", "bed", "window", "calendar", "rug"]
+	for name in non_desk:
+		if not clicked_objects.has(name):
+			return false
+	return true
+
+func diaryOverlay():
+	$CanvasLayer/blobGhostPlayer.visible=false
+	$Deskcloseup.visible=true
+	#disable click collisions
+	$explore/safe/CollisionShape2D.disabled=true
+	$explore/bed/CollisionShape2D.disabled=true
+	$explore/window/CollisionShape2D.disabled=true
+	$explore/calendar/CollisionShape2D.disabled=true
+	$explore/desk/CollisionShape2D.disabled=true
+	$explore/rug/CollisionShape2D.disabled=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=41 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://d1wo0i10s3pwc" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="16_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_ij3ta"]
 [ext_resource type="Script" uid="uid://wjog3cuqe5yc" path="res://scenes/explorebedroom.gd" id="19_rme15"]
-[ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_r7ukq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")
@@ -287,9 +286,6 @@ height = 490.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flduu"]
 size = Vector2(290, 397)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcvsn"]
-size = Vector2(723.864, 714.932)
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wfgsr")
 
@@ -361,6 +357,13 @@ visible = false
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("10_yahhj")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="textcollision" type="StaticBody2D" parent="."]
 position = Vector2(1151, 1204.5)
@@ -532,7 +535,6 @@ position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_k5fq4")
 
 [node name="Label3" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -550,7 +552,6 @@ text = "Investigate the bedroom."
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -634,29 +635,6 @@ position = Vector2(2124, 863.5)
 shape = SubResource("RectangleShape2D_flduu")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
-
-[node name="Deskcloseup" type="Sprite2D" parent="."]
-position = Vector2(1173, 643)
-scale = Vector2(0.88, 0.663)
-texture = ExtResource("20_r7ukq")
-
-[node name="familyphoto" type="Area2D" parent="Deskcloseup"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deskcloseup/familyphoto"]
-position = Vector2(-965.341, -372.549)
-shape = SubResource("RectangleShape2D_tcvsn")
-
-[node name="diary" type="Area2D" parent="Deskcloseup"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Deskcloseup/diary"]
-polygon = PackedVector2Array(-76.1366, -260.935, 669.318, -262.444, 717.045, -211.161, 688.636, 72.3981, 793.182, 42.2322, 850, 96.5308, 796.591, 194.57, 677.273, 153.846, 647.727, 469.08, 565.909, 455.505, -205.682, 432.881)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -17.0
-offset_top = 1120.0
-offset_right = 2313.0
-offset_bottom = 1299.0
-color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
