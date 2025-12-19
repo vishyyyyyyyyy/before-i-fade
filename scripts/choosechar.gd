@@ -22,10 +22,10 @@ func _on_mouse_exited():
 func _on_boy_pressed() -> void:
 	Global.character = "boyGhost"
 	emit_signal("char_chosen")
-	#get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")
+	get_tree().change_scene_to_file("res://scenes/bathroom.tscn")
 	
 
 func _on_girl_pressed() -> void:
 	Global.character = "girlGhost"
 	emit_signal("char_chosen")
-	#get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")
+	get_tree().change_scene_to_file("res://scenes/bathroom.tscn")
