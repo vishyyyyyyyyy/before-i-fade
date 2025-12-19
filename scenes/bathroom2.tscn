@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8dirl4qbbxrf"]
+[gd_scene load_steps=23 format=3 uid="uid://c8dirl4qbbxrf"]
 
-[ext_resource type="Script" uid="uid://mgab70ktvfw0" path="res://scenes/bathroom_2.gd" id="1_jjgtk"]
+[ext_resource type="Script" uid="uid://mgab70ktvfw0" path="res://scripts/bathroom_2.gd" id="1_jjgtk"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_jjgtk"]
 [ext_resource type="Texture2D" uid="uid://6krf88o8e158" path="res://assets/tiles2.png" id="3_ih4jt"]
 [ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="4_1hw0t"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="11_gaeyr"]
 [ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_ih4jt"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="12_f1837"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="13_o21yg"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_o21yg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("2_jjgtk")
@@ -34,117 +34,8 @@ sources/0 = SubResource("TileSetAtlasSource_3ouov")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
 size = Vector2(1534.67, 118)
 
-[sub_resource type="Animation" id="Animation_n5w2q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ym42y"]
-resource_name = "text"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.01),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(3, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xd8h1"]
-_data = {
-&"RESET": SubResource("Animation_n5w2q"),
-&"text": SubResource("Animation_ym42y")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohm1j"]
-size = Vector2(361, 439)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgtk"]
+size = Vector2(29.5, 319.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
@@ -255,51 +146,7 @@ layer = 4
 position = Vector2(2062, 809)
 scale = Vector2(4, 4)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer3"]
-root_node = NodePath("Label2")
-libraries = {
-&"": SubResource("AnimationLibrary_xd8h1")
-}
-
-[node name="Label" type="Label" parent="CanvasLayer3/AnimationPlayer"]
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -428.0
-offset_top = -93.0
-offset_right = 428.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_f1837")
-theme_override_font_sizes/font_size = 32
-text = "\"Why're all the colors so weird?!\""
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="CanvasLayer3/AnimationPlayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -921.0
-offset_top = -99.0
-offset_right = 1011.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_f1837")
-theme_override_font_sizes/font_size = 32
-text = "\"Let me just make sure my face is okay, I'm meeting up with my friend later.\""
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="Label3" type="Label" parent="CanvasLayer3"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -313,18 +160,16 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("12_f1837")
 theme_override_font_sizes/font_size = 32
-text = "Click the Mirror"
+text = "Exit the bathroom"
 horizontal_alignment = 1
 
-[node name="SceneTrigger" type="Area2D" parent="."]
-position = Vector2(556, 1203)
+[node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("13_o21yg")
-target_scene = "res://scenes/mirror.tscn"
-requires_interaction = true
+target_scene = "res://scenes/bedroom2.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(1486, -931.5)
-shape = SubResource("RectangleShape2D_ohm1j")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20.25, 962.75)
+shape = SubResource("RectangleShape2D_jjgtk")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="leftwallcollision" type="StaticBody2D" parent="."]
@@ -346,4 +191,6 @@ position = Vector2(1165.38, 293)
 shape = SubResource("RectangleShape2D_l23g3")
 
 [connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

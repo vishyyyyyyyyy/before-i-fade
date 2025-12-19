@@ -18,14 +18,22 @@ func _on_mouse_exited():
 	sprite.texture = normal_texture
 	print("exited")
 	
+var selected_character := ""
 
 func _on_boy_pressed() -> void:
-	Global.character = "boyGhost"
-	emit_signal("char_chosen")
-	get_tree().change_scene_to_file("res://scenes/bathroom.tscn")
-	
-
+	if selected_character == "boy":
+		Global.character = "boyGhost"
+		emit_signal("char_chosen")
+	else:
+		selected_character = "boy"
+		$"../BoyGhost".visible = true
+		$"../GirlGhost".visible = false
+		
 func _on_girl_pressed() -> void:
-	Global.character = "girlGhost"
-	emit_signal("char_chosen")
-	get_tree().change_scene_to_file("res://scenes/bathroom.tscn")
+	if selected_character == "girl":
+		Global.character = "girlGhost"
+		emit_signal("char_chosen")
+	else:
+		selected_character = "girl"
+		$"../BoyGhost".visible = false
+		$"../GirlGhost".visible = true
