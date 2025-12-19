@@ -527,7 +527,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -601,7 +600,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("4_4og1i")
 
 [node name="GirlGhost2" type="Sprite2D" parent="AnimationPlayer2"]
-visible = false
 position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("3_jp4bq")

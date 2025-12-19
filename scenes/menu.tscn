@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=18 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="2_13sgg"]
@@ -7,6 +7,11 @@
 [ext_resource type="Script" uid="uid://ds0cqe4afyhdh" path="res://scripts/menu_banner_2.gd" id="5_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="6_ufwb2"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="7_6cdou"]
+[ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="8_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="9_6cdou"]
+[ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="10_i42df"]
+[ext_resource type="Texture2D" uid="uid://dh1r0kfl87ugx" path="res://assets/rightarrow.png" id="11_7jp70"]
+[ext_resource type="Texture2D" uid="uid://c4s7qsieuj4n2" path="res://assets/mouse.png" id="12_mxgkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l48gv"]
 size = Vector2(209.5, 49)
@@ -16,18 +21,6 @@ size = Vector2(208, 49)
 
 [sub_resource type="Animation" id="Animation_kk3ma"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_ecwwl"]
 resource_name = "fade_in"
@@ -207,6 +200,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="Node2/AnimationPlayer"]
+visible = false
 z_index = 2
 offset_left = 953.0
 offset_top = 568.0
@@ -218,9 +212,102 @@ theme_override_font_sizes/font_size = 24
 text = "This game discusses topics
 about death, murder, and blood"
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+visible_characters = 2
+visible_ratio = 0.0421052
 metadata/_edit_use_anchors_ = true
+
+[node name="Node3" type="Node" parent="."]
+
+[node name="Title" type="Node" parent="Node3"]
+
+[node name="Label" type="Label" parent="Node3/Title"]
+visible = false
+z_index = 1
+offset_left = 965.0
+offset_top = 344.0
+offset_right = 1514.0
+offset_bottom = 491.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Node3/Title"]
+visible = false
+z_index = 1
+offset_left = 956.0
+offset_top = 348.0
+offset_right = 1505.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Downarrow" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1009, 883)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("8_ufwb2")
+
+[node name="Uparrow" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1008, 644)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("9_6cdou")
+
+[node name="LeftArrow" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(878, 760)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("10_i42df")
+
+[node name="Rightarrow" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1137, 763)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("11_7jp70")
+
+[node name="Mouse" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(1505, 764)
+scale = Vector2(3.70313, 3.70313)
+texture = ExtResource("12_mxgkd")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 700.0
+offset_top = 512.0
+offset_right = 1340.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 16
+text = "Use left, right, up, down
+arrow keys to move player"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 1148.0
+offset_top = 512.0
+offset_right = 1788.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 16
+text = "Use left click/hold
+to interact with objects"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]

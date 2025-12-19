@@ -24,6 +24,9 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		clear_screen()
 		add_screen()
+		await get_tree().create_timer(5).timeout
+		clear_screen2()
+		add_screen2()
 
 func clear_screen():
 	$Sprite2D.visible=false
@@ -35,10 +38,31 @@ func clear_screen():
 	$"../Music/CollisionShape2D".disabled =true
 	$CollisionShape2D.disabled=true
 	$"../../subtitle".visible=false
-	# or load next scene
-	# get_tree().change_scene_to_file("res://scenes/bedroom.tscn")
-
+	
+	
+func clear_screen2():
+	$"../../Node3/Title/Label".visible=false
+	$"../../Node3/Title/Label2".visible=false
+	$"../../Downarrow".visible=false
+	$"../../Uparrow".visible=false
+	$"../../LeftArrow".visible=false
+	$"../../Rightarrow".visible=false
+	$"../../Mouse".visible=false
+	$"../../Label".visible=false
+	$"../../Label2".visible=false
+	
 func add_screen():
+	$"../../Node3/Title/Label".visible=true
+	$"../../Node3/Title/Label2".visible=true
+	$"../../Downarrow".visible=true
+	$"../../Uparrow".visible=true
+	$"../../LeftArrow".visible=true
+	$"../../Rightarrow".visible=true
+	$"../../Mouse".visible=true
+	$"../../Label".visible=true
+	$"../../Label2".visible=true
+	
+func add_screen2():
 	$"../../Node2/Title2/Label".visible=true
 	$"../../Node2/Title2/Label2".visible=true
 	$"../../Node2/AnimationPlayer/Label".visible=true
