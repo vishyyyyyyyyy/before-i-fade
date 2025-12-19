@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://tosd2lbj70hu"]
+[gd_scene load_steps=26 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
+[ext_resource type="Script" uid="uid://sny0cu5i00sb" path="res://scripts/bedroom.gd" id="1_lj4hb"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_08kss"]
 [ext_resource type="Texture2D" uid="uid://cum4c3gbr24je" path="res://assets/bed.png" id="3_5gvsb"]
 [ext_resource type="Texture2D" uid="uid://6q3uqgo3oetd" path="res://assets/desk.png" id="3_ammhk"]
@@ -8,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="5_d74ih"]
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="7_u3ncq"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="8_ysy21"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="9_hdjrh"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="9_wx2xb"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_lv7wv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ysy21"]
 texture = ExtResource("1_j7co6")
@@ -41,7 +44,120 @@ size = Vector2(187, 104)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gd2a"]
 size = Vector2(2309.25, 174.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
+size = Vector2(422, 144)
+
+[sub_resource type="Animation" id="Animation_lv7wv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lj4hb"]
+resource_name = "type_text"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.93333, 6.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.96667, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5fq4"]
+_data = {
+&"RESET": SubResource("Animation_lv7wv"),
+&"type_text": SubResource("Animation_lj4hb")
+}
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lj4hb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 2303.0
@@ -140,8 +256,84 @@ shape = SubResource("RectangleShape2D_jsnhi")
 position = Vector2(1165.38, 100.875)
 shape = SubResource("RectangleShape2D_8gd2a")
 
+[node name="SceneTrigger" type="Area2D" parent="."]
+position = Vector2(556, 1203)
+script = ExtResource("11_lv7wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(1432, -162)
+shape = SubResource("RectangleShape2D_lj4hb")
+disabled = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../blobGhostPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_k5fq4")
+}
+autoplay = "type_text"
+
+[node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_hdjrh")
+theme_override_font_sizes/font_size = 32
+text = "\"Ugh... What happened?\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/AnimationPlayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_hdjrh")
+theme_override_font_sizes/font_size = 32
+text = "\"I need to go to the bathroom... My head hurts.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -93.0
+offset_right = 596.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_hdjrh")
+theme_override_font_sizes/font_size = 32
+text = "Enter the bathroom."
+horizontal_alignment = 1
+
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("9_wx2xb")]
-position = Vector2(1257, 528)
+position = Vector2(1209, 528)
 scale = Vector2(3, 3)
+
+[connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
