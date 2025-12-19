@@ -1,4 +1,5 @@
 extends Area2D
+signal char_chosen
 
 @export var normal_texture: Texture2D
 @export var hover_texture: Texture2D
@@ -19,10 +20,12 @@ func _on_mouse_exited():
 	
 
 func _on_boy_pressed() -> void:
+	emit_signal("char_chosen")
 	Global.character = "boyGhost"
 	get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")
 	
 
 func _on_girl_pressed() -> void:
+	emit_signal("char_chosen")
 	Global.character = "girlGhost"
 	get_tree().change_scene_to_file("res://scenes/blob_ghost_player.tscn")

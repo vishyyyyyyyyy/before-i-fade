@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://bmki4flc2dqe4"]
 
-[ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scenes/mirror.gd" id="1_ne3vj"]
+[ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_ne3vj"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_50nco"]
 [ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="3_0u51k"]
 [ext_resource type="Texture2D" uid="uid://cdmb7pkjcgu60" path="res://assets/mirror2.png" id="3_q7r2j"]
 [ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://scripts/choosechar.gd" id="4_3w1wn"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="5_0u51k"]
-[ext_resource type="Script" uid="uid://dbia3mkxlspt3" path="res://scenes/mirrorscrub.gd" id="5_jp4bq"]
+[ext_resource type="Script" uid="uid://dbia3mkxlspt3" path="res://scripts/mirrorscrub.gd" id="5_jp4bq"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="6_jp4bq"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="7_mp6ep"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="8_4og1i"]
 [ext_resource type="Texture2D" uid="uid://cxrmcl03gnmff" path="res://assets/sponge.png" id="9_q7r2j"]
-[ext_resource type="Script" uid="uid://b4t4hmayx8ad3" path="res://scenes/sponge.gd" id="10_3w1wn"]
+[ext_resource type="Script" uid="uid://b4t4hmayx8ad3" path="res://scripts/sponge.gd" id="10_3w1wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfheo"]
 texture = ExtResource("2_50nco")
@@ -106,6 +106,7 @@ offset_left = 922.0
 offset_top = 375.0
 offset_right = 1391.0
 offset_bottom = 457.979
+disabled = true
 
 [node name="girl" type="TextureButton" parent="ColorRect"]
 layout_mode = 0
@@ -113,6 +114,7 @@ offset_left = 920.0
 offset_top = 658.0
 offset_right = 1397.0
 offset_bottom = 785.0
+disabled = true
 
 [node name="TileMap2" type="TileMap" parent="."]
 modulate = Color(0, 0.992157, 0.815686, 1)
@@ -187,6 +189,7 @@ z_index = 1
 position = Vector2(0, 9.82243)
 scale = Vector2(0.582257, 1.03181)
 shape = SubResource("RectangleShape2D_neuhm")
+disabled = true
 
 [node name="Area2D2" type="Area2D" parent="."]
 visible = false
@@ -218,6 +221,7 @@ z_index = 1
 position = Vector2(0, 9.82243)
 scale = Vector2(0.582257, 1.03181)
 shape = SubResource("RectangleShape2D_neuhm")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -261,6 +265,25 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "Clean the mirror."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 724.0
+offset_top = 1203.0
+offset_right = 1580.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_4og1i")
+theme_override_font_sizes/font_size = 32
+text = "Choose your character."
 horizontal_alignment = 1
 
 [node name="Sponge" type="Sprite2D" parent="."]

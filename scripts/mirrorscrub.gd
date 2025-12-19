@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var scrub_needed := 2000  # higher = longer cleaning
+@export var scrub_needed := 1500 # higher = longer cleaning
 
 var scrub_amount := 0.0
 var cleaned := false
@@ -35,5 +35,16 @@ func update_fade():
 func on_cleaned():
 	dirty_sprite.visible = false
 	clean_sprite.modulate.a = 1.0
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$"../../Sponge".visible=false
+	$"../../Label2".visible=false
+	$"../../Label3".visible=true
+	$"../../ColorRect/boy".disabled = false
+	$"../../ColorRect/girl".disabled = false
+	$"../../Area2D2".visible=true
+	$"../../Area2D".visible=true
+	await get_tree().create_timer(2.0).timeout
+	$"../../Area2D/CollisionShape2D3".disabled=false
+	$"../../Area2D2/CollisionShape2D3".disabled=false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
