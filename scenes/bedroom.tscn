@@ -263,6 +263,7 @@ shape = SubResource("RectangleShape2D_8gd2a")
 [node name="SceneTrigger" type="Area2D" parent="."]
 position = Vector2(556, 1203)
 script = ExtResource("11_lv7wv")
+target_scene = "res://scenes/bathroom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(1462.5, -97.5)

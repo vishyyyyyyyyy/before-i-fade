@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://hktmcl6xg08u"]
+[gd_scene load_steps=25 format=3 uid="uid://hktmcl6xg08u"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_gknyc"]
 [ext_resource type="Script" uid="uid://dp3auqvxnpfao" path="res://scripts/bathroom.gd" id="1_n5w2q"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_c0g1v"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="10_c0g1v"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_ym42y"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_xd8h1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("1_gknyc")
@@ -34,7 +35,7 @@ size = Vector2(1534.67, 118)
 
 [sub_resource type="Animation" id="Animation_ym42y"]
 resource_name = "text"
-length = 6.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,7 +67,7 @@ tracks/2/path = NodePath(".:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 6),
+"times": PackedFloat32Array(0, 3, 7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -78,7 +79,7 @@ tracks/3/path = NodePath(".:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3, 5.05),
+"times": PackedFloat32Array(3, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -140,6 +141,9 @@ _data = {
 &"RESET": SubResource("Animation_n5w2q"),
 &"text": SubResource("Animation_ym42y")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohm1j"]
+size = Vector2(361, 439)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
@@ -275,6 +279,35 @@ text = "\"Let me just make sure my face is okay, I'm meeting up with my friend l
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="Label3" type="Label" parent="CanvasLayer3"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -101.0
+offset_right = 596.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_ym42y")
+theme_override_font_sizes/font_size = 32
+text = "Interact with the Mirror"
+horizontal_alignment = 1
+
+[node name="SceneTrigger" type="Area2D" parent="."]
+position = Vector2(556, 1203)
+script = ExtResource("13_xd8h1")
+target_scene = "res://scenes/choosechar.tscn"
+requires_interaction = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(1486, -931.5)
+shape = SubResource("RectangleShape2D_ohm1j")
+debug_color = Color(1, 1, 1, 0.42)
+
 [node name="leftwallcollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
@@ -292,3 +325,5 @@ shape = SubResource("RectangleShape2D_2v03t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision/WallCollision"]
 position = Vector2(1165.38, 293)
 shape = SubResource("RectangleShape2D_l23g3")
+
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
