@@ -527,6 +527,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -583,7 +584,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
-text = "\"That's not possible. I.. I.. I can't remember.\""
+text = "\"That's not possible. I.. I.. I can't remember what happened to me.\""
 visible_characters = 0
 visible_ratio = 0.0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=28 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://d1wo0i10s3pwc" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -10,14 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_ij3ta"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
-[ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_yahhj"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_flduu"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_4saaw"]
-[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_rik1q"]
-[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="15_rme15"]
-[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="16_r7ukq"]
-[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_ij3ta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")
@@ -162,216 +157,6 @@ _data = {
 &"type_text": SubResource("Animation_lj4hb")
 }
 
-[sub_resource type="Animation" id="Animation_flduu"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_tcvsn"]
-resource_name = "girlghost"
-length = 7.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/AnimationPlayer2/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/AnimationPlayer2/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2, 6.03333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(2, 5.03333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(5.06667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(6, 7.43333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/AnimationPlayer2/GirlGhost2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 2, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/AnimationPlayer2/GirlGhost:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_rik1q"]
-resource_name = "boyghost"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/AnimationPlayer2/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/AnimationPlayer2/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2, 4.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(2, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(5, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CanvasLayer/AnimationPlayer2/BoyGhost2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 2, 5.03333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CanvasLayer/AnimationPlayer2/BoyGhost:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xrbb"]
-_data = {
-&"RESET": SubResource("Animation_flduu"),
-&"boyghost": SubResource("Animation_rik1q"),
-&"girlghost": SubResource("Animation_tcvsn")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
 size = Vector2(169, 1323)
 
@@ -436,16 +221,10 @@ position = Vector2(1188, 111)
 scale = Vector2(4, 4)
 texture = ExtResource("8_r7ukq")
 
-[node name="Calendar" type="Sprite2D" parent="CanvasModulate"]
+[node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("9_ij3ta")
-
-[node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
-visible = false
-position = Vector2(1896, 148)
-scale = Vector2(3, 3)
-texture = ExtResource("10_yahhj")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -17.0
@@ -562,109 +341,6 @@ horizontal_alignment = 1
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_0xrbb")]
 position = Vector2(1907, 882)
 scale = Vector2(3, 3)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_0xrbb")
-}
-
-[node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer2"]
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -272.0
-offset_top = -93.0
-offset_right = 272.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("11_flduu")
-theme_override_font_sizes/font_size = 32
-text = "\"Is that ...me?!\""
-horizontal_alignment = 1
-vertical_alignment = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -272.0
-offset_top = -93.0
-offset_right = 272.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("11_flduu")
-theme_override_font_sizes/font_size = 32
-text = "“That’s me… but from before I died.”"
-horizontal_alignment = 1
-vertical_alignment = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label3" type="Label" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -272.0
-offset_top = -93.0
-offset_right = 272.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("11_flduu")
-theme_override_font_sizes/font_size = 32
-text = "\"Being in the past is creeping me out.\""
-horizontal_alignment = 1
-vertical_alignment = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 2
-z_as_relative = false
-position = Vector2(2026, 692)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("14_rik1q")
-
-[node name="GirlGhost2" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 2
-z_as_relative = false
-position = Vector2(2026, 692)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("16_r7ukq")
-
-[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 2
-z_as_relative = false
-position = Vector2(2026, 724)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("15_rme15")
-
-[node name="BoyGhost2" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
-z_index = 2
-z_as_relative = false
-position = Vector2(2026, 724)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("17_ij3ta")
 
 [node name="Catrug" type="Sprite2D" parent="."]
 position = Vector2(1797, 651)
