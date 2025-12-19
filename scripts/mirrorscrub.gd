@@ -43,7 +43,7 @@ func on_cleaned():
 	$"../../ColorRect/girl".disabled = false
 	$"../../Area2D2".visible=true
 	$"../../Area2D".visible=true
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	$"../../Area2D/CollisionShape2D3".disabled=false
 	$"../../Area2D2/CollisionShape2D3".disabled=false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

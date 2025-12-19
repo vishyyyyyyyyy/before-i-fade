@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://bmki4flc2dqe4"]
+[gd_scene load_steps=22 format=3 uid="uid://bmki4flc2dqe4"]
 
 [ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_ne3vj"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_50nco"]
 [ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="3_0u51k"]
+[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="3_jp4bq"]
 [ext_resource type="Texture2D" uid="uid://cdmb7pkjcgu60" path="res://assets/mirror2.png" id="3_q7r2j"]
 [ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://scripts/choosechar.gd" id="4_3w1wn"]
+[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="4_mp6ep"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="5_0u51k"]
 [ext_resource type="Script" uid="uid://dbia3mkxlspt3" path="res://scripts/mirrorscrub.gd" id="5_jp4bq"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="6_jp4bq"]
@@ -123,6 +125,18 @@ scale = Vector2(7.67578, 7.67578)
 tile_set = SubResource("TileSet_10l4d")
 format = 2
 layer_0/tile_data = PackedInt32Array(-196615, 0, 0, -262143, 0, 0, -262135, 0, 0, 327673, 0, 0, 262145, 0, 0, 262153, 0, 0)
+
+[node name="GhostGirl2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(303, 716)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("3_jp4bq")
+
+[node name="BoyGhost" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(303, 716)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("4_mp6ep")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -8.0

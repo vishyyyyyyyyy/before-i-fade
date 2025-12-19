@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ybj4ngy520nu"
-path="res://.godot/imported/ghost gjrl2.png-31540776fabc179adbe90d6d4488c7f4.ctex"
+path="res://.godot/imported/ghost girl2.png-f7f08cb686b19416d52d56b190eced9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/ghost gjrl2.png"
-dest_files=["res://.godot/imported/ghost gjrl2.png-31540776fabc179adbe90d6d4488c7f4.ctex"]
+source_file="res://assets/characters/ghost girl2.png"
+dest_files=["res://.godot/imported/ghost girl2.png-f7f08cb686b19416d52d56b190eced9c.ctex"]
 
 [params]
 
