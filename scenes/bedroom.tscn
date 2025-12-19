@@ -178,12 +178,10 @@ scale = Vector2(3.5, 3.5)
 color = Color(0.0938939, 0.322573, 0.279504, 1)
 
 [node name="Door" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
-scale = Vector2(1, 1)
 texture = ExtResource("4_d74ih")
 
 [node name="Door2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
 position = Vector2(-497.714, 0.571442)
-scale = Vector2(1, 1)
 texture = ExtResource("4_d74ih")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

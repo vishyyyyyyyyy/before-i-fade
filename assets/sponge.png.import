@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxrmcl03gnmff"
-path="res://.godot/imported/spongepng.png-f93448a01b63f86ff29ddb8961c73911.ctex"
+path="res://.godot/imported/sponge.png-8b6d217898bba4d817207b90f6baadd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spongepng.png"
-dest_files=["res://.godot/imported/spongepng.png-f93448a01b63f86ff29ddb8961c73911.ctex"]
+source_file="res://assets/sponge.png"
+dest_files=["res://.godot/imported/sponge.png-8b6d217898bba4d817207b90f6baadd4.ctex"]
 
 [params]
 
