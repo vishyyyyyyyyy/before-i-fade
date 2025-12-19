@@ -189,12 +189,6 @@ position = Vector2(2036, 656)
 scale = Vector2(5.34375, 5.34375)
 texture = ExtResource("4_c3o6o")
 
-[node name="Door" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(-4, 965.677)
-rotation = 1.5708
-scale = Vector2(3.08318, 3.5)
-texture = ExtResource("5_hq5ij")
-
 [node name="Pinkrug" type="Sprite2D" parent="CanvasLayer2"]
 position = Vector2(1349, 926)
 scale = Vector2(5.43164, 1.99804)
@@ -214,6 +208,19 @@ texture = ExtResource("8_hq5ij")
 position = Vector2(982, 265)
 scale = Vector2(3.10156, 3.10156)
 texture = ExtResource("9_c0g1v")
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="CanvasLayer4"]
+position = Vector2(2024, 1127)
+scale = Vector2(3.5, 3.5)
+color = Color(0.0938939, 0.322573, 0.279504, 1)
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer4"]
+position = Vector2(-4, 965.677)
+rotation = 1.5708
+scale = Vector2(3.08318, 3.5)
+texture = ExtResource("5_hq5ij")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -17.0
