@@ -171,7 +171,7 @@ color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.205404, 0.985669, 0.701203, 1)
+color = Color(3.08037e-06, 0.993911, 0.816257, 1)
 
 [node name="TileMap2" type="TileMap" parent="CanvasModulate"]
 position = Vector2(-70.895, 53.39)
