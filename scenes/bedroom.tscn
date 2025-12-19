@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://tosd2lbj70hu"]
+[gd_scene load_steps=28 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
 [ext_resource type="Script" uid="uid://sny0cu5i00sb" path="res://scripts/bedroom.gd" id="1_lj4hb"]
@@ -157,6 +157,9 @@ _data = {
 &"type_text": SubResource("Animation_lj4hb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
+size = Vector2(169, 1323)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lj4hb")
 
@@ -226,34 +229,34 @@ offset_right = 2313.0
 offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="textcollision" type="StaticBody2D" parent="."]
 position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
 shape = SubResource("RectangleShape2D_rggls")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="DeskCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskCollision"]
 position = Vector2(2158, 517.25)
 shape = SubResource("RectangleShape2D_ysy21")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="BedCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedCollision"]
 position = Vector2(444, 298.5)
 shape = SubResource("RectangleShape2D_lu6es")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="SafeCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeCollision"]
 position = Vector2(213.5, 620)
 shape = SubResource("RectangleShape2D_jsnhi")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+[node name="WallCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollision"]
 position = Vector2(1165.38, 100.875)
 shape = SubResource("RectangleShape2D_8gd2a")
 
@@ -340,6 +343,18 @@ position = Vector2(1797, 651)
 rotation = 1.5708
 scale = Vector2(5.36234, 5.36234)
 texture = ExtResource("13_k5fq4")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+position = Vector2(-74.5, 651.5)
+shape = SubResource("RectangleShape2D_k5fq4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2383, 642)
+shape = SubResource("RectangleShape2D_k5fq4")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

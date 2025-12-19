@@ -73,7 +73,7 @@ texture = ExtResource("1_iy07t")
 [node name="Area2D" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(1153, 399)
-scale = Vector2(3.83789, 3.83789)
+scale = Vector2(3, 3)
 script = ExtResource("2_bvee0")
 normal_texture = ExtResource("3_nfheo")
 hover_texture = ExtResource("4_10l4d")
@@ -93,6 +93,7 @@ scale = Vector2(2.26111, 2.26111)
 theme_override_fonts/font = ExtResource("5_g8o3b")
 theme_override_font_sizes/font_size = 8
 text = "boy"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
@@ -103,7 +104,7 @@ shape = SubResource("RectangleShape2D_neuhm")
 [node name="Area2D2" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(1153, 682)
-scale = Vector2(3.83789, 3.83789)
+scale = Vector2(3, 3)
 script = ExtResource("2_bvee0")
 normal_texture = ExtResource("3_nfheo")
 hover_texture = ExtResource("3_nfheo")
