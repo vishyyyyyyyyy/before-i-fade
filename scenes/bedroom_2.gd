@@ -5,9 +5,11 @@ extends Node2D
 @onready var explore_node: Node2D = $explore 
 
 var clicked_objects := {} 
+var deskcounter:= 0
 
 func _ready():
-	$Deskcloseup.visible=false
+	$Node2/Area2D.pressed.connect(_on_desk_area_pressed)
+	$Node/Deskcloseup.visible=false
 	$Label3.visible=false
 	narration_label.visible = false
 	$explore/safe/CollisionShape2D.disabled=true
@@ -16,6 +18,14 @@ func _ready():
 	$explore/calendar/CollisionShape2D.disabled=true
 	$explore/desk/CollisionShape2D.disabled=true
 	$explore/rug/CollisionShape2D.disabled=true
+	 # Use lambda to bind the area name
+	$Node/familyphoto.input_event.connect(func(area, event, shape_idx):
+		_on_area_clicked(area, event, shape_idx, "familyphoto")
+		)
+	
+	$Node/diary.input_event.connect(func(area, event, shape_idx):
+		_on_area_clicked(area, event, shape_idx, "diary")
+		)
 	modulate()
 	
 func modulate():
@@ -105,10 +115,16 @@ func all_non_desk_clicked() -> bool:
 		if not clicked_objects.has(name):
 			return false
 	return true
+	
+@onready var family_photo_area: Area2D = $Node/familyphoto
+@onready var diary_area: Area2D = $Node/diary
 
 func diaryOverlay():
+	$CanvasLayer2/CanvasModulate2/Door.visible=false
+	$CanvasLayer2/CanvasModulate2/Door2.visible=false
+	$Label3.visible=false
 	$CanvasLayer/blobGhostPlayer.visible=false
-	$Deskcloseup.visible=true
+	$Node/Deskcloseup.visible=true
 	#disable click collisions
 	$explore/safe/CollisionShape2D.disabled=true
 	$explore/bed/CollisionShape2D.disabled=true
@@ -116,3 +132,43 @@ func diaryOverlay():
 	$explore/calendar/CollisionShape2D.disabled=true
 	$explore/desk/CollisionShape2D.disabled=true
 	$explore/rug/CollisionShape2D.disabled=true
+	
+	#enable photo and diary collisions
+	$Node/familyphoto/CollisionShape2D.disabled =false
+	$Node/diary/CollisionPolygon2D.disabled=false
+
+
+func _on_area_clicked(area, event, shape_idx, area_name):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		match area_name:
+			"familyphoto":
+				if Global.character == "boyGhost":
+					$Node/AnimationPlayer.play("boyfamilyphoto")
+					await $Node/AnimationPlayer2.animation_finished
+					deskcounter +=1
+					
+				else:
+					$Node/AnimationPlayer.play("girlfamilyphoto")
+					await $Node/AnimationPlayer2.animation_finished
+					deskcounter +=1
+			"diary":
+				if Global.character == "boyGhost":
+					$Node/AnimationPlayer2.play("boydiarytext")
+					await $Node/AnimationPlayer2.animation_finished
+					deskcounter +=1
+				else:
+					$Node/AnimationPlayer2.play("girldiarytext")
+					await $Node/AnimationPlayer2.animation_finished
+					deskcounter +=1
+					
+		if deskcounter >=1:
+			$Node2/Area2D/CollisionShape2D.disabled=false
+			$Node2/Area2D.visible=true
+
+
+func _on_desk_area_pressed():
+	$Node/Deskcloseup.visible = false
+	$Node2/Area2D/CollisionShape2D.disabled = true
+	$Node2/Area2D.visible=false
+	$Node/familyphoto/CollisionShape2D.disabled=true
+	$Node/diary/CollisionPolygon2D.disabled=true
