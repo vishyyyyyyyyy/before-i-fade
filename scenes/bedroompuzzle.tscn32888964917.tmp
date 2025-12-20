@@ -1,0 +1,401 @@
+[gd_scene load_steps=36 format=3 uid="uid://ude0i3qr7e54"]
+
+[ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rqbah"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_qoho3"]
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="3_8yyjw"]
+[ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="4_2otpw"]
+[ext_resource type="Texture2D" uid="uid://6q3uqgo3oetd" path="res://assets/desk.png" id="5_lfv2d"]
+[ext_resource type="Texture2D" uid="uid://cum4c3gbr24je" path="res://assets/bed.png" id="6_ugq2k"]
+[ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_fqxvh"]
+[ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_kp75u"]
+[ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_qy7hx"]
+[ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_m6olq"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_d7b7r"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_7v2qe"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_v3vwr"]
+[ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="18_rrknc"]
+[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="19_6xpoc"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="20_6xpoc"]
+[ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_n12it"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="21_jxq3j"]
+[ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="22_2srh7"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="23_gyyxh"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="24_pr0aa"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
+texture = ExtResource("3_8yyjw")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wx2xb"]
+sources/0 = SubResource("TileSetAtlasSource_lv7wv")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx2xb"]
+texture = ExtResource("4_2otpw")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ecit3"]
+sources/0 = SubResource("TileSetAtlasSource_wx2xb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
+size = Vector2(1534.67, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
+size = Vector2(286, 393.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu6es"]
+size = Vector2(614, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsnhi"]
+size = Vector2(187, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gd2a"]
+size = Vector2(2309.25, 174.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
+size = Vector2(361, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcvsn"]
+size = Vector2(723.864, 714.932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
+size = Vector2(422, 107.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxq3j"]
+size = Vector2(209.5, 49)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rqbah")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="TileMap2" type="TileMap" parent="CanvasModulate"]
+position = Vector2(-70.895, 53.39)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_wx2xb")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 327685, 0, 0, 131121, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="CanvasModulate"]
+position = Vector2(-81.75, 53.39)
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_ecit3")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 1572935, 0, 0, 1572943, 0, 0, 1572951, 0, 0, 1048583, 0, 0, 1048591, 0, 0, 1048599, 0, 0, 1048607, 0, 0, 1048615, 0, 0, 1048623, 0, 0, 1048631, 0, 0, 1048639, 0, 0, 1048647, 0, 0, 1048655, 0, 0, 1048663, 0, 0, 1048671, 0, 0, 1572959, 0, 0, 2097247, 0, 0, 2621535, 0, 0)
+
+[node name="Door" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(2024, 1127)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_qoho3")
+
+[node name="Door2" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(282.001, 1129)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_qoho3")
+
+[node name="Desk" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(2078, 642)
+scale = Vector2(6, 6)
+texture = ExtResource("5_lfv2d")
+
+[node name="Bed" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(477, 339)
+scale = Vector2(6, 6)
+texture = ExtResource("6_ugq2k")
+
+[node name="Safe" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(209, 665)
+scale = Vector2(2, 2)
+texture = ExtResource("7_fqxvh")
+
+[node name="Window" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(1188, 111)
+scale = Vector2(4, 4)
+texture = ExtResource("8_kp75u")
+
+[node name="Calendar" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(1896, 148)
+scale = Vector2(3, 3)
+texture = ExtResource("9_qy7hx")
+
+[node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
+visible = false
+position = Vector2(1896, 148)
+scale = Vector2(3, 3)
+texture = ExtResource("10_m6olq")
+
+[node name="Catrug" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(1797, 651)
+rotation = 1.5708
+scale = Vector2(5.36234, 5.36234)
+texture = ExtResource("18_rrknc")
+
+[node name="blobGhostPlayer" parent="CanvasModulate" instance=ExtResource("12_7v2qe")]
+position = Vector2(1912, 535)
+scale = Vector2(3, 3)
+
+[node name="textcollision" type="StaticBody2D" parent="."]
+position = Vector2(1151, 1204.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+shape = SubResource("RectangleShape2D_rggls")
+
+[node name="DeskCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskCollision"]
+position = Vector2(2158, 517.25)
+shape = SubResource("RectangleShape2D_ysy21")
+
+[node name="BedCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedCollision"]
+position = Vector2(444, 298.5)
+shape = SubResource("RectangleShape2D_lu6es")
+
+[node name="SafeCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeCollision"]
+position = Vector2(213.5, 620)
+shape = SubResource("RectangleShape2D_jsnhi")
+
+[node name="WallCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollision"]
+position = Vector2(1165.38, 100.875)
+shape = SubResource("RectangleShape2D_8gd2a")
+
+[node name="SceneTrigger" type="Area2D" parent="."]
+position = Vector2(556, 1203)
+script = ExtResource("11_d7b7r")
+target_scene = "res://scenes/bathroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(1462.5, -97.5)
+shape = SubResource("RectangleShape2D_lj4hb")
+disabled = true
+
+[node name="leftwallcollision" type="StaticBody2D" parent="."]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+position = Vector2(-74.5, 651.5)
+shape = SubResource("RectangleShape2D_k5fq4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2383, 642)
+shape = SubResource("RectangleShape2D_k5fq4")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_top = 1162.0
+offset_right = 1976.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("13_v3vwr")
+theme_override_font_sizes/font_size = 32
+text = "\"Ugh. I'm almost at my limit of being in the past...
+Let me quickly unlock my diary and travel back to the present.\""
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 556.0
+offset_top = 1203.0
+offset_right = 1748.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("13_v3vwr")
+theme_override_font_sizes/font_size = 32
+text = "\"The lock seems to be related to the order and colors on the bed!\"
+Interact with the desk again to enter the combination."
+horizontal_alignment = 1
+
+[node name="explore" type="Node2D" parent="."]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Deskcloseup" type="Sprite2D" parent="Node"]
+visible = false
+position = Vector2(1173, 643)
+scale = Vector2(0.88, 0.663)
+texture = ExtResource("20_n12it")
+
+[node name="familyphoto" type="Area2D" parent="Node"]
+position = Vector2(1173, 643)
+scale = Vector2(0.88, 0.663)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/familyphoto"]
+position = Vector2(-965.341, -372.549)
+shape = SubResource("RectangleShape2D_tcvsn")
+disabled = true
+
+[node name="diary" type="Area2D" parent="Node"]
+position = Vector2(1173, 643)
+scale = Vector2(0.88, 0.663)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/diary"]
+polygon = PackedVector2Array(-76.1366, -260.935, 669.318, -262.444, 717.045, -211.161, 688.636, 72.3981, 793.182, 42.2322, 850, 96.5308, 796.591, 194.57, 677.273, 153.846, 647.727, 469.08, 565.909, 455.505, -205.682, 432.881)
+disabled = true
+
+[node name="ColorRect2" type="ColorRect" parent="Node"]
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2"]
+visible = false
+position = Vector2(-135, -8)
+script = ExtResource("22_2srh7")
+
+[node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
+z_index = 1
+position = Vector2(2165.72, 946.723)
+scale = Vector2(7.5738, 7.5738)
+texture = ExtResource("23_gyyxh")
+
+[node name="Label" type="Label" parent="Node2/Area2D"]
+z_index = 1
+offset_left = 2015.72
+offset_top = 962.723
+offset_right = 2319.72
+offset_bottom = 994.723
+theme_override_fonts/font = ExtResource("24_pr0aa")
+theme_override_font_sizes/font_size = 32
+text = "Leave desk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2/Area2D"]
+position = Vector2(2162, 975.125)
+shape = SubResource("RectangleShape2D_0xrbb")
+disabled = true
+
+[node name="Timer" type="Sprite2D" parent="."]
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("19_6xpoc")
+
+[node name="Node3" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="Node3"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -344.0
+offset_right = 236.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("24_pr0aa")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label" type="Label" parent="Node3"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -340.0
+offset_right = 274.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("24_pr0aa")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="ColorRect" type="ColorRect" parent="Node3"]
+z_index = 1
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.670588)
+
+[node name="Label3" type="Label" parent="Node3"]
+z_index = 2
+offset_left = 848.0
+offset_top = 484.0
+offset_right = 1543.0
+offset_bottom = 586.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("13_v3vwr")
+theme_override_font_sizes/font_size = 24
+text = "Ghosts can only remain in the
+past briefly. Solve puzzles within the time limit to progress. "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Menucard" type="Sprite2D" parent="Node3"]
+z_index = 1
+position = Vector2(1195, 566)
+scale = Vector2(7.94531, 7.94531)
+texture = ExtResource("20_6xpoc")
+metadata/_edit_lock_ = true
+
+[node name="continue" type="Area2D" parent="Node3"]
+z_index = 1
+position = Vector2(245, 12)
+scale = Vector2(2, 2)
+script = ExtResource("21_jxq3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node3/continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("23_gyyxh")
+
+[node name="Label" type="Label" parent="Node3/continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("24_pr0aa")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node3/continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_jxq3j")
+
+[connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Node3/continue" to="Node3/continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_shape_exited"]

@@ -1,4 +1,4 @@
 extends Node
 
-var character = "blob"
+var character = "girlGhost"
 var bathroomCount = 0

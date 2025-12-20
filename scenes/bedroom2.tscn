@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=57 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://d1wo0i10s3pwc" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -24,6 +24,7 @@
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="21_tcvsn"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="22_flduu"]
 [ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="23_flduu"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="24_4saaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")
@@ -1185,7 +1186,7 @@ libraries = {
 
 [node name="Deskcloseup2" type="Sprite2D" parent="Node/AnimationPlayer2"]
 visible = false
-position = Vector2(886, 654)
+position = Vector2(886, 651)
 scale = Vector2(1.22578, 0.923516)
 texture = ExtResource("21_0xrbb")
 
@@ -1294,6 +1295,8 @@ color = Color(0.117647, 0.0431373, 0.152941, 1)
 visible = false
 position = Vector2(-135, -8)
 script = ExtResource("23_flduu")
+normal_texture = ExtResource("22_flduu")
+hover_texture = ExtResource("24_4saaw")
 
 [node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
 z_index = 1
