@@ -17,14 +17,25 @@ func _ready():
 
 func _on_continue_pressed():
 	print("Node was clicked!")
-	$AnimationPlayer.play("text")
-	$Node3/continue/CollisionShape2D.disabled=true
 	$Timer2.start()
+	$TextureRect/TextureButton.disabled=true
+	$TextureRect/TextureButton2.disabled=true
+	$TextureRect/TextureButton3.disabled=true
+	$TextureRect/TextureButton4.disabled=true
+	$desk/CollisionShape2D.disabled=true
+	$AnimationPlayer.play("text")
+	await $AnimationPlayer.animation_finished
+	$desk/CollisionShape2D.disabled=false
+	$Node3/continue/CollisionShape2D.disabled=true
 	$desk.clicked.connect(_on_desk_clicked)
 	
 	
 func _on_desk_clicked():
 	print("Clicked from main script!")
+	$TextureRect/TextureButton.disabled=false
+	$TextureRect/TextureButton2.disabled=false
+	$TextureRect/TextureButton3.disabled=false
+	$TextureRect/TextureButton4.disabled=false
 
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
@@ -67,9 +78,15 @@ func check_code():
 		
 		if code == "ypPg":
 			$CanvasLayer5/Correct.visible = true
+			await get_tree().create_timer(2).timeout
+			$CanvasLayer5/Correct.visible = false
+			$AnimationPlayer/Label.visible=false
+			$AnimationPlayer/Label3.visible=false
+			correct()
 		else:
 			$CanvasLayer5/Wrong.visible = true
 			await get_tree().create_timer(2).timeout
+			$CanvasLayer5/Correct.visible = false
 			reset_puzzle()
 			
 func reset_puzzle():
@@ -90,3 +107,26 @@ func reset_puzzle():
 	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
 	$AnimationPlayer.play("text")
 	$Timer2.start()
+	
+func correct():
+	$Node4/ColorRect3.visible=true
+	$Node4/Diarypage.visible=true
+	$Node4/Label2.visible=true
+	$Node4/Label.visible=true
+	$Node4/Label3.visible=true
+	await get_tree().create_timer(5).timeout
+	$"CanvasLayer".visible = false
+	$"CanvasLayer2".visible = false
+	$"CanvasLayer3".visible = false
+	$"CanvasLayer4".visible = false
+	$CanvasLayer5/Correct.visible = false
+	$Node4/ColorRect3.visible=false
+	$Node4/Diarypage.visible=false
+	$Node4/Label2.visible=false
+	$Node4/Label.visible=false
+	$Node4/Label3.visible=false
+	$Desk2.visible=true
+	if Global.character == "girlGhost":
+		$AnimationPlayer2.play("girlnametext")
+	if Global.character == "boyGhost":
+		$AnimationPlayer2.play("boynametext")
