@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=24 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_1wnl2"]
-[ext_resource type="Texture2D" uid="uid://dyn3a7oixix7g" path="res://couch.png" id="3_7ef23"]
+[ext_resource type="Texture2D" uid="uid://dyn3a7oixix7g" path="res://assets/couch.png" id="3_7ef23"]
 [ext_resource type="Texture2D" uid="uid://c8p3dr6o3vkhc" path="res://assets/tv.png" id="4_po3oh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="5_k00ks"]
 [ext_resource type="Texture2D" uid="uid://cm25yosnh5ly5" path="res://assets/clock.png" id="6_kwc7q"]
@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cewwpoi0kaoqn" path="res://assets/piano.png" id="8_24a1y"]
 [ext_resource type="Texture2D" uid="uid://cxta5qoyvmrtq" path="res://assets/flower.png" id="9_xddai"]
 [ext_resource type="Texture2D" uid="uid://dv3jxi8g6xc6o" path="res://assets/bluerug.png" id="10_tlixj"]
-[ext_resource type="Texture2D" uid="uid://df32g8tj1tk3u" path="res://assets/coffeetable.png" id="11_1wnl2"]
+[ext_resource type="Texture2D" uid="uid://dya8ub8gb3ao3" path="res://assets/coffeetable.png" id="11_1wnl2"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_7ef23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -27,6 +28,27 @@ texture = ExtResource("2_1wnl2")
 
 [sub_resource type="TileSet" id="TileSet_vu36g"]
 sources/0 = SubResource("TileSetAtlasSource_04r7s")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
+size = Vector2(1534.67, 151.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ef23"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po3oh"]
+size = Vector2(2346, 375.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k00ks"]
+size = Vector2(613, 298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwc7q"]
+size = Vector2(578.5, 95.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
+size = Vector2(258, 160.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
+size = Vector2(379, 249.438)
 
 [node name="Node2D" type="Node2D"]
 
@@ -56,11 +78,6 @@ position = Vector2(1304, 578)
 scale = Vector2(5.34375, 5.34375)
 texture = ExtResource("3_7ef23")
 
-[node name="Tv" type="Sprite2D" parent="."]
-position = Vector2(1296, 1035)
-scale = Vector2(7.02344, 7.02344)
-texture = ExtResource("4_po3oh")
-
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(-2.99998, 867)
 rotation = 1.5708
@@ -73,13 +90,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("5_k00ks")
 
 [node name="Clock" type="Sprite2D" parent="."]
-position = Vector2(623, 160)
-scale = Vector2(5.125, 5.125)
+position = Vector2(503, 284)
+scale = Vector2(5, 5)
 texture = ExtResource("6_kwc7q")
 
 [node name="Shelf" type="Sprite2D" parent="."]
-position = Vector2(237, 168)
-scale = Vector2(5.64063, 5.64063)
+position = Vector2(182, 305)
+scale = Vector2(5, 5)
 texture = ExtResource("7_ikg1h")
 
 [node name="Piano" type="Sprite2D" parent="."]
@@ -101,3 +118,71 @@ texture = ExtResource("10_tlixj")
 position = Vector2(768, 795)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("11_1wnl2")
+
+[node name="blobGhostPlayer" parent="." instance=ExtResource("12_7ef23")]
+position = Vector2(1086.5, 880.5)
+scale = Vector2(3, 3)
+
+[node name="Tv" type="Sprite2D" parent="."]
+position = Vector2(1296, 1035)
+scale = Vector2(7.02344, 7.02344)
+texture = ExtResource("4_po3oh")
+
+[node name="textcollision" type="StaticBody2D" parent="."]
+position = Vector2(3527.5, 1868)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+position = Vector2(-1582.33, -443.167)
+shape = SubResource("RectangleShape2D_1wnl2")
+
+[node name="rightwallcollision" type="StaticBody2D" parent="."]
+position = Vector2(-5.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
+position = Vector2(2382, 642)
+shape = SubResource("RectangleShape2D_7ef23")
+
+[node name="wallcollision" type="StaticBody2D" parent="."]
+position = Vector2(-7, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallcollision"]
+position = Vector2(1165, -3.75)
+shape = SubResource("RectangleShape2D_po3oh")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="."]
+position = Vector2(-3.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+position = Vector2(-66.5, 651.5)
+shape = SubResource("RectangleShape2D_7ef23")
+
+[node name="shlef+clockcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shlef+clockcollision"]
+position = Vector2(296.5, 139)
+shape = SubResource("RectangleShape2D_k00ks")
+
+[node name="couchcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="couchcollision"]
+position = Vector2(1293, 529)
+shape = SubResource("RectangleShape2D_kwc7q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1086.5, 880.5)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-99.1667, -79.7917)
+scale = Vector2(0.333333, 0.333333)
+shape = SubResource("RectangleShape2D_ikg1h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1086.5, 880.5)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(67, 27.4063)
+scale = Vector2(0.333333, 0.333333)
+shape = SubResource("RectangleShape2D_24a1y")

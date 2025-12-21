@@ -146,22 +146,22 @@ position = Vector2(-5.5, 21.5)
 position = Vector2(2382, 642)
 shape = SubResource("RectangleShape2D_5pnpo")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="wallcollision" type="StaticBody2D" parent="."]
 position = Vector2(-3.5, 21.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallcollision"]
 position = Vector2(1163, 238.5)
 shape = SubResource("RectangleShape2D_v6ge5")
 
-[node name="blobGhostPlayer" parent="StaticBody2D2" instance=ExtResource("9_5pnpo")]
+[node name="blobGhostPlayer" parent="wallcollision" instance=ExtResource("9_5pnpo")]
 position = Vector2(1093.5, 837.5)
 scale = Vector2(3, 3)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="boxcollision" type="StaticBody2D" parent="."]
 position = Vector2(1090, 859)
 scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxcollision"]
 position = Vector2(-211.167, -46.4167)
 shape = SubResource("RectangleShape2D_wyt8s")
 
