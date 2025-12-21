@@ -1,8 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=36 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
-[ext_resource type="Texture2D" uid="uid://bywtm1o1ut3ta" path="res://assets/tiles.png" id="3_c2g0u"]
 [ext_resource type="Texture2D" uid="uid://6krf88o8e158" path="res://assets/tiles2.png" id="3_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="4_celu3"]
 [ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="5_fccw1"]
@@ -23,9 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
-[ext_resource type="Texture2D" uid="uid://b4vrigcy0mnwp" path="res://assets/characters/boy 2.png" id="19_wwfem"]
 [ext_resource type="AudioStream" uid="uid://djacvv0tinev7" path="res://assets/audio/phone-ringing-382734.mp3" id="23_25jch"]
-[ext_resource type="Texture2D" uid="uid://ti2kciknesb2" path="res://assets/characters/girl3.png" id="23_ys5x2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("2_wmlgl")
@@ -34,14 +31,6 @@ texture = ExtResource("2_wmlgl")
 
 [sub_resource type="TileSet" id="TileSet_qfxnf"]
 sources/0 = SubResource("TileSetAtlasSource_82jhl")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bm87y"]
-texture = ExtResource("3_c2g0u")
-0:0/size_in_atlas = Vector2i(8, 8)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_wwfem"]
-sources/0 = SubResource("TileSetAtlasSource_bm87y")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ouov"]
 texture = ExtResource("3_kc3g8")
@@ -144,360 +133,6 @@ _data = {
 &"girltext": SubResource("Animation_bs0mm")
 }
 
-[sub_resource type="Animation" id="Animation_ks7oe"]
-resource_name = "friendcallgirl"
-length = 16.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimationPlayer2/Friend2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12.0333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimationPlayer2/Friend label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AnimationPlayer2/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../AnimationPlayer2/Label:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimationPlayer2/Friend:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimationPlayer2/Girl2:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(4, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../AnimationPlayer2/YNlabel:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(4, 8, 12.1333, 16),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../AnimationPlayer2/Label3:visible_ratio")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../AnimationPlayer2/Label3:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(4.06667, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../AnimationPlayer2/Girl3:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(8, 12.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../AnimationPlayer2/Label2:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(8, 12.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../AnimationPlayer2/Label2:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(8, 10.2667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(12.0333, 14.0333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../AnimationPlayer2/Label4:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(12.0667, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_heiri"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_8e03d"]
-resource_name = "friendcallboy"
-length = 16.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimationPlayer2/Friend2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4, 8, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimationPlayer2/Friend label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4, 8, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AnimationPlayer2/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../AnimationPlayer2/Label:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimationPlayer2/Friend:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimationPlayer2/YNlabel:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(4, 8, 12.0667, 16),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../AnimationPlayer2/Label3:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../AnimationPlayer2/Label3:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(4.06667, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../AnimationPlayer2/Label2:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(8, 12.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../AnimationPlayer2/Label2:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(8, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(12.0667, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../AnimationPlayer2/Label4:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(12, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../AnimationPlayer2/Boy2:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12.0667, 16),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../AnimationPlayer2/Boy3:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 8, 12.1333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_21qgr"]
-_data = {
-&"RESET": SubResource("Animation_heiri"),
-&"friendcallboy": SubResource("Animation_8e03d"),
-&"friendcallgirl": SubResource("Animation_ks7oe")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgtk"]
 size = Vector2(29.5, 319.5)
 
@@ -522,13 +157,6 @@ layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
-
-[node name="TileMap2" type="TileMap" parent="CanvasLayer"]
-position = Vector2(21, -740)
-scale = Vector2(2.5, 2.5)
-tile_set = SubResource("TileSet_wwfem")
-format = 2
-layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752537, 0, 0, 2752543, 0, 0, 2752551, 0, 0, 2752559, 0, 0, 2752565, 0, 0, 2752573, 0, 0)
 
 [node name="TileMap" type="TileMap" parent="CanvasLayer"]
 position = Vector2(21, -740)
@@ -618,6 +246,39 @@ z_index = 2
 position = Vector2(158, 840)
 scale = Vector2(4, 4)
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
+root_node = NodePath("../AnimationPlayer")
+
+[node name="Boy1" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(-1036, 1027)
+texture = ExtResource("17_wwfem")
+
+[node name="Boy5" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(-1781, 1129)
+texture = ExtResource("18_ys5x2")
+
+[node name="Friend" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(554, 959)
+texture = ExtResource("13_2u65w")
+
+[node name="Friend2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(1609, 977)
+texture = ExtResource("14_25jch")
+
+[node name="Girl2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(3067, 644)
+texture = ExtResource("15_c2g0u")
+
+[node name="Girl" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(4019, 771)
+texture = ExtResource("16_bm87y")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer3"]
 root_node = NodePath("../..")
 libraries = {
@@ -655,200 +316,6 @@ theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 32
 text = "\"I still can't believe I'm a ghost.\""
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
-root_node = NodePath("../AnimationPlayer")
-libraries = {
-&"": SubResource("AnimationLibrary_21qgr")
-}
-
-[node name="Boy1" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(1999, 531)
-scale = Vector2(0.516547, 0.516547)
-texture = ExtResource("17_wwfem")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2289.55)
-
-[node name="Boy2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(1999, 531)
-scale = Vector2(0.516547, 0.516547)
-texture = ExtResource("18_ys5x2")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2289.55)
-
-[node name="Boy3" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(1999, 531)
-scale = Vector2(0.516547, 0.516547)
-texture = ExtResource("19_wwfem")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2289.55)
-
-[node name="Friend" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-z_index = 2
-position = Vector2(268, 549)
-scale = Vector2(0.488667, 0.488667)
-texture = ExtResource("13_2u65w")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2347.23)
-
-[node name="Friend2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-z_index = 2
-position = Vector2(268, 549)
-scale = Vector2(0.488667, 0.488667)
-texture = ExtResource("14_25jch")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2347.23)
-
-[node name="Girl2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(2022, 547)
-scale = Vector2(0.489333, 0.489333)
-texture = ExtResource("15_c2g0u")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2340.02)
-
-[node name="Girl3" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(2022, 547)
-scale = Vector2(0.489333, 0.489333)
-texture = ExtResource("23_ys5x2")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2340.02)
-
-[node name="Girl" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-position = Vector2(2022, 547)
-scale = Vector2(0.489333, 0.489333)
-texture = ExtResource("16_bm87y")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2340.02)
-
-[node name="Label" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -101.0
-offset_right = 596.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "\"Heyyy. Can I borrow 100k for a yacht?\""
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label3" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -101.0
-offset_right = 596.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "\"What?! NO.\""
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -101.0
-offset_right = 596.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "\"Aw man. Be nice to your best friend! Pleaseeee~?\""
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label4" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -101.0
-offset_right = 596.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "\"We've been going shopping EVERYDAY. I can't keep paying for your expenditures.\""
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Friend label" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -1155.0
-offset_top = -151.0
-offset_right = -571.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "Friend"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="YNlabel" type="Label" parent="CanvasLayer3/AnimationPlayer2"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 570.0
-offset_top = -143.0
-offset_right = 1154.0
-offset_bottom = -106.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 32
-text = "Past You"
-horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("14_ys5x2")
@@ -857,7 +324,6 @@ target_scene = "res://scenes/bedroom2.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20.25, 962.75)
 shape = SubResource("RectangleShape2D_jjgtk")
-disabled = true
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="leftwallcollision" type="StaticBody2D" parent="."]

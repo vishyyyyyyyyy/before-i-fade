@@ -1,24 +1,24 @@
-[gd_scene load_steps=28 format=3 uid="uid://dx0sbj1tdfhed"]
+[gd_scene load_steps=28 format=3 uid="uid://bmki4flc2dqe4"]
 
-[ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_eo0g1"]
-[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_mbs1g"]
-[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="3_4gax8"]
-[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="4_sywtn"]
-[ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="5_821lo"]
-[ext_resource type="Texture2D" uid="uid://cdmb7pkjcgu60" path="res://assets/mirror2.png" id="6_qpl04"]
-[ext_resource type="Script" uid="uid://dbia3mkxlspt3" path="res://scripts/mirrorscrub.gd" id="7_gjs5c"]
-[ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://scripts/choosechar.gd" id="8_132wt"]
-[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="9_qpcod"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="10_btchy"]
-[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="11_rrng2"]
-[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="12_r25wp"]
-[ext_resource type="Texture2D" uid="uid://cxrmcl03gnmff" path="res://assets/sponge.png" id="13_1pyd4"]
-[ext_resource type="Script" uid="uid://b4t4hmayx8ad3" path="res://scripts/sponge.gd" id="14_dq2pt"]
-[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="15_e4x35"]
-[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="16_bndbn"]
+[ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_ne3vj"]
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_50nco"]
+[ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="3_0u51k"]
+[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="3_jp4bq"]
+[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="3_mp6ep"]
+[ext_resource type="Texture2D" uid="uid://cdmb7pkjcgu60" path="res://assets/mirror2.png" id="3_q7r2j"]
+[ext_resource type="Script" uid="uid://cux68mmqd8tqj" path="res://scripts/choosechar.gd" id="4_3w1wn"]
+[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="4_4og1i"]
+[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="4_mp6ep"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="5_0u51k"]
+[ext_resource type="Script" uid="uid://dbia3mkxlspt3" path="res://scripts/mirrorscrub.gd" id="5_jp4bq"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="6_jp4bq"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="7_mp6ep"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="8_4og1i"]
+[ext_resource type="Texture2D" uid="uid://cxrmcl03gnmff" path="res://assets/sponge.png" id="9_q7r2j"]
+[ext_resource type="Script" uid="uid://b4t4hmayx8ad3" path="res://scripts/sponge.gd" id="10_3w1wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfheo"]
-texture = ExtResource("2_mbs1g")
+texture = ExtResource("2_50nco")
 0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 
@@ -303,7 +303,7 @@ _data = {
 }
 
 [node name="Node2D2" type="Node2D"]
-script = ExtResource("1_eo0g1")
+script = ExtResource("1_ne3vj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 2303.0
@@ -342,13 +342,13 @@ layer_0/tile_data = PackedInt32Array(-196615, 0, 0, -262143, 0, 0, -262135, 0, 0
 visible = false
 position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("3_4gax8")
+texture = ExtResource("3_mp6ep")
 
 [node name="BoyGhost" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(303, 716)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("4_sywtn")
+texture = ExtResource("4_4og1i")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -368,18 +368,18 @@ shape = SubResource("RectangleShape2D_qt34r")
 modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1158, 578)
 scale = Vector2(15.5, 15.5)
-texture = ExtResource("5_821lo")
+texture = ExtResource("3_0u51k")
 
 [node name="DirtyMirror" type="Sprite2D" parent="Node"]
 modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1158, 578)
 scale = Vector2(15.5, 15.5)
-texture = ExtResource("6_qpl04")
+texture = ExtResource("3_q7r2j")
 
 [node name="Area2D" type="Area2D" parent="Node"]
 position = Vector2(1158, 578)
 scale = Vector2(15.5, 15.5)
-script = ExtResource("7_gjs5c")
+script = ExtResource("5_jp4bq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/Area2D"]
 polygon = PackedVector2Array(-15.8065, -31.0323, -9.09678, -33.5484, 9.41935, -33.4839, 15.0968, -31.3548, 20.4516, -23.5484, 21.3548, 30.3871, -21.6774, 30.7097, -21.3548, -21.5484)
@@ -389,14 +389,14 @@ visible = false
 z_index = 1
 position = Vector2(1153, 399)
 scale = Vector2(3, 3)
-script = ExtResource("8_132wt")
-normal_texture = ExtResource("9_qpcod")
-hover_texture = ExtResource("10_btchy")
+script = ExtResource("4_3w1wn")
+normal_texture = ExtResource("5_0u51k")
+hover_texture = ExtResource("6_jp4bq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
-texture = ExtResource("9_qpcod")
+texture = ExtResource("5_0u51k")
 
 [node name="Label" type="Label" parent="Area2D"]
 z_index = 1
@@ -405,7 +405,7 @@ offset_top = -0.183205
 offset_right = -2.15521
 offset_bottom = 8.8168
 scale = Vector2(2.26111, 2.26111)
-theme_override_fonts/font = ExtResource("11_rrng2")
+theme_override_fonts/font = ExtResource("7_mp6ep")
 theme_override_font_sizes/font_size = 8
 text = "boy"
 metadata/_edit_use_anchors_ = true
@@ -422,14 +422,14 @@ visible = false
 z_index = 1
 position = Vector2(1153, 682)
 scale = Vector2(3, 3)
-script = ExtResource("8_132wt")
-normal_texture = ExtResource("9_qpcod")
-hover_texture = ExtResource("9_qpcod")
+script = ExtResource("4_3w1wn")
+normal_texture = ExtResource("5_0u51k")
+hover_texture = ExtResource("5_0u51k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
-texture = ExtResource("9_qpcod")
+texture = ExtResource("5_0u51k")
 
 [node name="Label" type="Label" parent="Area2D2"]
 z_index = 1
@@ -438,7 +438,7 @@ offset_top = 0.168945
 offset_right = -1.15523
 offset_bottom = 8.16895
 scale = Vector2(2.26111, 2.26111)
-theme_override_fonts/font = ExtResource("11_rrng2")
+theme_override_fonts/font = ExtResource("7_mp6ep")
 theme_override_font_sizes/font_size = 8
 text = "girl"
 
@@ -468,7 +468,7 @@ offset_right = 428.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "\"Ew. Why is the mirror so dirty?\""
 visible_characters = 0
@@ -488,7 +488,7 @@ offset_right = 1580.0
 offset_bottom = 1240.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "Clean the mirror."
 horizontal_alignment = 1
@@ -508,7 +508,7 @@ offset_bottom = 1240.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 10
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "Choose your character.
 Double click to confirm."
@@ -518,8 +518,8 @@ horizontal_alignment = 1
 z_index = 1
 position = Vector2(1299, 733)
 scale = Vector2(4.63281, 4.63281)
-texture = ExtResource("13_1pyd4")
-script = ExtResource("14_dq2pt")
+texture = ExtResource("9_q7r2j")
+script = ExtResource("10_3w1wn")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
@@ -527,7 +527,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -540,7 +539,7 @@ offset_right = 428.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "\"!!!\""
 horizontal_alignment = 1
@@ -562,7 +561,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 9
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "\"What happened to me... Am I a ghost?\""
 visible_characters = 0
@@ -582,7 +581,7 @@ offset_right = 428.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("12_r25wp")
+theme_override_fonts/font = ExtResource("8_4og1i")
 theme_override_font_sizes/font_size = 32
 text = "\"That's not possible. I.. I.. I can't remember what happened to me.\""
 visible_characters = 0
@@ -592,25 +591,25 @@ visible_ratio = 0.0
 visible = false
 position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("3_4gax8")
+texture = ExtResource("3_mp6ep")
 
 [node name="BoyGhost" type="Sprite2D" parent="AnimationPlayer2"]
 visible = false
 position = Vector2(303, 716)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("4_sywtn")
+texture = ExtResource("4_4og1i")
 
 [node name="GirlGhost2" type="Sprite2D" parent="AnimationPlayer2"]
 visible = false
 position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("15_e4x35")
+texture = ExtResource("3_jp4bq")
 
 [node name="BoyGhost2" type="Sprite2D" parent="AnimationPlayer2"]
 visible = false
 position = Vector2(303, 716)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("16_bndbn")
+texture = ExtResource("4_mp6ep")
 
 [connection signal="pressed" from="ColorRect/boy" to="Area2D" method="_on_boy_pressed"]
 [connection signal="pressed" from="ColorRect/girl" to="Area2D" method="_on_girl_pressed"]
