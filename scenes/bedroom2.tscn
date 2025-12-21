@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=67 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -31,7 +31,6 @@
 [ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="23_flduu"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="23_urv0e"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="24_4saaw"]
-[ext_resource type="PackedScene" path="res://scenes/friend.tscn" id="26_pp5hi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")
@@ -1536,9 +1535,6 @@ position = Vector2(2124, 863.5)
 shape = SubResource("RectangleShape2D_flduu")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
-
-[node name="friend" parent="explore" instance=ExtResource("26_pp5hi")]
-position = Vector2(264, 1361)
 
 [node name="Node" type="Node" parent="."]
 
