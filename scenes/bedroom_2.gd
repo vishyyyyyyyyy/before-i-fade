@@ -44,8 +44,8 @@ func modulate():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer2.play("girlghost")
 		await $CanvasLayer/AnimationPlayer2.animation_finished
-		#$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
-		#await $CanvasLayer/AnimationPlayer.animation_finished
+		$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		$Label3.visible=true
 		unlock_explore()
 		
@@ -64,7 +64,7 @@ func modulate():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer2.play("boyghost")
 		await $CanvasLayer/AnimationPlayer2.animation_finished
-		$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
+		$CanvasLayer/AnimationPlayer.play("friendtextBOY")
 		await $CanvasLayer/AnimationPlayer.animation_finished
 		$Label3.visible=true
 		unlock_explore()

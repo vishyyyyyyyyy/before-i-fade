@@ -63,7 +63,7 @@ func _on_timer_2_timeout() -> void:
 	
 func check_code():
 	if count == 4:
-		$Timer2.stop()  # stop timer once input is complete
+		$Timer2.stop() 
 		
 		if code == "ypPg":
 			$CanvasLayer5/Correct.visible = true
