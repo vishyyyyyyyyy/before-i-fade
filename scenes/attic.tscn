@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqsmxtxsokfbn"]
+
+[ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_5pnpo"]
+[ext_resource type="Texture2D" uid="uid://b3bfrulqjgj7b" path="res://assets/box2.png" id="3_v6ge5"]
+[ext_resource type="Texture2D" uid="uid://b41s20tcnnj41" path="res://assets/box3.png" id="4_wyt8s"]
+[ext_resource type="Texture2D" uid="uid://c7rggfp5slpgu" path="res://assets/box4.png" id="5_245kf"]
+[ext_resource type="Texture2D" uid="uid://6mjvhsoyj1uj" path="res://assets/box.png" id="6_dwpn6"]
+[ext_resource type="Texture2D" uid="uid://cucthlk2u4yns" path="res://assets/atticwindow.png" id="7_sskvc"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="8_26uk4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx7od"]
+texture = ExtResource("1_qajrb")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g8t2i"]
+sources/0 = SubResource("TileSetAtlasSource_wx7od")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_naci5"]
+texture = ExtResource("2_5pnpo")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_131wt"]
+sources/0 = SubResource("TileSetAtlasSource_naci5")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-81.75, 53.39)
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_g8t2i")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 2097247, 0, 0, 2621535, 0, 0, 1572959, 0, 0, 1572951, 0, 0, 1572943, 0, 0, 1572935, 0, 0)
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(-75, 352)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_131wt")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393171, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393163, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = 1117.0
+offset_right = 2312.0
+offset_bottom = 1307.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="Box2" type="Sprite2D" parent="."]
+position = Vector2(203, 695)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v6ge5")
+
+[node name="Box3" type="Sprite2D" parent="."]
+position = Vector2(480, 618)
+scale = Vector2(4, 4)
+texture = ExtResource("4_wyt8s")
+
+[node name="Box4" type="Sprite2D" parent="."]
+position = Vector2(460, 811)
+scale = Vector2(4, 4)
+texture = ExtResource("5_245kf")
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(783, 712)
+scale = Vector2(4, 4)
+texture = ExtResource("6_dwpn6")
+
+[node name="Box5" type="Sprite2D" parent="."]
+position = Vector2(2143, 646)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v6ge5")
+
+[node name="Box6" type="Sprite2D" parent="."]
+position = Vector2(1660, 738)
+scale = Vector2(4, 4)
+texture = ExtResource("4_wyt8s")
+
+[node name="Box7" type="Sprite2D" parent="."]
+position = Vector2(1887, 643)
+scale = Vector2(4, 4)
+texture = ExtResource("5_245kf")
+
+[node name="Box8" type="Sprite2D" parent="."]
+position = Vector2(1576, 595)
+scale = Vector2(4, 4)
+texture = ExtResource("6_dwpn6")
+
+[node name="Box9" type="Sprite2D" parent="."]
+position = Vector2(794, 574)
+scale = Vector2(4, 4)
+texture = ExtResource("3_v6ge5")
+
+[node name="Box11" type="Sprite2D" parent="."]
+position = Vector2(1956, 504)
+scale = Vector2(4, 4)
+texture = ExtResource("5_245kf")
+
+[node name="Box12" type="Sprite2D" parent="."]
+position = Vector2(551, 476)
+scale = Vector2(4, 4)
+texture = ExtResource("6_dwpn6")
+
+[node name="Box10" type="Sprite2D" parent="."]
+position = Vector2(1893, 351)
+scale = Vector2(4, 4)
+texture = ExtResource("4_wyt8s")
+
+[node name="Atticwindow" type="Sprite2D" parent="."]
+position = Vector2(1186, 355)
+scale = Vector2(5.42188, 5.42188)
+texture = ExtResource("7_sskvc")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(2168, 1123)
+scale = Vector2(2.71875, 2.71875)
+texture = ExtResource("8_26uk4")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=57 format=3 uid="uid://brofe21jg5np5"]
 
-[ext_resource type="Script" uid="uid://d1wo0i10s3pwc" path="res://scripts/bedroom_2.gd" id="1_wfgsr"]
+[ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="3_ksqid"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="4_onm5g"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_rme15"]
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_ij3ta"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_yahhj"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_flduu"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="15_rme15"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="16_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_ij3ta"]
-[ext_resource type="Script" uid="uid://wjog3cuqe5yc" path="res://scripts/explorebedroom.gd" id="19_rme15"]
+[ext_resource type="Script" path="res://scripts/explorebedroom.gd" id="19_rme15"]
 [ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="21_0xrbb"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="21_tcvsn"]
@@ -742,7 +742,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
 size = Vector2(422, 107.75)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_wfgsr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -1157,6 +1157,7 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
 
 [node name="Deskcloseup" type="Sprite2D" parent="Node"]
+visible = false
 position = Vector2(1173, 643)
 scale = Vector2(0.88, 0.663)
 texture = ExtResource("20_r7ukq")

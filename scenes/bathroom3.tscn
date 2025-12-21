@@ -1,0 +1,354 @@
+[gd_scene load_steps=36 format=3 uid="uid://btxcdkx1xcumt"]
+
+[ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
+[ext_resource type="Texture2D" uid="uid://6krf88o8e158" path="res://assets/tiles2.png" id="3_kc3g8"]
+[ext_resource type="Texture2D" uid="uid://cvsf5sjvmw613" path="res://assets/mirror.png" id="4_celu3"]
+[ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="5_fccw1"]
+[ext_resource type="Texture2D" uid="uid://b6f8ffxthgceb" path="res://assets/pinkrug.png" id="6_7egjw"]
+[ext_resource type="Texture2D" uid="uid://c2fb3iih86b4x" path="res://assets/toliet.png" id="7_bs0mm"]
+[ext_resource type="Texture2D" uid="uid://bpoi2xwk8svwu" path="res://assets/bathtub.png" id="8_fffvf"]
+[ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_2u65w"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="10_25jch"]
+[ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_c2g0u"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_bm87y"]
+[ext_resource type="Texture2D" uid="uid://bm3prv258iged" path="res://assets/characters/friend.png" id="13_2u65w"]
+[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="13_kc3g8"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_wwfem"]
+[ext_resource type="Texture2D" uid="uid://cp4oxhsbc7n7a" path="res://assets/characters/friend2.png" id="14_25jch"]
+[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="14_celu3"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="14_ys5x2"]
+[ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="15_c2g0u"]
+[ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
+[ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
+[ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
+[ext_resource type="AudioStream" uid="uid://djacvv0tinev7" path="res://assets/audio/phone-ringing-382734.mp3" id="23_25jch"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
+texture = ExtResource("2_wmlgl")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qfxnf"]
+sources/0 = SubResource("TileSetAtlasSource_82jhl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ouov"]
+texture = ExtResource("3_kc3g8")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_q0btg"]
+sources/0 = SubResource("TileSetAtlasSource_3ouov")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
+size = Vector2(1534.67, 118)
+
+[sub_resource type="Animation" id="Animation_7egjw"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fccw1"]
+resource_name = "boytext"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer3/AnimationPlayer/BoyGhost:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer3/AnimationPlayer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bs0mm"]
+resource_name = "girltext"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer3/AnimationPlayer/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer3/AnimationPlayer/GirlGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fffvf"]
+_data = {
+&"RESET": SubResource("Animation_7egjw"),
+&"boytext": SubResource("Animation_fccw1"),
+&"girltext": SubResource("Animation_bs0mm")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgtk"]
+size = Vector2(29.5, 319.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l23g3"]
+size = Vector2(2309.25, 620)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kc3g8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0.992157, 0.815686, 1)
+
+[node name="TileMap2" type="TileMap" parent="CanvasModulate"]
+position = Vector2(-70.895, 53.39)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_qfxnf")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 327685, 0, 0, 131121, 0, 0, 655373, 0, 0, 655381, 0, 0, 655389, 0, 0, 655397, 0, 0, 655405, 0, 0, 655413, 0, 0, 1179701, 0, 0, 851973, 0, 0, 1179677, 0, 0, 1179685, 0, 0, 1179693, 0, 0, 1179661, 0, 0, 1179669, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer"]
+position = Vector2(21, -740)
+scale = Vector2(2.5, 2.5)
+tile_set = SubResource("TileSet_q0btg")
+format = 2
+layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752539, 0, 0, 2752547, 0, 0, 2752555, 0, 0, 2752563, 0, 0, 2752571, 0, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+color = Color(0, 0.992157, 0.815686, 1)
+
+[node name="Mirror2" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(2030, 280)
+scale = Vector2(6.67188, 6.67188)
+texture = ExtResource("4_celu3")
+
+[node name="Sink" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(2036, 656)
+scale = Vector2(5.34375, 5.34375)
+texture = ExtResource("5_fccw1")
+
+[node name="Pinkrug" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(1349, 926)
+scale = Vector2(5.43164, 1.99804)
+texture = ExtResource("6_7egjw")
+
+[node name="Toliet" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(1349, 593)
+scale = Vector2(4.95508, 4.95508)
+texture = ExtResource("7_bs0mm")
+
+[node name="Bathtub" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(499, 700)
+scale = Vector2(6.35938, 6.35938)
+texture = ExtResource("8_fffvf")
+
+[node name="Flowerpainting" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(982, 265)
+scale = Vector2(3.10156, 3.10156)
+texture = ExtResource("9_2u65w")
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="CanvasLayer4"]
+position = Vector2(2024, 1127)
+scale = Vector2(3.5, 3.5)
+color = Color(0.0938939, 0.322573, 0.279504, 1)
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer4"]
+position = Vector2(-4, 965.677)
+rotation = 1.5708
+scale = Vector2(3.08318, 3.5)
+texture = ExtResource("10_25jch")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 1203.0
+offset_top = -661.0
+offset_right = 1533.0
+offset_bottom = -314.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ColorRect2/TextureButton"]
+stream = ExtResource("11_c2g0u")
+volume_db = 24.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1151, 1204.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_m8av8")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="blobGhostPlayer" parent="CanvasLayer3" instance=ExtResource("12_bm87y")]
+z_index = 2
+position = Vector2(158, 840)
+scale = Vector2(4, 4)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
+root_node = NodePath("../AnimationPlayer")
+
+[node name="Boy1" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(-1036, 1027)
+texture = ExtResource("17_wwfem")
+
+[node name="Boy5" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(-1781, 1129)
+texture = ExtResource("18_ys5x2")
+
+[node name="Friend" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(554, 959)
+texture = ExtResource("13_2u65w")
+
+[node name="Friend2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(1609, 977)
+texture = ExtResource("14_25jch")
+
+[node name="Girl2" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(3067, 644)
+texture = ExtResource("15_c2g0u")
+
+[node name="Girl" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(4019, 771)
+texture = ExtResource("16_bm87y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer3"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_fffvf")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("13_kc3g8")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("14_celu3")
+
+[node name="Label" type="Label" parent="CanvasLayer3/AnimationPlayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -101.0
+offset_right = 596.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_wwfem")
+theme_override_font_sizes/font_size = 32
+text = "\"I still can't believe I'm a ghost.\""
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("14_ys5x2")
+target_scene = "res://scenes/bedroom2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20.25, 962.75)
+shape = SubResource("RectangleShape2D_jjgtk")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="leftwallcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+position = Vector2(-74.5, 651.5)
+shape = SubResource("RectangleShape2D_2v03t")
+
+[node name="rightwallcollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
+position = Vector2(2383, 642)
+shape = SubResource("RectangleShape2D_2v03t")
+
+[node name="WallCollision" type="StaticBody2D" parent="rightwallcollision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision/WallCollision"]
+position = Vector2(1165.38, 293)
+shape = SubResource("RectangleShape2D_l23g3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_25jch")
+volume_db = 20.0
+
+[connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
