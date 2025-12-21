@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=48 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rqbah"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_qoho3"]
@@ -10,15 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_kp75u"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_qy7hx"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_m6olq"]
-[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_d7b7r"]
+[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="11_d7b7r"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_7v2qe"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_v3vwr"]
-[ext_resource type="Script" uid="uid://1n07g0srhaep" path="res://scripts/deskpuzzle.gd" id="14_lfv2d"]
+[ext_resource type="Script" path="res://scripts/deskpuzzle.gd" id="14_lfv2d"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="18_rrknc"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="19_6xpoc"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="20_6xpoc"]
 [ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_n12it"]
-[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="21_jxq3j"]
+[ext_resource type="Script" path="res://scripts/continue.gd" id="21_jxq3j"]
 [ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="21_xjppy"]
 [ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="22_2srh7"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="22_uvfoc"]
@@ -74,6 +74,9 @@ size = Vector2(723.864, 714.932)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
 size = Vector2(422, 107.75)
+
+[sub_resource type="Animation" id="Animation_u3ufv"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_uvfoc"]
 resource_name = "text"
@@ -139,9 +142,6 @@ tracks/4/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_u3ufv"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfdvt"]
 _data = {
 &"RESET": SubResource("Animation_u3ufv"),
@@ -150,6 +150,8 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxq3j"]
 size = Vector2(209.5, 49)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lfv2d"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rqbah")
@@ -308,6 +310,7 @@ position = Vector2(1173, 643)
 scale = Vector2(0.88, 0.663)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/diary"]
+visible = false
 polygon = PackedVector2Array(-76.1366, -260.935, 669.318, -262.444, 717.045, -211.161, 688.636, 72.3981, 793.182, 42.2322, 850, 96.5308, 796.591, 194.57, 677.273, 153.846, 647.727, 469.08, 565.909, 455.505, -205.682, 432.881)
 disabled = true
 
@@ -569,24 +572,100 @@ position = Vector2(128, 80)
 scale = Vector2(3.91016, 3.91016)
 texture = ExtResource("19_6xpoc")
 
-[node name="Pink" type="Sprite2D" parent="."]
-position = Vector2(3635, 433)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+position = Vector2(952, 615)
+
+[node name="Pink" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(-29, 0)
+scale = Vector2(1.07033, 1)
 texture = ExtResource("25_ugq2k")
 
-[node name="Yello" type="Sprite2D" parent="."]
-position = Vector2(3464, 583)
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+
+[node name="Yello" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(883, 632)
+scale = Vector2(1.24385, 1)
 texture = ExtResource("26_fqxvh")
 
-[node name="Green" type="Sprite2D" parent="."]
-position = Vector2(3209, 589)
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
+
+[node name="Green" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(946, 612)
+scale = Vector2(1.01567, 1.034)
 texture = ExtResource("27_kp75u")
 
-[node name="Purple" type="Sprite2D" parent="."]
-position = Vector2(3307, 326)
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer4"]
+
+[node name="Purple" type="Sprite2D" parent="CanvasLayer4/CanvasModulate"]
+position = Vector2(914, 595)
+scale = Vector2(1.02717, 1.059)
 texture = ExtResource("28_qy7hx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 880.0
+offset_right = 1091.0
+offset_bottom = 1035.0
+texture_normal = SubResource("ViewportTexture_lfv2d")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 850.0
+offset_right = 1228.0
+offset_bottom = 937.0
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1240.0
+offset_top = 912.0
+offset_right = 1342.0
+offset_bottom = 1023.0
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1116.0
+offset_top = 1004.0
+offset_right = 1227.0
+offset_bottom = 1087.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 214.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_v3vwr")
+theme_override_font_sizes/font_size = 54
+text = "30.0"
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Node3/continue" to="Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_shape_exited"]
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]

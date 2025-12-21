@@ -262,7 +262,7 @@ script = ExtResource("1_0wiv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ptdhe")
-animation = &"boyGhost_backward"
+animation = &"blob_forward"
 autoplay = "blob_forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
