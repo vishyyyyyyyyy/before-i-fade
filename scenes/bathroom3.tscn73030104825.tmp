@@ -1290,7 +1290,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Past Tiles" type="Label" parent="CanvasLayer3"]
-visible = false
 z_index = 3
 offset_left = 121.0
 offset_top = 80.0
@@ -1305,7 +1304,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Present Tiles" type="Label" parent="CanvasLayer3"]
-visible = false
 z_index = 3
 offset_left = 1349.0
 offset_top = 91.0
@@ -1318,10 +1316,10 @@ theme_override_font_sizes/font_size = 40
 text = "PRESENT TILE"
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Label4" type="Label" parent="CanvasLayer3"]
 visible = false
-z_index = 5
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -1339,14 +1337,12 @@ text = "Click on present tiles to match the color and pattern of the past tile."
 horizontal_alignment = 1
 
 [node name="presenttile" type="Sprite2D" parent="CanvasLayer3"]
-visible = false
 z_index = 3
 position = Vector2(1787, 612)
 scale = Vector2(7.19189, 7.19189)
 texture = ExtResource("3_kc3g8")
 
 [node name="pasttile" type="Sprite2D" parent="CanvasLayer3"]
-visible = false
 z_index = 3
 position = Vector2(565, 608)
 scale = Vector2(7.19189, 7.19189)
@@ -2225,14 +2221,12 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Timer" type="Sprite2D" parent="CanvasLayer3/Node3"]
-visible = false
 z_index = 2
 position = Vector2(128, 80)
 scale = Vector2(3.91016, 3.91016)
 texture = ExtResource("33_oyxel")
 
 [node name="Label5" type="Label" parent="CanvasLayer3/Node3"]
-visible = false
 z_index = 2
 offset_left = 38.0
 offset_top = 54.0
@@ -2256,7 +2250,7 @@ texture = ExtResource("35_qcjub")
 
 [node name="Wrong" type="Sprite2D" parent="CanvasLayer3/Node3"]
 visible = false
-z_index = 5
+z_index = 2
 position = Vector2(1258, 649)
 scale = Vector2(8.23438, 8.23438)
 texture = ExtResource("36_675fu")
@@ -2333,7 +2327,6 @@ stream = ExtResource("23_25jch")
 volume_db = 20.0
 
 [connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="timeout" from="CanvasLayer3/Node3/Timer2" to="CanvasLayer3/PresentTile" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_shape_exited"]
