@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_2u65w"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="10_25jch"]
 [ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_c2g0u"]
-[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://blob_ghost_player.tscn" id="12_bm87y"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_bm87y"]
 [ext_resource type="Texture2D" uid="uid://bm3prv258iged" path="res://assets/characters/friend.png" id="13_2u65w"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="13_kc3g8"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_wwfem"]
