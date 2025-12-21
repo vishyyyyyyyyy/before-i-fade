@@ -10,15 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_kp75u"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_qy7hx"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_m6olq"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="11_d7b7r"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_d7b7r"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_7v2qe"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_v3vwr"]
-[ext_resource type="Script" path="res://scripts/deskpuzzle.gd" id="14_lfv2d"]
+[ext_resource type="Script" uid="uid://1n07g0srhaep" path="res://scripts/deskpuzzle.gd" id="14_lfv2d"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="18_rrknc"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="19_6xpoc"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="20_6xpoc"]
 [ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_n12it"]
-[ext_resource type="Script" path="res://scripts/continue.gd" id="21_jxq3j"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="21_jxq3j"]
 [ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="21_xjppy"]
 [ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="22_2srh7"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="22_uvfoc"]
@@ -322,6 +322,7 @@ offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Node2" type="Node" parent="."]
 
@@ -608,6 +609,7 @@ scale = Vector2(1.01567, 1.034)
 texture = ExtResource("27_kp75u")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer4"]
 
@@ -617,6 +619,12 @@ scale = Vector2(1.02717, 1.059)
 texture = ExtResource("28_qy7hx")
 
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="Correct" type="Sprite2D" parent="CanvasLayer5"]
+visible = false
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("29_ugq2k")
 
 [node name="Wrong" type="Sprite2D" parent="CanvasLayer5"]
 visible = false
@@ -628,6 +636,7 @@ texture = ExtResource("30_fqxvh")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
@@ -636,6 +645,7 @@ offset_top = 880.0
 offset_right = 1091.0
 offset_bottom = 1035.0
 texture_normal = SubResource("ViewportTexture_lfv2d")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton2" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
@@ -643,6 +653,7 @@ offset_left = 1112.0
 offset_top = 850.0
 offset_right = 1228.0
 offset_bottom = 937.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton3" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
@@ -650,6 +661,7 @@ offset_left = 1240.0
 offset_top = 912.0
 offset_right = 1342.0
 offset_bottom = 1023.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton4" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
@@ -657,9 +669,10 @@ offset_left = 1116.0
 offset_top = 1004.0
 offset_right = 1227.0
 offset_bottom = 1087.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Label2" type="Label" parent="."]
@@ -671,12 +684,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_v3vwr")
 theme_override_font_sizes/font_size = 54
 text = "30.0"
-
-[node name="Correct" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1262, 627)
-scale = Vector2(11.2539, 11.2539)
-texture = ExtResource("29_ugq2k")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

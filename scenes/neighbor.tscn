@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3vijqg7agkhj"]
+[gd_scene load_steps=18 format=3 uid="uid://bcjmctlwq408o"]
 
 [ext_resource type="Texture2D" uid="uid://dr2d2gpc2ljrc" path="res://assets/pixel-characters/neighbor1.png" id="1_dsynj"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="2_x7cql"]

@@ -12,8 +12,6 @@ func _ready():
 	$Node3/ColorRect.visible=true
 	$Node3/continue.visible=true
 	$Node3/continue.pressed.connect(_on_continue_pressed)
-	if code == "ypPg":
-		$Correct.visible=true
 
 
 
@@ -36,35 +34,59 @@ func _on_texture_button_pressed() -> void:
 	$CanvasLayer4/CanvasModulate.color = Color(0, 0, 0, 1)
 	code = code + "P"
 	count += 1
-	if (count == 4):
-		if (code == "ypPg"):
-			print("correct")
+	check_code()
 
 
 func _on_texture_button_2_pressed() -> void:
 	$CanvasLayer2/CanvasModulate.color = Color(0, 0, 0, 1)
 	code = code + "y"
 	count += 1
-	if (count == 4):
-		if (code == "ypPg"):
-			print("correct")
+	check_code()
 
 func _on_texture_button_3_pressed() -> void:
 	$CanvasLayer3/CanvasModulate.color = Color(0, 0, 0, 1)
 	code = code + "g"
 	count += 1
-	if (count == 4):
-		if (code == "ypPg"):
-			print("correct")
+	check_code()
 
 func _on_texture_button_4_pressed() -> void:
 	$CanvasLayer/CanvasModulate.color = Color(0, 0, 0, 1)
 	code = code + 'p'
 	count += 1
-	if (count == 4):
-		if (code == "ypPg"):
-			print("correct")
-
+	check_code()
+			
 
 func _on_timer_2_timeout() -> void:
-	$Wrong.visible = true
+	$CanvasLayer5/Wrong.visible = true
+	await get_tree().create_timer(2).timeout
+	reset_puzzle()
+	
+func check_code():
+	if count == 4:
+		$Timer2.stop()  # stop timer once input is complete
+		
+		if code == "ypPg":
+			$CanvasLayer5/Correct.visible = true
+		else:
+			$CanvasLayer5/Wrong.visible = true
+			await get_tree().create_timer(2).timeout
+			reset_puzzle()
+			
+func reset_puzzle():
+	code = ""
+	count = 0
+	
+	$CanvasLayer5/Wrong.visible = false
+	$CanvasLayer5/Correct.visible = false
+	
+	$"Deskcloseup2".visible=false
+	$"CanvasLayer".visible = false
+	$"CanvasLayer2".visible = false
+	$"CanvasLayer3".visible = false
+	$"CanvasLayer4".visible = false
+	$CanvasLayer/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
+	$AnimationPlayer.play("text")
+	$Timer2.start()
