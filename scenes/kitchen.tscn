@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=19 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
 [ext_resource type="Texture2D" uid="uid://bywtm1o1ut3ta" path="res://assets/tiles.png" id="2_cwf2y"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dijuxts4er705" path="res://assets/oven.png" id="6_ktc20"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="7_bs8bs"]
 [ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="8_88wuv"]
-[ext_resource type="Texture2D" uid="uid://bfexmnxwven6q" path="res://assets/stool.png" id="9_acu1m"]
+[ext_resource type="Texture2D" uid="uid://b4h1ps8unjwmi" path="res://assets/stool.png" id="9_acu1m"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://blob_ghost_player.tscn" id="10_cwf2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
 texture = ExtResource("1_mwmjw")
@@ -25,6 +26,18 @@ texture = ExtResource("2_cwf2y")
 
 [sub_resource type="TileSet" id="TileSet_e7cmp"]
 sources/0 = SubResource("TileSetAtlasSource_3fy06")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
+size = Vector2(418.667, 260.958)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
+size = Vector2(1534.67, 151.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwf2y"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpxcu"]
+size = Vector2(2303, 276)
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,11 +81,6 @@ position = Vector2(816, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("3_vpxcu")
 
-[node name="Island" type="Sprite2D" parent="."]
-position = Vector2(1147, 638)
-scale = Vector2(5.84, 5.84)
-texture = ExtResource("4_k1jr4")
-
 [node name="Fridge" type="Sprite2D" parent="."]
 position = Vector2(2155, 225)
 scale = Vector2(4.26563, 4.26563)
@@ -100,12 +108,57 @@ position = Vector2(1168, 264)
 scale = Vector2(4, 4)
 texture = ExtResource("8_88wuv")
 
+[node name="blobGhostPlayer" parent="." instance=ExtResource("10_cwf2y")]
+position = Vector2(321, 581)
+scale = Vector2(3, 3)
+
+[node name="Island" type="Sprite2D" parent="."]
+position = Vector2(1148, 805)
+scale = Vector2(5.84, 5.84)
+texture = ExtResource("4_k1jr4")
+
 [node name="Stool" type="Sprite2D" parent="."]
-position = Vector2(971, 758)
+position = Vector2(971, 926)
 scale = Vector2(3.72656, 3.72656)
 texture = ExtResource("9_acu1m")
 
 [node name="Stool2" type="Sprite2D" parent="."]
-position = Vector2(1312, 758)
+position = Vector2(1312, 926)
 scale = Vector2(3.72656, 3.72656)
 texture = ExtResource("9_acu1m")
+
+[node name="islandcollision" type="StaticBody2D" parent="."]
+position = Vector2(1147, 1344)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="islandcollision"]
+position = Vector2(-3.33331, -312.479)
+shape = SubResource("RectangleShape2D_k1jr4")
+
+[node name="textcollision" type="StaticBody2D" parent="."]
+position = Vector2(3523.5, 1854.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+position = Vector2(-1582.33, -443.167)
+shape = SubResource("RectangleShape2D_mwmjw")
+
+[node name="rightwallcollision" type="StaticBody2D" parent="."]
+position = Vector2(-9.5, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
+position = Vector2(2382, 642)
+shape = SubResource("RectangleShape2D_cwf2y")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="."]
+position = Vector2(-7.5, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+position = Vector2(-66.5, 651.5)
+shape = SubResource("RectangleShape2D_cwf2y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1141.5, 128)
+shape = SubResource("RectangleShape2D_vpxcu")

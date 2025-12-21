@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_votow"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_g7k7r"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="11_duejm"]
-[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_u1h6i"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://blob_ghost_player.tscn" id="12_u1h6i"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_itrys"]
 [ext_resource type="Script" uid="uid://1n07g0srhaep" path="res://scripts/deskpuzzle.gd" id="14_pyjth"]
 [ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="15_0lw2a"]
