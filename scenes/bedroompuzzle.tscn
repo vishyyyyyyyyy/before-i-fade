@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=50 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rqbah"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_qoho3"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://c7kudhf4qan8u" path="res://assets/yello.png" id="26_fqxvh"]
 [ext_resource type="Texture2D" uid="uid://cc42dam8nltxv" path="res://assets/green.png" id="27_kp75u"]
 [ext_resource type="Texture2D" uid="uid://dj78avoi0oiqr" path="res://assets/purple.png" id="28_qy7hx"]
+[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_ugq2k"]
+[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_fqxvh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_8yyjw")
@@ -544,11 +546,13 @@ scale = Vector2(1, 1.14765)
 polygon = PackedVector2Array(210.478, 335.803, 210.478, 365.052, 131.345, 421.662, 95.4492, 322.594, 149.292, 255.604)
 
 [node name="Deskcloseup2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(886, 651)
 scale = Vector2(1.22578, 0.923516)
 texture = ExtResource("21_xjppy")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -604,7 +608,6 @@ scale = Vector2(1.01567, 1.034)
 texture = ExtResource("27_kp75u")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer4"]
 
@@ -612,6 +615,15 @@ visible = false
 position = Vector2(914, 595)
 scale = Vector2(1.02717, 1.059)
 texture = ExtResource("28_qy7hx")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="Wrong" type="Sprite2D" parent="CanvasLayer5"]
+visible = false
+z_index = 1
+position = Vector2(1258, 649)
+scale = Vector2(8.23438, 8.23438)
+texture = ExtResource("30_fqxvh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -647,7 +659,7 @@ offset_right = 1227.0
 offset_bottom = 1087.0
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Label2" type="Label" parent="."]
@@ -660,6 +672,12 @@ theme_override_fonts/font = ExtResource("13_v3vwr")
 theme_override_font_sizes/font_size = 54
 text = "30.0"
 
+[node name="Correct" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("29_ugq2k")
+
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Node3/continue" to="Node3/continue" method="_on_mouse_entered"]
@@ -669,3 +687,4 @@ text = "30.0"
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

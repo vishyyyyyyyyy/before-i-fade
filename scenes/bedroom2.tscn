@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="15_rme15"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="16_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_ij3ta"]
-[ext_resource type="Script" path="res://scripts/explorebedroom.gd" id="19_rme15"]
+[ext_resource type="Script" uid="uid://wjog3cuqe5yc" path="res://scripts/explorebedroom.gd" id="19_rme15"]
 [ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="20_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="21_0xrbb"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="21_tcvsn"]
@@ -867,7 +867,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -949,7 +948,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_r7ukq")
 
 [node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
@@ -957,7 +955,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
 
 [node name="BoyGhost2" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
-visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)

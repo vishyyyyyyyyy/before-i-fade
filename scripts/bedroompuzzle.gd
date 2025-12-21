@@ -2,6 +2,7 @@ extends Node2D
 
 var code = ""
 var count = 0
+var time_left_seconds
 
 func _ready():
 	$Node3/Label2.visible=true
@@ -11,20 +12,24 @@ func _ready():
 	$Node3/ColorRect.visible=true
 	$Node3/continue.visible=true
 	$Node3/continue.pressed.connect(_on_continue_pressed)
+	if code == "ypPg":
+		$Correct.visible=true
+
 
 
 func _on_continue_pressed():
 	print("Node was clicked!")
 	$AnimationPlayer.play("text")
 	$Node3/continue/CollisionShape2D.disabled=true
-	$CanvasLayer.visible = true
-	$CanvasLayer2.visible = true
-	$CanvasLayer3.visible = true
-	$CanvasLayer4.visible = true
 	$Timer2.start()
+	$desk.clicked.connect(_on_desk_clicked)
+	
+	
+func _on_desk_clicked():
+	print("Clicked from main script!")
 
 func _process(delta: float) -> void:
-	var time_left_seconds = $Timer2.time_left
+	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
 
 func _on_texture_button_pressed() -> void:
@@ -59,3 +64,7 @@ func _on_texture_button_4_pressed() -> void:
 	if (count == 4):
 		if (code == "ypPg"):
 			print("correct")
+
+
+func _on_timer_2_timeout() -> void:
+	$Wrong.visible = true
