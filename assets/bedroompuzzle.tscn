@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=67 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_cqub6"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_eg4gs"]
@@ -34,6 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://c0187ehsqv43i" path="res://assets/desk2.png" id="32_eg4gs"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="32_mktfx"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="33_ubqon"]
+[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="35_fekwh"]
+[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="36_5mquo"]
+[ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="37_votow"]
+[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="38_g7k7r"]
+[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="39_duejm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("2_eg4gs")
@@ -161,7 +166,7 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_mktfx"]
 resource_name = "girlnametext"
-length = 18.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -225,95 +230,71 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimationPlayer2/Label3:visible")
+tracks/5/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8, 10),
+"times": PackedFloat32Array(8.06667, 10.0667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [0.0, 1.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../AnimationPlayer2/Label3:visible_ratio")
+tracks/6/path = NodePath("../AnimationPlayer2/Label4:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"times": PackedFloat32Array(8.06667, 11.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
+tracks/7/path = NodePath("../AnimationPlayer2/Label5:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(10, 12),
+"times": PackedFloat32Array(11.0333, 14),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
+"update": 1,
+"values": [true, false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../AnimationPlayer2/Label4:visible")
+tracks/8/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(10, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../AnimationPlayer2/Label5:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(14, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(14, 16),
+"times": PackedFloat32Array(11.0333, 13.0667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../AnimationPlayer2/Label6:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(18),
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../AnimationPlayer2/Label6:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(13.9667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../AnimationPlayer2/Label6:visible_ratio")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(17.905),
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../AnimationPlayer2/Label6:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(14),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
@@ -376,107 +357,83 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimationPlayer2/Label3:visible")
+tracks/4/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(8, 10),
+"times": PackedFloat32Array(8.1, 11.0333),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [0.0, 1.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../AnimationPlayer2/Label3:visible_ratio")
+tracks/5/path = NodePath("../AnimationPlayer2/Label4:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"times": PackedFloat32Array(8.16667, 13.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
+tracks/6/path = NodePath("../AnimationPlayer2/Label5:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(10, 12),
+"times": PackedFloat32Array(13.0667, 17),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
+"update": 1,
+"values": [true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../AnimationPlayer2/Label4:visible")
+tracks/7/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(10, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../AnimationPlayer2/Label5:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(14, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(14, 16),
+"times": PackedFloat32Array(13.1, 15.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../AnimationPlayer2/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(18),
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../AnimationPlayer2/Label6:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(17.0667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../AnimationPlayer2/BoyGhost:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 18),
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../AnimationPlayer2/BoyGhost:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 18.0667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../AnimationPlayer2/Label6:visible_ratio")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(18),
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../AnimationPlayer2/Label6:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(17.0667),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
@@ -487,6 +444,216 @@ _data = {
 &"RESET": SubResource("Animation_ubqon"),
 &"boynametext": SubResource("Animation_fekwh"),
 &"girlnametext": SubResource("Animation_mktfx")
+}
+
+[sub_resource type="Animation" id="Animation_u1h6i"]
+resource_name = "girldiaryentry1"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer3/GirlGhost:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer3/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer3/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer3/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer3/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer3/Label4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 14.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer3/Label4:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10, 10.0067, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer3/GirlGhost2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_itrys"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_pyjth"]
+resource_name = "boydiaryentry1"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer3/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer3/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer3/Label2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer3/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer3/Label4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 14.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer3/Label4:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 10.0067, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer3/BoyGhost:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 14.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer3/BoyGhost2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lw2a"]
+_data = {
+&"RESET": SubResource("Animation_itrys"),
+&"boydiaryentry1": SubResource("Animation_pyjth"),
+&"girldiaryentry1": SubResource("Animation_u1h6i")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -539,12 +706,12 @@ scale = Vector2(4, 4)
 texture = ExtResource("8_5nrpb")
 
 [node name="Calendar" type="Sprite2D" parent="CanvasModulate"]
+visible = false
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("9_votow")
 
 [node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
-visible = false
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("10_g7k7r")
@@ -593,7 +760,7 @@ shape = SubResource("RectangleShape2D_8gd2a")
 [node name="SceneTrigger" type="Area2D" parent="."]
 position = Vector2(556, 1203)
 script = ExtResource("13_itrys")
-target_scene = "res://scenes/bathroom.tscn"
+target_scene = "res://scenes/bathroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(1462.5, -97.5)
@@ -710,8 +877,6 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"Let me quickly unlock my diary and travel back to the present.\""
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
 visible = false
@@ -732,8 +897,6 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"The lock seems to be related to the order and colors on the bed!\""
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="AnimationPlayer"]
 visible = false
@@ -1151,28 +1314,6 @@ theme_override_font_sizes/font_size = 32
 text = "\"Well, I found one anyways. Maybe I'll find more later.\""
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="AnimationPlayer2"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -824.0
-offset_top = -134.0
-offset_right = 824.0
-offset_bottom = -56.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
-theme_override_font_sizes/font_size = 32
-text = "\"Before I read it, it looks like I need to enter my name in the diary.\""
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="Label4" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 1
@@ -1230,13 +1371,159 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 14
 theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
-text = "Type your ghost's name."
+text = "Type your ghost's name.
+Press enter key to save."
 horizontal_alignment = 1
 
 [node name="Desk2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(817, 512)
 texture = ExtResource("32_eg4gs")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+offset_left = 816.0
+offset_top = 647.0
+offset_right = 1004.0
+offset_bottom = 695.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 40
+text = "NAME"
+clear_button_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_fekwh")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_5mquo")
+volume_db = 20.0
+
+[node name="Diaryentry1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(820, 507)
+texture = ExtResource("37_votow")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0lw2a")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="AnimationPlayer3"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("32_mktfx")
+
+[node name="GirlGhost2" type="Sprite2D" parent="AnimationPlayer3"]
+visible = false
+z_index = 2
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("38_g7k7r")
+
+[node name="BoyGhost" type="Sprite2D" parent="AnimationPlayer3"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("33_ubqon")
+
+[node name="BoyGhost2" type="Sprite2D" parent="AnimationPlayer3"]
+visible = false
+z_index = 2
+position = Vector2(2024, 722)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("39_duejm")
+
+[node name="Label" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -824.0
+offset_top = -134.0
+offset_right = 824.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 32
+text = "\"November First, I've been stressed lately... Everyone seems tense around me... Maybe i'm just overthinking...\""
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -824.0
+offset_top = -102.0
+offset_right = 824.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 32
+text = "\"What if I didn't just die. What if I was murdered!?\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -824.0
+offset_top = -104.0
+offset_right = 824.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 32
+text = "\"Okay, let's calm down and check the bathroom for any clues.\""
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 1192.0
+offset_right = 1968.0
+offset_bottom = 1270.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 14
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 32
+text = "Enter the bathroom again."
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

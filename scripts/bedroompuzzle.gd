@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var name_input: LineEdit = $LineEdit
+
 var code = ""
 var count = 0
 var time_left_seconds
@@ -12,8 +14,22 @@ func _ready():
 	$Node3/ColorRect.visible=true
 	$Node3/continue.visible=true
 	$Node3/continue.pressed.connect(_on_continue_pressed)
+	name_input.text_submitted.connect(_on_name_submitted)
 
 
+var diary_started := false
+
+func _input(event):
+	if diary_started:
+		return
+
+	if event.is_action_pressed("ui_accept"):
+		diary_started = true
+		play_diary_sequence()
+
+func _on_name_submitted(text: String):
+	print("Player name:", text)
+	Global.charName = text
 
 func _on_continue_pressed():
 	print("Node was clicked!")
@@ -69,14 +85,16 @@ func _on_texture_button_4_pressed() -> void:
 
 func _on_timer_2_timeout() -> void:
 	$CanvasLayer5/Wrong.visible = true
+	$AudioStreamPlayer2.play()
 	await get_tree().create_timer(2).timeout
 	reset_puzzle()
 	
 func check_code():
 	if count == 4:
-		$Timer2.stop() 
 		
 		if code == "ypPg":
+			$Timer2.stop() 
+			$AudioStreamPlayer.play()
 			$CanvasLayer5/Correct.visible = true
 			await get_tree().create_timer(2).timeout
 			$CanvasLayer5/Correct.visible = false
@@ -85,14 +103,14 @@ func check_code():
 			correct()
 		else:
 			$CanvasLayer5/Wrong.visible = true
+			$AudioStreamPlayer2.play()
 			await get_tree().create_timer(2).timeout
 			$CanvasLayer5/Correct.visible = false
-			reset_puzzle()
+			wrong()
 			
 func reset_puzzle():
 	code = ""
 	count = 0
-	
 	$CanvasLayer5/Wrong.visible = false
 	$CanvasLayer5/Correct.visible = false
 	
@@ -108,12 +126,31 @@ func reset_puzzle():
 	$AnimationPlayer.play("text")
 	$Timer2.start()
 	
+func wrong():
+	code = ""
+	count = 0
+	$CanvasLayer5/Wrong.visible = false
+	$CanvasLayer5/Correct.visible = false
+	
+	$"Deskcloseup2".visible=false
+	$"CanvasLayer".visible = false
+	$"CanvasLayer2".visible = false
+	$"CanvasLayer3".visible = false
+	$"CanvasLayer4".visible = false
+	$CanvasLayer/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
+	$AnimationPlayer.play("text")
+	
 func correct():
 	$Node4/ColorRect3.visible=true
 	$Node4/Diarypage.visible=true
 	$Node4/Label2.visible=true
 	$Node4/Label.visible=true
 	$Node4/Label3.visible=true
+	$Label2.visible=false
+	$Timer.visible=false
 	await get_tree().create_timer(5).timeout
 	$"CanvasLayer".visible = false
 	$"CanvasLayer2".visible = false
@@ -128,5 +165,71 @@ func correct():
 	$Desk2.visible=true
 	if Global.character == "girlGhost":
 		$AnimationPlayer2.play("girlnametext")
+		await $AnimationPlayer2.animation_finished
+		$LineEdit.editable=true
+		$LineEdit.visible=true
+		
 	if Global.character == "boyGhost":
 		$AnimationPlayer2.play("boynametext")
+		await $AnimationPlayer2.animation_finished
+		$LineEdit.editable=true
+		$LineEdit.visible=true
+		$Diaryentry1.visible=true
+
+
+func play_diary_sequence():
+	if Global.character == "girlGhost":
+		$AnimationPlayer2/Label6.visible=false
+		$LineEdit.editable=false
+		$LineEdit.visible=false
+		$Diaryentry1.visible=true
+		$Deskcloseup2.visible=false
+		$AnimationPlayer3.play("girldiaryentry1")
+		$Desk2.visible=false
+		await $AnimationPlayer3.animation_finished
+		await get_tree().create_timer(2).timeout
+		$AnimationPlayer3/Label4.visible=false
+		$Label6.visible=true
+		$AnimationPlayer3/GirlGhost.visible=false
+		$AnimationPlayer3/BoyGhost.visible=false
+		$AnimationPlayer2/GirlGhost.visible=false
+		$AnimationPlayer2/BoyGhost.visible=false
+		$Diaryentry1.visible=false
+		$CanvasModulate/Calendar2.visible=true
+		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		await get_tree().create_timer(0.5).timeout
+		$CanvasModulate.color = Color(1,1,1,1)
+		$CanvasModulate/Calendar2.visible=false
+		await get_tree().create_timer(0.5).timeout
+		$CanvasModulate/Calendar2.visible=true
+		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		$SceneTrigger/CollisionShape2D.disabled=false
+		$Label6.visible=true
+		
+	if Global.character == "boyGhost":
+		$AnimationPlayer2/Label6.visible=false
+		$LineEdit.editable=false
+		$LineEdit.visible=false
+		$Diaryentry1.visible=true
+		$Deskcloseup2.visible=false
+		$AnimationPlayer3.play("boydiaryentry1")
+		$Desk2.visible=false
+		await $AnimationPlayer3.animation_finished
+		await get_tree().create_timer(2).timeout
+		$AnimationPlayer3/Label4.visible=false
+		$Label6.visible=true
+		$AnimationPlayer3/GirlGhost.visible=false
+		$AnimationPlayer3/BoyGhost.visible=false
+		$AnimationPlayer2/GirlGhost.visible=false
+		$AnimationPlayer2/BoyGhost.visible=false
+		$Diaryentry1.visible=false
+		$CanvasModulate/Calendar2.visible=true
+		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		await get_tree().create_timer(0.5).timeout
+		$CanvasModulate.color = Color(1,1,1,1)
+		$CanvasModulate/Calendar2.visible=false
+		await get_tree().create_timer(0.5).timeout
+		$CanvasModulate/Calendar2.visible=true
+		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		$SceneTrigger/CollisionShape2D.disabled=false
+		$Label6.visible=true

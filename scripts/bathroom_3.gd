@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	if Global.character=="GirlGhost":
 		$CanvasLayer3/AnimationPlayer.play("boytext")
-		$AudioStreamPlayer.play
+		$AudioStreamPlayer.play()
 
 	if Global.character=="boyGhost":
 		$CanvasLayer3/AnimationPlayer.play("girltext")
