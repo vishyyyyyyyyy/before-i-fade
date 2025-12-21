@@ -176,4 +176,4 @@ func _on_desk_area_pressed():
 	$Node2/Area2D.visible=false
 	$Node/familyphoto/CollisionShape2D.disabled=true
 	$Node/diary/CollisionPolygon2D.disabled=true
-	get_tree().change_scene_to_file("res://scenes/bedroompuzzle.tscn")
+	get_tree().change_scene_to_file("res://assets/bedroompuzzle.tscn")

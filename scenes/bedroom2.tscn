@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=66 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="22_flduu"]
 [ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="23_flduu"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="23_urv0e"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="24_4saaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")
@@ -1764,8 +1763,6 @@ metadata/_edit_lock_ = true
 visible = false
 position = Vector2(-135, -8)
 script = ExtResource("23_flduu")
-normal_texture = ExtResource("22_flduu")
-hover_texture = ExtResource("24_4saaw")
 
 [node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
 z_index = 1
