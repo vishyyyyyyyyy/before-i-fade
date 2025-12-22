@@ -1,39 +1,35 @@
 extends Area2D
 signal diaryentry2
+signal diaryentry3
 
 func _ready() -> void:
-	Global.reusabledesk = 1
+	Global.reusabledesk =2
 	
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:
 	
-		if Global.reusabledesk == 1:
-			if shape_idx == 0:
-				$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
-				$CollisionPolygon2D.disabled=false
-				print("Clicked shape 1")
+		if shape_idx == 0:
+			$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
+			$CollisionPolygon2D.disabled = false
+			print("Clicked shape 1")
 
-			elif shape_idx == 1:
-				$"../CanvasLayer5/Label".visible=false
-				$CollisionShape2D.disabled=true
-				print("Clicked shape 2")
-				$CollisionPolygon2D.disabled=true
-				$"../CanvasLayer3/CanvasModulate/Diaryentry2".visible=true
-				emit_signal("diaryentry2")
-		if Global.reusabledesk == 2:
-			if shape_idx == 0:
-				$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
-				$CollisionPolygon2D.disabled=false
-				print("Clicked shape 1")
+		elif Global.reusabledesk == 1 and shape_idx == 1:
+			$"../CanvasLayer5/Label".visible = false
+			print("Clicked shape 2")
+			$CollisionShape2D.disabled = true
+			$CollisionPolygon2D.disabled = true
+			$"../CanvasLayer3/CanvasModulate/Diaryentry2".visible = true
+			emit_signal("diaryentry2")
 
-			elif shape_idx == 2:
-				$CollisionShape2D.disabled=true
-				print("Clicked shape 2")
-				$CollisionPolygon2D.disabled=true
-				$"../CanvasLayer3/CanvasModulate/Diaryentry2".visible=true
-				emit_signal("diaryentry2")
+		elif Global.reusabledesk == 2 and shape_idx == 2:
+			$CollisionShape2D.disabled = true
+			print("Clicked shape 2")
+			$"../CanvasLayer5/Label".visible = false
+			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible = true
+			emit_signal("diaryentry3")
+
 		
 		
 				
