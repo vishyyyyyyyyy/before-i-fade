@@ -1,5 +1,6 @@
 extends Node2D
 
+var time_left_seconds
 @onready var narration_label: Label = $CanvasLayer/Label
 @onready var explore_node: Node = $explore
 
@@ -7,8 +8,13 @@ var clicked_objects := {}
 
 func _ready() -> void:
 	Global.reusabledesk += 1
+	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	ghosttext1()
 
+func _process(delta: float) -> void:
+	time_left_seconds = $"../Node3/Timer2".time_left
+	$"../Node3/Label5".text = "%.1f" % time_left_seconds
+	
 func ghosttext1():
 	if Global.character == "girlGhost":
 		$CanvasLayer/ghosttext1.play("girltext")
@@ -159,6 +165,7 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Boyframe.visible=false
 			$CanvasLayer/Friendframe.visible=false
 			$CanvasLayer/Neigborframe.visible=false
+			hallwaypuzzle()
 		if Global.character == "boyGhost":
 			$CanvasLayer/TileMap3.visible=true
 			$CanvasLayer/Auntframe.visible=true
@@ -172,6 +179,7 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Friendframe.visible=false
 			$CanvasLayer/Girlframe.visible=false
 			$CanvasLayer/Neigborframe.visible=false
+			hallwaypuzzle()
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["lamp", "flowers"]
 	for name in non_desk:
@@ -179,5 +187,53 @@ func all_non_photos_clicked() -> bool:
 			return false
 	return true
 
+func _on_button_pressed():
+	$"../Node3/Timer2".start()
+	$CanvasLayer/Node3/Timer.visible=true
+	$CanvasLayer/Node3/Label5.visible=true
+	if Global.character== "girlGhost":
+		$CanvasLayer/Auntframe2.visible=true
+		$CanvasLayer/Auntframe3.visible=true
+		$CanvasLayer/Auntframe4.visible=true
+		$CanvasLayer/Auntframe5.visible=true
+		$CanvasLayer/Boyframe2.visible=true
+		$CanvasLayer/Boyframe3.visible=true
+		$CanvasLayer/Boyframe4.visible=true
+		$CanvasLayer/Boyframe5.visible=true
+		$CanvasLayer/Friendframe2.visible=true
+		$CanvasLayer/Friendframe3.visible=true
+		$CanvasLayer/Friendframe4.visible=true
+		$CanvasLayer/Friendframe5.visible=true
+		$CanvasLayer/Neighborframe2.visible=true
+		$CanvasLayer/Neighborframe3.visible=true
+		$CanvasLayer/Neighborframe4.visible=true
+		$CanvasLayer/Neighborframe5.visible=true
+	if Global.character== "boyGhost":
+		$CanvasLayer/Auntframe2.visible=true
+		$CanvasLayer/Auntframe3.visible=true
+		$CanvasLayer/Auntframe4.visible=true
+		$CanvasLayer/Auntframe5.visible=true
+		$CanvasLayer/Friendframe2.visible=true
+		$CanvasLayer/Friendframe3.visible=true
+		$CanvasLayer/Friendframe4.visible=true
+		$CanvasLayer/Friendframe5.visible=true
+		$CanvasLayer/Girlframe2.visible=true
+		$CanvasLayer/Girlframe3.visible=true
+		$CanvasLayer/Girlframe4.visible=true
+		$CanvasLayer/Girlframe5.visible=true
+		$CanvasLayer/Neighborframe2.visible=true
+		$CanvasLayer/Neighborframe3.visible=true
+		$CanvasLayer/Neighborframe4.visible=true
+		$CanvasLayer/Neighborframe5.visible=true
+
+		
+	
 func hallwaypuzzle():
-	pass
+	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
+	$CanvasLayer/Node3/ColorRect.visible=true
+	$CanvasLayer/Node3/Menucard.visible=true
+	$CanvasLayer/Node3/Label2.visilbe=true
+	$CanvasLayer/Node3/Label.visible=true
+	$CanvasLayer/Node3/Label3.visible=true
+	$CanvasLayer/Node3/continue.visible=true

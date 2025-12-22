@@ -1316,7 +1316,6 @@ horizontal_alignment = 1
 [node name="Node3" type="Node" parent="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 2
 offset_right = 2303.0
 offset_bottom = 1291.0
@@ -1324,14 +1323,12 @@ mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
 
 [node name="Menucard" type="Sprite2D" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 3
 position = Vector2(1195, 566)
 scale = Vector2(7.94531, 7.94531)
 texture = ExtResource("21_x4bkm")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1350,7 +1347,6 @@ theme_override_font_sizes/font_size = 64
 text = "Puzzle"
 
 [node name="Label" type="Label" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1369,7 +1365,6 @@ theme_override_font_sizes/font_size = 64
 text = "Puzzle"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 3
 offset_left = 848.0
 offset_top = 452.0
@@ -1379,8 +1374,7 @@ theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 24
-text = "Ghosts can see both the past and present at the same time. This drains thier energy greatly. Finish
-the puzzle before the time ends."
+text = "After a ghost crosses a time field, they become very fragile and can only perform limited actions. Piece the frames together before the time is up."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -1422,7 +1416,6 @@ scale = Vector2(8.23438, 8.23438)
 texture = ExtResource("25_rx3tq")
 
 [node name="continue" type="Area2D" parent="CanvasLayer/Node3"]
-visible = false
 z_index = 3
 position = Vector2(245, 12)
 scale = Vector2(2, 2)
@@ -1458,6 +1451,166 @@ volume_db = 20.0
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
 stream = ExtResource("30_odr86")
 volume_db = 20.0
+
+[node name="Auntframe2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(506.5, 443)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(0, 64.454, 64.8949, 63.546)
+
+[node name="Auntframe3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(506.5, 443)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(64.8949, 64.454, 62.993, 63.546)
+
+[node name="Auntframe4" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(506.5, 443)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(64.8949, -0.529961, 62.993, 64.984)
+
+[node name="Auntframe5" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(506.5, 443)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(-0.658318, -0.529961, 65.5532, 64.984)
+
+[node name="Boyframe2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1667.5, 1027)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(0, 66.9503, 64.5128, 61.0497)
+
+[node name="Boyframe3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1667.5, 1027)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(64.5128, 66.9503, 64.1448, 61.0497)
+
+[node name="Boyframe4" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1667.5, 1027)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(64.5128, -0.0168018, 64.1448, 66.9671)
+
+[node name="Boyframe5" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1667.5, 1027)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(0.440407, -0.0168018, 64.0724, 66.9671)
+
+[node name="Friendframe2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1000.5, 952)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(0, 65.6675, 63.9996, 62.3325)
+
+[node name="Friendframe3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1000.5, 952)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(63.9996, 65.6675, 64.1448, 62.3325)
+
+[node name="Friendframe4" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1000.5, 952)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(63.9996, 0.239777, 64.1448, 65.4277)
+
+[node name="Friendframe5" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1000.5, 952)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(-0.0731659, 0.239777, 64.0728, 65.4277)
+
+[node name="Girlframe2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1766.5, 441)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(0, 65.4109, 63.4865, 62.5891)
+
+[node name="Girlframe3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1766.5, 441)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(63.4865, 65.4109, 64.9145, 62.5891)
+
+[node name="Girlframe4" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1766.5, 441)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(63.4865, 0.496355, 64.9145, 64.9145)
+
+[node name="Girlframe5" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1766.5, 441)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
+
+[node name="Neigborframe2" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1069.5, 435)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
+
+[node name="Neigborframe3" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(981.5, 433)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
+
+[node name="Neigborframe4" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(992.5, 440)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
+
+[node name="Neigborframe5" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(1076.5, 445)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(-0.315399, 0.0733032, 64.6089, 64.6323)
 
 [node name="scenecollisions" type="Node" parent="."]
 
@@ -1532,146 +1685,6 @@ disabled = true
 debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
 
 [node name="Node" type="Node" parent="."]
-
-[node name="Auntframe" type="Sprite2D" parent="Node"]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(0, 64.454, 64.8949, 63.546)
-
-[node name="Auntframe2" type="Sprite2D" parent="Node"]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(64.8949, 64.454, 62.993, 63.546)
-
-[node name="Auntframe3" type="Sprite2D" parent="Node"]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(64.8949, -0.529961, 62.993, 64.984)
-
-[node name="Auntframe4" type="Sprite2D" parent="Node"]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(-0.658318, -0.529961, 65.5532, 64.984)
-
-[node name="Boyframe" type="Sprite2D" parent="Node"]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(0, 66.9503, 64.5128, 61.0497)
-
-[node name="Boyframe2" type="Sprite2D" parent="Node"]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(64.5128, 66.9503, 64.1448, 61.0497)
-
-[node name="Boyframe3" type="Sprite2D" parent="Node"]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(64.5128, -0.0168018, 64.1448, 66.9671)
-
-[node name="Boyframe4" type="Sprite2D" parent="Node"]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(0.440407, -0.0168018, 64.0724, 66.9671)
-
-[node name="Friendframe" type="Sprite2D" parent="Node"]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(0, 65.6675, 63.9996, 62.3325)
-
-[node name="Friendframe2" type="Sprite2D" parent="Node"]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(63.9996, 65.6675, 64.1448, 62.3325)
-
-[node name="Friendframe3" type="Sprite2D" parent="Node"]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(63.9996, 0.239777, 64.1448, 65.4277)
-
-[node name="Friendframe4" type="Sprite2D" parent="Node"]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(-0.0731659, 0.239777, 64.0728, 65.4277)
-
-[node name="Girlframe" type="Sprite2D" parent="Node"]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(0, 65.4109, 63.4865, 62.5891)
-
-[node name="Girlframe2" type="Sprite2D" parent="Node"]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(63.4865, 65.4109, 64.9145, 62.5891)
-
-[node name="Girlframe3" type="Sprite2D" parent="Node"]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(63.4865, 0.496355, 64.9145, 64.9145)
-
-[node name="Girlframe4" type="Sprite2D" parent="Node"]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
-
-[node name="Neigborframe" type="Sprite2D" parent="Node"]
-position = Vector2(3518, 511)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
-
-[node name="Neigborframe2" type="Sprite2D" parent="Node"]
-position = Vector2(3430, 509)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
-
-[node name="Neigborframe3" type="Sprite2D" parent="Node"]
-position = Vector2(3441, 516)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
-
-[node name="Neigborframe4" type="Sprite2D" parent="Node"]
-position = Vector2(3525, 521)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(-0.315399, 0.0733032, 64.6089, 64.6323)
 
 [connection signal="mouse_entered" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_exited"]
