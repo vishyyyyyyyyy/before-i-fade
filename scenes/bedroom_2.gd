@@ -31,30 +31,42 @@ func _ready():
 func modulate():
 	if Global.character == "girlGhost":
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer3/girlIdle.visible = true
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
 		$CanvasModulate/Calendar2.visible=false
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$CanvasLayer2/CanvasModulate2.color = Color(0.094, 0.323, 0.28)
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer3/girlIdle.visible = true
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer2.play("girlghost")
 		await $CanvasLayer/AnimationPlayer2.animation_finished
+		$CanvasLayer/AnimationPlayer3/friend.visible = true
+		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
-		await $CanvasLayer/AnimationPlayer.animation_finished
+		await $CanvasLayer/AnimationPlayer3.animation_finished
+		await get_tree().create_timer(1.0).timeout
+		$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
+		$CanvasLayer/AnimationPlayer3/girlWalk.visible = true
+		$CanvasLayer/AnimationPlayer3.play("exitGirl")
+		await $CanvasLayer/AnimationPlayer3.animation_finished
 		$Label3.visible=true
 		unlock_explore()
 		
 	if Global.character == "boyGhost":
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer3/boyIdle.visible = false
 		$CanvasModulate/Calendar2.visible=false
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$CanvasLayer2/CanvasModulate2.color = Color(0.094, 0.323, 0.28)
@@ -62,10 +74,18 @@ func modulate():
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
+		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
 		$CanvasLayer/AnimationPlayer2.play("boyghost")
 		await $CanvasLayer/AnimationPlayer2.animation_finished
+		$CanvasLayer/AnimationPlayer3/friend.visible = true
+		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/AnimationPlayer.play("friendtextBOY")
 		await $CanvasLayer/AnimationPlayer.animation_finished
+		await get_tree().create_timer(1.0).timeout
+		$CanvasLayer/AnimationPlayer3/boyIdle.visible = false
+		$CanvasLayer/AnimationPlayer3/boyWalk.visible = true
+		$CanvasLayer/AnimationPlayer3.play("exit")
+		await $CanvasLayer/AnimationPlayer3.animation_finished
 		$Label3.visible=true
 		unlock_explore()
 
@@ -177,3 +197,8 @@ func _on_desk_area_pressed():
 	$Node/familyphoto/CollisionShape2D.disabled=true
 	$Node/diary/CollisionPolygon2D.disabled=true
 	get_tree().change_scene_to_file("res://assets/bedroompuzzle.tscn")
+	
+
+
+func _on_animation_player_3_animation_started(anim_name: StringName) -> void:
+	pass # Replace with function body.
