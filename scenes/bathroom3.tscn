@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4oxhsbc7n7a" path="res://assets/characters/friend2.png" id="14_25jch"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="14_celu3"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="14_myyx2"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="14_ys5x2"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="14_ys5x2"]
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="15_c2g0u"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="15_gaq0e"]
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
@@ -36,7 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://djacvv0tinev7" path="res://assets/audio/phone-ringing-382734.mp3" id="23_25jch"]
 [ext_resource type="Texture2D" uid="uid://ti2kciknesb2" path="res://assets/characters/girl3.png" id="23_ys5x2"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="27_y84uo"]
-[ext_resource type="Script" path="res://scripts/continue.gd" id="28_6wssb"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="28_6wssb"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="29_tf7d5"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="30_tbr22"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="33_oyxel"]
@@ -2704,7 +2704,7 @@ z_index = -2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/girl"]
 z_index = -2
 position = Vector2(2014, 773)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_a8ml4")
 
 [node name="girlWalk" type="CharacterBody2D" parent="CanvasLayer3/AnimationPlayer"]
@@ -2714,7 +2714,7 @@ position = Vector2(-1947, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/girlWalk"]
 z_index = 2
 position = Vector2(2027, 793)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_4kitr")
 autoplay = "default"
 frame_progress = 0.828006
@@ -2726,7 +2726,7 @@ z_index = -2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/boy"]
 position = Vector2(2019, 786)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_qyk23")
 
 [node name="boyWalk" type="CharacterBody2D" parent="CanvasLayer3/AnimationPlayer"]
@@ -2735,6 +2735,7 @@ scale = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/boyWalk"]
 z_index = -2
 position = Vector2(676, 265.333)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_e0e3o")
 autoplay = "default"
 frame_progress = 0.518036
