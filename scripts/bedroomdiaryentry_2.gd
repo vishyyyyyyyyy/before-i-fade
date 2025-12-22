@@ -15,7 +15,7 @@ func diaryentry2():
 		$CanvasLayer4/Area2D.visible=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 	if Global.character=="girlGhost":
-		$CanvasLayer4/diaryentry2.play("boytext")
+		$CanvasLayer4/diaryentry2.play("girltext")
 		await $CanvasLayer4/diaryentry2.animation_finished
 		$CanvasLayer4/Area2D.visible=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false

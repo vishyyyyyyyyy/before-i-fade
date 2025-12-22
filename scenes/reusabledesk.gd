@@ -3,7 +3,7 @@ signal diaryentry2
 signal diaryentry3
 
 func _ready() -> void:
-	Global.reusabledesk =2
+	pass
 	
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
