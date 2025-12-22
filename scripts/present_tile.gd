@@ -1,6 +1,7 @@
 extends Node
 
 var time_left_seconds
+signal challengecompleted
 
 var solution = {
 	"tile1": "green",
@@ -85,6 +86,7 @@ func check_solution():
 			$"../Node3/Timer2".stop()
 			$"../Node3/Correct".visible=true
 			$"../Node3/AudioStreamPlayer".play()
+			emit_signal("challengecompleted")
 			
 func resetpuzzle():
 	$tile1/whitetile.modulate=Color(1,1,1,1)
