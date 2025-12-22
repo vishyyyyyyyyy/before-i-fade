@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=58 format=3 uid="uid://3ulr6k8q2lmt"]
 
-[ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scenes/hallway.gd" id="1_y7q4l"]
+[ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_nlnob"]
 [ext_resource type="Texture2D" uid="uid://i4g7gamj3615" path="res://assets/blankpicture.png" id="3_w57m6"]
@@ -20,6 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="18_bje8i"]
 [ext_resource type="Texture2D" uid="uid://clqoht1uc477a" path="res://assets/characters/neighbor2.png" id="18_xgli8"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="19_xyikb"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="21_x4bkm"]
+[ext_resource type="Script" uid="uid://b2dd6uqysp2n3" path="res://scripts/explorehallway.gd" id="21_xyikb"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_1m42w"]
+[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_gmxc1"]
+[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_3cp5q"]
+[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_rx3tq"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_klhg5"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_lrdi4"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_u2q5v"]
+[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_olmwx"]
+[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="30_odr86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjeik"]
 texture = ExtResource("1_yjeik")
@@ -36,130 +47,6 @@ texture = ExtResource("2_nlnob")
 
 [sub_resource type="TileSet" id="TileSet_y7q4l"]
 sources/0 = SubResource("TileSetAtlasSource_nlnob")
-
-[sub_resource type="Animation" id="Animation_x1vi3"]
-resource_name = "girlghosttext"
-length = 18.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../ghosttext2/GirlGhost:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../ghosttext2/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ghosttext2/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../ghosttext2/GirlGhost2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../ghosttext2/Label2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4, 10.1333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../ghosttext2/Label2:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../ghosttext2/Label3:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(10, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../ghosttext2/Label3:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(10, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../ghosttext2/Label4:visible_ratio")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(14, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../ghosttext2/Label4:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(14, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_dvv28"]
 length = 0.001
@@ -288,24 +175,17 @@ tracks/9/keys = {
 "values": [false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufb1b"]
-_data = {
-&"RESET": SubResource("Animation_dvv28"),
-&"boyghosttext": SubResource("Animation_kl7cc"),
-&"girlghosttext": SubResource("Animation_x1vi3")
-}
-
-[sub_resource type="Animation" id="Animation_xyikb"]
-resource_name = "girltext"
-length = 8.0
+[sub_resource type="Animation" id="Animation_x1vi3"]
+resource_name = "girlghosttext"
+length = 18.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext1/GirlGhost:visible")
+tracks/0/path = NodePath("../ghosttext2/GirlGhost:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 8),
+"times": PackedFloat32Array(0, 18),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -313,35 +193,35 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext1/Label:visible")
+tracks/1/path = NodePath("../ghosttext2/Label:visible_ratio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext1/Label:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext2/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext1/Label2:visible")
+tracks/3/path = NodePath("../ghosttext2/GirlGhost2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4, 8),
+"times": PackedFloat32Array(0, 14),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -349,14 +229,81 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext1/Label2:visible_ratio")
+tracks/4/path = NodePath("../ghosttext2/Label2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(4, 10.1333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext2/Label2:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(4, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext2/Label3:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ghosttext2/Label3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(10, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext2/Label4:visible_ratio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(14, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../ghosttext2/Label4:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(14, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufb1b"]
+_data = {
+&"RESET": SubResource("Animation_dvv28"),
+&"boyghosttext": SubResource("Animation_kl7cc"),
+&"girlghosttext": SubResource("Animation_x1vi3")
 }
 
 [sub_resource type="Animation" id="Animation_frgbo"]
@@ -450,12 +397,79 @@ tracks/6/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_xyikb"]
+resource_name = "girltext"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext1/GirlGhost:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext1/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext1/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghosttext1/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghosttext1/Label2:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x1vi3"]
 _data = {
 &"RESET": SubResource("Animation_frgbo"),
 &"boytext": SubResource("Animation_fxf57"),
 &"girltext": SubResource("Animation_xyikb")
 }
+
+[sub_resource type="Animation" id="Animation_bje8i"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_172kp"]
 resource_name = "neighbortext"
@@ -533,14 +547,296 @@ tracks/5/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_bje8i"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xyikb"]
 _data = {
 &"RESET": SubResource("Animation_bje8i"),
 &"neighbortext": SubResource("Animation_172kp")
 }
+
+[sub_resource type="Animation" id="Animation_lyhqc"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_84wcw"]
+resource_name = "boytext"
+length = 26.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext3/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext3/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext3/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext3/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext3/Label3:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext3/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10.0333, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext3/Label4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(16, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ghosttext3/Label4:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(16, 18.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext3/Label5:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(20, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../ghosttext3/Label5:visible_ratio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(20, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ghosttext3/BoyGhost:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ufb1b"]
+resource_name = "girltext"
+length = 26.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext3/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext3/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext3/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext3/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext3/Label3:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext3/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10.0667, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext3/Label4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(16, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ghosttext3/Label4:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(16, 18.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext3/Label5:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(20, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../ghosttext3/Label5:visible_ratio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(20, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ghosttext3/GirlGhost:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmws0"]
+_data = {
+&"RESET": SubResource("Animation_lyhqc"),
+&"boytext": SubResource("Animation_84wcw"),
+&"girltext": SubResource("Animation_ufb1b")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjut"]
+size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlnob"]
 size = Vector2(1534.67, 151.667)
@@ -691,6 +987,44 @@ texture = ExtResource("7_ew26q")
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("8_nlnob")]
 position = Vector2(2188, 840)
 scale = Vector2(3, 3)
+
+[node name="TileMap3" type="TileMap" parent="CanvasLayer"]
+visible = false
+position = Vector2(-147, 608)
+scale = Vector2(6.1, 6.1)
+tile_set = SubResource("TileSet_gvesl")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, -393211, 0, 0, -393203, 0, 0, -393195, 0, 0)
+
+[node name="Auntframe" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(1714.2, 474)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+
+[node name="Boyframe" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(1236, 474)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+
+[node name="Friendframe" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(295, 474)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+
+[node name="Girlframe" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(1236, 474)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+
+[node name="Neigborframe" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(761.401, 474)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 offset_left = 4.0
@@ -871,145 +1205,259 @@ texture = ExtResource("18_xgli8")
 region_enabled = true
 region_rect = Rect2(536.067, 135.633, 1971.92, 2356.55)
 
-[node name="Auntframe" type="Sprite2D" parent="."]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(0, 64.454, 64.8949, 63.546)
+[node name="ghosttext3" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../Label")
+libraries = {
+&"": SubResource("AnimationLibrary_nmws0")
+}
 
-[node name="Auntframe2" type="Sprite2D" parent="."]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(64.8949, 64.454, 62.993, 63.546)
+[node name="Label" type="Label" parent="CanvasLayer/ghosttext3"]
+visible = false
+offset_left = 697.0
+offset_top = 1192.0
+offset_right = 1621.0
+offset_bottom = 1224.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"These photos...\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Auntframe3" type="Sprite2D" parent="."]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(64.8949, -0.529961, 62.993, 64.984)
+[node name="Label2" type="Label" parent="CanvasLayer/ghosttext3"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"They're the only people I've talked to recently\" "
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Auntframe4" type="Sprite2D" parent="."]
-position = Vector2(2955, 519)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ew26q")
-region_enabled = true
-region_rect = Rect2(-0.658318, -0.529961, 65.5532, 64.984)
+[node name="Label3" type="Label" parent="CanvasLayer/ghosttext3"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"My friend, my neighbor, my fiance, and my aunt.\" "
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Boyframe" type="Sprite2D" parent="."]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(0, 66.9503, 64.5128, 61.0497)
+[node name="Label4" type="Label" parent="CanvasLayer/ghosttext3"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"I wonder why they were broken in the present?\" "
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Boyframe2" type="Sprite2D" parent="."]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(64.5128, 66.9503, 64.1448, 61.0497)
+[node name="Label5" type="Label" parent="CanvasLayer/ghosttext3"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"Maybe I can try fixing the photos in the present?\" "
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
-[node name="Boyframe3" type="Sprite2D" parent="."]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(64.5128, -0.0168018, 64.1448, 66.9671)
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/ghosttext3"]
+visible = false
+z_index = 4
+position = Vector2(2010, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_172kp")
 
-[node name="Boyframe4" type="Sprite2D" parent="."]
-position = Vector2(4116, 1103)
-scale = Vector2(5, 5)
-texture = ExtResource("10_keade")
-region_enabled = true
-region_rect = Rect2(0.440407, -0.0168018, 64.0724, 66.9671)
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/ghosttext3"]
+visible = false
+z_index = 2
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_bje8i")
 
-[node name="Friendframe" type="Sprite2D" parent="."]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(0, 65.6675, 63.9996, 62.3325)
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+z_index = 2
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "Click objects in the hallway to investigate"
+horizontal_alignment = 1
 
-[node name="Friendframe2" type="Sprite2D" parent="."]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(63.9996, 65.6675, 64.1448, 62.3325)
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "Click objects in the hallway to investigate"
+horizontal_alignment = 1
 
-[node name="Friendframe3" type="Sprite2D" parent="."]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(63.9996, 0.239777, 64.1448, 65.4277)
+[node name="Node3" type="Node" parent="CanvasLayer"]
 
-[node name="Friendframe4" type="Sprite2D" parent="."]
-position = Vector2(3449, 1028)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gvesl")
-region_enabled = true
-region_rect = Rect2(-0.0731659, 0.239777, 64.0728, 65.4277)
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
 
-[node name="Girlframe" type="Sprite2D" parent="."]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(0, 65.4109, 63.4865, 62.5891)
+[node name="Menucard" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 3
+position = Vector2(1195, 566)
+scale = Vector2(7.94531, 7.94531)
+texture = ExtResource("21_x4bkm")
 
-[node name="Girlframe2" type="Sprite2D" parent="."]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(63.4865, 65.4109, 64.9145, 62.5891)
+[node name="Label2" type="Label" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -344.0
+offset_right = 236.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("22_1m42w")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
 
-[node name="Girlframe3" type="Sprite2D" parent="."]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(63.4865, 0.496355, 64.9145, 64.9145)
+[node name="Label" type="Label" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -340.0
+offset_right = 274.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("22_1m42w")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
 
-[node name="Girlframe4" type="Sprite2D" parent="."]
-position = Vector2(4215, 517)
-scale = Vector2(5, 5)
-texture = ExtResource("12_yar4q")
-region_enabled = true
-region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
+[node name="Label3" type="Label" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 3
+offset_left = 848.0
+offset_top = 452.0
+offset_right = 1543.0
+offset_bottom = 593.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 24
+text = "Ghosts can see both the past and present at the same time. This drains thier energy greatly. Finish
+the puzzle before the time ends."
+horizontal_alignment = 1
+autowrap_mode = 2
 
-[node name="Neigborframe" type="Sprite2D" parent="."]
-position = Vector2(3518, 511)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
+[node name="Timer" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("23_gmxc1")
 
-[node name="Neigborframe2" type="Sprite2D" parent="."]
-position = Vector2(3430, 509)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
+[node name="Label5" type="Label" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 214.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 54
+text = "15.0"
 
-[node name="Neigborframe3" type="Sprite2D" parent="."]
-position = Vector2(3441, 516)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
+[node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
+wait_time = 15.0
+one_shot = true
 
-[node name="Neigborframe4" type="Sprite2D" parent="."]
-position = Vector2(3525, 521)
-scale = Vector2(5, 5)
-texture = ExtResource("13_y7q4l")
-region_enabled = true
-region_rect = Rect2(-0.315399, 0.0733032, 64.6089, 64.6323)
+[node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("24_3cp5q")
+
+[node name="Wrong" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1258, 649)
+scale = Vector2(8.23438, 8.23438)
+texture = ExtResource("25_rx3tq")
+
+[node name="continue" type="Area2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 3
+position = Vector2(245, 12)
+scale = Vector2(2, 2)
+script = ExtResource("26_klhg5")
+normal_texture = ExtResource("27_lrdi4")
+hover_texture = ExtResource("28_u2q5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Node3/continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("27_lrdi4")
+
+[node name="Label" type="Label" parent="CanvasLayer/Node3/continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("22_1m42w")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Node3/continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_xmjut")
+disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
+stream = ExtResource("29_olmwx")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
+stream = ExtResource("30_odr86")
+volume_db = 20.0
 
 [node name="scenecollisions" type="Node" parent="."]
 
@@ -1041,42 +1489,190 @@ shape = SubResource("RectangleShape2D_w57m6")
 position = Vector2(1163, 238.5)
 shape = SubResource("RectangleShape2D_yjeik")
 
-[node name="Node" type="Node" parent="."]
+[node name="explore" type="Node" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="explore"]
 
-[node name="flowers" type="Area2D" parent="Node/CanvasLayer"]
+[node name="flowers" type="Area2D" parent="explore/CanvasLayer"]
+script = ExtResource("21_xyikb")
+label_text = "Beautiful roses in a pot."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CanvasLayer/flowers"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/flowers"]
 z_index = 5
 position = Vector2(1964, 453)
 shape = SubResource("CapsuleShape2D_bje8i")
+disabled = true
 debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node/CanvasLayer/flowers"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/flowers"]
 z_index = 5
 position = Vector2(236, 453)
 shape = SubResource("CapsuleShape2D_bje8i")
+disabled = true
 debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 
-[node name="lamp" type="Area2D" parent="Node/CanvasLayer"]
+[node name="lamp" type="Area2D" parent="explore/CanvasLayer"]
+script = ExtResource("21_xyikb")
+label_text = "A tall lamp."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CanvasLayer/lamp"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/lamp"]
 z_index = 5
 position = Vector2(2203, 345)
 shape = SubResource("CapsuleShape2D_xyikb")
+disabled = true
 debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node/CanvasLayer/lamp"]
-z_index = 5
-position = Vector2(236, 453)
-shape = SubResource("CapsuleShape2D_bje8i")
-debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
+[node name="photos" type="Area2D" parent="explore/CanvasLayer"]
+script = ExtResource("21_xyikb")
 
-[node name="photos" type="Area2D" parent="Node/CanvasLayer"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CanvasLayer/photos"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/photos"]
 position = Vector2(1137.5, 296)
 shape = SubResource("RectangleShape2D_frgbo")
+disabled = true
 debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Auntframe" type="Sprite2D" parent="Node"]
+position = Vector2(2955, 519)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(0, 64.454, 64.8949, 63.546)
+
+[node name="Auntframe2" type="Sprite2D" parent="Node"]
+position = Vector2(2955, 519)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(64.8949, 64.454, 62.993, 63.546)
+
+[node name="Auntframe3" type="Sprite2D" parent="Node"]
+position = Vector2(2955, 519)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(64.8949, -0.529961, 62.993, 64.984)
+
+[node name="Auntframe4" type="Sprite2D" parent="Node"]
+position = Vector2(2955, 519)
+scale = Vector2(5, 5)
+texture = ExtResource("9_ew26q")
+region_enabled = true
+region_rect = Rect2(-0.658318, -0.529961, 65.5532, 64.984)
+
+[node name="Boyframe" type="Sprite2D" parent="Node"]
+position = Vector2(4116, 1103)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(0, 66.9503, 64.5128, 61.0497)
+
+[node name="Boyframe2" type="Sprite2D" parent="Node"]
+position = Vector2(4116, 1103)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(64.5128, 66.9503, 64.1448, 61.0497)
+
+[node name="Boyframe3" type="Sprite2D" parent="Node"]
+position = Vector2(4116, 1103)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(64.5128, -0.0168018, 64.1448, 66.9671)
+
+[node name="Boyframe4" type="Sprite2D" parent="Node"]
+position = Vector2(4116, 1103)
+scale = Vector2(5, 5)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(0.440407, -0.0168018, 64.0724, 66.9671)
+
+[node name="Friendframe" type="Sprite2D" parent="Node"]
+position = Vector2(3449, 1028)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(0, 65.6675, 63.9996, 62.3325)
+
+[node name="Friendframe2" type="Sprite2D" parent="Node"]
+position = Vector2(3449, 1028)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(63.9996, 65.6675, 64.1448, 62.3325)
+
+[node name="Friendframe3" type="Sprite2D" parent="Node"]
+position = Vector2(3449, 1028)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(63.9996, 0.239777, 64.1448, 65.4277)
+
+[node name="Friendframe4" type="Sprite2D" parent="Node"]
+position = Vector2(3449, 1028)
+scale = Vector2(5, 5)
+texture = ExtResource("11_gvesl")
+region_enabled = true
+region_rect = Rect2(-0.0731659, 0.239777, 64.0728, 65.4277)
+
+[node name="Girlframe" type="Sprite2D" parent="Node"]
+position = Vector2(4215, 517)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(0, 65.4109, 63.4865, 62.5891)
+
+[node name="Girlframe2" type="Sprite2D" parent="Node"]
+position = Vector2(4215, 517)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(63.4865, 65.4109, 64.9145, 62.5891)
+
+[node name="Girlframe3" type="Sprite2D" parent="Node"]
+position = Vector2(4215, 517)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(63.4865, 0.496355, 64.9145, 64.9145)
+
+[node name="Girlframe4" type="Sprite2D" parent="Node"]
+position = Vector2(4215, 517)
+scale = Vector2(5, 5)
+texture = ExtResource("12_yar4q")
+region_enabled = true
+region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
+
+[node name="Neigborframe" type="Sprite2D" parent="Node"]
+position = Vector2(3518, 511)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
+
+[node name="Neigborframe2" type="Sprite2D" parent="Node"]
+position = Vector2(3430, 509)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
+
+[node name="Neigborframe3" type="Sprite2D" parent="Node"]
+position = Vector2(3441, 516)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
+
+[node name="Neigborframe4" type="Sprite2D" parent="Node"]
+position = Vector2(3525, 521)
+scale = Vector2(5, 5)
+texture = ExtResource("13_y7q4l")
+region_enabled = true
+region_rect = Rect2(-0.315399, 0.0733032, 64.6089, 64.6323)
+
+[connection signal="mouse_entered" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_shape_exited"]
