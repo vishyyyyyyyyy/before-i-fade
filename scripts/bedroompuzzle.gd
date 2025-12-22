@@ -174,7 +174,6 @@ func correct():
 		await $AnimationPlayer2.animation_finished
 		$LineEdit.editable=true
 		$LineEdit.visible=true
-		$Diaryentry1.visible=true
 
 
 func play_diary_sequence():
