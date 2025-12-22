@@ -50,7 +50,7 @@ func modulate():
 		$CanvasLayer/AnimationPlayer3/friend.visible = true
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
-		await $CanvasLayer/AnimationPlayer3.animation_finished
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
 		$CanvasLayer/AnimationPlayer3/girlWalk.visible = true

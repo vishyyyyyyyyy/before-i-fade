@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_rme15"]
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_ij3ta"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_yahhj"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_flduu"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
@@ -584,6 +584,9 @@ _data = {
 &"friendtextGIRL": SubResource("Animation_q87as")
 }
 
+[sub_resource type="Animation" id="Animation_awq7q"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_tvp18"]
 resource_name = "exit"
 length = 2.0
@@ -619,69 +622,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_awq7q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer3/friend:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer3/boyWalk:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 478)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer3/boyWalk:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer3/girlWalk:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer3/girlWalk:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -1611,6 +1551,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Friend label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1650,6 +1591,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Friend" type="Sprite2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 position = Vector2(391, 574)
 scale = Vector2(0.469667, 0.469667)
 texture = ExtResource("18_54e4t")
@@ -1657,6 +1599,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2969.97, 2348.37)
 
 [node name="Friend2" type="Sprite2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 position = Vector2(391, 574)
 scale = Vector2(0.469667, 0.469667)
 texture = ExtResource("19_pp5hi")
@@ -1703,7 +1646,6 @@ libraries = {
 [node name="boyWalk" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer3"]
 visible = false
 z_index = -2
-position = Vector2(0, 478)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer3/boyWalk"]

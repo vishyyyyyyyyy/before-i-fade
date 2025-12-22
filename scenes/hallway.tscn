@@ -984,28 +984,28 @@ region_enabled = true
 region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
 
 [node name="Neigborframe" type="Sprite2D" parent="."]
-position = Vector2(3345, 616)
+position = Vector2(3518, 511)
 scale = Vector2(5, 5)
 texture = ExtResource("13_y7q4l")
 region_enabled = true
 region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
 
 [node name="Neigborframe2" type="Sprite2D" parent="."]
-position = Vector2(3668, 617)
+position = Vector2(3430, 509)
 scale = Vector2(5, 5)
 texture = ExtResource("13_y7q4l")
 region_enabled = true
 region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
 
 [node name="Neigborframe3" type="Sprite2D" parent="."]
-position = Vector2(3666, 299)
+position = Vector2(3441, 516)
 scale = Vector2(5, 5)
 texture = ExtResource("13_y7q4l")
 region_enabled = true
 region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
 
 [node name="Neigborframe4" type="Sprite2D" parent="."]
-position = Vector2(3342, 296)
+position = Vector2(3525, 521)
 scale = Vector2(5, 5)
 texture = ExtResource("13_y7q4l")
 region_enabled = true
