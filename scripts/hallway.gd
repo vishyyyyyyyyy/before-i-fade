@@ -124,6 +124,9 @@ func modulate():
 		await get_tree().create_timer(0.5).timeout
 		$"CanvasLayer/neighbor talk".play("neighbortext")
 		await $"CanvasLayer/neighbor talk".animation_finished
+		$CanvasLayer/AnimationPlayer/neighbor.visible = false
+		$CanvasLayer/AnimationPlayer.play("neighborPhotos")
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		$CanvasLayer/ghosttext2.play("boyghosttext")
 		await $CanvasLayer/ghosttext2.animation_finished
 		$CanvasLayer/Label.visible=true
@@ -215,8 +218,12 @@ func _on_button_pressed():
 	if Global.character== "boyGhost":
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
 		$CanvasLayer3/CanvasModulate/Friendframe5.visible=true
-		$CanvasLayer/CanvasModulate/Girlframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Girlframe5.visible=true
 		$CanvasLayer3/CanvasModulate/Neigborframe5.visible=true
+		$CanvasLayer/puzzle/pieces/piece13.texture = load("res://assets/hallwayPuzzlePics/girlframeTopLeft.png")
+		$CanvasLayer/puzzle/pieces/piece14.texture = load("res://assets/hallwayPuzzlePics/girlframeTopRight.png")
+		$CanvasLayer/puzzle/pieces/piece15.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomLeft.png")
+		$CanvasLayer/puzzle/pieces/piece16.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomRight.png")
 
 		
 	

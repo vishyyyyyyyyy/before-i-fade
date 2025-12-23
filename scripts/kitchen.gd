@@ -6,6 +6,11 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	$ghostlayer/AnimationPlayer/girl.visible = false
+	$ghostlayer/AnimationPlayer/aunt.visible = false
+	$ghostlayer/AnimationPlayer/girlSide.visible = false
+	$ghostlayer/AnimationPlayer/boy.visible = false
+	$ghostlayer/AnimationPlayer/boySide.visible = false
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/ColorRect2.visible=false
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
@@ -26,8 +31,14 @@ func start():
 		await $ghostlayer/ghosttext1.animation_finished
 		await get_tree().create_timer(0.5).timeout
 		await kitchenmodulate()
+		$ghostlayer/AnimationPlayer/boy.visible = false
+		$ghostlayer/AnimationPlayer/aunt.visible = true
+		$ghostlayer/AnimationPlayer/boySide.visible = true
 		$ghostlayer/aunttext.play("boy")
 		await $ghostlayer/aunttext.animation_finished
+		$ghostlayer/AnimationPlayer/boy.visible = true
+		$ghostlayer/AnimationPlayer/aunt.visible = false
+		$ghostlayer/AnimationPlayer/boySide.visible = false
 		$ghostlayer/ghosttext2.play("boy")
 		await $ghostlayer/ghosttext2.animation_finished
 		unlock_explore()
@@ -37,21 +48,39 @@ func start():
 		await $ghostlayer/ghosttext1.animation_finished
 		await get_tree().create_timer(0.5).timeout
 		await kitchenmodulate()
+		$ghostlayer/AnimationPlayer/girl.visible = false
+		$ghostlayer/AnimationPlayer/aunt.visible = true
+		$ghostlayer/AnimationPlayer/girlSide.visible = true
 		$ghostlayer/aunttext.play("girl")
 		await $ghostlayer/aunttext.animation_finished
+		$ghostlayer/AnimationPlayer/girl.visible = true
+		$ghostlayer/AnimationPlayer/aunt.visible = false
+		$ghostlayer/AnimationPlayer/girlSide.visible = false
 		$ghostlayer/ghosttext2.play("girl")
 		await $ghostlayer/ghosttext2.animation_finished
 		unlock_explore()
 		
 func kitchenmodulate():
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = true
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = true
 	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
 	await get_tree().create_timer(0.5).timeout
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = false
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = false
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
 	await get_tree().create_timer(0.5).timeout
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = true
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = true
 	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
@@ -232,14 +261,26 @@ func challengecompleted():
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = false
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = false
 	await get_tree().create_timer(0.5).timeout
 	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
 	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = true
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = true
 	await get_tree().create_timer(0.5).timeout
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28)
+	if (Global.character == "girlGhost"):
+		$ghostlayer/AnimationPlayer/girl.visible = false
+	if (Global.character == "boyGhost"):
+		$ghostlayer/AnimationPlayer/boy.visible = false
 	await get_tree().create_timer(0.5).timeout 
 	$CanvasLayer4/Kitchen20.visible=true
 	$CanvasLayer4/ColorRect2.visible=true
