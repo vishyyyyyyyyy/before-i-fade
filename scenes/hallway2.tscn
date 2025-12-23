@@ -1,6 +1,5 @@
-[gd_scene load_steps=58 format=3 uid="uid://btltey4jnqo1y"]
+[gd_scene load_steps=57 format=3 uid="uid://btltey4jnqo1y"]
 
-[ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_xgk4v"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_ju8yb"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="3_0h7pq"]
 [ext_resource type="Texture2D" uid="uid://i4g7gamj3615" path="res://assets/blankpicture.png" id="4_hf4ka"]
@@ -859,7 +858,6 @@ height = 530.0
 size = Vector2(913, 206)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_xgk4v")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
@@ -1451,166 +1449,6 @@ volume_db = 20.0
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
 stream = ExtResource("30_3vi2g")
 volume_db = 20.0
-
-[node name="Auntframe2" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(506.5, 443)
-scale = Vector2(5, 5)
-texture = ExtResource("5_ccge7")
-region_enabled = true
-region_rect = Rect2(0, 64.454, 64.8949, 63.546)
-
-[node name="Auntframe3" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(506.5, 443)
-scale = Vector2(5, 5)
-texture = ExtResource("5_ccge7")
-region_enabled = true
-region_rect = Rect2(64.8949, 64.454, 62.993, 63.546)
-
-[node name="Auntframe4" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(506.5, 443)
-scale = Vector2(5, 5)
-texture = ExtResource("5_ccge7")
-region_enabled = true
-region_rect = Rect2(64.8949, -0.529961, 62.993, 64.984)
-
-[node name="Auntframe5" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(506.5, 443)
-scale = Vector2(5, 5)
-texture = ExtResource("5_ccge7")
-region_enabled = true
-region_rect = Rect2(-0.658318, -0.529961, 65.5532, 64.984)
-
-[node name="Boyframe2" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1667.5, 1027)
-scale = Vector2(5, 5)
-texture = ExtResource("6_6msv5")
-region_enabled = true
-region_rect = Rect2(0, 66.9503, 64.5128, 61.0497)
-
-[node name="Boyframe3" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1667.5, 1027)
-scale = Vector2(5, 5)
-texture = ExtResource("6_6msv5")
-region_enabled = true
-region_rect = Rect2(64.5128, 66.9503, 64.1448, 61.0497)
-
-[node name="Boyframe4" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1667.5, 1027)
-scale = Vector2(5, 5)
-texture = ExtResource("6_6msv5")
-region_enabled = true
-region_rect = Rect2(64.5128, -0.0168018, 64.1448, 66.9671)
-
-[node name="Boyframe5" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1667.5, 1027)
-scale = Vector2(5, 5)
-texture = ExtResource("6_6msv5")
-region_enabled = true
-region_rect = Rect2(0.440407, -0.0168018, 64.0724, 66.9671)
-
-[node name="Friendframe2" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1000.5, 952)
-scale = Vector2(5, 5)
-texture = ExtResource("7_bf11t")
-region_enabled = true
-region_rect = Rect2(0, 65.6675, 63.9996, 62.3325)
-
-[node name="Friendframe3" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1000.5, 952)
-scale = Vector2(5, 5)
-texture = ExtResource("7_bf11t")
-region_enabled = true
-region_rect = Rect2(63.9996, 65.6675, 64.1448, 62.3325)
-
-[node name="Friendframe4" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1000.5, 952)
-scale = Vector2(5, 5)
-texture = ExtResource("7_bf11t")
-region_enabled = true
-region_rect = Rect2(63.9996, 0.239777, 64.1448, 65.4277)
-
-[node name="Friendframe5" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1000.5, 952)
-scale = Vector2(5, 5)
-texture = ExtResource("7_bf11t")
-region_enabled = true
-region_rect = Rect2(-0.0731659, 0.239777, 64.0728, 65.4277)
-
-[node name="Girlframe2" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1766.5, 441)
-scale = Vector2(5, 5)
-texture = ExtResource("8_w2nbi")
-region_enabled = true
-region_rect = Rect2(0, 65.4109, 63.4865, 62.5891)
-
-[node name="Girlframe3" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1766.5, 441)
-scale = Vector2(5, 5)
-texture = ExtResource("8_w2nbi")
-region_enabled = true
-region_rect = Rect2(63.4865, 65.4109, 64.9145, 62.5891)
-
-[node name="Girlframe4" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1766.5, 441)
-scale = Vector2(5, 5)
-texture = ExtResource("8_w2nbi")
-region_enabled = true
-region_rect = Rect2(63.4865, 0.496355, 64.9145, 64.9145)
-
-[node name="Girlframe5" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1766.5, 441)
-scale = Vector2(5, 5)
-texture = ExtResource("8_w2nbi")
-region_enabled = true
-region_rect = Rect2(0.0548401, 0.496355, 63.4316, 64.9145)
-
-[node name="Neigborframe2" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1069.5, 435)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ijsi2")
-region_enabled = true
-region_rect = Rect2(0, 63.7198, 64.2935, 64.2802)
-
-[node name="Neigborframe3" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(981.5, 433)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ijsi2")
-region_enabled = true
-region_rect = Rect2(64.2935, 64.7056, 64.9033, 63.2944)
-
-[node name="Neigborframe4" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(992.5, 440)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ijsi2")
-region_enabled = true
-region_rect = Rect2(64.2935, 0.0733032, 64.9033, 64.6323)
-
-[node name="Neigborframe5" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-position = Vector2(1076.5, 445)
-scale = Vector2(5, 5)
-texture = ExtResource("9_ijsi2")
-region_enabled = true
-region_rect = Rect2(-0.315399, 0.0733032, 64.6089, 64.6323)
 
 [node name="scenecollisions" type="Node" parent="."]
 

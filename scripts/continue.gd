@@ -1,5 +1,4 @@
 extends Area2D
-
 @export var normal_texture: Texture2D
 @export var hover_texture: Texture2D
 
