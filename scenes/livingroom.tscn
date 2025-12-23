@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=28 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dv3jxi8g6xc6o" path="res://assets/bluerug.png" id="10_tlixj"]
 [ext_resource type="Texture2D" uid="uid://dya8ub8gb3ao3" path="res://assets/coffeetable.png" id="11_1wnl2"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_7ef23"]
+[ext_resource type="Texture2D" uid="uid://bbii74gaxnddm" path="res://assets/music2.png" id="13_ikg1h"]
+[ext_resource type="Texture2D" uid="uid://dum4kq1kth800" path="res://assets/music3.png" id="14_24a1y"]
+[ext_resource type="Texture2D" uid="uid://dj7uvdd22tg8v" path="res://assets/music.png" id="15_xddai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -124,16 +127,34 @@ texture = ExtResource("5_k00ks")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
+[node name="blobGhostPlayer" parent="CanvasLayer2" instance=ExtResource("12_7ef23")]
+position = Vector2(192, 869)
+scale = Vector2(3, 3)
+
+[node name="Music2" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(1182, 638)
+scale = Vector2(0.804001, 0.720001)
+texture = ExtResource("13_ikg1h")
+
+[node name="Music3" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(1182, 638)
+scale = Vector2(0.804001, 0.720001)
+texture = ExtResource("14_24a1y")
+
+[node name="Music" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(1182, 638)
+scale = Vector2(0.804001, 0.720001)
+texture = ExtResource("15_xddai")
+
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
 offset_left = -10.0
 offset_top = 1124.0
 offset_right = 2306.0
 offset_bottom = 1301.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
-
-[node name="blobGhostPlayer" parent="CanvasLayer2" instance=ExtResource("12_7ef23")]
-position = Vector2(1086.5, 880.5)
-scale = Vector2(3, 3)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
