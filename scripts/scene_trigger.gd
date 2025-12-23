@@ -4,6 +4,7 @@ extends Area2D
 @export var requires_interaction: bool = false
 @export var interaction_action: String = "interact"
 
+
 var player_inside := false
 
 func _ready():
@@ -26,6 +27,25 @@ func _input_event(viewport, event, shape_idx):
 			change_scene()
 			
 func change_scene():
+	if Global.kitchen ==4: 
+		get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
+		return
+	if Global.kitchen == 3:
+		get_tree().change_scene_to_file("res://scenes/kitchen2.tscn")
+		return
+	if Global.reusablehallway == 4:
+		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
+		return
+		
+	if Global.reusablehallway == 3:
+		get_tree().change_scene_to_file("res://scenes/bedroomdiaryentry2plus.tscn")
+		return
+		
+	if Global.reusablehallway == 2 and Global.reusabledesk >=2 and Global.kitchen == 2:
+		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
+		Global.reusablehallway  = 3
+		return
+		
 	if Global.reusablehallway == 1 and Global.reusabledesk >=2 and Global.kitchen == 1:
 		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
 		return
@@ -33,8 +53,6 @@ func change_scene():
 	if Global.reusablehallway == 1 and Global.reusabledesk >=2:
 		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
 		return
-		
-		
 		
 	if target_scene != "":
 		get_tree().change_scene_to_file(target_scene)

@@ -26,6 +26,8 @@ func _input_event(viewport, event, shape_idx):
 			$CollisionShape2D.disabled=true
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry2".visible=false
 			$"../../CanvasLayer5/Label2".visible=true
+			$"../../CanvasLayer5/Label4".visible=false
+			$"../../CanvasLayer5/Label3".visible=false
 			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 			$"../../SceneTrigger/CollisionShape2D".disabled=false
 			counter +=1
@@ -35,6 +37,8 @@ func _input_event(viewport, event, shape_idx):
 			$CollisionShape2D.disabled=true
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
 			$"../../CanvasLayer5/Label3".visible=true
+			$"../../CanvasLayer5/Label4".visible=false
+			$"../../CanvasLayer5/Label2".visible=false
 			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 			$"../../SceneTrigger/CollisionShape2D".disabled=false
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
@@ -44,7 +48,9 @@ func _input_event(viewport, event, shape_idx):
 			$"../../CanvasLayer5/Label2".visible=false
 			$CollisionShape2D.disabled=true
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
-			$"../../CanvasLayer5/Label3".visible=true
+			$"../../CanvasLayer5/Label4".visible=true
+			$"../../CanvasLayer5/Label3".visible=false
+			$"../../CanvasLayer5/Label2".visible=false
 			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 			$"../../SceneTrigger/CollisionShape2D".disabled=false
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry4".visible=false

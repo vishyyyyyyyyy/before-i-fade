@@ -26,6 +26,7 @@ func _input_event(viewport, event, shape_idx):
 
 		elif Global.reusabledesk == 2 and shape_idx == 2:
 			$CollisionShape2D.disabled = true
+			$"../CanvasLayer4/Area2D/CollisionShape2D".disabled=true
 			print("Clicked shape 2")
 			$"../CanvasLayer5/Label".visible = false
 			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible = true
@@ -36,6 +37,7 @@ func _input_event(viewport, event, shape_idx):
 			print("Clicked shape 2")
 			$"../CanvasLayer5/Label".visible = false
 			$"../CanvasLayer3/CanvasModulate/Diaryentry4".visible = true
+			Global.reusabledesk = 4
 			emit_signal("diaryentry4")
 
 

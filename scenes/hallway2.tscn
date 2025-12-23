@@ -583,6 +583,11 @@ script = ExtResource("14_yyumt")
 position = Vector2(-1.16669, 0.499911)
 shape = SubResource("RectangleShape2D_gf1ow")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/scene trigger"]
+position = Vector2(-1.16946, -767.833)
+shape = SubResource("RectangleShape2D_gf1ow")
+disabled = true
+
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 offset_left = 4.0
 offset_top = 1120.0
@@ -747,6 +752,17 @@ offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("15_8gnqt")
 theme_override_font_sizes/font_size = 32
 text = "Enter the kitchen."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("15_8gnqt")
+theme_override_font_sizes/font_size = 32
+text = "Enter the livingroom."
 horizontal_alignment = 1
 
 [node name="scenecollisions" type="Node" parent="."]

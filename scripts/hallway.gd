@@ -230,6 +230,9 @@ func _on_button_pressed():
 func hallwaypuzzle():
 	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
+	$CanvasLayer/Node3/Timer.visible=false
+	$CanvasLayer/Node3/Label5.visible=false
+	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/ColorRect.visible=true
 	$CanvasLayer/Node3/Menucard.visible=true
 	$CanvasLayer/Node3/Label2.visible=true
