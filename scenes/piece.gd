@@ -2,6 +2,8 @@ extends TextureRect
 
 @export var picture_id: int
 @export var correct_slot_id: int
+signal piece_snapped
+
 
 var dragging := false
 var drag_offset := Vector2.ZERO
@@ -28,7 +30,7 @@ func _gui_input(event):
 func try_snap():
 	var slots = get_tree().get_nodes_in_group("slots")
 	var best_slot = null
-	var min_dist := 40
+	var min_dist := 100
 
 	for slot in slots:
 		if slot.occupied:
@@ -44,7 +46,9 @@ func try_snap():
 	if best_slot and best_slot.slot_id == correct_slot_id:
 		snap_to_slot(best_slot)
 
+
 func snap_to_slot(slot):
 	global_position = slot.global_position
 	locked = true
 	slot.occupied = true
+	emit_signal("piece_snapped")  # ← Notify the Puzzle scene
