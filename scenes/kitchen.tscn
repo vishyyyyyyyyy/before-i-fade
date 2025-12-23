@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=64 format=3 uid="uid://2rptg4abkfci"]
 
+[ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
 [ext_resource type="Texture2D" uid="uid://bywtm1o1ut3ta" path="res://assets/tiles.png" id="2_cwf2y"]
 [ext_resource type="Texture2D" uid="uid://x6bs0jnwuui1" path="res://assets/counter.png" id="3_vpxcu"]
@@ -9,7 +10,29 @@
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="7_bs8bs"]
 [ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="8_88wuv"]
 [ext_resource type="Texture2D" uid="uid://b4h1ps8unjwmi" path="res://assets/stool.png" id="9_acu1m"]
+[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="10_bs8bs"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="10_cwf2y"]
+[ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="10_f125y"]
+[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="11_88wuv"]
+[ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="11_n55t6"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="12_acu1m"]
+[ext_resource type="Texture2D" uid="uid://b4vrigcy0mnwp" path="res://assets/characters/boy 2.png" id="12_fr5pv"]
+[ext_resource type="Texture2D" uid="uid://briemdp5dnq71" path="res://assets/characters/aunt.png" id="13_k0mf2"]
+[ext_resource type="Texture2D" uid="uid://di7agp73vb8uc" path="res://assets/characters/aunt2.png" id="14_1gswy"]
+[ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="15_ls4fu"]
+[ext_resource type="Texture2D" uid="uid://ti2kciknesb2" path="res://assets/characters/girl3.png" id="16_j1h31"]
+[ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="17_mbcyj"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="21_8vv5g"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_5hhqf"]
+[ext_resource type="Script" uid="uid://dn58bui2th17a" path="res://scripts/kitchenexplore.gd" id="23_n55t6"]
+[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_q21mm"]
+[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_mnhhk"]
+[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_1cet2"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_j5uij"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_tpccs"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_hxncp"]
+[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_w3dxo"]
+[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="30_cuqh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
 texture = ExtResource("1_mwmjw")
@@ -27,6 +50,817 @@ texture = ExtResource("2_cwf2y")
 [sub_resource type="TileSet" id="TileSet_e7cmp"]
 sources/0 = SubResource("TileSetAtlasSource_3fy06")
 
+[sub_resource type="Animation" id="Animation_n55t6"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fr5pv"]
+resource_name = "boy"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../aunttext/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../aunttext/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../aunttext/Label2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../aunttext/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../aunttext/aunt2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../aunttext/aunt:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../aunttext/Label3:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.96132, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../aunttext/Label3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.96132, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../aunttext/Label4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../aunttext/Label4:visible_ratio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../aunttext/Boy1:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../aunttext/Boy2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../aunttext/Boy3:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../aunttext/YN label:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../aunttext/Aunt label:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_f125y"]
+resource_name = "girl"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../aunttext/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../aunttext/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../aunttext/Label2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../aunttext/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../aunttext/aunt2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../aunttext/aunt:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../aunttext/Label3:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.96132, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../aunttext/Label3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.96132, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../aunttext/Label4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../aunttext/Label4:visible_ratio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../aunttext/YN label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../aunttext/Aunt label:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../aunttext/Girl2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(4, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../aunttext/Girl:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../aunttext/Girl3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0mf2"]
+_data = {
+&"RESET": SubResource("Animation_n55t6"),
+&"boy": SubResource("Animation_fr5pv"),
+&"girl": SubResource("Animation_f125y")
+}
+
+[sub_resource type="Animation" id="Animation_k0mf2"]
+resource_name = "girl"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext2/GirlGhost:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext2/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext2/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext2/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 9.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext2/Label2:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext2/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext2/Label3:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1gswy"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ls4fu"]
+resource_name = "boy"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext2/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext2/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext2/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 9.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext2/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext2/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext2/Label3:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext2/BoyGhost:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1h31"]
+_data = {
+&"RESET": SubResource("Animation_1gswy"),
+&"boy": SubResource("Animation_ls4fu"),
+&"girl": SubResource("Animation_k0mf2")
+}
+
+[sub_resource type="Animation" id="Animation_87bic"]
+resource_name = "girl"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext1/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext1/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext1/GirlGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_k1cyo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_3fy06"]
+resource_name = "boy"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext1/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext1/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext1/BoyGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7cmp"]
+_data = {
+&"RESET": SubResource("Animation_k1cyo"),
+&"boy": SubResource("Animation_3fy06"),
+&"girl": SubResource("Animation_87bic")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp3y8"]
+size = Vector2(209.5, 49)
+
+[sub_resource type="Animation" id="Animation_j1h31"]
+resource_name = "girl"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/GirlGhost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_mbcyj"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_psp1i"]
+resource_name = "boy"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../CanvasLayer2/CanvasModulate/AnimationPlayer/BoyGhost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxurs"]
+_data = {
+&"RESET": SubResource("Animation_mbcyj"),
+&"boy": SubResource("Animation_psp1i"),
+&"girl": SubResource("Animation_j1h31")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f125y"]
+size = Vector2(327, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n55t6"]
+size = Vector2(309, 244)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr5pv"]
+size = Vector2(259.5, 437)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0mf2"]
+radius = 80.0
+height = 273.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gswy"]
+size = Vector2(639, 102)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
 size = Vector2(418.667, 260.958)
 
@@ -40,125 +874,789 @@ size = Vector2(169, 1323)
 size = Vector2(2303, 276)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ktc20")
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="TileMap2" type="TileMap" parent="CanvasLayer/CanvasModulate"]
 position = Vector2(-83, 99)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_k1cyo")
 format = 2
 layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393171, 0, 0, -393163, 0, 0)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="CanvasLayer/CanvasModulate"]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_e7cmp")
 format = 2
 layer_0/tile_data = PackedInt32Array(2097155, 0, 0, 2097163, 0, 0, 2097171, 0, 0, 2097179, 0, 0, 2097187, 0, 0, 2097195, 0, 0, 2097203, 0, 0, 2097211, 0, 0, 2097219, 0, 0, 2097227, 0, 0, 1572867, 0, 0, 1572875, 0, 0, 1572883, 0, 0, 1572891, 0, 0, 1572899, 0, 0, 1572907, 0, 0, 1572915, 0, 0, 1572923, 0, 0, 1572931, 0, 0, 1572939, 0, 0, 1048579, 0, 0, 1048587, 0, 0, 1048595, 0, 0, 1048603, 0, 0, 1048611, 0, 0, 1048619, 0, 0, 1048627, 0, 0, 1048635, 0, 0, 1048643, 0, 0, 1048651, 0, 0)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Counter" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(177, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_vpxcu")
+
+[node name="Counter2" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1840, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_vpxcu")
+
+[node name="Counter4" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1520, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_vpxcu")
+
+[node name="Counter3" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(816, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_vpxcu")
+
+[node name="Fridge" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(2155, 225)
+scale = Vector2(4.26563, 4.26563)
+texture = ExtResource("5_umms5")
+
+[node name="Oven" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(496, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("6_ktc20")
+
+[node name="Sink" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1168, 264)
+scale = Vector2(4, 4)
+texture = ExtResource("8_88wuv")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
+
+[node name="Door2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(2309, 875)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_bs8bs")
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(-4, 883)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_bs8bs")
+
+[node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
 offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
-[node name="Counter" type="Sprite2D" parent="."]
-position = Vector2(177, 254)
-scale = Vector2(4, 4)
-texture = ExtResource("3_vpxcu")
-
-[node name="Counter2" type="Sprite2D" parent="."]
-position = Vector2(1840, 254)
-scale = Vector2(4, 4)
-texture = ExtResource("3_vpxcu")
-
-[node name="Counter4" type="Sprite2D" parent="."]
-position = Vector2(1520, 254)
-scale = Vector2(4, 4)
-texture = ExtResource("3_vpxcu")
-
-[node name="Counter3" type="Sprite2D" parent="."]
-position = Vector2(816, 254)
-scale = Vector2(4, 4)
-texture = ExtResource("3_vpxcu")
-
-[node name="Fridge" type="Sprite2D" parent="."]
-position = Vector2(2155, 225)
-scale = Vector2(4.26563, 4.26563)
-texture = ExtResource("5_umms5")
-
-[node name="Oven" type="Sprite2D" parent="."]
-position = Vector2(496, 254)
-scale = Vector2(4, 4)
-texture = ExtResource("6_ktc20")
-
-[node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(2309, 875)
-rotation = 4.71239
-scale = Vector2(3, 3)
-texture = ExtResource("7_bs8bs")
-
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(-4, 883)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("7_bs8bs")
-
-[node name="Sink" type="Sprite2D" parent="."]
-position = Vector2(1168, 264)
-scale = Vector2(4, 4)
-texture = ExtResource("8_88wuv")
-
-[node name="blobGhostPlayer" parent="." instance=ExtResource("10_cwf2y")]
+[node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("10_cwf2y")]
 position = Vector2(321, 581)
 scale = Vector2(3, 3)
 
-[node name="Island" type="Sprite2D" parent="."]
+[node name="aunttext" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("../ghosttext1")
+libraries = {
+&"": SubResource("AnimationLibrary_k0mf2")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -85.0
+offset_right = 596.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"Hello sweetie.\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -85.0
+offset_right = 596.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"Well, yes dear. Just let me be in charge of your father's assets.\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -85.0
+offset_right = 596.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"NO! GET OUT!\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -85.0
+offset_right = 596.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"Auntie, this it the 3rd time you've visited this week\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="YN label" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1417.0
+offset_top = -150.0
+offset_right = -225.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "Past you
+"
+horizontal_alignment = 1
+
+[node name="Aunt label" type="Label" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = -152.0
+offset_right = 1484.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "Aunt"
+horizontal_alignment = 1
+
+[node name="Boy1" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(279, 531)
+scale = Vector2(0.516547, 0.516547)
+texture = ExtResource("10_f125y")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2289.55)
+
+[node name="Boy2" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(279, 531)
+scale = Vector2(0.516547, 0.516547)
+texture = ExtResource("11_n55t6")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2289.55)
+
+[node name="Boy3" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(279, 531)
+scale = Vector2(0.516547, 0.516547)
+texture = ExtResource("12_fr5pv")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2289.55)
+
+[node name="aunt" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 2
+position = Vector2(2004, 621)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("13_k0mf2")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2347.23)
+
+[node name="aunt2" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+z_index = 2
+position = Vector2(2004, 620)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("14_1gswy")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2347.23)
+
+[node name="Girl2" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(302, 547)
+scale = Vector2(0.489333, 0.489333)
+texture = ExtResource("15_ls4fu")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2340.02)
+
+[node name="Girl3" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(302, 547)
+scale = Vector2(0.489333, 0.489333)
+texture = ExtResource("16_j1h31")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2340.02)
+
+[node name="Girl" type="Sprite2D" parent="ghostlayer/aunttext"]
+visible = false
+position = Vector2(302, 547)
+scale = Vector2(0.489333, 0.489333)
+texture = ExtResource("17_mbcyj")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2340.02)
+
+[node name="ghosttext2" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("../aunttext")
+libraries = {
+&"": SubResource("AnimationLibrary_j1h31")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"First my friend asking for money,then my neighbor acting weird, and now my aunt wanting control of my assets?\""
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -92.0
+offset_right = 596.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"I hope I can soon find out why I died...\""
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -142.0
+offset_right = 596.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"I'm going to explore the kitchen while I can, who knows when I'll get sent back to the present.\""
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("10_bs8bs")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("11_88wuv")
+
+[node name="ghosttext1" type="AnimationPlayer" parent="ghostlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_e7cmp")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext1"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("10_bs8bs")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext1"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("11_88wuv")
+
+[node name="Label" type="Label" parent="ghostlayer/ghosttext1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -85.0
+offset_right = 596.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"I used to bake cookies with my friend all the time in this kitchen.\""
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="explorelabel" type="Label" parent="ghostlayer"]
+offset_left = 588.0
+offset_top = 1199.0
+offset_right = 1740.0
+offset_bottom = 1231.0
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "Click object around the kitchen to investigate."
+horizontal_alignment = 1
+
+[node name="Node3" type="Node" parent="ghostlayer"]
+
+[node name="ColorRect" type="ColorRect" parent="ghostlayer/Node3"]
+visible = false
+z_index = 2
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
+
+[node name="Menucard" type="Sprite2D" parent="ghostlayer/Node3"]
+visible = false
+z_index = 3
+position = Vector2(1195, 566)
+scale = Vector2(7.94531, 7.94531)
+texture = ExtResource("21_8vv5g")
+
+[node name="Label2" type="Label" parent="ghostlayer/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -344.0
+offset_right = 236.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("22_5hhqf")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label" type="Label" parent="ghostlayer/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -340.0
+offset_right = 274.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("22_5hhqf")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label3" type="Label" parent="ghostlayer/Node3"]
+visible = false
+z_index = 3
+offset_left = 848.0
+offset_top = 452.0
+offset_right = 1543.0
+offset_bottom = 593.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 24
+text = "Ghosts can see both the past and present at the same time. This drains thier energy greatly. Finish
+the puzzle before the time ends."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Sprite2D" parent="ghostlayer/Node3"]
+visible = false
+z_index = 2
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("23_q21mm")
+
+[node name="Label5" type="Label" parent="ghostlayer/Node3"]
+visible = false
+z_index = 2
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 214.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 54
+text = "15.0"
+
+[node name="Timer2" type="Timer" parent="ghostlayer/Node3"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Correct" type="Sprite2D" parent="ghostlayer/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("24_mnhhk")
+
+[node name="Wrong" type="Sprite2D" parent="ghostlayer/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1258, 649)
+scale = Vector2(8.23438, 8.23438)
+texture = ExtResource("25_1cet2")
+
+[node name="continue" type="Area2D" parent="ghostlayer/Node3"]
+visible = false
+z_index = 3
+position = Vector2(245, 12)
+scale = Vector2(2, 2)
+script = ExtResource("26_j5uij")
+normal_texture = ExtResource("27_tpccs")
+hover_texture = ExtResource("28_hxncp")
+
+[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/Node3/continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("27_tpccs")
+
+[node name="Label" type="Label" parent="ghostlayer/Node3/continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("22_5hhqf")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/Node3/continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_xp3y8")
+disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/Node3"]
+stream = ExtResource("29_w3dxo")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer/Node3"]
+stream = ExtResource("30_cuqh1")
+volume_db = 20.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+
+[node name="Island" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
 position = Vector2(1148, 805)
 scale = Vector2(5.84, 5.84)
 texture = ExtResource("4_k1jr4")
 
-[node name="Stool" type="Sprite2D" parent="."]
+[node name="Stool" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
 position = Vector2(971, 926)
 scale = Vector2(3.72656, 3.72656)
 texture = ExtResource("9_acu1m")
 
-[node name="Stool2" type="Sprite2D" parent="."]
+[node name="Stool2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
 position = Vector2(1312, 926)
 scale = Vector2(3.72656, 3.72656)
 texture = ExtResource("9_acu1m")
 
-[node name="islandcollision" type="StaticBody2D" parent="."]
+[node name="TileMap3" type="TileMap" parent="CanvasLayer2/CanvasModulate"]
+visible = false
+position = Vector2(-181, 515)
+scale = Vector2(6, 6)
+tile_set = SubResource("TileSet_k1cyo")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393171, 0, 0, -393163, 0, 0)
+
+[node name="Fridge" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+visible = false
+position = Vector2(1238, 468)
+scale = Vector2(12.32, 12.32)
+texture = ExtResource("5_umms5")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 109.25)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/CanvasModulate"]
+root_node = NodePath("../../../explore/CanvasLayer/oven/CollisionShape2D")
+libraries = {
+&"": SubResource("AnimationLibrary_lxurs")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -118.0
+offset_right = 596.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"There's only 4 magnet letters on the fridge (A, F, E, D). I wonder what it means.\"
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -126.0
+offset_right = 596.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"I'll try to remember this incase it's somthing important.\""
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("10_bs8bs")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("11_88wuv")
+
+[node name="explore" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="explore"]
+
+[node name="cabinet" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+label_text = "Just an ordinary pink cabinet."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
+position = Vector2(165, 319)
+shape = SubResource("RectangleShape2D_f125y")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
+position = Vector2(814, 318)
+shape = SubResource("RectangleShape2D_f125y")
+disabled = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
+position = Vector2(1520, 318)
+shape = SubResource("RectangleShape2D_f125y")
+disabled = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
+position = Vector2(1838, 312)
+shape = SubResource("RectangleShape2D_f125y")
+disabled = true
+
+[node name="oven" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+label_text = "A one-of-a-kind, premium pink oven."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/oven"]
+position = Vector2(492.5, 315)
+shape = SubResource("RectangleShape2D_n55t6")
+disabled = true
+
+[node name="sink" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+label_text = "Is that the same sink from the bathroom?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/sink"]
+position = Vector2(1156, 311)
+shape = SubResource("RectangleShape2D_n55t6")
+disabled = true
+
+[node name="fridge" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/fridge"]
+position = Vector2(2145.25, 207.5)
+shape = SubResource("RectangleShape2D_fr5pv")
+disabled = true
+
+[node name="chair" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+label_text = "2 chairs."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/chair"]
+position = Vector2(957, 939)
+shape = SubResource("CapsuleShape2D_k0mf2")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/chair"]
+position = Vector2(1321, 929)
+shape = SubResource("CapsuleShape2D_k0mf2")
+disabled = true
+
+[node name="island" type="Area2D" parent="explore/CanvasLayer"]
+position = Vector2(6, 16)
+script = ExtResource("23_n55t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/island"]
+position = Vector2(1144.5, 729)
+shape = SubResource("RectangleShape2D_1gswy")
+disabled = true
+
+[node name="scene collisions" type="Node" parent="."]
+
+[node name="islandcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(1147, 1344)
 scale = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="islandcollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/islandcollision"]
 position = Vector2(-3.33331, -312.479)
 shape = SubResource("RectangleShape2D_k1jr4")
 
-[node name="textcollision" type="StaticBody2D" parent="."]
+[node name="textcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(3523.5, 1854.5)
 scale = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
 position = Vector2(-1582.33, -443.167)
 shape = SubResource("RectangleShape2D_mwmjw")
 
-[node name="rightwallcollision" type="StaticBody2D" parent="."]
+[node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-9.5, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/rightwallcollision"]
 position = Vector2(2382, 642)
 shape = SubResource("RectangleShape2D_cwf2y")
 
-[node name="leftwallcollision" type="StaticBody2D" parent="."]
+[node name="leftwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-7.5, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/leftwallcollision"]
 position = Vector2(-66.5, 651.5)
 shape = SubResource("RectangleShape2D_cwf2y")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
 position = Vector2(1141.5, 128)
 shape = SubResource("RectangleShape2D_vpxcu")
+
+[connection signal="mouse_entered" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_shape_exited"]
