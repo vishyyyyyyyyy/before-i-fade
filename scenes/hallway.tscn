@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_3cp5q"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_rx3tq"]
-[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_klhg5"]
+[ext_resource type="Script" path="res://scripts/continue.gd" id="26_klhg5"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_lrdi4"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_u2q5v"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_olmwx"]
@@ -34,8 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://dr2d2gpc2ljrc" path="res://assets/pixel-characters/neighbor1.png" id="31_1m42w"]
 [ext_resource type="Texture2D" uid="uid://bttq88nuj6a35" path="res://assets/pixel-characters/neighbor3.png" id="32_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="33_3cp5q"]
-[ext_resource type="Script" path="res://scenes/slot.gd" id="34_rx3tq"]
-[ext_resource type="Script" path="res://scenes/piece.gd" id="35_klhg5"]
+[ext_resource type="Script" uid="uid://ye7bofo5hhyd" path="res://scenes/slot.gd" id="34_rx3tq"]
+[ext_resource type="Script" uid="uid://caqps3d53w80h" path="res://scenes/piece.gd" id="35_klhg5"]
 [ext_resource type="Texture2D" uid="uid://bxqxsc21h3m0q" path="res://assets/hallwayPuzzlePics/auntframeTopLeft.png" id="35_woyx4"]
 [ext_resource type="Texture2D" uid="uid://c8nqhyeb8c5v6" path="res://assets/hallwayPuzzlePics/auntframeTopRight.png" id="37_ydsot"]
 [ext_resource type="Texture2D" uid="uid://cuitgl2oytd3c" path="res://assets/hallwayPuzzlePics/auntframeBottomLeft.png" id="38_a7ten"]
@@ -1839,7 +1839,7 @@ theme_override_font_sizes/font_size = 54
 text = "15.0"
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 15.0
+wait_time = 60.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
@@ -1954,7 +1954,6 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_t0wjw")
 
 [node name="puzzle" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1967,152 +1966,152 @@ offset_bottom = 40.0
 
 [node name="slot" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 261.0
-offset_top = -28.0
-offset_right = 460.0
-offset_bottom = 232.0
+offset_left = 248.5
+offset_top = 19.0
+offset_right = 447.5
+offset_bottom = 279.0
 script = ExtResource("34_rx3tq")
 
 [node name="slot2" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 460.0
-offset_top = -29.0
-offset_right = 663.0
-offset_bottom = 232.0
+offset_left = 447.5
+offset_top = 18.0
+offset_right = 650.5
+offset_bottom = 279.0
 script = ExtResource("34_rx3tq")
 slot_id = 1
 
 [node name="slot3" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 460.0
-offset_top = 233.0
-offset_right = 664.0
-offset_bottom = 484.0
+offset_left = 447.5
+offset_top = 280.0
+offset_right = 651.5
+offset_bottom = 531.0
 script = ExtResource("34_rx3tq")
 slot_id = 3
 
 [node name="slot4" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 260.0
-offset_top = 232.0
-offset_right = 459.0
-offset_bottom = 482.0
+offset_left = 247.5
+offset_top = 279.0
+offset_right = 446.5
+offset_bottom = 529.0
 script = ExtResource("34_rx3tq")
 slot_id = 2
 
 [node name="slot5" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 761.0
-offset_top = -31.0
-offset_right = 960.0
-offset_bottom = 229.0
+offset_left = 748.5
+offset_top = 16.0
+offset_right = 947.5
+offset_bottom = 276.0
 script = ExtResource("34_rx3tq")
 picture_id = 1
 
 [node name="slot6" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 963.0
-offset_top = -31.0
-offset_right = 1166.0
-offset_bottom = 230.0
+offset_left = 950.5
+offset_top = 16.0
+offset_right = 1153.5
+offset_bottom = 277.0
 script = ExtResource("34_rx3tq")
 picture_id = 1
 slot_id = 1
 
 [node name="slot7" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 962.0
-offset_top = 228.0
-offset_right = 1166.0
-offset_bottom = 479.0
+offset_left = 949.5
+offset_top = 275.0
+offset_right = 1153.5
+offset_bottom = 526.0
 script = ExtResource("34_rx3tq")
 picture_id = 1
 slot_id = 3
 
 [node name="slot8" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 764.0
-offset_top = 227.0
-offset_right = 963.0
-offset_bottom = 477.0
+offset_left = 751.5
+offset_top = 274.0
+offset_right = 950.5
+offset_bottom = 524.0
 script = ExtResource("34_rx3tq")
 picture_id = 1
 slot_id = 2
 
 [node name="slot9" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1288.0
-offset_top = -27.0
-offset_right = 1487.0
-offset_bottom = 233.0
+offset_left = 1275.5
+offset_top = 20.0
+offset_right = 1474.5
+offset_bottom = 280.0
 script = ExtResource("34_rx3tq")
 picture_id = 2
 
 [node name="slot10" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1490.0
-offset_top = -27.0
-offset_right = 1693.0
-offset_bottom = 234.0
+offset_left = 1477.5
+offset_top = 20.0
+offset_right = 1680.5
+offset_bottom = 281.0
 script = ExtResource("34_rx3tq")
 picture_id = 2
 slot_id = 1
 
 [node name="slot11" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1489.0
-offset_top = 232.0
-offset_right = 1693.0
-offset_bottom = 483.0
+offset_left = 1476.5
+offset_top = 279.0
+offset_right = 1680.5
+offset_bottom = 530.0
 script = ExtResource("34_rx3tq")
 picture_id = 2
 slot_id = 3
 
 [node name="slot12" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1291.0
-offset_top = 231.0
-offset_right = 1490.0
-offset_bottom = 481.0
+offset_left = 1278.5
+offset_top = 278.0
+offset_right = 1477.5
+offset_bottom = 528.0
 script = ExtResource("34_rx3tq")
 picture_id = 2
 slot_id = 2
 
 [node name="slot13" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1800.0
-offset_top = -40.0
-offset_right = 1999.0
-offset_bottom = 220.0
+offset_left = 1787.5
+offset_top = 7.0
+offset_right = 1986.5
+offset_bottom = 267.0
 script = ExtResource("34_rx3tq")
 picture_id = 3
 
 [node name="slot14" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 2002.0
-offset_top = -40.0
-offset_right = 2205.0
-offset_bottom = 221.0
+offset_left = 1989.5
+offset_top = 7.0
+offset_right = 2192.5
+offset_bottom = 268.0
 script = ExtResource("34_rx3tq")
 picture_id = 3
 slot_id = 1
 
 [node name="slot15" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 2001.0
-offset_top = 219.0
-offset_right = 2205.0
-offset_bottom = 470.0
+offset_left = 1988.5
+offset_top = 266.0
+offset_right = 2192.5
+offset_bottom = 517.0
 script = ExtResource("34_rx3tq")
 picture_id = 3
 slot_id = 3
 
 [node name="slot16" type="Control" parent="CanvasLayer/puzzle/slots" groups=["slots"]]
 anchors_preset = 0
-offset_left = 1803.0
-offset_top = 218.0
-offset_right = 2002.0
-offset_bottom = 468.0
+offset_left = 1790.5
+offset_top = 265.0
+offset_right = 1989.5
+offset_bottom = 515.0
 script = ExtResource("34_rx3tq")
 picture_id = 3
 slot_id = 2
@@ -2128,7 +2127,7 @@ offset_left = 139.0
 offset_top = 637.0
 offset_right = 267.0
 offset_bottom = 765.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("35_woyx4")
 stretch_mode = 5
@@ -2140,7 +2139,7 @@ offset_left = 6.00001
 offset_top = 534.0
 offset_right = 134.0
 offset_bottom = 662.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("37_ydsot")
 stretch_mode = 5
@@ -2153,7 +2152,7 @@ offset_left = 159.0
 offset_top = 536.0
 offset_right = 287.0
 offset_bottom = 664.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("38_a7ten")
 stretch_mode = 5
@@ -2166,7 +2165,7 @@ offset_left = 1050.0
 offset_top = 764.0
 offset_right = 1178.0
 offset_bottom = 892.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("39_s8q44")
 stretch_mode = 5
@@ -2179,7 +2178,7 @@ offset_left = 714.0
 offset_top = 760.0
 offset_right = 842.0
 offset_bottom = 888.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("40_tb454")
 stretch_mode = 5
@@ -2188,11 +2187,11 @@ picture_id = 1
 
 [node name="piece6" type="TextureRect" parent="CanvasLayer/puzzle/pieces" groups=["pieces"]]
 layout_mode = 0
-offset_left = 908.0
-offset_top = 401.0
-offset_right = 1036.0
-offset_bottom = 529.0
-scale = Vector2(2.5, 2.5)
+offset_left = 1040.0
+offset_top = 476.0
+offset_right = 1168.0
+offset_bottom = 604.0
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("41_sm38h")
 stretch_mode = 5
@@ -2206,7 +2205,7 @@ offset_left = 36.0
 offset_top = 876.0
 offset_right = 164.0
 offset_bottom = 1004.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("42_ivync")
 stretch_mode = 5
@@ -2220,7 +2219,7 @@ offset_left = 1268.0
 offset_top = 502.0
 offset_right = 1396.0
 offset_bottom = 630.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("43_kv4cf")
 stretch_mode = 5
@@ -2234,7 +2233,7 @@ offset_left = 568.0
 offset_top = 414.0
 offset_right = 696.0
 offset_bottom = 542.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("44_j1u7c")
 stretch_mode = 5
@@ -2247,7 +2246,7 @@ offset_left = 1776.0
 offset_top = 787.0
 offset_right = 1904.0
 offset_bottom = 915.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("45_qubdq")
 stretch_mode = 5
@@ -2261,7 +2260,7 @@ offset_left = 1801.0
 offset_top = 533.0
 offset_right = 1929.0
 offset_bottom = 661.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("46_fwk5y")
 stretch_mode = 5
@@ -2275,7 +2274,7 @@ offset_left = 17.0
 offset_top = 344.0
 offset_right = 145.0
 offset_bottom = 472.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("47_y6ewp")
 stretch_mode = 5
@@ -2289,7 +2288,7 @@ offset_left = 1280.0
 offset_top = 738.0
 offset_right = 1408.0
 offset_bottom = 866.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("48_770qv")
 stretch_mode = 5
@@ -2302,7 +2301,7 @@ offset_left = 360.0
 offset_top = 339.0
 offset_right = 488.0
 offset_bottom = 467.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("49_wdffw")
 stretch_mode = 5
@@ -2316,7 +2315,7 @@ offset_left = 1505.0
 offset_top = 519.0
 offset_right = 1633.0
 offset_bottom = 647.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("50_lip3m")
 stretch_mode = 5
@@ -2330,7 +2329,7 @@ offset_left = 494.0
 offset_top = 784.0
 offset_right = 622.0
 offset_bottom = 912.0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 mouse_filter = 0
 texture = ExtResource("51_0qhv5")
 stretch_mode = 5
@@ -2339,25 +2338,26 @@ picture_id = 3
 correct_slot_id = 3
 
 [node name="Blankpicture" type="Sprite2D" parent="CanvasLayer/puzzle"]
-position = Vector2(463, 227)
+z_index = -20
+position = Vector2(476.5, 270)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 
 [node name="Blankpicture2" type="Sprite2D" parent="CanvasLayer/puzzle"]
-z_index = 2
-position = Vector2(964, 224)
+z_index = -20
+position = Vector2(977.5, 267)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 
 [node name="Blankpicture3" type="Sprite2D" parent="CanvasLayer/puzzle"]
-z_index = 2
-position = Vector2(1489, 224)
+z_index = -20
+position = Vector2(1502.5, 267)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 
 [node name="Blankpicture4" type="Sprite2D" parent="CanvasLayer/puzzle"]
-z_index = 2
-position = Vector2(2003, 214)
+z_index = -20
+position = Vector2(2016.5, 257)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 

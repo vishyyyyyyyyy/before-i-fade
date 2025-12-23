@@ -17,11 +17,13 @@ func _ready() -> void:
 	#Global.reusabledesk += 1
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	#ghosttext1()
+	for piece in $CanvasLayer/puzzle/pieces.get_children():
+		piece.connect("piece_snapped", Callable(self, "_on_piece_snapped"))
 #
-#func _process(delta: float) -> void:
-	#time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
-	#$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
-	#
+func _process(delta: float) -> void:
+	time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
+	$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
+	
 #func ghosttext1():
 	#if Global.character == "girlGhost":
 		#$CanvasLayer/ghosttext1.play("girltext")
@@ -257,4 +259,15 @@ func hallwaypuzzle():
 	$CanvasLayer/AnimationPlayer/neighborBackward.visible=false
 	$CanvasLayer/AnimationPlayer/neighborLook.visible=false
 	$CanvasLayer/Node3/ColorRect.visible=true
-	
+func check_picture_complete(picture_id: int) -> bool:
+	for slot in $CanvasLayer/puzzle/slots.get_children():
+		if slot.picture_id == picture_id and not slot.occupied:
+			return false
+	return true
+
+func _on_piece_snapped():
+	for picture_id in range(4):
+		if check_picture_complete(picture_id):
+			print("Picture", picture_id, "complete!")
+		if (check_picture_complete(0) && check_picture_complete(1) && check_picture_complete(2) && check_picture_complete(3)):
+			print("puzzle complete!")
