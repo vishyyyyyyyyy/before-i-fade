@@ -209,14 +209,14 @@ func _on_button_pressed():
 	$CanvasLayer/puzzle.visible=true
 	if Global.character== "girlGhost":
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
-		$CanvasLayer3/CanvasLayer/Boyframe5.visible=true
-		$CanvasLayer3/CanvasLayer/Friendframe5.visible=true
-		$CanvasLayer3/CanvasLayer/Neighborframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Boyframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Friendframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Neigborframe5.visible=true
 	if Global.character== "boyGhost":
-		$CanvasLayer3/CanvasLayer/Auntframe5.visible=true
-		$CanvasLayer3/CanvasLayer/Friendframe5.visible=true
-		$CanvasLayer/CanvasLayer/Girlframe5.visible=true
-		$CanvasLayer3/CanvasLayer/Neighborframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Friendframe5.visible=true
+		$CanvasLayer/CanvasModulate/Girlframe5.visible=true
+		$CanvasLayer3/CanvasModulate/Neigborframe5.visible=true
 
 		
 	
@@ -271,6 +271,7 @@ func resetpuzzle():
 	$CanvasLayer/Node3/Timer2.start()
 	
 func afterpuzzle():
+	await _on_piece_snapped()
 	$CanvasLayer/Node3/ColorRect.visible=true
 	$CanvasLayer/Node3/Diarypage.visible=true
 	$CanvasLayer/Node3/Label4.visible=true
