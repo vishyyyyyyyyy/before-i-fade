@@ -2630,7 +2630,7 @@ theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 24
-text = "Ghosts may alter the past, but every movement costs them a piece of their remaining existence. Finish the puzzle before the time ends "
+text = "Ghosts may posess beings from the past, but doing so causes irreversible damage to the ghost and host. Finish the puzzle before the time ends "
 horizontal_alignment = 1
 autowrap_mode = 2
 
