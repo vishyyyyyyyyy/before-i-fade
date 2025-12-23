@@ -14,11 +14,13 @@ func diaryentry2():
 		$CanvasLayer4/diaryentry2.play("boytext")
 		await $CanvasLayer4/diaryentry2.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 	if Global.character=="girlGhost":
 		$CanvasLayer4/diaryentry2.play("girltext")
 		await $CanvasLayer4/diaryentry2.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 		
 func diaryentry3():
@@ -26,21 +28,28 @@ func diaryentry3():
 		$CanvasLayer4/diaryentry3.play("boytext")
 		await $CanvasLayer4/diaryentry3.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 	if Global.character=="girlGhost":
 		$CanvasLayer4/diaryentry3.play("girltext")
 		await $CanvasLayer4/diaryentry3.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 
 func diaryentry4():
 	if Global.character=="boyGhost":
-		$CanvasLayer4/diaryentry3.play("boytext")
-		await $CanvasLayer4/diaryentry3.animation_finished
+		$CanvasLayer4/diaryentry4.play("boy")
+		await $CanvasLayer4/diaryentry4.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+		$CanvasLayer5/Label4.visible=true
 	if Global.character=="girlGhost":
-		$CanvasLayer4/diaryentry3.play("girltext")
-		await $CanvasLayer4/diaryentry3.animation_finished
+		$CanvasLayer4/diaryentry4.play("girl")
+		await $CanvasLayer4/diaryentry4.animation_finished
 		$CanvasLayer4/Area2D.visible=true
+		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+		$CanvasLayer5/Label4.visible=true
+	Global.reusablehallway = 1
