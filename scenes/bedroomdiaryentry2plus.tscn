@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=53 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -246,6 +246,96 @@ _data = {
 &"RESET": SubResource("Animation_w5x8o"),
 &"boytext": SubResource("Animation_jhia0"),
 &"girltext": SubResource("Animation_ryjlh")
+}
+
+[sub_resource type="Animation" id="Animation_4oxbo"]
+resource_name = "girl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("diaryentry4/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("diaryentry4/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("diaryentry4/GirlGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wppai"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_yocy6"]
+resource_name = "boy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("diaryentry4/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("diaryentry4/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("diaryentry4/BoyGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq1p1"]
+_data = {
+&"RESET": SubResource("Animation_wppai"),
+&"boy": SubResource("Animation_yocy6"),
+&"girl": SubResource("Animation_4oxbo")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvaqh"]
@@ -577,6 +667,46 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="diaryentry4" type="AnimationPlayer" parent="CanvasLayer4"]
+libraries = {
+&"": SubResource("AnimationLibrary_yq1p1")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry4"]
+visible = false
+z_index = 1
+position = Vector2(2010, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("14_7ccer")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry4"]
+visible = false
+z_index = 3
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_dwit2")
+
+[node name="Label" type="Label" parent="CanvasLayer4/diaryentry4"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -812.0
+offset_top = -123.0
+offset_right = 835.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 32
+text = "\"November 4th, whenever my aunt shows up, I can't breathe... She's such a pain. LEAVE ME ALONE."
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Node" type="Node" parent="."]
 
 [node name="ColorRect2" type="ColorRect" parent="Node"]
@@ -626,6 +756,17 @@ offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_kaovn")
 theme_override_font_sizes/font_size = 32
 text = "Enter the hallway."
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer5"]
+visible = false
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 32
+text = "Enter the kitchen."
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer5"]

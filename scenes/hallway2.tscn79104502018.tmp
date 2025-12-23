@@ -778,6 +778,3 @@ shape = SubResource("RectangleShape2D_w57m6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/StaticBody2D"]
 position = Vector2(1163, 238.5)
 shape = SubResource("RectangleShape2D_yjeik")
-
-[connection signal="body_entered" from="CanvasLayer/scene trigger" to="CanvasLayer/scene trigger" method="_on_body_entered"]
-[connection signal="body_exited" from="CanvasLayer/scene trigger" to="CanvasLayer/scene trigger" method="_on_body_exited"]
