@@ -5,6 +5,7 @@ var time_left_seconds
 @onready var explore_node: Node = $explore
 
 var clicked_objects := {} 
+var piece_start_positions := {}
 
 func _ready() -> void:
 	hallwaypuzzle()
@@ -18,6 +19,7 @@ func _ready() -> void:
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	#ghosttext1()
 	for piece in $CanvasLayer/puzzle/pieces.get_children():
+		piece_start_positions[piece] = piece.position
 		piece.connect("piece_snapped", Callable(self, "_on_piece_snapped"))
 #
 func _process(delta: float) -> void:
@@ -271,3 +273,20 @@ func _on_piece_snapped():
 			print("Picture", picture_id, "complete!")
 		if (check_picture_complete(0) && check_picture_complete(1) && check_picture_complete(2) && check_picture_complete(3)):
 			print("puzzle complete!")
+			$CanvasLayer/Node3/Timer2.stop()
+			$CanvasLayer/Node3/Correct.visible=true
+			$CanvasLayer/Node3/AudioStreamPlayer.play()
+			
+func _on_timer_2_timeout() -> void:
+	$CanvasLayer/Node3/Wrong.visible=true
+	$CanvasLayer/Node3/AudioStreamPlayer2.play()
+	$CanvasLayer/Node3/Timer2.stop()
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer/Node3/Wrong.visible=false
+	resetpuzzle()
+
+func resetpuzzle():
+	for piece in piece_start_positions.keys():
+		piece.position = piece_start_positions[piece]
+	$CanvasLayer/Node3/Timer2.start()
+	

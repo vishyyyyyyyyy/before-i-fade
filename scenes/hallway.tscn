@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_3cp5q"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_rx3tq"]
-[ext_resource type="Script" path="res://scripts/continue.gd" id="26_klhg5"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_klhg5"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_lrdi4"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_u2q5v"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_olmwx"]
@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dr2d2gpc2ljrc" path="res://assets/pixel-characters/neighbor1.png" id="31_1m42w"]
 [ext_resource type="Texture2D" uid="uid://bttq88nuj6a35" path="res://assets/pixel-characters/neighbor3.png" id="32_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="33_3cp5q"]
-[ext_resource type="Script" uid="uid://ye7bofo5hhyd" path="res://scenes/slot.gd" id="34_rx3tq"]
+[ext_resource type="Script" path="res://scenes/slot.gd" id="34_rx3tq"]
 [ext_resource type="Script" uid="uid://caqps3d53w80h" path="res://scenes/piece.gd" id="35_klhg5"]
 [ext_resource type="Texture2D" uid="uid://bxqxsc21h3m0q" path="res://assets/hallwayPuzzlePics/auntframeTopLeft.png" id="35_woyx4"]
 [ext_resource type="Texture2D" uid="uid://c8nqhyeb8c5v6" path="res://assets/hallwayPuzzlePics/auntframeTopRight.png" id="37_ydsot"]
@@ -1954,6 +1954,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_t0wjw")
 
 [node name="puzzle" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -2436,6 +2437,7 @@ debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
 
 [node name="Node" type="Node" parent="."]
 
+[connection signal="timeout" from="CanvasLayer/Node3/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_shape_exited"]

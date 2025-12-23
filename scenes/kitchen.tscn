@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=100 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -57,6 +57,12 @@
 [ext_resource type="Texture2D" uid="uid://dbaaxlukd6e41" path="res://assets/flour.png" id="44_gho0h"]
 [ext_resource type="Texture2D" uid="uid://b1j34kjg6uloh" path="res://assets/radish.png" id="45_fbqej"]
 [ext_resource type="Texture2D" uid="uid://clotbfr5lwm3c" path="res://assets/strawberry.png" id="46_clwqs"]
+[ext_resource type="Texture2D" uid="uid://dc3ccigkyiwfa" path="res://assets/sugar.png" id="47_r87tc"]
+[ext_resource type="Texture2D" uid="uid://b18mhj10relx2" path="res://assets/brocoli.png" id="48_xk64l"]
+[ext_resource type="Texture2D" uid="uid://cbq1gowx84x7f" path="res://assets/avocado.png" id="49_igyye"]
+[ext_resource type="Texture2D" uid="uid://cs7380lc1ypw6" path="res://assets/butter.png" id="50_sh27m"]
+[ext_resource type="Texture2D" uid="uid://dhfeajis2hgu" path="res://assets/orange.png" id="51_30fne"]
+[ext_resource type="Texture2D" uid="uid://cx5w3bw5jqsar" path="res://assets/carrot.png" id="52_hsv4d"]
 [ext_resource type="Texture2D" uid="uid://d2wjrxdl11ir5" path="res://assets/spoon.png" id="53_cieeo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
@@ -866,6 +872,9 @@ _data = {
 &"boy": SubResource("Animation_psp1i"),
 &"girl": SubResource("Animation_j1h31")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx1yq"]
+size = Vector2(73.9618, 91.2696)
 
 [sub_resource type="Animation" id="Animation_lvvf4"]
 resource_name = "girl"
@@ -1769,7 +1778,7 @@ texture = ExtResource("43_1siqs")
 
 [node name="Flour" type="Sprite2D" parent="CanvasLayer4"]
 z_index = 2
-position = Vector2(2033, 287)
+position = Vector2(1993, 287)
 scale = Vector2(4.38721, 4.38721)
 texture = ExtResource("44_gho0h")
 
@@ -1784,6 +1793,64 @@ z_index = 3
 position = Vector2(352, 377)
 scale = Vector2(6.89063, 6.89063)
 texture = ExtResource("46_clwqs")
+
+[node name="Sugar" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(1138, 282)
+scale = Vector2(4.58984, 4.58984)
+texture = ExtResource("47_r87tc")
+
+[node name="Brocoli" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(1977, 267)
+scale = Vector2(6.52344, 6.52344)
+texture = ExtResource("48_xk64l")
+
+[node name="Avocado" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(315, 298)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("49_igyye")
+
+[node name="Butter" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(381, 365)
+scale = Vector2(4.49219, 4.49219)
+texture = ExtResource("50_sh27m")
+
+[node name="Orange" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(1153, 332)
+scale = Vector2(4.92969, 4.92969)
+texture = ExtResource("51_30fne")
+
+[node name="Carrot" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(1997, 296)
+scale = Vector2(4, 4)
+texture = ExtResource("52_hsv4d")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer4"]
+position = Vector2(381, 365)
+scale = Vector2(4.49219, 4.49219)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer4/Area2D"]
+z_index = 3
+position = Vector2(354.393, -16.0278)
+shape = SubResource("RectangleShape2D_hx1yq")
+debug_color = Color(0.931673, 0.000433562, 0.876524, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer4/Area2D"]
+z_index = 3
+position = Vector2(171.186, -15.1374)
+shape = SubResource("RectangleShape2D_hx1yq")
+debug_color = Color(0.931673, 0.000433562, 0.876524, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CanvasLayer4/Area2D"]
+z_index = 3
+position = Vector2(-12.6887, -14.4696)
+shape = SubResource("RectangleShape2D_hx1yq")
+debug_color = Color(0.931673, 0.000433562, 0.876524, 0.42)
 
 [node name="Node3" type="Node" parent="CanvasLayer4"]
 
