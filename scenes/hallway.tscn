@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=109 format=3 uid="uid://3ulr6k8q2lmt"]
 
 [ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://rhqcxbl4moqm" path="res://assets/girlframe.png" id="12_yar4q"]
 [ext_resource type="Texture2D" uid="uid://btq4355tuyrd4" path="res://assets/neigborframe.png" id="13_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bi1sjlkbtaujm" path="res://assets/neighbornote2.png" id="15_a7ten"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="15_s8q44"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_xgli8"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_172kp"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_bje8i"]
@@ -36,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="31_ydsot"]
 [ext_resource type="Texture2D" uid="uid://bttq88nuj6a35" path="res://assets/pixel-characters/neighbor3.png" id="32_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="33_3cp5q"]
-[ext_resource type="Script" uid="uid://ye7bofo5hhyd" path="res://scenes/slot.gd" id="34_rx3tq"]
+[ext_resource type="Script" path="res://scenes/slot.gd" id="34_rx3tq"]
 [ext_resource type="Script" uid="uid://caqps3d53w80h" path="res://scenes/piece.gd" id="35_klhg5"]
 [ext_resource type="Texture2D" uid="uid://bxqxsc21h3m0q" path="res://assets/hallwayPuzzlePics/auntframeTopLeft.png" id="35_woyx4"]
 [ext_resource type="Texture2D" uid="uid://c8nqhyeb8c5v6" path="res://assets/hallwayPuzzlePics/auntframeTopRight.png" id="37_ydsot"]
@@ -70,6 +71,243 @@ texture = ExtResource("2_nlnob")
 
 [sub_resource type="TileSet" id="TileSet_y7q4l"]
 sources/0 = SubResource("TileSetAtlasSource_nlnob")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb454"]
+size = Vector2(34, 320)
+
+[sub_resource type="Animation" id="Animation_a7ten"]
+resource_name = "girl"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext4/GirlGhost:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext4/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext4/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext4/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext4/Label2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext4/Label3:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext4/Label3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ghosttext4/Label4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext4/Label4:visible_ratio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_s8q44"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_tb454"]
+resource_name = "boy"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext4/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ghosttext4/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ghosttext4/Label2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../ghosttext4/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../ghosttext4/Label3:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ghosttext4/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ghosttext4/Label4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../ghosttext4/Label4:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext4/BoyGhost:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sm38h"]
+_data = {
+&"RESET": SubResource("Animation_s8q44"),
+&"boy": SubResource("Animation_tb454"),
+&"girl": SubResource("Animation_a7ten")
+}
 
 [sub_resource type="Animation" id="Animation_dvv28"]
 length = 0.001
@@ -1426,6 +1664,15 @@ texture = ExtResource("7_ew26q")
 position = Vector2(2188, 840)
 scale = Vector2(3, 3)
 
+[node name="scenetrigger" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("15_s8q44")
+target_scene = "res://scenes/bedroomdiaryentry2plus.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/scenetrigger"]
+position = Vector2(2290, 850)
+shape = SubResource("RectangleShape2D_tb454")
+disabled = true
+
 [node name="TileMap3" type="TileMap" parent="CanvasLayer"]
 visible = false
 position = Vector2(-147, 608)
@@ -1476,6 +1723,101 @@ offset_top = 1120.0
 offset_right = 2303.0
 offset_bottom = 1297.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="Label7" type="Label" parent="CanvasLayer"]
+visible = false
+z_index = 16
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -590.0
+offset_top = -96.0
+offset_right = 602.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "Exit the hallway to read the new diary entry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ghosttext4" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../Neighbornote3")
+libraries = {
+&"": SubResource("AnimationLibrary_sm38h")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/ghosttext4"]
+visible = false
+offset_left = 697.0
+offset_top = 1192.0
+offset_right = 1621.0
+offset_bottom = 1224.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"Huh? What's that note\""
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/ghosttext4"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"That must be what my neighbor was doing at the photos.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="CanvasLayer/ghosttext4"]
+visible = false
+offset_left = 415.0
+offset_top = 1192.0
+offset_right = 1911.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"Heard shouting. U ok?\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="CanvasLayer/ghosttext4"]
+visible = false
+offset_left = 2.0
+offset_top = 1192.0
+offset_right = 2290.0
+offset_bottom = 1259.0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+text = "\"Why didn't he just ask me directly instead of sneaking around my house.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/ghosttext4"]
+visible = false
+z_index = 4
+position = Vector2(2010, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_172kp")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/ghosttext4"]
+visible = false
+z_index = 2
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_bje8i")
 
 [node name="ghosttext2" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../ghosttext1")
@@ -1847,7 +2189,7 @@ theme_override_font_sizes/font_size = 54
 text = "15.0"
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 60.0
+wait_time = 40.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
@@ -2496,6 +2838,7 @@ scale = Vector2(1.5, 1.5)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scenecollisions/textcollision"]
 position = Vector2(-1582.33, -443.167)
 shape = SubResource("RectangleShape2D_nlnob")
+metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scenecollisions"]
 position = Vector2(-5.5, 21.5)
@@ -2562,6 +2905,9 @@ debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
 
 [node name="Node" type="Node" parent="."]
 
+[connection signal="body_entered" from="CanvasLayer/scenetrigger" to="CanvasLayer/scenetrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/scenetrigger" to="." method="_on_scenetrigger_body_exited"]
+[connection signal="body_exited" from="CanvasLayer/scenetrigger" to="CanvasLayer/scenetrigger" method="_on_body_exited"]
 [connection signal="timeout" from="CanvasLayer/Node3/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Node3/continue" to="CanvasLayer/Node3/continue" method="_on_mouse_exited"]

@@ -69,7 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://dhfeajis2hgu" path="res://assets/orange.png" id="51_30fne"]
 [ext_resource type="Texture2D" uid="uid://cx5w3bw5jqsar" path="res://assets/carrot.png" id="52_hsv4d"]
 [ext_resource type="Texture2D" uid="uid://d2wjrxdl11ir5" path="res://assets/spoon.png" id="53_cieeo"]
-[ext_resource type="Script" path="res://scripts/foodchoice.gd" id="53_xk64l"]
+[ext_resource type="Script" uid="uid://bhf3syom63tdy" path="res://scripts/foodchoice.gd" id="53_xk64l"]
 [ext_resource type="Texture2D" uid="uid://2cdbf85legod" path="res://assets/egg.png" id="54_ggb88"]
 [ext_resource type="Texture2D" uid="uid://cfvg1id0wgqas" path="res://assets/egg2.png" id="55_cho25"]
 [ext_resource type="Texture2D" uid="uid://c3gab6crygc1y" path="res://assets/egg3.png" id="56_nylry"]
@@ -1448,7 +1448,7 @@ size = Vector2(169, 1323)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpxcu"]
 size = Vector2(2303, 276)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ktc20")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

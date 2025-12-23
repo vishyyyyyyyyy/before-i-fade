@@ -258,9 +258,6 @@ func _on_piece_snapped():
 			$CanvasLayer/Node3/Timer2.stop()
 			$CanvasLayer/Node3/Correct.visible=true
 			$CanvasLayer/Node3/AudioStreamPlayer.play()
-			await get_tree().create_timer(2).timeout
-			$CanvasLayer/Node3/Correct.visible=false
-			$CanvasLayer/puzzle.visible=false
 			afterpuzzle()
 			
 			
@@ -278,18 +275,25 @@ func resetpuzzle():
 	$CanvasLayer/Node3/Timer2.start()
 	
 func afterpuzzle():
-	await _on_piece_snapped()
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer/Node3/Correct.visible=false
+	$CanvasLayer/puzzle.visible=false
+	$CanvasLayer/Node3/ColorRect.visible=true
+	$CanvasLayer/Node3/Diarypage.visible=true
+	$CanvasLayer/Node3/Label4.visible=true
+	$CanvasLayer/Node3/Label6.visible=true
+	$CanvasLayer/Node3/Label7.visible=true
 	$CanvasLayer/Node3/ColorRect.visible=true
 	$CanvasLayer/Node3/Diarypage.visible=true
 	$CanvasLayer/Node3/Label4.visible=true
 	$CanvasLayer/Node3/Label6.visible=true
 	$CanvasLayer/Node3/Label7.visible=true
 	await get_tree().create_timer(5).timeout
-	$CanvasLayer/Node3/ColorRect.visible=true
-	$CanvasLayer/Node3/Diarypage.visible=true
-	$CanvasLayer/Node3/Label4.visible=true
-	$CanvasLayer/Node3/Label6.visible=true
-	$CanvasLayer/Node3/Label7.visible=true
+	$CanvasLayer/Node3/ColorRect.visible=false
+	$CanvasLayer/Node3/Diarypage.visible=false
+	$CanvasLayer/Node3/Label4.visible=false
+	$CanvasLayer/Node3/Label6.visible=false
+	$CanvasLayer/Node3/Label7.visible=false
 	$CanvasLayer/TileMap3.visible=true
 	$CanvasLayer/Auntframe.visible=true
 	$CanvasLayer/Friendframe.visible=true
@@ -300,8 +304,23 @@ func afterpuzzle():
 	$CanvasLayer/Friendframe.modulate=Color(0.0, 0.992, 0.816)
 	$CanvasLayer/Girlframe.modulate=Color(0.0, 0.992, 0.816)
 	$CanvasLayer/Neigborframe.modulate=Color(0.0, 0.992, 0.816)
+	$CanvasLayer/Neighbornote3.visible=true
 	if Global.character == "girlGhost":
 		$CanvasLayer/Boyframe.visible=true
+		$CanvasLayer/ghosttext4.play("girl")
 	elif Global.character == "boyGhost":
 		$CanvasLayer/Girlframe.visible=true
-	$CanvasLayer/Neighbornote3.visible=true
+		$CanvasLayer/ghosttext4.play("boy")
+	$CanvasLayer/blobGhostPlayer.position.x = 1166
+	$CanvasLayer/blobGhostPlayer.position.y = 520
+	await $CanvasLayer/ghosttext4.animation_finished
+	$CanvasLayer/Neighbornote3.visible=false
+	$CanvasLayer/TileMap3.visible=false
+	$CanvasLayer/Auntframe.visible=false
+	$CanvasLayer/Friendframe.visible=false
+	$CanvasLayer/Neigborframe.visible=false
+	$CanvasLayer/TileMap3.visible=false
+	$CanvasLayer/Boyframe.visible=false
+	$CanvasLayer/Girlframe.visible=false
+	$CanvasLayer/scenetrigger/CollisionShape2D.disabled=false
+	$CanvasLayer/Label7.visible=true

@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready() -> void:
-	Global.reusabledesk = 3
 	$CanvasLayer5/Label.visible=true
 	$desk.diaryentry2.connect(diaryentry2)
 	$desk.diaryentry3.connect(diaryentry3)

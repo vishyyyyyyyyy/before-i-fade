@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=33 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://bbii74gaxnddm" path="res://assets/music2.png" id="13_ikg1h"]
 [ext_resource type="Texture2D" uid="uid://dum4kq1kth800" path="res://assets/music3.png" id="14_24a1y"]
 [ext_resource type="Texture2D" uid="uid://dj7uvdd22tg8v" path="res://assets/music.png" id="15_xddai"]
+[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_tlixj"]
+[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_306lt"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="18_rq2ij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -32,6 +35,15 @@ texture = ExtResource("2_1wnl2")
 
 [sub_resource type="TileSet" id="TileSet_vu36g"]
 sources/0 = SubResource("TileSetAtlasSource_04r7s")
+
+[sub_resource type="Animation" id="Animation_04r7s"]
+resource_name = "girl"
+length = 10.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vu36g"]
+_data = {
+&"girl": SubResource("Animation_04r7s")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
 size = Vector2(1534.67, 151.667)
@@ -148,6 +160,97 @@ visible = false
 position = Vector2(1182, 638)
 scale = Vector2(0.804001, 0.720001)
 texture = ExtResource("15_xddai")
+
+[node name="ghosttext1" type="AnimationPlayer" parent="CanvasLayer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_vu36g")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer2/ghosttext1"]
+visible = false
+z_index = 1
+position = Vector2(2010, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_tlixj")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer2/ghosttext1"]
+visible = false
+z_index = 3
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_306lt")
+
+[node name="Label" type="Label" parent="CanvasLayer2/ghosttext1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 756.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 32
+text = "\"My living room!\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="CanvasLayer2/ghosttext1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 756.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 32
+text = "\"This was my most favorite place in the whole house.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="CanvasLayer2/ghosttext1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 756.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 32
+text = "\"So many memories.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
 offset_left = -10.0
