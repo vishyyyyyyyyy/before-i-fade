@@ -1,6 +1,7 @@
 extends Area2D
 signal diaryentry2
 signal diaryentry3
+signal diaryentry4
 
 func _ready() -> void:
 	pass
@@ -29,6 +30,14 @@ func _input_event(viewport, event, shape_idx):
 			$"../CanvasLayer5/Label".visible = false
 			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible = true
 			emit_signal("diaryentry3")
+		
+		elif Global.reusabledesk == 3 and shape_idx == 2:
+			$CollisionShape2D.disabled = true
+			print("Clicked shape 2")
+			$"../CanvasLayer5/Label".visible = false
+			$"../CanvasLayer3/CanvasModulate/Diaryentry4".visible = true
+			emit_signal("diaryentry4")
+
 
 		
 		

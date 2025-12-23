@@ -9,7 +9,7 @@ func _ready() -> void:
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/ColorRect2.visible=false
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-	Global.reusabledesk += 1
+	Global.reusabledesk = 3
 	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer4/foodchoice.challengecompleted.connect(challengecompleted)
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)

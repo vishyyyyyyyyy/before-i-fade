@@ -9,7 +9,7 @@ func _ready() -> void:
 		$CanvasLayer3/AnimationPlayer/girl.visible = false
 	if (Global.character == "boyGhost"):
 		$CanvasLayer3/AnimationPlayer/boy.visible = false
-	Global.reusabledesk += 1
+	Global.reusabledesk =1
 	print(Global.reusabledesk)
 	firsttext()
 	await $CanvasLayer3/ghosttalk.animation_finished
@@ -214,7 +214,7 @@ func combpress():
 	$CanvasLayer3/comb/CollisionShape2D.disabled=true
 	if Global.character=="girlGhost":
 		$CanvasLayer3/ghosttalk3.play("girlghost")
-		$CanvasLayer3/blobGhostPlayer.positionx=1800
+		$CanvasLayer3/blobGhostPlayer.position.x=1800
 		await $"CanvasLayer3/ghosttalk3".animation_finished
 		$CanvasLayer3/TileMap3.visible=false
 		$CanvasLayer3/comb.visible=true

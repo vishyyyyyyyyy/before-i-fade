@@ -14,7 +14,7 @@ func _ready() -> void:
 	$CanvasLayer/AnimationPlayer/neighborForward.visible = false
 	$CanvasLayer/AnimationPlayer/neighborBackward.visible = false
 	$CanvasLayer/AnimationPlayer/neighborLook.visible = false
-	Global.reusabledesk += 1
+	Global.reusabledesk =2
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	ghosttext1()
 	for piece in $CanvasLayer/puzzle/pieces.get_children():

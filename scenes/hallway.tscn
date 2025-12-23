@@ -2187,6 +2187,7 @@ picture_id = 3
 slot_id = 2
 
 [node name="Label6" type="Label" parent="CanvasLayer/puzzle"]
+layout_mode = 0
 offset_left = 310.0
 offset_top = 249.0
 offset_right = 675.0
@@ -2199,6 +2200,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="CanvasLayer/puzzle"]
+layout_mode = 0
 offset_left = 798.0
 offset_top = 249.0
 offset_right = 1163.0
@@ -2211,6 +2213,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="CanvasLayer/puzzle"]
+layout_mode = 0
 offset_left = 1342.0
 offset_top = 249.0
 offset_right = 1707.0
@@ -2223,6 +2226,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="CanvasLayer/puzzle"]
+layout_mode = 0
 offset_left = 1854.0
 offset_top = 249.0
 offset_right = 2219.0
