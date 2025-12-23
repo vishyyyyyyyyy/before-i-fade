@@ -214,6 +214,7 @@ func combpress():
 	$CanvasLayer3/comb/CollisionShape2D.disabled=true
 	if Global.character=="girlGhost":
 		$CanvasLayer3/ghosttalk3.play("girlghost")
+		$CanvasLayer3/blobGhostPlayer.positionx=1800
 		await $"CanvasLayer3/ghosttalk3".animation_finished
 		$CanvasLayer3/TileMap3.visible=false
 		$CanvasLayer3/comb.visible=true
@@ -221,6 +222,7 @@ func combpress():
 		$CanvasLayer3/Label7.visible=true
 	if Global.character=="boyGhost":
 		$CanvasLayer3/ghosttalk3.play("boyghost")
+		$CanvasLayer3/blobGhostPlayer.positionx=1800
 		await $"CanvasLayer3/ghosttalk3".animation_finished
 		$CanvasLayer3/TileMap3.visible=false
 		$CanvasLayer3/comb.visible=true
@@ -228,7 +230,7 @@ func combpress():
 		$CanvasLayer3/Label7.visible=true
 		
 func modulatebackghost():
-	$CanvasLayer/TileMap.visible=true
+	$CanvasLayer/TileMap.visible=false
 	$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.323, 0.28)
 	$CanvasLayer4/CanvasModulate2.color= Color(0.094, 0.323, 0.28)

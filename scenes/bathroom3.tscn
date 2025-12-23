@@ -1518,11 +1518,11 @@ scale = Vector2(4, 4)
 [node name="TileMap3" type="TileMap" parent="CanvasLayer3"]
 visible = false
 z_index = 2
-position = Vector2(-33, -4349)
-scale = Vector2(7, 7)
-tile_set = SubResource("TileSet_q0btg")
+position = Vector2(57.9999, -6312)
+scale = Vector2(10, 10)
+tile_set = SubResource("TileSet_wwfem")
 format = 2
-layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752539, 0, 0, 3276803, 0, 0, 3276811, 0, 0, 3276819, 0, 0, 3276827, 0, 0)
+layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752537, 0, 0, 2752543, 0, 0, 2752551, 0, 0, 2752559, 0, 0, 2752565, 0, 0, 2752573, 0, 0)
 
 [node name="Comb2" type="Sprite2D" parent="CanvasLayer3"]
 visible = false

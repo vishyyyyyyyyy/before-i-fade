@@ -28,4 +28,14 @@ func _input_event(viewport, event, shape_idx):
 			$"../../CanvasLayer5/Label2".visible=true
 			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 			$"../../SceneTrigger/CollisionShape2D".disabled=false
+			counter +=1
+		if counter ==2:
+			$".".visible=false
+			$"../../CanvasLayer5/Label2".visible=false
+			$CollisionShape2D.disabled=true
+			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
+			$"../../CanvasLayer5/Label3".visible=true
+			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
+			$"../../SceneTrigger/CollisionShape2D".disabled=false
+			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
 		emit_signal("pressed")
