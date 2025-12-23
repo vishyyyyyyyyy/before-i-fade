@@ -16,7 +16,7 @@ func _ready() -> void:
 	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
 	start()
-	#
+	
 func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer4/Node3/Timer2.time_left
 	$CanvasLayer4/Node3/Label5.text = "%.1f" % time_left_seconds

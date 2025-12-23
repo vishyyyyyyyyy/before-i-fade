@@ -76,11 +76,11 @@ func _input_event(viewport, event, shape_idx):
 			$"../Butter".visible=false
 			$"../Orange".visible=false
 			$"../Carrot".visible=false
-			$CollisionShape2D.disabled=true
-			$CollisionShape2D3.disabled=true
 			$"../Egg".visible=true
 			
 		elif counter == 3:
+			$CollisionShape2D.disabled=true
+			$CollisionShape2D3.disabled=true
 			$"../Egg2".visible=true
 			counter +=1
 			
@@ -226,6 +226,7 @@ func _on_timer_2_timeout() -> void:
 	$CollisionShape2D3.disabled=false
 	$CollisionShape2D2.disabled=false
 	counter =0
+	wrongcounter =0
 	$"../Node3/Timer2".start()
 
 
@@ -256,6 +257,7 @@ func correct():
 	$CollisionShape2D4.disabled=true
 	$"../Node3/AudioStreamPlayer".play() 
 	$"../Node3/Timer2".stop()
+	await get_tree().create_timer(2).timeout
 	$"../Node3/Correct".visible = false
 	emit_signal("challengecompleted")
 
@@ -309,6 +311,7 @@ func incorrect():
 	$CollisionShape2D3.disabled=false
 	$CollisionShape2D2.disabled=false
 	counter =0
+	wrongcounter =0
 	$"../Node3/Timer2".start()
 
 	
