@@ -7,13 +7,19 @@ var time_left_seconds
 var clicked_objects := {} 
 
 func _ready() -> void:
+	$CanvasLayer/AnimationPlayer/neighbor.visible = false
+	$CanvasLayer/AnimationPlayer/neighborRight.visible = false
+	$CanvasLayer/AnimationPlayer/neighborLeft.visible = false
+	$CanvasLayer/AnimationPlayer/neighborForward.visible = false
+	$CanvasLayer/AnimationPlayer/neighborBackward.visible = false
+	$CanvasLayer/AnimationPlayer/neighborLook.visible = false
 	Global.reusabledesk += 1
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	ghosttext1()
 
 func _process(delta: float) -> void:
-	time_left_seconds = $"../Node3/Timer2".time_left
-	$"../Node3/Label5".text = "%.1f" % time_left_seconds
+	time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
+	$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
 	
 func ghosttext1():
 	if Global.character == "girlGhost":
@@ -37,6 +43,7 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece2.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
+		$CanvasLayer/AnimationPlayer/neighbor.visible = true
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 		$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
@@ -48,7 +55,7 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece2.visible=true
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=true
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=true
-		
+		$CanvasLayer/AnimationPlayer/neighbor.visible = false
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
@@ -60,9 +67,13 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece2.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
+		$CanvasLayer/AnimationPlayer/neighbor.visible = true
 		await get_tree().create_timer(0.5).timeout
 		$"CanvasLayer/neighbor talk".play("neighbortext")
 		await $"CanvasLayer/neighbor talk".animation_finished
+		$CanvasLayer/AnimationPlayer/neighbor.visible = false
+		$CanvasLayer/AnimationPlayer.play("neighborPhotos")
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		$CanvasLayer/ghosttext2.play("girlghosttext")
 		await $CanvasLayer/ghosttext2.animation_finished
 		$CanvasLayer/Label.visible=true
@@ -233,7 +244,7 @@ func hallwaypuzzle():
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
 	$CanvasLayer/Node3/ColorRect.visible=true
 	$CanvasLayer/Node3/Menucard.visible=true
-	$CanvasLayer/Node3/Label2.visilbe=true
+	$CanvasLayer/Node3/Label2.visible=true
 	$CanvasLayer/Node3/Label.visible=true
 	$CanvasLayer/Node3/Label3.visible=true
 	$CanvasLayer/Node3/continue.visible=true
