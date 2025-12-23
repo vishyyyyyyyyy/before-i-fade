@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=93 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -24,15 +24,40 @@
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="17_mbcyj"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="21_8vv5g"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_5hhqf"]
+[ext_resource type="Texture2D" uid="uid://unpmj47xi8ee" path="res://assets/kitchen1.png" id="23_lvvf4"]
 [ext_resource type="Script" uid="uid://dn58bui2th17a" path="res://scripts/kitchenexplore.gd" id="23_n55t6"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_q21mm"]
+[ext_resource type="Texture2D" uid="uid://d040sx4mvuqk4" path="res://assets/kitchen2.png" id="24_cieeo"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_mnhhk"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_1cet2"]
+[ext_resource type="Texture2D" uid="uid://dj48vpbal5yi3" path="res://assets/kitchen3.png" id="25_aj0r3"]
+[ext_resource type="Texture2D" uid="uid://dllleie8dya53" path="res://assets/kitchen4.png" id="26_d7r0a"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_j5uij"]
+[ext_resource type="Texture2D" uid="uid://mrjhghow33oy" path="res://assets/kitchen5.png" id="27_frf47"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_tpccs"]
+[ext_resource type="Texture2D" uid="uid://cwemow836riju" path="res://assets/kitchen6.png" id="28_1siqs"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_hxncp"]
+[ext_resource type="Texture2D" uid="uid://cns2v2bojd3og" path="res://assets/kitchen7.png" id="29_gho0h"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_w3dxo"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="30_cuqh1"]
+[ext_resource type="Texture2D" uid="uid://bu0uqqxk113is" path="res://assets/kitchen8.png" id="30_fbqej"]
+[ext_resource type="Texture2D" uid="uid://dfic8fec18jgp" path="res://assets/kitchen9.png" id="31_clwqs"]
+[ext_resource type="Texture2D" uid="uid://068bbfg1346y" path="res://assets/kitchen10.png" id="32_de2mg"]
+[ext_resource type="Texture2D" uid="uid://br864t7gogcfa" path="res://assets/kitchen11.png" id="33_swq8l"]
+[ext_resource type="Texture2D" uid="uid://8uvg2atghpbl" path="res://assets/kitchen12.png" id="34_r87tc"]
+[ext_resource type="Texture2D" uid="uid://de6o8p0y3h2m3" path="res://assets/kitchen13.png" id="35_xk64l"]
+[ext_resource type="Texture2D" uid="uid://ss4g2eadshlr" path="res://assets/kitchen14.png" id="36_igyye"]
+[ext_resource type="Texture2D" uid="uid://cgdejlvbn11so" path="res://assets/kitchen15.png" id="37_sh27m"]
+[ext_resource type="Texture2D" uid="uid://1iwvu0dayepg" path="res://assets/kitchen16.png" id="38_30fne"]
+[ext_resource type="Texture2D" uid="uid://bbi8qq4c01rtp" path="res://assets/kitchen17.png" id="39_hsv4d"]
+[ext_resource type="Texture2D" uid="uid://b7rnwbu6bhycx" path="res://assets/kitchen18.png" id="40_hx1yq"]
+[ext_resource type="Texture2D" uid="uid://514t6xjrqlvo" path="res://assets/kitchen19.png" id="41_5dipu"]
+[ext_resource type="Texture2D" uid="uid://bee4kvmpf2nu8" path="res://assets/kitchen.png" id="42_ggb88"]
+[ext_resource type="Texture2D" uid="uid://2jkabsqpxjj6" path="res://assets/kitchen20.png" id="43_1siqs"]
+[ext_resource type="Texture2D" uid="uid://dbaaxlukd6e41" path="res://assets/flour.png" id="44_gho0h"]
+[ext_resource type="Texture2D" uid="uid://b1j34kjg6uloh" path="res://assets/radish.png" id="45_fbqej"]
+[ext_resource type="Texture2D" uid="uid://clotbfr5lwm3c" path="res://assets/strawberry.png" id="46_clwqs"]
+[ext_resource type="Texture2D" uid="uid://d2wjrxdl11ir5" path="res://assets/spoon.png" id="53_cieeo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
 texture = ExtResource("1_mwmjw")
@@ -704,9 +729,6 @@ _data = {
 &"girl": SubResource("Animation_87bic")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp3y8"]
-size = Vector2(209.5, 49)
-
 [sub_resource type="Animation" id="Animation_j1h31"]
 resource_name = "girl"
 length = 8.0
@@ -844,6 +866,195 @@ _data = {
 &"boy": SubResource("Animation_psp1i"),
 &"girl": SubResource("Animation_j1h31")
 }
+
+[sub_resource type="Animation" id="Animation_lvvf4"]
+resource_name = "girl"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3/ghosttext/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3/ghosttext/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3/ghosttext/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3/ghosttext/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3/ghosttext/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3/ghosttext/Label3:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3/ghosttext/GirlGhost:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cieeo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_aj0r3"]
+resource_name = "boy"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3/ghosttext/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3/ghosttext/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3/ghosttext/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 7.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3/ghosttext/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3/ghosttext/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3/ghosttext/Label3:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3/ghosttext/BoyGhost:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7r0a"]
+_data = {
+&"RESET": SubResource("Animation_cieeo"),
+&"boy": SubResource("Animation_aj0r3"),
+&"girl": SubResource("Animation_lvvf4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp3y8"]
+size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f125y"]
 size = Vector2(327, 232)
@@ -1291,152 +1502,6 @@ theme_override_font_sizes/font_size = 32
 text = "Click object around the kitchen to investigate."
 horizontal_alignment = 1
 
-[node name="Node3" type="Node" parent="ghostlayer"]
-
-[node name="ColorRect" type="ColorRect" parent="ghostlayer/Node3"]
-visible = false
-z_index = 2
-offset_right = 2303.0
-offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
-
-[node name="Menucard" type="Sprite2D" parent="ghostlayer/Node3"]
-visible = false
-z_index = 3
-position = Vector2(1195, 566)
-scale = Vector2(7.94531, 7.94531)
-texture = ExtResource("21_8vv5g")
-
-[node name="Label2" type="Label" parent="ghostlayer/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -344.0
-offset_right = 236.0
-offset_bottom = -280.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("22_5hhqf")
-theme_override_font_sizes/font_size = 64
-text = "Puzzle"
-
-[node name="Label" type="Label" parent="ghostlayer/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -340.0
-offset_right = 274.0
-offset_bottom = -268.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("22_5hhqf")
-theme_override_font_sizes/font_size = 64
-text = "Puzzle"
-
-[node name="Label3" type="Label" parent="ghostlayer/Node3"]
-visible = false
-z_index = 3
-offset_left = 848.0
-offset_top = 452.0
-offset_right = 1543.0
-offset_bottom = 593.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("12_acu1m")
-theme_override_font_sizes/font_size = 24
-text = "Ghosts can see both the past and present at the same time. This drains thier energy greatly. Finish
-the puzzle before the time ends."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Timer" type="Sprite2D" parent="ghostlayer/Node3"]
-visible = false
-z_index = 2
-position = Vector2(128, 80)
-scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("23_q21mm")
-
-[node name="Label5" type="Label" parent="ghostlayer/Node3"]
-visible = false
-z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_acu1m")
-theme_override_font_sizes/font_size = 54
-text = "15.0"
-
-[node name="Timer2" type="Timer" parent="ghostlayer/Node3"]
-wait_time = 15.0
-one_shot = true
-
-[node name="Correct" type="Sprite2D" parent="ghostlayer/Node3"]
-visible = false
-z_index = 5
-position = Vector2(1262, 627)
-scale = Vector2(11.2539, 11.2539)
-texture = ExtResource("24_mnhhk")
-
-[node name="Wrong" type="Sprite2D" parent="ghostlayer/Node3"]
-visible = false
-z_index = 5
-position = Vector2(1258, 649)
-scale = Vector2(8.23438, 8.23438)
-texture = ExtResource("25_1cet2")
-
-[node name="continue" type="Area2D" parent="ghostlayer/Node3"]
-visible = false
-z_index = 3
-position = Vector2(245, 12)
-scale = Vector2(2, 2)
-script = ExtResource("26_j5uij")
-normal_texture = ExtResource("27_tpccs")
-hover_texture = ExtResource("28_hxncp")
-
-[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/Node3/continue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("27_tpccs")
-
-[node name="Label" type="Label" parent="ghostlayer/Node3/continue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("22_5hhqf")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/Node3/continue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_xp3y8")
-disabled = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/Node3"]
-stream = ExtResource("29_w3dxo")
-volume_db = 20.0
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer/Node3"]
-stream = ExtResource("30_cuqh1")
-volume_db = 20.0
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
@@ -1503,6 +1568,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -1537,6 +1603,433 @@ position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("11_88wuv")
 
+[node name="CanvasLayer4" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer4"]
+z_index = 2
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer4"]
+z_index = 2
+offset_left = -17.0
+offset_top = -2.0
+offset_right = 2313.0
+offset_bottom = 547.0
+color = Color(0.117647, 0.0431373, 0.152941, 0.701961)
+
+[node name="Kitchen" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("42_ggb88")
+
+[node name="Kitchen1" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("23_lvvf4")
+
+[node name="Kitchen2" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("24_cieeo")
+
+[node name="Kitchen3" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("25_aj0r3")
+
+[node name="Kitchen4" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("26_d7r0a")
+
+[node name="Kitchen5" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("27_frf47")
+
+[node name="Kitchen6" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("28_1siqs")
+
+[node name="Kitchen7" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("29_gho0h")
+
+[node name="Kitchen8" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("30_fbqej")
+
+[node name="Kitchen9" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("31_clwqs")
+
+[node name="Kitchen10" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("32_de2mg")
+
+[node name="Kitchen11" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("33_swq8l")
+
+[node name="Kitchen12" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("34_r87tc")
+
+[node name="Kitchen13" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("35_xk64l")
+
+[node name="Kitchen14" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("36_igyye")
+
+[node name="Kitchen15" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("37_sh27m")
+
+[node name="Kitchen16" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("38_30fne")
+
+[node name="Kitchen17" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("39_hsv4d")
+
+[node name="Kitchen18" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("40_hx1yq")
+
+[node name="Kitchen19" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("41_5dipu")
+
+[node name="Kitchen20" type="Sprite2D" parent="CanvasLayer4"]
+visible = false
+z_index = 1
+position = Vector2(1160.01, 584.999)
+scale = Vector2(0.800004, 0.704101)
+texture = ExtResource("43_1siqs")
+
+[node name="Flour" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 2
+position = Vector2(2033, 287)
+scale = Vector2(4.38721, 4.38721)
+texture = ExtResource("44_gho0h")
+
+[node name="Radish" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 2
+position = Vector2(1141, 268)
+scale = Vector2(3.54492, 3.54492)
+texture = ExtResource("45_fbqej")
+
+[node name="Strawberry" type="Sprite2D" parent="CanvasLayer4"]
+z_index = 3
+position = Vector2(352, 377)
+scale = Vector2(6.89063, 6.89063)
+texture = ExtResource("46_clwqs")
+
+[node name="Node3" type="Node" parent="CanvasLayer4"]
+
+[node name="ghosttext" type="AnimationPlayer" parent="CanvasLayer4/Node3"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_d7r0a")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer4/Node3/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -798.0
+offset_top = -94.0
+offset_right = 798.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"Me and my greedy friend were probably about to bake cookies.\"
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer4/Node3/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -102.0
+offset_right = 596.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"It's been so long since I had a cookie...\""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer4/Node3/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -102.0
+offset_right = 596.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "\"Maybe I can make some now?\""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/Node3/ghosttext"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("10_bs8bs")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/Node3/ghosttext"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("11_88wuv")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 2
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.768627)
+
+[node name="Menucard" type="Sprite2D" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 3
+position = Vector2(1195, 566)
+scale = Vector2(7.94531, 7.94531)
+texture = ExtResource("21_8vv5g")
+
+[node name="Label2" type="Label" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -344.0
+offset_right = 236.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("22_5hhqf")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label" type="Label" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -340.0
+offset_right = 274.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("22_5hhqf")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label3" type="Label" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 3
+offset_left = 848.0
+offset_top = 452.0
+offset_right = 1543.0
+offset_bottom = 593.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 24
+text = "Ghosts may alter the past, but every movement costs them a piece of their remaining existence. Finish the puzzle before the time ends "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Sprite2D" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 2
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("23_q21mm")
+
+[node name="Label5" type="Label" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 2
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 214.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 54
+text = "15.0"
+
+[node name="Label6" type="Label" parent="CanvasLayer4/Node3"]
+z_index = 2
+offset_left = 530.0
+offset_top = 1192.0
+offset_right = 1846.0
+offset_bottom = 1265.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("12_acu1m")
+theme_override_font_sizes/font_size = 32
+text = "Follow the recipie instructions to bake cookies"
+horizontal_alignment = 1
+
+[node name="Timer2" type="Timer" parent="CanvasLayer4/Node3"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Correct" type="Sprite2D" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("24_mnhhk")
+
+[node name="Wrong" type="Sprite2D" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 5
+position = Vector2(1258, 649)
+scale = Vector2(8.23438, 8.23438)
+texture = ExtResource("25_1cet2")
+
+[node name="continue" type="Area2D" parent="CanvasLayer4/Node3"]
+visible = false
+z_index = 3
+position = Vector2(245, 12)
+scale = Vector2(2, 2)
+script = ExtResource("26_j5uij")
+normal_texture = ExtResource("27_tpccs")
+hover_texture = ExtResource("28_hxncp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer4/Node3/continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("27_tpccs")
+
+[node name="Label" type="Label" parent="CanvasLayer4/Node3/continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("22_5hhqf")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer4/Node3/continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_xp3y8")
+disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer4/Node3"]
+stream = ExtResource("29_w3dxo")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer4/Node3"]
+stream = ExtResource("30_cuqh1")
+volume_db = 20.0
+
+[node name="Spoon" type="Sprite2D" parent="CanvasLayer4/Node3"]
+position = Vector2(3471, 591)
+scale = Vector2(5, 5)
+texture = ExtResource("53_cieeo")
+
 [node name="explore" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="explore"]
@@ -1550,21 +2043,25 @@ label_text = "Just an ordinary pink cabinet."
 position = Vector2(165, 319)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
 position = Vector2(814, 318)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
 position = Vector2(1520, 318)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
 position = Vector2(1838, 312)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="oven" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -1575,6 +2072,7 @@ label_text = "A one-of-a-kind, premium pink oven."
 position = Vector2(492.5, 315)
 shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="sink" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -1585,6 +2083,7 @@ label_text = "Is that the same sink from the bathroom?"
 position = Vector2(1156, 311)
 shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="fridge" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -1594,6 +2093,7 @@ script = ExtResource("23_n55t6")
 position = Vector2(2145.25, 207.5)
 shape = SubResource("RectangleShape2D_fr5pv")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="chair" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -1604,11 +2104,13 @@ label_text = "2 chairs."
 position = Vector2(957, 939)
 shape = SubResource("CapsuleShape2D_k0mf2")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/chair"]
 position = Vector2(1321, 929)
 shape = SubResource("CapsuleShape2D_k0mf2")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="island" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -1656,7 +2158,9 @@ shape = SubResource("RectangleShape2D_cwf2y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
 position = Vector2(1141.5, 128)
 shape = SubResource("RectangleShape2D_vpxcu")
+metadata/_edit_lock_ = true
 
-[connection signal="mouse_entered" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="ghostlayer/Node3/continue" to="ghostlayer/Node3/continue" method="_on_mouse_shape_exited"]
+[connection signal="timeout" from="CanvasLayer4/Node3/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_shape_exited"]

@@ -3,15 +3,20 @@ extends Node2D
 @onready var narration_label: Label = $ghostlayer/explorelabel
 @onready var explore_node: Node = $explore
 var clicked_objects := {} 
+var time_left_seconds
 
 func _ready() -> void:
 	Global.reusabledesk += 1
 	unlock_explore()
+	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	#$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	#$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	#$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
 	#start()
 	#
+func _process(delta: float) -> void:
+	time_left_seconds = $CanvasLayer4/Node3/Timer2.time_left
+	$CanvasLayer4/Node3/Label5.text = "%.1f" % time_left_seconds
 #func start():
 	#if Global.character == "boyGhost":
 		#$ghostlayer/ghosttext1.play("boy")
@@ -59,7 +64,7 @@ func unlock_explore():
 	$explore/CanvasLayer/fridge/CollisionShape2D.disabled=false
 	$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
 	$explore/CanvasLayer/island/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
+	$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
 	
 	$ghostlayer/explorelabel.visible=true
 	
@@ -90,41 +95,41 @@ func _on_object_clicked(text: String, area_name: String):
 	narration_label.text = text
 	narration_label.visible = true
 	
-	if area_name == "fridge":
-		$CanvasLayer2/CanvasModulate/TileMap3.visible=true
-		$CanvasLayer2/CanvasModulate/Fridge.visible=true
-		$ghostlayer/explorelabel.visible=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=true
-		$explore/CanvasLayer/oven/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/sink/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/island/CollisionShape2D.disabled=true
-		if Global.character =="boyGhost":
-			$CanvasLayer2/CanvasModulate/AnimationPlayer.play("boy")
-		if Global.character =="girlGhost":
-			$CanvasLayer2/CanvasModulate/AnimationPlayer.play("girl")
-		await $CanvasLayer2/CanvasModulate/AnimationPlayer.animation_finished
-		$ghostlayer/explorelabel.visible=true
-		$CanvasLayer2/CanvasModulate/TileMap3.visible=false
-		$CanvasLayer2/CanvasModulate/Fridge.visible=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=false
-		$explore/CanvasLayer/oven/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/sink/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/island/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
-		
+	#if area_name == "fridge":
+		#$CanvasLayer2/CanvasModulate/TileMap3.visible=true
+		#$CanvasLayer2/CanvasModulate/Fridge.visible=true
+		#$ghostlayer/explorelabel.visible=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=true
+		#$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=true
+		#$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=true
+		#$explore/CanvasLayer/oven/CollisionShape2D.disabled=true
+		#$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=true
+		#$explore/CanvasLayer/sink/CollisionShape2D.disabled=true
+		#$explore/CanvasLayer/fridge/CollisionShape2D.disabled=true
+		#$explore/CanvasLayer/chair/CollisionShape2D.disabled=true
+		#$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
+		#$explore/CanvasLayer/island/CollisionShape2D.disabled=true
+		#if Global.character =="boyGhost":
+			#$CanvasLayer2/CanvasModulate/AnimationPlayer.play("boy")
+		#if Global.character =="girlGhost":
+			#$CanvasLayer2/CanvasModulate/AnimationPlayer.play("girl")
+		#await $CanvasLayer2/CanvasModulate/AnimationPlayer.animation_finished
+		#$ghostlayer/explorelabel.visible=true
+		#$CanvasLayer2/CanvasModulate/TileMap3.visible=false
+		#$CanvasLayer2/CanvasModulate/Fridge.visible=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=false
+		#$explore/CanvasLayer/oven/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/sink/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/fridge/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/island/CollisionShape2D.disabled=false
+		#$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
+		#
 	# If desk clicked after everything else, trigger scene change
 	if area_name == "island" and all_non_photos_clicked():
 		print("yes")
@@ -138,12 +143,24 @@ func _on_object_clicked(text: String, area_name: String):
 		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=true
 		$explore/CanvasLayer/chair/CollisionShape2D.disabled=true
 		$explore/CanvasLayer/island/CollisionShape2D.disabled=true
+		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
 		$ghostlayer/explorelabel.visible=false
-		#if Global.character == "girlGhost":
-
-		#if Global.character == "boyGhost":
+		$CanvasLayer4/ColorRect2.visible=true
+		$CanvasLayer4/Kitchen.visible=true
+		if Global.character == "girlGhost":
+			$CanvasLayer4/Node3/ghosttext.play("girl")
+		if Global.character == "boyGhost":
+			$CanvasLayer4/Node3/ghosttext.play("boy")
+		await $CanvasLayer4/Node3/ghosttext.animation_finished
+		$CanvasLayer4/Node3/ColorRect.visible=true
+		$CanvasLayer4/Node3/Menucard.visible=true
+		$CanvasLayer4/Node3/Label2.visible=true
+		$CanvasLayer4/Node3/Label.visible=true
+		$CanvasLayer4/Node3/Label3.visible=true
+		$CanvasLayer4/Node3/continue/CollisionShape2D.disabled=false
+		$CanvasLayer4/Node3/continue.visible=true
 		
-			
+		
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["cabinet", "oven", "sink", "fridge", "chair"]
 	for name in non_desk:
@@ -151,7 +168,21 @@ func all_non_photos_clicked() -> bool:
 			return false
 	return true
 
-
-
-		
+func on_button_pressed():
+	$CanvasLayer4/Node3/Timer.visible=true
+	$CanvasLayer4/Node3/Label5.visible=true
+	$CanvasLayer4/Node3/Label6.visible=true
+	$CanvasLayer4/Node3/Timer2.start()
+	$CanvasLayer4/ColorRect3.visible=true
 	
+func kitchenpuzzle():
+	pass
+
+
+func _on_timer_2_timeout() -> void:
+	print("lose")
+	$CanvasLayer4/Node3/Timer2.stop
+	$CanvasLayer4/Node3/Wrong.visible=true
+	$CanvasLayer4/Node3/AudioStreamPlayer2.play()
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer4/Node3/Wrong.visible.visible=false
