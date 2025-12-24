@@ -65,7 +65,10 @@ func check_solution():
 			print("🎉 ALL SOLUTIONS COMPLETE")
 			$"../Correct".visible=true
 			$"../AudioStreamPlayer".play()
+			$"../Timer2".stop()
 			await get_tree().create_timer(2).timeout
+			$"../Timer".visible=false
+			$"../Label8".visible=false
 			$"../Correct".visible=false
 			disablecollisionshape()
 			emit_signal("challengecompleted")

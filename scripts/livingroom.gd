@@ -19,41 +19,43 @@ func _process(delta: float) -> void:
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
 
 func text():
-	#if Global.character =="girlGhost":
-		#$ghostlayer/ghosttext1.play("girl")
-	#if Global.character == "boyGhost":
-		#$ghostlayer/ghosttext1.play("boy")
-	#await $ghostlayer/ghosttext1.animation_finished
-	#modulatelivingroom()
+	if Global.character =="girlGhost":
+		$ghostlayer/ghosttext1.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext1.play("boy")
+	await $ghostlayer/ghosttext1.animation_finished
+	modulatelivingroom()
 	await modulatelivingroom()
 	
 func modulatelivingroom():
-	#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
-	#$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
-	#$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
-	#await get_tree().create_timer(0.5).timeout
-	#$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
-	#$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-	#$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
-	#await get_tree().create_timer(0.5).timeout
-	#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
-	#$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
-	#$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
-	#if Global.character == "boyGhost":
-		#$ghostlayer/extext.play("boy")
-		#await $ghostlayer/extext.animation_finished
-		#$ghostlayer/ghosttext2.play("boy")
-		#await $ghostlayer/ghosttext2.animation_finished
-	#if Global.character == "girlGhost":
-		#$ghostlayer/extext.play("girl")
-		#await $ghostlayer/extext.animation_finished
-		#$ghostlayer/ghosttext2.play("girl")
-		#await $ghostlayer/ghosttext2.animation_finished
-		#$ghostlayer/explorelabel.visible=true
-		#unlockexplore()
-		challenge()
+	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
+	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
+	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
+	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
+	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	if Global.character == "boyGhost":
+		$ghostlayer/extext.play("boy")
+		await $ghostlayer/extext.animation_finished
+		$ghostlayer/ghosttext2.play("boy")
+		await $ghostlayer/ghosttext2.animation_finished
+		$ghostlayer/explorelabel.visible=true
+		unlockexplore()
+	if Global.character == "girlGhost":
+		$ghostlayer/extext.play("girl")
+		await $ghostlayer/extext.animation_finished
+		$ghostlayer/ghosttext2.play("girl")
+		await $ghostlayer/ghosttext2.animation_finished
+		$ghostlayer/explorelabel.visible=true
+		unlockexplore()
 
 func unlockexplore():
+	$ghostlayer/explorelabel.visible=true
 	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=false
 	$explore/CanvasLayer/clock/CollisionShape2D.disabled=false
 	$explore/CanvasLayer/couch/CollisionShape2D.disabled=false
@@ -121,11 +123,11 @@ func challenge():
 	$ghostlayer/Label2.visible=true
 	$ghostlayer/Label3.visible=true
 	$ghostlayer/Label4.visible=true
-	#if Global.character == "boyGhost":
-		#$ghostlayer/ghosttext3.play("boy")
-	#if Global.character == "girlGhost":
-		#$ghostlayer/ghosttext3.play("girl")
-	#await $ghostlayer/ghosttext3.animation_finished
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext3.play("boy")
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext3.play("girl")
+	await $ghostlayer/ghosttext3.animation_finished
 	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/Menucard.visible=true
 	$ghostlayer/Label5.visible=true
@@ -160,6 +162,11 @@ func pressed():
 	$ghostlayer/pianokeys/CollisionShape2D9.disabled=false
 	
 func challengecompleted():
+	$ghostlayer/Label.visible=false
+	$ghostlayer/Label2.visible=false
+	$ghostlayer/Label3.visible=false
+	$ghostlayer/Label4.visible=false
+	$ghostlayer/Label9.visible=false
 	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=true
 	$explore/CanvasLayer/clock/CollisionShape2D.disabled=true
 	$explore/CanvasLayer/couch/CollisionShape2D.disabled=true
@@ -168,6 +175,7 @@ func challengecompleted():
 	$explore/CanvasLayer/rug/CollisionShape2D.disabled=true
 	$explore/CanvasLayer/flower/CollisionShape2D.disabled=true
 	$explore/CanvasLayer/piano/CollisionShape2D.disabled=true
+	$ghostlayer/pianokeys/CollisionShape2D6/ColorRect.visible=false
 	$ghostlayer/Correct.visible=false
 	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/Diarypage.visible=true
@@ -180,5 +188,31 @@ func challengecompleted():
 	$ghostlayer/Label10.visible=false
 	$ghostlayer/Label11.visible=false
 	$ghostlayer/Label12.visible=false
-	
+	$ghostlayer/blobGhostPlayer.position.x = 2128
+	$ghostlayer/blobGhostPlayer.position.y = 399
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext4.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext4.play("boy")
+	await $ghostlayer/ghosttext4.animation_finished
+	$CanvasLayer3/CanvasModulate/Tv.visible=true
+	$ghostlayer/blobGhostPlayer.position.x = 2128
+	$ghostlayer/blobGhostPlayer.position.y = 399
+	$ghostlayer/Music.visible=false
+	$ghostlayer/Music2.visible=false
+	$ghostlayer/Music3.visible=false
+	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
+	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
+	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
+	Global.livingroom = 1
+	$ghostlayer/Label14.visible=true
 	
