@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=101 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="15_c2g0u"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="15_gaq0e"]
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
+[ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="16_qr1ii"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Script" uid="uid://des6a3n5gl1xa" path="res://scripts/present_tile.gd" id="18_tbr22"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
@@ -142,6 +143,43 @@ size = Vector2(1534.67, 118)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcjub"]
 radius = 35.4565
 height = 180.0
+
+[sub_resource type="Animation" id="Animation_mc686"]
+resource_name = "phone"
+length = 8.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2.03333, 2.76667, 3.03333, 3.28333, 3.53333, 3.86667, 4.11667, 4.36667, 4.61667, 5.46667, 5.71667, 5.96667, 6.21667, 6.46667, 6.76667, 7.01667, 7.26667, 7.51667, 7.81667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799]
+}
+
+[sub_resource type="Animation" id="Animation_4kitr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyk23"]
+_data = {
+&"RESET": SubResource("Animation_4kitr"),
+&"phone": SubResource("Animation_mc686")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbr22"]
 size = Vector2(219, 212)
@@ -1514,6 +1552,19 @@ disabled = true
 z_index = 2
 position = Vector2(158, 840)
 scale = Vector2(4, 4)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
+root_node = NodePath("Phone")
+libraries = {
+&"": SubResource("AnimationLibrary_qyk23")
+}
+
+[node name="Phone" type="Sprite2D" parent="CanvasLayer3/AnimationPlayer2"]
+visible = false
+position = Vector2(1318, 582)
+rotation = 0.261799
+scale = Vector2(8.98259, 8.98259)
+texture = ExtResource("16_qr1ii")
 
 [node name="TileMap3" type="TileMap" parent="CanvasLayer3"]
 visible = false

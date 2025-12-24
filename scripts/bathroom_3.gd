@@ -42,7 +42,10 @@ func _ready() -> void:
 	$CanvasLayer4/CanvasModulate2.color = Color(1,1,1,1)
 	await get_tree().create_timer(0.5).timeout
 	$AudioStreamPlayer.play()
+	$CanvasLayer3/AnimationPlayer2.play("phone")
+	$CanvasLayer3/AnimationPlayer2/Phone.visible=true
 	await $AudioStreamPlayer.finished
+	$CanvasLayer3/AnimationPlayer2/Phone.visible=false
 	friendCall()
 	await get_tree().create_timer(16).timeout
 	if (Global.character == "girlGhost"):
