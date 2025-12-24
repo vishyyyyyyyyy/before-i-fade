@@ -1,0 +1,438 @@
+[gd_scene load_steps=11 format=3 uid="uid://7t53o3dj0qbw"]
+
+[ext_resource type="Script" uid="uid://dh38qqg8q2e4f" path="res://scripts/endingandcreds.gd" id="1_wvc7n"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="2_p36n8"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="3_5ue1b"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="4_hr0jj"]
+
+[sub_resource type="Animation" id="Animation_mvr4j"]
+resource_name = "countdown"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("countdown/Label3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("countdown/Label4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("countdown/Label5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("countdown/Label6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("countdown/Label7:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_c85ov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("countdown/Label3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("countdown/Label4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("countdown/Label5:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("countdown/Label6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("countdown/Label7:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3yiw"]
+_data = {
+&"RESET": SubResource("Animation_c85ov"),
+&"countdown": SubResource("Animation_mvr4j")
+}
+
+[sub_resource type="Animation" id="Animation_wvc7n"]
+resource_name = "type"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../subtitle:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_p36n8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../subtitle:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ue1b"]
+_data = {
+&"RESET": SubResource("Animation_p36n8"),
+&"type": SubResource("Animation_wvc7n")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wvc7n")
+
+[node name="Menucard" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(1170, 642)
+scale = Vector2(9.88086, 10.2381)
+texture = ExtResource("2_p36n8")
+
+[node name="ending1" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="ending1"]
+visible = false
+z_index = 1
+offset_left = 862.0
+offset_top = 365.0
+offset_right = 1483.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Ending 1:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ending1"]
+visible = false
+z_index = 1
+offset_left = 853.0
+offset_top = 369.0
+offset_right = 1474.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Ending 1:"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="ending1"]
+visible = false
+z_index = 2
+offset_left = 788.0
+offset_top = 607.0
+offset_right = 1551.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_hr0jj")
+theme_override_font_sizes/font_size = 24
+text = "You saw the truth and let it be. Time moved forward, and knowing how you died was all you needed to remain at peace."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="subtitle2" type="Label" parent="ending1"]
+visible = false
+z_index = 2
+offset_left = 858.0
+offset_top = 495.0
+offset_right = 1458.0
+offset_bottom = 546.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_hr0jj")
+theme_override_font_sizes/font_size = 32
+text = "A quiet knowing: (1/2)"
+horizontal_alignment = 1
+
+[node name="ending2" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="ending2"]
+visible = false
+z_index = 1
+offset_left = 862.0
+offset_top = 365.0
+offset_right = 1483.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Ending 2:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ending2"]
+visible = false
+z_index = 1
+offset_left = 853.0
+offset_top = 369.0
+offset_right = 1474.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Ending 2:"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="ending2"]
+visible = false
+z_index = 2
+offset_left = 788.0
+offset_top = 607.0
+offset_right = 1551.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_hr0jj")
+theme_override_font_sizes/font_size = 24
+text = "You saw the truth and could not let it be. Time hesitated, and knowing how you died made staying still impossible."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="subtitle2" type="Label" parent="ending2"]
+visible = false
+z_index = 2
+offset_left = 858.0
+offset_top = 495.0
+offset_right = 1458.0
+offset_bottom = 546.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_hr0jj")
+theme_override_font_sizes/font_size = 32
+text = "A second breath: (2/2)"
+horizontal_alignment = 1
+
+[node name="countdown" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y3yiw")
+}
+
+[node name="Label3" type="Label" parent="countdown"]
+z_index = 1
+offset_left = 1890.0
+offset_top = 1176.0
+offset_right = 2511.0
+offset_bottom = 1323.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "5
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="countdown"]
+z_index = 1
+offset_left = 1890.0
+offset_top = 1176.0
+offset_right = 2511.0
+offset_bottom = 1323.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "4"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="countdown"]
+z_index = 1
+offset_left = 1890.0
+offset_top = 1176.0
+offset_right = 2511.0
+offset_bottom = 1323.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "3"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="countdown"]
+z_index = 1
+offset_left = 1890.0
+offset_top = 1176.0
+offset_right = 2511.0
+offset_bottom = 1323.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "2"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="countdown"]
+z_index = 1
+offset_left = 1890.0
+offset_top = 1176.0
+offset_right = 2511.0
+offset_bottom = 1323.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "1"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117182, 0.0425973, 0.151198, 1)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("Label")
+libraries = {
+&"": SubResource("AnimationLibrary_5ue1b")
+}
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+z_index = 1
+offset_left = 862.0
+offset_top = 173.0
+offset_right = 1483.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="AnimationPlayer"]
+z_index = 1
+offset_left = 853.0
+offset_top = 177.0
+offset_right = 1474.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="AnimationPlayer"]
+z_index = 2
+offset_left = 788.0
+offset_top = 335.0
+offset_right = 1551.0
+offset_bottom = 1195.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("4_hr0jj")
+theme_override_font_sizes/font_size = 24
+text = "Created by:
+Vishalya Sairam and Aadityan Anbumani
+
+Art & Assets:
+Vishalya Sairam
+
+Music & Sound:
+Phone Ringing — Dragon Studio
+Story of Maple — Final Gate Studios
+Correct Buzzer — u_a5z4rtk6yn
+Incorrect Buzzer — logicallism
+Piano notes — u_c58whxla22
+
+Fonts:
+Pixel Operator —  Webfontfree
+
+Made with love in Godot
+
+
+Time keeps moving."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 22
+visible_characters = 0
+visible_ratio = 0.0
