@@ -24,7 +24,7 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		clear_screen()
 		add_screen()
-		await get_tree().create_timer(10).timeout
+		await get_tree().create_timer(7).timeout
 		clear_screen2()
 		add_screen2()
 

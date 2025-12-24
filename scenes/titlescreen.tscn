@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddp06h4s7fxje"]
+
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="1_tt55a"]
+[ext_resource type="Texture2D" uid="uid://dg275asuk42en" path="res://assets/ghost1.png" id="2_t7v6v"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="3_vhbaf"]
+
+[node name="title image" type="Node"]
+
+[node name="Menucard" type="Sprite2D" parent="."]
+position = Vector2(1148, -123)
+scale = Vector2(26.2969, 26.2969)
+texture = ExtResource("1_tt55a")
+
+[node name="Ghost1" type="Sprite2D" parent="."]
+position = Vector2(1160, 834)
+scale = Vector2(5.45672, 5.45672)
+texture = ExtResource("2_t7v6v")
+
+[node name="Title" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Title"]
+z_index = 1
+offset_left = 632.0
+offset_top = 150.0
+offset_right = 1772.0
+offset_bottom = 473.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_vhbaf")
+theme_override_font_sizes/font_size = 160
+text = "Before I
+Fade"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Title"]
+z_index = 1
+offset_left = 613.0
+offset_top = 157.0
+offset_right = 1753.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_vhbaf")
+theme_override_font_sizes/font_size = 160
+text = "Before I
+Fade"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
