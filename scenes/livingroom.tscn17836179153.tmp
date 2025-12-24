@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=71 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -20,31 +20,14 @@
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="16_tj75g"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_tlixj"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_306lt"]
-[ext_resource type="AudioStream" uid="uid://di6psi522y8vv" path="res://assets/audio/c.mp3" id="18_bng4i"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="18_rq2ij"]
-[ext_resource type="AudioStream" uid="uid://dk0u74yn1kkcd" path="res://assets/audio/d.mp3" id="19_dg5mc"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="19_l0d4q"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="20_8wvgp"]
-[ext_resource type="AudioStream" uid="uid://bfy73xa482d6w" path="res://assets/audio/e.mp3" id="20_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://b4vrigcy0mnwp" path="res://assets/characters/boy 2.png" id="21_2anki"]
-[ext_resource type="AudioStream" uid="uid://4rjbqcqltpw8" path="res://assets/audio/f.mp3" id="21_u7681"]
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="22_tj75g"]
-[ext_resource type="AudioStream" uid="uid://c2om86gun5y40" path="res://assets/audio/g.mp3" id="22_x6klw"]
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="23_2n8s8"]
-[ext_resource type="AudioStream" uid="uid://b4ikym1wth3cn" path="res://assets/audio/a.mp3" id="23_ciqo4"]
 [ext_resource type="Texture2D" uid="uid://ti2kciknesb2" path="res://assets/characters/girl3.png" id="24_mhao1"]
-[ext_resource type="AudioStream" uid="uid://d06ati6ujtqxn" path="res://assets/audio/b.mp3" id="24_vdshs"]
 [ext_resource type="Script" uid="uid://dnok83lpeteey" path="res://scripts/livingroomexplore.gd" id="26_8wvgp"]
-[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="27_4gjkn"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="28_t4ss2"]
-[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_d61ai"]
-[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_trqwp"]
-[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="31_y0t83"]
-[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="32_hh60n"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="33_wfb7x"]
-[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="34_bng4i"]
-[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="35_dg5mc"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="36_xnj5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -1259,9 +1242,6 @@ _data = {
 &"girl": SubResource("Animation_tj75g")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7681"]
-size = Vector2(209.5, 49)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2anki"]
 size = Vector2(314, 469)
 
@@ -1387,7 +1367,6 @@ position = Vector2(192, 869)
 scale = Vector2(3, 3)
 
 [node name="Music" type="Sprite2D" parent="ghostlayer"]
-visible = false
 position = Vector2(1182, 638)
 scale = Vector2(0.804001, 0.720001)
 texture = ExtResource("15_xddai")
@@ -1504,7 +1483,6 @@ script = ExtResource("16_2anki")
 position = Vector2(-1370.65, 350.625)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_soh4j")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D"]
 visible = false
@@ -1512,18 +1490,12 @@ offset_left = -124.0
 offset_top = -319.0
 offset_right = 134.0
 offset_bottom = 323.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D"]
-stream = ExtResource("18_bng4i")
-volume_db = 15.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(-1049.75, 350.694)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n1eef")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D2"]
 visible = false
@@ -1531,18 +1503,12 @@ offset_left = -192.0
 offset_top = -331.0
 offset_right = 181.0
 offset_bottom = 330.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D2"]
-stream = ExtResource("19_dg5mc")
-volume_db = 15.0
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(-733.83, 350.625)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_soh4j")
-disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D3"]
@@ -1551,18 +1517,12 @@ offset_left = -132.0
 offset_top = -317.0
 offset_right = 134.0
 offset_bottom = 326.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D3"]
-stream = ExtResource("20_xnj5d")
-volume_db = 15.0
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(-465.174, 350.625)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_soh4j")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D4"]
 visible = false
@@ -1570,18 +1530,12 @@ offset_left = -141.0
 offset_top = -310.0
 offset_right = 133.0
 offset_bottom = 322.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D4"]
-stream = ExtResource("21_u7681")
-volume_db = 15.0
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(-131.853, 349.774)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pnfql")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D5"]
 visible = false
@@ -1589,18 +1543,12 @@ offset_left = -192.0
 offset_top = -331.0
 offset_right = 195.0
 offset_bottom = 330.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D5"]
-stream = ExtResource("22_x6klw")
-volume_db = 15.0
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(263.681, 350)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o5dpf")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D6"]
 visible = false
@@ -1608,18 +1556,12 @@ offset_left = -192.0
 offset_top = -331.0
 offset_right = 181.0
 offset_bottom = 330.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D6"]
-stream = ExtResource("23_ciqo4")
-volume_db = 15.0
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(607.586, 353.472)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_go1yk")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D7"]
 visible = false
@@ -1627,18 +1569,12 @@ offset_left = -155.0
 offset_top = -337.0
 offset_right = 156.0
 offset_bottom = 324.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D7"]
-stream = ExtResource("24_vdshs")
-volume_db = 15.0
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(900.496, 354.166)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4gjkn")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D8"]
 visible = false
@@ -1646,19 +1582,12 @@ offset_left = -137.0
 offset_top = -314.0
 offset_right = 142.0
 offset_bottom = 323.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D8"]
-stream = ExtResource("18_bng4i")
-volume_db = 15.0
-pitch_scale = 2.0
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="ghostlayer/pianokeys"]
 position = Vector2(1218.28, 352.083)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t4ss2")
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D9"]
 visible = false
@@ -1666,13 +1595,7 @@ offset_left = -171.0
 offset_top = -337.0
 offset_right = 216.0
 offset_bottom = 324.0
-mouse_filter = 2
 color = Color(0.917647, 0.619608, 0.0784314, 0.423529)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/pianokeys/CollisionShape2D9"]
-stream = ExtResource("19_dg5mc")
-volume_db = 15.0
-pitch_scale = 2.0
 
 [node name="ghosttext1" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -2268,242 +2191,6 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="ghostlayer"]
-visible = false
-z_index = 2
-offset_right = 2303.0
-offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.768627)
-
-[node name="Menucard" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 3
-position = Vector2(1195, 566)
-scale = Vector2(7.94531, 7.94531)
-texture = ExtResource("27_4gjkn")
-
-[node name="Label5" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -344.0
-offset_right = 236.0
-offset_bottom = -280.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Puzzle"
-
-[node name="Label6" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -340.0
-offset_right = 274.0
-offset_bottom = -268.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Puzzle"
-
-[node name="Label7" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-offset_left = 848.0
-offset_top = 452.0
-offset_right = 1543.0
-offset_bottom = 593.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 24
-text = "Ghosts may alter the past, but every movement costs them a piece of their remaining existence. Finish the puzzle before the time ends."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Timer" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 2
-position = Vector2(128, 80)
-scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("28_t4ss2")
-
-[node name="Label8" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 54
-text = "30.0"
-
-[node name="Label9" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 2
-offset_left = 530.0
-offset_top = 1192.0
-offset_right = 1846.0
-offset_bottom = 1265.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 32
-text = "Play the notes in the correct order on the piano."
-horizontal_alignment = 1
-
-[node name="Timer2" type="Timer" parent="ghostlayer"]
-wait_time = 30.0
-one_shot = true
-
-[node name="Correct" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 5
-position = Vector2(1262, 627)
-scale = Vector2(11.2539, 11.2539)
-texture = ExtResource("29_d61ai")
-
-[node name="Wrong" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 5
-position = Vector2(1258, 649)
-scale = Vector2(8.23438, 8.23438)
-texture = ExtResource("30_trqwp")
-
-[node name="continue" type="Area2D" parent="ghostlayer"]
-visible = false
-z_index = 3
-position = Vector2(245, 12)
-scale = Vector2(2, 2)
-script = ExtResource("31_y0t83")
-normal_texture = ExtResource("32_hh60n")
-hover_texture = ExtResource("33_wfb7x")
-
-[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/continue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("32_hh60n")
-
-[node name="Label" type="Label" parent="ghostlayer/continue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("16_tj75g")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/continue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_u7681")
-disabled = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
-stream = ExtResource("34_bng4i")
-volume_db = 20.0
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
-stream = ExtResource("35_dg5mc")
-volume_db = 20.0
-
-[node name="Diarypage" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 3
-position = Vector2(1199, 406.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("36_xnj5d")
-
-[node name="Label10" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -502.75
-offset_right = 348.0
-offset_bottom = -438.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label11" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -498.75
-offset_right = 342.0
-offset_bottom = -426.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label12" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-offset_left = 755.0
-offset_top = 592.25
-offset_right = 1616.0
-offset_bottom = 655.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #5
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label13" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 5
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -101.0
-offset_right = 596.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 32
-text = "Exit the living room to read the new diary entry."
-horizontal_alignment = 1
-
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
@@ -2670,8 +2357,3 @@ position = Vector2(67, 27.4063)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_24a1y")
 metadata/_edit_lock_ = true
-
-[connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/pianokeys" method="_on_timer_2_timeout"]
-[connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]
