@@ -7,6 +7,7 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	$CanvasLayer3/CanvasModulate/Tv.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
@@ -43,10 +44,19 @@ func modulatelivingroom():
 		#await $ghostlayer/extext.animation_finished
 		#$ghostlayer/ghosttext2.play("girl")
 		#await $ghostlayer/ghosttext2.animation_finished
-		$ghostlayer/explorelabel.visible=true
-		unlockexplore()
+		#$ghostlayer/explorelabel.visible=true
+		#unlockexplore()
+		challenge()
 
 func unlockexplore():
+	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/clock/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/couch/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/table/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/tv/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/rug/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/flower/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/piano/CollisionShape2D.disabled=false
 	
 	var areas = {
 		"bookshelf": $explore/CanvasLayer/bookshelf,
@@ -80,6 +90,7 @@ func _on_object_clicked(text: String, area_name: String):
 	
 	if area_name == "piano" and all_non_photos_clicked():
 		print("yes")
+		challenge()
 	
 		
 func all_non_photos_clicked() -> bool:
@@ -88,3 +99,21 @@ func all_non_photos_clicked() -> bool:
 		if not clicked_objects.has(name): 
 			return false
 	return true
+
+func challenge():
+	$ghostlayer/explorelabel.visible=false
+	$CanvasLayer3/CanvasModulate/Tv.visible=false
+	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/clock/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/couch/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/table/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/tv/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/rug/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/flower/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/piano/CollisionShape2D.disabled=true
+	$ghostlayer/Music.visible=true
+	#if Global.character == "boyGhost":
+		#$ghostlayer/ghosttext3.play("boy")
+	#if Global.character == "girlGhost":
+		#$ghostlayer/ghosttext3.play("girl")
+	#await $ghostlayer/ghosttext3.animation_finished
