@@ -222,7 +222,7 @@ func combpress():
 		$CanvasLayer3/Label7.visible=true
 	if Global.character=="boyGhost":
 		$CanvasLayer3/ghosttalk3.play("boyghost")
-		$CanvasLayer3/blobGhostPlayer.positionx=2000
+		$CanvasLayer3/blobGhostPlayer.position.x=1800
 		await $"CanvasLayer3/ghosttalk3".animation_finished
 		$CanvasLayer3/TileMap3.visible=false
 		$CanvasLayer3/comb.visible=true

@@ -7,6 +7,7 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	Global.reusablehallway =5
 	$CanvasLayer3/CanvasModulate/Tv.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 

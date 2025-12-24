@@ -1,5 +1,6 @@
 extends Node2D
 
+
 func _ready() -> void:
 	$CanvasLayer5/Label.visible=true
 	$desk.diaryentry2.connect(diaryentry2)
@@ -29,13 +30,14 @@ func diaryentry3():
 		$CanvasLayer4/Area2D.visible=true
 		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+		Global.reusablehallway = 1
 	if Global.character=="girlGhost":
 		$CanvasLayer4/diaryentry3.play("girltext")
 		await $CanvasLayer4/diaryentry3.animation_finished
 		$CanvasLayer4/Area2D.visible=true
 		$desk/CollisionPolygon2D.disabled=true
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-	Global.reusablehallway = 1
+		Global.reusablehallway = 1
 
 
 func diaryentry4():
@@ -47,6 +49,7 @@ func diaryentry4():
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 		$CanvasLayer5/Label4.visible=true
 		$SceneTrigger/CollisionShape2D.disabled=true
+		Global.reusablehallway = 4
 	if Global.character=="girlGhost":
 		$CanvasLayer4/diaryentry4.play("girl")
 		await $CanvasLayer4/diaryentry4.animation_finished
@@ -55,4 +58,4 @@ func diaryentry4():
 		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 		$CanvasLayer5/Label4.visible=true
 		$SceneTrigger/CollisionShape2D.disabled=true
-	Global.reusablehallway = 4
+		Global.reusablehallway = 4

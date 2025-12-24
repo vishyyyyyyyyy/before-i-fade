@@ -155,6 +155,25 @@ theme_override_font_sizes/font_size = 32
 text = "Enter the livingroom."
 horizontal_alignment = 1
 
+[node name="Label13" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 5
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -101.0
+offset_right = 596.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_wvfco")
+theme_override_font_sizes/font_size = 32
+text = "Exit the living room to read the new diary entry."
+horizontal_alignment = 1
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]

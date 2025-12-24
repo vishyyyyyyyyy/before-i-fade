@@ -210,6 +210,7 @@ func _on_button_pressed():
 	$CanvasLayer/Node3/Timer.visible=true
 	$CanvasLayer/Node3/Label5.visible=true
 	$CanvasLayer/puzzle.visible=true
+	$CanvasLayer/Label8.visible=true
 	if Global.character== "girlGhost":
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
 		$CanvasLayer3/CanvasModulate/Boyframe5.visible=true
@@ -224,6 +225,7 @@ func _on_button_pressed():
 		$CanvasLayer/puzzle/pieces/piece14.texture = load("res://assets/hallwayPuzzlePics/girlframeTopRight.png")
 		$CanvasLayer/puzzle/pieces/piece15.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomLeft.png")
 		$CanvasLayer/puzzle/pieces/piece16.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomRight.png")
+		
 
 		
 	
@@ -278,7 +280,10 @@ func resetpuzzle():
 	$CanvasLayer/Node3/Timer2.start()
 	
 func afterpuzzle():
+	$CanvasLayer/Label8.visible=false
 	await get_tree().create_timer(2).timeout
+	$CanvasLayer/Node3/Timer.visible=false
+	$CanvasLayer/Node3/Label5.visible=false
 	$CanvasLayer/Node3/Correct.visible=false
 	$CanvasLayer/puzzle.visible=false
 	$CanvasLayer/Node3/ColorRect.visible=true
@@ -302,6 +307,7 @@ func afterpuzzle():
 	$CanvasLayer/Friendframe.visible=true
 	$CanvasLayer/Neigborframe.visible=true
 	$CanvasLayer/TileMap3.visible=true
+	$CanvasLayer/TileMap3.modulate=Color(0.0, 0.992, 0.816)
 	$CanvasLayer/Auntframe.modulate=Color(0.0, 0.992, 0.816)
 	$CanvasLayer/Boyframe.modulate=Color(0.0, 0.992, 0.816)
 	$CanvasLayer/Friendframe.modulate=Color(0.0, 0.992, 0.816)

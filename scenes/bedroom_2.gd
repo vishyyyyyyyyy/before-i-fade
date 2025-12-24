@@ -168,21 +168,37 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			"familyphoto":
 				if Global.character == "boyGhost":
 					$Node/AnimationPlayer.play("boyfamilyphoto")
-					await $Node/AnimationPlayer2.animation_finished
+					$Node/familyphoto/CollisionShape2D.disabled=true
+					$Node/diary/CollisionPolygon2D.disabled=true
+					await $Node/AnimationPlayer.animation_finished
+					$Node/familyphoto/CollisionShape2D.disabled=false
+					$Node/diary/CollisionPolygon2D.disabled=false
 					deskcounter +=1
 					
 				else:
 					$Node/AnimationPlayer.play("girlfamilyphoto")
-					await $Node/AnimationPlayer2.animation_finished
+					$Node/familyphoto/CollisionShape2D.disabled=true
+					$Node/diary/CollisionPolygon2D.disabled=true
+					await $Node/AnimationPlayer.animation_finished
+					$Node/familyphoto/CollisionShape2D.disabled=false
+					$Node/diary/CollisionPolygon2D.disabled=false
 					deskcounter +=1
 			"diary":
 				if Global.character == "boyGhost":
 					$Node/AnimationPlayer2.play("boydiarytext")
+					$Node/familyphoto/CollisionShape2D.disabled=true
+					$Node/diary/CollisionPolygon2D.disabled=true
 					await $Node/AnimationPlayer2.animation_finished
+					$Node/diary/CollisionPolygon2D.disabled=false
+					$Node/familyphoto/CollisionShape2D.disabled=false
 					deskcounter +=1
 				else:
 					$Node/AnimationPlayer2.play("girldiarytext")
+					$Node/diary/CollisionPolygon2D.disabled=true
+					$Node/familyphoto/CollisionShape2D.disabled=true
 					await $Node/AnimationPlayer2.animation_finished
+					$Node/diary/CollisionPolygon2D.disabled=false
+					$Node/familyphoto/CollisionShape2D.disabled=false
 					deskcounter +=1
 					
 		if deskcounter >=1:

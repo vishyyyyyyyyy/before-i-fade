@@ -2967,6 +2967,7 @@ script = ExtResource("46_u7681")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
 position = Vector2(16.5, 861)
 shape = SubResource("RectangleShape2D_x6klw")
+disabled = true
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 

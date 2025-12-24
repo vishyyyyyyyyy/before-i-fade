@@ -146,15 +146,15 @@ horizontal_alignment = 1
 
 [node name="subtitle" type="Label" parent="."]
 z_index = 2
-offset_left = 970.0
+offset_left = 938.0
 offset_top = 575.0
-offset_right = 1516.0
+offset_right = 1523.0
 offset_bottom = 626.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 24
 text = "This game is best played with
-a keyboard and mouse"
+a keyboard, mouse and music on."
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]

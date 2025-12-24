@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
-[ext_resource type="Script" path="res://scripts/bedroom.gd" id="1_lj4hb"]
+[ext_resource type="Script" uid="uid://sny0cu5i00sb" path="res://scripts/bedroom.gd" id="1_lj4hb"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_08kss"]
 [ext_resource type="Texture2D" uid="uid://cum4c3gbr24je" path="res://assets/bed.png" id="3_5gvsb"]
 [ext_resource type="Texture2D" uid="uid://6q3uqgo3oetd" path="res://assets/desk.png" id="3_ammhk"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="8_ysy21"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="9_hdjrh"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="9_wx2xb"]
-[ext_resource type="Script" path="res://scripts/scene_trigger.gd" id="11_lv7wv"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_lv7wv"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_k5fq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]

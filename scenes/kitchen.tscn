@@ -1876,7 +1876,7 @@ offset_right = 1740.0
 offset_bottom = 1231.0
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "Click object around the kitchen to investigate."
+text = "Click objects around the kitchen to investigate."
 horizontal_alignment = 1
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
@@ -1886,7 +1886,6 @@ target_scene = "res://scenes/hallway2.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
 position = Vector2(9.5, 886)
 shape = SubResource("RectangleShape2D_wy14m")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ghostlayer"]
 
@@ -2506,7 +2505,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "\"Me and my greedy friend were probably about to bake cookies.\"
+text = "\"I was probably about to bake cookies.\"
 "
 horizontal_alignment = 1
 

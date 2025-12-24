@@ -27,6 +27,9 @@ func _input_event(viewport, event, shape_idx):
 			change_scene()
 			
 func change_scene():
+	if Global.kitchen ==5: 
+		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
+		return
 	if Global.livingroom == 1:
 		get_tree().change_scene_to_file("res://scenes/kitchen2.tscn")
 	if Global.kitchen ==4: 
@@ -45,7 +48,6 @@ func change_scene():
 		
 	if Global.reusablehallway == 2 and Global.reusabledesk >=2 and Global.kitchen == 2:
 		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
-		Global.reusablehallway  = 3
 		return
 		
 	if Global.reusablehallway == 1 and Global.reusabledesk >=2 and Global.kitchen == 1:

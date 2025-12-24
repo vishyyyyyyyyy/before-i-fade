@@ -6,6 +6,12 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	#Global.bathroomCount = 0
+	#Global.reusabledesk=3
+	#Global.reusablehallway=2
+	#Global.kitchen =2
+	#Global.livingroom =0
+	
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
 	$ghostlayer/AnimationPlayer/girl.visible = false
 	$ghostlayer/AnimationPlayer/aunt.visible = false
@@ -296,4 +302,9 @@ func challengecompleted():
 	$CanvasLayer4/ColorRect2.visible=false
 	$CanvasLayer4/Node3/Label11.visible=true
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-	$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
+	
+	print("bathroom count: " + str(Global.bathroomCount))
+	print("reusabledesk count: " + str(Global.reusabledesk))
+	print("reusablehallway count: " + str(Global.reusablehallway))
+	print("kitchen: " + str(Global.kitchen))
+	print("livingroom: " + str(Global.livingroom))
