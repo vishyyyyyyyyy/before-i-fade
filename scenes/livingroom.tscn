@@ -2052,7 +2052,7 @@ size = Vector2(258, 160.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
 size = Vector2(379, 249.438)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_po3oh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
