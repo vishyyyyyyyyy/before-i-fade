@@ -144,6 +144,21 @@ size = Vector2(1534.67, 118)
 radius = 35.4565
 height = 180.0
 
+[sub_resource type="Animation" id="Animation_4kitr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+
 [sub_resource type="Animation" id="Animation_mc686"]
 resource_name = "phone"
 length = 8.1
@@ -158,21 +173,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799, -0.261799, 0.261799]
-}
-
-[sub_resource type="Animation" id="Animation_4kitr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.261799]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qyk23"]

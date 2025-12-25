@@ -62,6 +62,9 @@ texture = ExtResource("2_5pnpo")
 [sub_resource type="TileSet" id="TileSet_131wt"]
 sources/0 = SubResource("TileSetAtlasSource_naci5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8peh4"]
+size = Vector2(206.5, 139.5)
+
 [sub_resource type="Animation" id="Animation_o70b4"]
 length = 0.001
 
@@ -434,166 +437,6 @@ _data = {
 &"girl": SubResource("Animation_6i1t2")
 }
 
-[sub_resource type="Animation" id="Animation_gkdoc"]
-resource_name = "girl"
-length = 24.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext3/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext3/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext3/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext3/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext3/Label3:visible_ratio")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(8, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext3/Label3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ghosttext3/Label4:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(12, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ghosttext3/Label4:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(12, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("ghosttext3/Label5:visible_ratio")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(16, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("ghosttext3/Label5:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(16, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("ghosttext3/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(20, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("ghosttext3/Label6:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(20, 22),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("ghosttext3/GirlGhost:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_h7llc"]
 length = 0.001
 
@@ -748,6 +591,166 @@ tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/path = NodePath("ghosttext3/BoyGhost:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_gkdoc"]
+resource_name = "girl"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext3/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext3/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext3/Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghosttext3/Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghosttext3/Label3:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ghosttext3/Label3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ghosttext3/Label4:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext3/Label4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ghosttext3/Label5:visible_ratio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(16, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ghosttext3/Label5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(16, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ghosttext3/Label6:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(20, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ghosttext3/Label6:visible_ratio")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(20, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ghosttext3/GirlGhost:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -1971,6 +1974,9 @@ _data = {
 &"girl": SubResource("Animation_cswo8")
 }
 
+[sub_resource type="Animation" id="Animation_ioplr"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_yeiuc"]
 resource_name = "boy"
 length = 3.5
@@ -2046,9 +2052,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-505, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_ioplr"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_8copa"]
 resource_name = "death"
@@ -2307,6 +2310,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_xncmy"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_q3k7k"]
 resource_name = "girl"
 length = 3.0
@@ -2382,9 +2388,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_xncmy"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_f3qo7"]
 resource_name = "kill"
@@ -2469,6 +2472,9 @@ _data = {
 &"kill": SubResource("Animation_f3qo7")
 }
 
+[sub_resource type="Animation" id="Animation_8aqb0"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_g2gqq"]
 resource_name = "boy"
 length = 4.0
@@ -2484,9 +2490,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_8aqb0"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yeiuc"]
 _data = {
@@ -2515,9 +2518,6 @@ size = Vector2(402, 311)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_waqk1"]
 radius = 47.5383
 height = 363.124
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8peh4"]
-size = Vector2(206.5, 139.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wdb1v")
@@ -2616,77 +2616,249 @@ texture = ExtResource("4_wyt8s")
 
 [node name="box2" type="Node" parent="CanvasLayer/CanvasModulate"]
 
-[node name="Box2" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
+[node name="box1" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box1"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box1"]
 position = Vector2(203, 695)
 scale = Vector2(4, 4)
-texture = ExtResource("5_245kf")
-
-[node name="Box3" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(480, 618)
-scale = Vector2(4, 4)
-texture = ExtResource("3_v6ge5")
-
-[node name="Box4" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(460, 811)
-scale = Vector2(4, 4)
 texture = ExtResource("4_wyt8s")
 
-[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
+[node name="box2" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
 position = Vector2(783, 712)
 scale = Vector2(4, 4)
-texture = ExtResource("3_v6ge5")
 
-[node name="Box5" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(2143, 646)
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box2"]
+position = Vector2(-80.75, 24.75)
+texture = ExtResource("5_245kf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box2"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box3" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box3"]
+position = Vector2(-75.75, -23.5)
 texture = ExtResource("4_wyt8s")
 
-[node name="Box6" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(1660, 738)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box3"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box4" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box4"]
+texture = ExtResource("5_245kf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box4"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box5" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
+scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box5"]
+position = Vector2(340, -16.5)
 texture = ExtResource("4_wyt8s")
 
-[node name="Box7" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(1887, 643)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box5"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box6" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box6"]
+position = Vector2(219.25, 6.5)
+texture = ExtResource("4_wyt8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box6"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box7" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
+scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box7"]
+position = Vector2(276, -17.25)
 texture = ExtResource("5_245kf")
 
-[node name="Box8" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(1576, 595)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box7"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box8" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box8"]
+position = Vector2(198.25, -29.25)
 texture = ExtResource("5_245kf")
 
-[node name="Box9" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(794, 574)
-scale = Vector2(4, 4)
-texture = ExtResource("6_dwpn6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box8"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
 
-[node name="Box11" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(1956, 504)
+[node name="box9" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
-texture = ExtResource("3_v6ge5")
 
-[node name="Box12" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(551, 476)
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box9"]
+position = Vector2(2.75, -34.5)
+texture = ExtResource("4_wyt8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box9"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box10" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box10"]
+position = Vector2(277.5, -90.25)
+texture = ExtResource("4_wyt8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box10"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box11" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
+scale = Vector2(4, 4)
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box11"]
+position = Vector2(293.25, -52)
 texture = ExtResource("5_245kf")
 
-[node name="Box10" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2"]
-visible = false
-position = Vector2(1893, 351)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box11"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="box12" type="Area2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(783, 712)
 scale = Vector2(4, 4)
-texture = ExtResource("6_dwpn6")
+
+[node name="Box" type="Sprite2D" parent="CanvasLayer/CanvasModulate/box2/box12"]
+position = Vector2(-58, -59)
+texture = ExtResource("5_245kf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2/box12"]
+position = Vector2(198, 705)
+shape = SubResource("RectangleShape2D_8peh4")
+disabled = true
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(462, 819)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(481, 629)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(792, 581)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(784, 723)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(552, 487)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(1575, 609)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(1660, 747)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(1887, 652)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(1956, 512)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(2144, 657)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="CanvasLayer/CanvasModulate/box2"]
+position = Vector2(1890, 356)
+shape = SubResource("RectangleShape2D_8peh4")
+debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
 
 [node name="Atticwindow" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
 position = Vector2(1186, 355)
@@ -2988,7 +3160,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "\"Wait a minute, what's up with those boxes?\""
+text = "\"Wait a minute, what's up with the boxes?\""
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -3010,7 +3182,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "\"I dont remember keeping that one open, and that color looks wrong too.\""
+text = "\"I dont remember keeping that one open...\""
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -3032,7 +3204,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "\"Let me fix the arrangement of the boxes.\""
+text = "\"Let me close and open the necessary boxes.\""
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0

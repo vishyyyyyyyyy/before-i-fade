@@ -206,6 +206,18 @@ func on_button_pressed():
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	presentbox()
+	$CanvasLayer/CanvasModulate/box2/box1/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box2/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box3/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box4/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box5/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box6/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box7/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box8/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box9/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box10/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box11/CollisionShape2D.disabled=false
+	$CanvasLayer/CanvasModulate/box2/box12/CollisionShape2D.disabled=false
 
 func pastbox():
 	$CanvasLayer/CanvasModulate/box2/Box.visible=false
@@ -249,15 +261,15 @@ func presentbox():
 	$CanvasLayer/CanvasModulate/box/Box11.visible=false
 	$CanvasLayer/CanvasModulate/box/Box12.visible=false
 	
-	$CanvasLayer/CanvasModulate/box2/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box2.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box3.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box4.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box5.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box6.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box7.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box8.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box9.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box10.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box11.visible=true
-	$CanvasLayer/CanvasModulate/box2/Box12.visible=true
+	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
