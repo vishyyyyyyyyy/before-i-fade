@@ -48,6 +48,9 @@ _data = {
 &"fade_in": SubResource("Animation_ecwwl")
 }
 
+[sub_resource type="Animation" id="Animation_mxgkd"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_7jp70"]
 resource_name = "fadein"
 length = 4.0
@@ -159,9 +162,6 @@ tracks/8/keys = {
 "update": 1,
 "values": [false, true, false, true, false, true, false]
 }
-
-[sub_resource type="Animation" id="Animation_mxgkd"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g6gyw"]
 _data = {

@@ -7,6 +7,12 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	$CanvasLayer/AnimationPlayer/boy.visible = false
+	$CanvasLayer/AnimationPlayer/girl.visible = false
+	$CanvasLayer/AnimationPlayer/boySide.visible = false
+	$CanvasLayer/AnimationPlayer/girlSide.visible = false
+	$CanvasLayer/AnimationPlayer/boyDown.visible = false
+	$CanvasLayer/AnimationPlayer/girlDown.visible = false
 	Global.reusablehallway =5
 	$CanvasLayer3/CanvasModulate/Tv.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
@@ -32,17 +38,25 @@ func modulatelivingroom():
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
 	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
 	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	$CanvasLayer/AnimationPlayer/boy.visible = true
+	$CanvasLayer/AnimationPlayer/girl.visible = true
 	await get_tree().create_timer(0.5).timeout
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	$CanvasLayer/AnimationPlayer/boy.visible = false
+	$CanvasLayer/AnimationPlayer/girl.visible = false
 	await get_tree().create_timer(0.5).timeout
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
 	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
 	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	$CanvasLayer/AnimationPlayer/boy.visible = true
+	$CanvasLayer/AnimationPlayer/girl.visible = true
 	if Global.character == "boyGhost":
 		$ghostlayer/extext.play("boy")
 		await $ghostlayer/extext.animation_finished
+		$CanvasLayer/AnimationPlayer.play("exit")
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		$ghostlayer/ghosttext2.play("boy")
 		await $ghostlayer/ghosttext2.animation_finished
 		$ghostlayer/explorelabel.visible=true
@@ -50,6 +64,8 @@ func modulatelivingroom():
 	if Global.character == "girlGhost":
 		$ghostlayer/extext.play("girl")
 		await $ghostlayer/extext.animation_finished
+		$CanvasLayer/AnimationPlayer.play("exit")
+		await $CanvasLayer/AnimationPlayer.animation_finished
 		$ghostlayer/ghosttext2.play("girl")
 		await $ghostlayer/ghosttext2.animation_finished
 		$ghostlayer/explorelabel.visible=true
