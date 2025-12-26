@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=62 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="16_dwit2"]
 [ext_resource type="Texture2D" uid="uid://bdl6a82of5gnp" path="res://assets/diaryentry3.png" id="17_3a4ms"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_b0gkk"]
+[ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="18_jbwap"]
 [ext_resource type="Texture2D" uid="uid://8cbmphfxyax" path="res://assets/diaryentry4.png" id="18_jw3s4"]
 [ext_resource type="Texture2D" uid="uid://djh5rej5r0557" path="res://assets/diaryentry6.png" id="19_sraci"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="24_0hctn"]
@@ -338,6 +339,186 @@ _data = {
 &"girl": SubResource("Animation_4oxbo")
 }
 
+[sub_resource type="Animation" id="Animation_yq1p1"]
+resource_name = "boy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("diaryentry5/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("diaryentry5/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("diaryentry5/BoyGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qvxwn"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_b8r27"]
+resource_name = "girl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("diaryentry5/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("diaryentry5/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("diaryentry5/GirlGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wexmg"]
+_data = {
+&"RESET": SubResource("Animation_qvxwn"),
+&"boy": SubResource("Animation_yq1p1"),
+&"girl": SubResource("Animation_b8r27")
+}
+
+[sub_resource type="Animation" id="Animation_1vrlx"]
+resource_name = "boy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../diaryentry6/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../diaryentry6/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../diaryentry6/BoyGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wv56w"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xnet5"]
+resource_name = "girl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../diaryentry6/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../diaryentry6/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../diaryentry6/GirlGhost:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lqku5"]
+_data = {
+&"RESET": SubResource("Animation_wv56w"),
+&"boy": SubResource("Animation_1vrlx"),
+&"girl": SubResource("Animation_xnet5")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvaqh"]
 size = Vector2(94, 130.333)
 
@@ -518,8 +699,14 @@ rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
 texture = ExtResource("18_jw3s4")
 
-[node name="Diaryentry6" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+[node name="Diaryentry5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("18_jbwap")
+
+[node name="Diaryentry6" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 position = Vector2(-23.4965, 176.602)
 rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
@@ -699,6 +886,91 @@ theme_override_font_sizes/font_size = 32
 text = "\"November 4th, whenever my aunt shows up, I can't breathe... She's such a pain. LEAVE ME ALONE."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="diaryentry5" type="AnimationPlayer" parent="CanvasLayer4"]
+libraries = {
+&"": SubResource("AnimationLibrary_wexmg")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry5"]
+visible = false
+z_index = 1
+position = Vector2(2010, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("14_7ccer")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry5"]
+visible = false
+z_index = 3
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_dwit2")
+
+[node name="Label" type="Label" parent="CanvasLayer4/diaryentry5"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -812.0
+offset_top = -123.0
+offset_right = 835.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 32
+text = "\"November 5th, Why are they after my money? I just wanna live a peacefule life.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="diaryentry6" type="AnimationPlayer" parent="CanvasLayer4"]
+root_node = NodePath("../diaryentry5/Label")
+libraries = {
+&"": SubResource("AnimationLibrary_lqku5")
+}
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry6"]
+visible = false
+z_index = 1
+position = Vector2(2010, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("14_7ccer")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry6"]
+visible = false
+z_index = 3
+position = Vector2(2015, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_dwit2")
+
+[node name="Label" type="Label" parent="CanvasLayer4/diaryentry6"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -812.0
+offset_top = -123.0
+offset_right = 835.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 32
+text = "\"WHY ME.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Node" type="Node" parent="."]
 

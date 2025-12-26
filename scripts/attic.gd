@@ -20,157 +20,144 @@ func _process(delta: float) -> void:
 
 
 func text():
-	#if Global.character == "girlGhost":
-		#$ghostlayer/ghosttext.play("girl")
-	#if Global.character == "boyGhost":
-		#$ghostlayer/ghosttext.play("boy")
-	#await $ghostlayer/ghosttext.animation_finished
-	#await atticmodulate()
-	#if Global.character == "girlGhost":
-		#$ghostlayer/pastchar1.play("girl")
-	#if Global.character == "boyGhost":
-		#$ghostlayer/pastchar1.play("boy")
-	#await $ghostlayer/pastchar1.animation_finished
-	#$ghostlayer/idle/girl.visible=false
-	#$ghostlayer/idle/boy.visible=false
-	#$ghostlayer/AnimationPlayer.play("death")
-	#await $ghostlayer/AnimationPlayer.animation_finished
-	#$ghostlayer/Bloodblanket.visible=true
-	#if Global.character == "girlGhost":
-		#$ghostlayer/ghosttext2.play("girl")
-	#if Global.character == "boyGhost":
-		#$ghostlayer/ghosttext2.play("boy")
-	#await $ghostlayer/ghosttext2.animation_finished
-	#$ghostlayer/explorelabel.visible=true
-	#unlockexplore()
-	challenge()
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext.play("boy")
+	await $ghostlayer/ghosttext.animation_finished
+	await atticmodulate()
+	if Global.character == "girlGhost":
+		$ghostlayer/pastchar1.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/pastchar1.play("boy")
+	await $ghostlayer/pastchar1.animation_finished
+	$ghostlayer/idle/girl.visible=false
+	$ghostlayer/idle/boy.visible=false
+	$ghostlayer/AnimationPlayer.play("death")
+	await $ghostlayer/AnimationPlayer.animation_finished
+	$ghostlayer/Bloodblanket.visible=true
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext2.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext2.play("boy")
+	await $ghostlayer/ghosttext2.animation_finished
+	$ghostlayer/explorelabel.visible=true
+	unlockexplore()
+
+	
+func atticmodulate():
+	##past char in modulations
+	if Global.character =="boyGhost":
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		pastbox()
+		$ghostlayer/idle/boy.visible=true
+		$ghostlayer/Bloodblanket.visible=false
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		presentbox()
+		$ghostlayer/idle/boy.visible=false
+		$ghostlayer/Bloodblanket.visible=true
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		pastbox()
+		$ghostlayer/Bloodblanket.visible=false
+		$ghostlayer/idle/boy.visible=true
+		
+	if Global.character =="girlGhost":
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		presentbox()
+		$ghostlayer/idle/girl.visible=true
+		$ghostlayer/Bloodblanket.visible=false
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		pastbox()
+		$ghostlayer/idle/girl.visible=true
+		$ghostlayer/Bloodblanket.visible=true
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		presentbox()
+		$ghostlayer/Bloodblanket.visible=false
+		$ghostlayer/idle/girl.visible=true
+
+
+func unlockexplore():
+	$ghostlayer/explorelabel.visible=true
+	$explore/CanvasLayer/box/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D2.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D3.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D4.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D5.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D6.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D7.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D8.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D9.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D10.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D11.disabled=false
+	$explore/CanvasLayer/box/CollisionShape2D12.disabled=false
+	$explore/CanvasLayer/window/CollisionShape2D.disabled=false
+	$explore/CanvasLayer/blanket/CollisionShape2D.disabled=false
+	
+	var areas = {
+		"window": $explore/CanvasLayer/window,
+		"blanket": $explore/CanvasLayer/blanket,
+		"box": $explore/CanvasLayer/box,
+
+		
+	}
+	for name in areas.keys():
+			var area_node = areas[name]
+			if area_node is Area2D:
+				area_node.clicked.connect(func(text):
+					_on_object_clicked(text, name)
+			)
+func _on_object_clicked(text: String, area_name: String):
+	# If desk clicked before finishing others
+	if area_name == "box" and not all_non_photos_clicked():
+		narration_label.text = "Let's finish looking at everything else first."
+		narration_label.visible = true
+		return
+# Mark this area as clicked
+	clicked_objects[area_name] = true
+
+	# Update label
+	narration_label.text = text
+	narration_label.visible = true
+	
+	if area_name == "box" and all_non_photos_clicked():
+		print("yes")
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		presentbox()
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		pastbox()
+		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		presentbox()
+		if Global.character == "girlGhost":
+			$ghostlayer/ghosttext3.play("girl")
+		if Global.character == "boyGhost":
+			$ghostlayer/ghosttext3.play("boy")
+		await $ghostlayer/ghosttext3.animation_finished
+		challenge()
 	
 		
-	
-	#await afterpuzzle()
-	#$ghostlayer/AnimationPlayer.play("death")
-	#await $ghostlayer/AnimationPlayer.animation_finished
-		
-	#
-#func atticmodulate():
-	###past char in modulations
-	#if Global.character =="boyGhost":
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		#$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
-		#pastbox()
-		#$ghostlayer/idle/boy.visible=true
-		#$ghostlayer/Bloodblanket.visible=false
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		#$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
-		#presentbox()
-		#$ghostlayer/idle/boy.visible=false
-		#$ghostlayer/Bloodblanket.visible=true
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		#$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
-		#pastbox()
-		#$ghostlayer/Bloodblanket.visible=false
-		#$ghostlayer/idle/boy.visible=true
-		#
-	#if Global.character =="girlGhost":
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		#$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
-		#presentbox()
-		#$ghostlayer/idle/girl.visible=true
-		#$ghostlayer/Bloodblanket.visible=false
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		#$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
-		#pastbox()
-		#$ghostlayer/idle/girl.visible=true
-		#$ghostlayer/Bloodblanket.visible=true
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		#$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
-		#presentbox()
-		#$ghostlayer/Bloodblanket.visible=false
-		#$ghostlayer/idle/girl.visible=true
-#
-#
-#func unlockexplore():
-	#$ghostlayer/explorelabel.visible=true
-	#$explore/CanvasLayer/box/CollisionShape2D.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D2.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D3.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D4.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D5.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D6.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D7.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D8.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D9.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D10.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D11.disabled=false
-	#$explore/CanvasLayer/box/CollisionShape2D12.disabled=false
-	#$explore/CanvasLayer/window/CollisionShape2D.disabled=false
-	#$explore/CanvasLayer/blanket/CollisionShape2D.disabled=false
-	#
-	#var areas = {
-		#"window": $explore/CanvasLayer/window,
-		#"blanket": $explore/CanvasLayer/blanket,
-		#"box": $explore/CanvasLayer/box,
-#
-		#
-	#}
-	#for name in areas.keys():
-			#var area_node = areas[name]
-			#if area_node is Area2D:
-				#area_node.clicked.connect(func(text):
-					#_on_object_clicked(text, name)
-			#)
-#func _on_object_clicked(text: String, area_name: String):
-	## If desk clicked before finishing others
-	#if area_name == "box" and not all_non_photos_clicked():
-		#narration_label.text = "Let's finish looking at everything else first."
-		#narration_label.visible = true
-		#return
-## Mark this area as clicked
-	#clicked_objects[area_name] = true
-#
-	## Update label
-	#narration_label.text = text
-	#narration_label.visible = true
-	#
-	#if area_name == "box" and all_non_photos_clicked():
-		#print("yes")
-		#$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		#$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
-		#presentbox()
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		#$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
-		#pastbox()
-		#await get_tree().create_timer(0.5).timeout
-		#$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		#$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
-		#presentbox()
-		#if Global.character == "girlGhost":
-			#$ghostlayer/ghosttext3.play("girl")
-		#if Global.character == "boyGhost":
-			#$ghostlayer/ghosttext3.play("boy")
-		#await $ghostlayer/ghosttext3.animation_finished
-		#challenge()
-	#
-		#
-#func all_non_photos_clicked() -> bool:
-	#var non_desk = ["blanket", "window"]
-	#for name in non_desk:
-		#if not clicked_objects.has(name): 
-			#return false
-	#return true
-#
-#
-
-
-
-
+func all_non_photos_clicked() -> bool:
+	var non_desk = ["blanket", "window"]
+	for name in non_desk:
+		if not clicked_objects.has(name): 
+			return false
+	return true
 
 
 func afterpuzzle():
@@ -265,18 +252,18 @@ func pastbox():
 	$CanvasLayer/CanvasModulate/box/Box12.visible=true
 	
 	
-	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box1.visible=false
+	$CanvasLayer/CanvasModulate/box2/box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box3.visible=false
+	$CanvasLayer/CanvasModulate/box2/box4.visible=false
+	$CanvasLayer/CanvasModulate/box2/box5.visible=false
+	$CanvasLayer/CanvasModulate/box2/box6.visible=false
+	$CanvasLayer/CanvasModulate/box2/box7.visible=false
+	$CanvasLayer/CanvasModulate/box2/box8.visible=false
+	$CanvasLayer/CanvasModulate/box2/box9.visible=false
+	$CanvasLayer/CanvasModulate/box2/box10.visible=false
+	$CanvasLayer/CanvasModulate/box2/box11.visible=false
+	$CanvasLayer/CanvasModulate/box2/box12.visible=false
 	
 func presentbox():
 	$CanvasLayer/CanvasModulate/box/Box1.visible=false
@@ -292,18 +279,18 @@ func presentbox():
 	$CanvasLayer/CanvasModulate/box/Box11.visible=false
 	$CanvasLayer/CanvasModulate/box/Box12.visible=false
 	
-	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box1.visible=true
+	$CanvasLayer/CanvasModulate/box2/box2.visible=true
+	$CanvasLayer/CanvasModulate/box2/box3.visible=true
+	$CanvasLayer/CanvasModulate/box2/box4.visible=true
+	$CanvasLayer/CanvasModulate/box2/box5.visible=true
+	$CanvasLayer/CanvasModulate/box2/box6.visible=true
+	$CanvasLayer/CanvasModulate/box2/box7.visible=true
+	$CanvasLayer/CanvasModulate/box2/box8.visible=true
+	$CanvasLayer/CanvasModulate/box2/box9.visible=true
+	$CanvasLayer/CanvasModulate/box2/box10.visible=true
+	$CanvasLayer/CanvasModulate/box2/box11.visible=true
+	$CanvasLayer/CanvasModulate/box2/box12.visible=true
 	
 func _on_timer_2_timeout() -> void:
 	print("lose")
@@ -328,7 +315,7 @@ func challengecompleted():
 	$ghostlayer/Label8.visible=false
 	$ghostlayer/present.visible=false
 	$ghostlayer/present2.visible=false
-	$ghostlayer/ColorRect.visilbe=true
+	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/Label9.visible=false
 	$ghostlayer/Diarypage.visible=true
 	$ghostlayer/Label10.visible=true
@@ -336,11 +323,27 @@ func challengecompleted():
 	$ghostlayer/Label12.visible=true
 	await get_tree().create_timer(5).timeout
 	##animaiton
-	$ghostlayer/ColorRect.visilbe=false
+	$ghostlayer/ColorRect.visible=false
 	$ghostlayer/Diarypage.visible=false
 	$ghostlayer/Label10.visible=false
 	$ghostlayer/Label11.visible=false
 	$ghostlayer/Label12.visible=false
+	$CanvasLayer/Insidebox.visible=true
+	$ghostlayer/Glove.visible=true
+	$ghostlayer/Bloodblanket.visible=false
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext4.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext4.play("boy")
+	await $ghostlayer/ghosttext4.animation_finished
+	$CanvasLayer/Insidebox.visible=false
+	$ghostlayer/Glove.visible=false
+	$ghostlayer/Label14.visible=true
+	$CanvasLayer3/blobGhostPlayer.position.x=725
+	$CanvasLayer3/blobGhostPlayer.position.y=737
+	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
+	#afterpuzzle()
+	
 	
 	
 	
