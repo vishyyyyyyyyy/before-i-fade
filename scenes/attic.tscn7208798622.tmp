@@ -4439,7 +4439,7 @@ theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #6
+text = "You earned: Diary Page #5
 Access diary from desk to read contents"
 horizontal_alignment = 1
 autowrap_mode = 2

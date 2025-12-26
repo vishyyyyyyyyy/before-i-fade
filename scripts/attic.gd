@@ -3,6 +3,7 @@ extends Node2D
 @onready var narration_label: Label = $ghostlayer/explorelabel
 @onready var explore_node: Node = $explore
 var clicked_objects := {} 
+var time_left_seconds
 
 func _ready() -> void:
 	presentbox()
@@ -10,7 +11,13 @@ func _ready() -> void:
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/Bloodblanket.visible=true
 	$ghostlayer/continue.pressed.connect(on_button_pressed)
+	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
 	text()
+	
+func _process(delta: float) -> void:
+	time_left_seconds = $ghostlayer/Timer2.time_left
+	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
+
 
 func text():
 	#if Global.character == "girlGhost":
@@ -199,12 +206,36 @@ func challenge():
 	
 func on_button_pressed():
 	$ghostlayer/Label9.visible=true
+	$ghostlayer/Timer.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
 	$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+	$ghostlayer/past.visible=true
+	$ghostlayer/past2.visible=true
+	$explore/CanvasLayer/box/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D2.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D3.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D4.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D5.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D6.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D7.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D8.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D9.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D10.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D11.disabled=true
+	$explore/CanvasLayer/box/CollisionShape2D12.disabled=true
+	$explore/CanvasLayer/window/CollisionShape2D.disabled=true
+	$explore/CanvasLayer/blanket/CollisionShape2D.disabled=true
 	pastbox()
-	await get_tree().create_timer(20).timeout
+	$ghostlayer/Timer2.start()
+	$ghostlayer/Label8.visible=true
+	await get_tree().create_timer(10).timeout
+	$ghostlayer/past.visible=false
+	$ghostlayer/past2.visible=false
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	$ghostlayer/Label8.visible=true
+	$ghostlayer/present.visible=true
+	$ghostlayer/present2.visible=true
 	presentbox()
 	$CanvasLayer/CanvasModulate/box2/box1/CollisionShape2D.disabled=false
 	$CanvasLayer/CanvasModulate/box2/box2/CollisionShape2D.disabled=false
@@ -220,21 +251,7 @@ func on_button_pressed():
 	$CanvasLayer/CanvasModulate/box2/box12/CollisionShape2D.disabled=false
 
 func pastbox():
-	$CanvasLayer/CanvasModulate/box2/Box.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box3.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box4.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box5.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box6.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box7.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box8.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box9.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box10.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box11.visible=false
-	$CanvasLayer/CanvasModulate/box2/Box12.visible=false
-	
-	
-	$CanvasLayer/CanvasModulate/box/Box.visible=true
+	$CanvasLayer/CanvasModulate/box/Box1.visible=true
 	$CanvasLayer/CanvasModulate/box/Box2.visible=true
 	$CanvasLayer/CanvasModulate/box/Box3.visible=true
 	$CanvasLayer/CanvasModulate/box/Box4.visible=true
@@ -247,8 +264,22 @@ func pastbox():
 	$CanvasLayer/CanvasModulate/box/Box11.visible=true
 	$CanvasLayer/CanvasModulate/box/Box12.visible=true
 	
+	
+	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=false
+	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=false
+	
 func presentbox():
-	$CanvasLayer/CanvasModulate/box/Box.visible=false
+	$CanvasLayer/CanvasModulate/box/Box1.visible=false
 	$CanvasLayer/CanvasModulate/box/Box2.visible=false
 	$CanvasLayer/CanvasModulate/box/Box3.visible=false
 	$CanvasLayer/CanvasModulate/box/Box4.visible=false
@@ -273,3 +304,43 @@ func presentbox():
 	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=true
 	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=true
 	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
+	
+func _on_timer_2_timeout() -> void:
+	print("lose")
+	$ghostlayer/Timer2.stop()
+	$ghostlayer/Wrong.visible=true
+	$ghostlayer/AudioStreamPlayer2.play()
+	await get_tree().create_timer(2).timeout
+	$ghostlayer/Wrong.visible=false
+	resetpuzzle()	
+	
+
+func resetpuzzle():
+	$ghostlayer/present.visible=false
+	$ghostlayer/present2.visible=false
+	on_button_pressed()
+
+
+func challengecompleted():
+	await get_tree().create_timer(2).timeout
+	$ghostlayer/Timer.visible=false
+	$ghostlayer/Correct.visible=false
+	$ghostlayer/Label8.visible=false
+	$ghostlayer/present.visible=false
+	$ghostlayer/present2.visible=false
+	$ghostlayer/ColorRect.visilbe=true
+	$ghostlayer/Label9.visible=false
+	$ghostlayer/Diarypage.visible=true
+	$ghostlayer/Label10.visible=true
+	$ghostlayer/Label11.visible=true
+	$ghostlayer/Label12.visible=true
+	await get_tree().create_timer(5).timeout
+	##animaiton
+	$ghostlayer/ColorRect.visilbe=false
+	$ghostlayer/Diarypage.visible=false
+	$ghostlayer/Label10.visible=false
+	$ghostlayer/Label11.visible=false
+	$ghostlayer/Label12.visible=false
+	
+	
+	
