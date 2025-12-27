@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=73 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -18,19 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="16_v60m4"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="17_2c3dm"]
 [ext_resource type="Script" uid="uid://dw2aixe3reksm" path="res://scripts/safe.gd" id="18_fy4la"]
-[ext_resource type="Texture2D" uid="uid://de3qmwhq12kg4" path="res://assets/recordscreen.png" id="18_hmrut"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="18_vtl2l"]
 [ext_resource type="Texture2D" uid="uid://dr8hrs7pxpysn" path="res://assets/opensafe.png" id="19_e2iyk"]
-[ext_resource type="Texture2D" uid="uid://csv18wi781khx" path="res://assets/ghostvideoboy.png" id="19_ejxh8"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="19_hmrut"]
-[ext_resource type="Texture2D" uid="uid://cy4qqqyevtqpq" path="res://assets/ghostvideogirl.png" id="20_6l7om"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="20_ejxh8"]
 [ext_resource type="Texture2D" uid="uid://cidebtmd0g1sa" path="res://assets/safecloseup.png" id="20_rfqt8"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="21_6l7om"]
 [ext_resource type="Script" uid="uid://do2jm7d8ej7l5" path="res://scripts/leavedesk6.gd" id="21_ocxwn"]
 [ext_resource type="Texture2D" uid="uid://du2gg3wgeki28" path="res://assets/fridge.png" id="21_rfqt8"]
 [ext_resource type="Texture2D" uid="uid://dlm6o0fiqxnma" path="res://assets/vignette.png" id="22_abimk"]
-[ext_resource type="Texture2D" uid="uid://wigvrdbhxpbh" path="res://assets/safenote.png" id="22_g2c65"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="22_wly0k"]
 [ext_resource type="Script" uid="uid://cm22fx8v0grcd" path="res://scenes/desk5.gd" id="23_bne4e"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="23_rpoo5"]
@@ -571,828 +567,6 @@ _data = {
 &"girl": SubResource("Animation_rpoo5")
 }
 
-[sub_resource type="Animation" id="Animation_k7q8l"]
-resource_name = "girl"
-length = 24.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext4/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext4/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext4/Label2:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext4/Label2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext4/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(8, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext4/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ghosttext4/Label4:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(12, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ghosttext4/Label4:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(12, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("ghosttext4/Label5:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(16, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("ghosttext4/Label5:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(16, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("ghosttext4/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(20, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("ghosttext4/Label6:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(20, 22),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Safenote:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(8, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("ghosttext4/GirlGhost:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_gxktf"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_y6fpv"]
-resource_name = "boy"
-length = 24.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext4/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext4/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext4/Label2:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext4/Label2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext4/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(8, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext4/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ghosttext4/Label4:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(12, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ghosttext4/Label4:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(12, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("ghosttext4/Label5:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(16, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("ghosttext4/Label5:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(16, 18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("ghosttext4/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(20, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("ghosttext4/Label6:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(20, 22),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Safenote:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(8, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("ghosttext4/BoyGhost:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmoy4"]
-_data = {
-&"RESET": SubResource("Animation_gxktf"),
-&"boy": SubResource("Animation_y6fpv"),
-&"girl": SubResource("Animation_k7q8l")
-}
-
-[sub_resource type="Animation" id="Animation_hmrut"]
-resource_name = "girl"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext5/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext5/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext5/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext5/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext5/GirlGhost2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_ejxh8"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_6l7om"]
-resource_name = "boy"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext5/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext5/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext5/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext5/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext5/BoyGhost2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wly0k"]
-_data = {
-&"RESET": SubResource("Animation_ejxh8"),
-&"boy": SubResource("Animation_6l7om"),
-&"girl": SubResource("Animation_hmrut")
-}
-
-[sub_resource type="Animation" id="Animation_k81dp"]
-resource_name = "girl"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../pastvideo/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../pastvideo/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../pastvideo/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(5, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../pastvideo/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../pastvideo/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(10, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../pastvideo/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(10, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../pastvideo/Label4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(15, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../pastvideo/Label4:visible_ratio")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(15, 17),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../pastvideo/Label5:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(20, 25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../pastvideo/Label5:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(20, 22),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../pastvideo/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(25, 30),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../pastvideo/Label6:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(25, 28),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../pastvideo/Ghostvideogirl:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 30),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_f847w"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_86txc"]
-resource_name = "boy"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../pastvideo/Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../pastvideo/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../pastvideo/Label2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(5, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../pastvideo/Label2:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../pastvideo/Label3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(10, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../pastvideo/Label3:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(10, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../pastvideo/Label4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(15, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../pastvideo/Label4:visible_ratio")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(15, 17),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../pastvideo/Label5:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(20, 25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../pastvideo/Label5:visible_ratio")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(20, 22),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../pastvideo/Label6:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(25, 30),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../pastvideo/Label6:visible_ratio")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(25, 28),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../pastvideo/Ghostvideoboy:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 30),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_01yvk"]
-_data = {
-&"RESET": SubResource("Animation_f847w"),
-&"boy": SubResource("Animation_86txc"),
-&"girl": SubResource("Animation_k81dp")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocxwn"]
 size = Vector2(180, 188)
 
@@ -1787,6 +961,7 @@ position = Vector2(347, 914)
 scale = Vector2(3, 3)
 
 [node name="TileMap3" type="TileMap" parent="ghostlayer"]
+visible = false
 modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-290, -2418)
 scale = Vector2(5, 5)
@@ -1886,7 +1061,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 32
-text = "\"Is it where I stored the money?\""
+text = "\"Idk why, but I think this is the right choice.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -1991,7 +1166,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext3"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2014,7 +1188,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/ghosttext3"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2038,447 +1211,16 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext3"]
-visible = false
 z_index = 4
 position = Vector2(2010, 695)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("20_ejxh8")
 
 [node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext3"]
-visible = false
 z_index = 2
 position = Vector2(2015, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("21_6l7om")
-
-[node name="ghosttext4" type="AnimationPlayer" parent="ghostlayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_fmoy4")
-}
-
-[node name="Label" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 6
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"There's no money in here...\""
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"Huh? There's a note.\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label3" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"STAY AWAY FROM THEM!\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label4" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"It's almost like my past self knew about my ex's murdeorus intentions...\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label5" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"There's a USB here too.\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label6" type="Label" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"Let's see what's on it.\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 4
-position = Vector2(2010, 695)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("20_ejxh8")
-
-[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext4"]
-visible = false
-z_index = 2
-position = Vector2(2015, 725)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("21_6l7om")
-
-[node name="ghosttext5" type="AnimationPlayer" parent="ghostlayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_wly0k")
-}
-
-[node name="Label" type="Label" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"I'm stuck in a timeloop?!\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "\"I need to get back to the attic to stop this time loop.\""
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 4
-position = Vector2(2010, 695)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("20_ejxh8")
-
-[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 2
-position = Vector2(2015, 725)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("21_6l7om")
-
-[node name="BoyGhost2" type="Sprite2D" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 2
-position = Vector2(2015, 722)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("16_v60m4")
-
-[node name="GirlGhost2" type="Sprite2D" parent="ghostlayer/ghosttext5"]
-visible = false
-z_index = 4
-position = Vector2(2010, 692)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("17_2c3dm")
-
-[node name="Recordscreen" type="Sprite2D" parent="ghostlayer"]
-visible = false
-modulate = Color(0, 0.992157, 0.815686, 1)
-position = Vector2(1163, 554.5)
-scale = Vector2(0.774667, 0.6115)
-texture = ExtResource("18_hmrut")
-
-[node name="pastvideo" type="AnimationPlayer" parent="ghostlayer"]
-root_node = NodePath("../Recordscreen")
-libraries = {
-&"": SubResource("AnimationLibrary_01yvk")
-}
-
-[node name="Label" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“Hey… if you’re seeing this, it means you’ve uncovered who killed us.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“I saw it too… our ex, the murder…”"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label3" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“I left this recording for you, to guide you.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label4" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -820.0
-offset_top = -140.0
-offset_right = 814.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“Listen carefully… you’re not just seeing me, you’re seeing a version of yourself trapped in a time loop.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label5" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“Go back to the attic… record everything… and call 911.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label6" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "“Do it carefully… I couldn’t stop it last time.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Ghostvideoboy" type="Sprite2D" parent="ghostlayer/pastvideo"]
-visible = false
-position = Vector2(1141, 452)
-scale = Vector2(10.2326, 10.2326)
-texture = ExtResource("19_ejxh8")
-region_enabled = true
-region_rect = Rect2(0, 0, 200, 130.75)
-
-[node name="Ghostvideogirl" type="Sprite2D" parent="ghostlayer/pastvideo"]
-visible = false
-position = Vector2(1168, 456)
-scale = Vector2(10.2326, 10.2326)
-texture = ExtResource("20_6l7om")
-region_enabled = true
-region_rect = Rect2(0, 0, 200, 129.75)
-
-[node name="Opensafe" type="Sprite2D" parent="ghostlayer"]
-visible = false
-position = Vector2(1106.8, 562.8)
-scale = Vector2(8.2, 8.2)
-texture = ExtResource("19_e2iyk")
-
-[node name="Safenote" type="Sprite2D" parent="ghostlayer"]
-visible = false
-position = Vector2(805, 550)
-scale = Vector2(6.10938, 6.10938)
-texture = ExtResource("22_g2c65")
-
-[node name="Safecloseup" type="Sprite2D" parent="ghostlayer"]
-visible = false
-modulate = Color(0, 0.992157, 0.815686, 1)
-position = Vector2(1106.8, 562.8)
-scale = Vector2(8.2, 8.2)
-texture = ExtResource("20_rfqt8")
 
 [node name="Label" type="Label" parent="ghostlayer"]
 visible = false
@@ -2510,6 +1252,19 @@ position = Vector2(206, 665)
 shape = SubResource("RectangleShape2D_ocxwn")
 disabled = true
 
+[node name="Opensafe" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(1106.8, 562.8)
+scale = Vector2(8.2, 8.2)
+texture = ExtResource("19_e2iyk")
+
+[node name="Safecloseup" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0, 0.992157, 0.815686, 1)
+position = Vector2(1106.8, 562.8)
+scale = Vector2(8.2, 8.2)
+texture = ExtResource("20_rfqt8")
+
 [node name="LineEdit" type="LineEdit" parent="ghostlayer"]
 visible = false
 offset_left = 577.0
@@ -2519,7 +1274,7 @@ offset_bottom = 786.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("19_hmrut")
 theme_override_font_sizes/font_size = 88
-alignment = 1
+text = "fade "
 
 [node name="fridgememory" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -2529,8 +1284,8 @@ libraries = {
 [node name="Vignette" type="Sprite2D" parent="ghostlayer/fridgememory"]
 visible = false
 z_index = 5
-position = Vector2(1159, 576.5)
-scale = Vector2(1.21458, 1.09167)
+position = Vector2(1161, 521)
+scale = Vector2(1.21667, 1.15926)
 texture = ExtResource("22_abimk")
 
 [node name="Label" type="Label" parent="ghostlayer/fridgememory"]
@@ -2581,7 +1336,6 @@ visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/fridgememory"]
 visible = false
-modulate = Color(1, 1, 1, 0.631373)
 z_index = 4
 position = Vector2(298, 695)
 scale = Vector2(0.472, 0.460139)
@@ -2589,7 +1343,6 @@ texture = ExtResource("20_ejxh8")
 
 [node name="BoyGhost" type="Sprite2D" parent="ghostlayer/fridgememory"]
 visible = false
-modulate = Color(1, 1, 1, 0.631373)
 z_index = 2
 position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
@@ -2692,7 +1445,6 @@ theme_override_font_sizes/font_size = 54
 text = "10.0"
 
 [node name="Label6" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 5
 offset_left = 314.0
 offset_top = 1192.0
@@ -2702,19 +1454,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 32
 text = "Unscramble the fridge magnets (A, F, E, D) and type it into the safe."
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 5
-offset_left = 314.0
-offset_top = 1192.0
-offset_right = 2010.0
-offset_bottom = 1265.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 32
-text = "Go back to the attic."
 horizontal_alignment = 1
 
 [node name="Timer2" type="Timer" parent="ghostlayer"]
@@ -3003,7 +1742,6 @@ horizontal_alignment = 1
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]
-[connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/Area2D" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]

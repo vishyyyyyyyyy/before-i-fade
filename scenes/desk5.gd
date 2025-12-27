@@ -1,9 +1,6 @@
 extends Area2D
-signal diaryentry2
-signal diaryentry3
-signal diaryentry4
 signal diaryentry5
-signal diaryentry6
+
 
 func _ready() -> void:
 	pass
