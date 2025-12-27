@@ -7,13 +7,13 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
+	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
 	$CanvasLayer/AnimationPlayer/boy.visible = false
 	$CanvasLayer/AnimationPlayer/girl.visible = false
 	$CanvasLayer/AnimationPlayer/boySide.visible = false
 	$CanvasLayer/AnimationPlayer/girlSide.visible = false
 	$CanvasLayer/AnimationPlayer/boyDown.visible = false
 	$CanvasLayer/AnimationPlayer/girlDown.visible = false
-	Global.reusablehallway =5
 	$CanvasLayer3/CanvasModulate/Tv.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
@@ -230,6 +230,5 @@ func challengecompleted():
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
-	Global.livingroom = 1
 	$ghostlayer/Label14.visible=true
 	

@@ -1,0 +1,251 @@
+[gd_scene load_steps=22 format=3 uid="uid://cxot8lfnfn4mu"]
+
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_u8kgb"]
+[ext_resource type="Texture2D" uid="uid://bywtm1o1ut3ta" path="res://assets/tiles.png" id="2_xi2dq"]
+[ext_resource type="Texture2D" uid="uid://x6bs0jnwuui1" path="res://assets/counter.png" id="3_wpsmi"]
+[ext_resource type="Texture2D" uid="uid://du2gg3wgeki28" path="res://assets/fridge.png" id="4_1hxea"]
+[ext_resource type="Texture2D" uid="uid://dijuxts4er705" path="res://assets/oven.png" id="5_3lxyi"]
+[ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="6_7ajdd"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="7_fhpuf"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="8_ee1dp"]
+[ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="9_tpylm"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="10_7ppa7"]
+[ext_resource type="Texture2D" uid="uid://cpk4ccxrq31fi" path="res://assets/island.png" id="11_dbkfa"]
+[ext_resource type="Texture2D" uid="uid://b4h1ps8unjwmi" path="res://assets/stool.png" id="12_mjxfd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
+texture = ExtResource("1_u8kgb")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k1cyo"]
+sources/0 = SubResource("TileSetAtlasSource_87bic")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fy06"]
+texture = ExtResource("2_xi2dq")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e7cmp"]
+sources/0 = SubResource("TileSetAtlasSource_3fy06")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy14m"]
+size = Vector2(39, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
+size = Vector2(418.667, 260.958)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
+size = Vector2(1534.67, 151.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwf2y"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpxcu"]
+size = Vector2(2303, 276)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+color = Color(0, 0.992157, 0.815686, 1)
+
+[node name="TileMap2" type="TileMap" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(-83, 99)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_k1cyo")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393171, 0, 0, -393163, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer/CanvasModulate"]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_e7cmp")
+format = 2
+layer_0/tile_data = PackedInt32Array(2097155, 0, 0, 2097163, 0, 0, 2097171, 0, 0, 2097179, 0, 0, 2097187, 0, 0, 2097195, 0, 0, 2097203, 0, 0, 2097211, 0, 0, 2097219, 0, 0, 2097227, 0, 0, 1572867, 0, 0, 1572875, 0, 0, 1572883, 0, 0, 1572891, 0, 0, 1572899, 0, 0, 1572907, 0, 0, 1572915, 0, 0, 1572923, 0, 0, 1572931, 0, 0, 1572939, 0, 0, 1048579, 0, 0, 1048587, 0, 0, 1048595, 0, 0, 1048603, 0, 0, 1048611, 0, 0, 1048619, 0, 0, 1048627, 0, 0, 1048635, 0, 0, 1048643, 0, 0, 1048651, 0, 0)
+
+[node name="Counter" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(177, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wpsmi")
+
+[node name="Counter2" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1840, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wpsmi")
+
+[node name="Counter4" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1520, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wpsmi")
+
+[node name="Counter3" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(816, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wpsmi")
+
+[node name="Fridge" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(2155, 225)
+scale = Vector2(4.26563, 4.26563)
+texture = ExtResource("4_1hxea")
+
+[node name="Oven" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(496, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("5_3lxyi")
+
+[node name="Sink" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(1168, 264)
+scale = Vector2(4, 4)
+texture = ExtResource("6_7ajdd")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
+color = Color(0.0941176, 0.321569, 0.278431, 1)
+
+[node name="Door2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(2309, 875)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_fhpuf")
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(-4, 883)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_fhpuf")
+
+[node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
+offset_left = -17.0
+offset_top = 1120.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("8_ee1dp")]
+position = Vector2(2138, 862)
+scale = Vector2(3, 3)
+
+[node name="scenetrigger" type="Area2D" parent="ghostlayer"]
+script = ExtResource("9_tpylm")
+target_scene = "res://scenes/hallway3.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
+position = Vector2(9.5, 886)
+shape = SubResource("RectangleShape2D_wy14m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
+position = Vector2(2277.5, 886)
+shape = SubResource("RectangleShape2D_wy14m")
+disabled = true
+
+[node name="Label" type="Label" parent="ghostlayer"]
+visible = false
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("10_7ppa7")
+theme_override_font_sizes/font_size = 32
+text = "Enter the livingroom."
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 5
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -101.0
+offset_right = 596.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_7ppa7")
+theme_override_font_sizes/font_size = 32
+text = "Exit the living room to read the new diary entry."
+horizontal_alignment = 1
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+color = Color(0, 0.992157, 0.815686, 1)
+
+[node name="Island" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(1148, 805)
+scale = Vector2(5.84, 5.84)
+texture = ExtResource("11_dbkfa")
+
+[node name="Stool" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(971, 926)
+scale = Vector2(3.72656, 3.72656)
+texture = ExtResource("12_mjxfd")
+
+[node name="Stool2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(1312, 926)
+scale = Vector2(3.72656, 3.72656)
+texture = ExtResource("12_mjxfd")
+
+[node name="TileMap3" type="TileMap" parent="CanvasLayer2/CanvasModulate"]
+visible = false
+position = Vector2(-181, 515)
+scale = Vector2(6, 6)
+tile_set = SubResource("TileSet_k1cyo")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393171, 0, 0, -393163, 0, 0)
+
+[node name="Fridge" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+visible = false
+position = Vector2(1238, 468)
+scale = Vector2(12.32, 12.32)
+texture = ExtResource("4_1hxea")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 109.25)
+
+[node name="scene collisions" type="Node" parent="."]
+
+[node name="islandcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(1147, 1344)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/islandcollision"]
+position = Vector2(-3.33331, -312.479)
+shape = SubResource("RectangleShape2D_k1jr4")
+
+[node name="textcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(3523.5, 1854.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
+position = Vector2(-1582.33, -443.167)
+shape = SubResource("RectangleShape2D_mwmjw")
+
+[node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(-9.5, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/rightwallcollision"]
+position = Vector2(2382, 642)
+shape = SubResource("RectangleShape2D_cwf2y")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(-7.5, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/leftwallcollision"]
+position = Vector2(-66.5, 651.5)
+shape = SubResource("RectangleShape2D_cwf2y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
+position = Vector2(1141.5, 128)
+shape = SubResource("RectangleShape2D_vpxcu")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_exited"]

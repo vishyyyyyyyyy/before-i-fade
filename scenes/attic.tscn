@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=130 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://cf4pipl81y47g" path="res://scripts/exploreattic.gd" id="34_waqk1"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="35_gkdoc"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="36_h7llc"]
+[ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="37_11ib6"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="37_nhg3k"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="38_11ib6"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="39_ap3yg"]
@@ -4476,6 +4477,8 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_8copa")
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
+script = ExtResource("37_11ib6")
+target_scene = "res://scenes/livingroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
 position = Vector2(2165, 1097)
@@ -4730,7 +4733,7 @@ offset_bottom = 1265.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "Exit the living room to read the new diary entry."
+text = "Exit the attic to read the new diary entry."
 horizontal_alignment = 1
 
 [node name="Timer2" type="Timer" parent="ghostlayer"]

@@ -177,6 +177,7 @@ func correct():
 
 
 func play_diary_sequence():
+	$desk/CollisionShape2D.disabled=true
 	if Global.character == "girlGhost":
 		$AnimationPlayer2/Label6.visible=false
 		$LineEdit.editable=false

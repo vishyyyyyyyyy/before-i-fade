@@ -1,0 +1,222 @@
+[gd_scene load_steps=23 format=3 uid="uid://bdd8fft0mj1gt"]
+
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_c55qv"]
+[ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_u251r"]
+[ext_resource type="Texture2D" uid="uid://i4g7gamj3615" path="res://assets/blankpicture.png" id="3_l5n11"]
+[ext_resource type="Texture2D" uid="uid://c4pughfwspf4j" path="res://assets/auntframe.png" id="4_6vseq"]
+[ext_resource type="Texture2D" uid="uid://cwy2gi85oknbc" path="res://assets/boyframe.png" id="5_6j1tk"]
+[ext_resource type="Texture2D" uid="uid://c1iy5twsdku11" path="res://assets/friendframe.png" id="6_10arh"]
+[ext_resource type="Texture2D" uid="uid://rhqcxbl4moqm" path="res://assets/girlframe.png" id="7_kpbm7"]
+[ext_resource type="Texture2D" uid="uid://btq4355tuyrd4" path="res://assets/neigborframe.png" id="8_ns4mk"]
+[ext_resource type="Texture2D" uid="uid://2siewjlu4432" path="res://assets/lamp.png" id="9_b2dh4"]
+[ext_resource type="Texture2D" uid="uid://cxta5qoyvmrtq" path="res://assets/flower.png" id="10_kulik"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="11_xk1hq"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_mwhim"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_l73xi"]
+[ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="14_ict8v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjeik"]
+texture = ExtResource("1_c55qv")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gvesl"]
+sources/0 = SubResource("TileSetAtlasSource_yjeik")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlnob"]
+texture = ExtResource("2_u251r")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y7q4l"]
+sources/0 = SubResource("TileSetAtlasSource_nlnob")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br42v"]
+size = Vector2(39, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlnob"]
+size = Vector2(1534.67, 151.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w57m6"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeik"]
+size = Vector2(2346, 497)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
+color = Color(0, 0.992157, 0.815686, 1)
+
+[node name="TileMap2" type="TileMap" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(-75, 240)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_gvesl")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 131121, 0, 0, -393211, 0, 0, -393203, 0, 0, -393171, 0, 0, -393195, 0, 0, -393187, 0, 0, -393179, 0, 0, -393163, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(-81.75, 53.39)
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_y7q4l")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 2097247, 0, 0, 2621535, 0, 0, 1572959, 0, 0, 1572951, 0, 0, 1572943, 0, 0, 1572935, 0, 0)
+
+[node name="Blankpicture" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(762, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("3_l5n11")
+
+[node name="Blankpicture2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1026, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("3_l5n11")
+
+[node name="Blankpicture3" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1274, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("3_l5n11")
+
+[node name="Blankpicture4" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1514, 295)
+scale = Vector2(2, 2)
+texture = ExtResource("3_l5n11")
+
+[node name="Auntframe5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1514, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("4_6vseq")
+
+[node name="Boyframe5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1274, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("5_6j1tk")
+
+[node name="Friendframe5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(762, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("6_10arh")
+
+[node name="Girlframe5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1274, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("7_kpbm7")
+
+[node name="Neigborframe5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1026, 296)
+scale = Vector2(2, 2)
+texture = ExtResource("8_ns4mk")
+
+[node name="Lamp" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(2204, 348)
+scale = Vector2(4, 4)
+texture = ExtResource("9_b2dh4")
+
+[node name="Flower" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(237, 451)
+scale = Vector2(3, 3)
+texture = ExtResource("10_kulik")
+
+[node name="Flower2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+position = Vector2(1969, 451)
+scale = Vector2(3, 3)
+texture = ExtResource("10_kulik")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
+color = Color(0.0941176, 0.321569, 0.278431, 1)
+
+[node name="Door2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(2311, 851)
+rotation = -1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("11_xk1hq")
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
+position = Vector2(-2.99998, 867)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("11_xk1hq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_mwhim")]
+position = Vector2(2148, 840)
+scale = Vector2(3, 3)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 1120.0
+offset_right = 2303.0
+offset_bottom = 1297.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("13_l73xi")
+theme_override_font_sizes/font_size = 32
+text = "Enter the kitchen."
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("13_l73xi")
+theme_override_font_sizes/font_size = 32
+text = "Enter the attic."
+horizontal_alignment = 1
+
+[node name="scenetrigger" type="Area2D" parent="CanvasLayer"]
+script = ExtResource("14_ict8v")
+target_scene = "res://scenes/kitchen6.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/scenetrigger"]
+position = Vector2(17.5, 870)
+shape = SubResource("RectangleShape2D_br42v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/scenetrigger"]
+position = Vector2(2285.5, 870)
+shape = SubResource("RectangleShape2D_br42v")
+disabled = true
+
+[node name="scenecollisions" type="Node" parent="."]
+
+[node name="textcollision" type="StaticBody2D" parent="scenecollisions"]
+position = Vector2(3527.5, 1868)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="scenecollisions/textcollision"]
+position = Vector2(-1582.33, -443.167)
+shape = SubResource("RectangleShape2D_nlnob")
+
+[node name="rightwallcollision" type="StaticBody2D" parent="scenecollisions"]
+position = Vector2(-5.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/rightwallcollision"]
+position = Vector2(2382, 642)
+shape = SubResource("RectangleShape2D_w57m6")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="scenecollisions"]
+position = Vector2(-3.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/leftwallcollision"]
+position = Vector2(-66.5, 651.5)
+shape = SubResource("RectangleShape2D_w57m6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="scenecollisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/StaticBody2D"]
+position = Vector2(1163, 238.5)
+shape = SubResource("RectangleShape2D_yjeik")
+
+[connection signal="body_entered" from="CanvasLayer/scenetrigger" to="CanvasLayer/scenetrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="CanvasLayer/scenetrigger" to="CanvasLayer/scenetrigger" method="_on_body_exited"]

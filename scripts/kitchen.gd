@@ -6,13 +6,12 @@ var clicked_objects := {}
 var time_left_seconds
 
 func _ready() -> void:
-	#Global.bathroomCount = 0
-	#Global.reusabledesk=3
-	#Global.reusablehallway=2
-	#Global.kitchen =2
-	#Global.livingroom =0
+	Global.bathroomCount = 0
+	Global.reusabledesk=3
+	Global.reusablehallway=2
+	Global.kitchen =2
+	Global.livingroom =0
 	
-	$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
 	$ghostlayer/AnimationPlayer/girl.visible = false
 	$ghostlayer/AnimationPlayer/aunt.visible = false
 	$ghostlayer/AnimationPlayer/girlSide.visible = false
@@ -21,9 +20,6 @@ func _ready() -> void:
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/ColorRect2.visible=false
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-	Global.reusabledesk = 3
-	Global.reusablehallway = 2
-	Global.kitchen =2
 	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer4/foodchoice.challengecompleted.connect(challengecompleted)
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)

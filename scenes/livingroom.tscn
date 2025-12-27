@@ -51,7 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="36_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://d1td3envmaoap" path="res://assets/auntletter2.png" id="44_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://ccaltmne4kumu" path="res://assets/auntletter.png" id="45_u7681"]
-[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="46_u7681"]
+[ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="50_vl3qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -3454,7 +3454,8 @@ scale = Vector2(10, 10)
 texture = ExtResource("45_u7681")
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
-script = ExtResource("46_u7681")
+script = ExtResource("50_vl3qy")
+target_scene = "res://scenes/kitchen3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
 position = Vector2(16.5, 861)

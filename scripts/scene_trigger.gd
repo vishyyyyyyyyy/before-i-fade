@@ -27,38 +27,35 @@ func _input_event(viewport, event, shape_idx):
 			change_scene()
 			
 func change_scene():
-	if Global.kitchen ==5: 
-		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
+	if not is_inside_tree():
 		return
-	if Global.livingroom == 1:
+
+	if Global.kitchen == 5:
+		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
+
+	elif Global.livingroom == 1:
 		get_tree().change_scene_to_file("res://scenes/kitchen2.tscn")
-	if Global.kitchen ==4: 
+
+	elif Global.kitchen == 4:
 		get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
-		return
-	if Global.kitchen == 3:
+
+	elif Global.kitchen == 3:
 		get_tree().change_scene_to_file("res://scenes/kitchen2.tscn")
-		return
-	if Global.reusablehallway == 4:
+
+	elif Global.reusablehallway == 4:
 		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
-		return
-		
-	if Global.reusablehallway == 3:
+
+	elif Global.reusablehallway == 3:
 		get_tree().change_scene_to_file("res://scenes/bedroomdiaryentry2plus.tscn")
-		return
-		
-	if Global.reusablehallway == 2 and Global.reusabledesk >=2 and Global.kitchen == 2:
+
+	elif Global.reusablehallway == 2 and Global.reusabledesk >= 2 and Global.kitchen == 2:
 		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
-		return
-		
-	if Global.reusablehallway == 1 and Global.reusabledesk >=2 and Global.kitchen == 1:
+
+	elif Global.reusablehallway == 1 and Global.reusabledesk >= 2 and Global.kitchen == 1:
 		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
-		return
-		
-	if Global.reusablehallway == 1 and Global.reusabledesk >=2:
+
+	elif Global.reusablehallway == 1 and Global.reusabledesk >= 2:
 		get_tree().change_scene_to_file("res://scenes/hallway2.tscn")
-		return
-		
-	if target_scene != "":
+
+	elif target_scene != "":
 		get_tree().change_scene_to_file(target_scene)
-		return
-		

@@ -2,6 +2,14 @@ extends Node2D
 
 func _ready() -> void:
 	
+	if Global.reusablehallway ==5:
+		$CanvasLayer/Label5.visible=true
+		$CanvasLayer/blobGhostPlayer.position.x = 178
+		Global.reusabledesk = 3
+		$"CanvasLayer/scene trigger/CollisionShape2D".disabled=false
+		$"CanvasLayer/scene trigger/CollisionShape2D2".disabled=true
+	
+	
 	if Global.reusablehallway ==4:
 		$CanvasLayer/Label5.visible=true
 		$CanvasLayer/blobGhostPlayer.position.x = 2188.0

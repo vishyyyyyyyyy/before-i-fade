@@ -39,23 +39,6 @@ func _input_event(viewport, event, shape_idx):
 			$"../CanvasLayer3/CanvasModulate/Diaryentry4".visible = true
 			Global.reusabledesk = 4
 			emit_signal("diaryentry4")
-			
-		elif Global.reusabledesk == 4 and shape_idx == 2:
-			$CollisionShape2D.disabled = true
-			print("Clicked shape 2")
-			$"../CanvasLayer5/Label".visible = false
-			$"../CanvasLayer3/CanvasModulate/Diaryentry5".visible = true
-			Global.reusabledesk = 5
-			emit_signal("diaryentry5")
-			
-		elif Global.reusabledesk == 5 and shape_idx == 2:
-			$CollisionShape2D.disabled = true
-			print("Clicked shape 2")
-			$"../CanvasLayer5/Label".visible = false
-			$"../CanvasLayer3/CanvasModulate/Diaryentry4".visible = true
-			Global.reusabledesk = 6
-			emit_signal("diaryentry6")
-
 
 		
 		
