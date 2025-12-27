@@ -2187,6 +2187,7 @@ texture = ExtResource("41_5dipu")
 
 [node name="Kitchen20" type="Sprite2D" parent="CanvasLayer4"]
 visible = false
+modulate = Color(0, 0.992157, 0.815686, 1)
 z_index = 1
 position = Vector2(2506, 291)
 scale = Vector2(1.69296, 1.49001)

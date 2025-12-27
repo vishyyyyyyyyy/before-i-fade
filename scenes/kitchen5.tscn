@@ -131,7 +131,7 @@ scale = Vector2(3, 3)
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
 script = ExtResource("9_xgumn")
-target_scene = "res://scenes/hallway3.tscn"
+target_scene = "res://scenes/hallway5.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
 position = Vector2(9.5, 886)
@@ -154,7 +154,6 @@ text = "Enter the livingroom."
 horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 5
 anchors_preset = 7
 anchor_left = 0.5
@@ -169,10 +168,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("10_83m3q")
 theme_override_font_sizes/font_size = 32
-text = "Exit the living room to read the new diary entry."
+text = "Exit the attic to read the new diary entry."
 horizontal_alignment = 1
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
 color = Color(0, 0.992157, 0.815686, 1)

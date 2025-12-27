@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=47 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://b13iitm0q6bvt" path="res://assets/diarynolock.png" id="14_0fb3i"]
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="15_rpoo5"]
 [ext_resource type="Texture2D" uid="uid://djh5rej5r0557" path="res://assets/diaryentry6.png" id="16_gr0fs"]
+[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="16_v60m4"]
+[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="17_2c3dm"]
 [ext_resource type="Script" uid="uid://wgsl8g0areyu" path="res://scenes/leavedeskdiary5.gd" id="17_mt0nl"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="18_vtl2l"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="19_hmrut"]
@@ -375,11 +377,136 @@ position = Vector2(-274.5, -97.5)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ghostlayer" type="CanvasLayer" parent="."]
 
-[node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_iasxt")]
+[node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_iasxt")]
 position = Vector2(347, 914)
 scale = Vector2(3, 3)
+
+[node name="ghosttext" type="AnimationPlayer" parent="ghostlayer"]
+
+[node name="Label" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("22_wly0k")
+theme_override_font_sizes/font_size = 32
+text = "\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("22_wly0k")
+theme_override_font_sizes/font_size = 32
+text = "\"Wait... Is that?...\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("22_wly0k")
+theme_override_font_sizes/font_size = 32
+text = "\"The gloves I gifted my ex for their birthday?\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("22_wly0k")
+theme_override_font_sizes/font_size = 32
+text = "\"Why is it all bloody though...\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("20_ejxh8")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("21_6l7om")
+
+[node name="BoyGhost2" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 2
+position = Vector2(303, 722)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_v60m4")
+
+[node name="GirlGhost2" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 4
+position = Vector2(298, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_2c3dm")
 
 [node name="Catrug" type="Sprite2D" parent="."]
 position = Vector2(1797, 651)

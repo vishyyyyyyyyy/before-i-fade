@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_72ri4"]
 [ext_resource type="Texture2D" uid="uid://b13iitm0q6bvt" path="res://assets/diarynolock.png" id="14_l6478"]
 [ext_resource type="Script" uid="uid://wgsl8g0areyu" path="res://scenes/leavedeskdiary5.gd" id="17_i2gc4"]
-[ext_resource type="Texture2D" uid="uid://djh5rej5r0557" path="res://assets/diaryentry6.png" id="19_r77x3"]
+[ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="18_bnqre"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="21_0vequ"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_wdnfu"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="23_cmfj1"]
@@ -72,19 +72,19 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../diaryentry6/Label:visible_ratio")
+tracks/0/path = NodePath("diaryentry5/BoyGhost:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../diaryentry6/Label:visible")
+tracks/1/path = NodePath("diaryentry5/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -96,14 +96,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../diaryentry6/BoyGhost:visible")
+tracks/2/path = NodePath("diaryentry5/Label:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_xnet5"]
@@ -112,19 +112,19 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../diaryentry6/Label:visible_ratio")
+tracks/0/path = NodePath("diaryentry5/GirlGhost:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../diaryentry6/Label:visible")
+tracks/1/path = NodePath("diaryentry5/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -136,14 +136,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../diaryentry6/GirlGhost:visible")
+tracks/2/path = NodePath("diaryentry5/Label:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqku5"]
@@ -278,6 +278,7 @@ shape = SubResource("RectangleShape2D_k5fq4")
 [node name="SceneTrigger" type="Area2D" parent="."]
 position = Vector2(556, 1203)
 script = ExtResource("11_i2gc4")
+target_scene = "res://scenes/hallway4.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(-274.5, -97.5)
@@ -316,7 +317,7 @@ visible = false
 position = Vector2(-23.4965, 176.602)
 rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
-texture = ExtResource("19_r77x3")
+texture = ExtResource("18_bnqre")
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer3/CanvasModulate"]
 z_index = 3
@@ -354,26 +355,26 @@ position = Vector2(2162, 975.125)
 shape = SubResource("RectangleShape2D_0xrbb")
 disabled = true
 
-[node name="diaryentry6" type="AnimationPlayer" parent="CanvasLayer4"]
+[node name="diaryentry5" type="AnimationPlayer" parent="CanvasLayer4"]
 libraries = {
 &"": SubResource("AnimationLibrary_lqku5")
 }
 
-[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry6"]
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry5"]
 visible = false
 z_index = 1
 position = Vector2(2010, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("23_cmfj1")
 
-[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry6"]
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/diaryentry5"]
 visible = false
 z_index = 3
 position = Vector2(2015, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("24_1m4nm")
 
-[node name="Label" type="Label" parent="CanvasLayer4/diaryentry6"]
+[node name="Label" type="Label" parent="CanvasLayer4/diaryentry5"]
 visible = false
 z_index = 3
 anchors_preset = 7
@@ -390,7 +391,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("27_mqa23")
 theme_override_font_sizes/font_size = 32
-text = "\"WHY ME.\""
+text = "\"Why are they after my money. I jsut wanna live a peaceful life."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -443,29 +444,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("27_mqa23")
 theme_override_font_sizes/font_size = 32
-text = "Enter the attic."
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer5"]
-visible = false
-offset_left = 845.0
-offset_top = 1196.0
-offset_right = 1481.0
-offset_bottom = 1228.0
-theme_override_fonts/font = ExtResource("27_mqa23")
-theme_override_font_sizes/font_size = 32
-text = "Enter the living room."
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="CanvasLayer5"]
-visible = false
-offset_left = 845.0
-offset_top = 1196.0
-offset_right = 1481.0
-offset_bottom = 1228.0
-theme_override_fonts/font = ExtResource("27_mqa23")
-theme_override_font_sizes/font_size = 32
-text = "Enter the kitchen."
+text = "Exit the bedroom."
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]

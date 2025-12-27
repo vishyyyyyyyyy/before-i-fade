@@ -12,7 +12,10 @@ func _ready() -> void:
 	$ghostlayer/Bloodblanket.visible=true
 	$ghostlayer/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
+	$ghostlayer/choice.choice1.connect(choice1)
+	$ghostlayer/choice.choice2.connect(choice2)
 	text()
+	
 	
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
@@ -78,7 +81,7 @@ func atticmodulate():
 		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 		pastbox()
-		$ghostlayer/idle/girl.visible=true
+		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/Bloodblanket.visible=true
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
@@ -168,15 +171,19 @@ func afterpuzzle():
 		$ghostlayer/pastchar2.play("girl")
 		await $ghostlayer/pastchar2.animation_finished
 		$ghostlayer/chars2girl.play("kill")
-		await $ghostlayer/pastchar2girl.animation_finished
+		$ghostlayer/idle/girl.visible=false
+		await $ghostlayer/chars2girl.animation_finished
+		$ghostlayer/Bloodblanket.visible=true
 			
 	if Global.character == "boyGhost":
 		$ghostlayer/chars2boy.play("boy")
 		await $ghostlayer/chars2boy.animation_finished
 		$ghostlayer/pastchar2.play("boy")
 		await $ghostlayer/pastchar2.animation_finished
+		$ghostlayer/idle/boy.visible=false
 		$ghostlayer/chars2boy.play("death")
 		await $ghostlayer/chars2boy.animation_finished
+		$ghostlayer/Bloodblanket.visible=true
 	#after animation finished, ex comes in closer fast so it looks like stab,
 	#then it'll go to the screen with blood on it 
 
@@ -305,6 +312,31 @@ func _on_timer_2_timeout() -> void:
 func resetpuzzle():
 	$ghostlayer/present.visible=false
 	$ghostlayer/present2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box1/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box2/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box3/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box4/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box5/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box6/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box7/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box8/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box9/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box10/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box11/Box2.visible=false
+	$CanvasLayer/CanvasModulate/box2/box12/Box2.visible=false
+	
+	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=true
+	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
 	on_button_pressed()
 
 
@@ -328,7 +360,7 @@ func challengecompleted():
 	$ghostlayer/Label10.visible=false
 	$ghostlayer/Label11.visible=false
 	$ghostlayer/Label12.visible=false
-	$CanvasLayer/Insidebox.visible=true
+	$ghostlayer/Insidebox.visible=true
 	$ghostlayer/Glove.visible=true
 	$ghostlayer/Bloodblanket.visible=false
 	if Global.character == "girlGhost":
@@ -336,14 +368,69 @@ func challengecompleted():
 	if Global.character == "boyGhost":
 		$ghostlayer/ghosttext4.play("boy")
 	await $ghostlayer/ghosttext4.animation_finished
-	$CanvasLayer/Insidebox.visible=false
+	$ghostlayer/Insidebox.visible=false
 	$ghostlayer/Glove.visible=false
+	#$ghostlayer/Label14.visible=true
+	$ghostlayer/blobGhostPlayer.position.x=725
+	$ghostlayer/blobGhostPlayer.position.y=737
+	await atticmodulate()
+	await afterpuzzle()
+	$ghostlayer/AnimationPlayer.play("death")
+	await $ghostlayer/AnimationPlayer.animation_finished
+	if Global.character == "girlGhost":
+		$ghostlayer/ghosttext5.play("girl")
+	if Global.character == "boyGhost":
+		$ghostlayer/ghosttext5.play("boy")
+	await $ghostlayer/ghosttext5.animation_finished
+	$ghostlayer/ColorRect.visible=true
+	$ghostlayer/choice.visible=true
+	$ghostlayer/choice/CollisionShape2D.disabled=false
+	$ghostlayer/choice/CollisionShape2D2.disabled=false
+	
+func choice1():
+	Global.ending = 1
+	$ghostlayer/ghosttext6/GirlGhost.visible=false
+	$ghostlayer/ghosttext6/BoyGhost.visible=false
+	$ghostlayer/choice.visible=false
+	$ghostlayer/choice/CollisionShape2D.disabled=true
+	$ghostlayer/choice/CollisionShape2D2.disabled=true
+	$ghostlayer/ColorRect.visible=false
+	if Global.character =="girlGhost":
+		$ghostlayer/ghosttext6.play("girl")
+	if Global.character =="boyGhost":
+		$ghostlayer/ghosttext6.play("boy")
+	await $ghostlayer/ghosttext6.animation_finished
+	var player = $ghostlayer/blobGhostPlayer
+	await fade_out_node(player, 2.5)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
+
+func choice2():
+	Global.ending = 2
+	$ghostlayer/ghosttext6/GirlGhost.visible=false
+	$ghostlayer/ghosttext6/BoyGhost.visible=false
+	$ghostlayer/choice.visible=false
+	$ghostlayer/choice/CollisionShape2D.disabled=true
+	$ghostlayer/choice/CollisionShape2D2.disabled=true
+	if Global.character =="girlGhost":
+		$ghostlayer/ghosttext7.play("girl")
+	if Global.character =="boyGhost":
+		$ghostlayer/ghosttext7.play("boy")
+	await $ghostlayer/ghosttext7.animation_finished
 	$ghostlayer/Label14.visible=true
-	$CanvasLayer3/blobGhostPlayer.position.x=725
-	$CanvasLayer3/blobGhostPlayer.position.y=737
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-	#afterpuzzle()
 	
 	
+func fade_out_node(node: CanvasItem, duration := 2.0) -> void:
+	var elapsed := 0.0
+
+	while elapsed < duration:
+		elapsed += get_process_delta_time()
+		var t := elapsed / duration
+		node.modulate.a = lerp(1.0, 0.0, t)
+		await get_tree().process_frame
+
+	node.modulate.a = 0.0
+
 	
 	

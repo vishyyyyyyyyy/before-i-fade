@@ -1005,7 +1005,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_kaovn")
 theme_override_font_sizes/font_size = 32
-text = "Enter the hallway."
+text = "Exit the bedroom."
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer5"]
@@ -1016,7 +1016,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_kaovn")
 theme_override_font_sizes/font_size = 32
-text = "Enter the living room."
+text = "Exit the bedroom."
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer5"]
@@ -1027,7 +1027,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_kaovn")
 theme_override_font_sizes/font_size = 32
-text = "Enter the kitchen."
+text = "Exit the bedroom."
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]

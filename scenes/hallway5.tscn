@@ -144,7 +144,7 @@ texture = ExtResource("11_52bah")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_junsx")]
-position = Vector2(2148, 840)
+position = Vector2(180, 840)
 scale = Vector2(3, 3)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
@@ -166,28 +166,27 @@ text = "Enter the kitchen."
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer"]
-visible = false
-offset_left = 845.0
+offset_left = 629.0
 offset_top = 1196.0
-offset_right = 1481.0
+offset_right = 1685.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_r2l3s")
 theme_override_font_sizes/font_size = 32
-text = "Enter the livingroom."
+text = "Exit the attic to read the new diary entry."
 horizontal_alignment = 1
 
 [node name="scenetrigger" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("14_kfy4v")
-target_scene = "res://scenes/kitchen4.tscn"
+target_scene = "res://scenes/bedroomdiaryentry4.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/scenetrigger"]
 position = Vector2(17.5, 870)
 shape = SubResource("RectangleShape2D_br42v")
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/scenetrigger"]
-position = Vector2(2285.5, 870)
+position = Vector2(2286, 868)
 shape = SubResource("RectangleShape2D_br42v")
-disabled = true
 
 [node name="scenecollisions" type="Node" parent="."]
 

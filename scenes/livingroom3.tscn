@@ -142,7 +142,7 @@ scale = Vector2(3, 3)
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
 script = ExtResource("12_o617q")
-target_scene = "res://scenes/attic.tscn"
+target_scene = "res://scenes/kitchen5.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
 position = Vector2(2048.5, 1095)
