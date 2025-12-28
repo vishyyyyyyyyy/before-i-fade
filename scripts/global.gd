@@ -1,6 +1,6 @@
 extends Node
 
-var character = "boyGhost"
+var character = "blob"
 var bathroomCount = 0
 var pastChar = ""
 var reusabledesk = 0
