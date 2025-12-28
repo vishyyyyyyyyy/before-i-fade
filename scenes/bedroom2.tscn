@@ -1791,6 +1791,7 @@ debug_color = Color(0, 0, 0, 0.42)
 [node name="desk" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
 script = ExtResource("19_rme15")
+label_text = "Investigate the bedroom by clicking on objects."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/desk"]
 position = Vector2(2124, 863.5)

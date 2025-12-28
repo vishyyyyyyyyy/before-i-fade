@@ -33,7 +33,7 @@ func diaryentry5():
 func pressed():
 	$CanvasLayer3/CanvasModulate/ColorRect2.visible=false
 	if Global.character=="boyGhost":
-		$ghostlayer/ghosttext.play("girl")
+		$ghostlayer/ghosttext.play("boy")
 	if Global.character=="girlGhost":
 		$ghostlayer/ghosttext.play("girl")
 	await $ghostlayer/ghosttext.animation_finished

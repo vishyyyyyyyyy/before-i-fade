@@ -146,7 +146,6 @@ func all_non_desk_clicked() -> bool:
 func diaryOverlay():
 	$CanvasLayer2/CanvasModulate2/Door.visible=false
 	$CanvasLayer2/CanvasModulate2/Door2.visible=false
-	$Label3.visible=false
 	$CanvasLayer/blobGhostPlayer.visible=false
 	$Node/Deskcloseup.visible=true
 	#disable click collisions
@@ -167,41 +166,50 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 		match area_name:
 			"familyphoto":
 				if Global.character == "boyGhost":
+					$Label3.visible=false
 					$Node/AnimationPlayer.play("boyfamilyphoto")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await $Node/AnimationPlayer.animation_finished
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
+					$Label3.visible=true
 					deskcounter +=1
 					
 				else:
+					$Label3.visible=false
 					$Node/AnimationPlayer.play("girlfamilyphoto")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await $Node/AnimationPlayer.animation_finished
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
+					$Label3.visible=true
 					deskcounter +=1
 			"diary":
 				if Global.character == "boyGhost":
+					$Label3.visible=false
 					$Node/AnimationPlayer2.play("boydiarytext")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await $Node/AnimationPlayer2.animation_finished
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
+					$Label3.visible=true
 					deskcounter +=1
 				else:
+					$Label3.visible=false
 					$Node/AnimationPlayer2.play("girldiarytext")
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					await $Node/AnimationPlayer2.animation_finished
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
+					$Label3.visible=true
 					deskcounter +=1
 					
-		if deskcounter >=1:
+		if deskcounter >1:
+			$Label3.visible=false
 			$Node2/Area2D/CollisionShape2D.disabled=false
 			$Node2/Area2D.visible=true
 
