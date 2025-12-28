@@ -136,6 +136,21 @@ func _on_object_clicked(text: String, area_name: String):
 	
 	if area_name == "box" and all_non_photos_clicked():
 		print("yes")
+		$explore/CanvasLayer/box/CollisionShape2D.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D2.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D3.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D4.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D5.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D6.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D7.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D8.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D9.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D10.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D11.disabled=true
+		$explore/CanvasLayer/box/CollisionShape2D12.disabled=true
+		$explore/CanvasLayer/window/CollisionShape2D.disabled=true
+		$explore/CanvasLayer/blanket/CollisionShape2D.disabled=true
+		
 		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 		presentbox()
@@ -299,45 +314,6 @@ func presentbox():
 	$CanvasLayer/CanvasModulate/box2/box11.visible=true
 	$CanvasLayer/CanvasModulate/box2/box12.visible=true
 	
-func _on_timer_2_timeout() -> void:
-	print("lose")
-	$ghostlayer/Timer2.stop()
-	$ghostlayer/Wrong.visible=true
-	$ghostlayer/AudioStreamPlayer2.play()
-	await get_tree().create_timer(2).timeout
-	$ghostlayer/Wrong.visible=false
-	resetpuzzle()	
-	
-
-func resetpuzzle():
-	$ghostlayer/present.visible=false
-	$ghostlayer/present2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box1/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box2/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box3/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box4/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box5/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box6/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box7/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box8/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box9/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box10/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box11/Box2.visible=false
-	$CanvasLayer/CanvasModulate/box2/box12/Box2.visible=false
-	
-	$CanvasLayer/CanvasModulate/box2/box1/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box2/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box3/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box4/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box5/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box6/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box7/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box8/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box9/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box10/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box11/Box.visible=true
-	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
-	on_button_pressed()
 
 func challengecompleted():
 	await get_tree().create_timer(2).timeout

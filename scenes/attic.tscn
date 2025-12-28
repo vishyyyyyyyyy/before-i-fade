@@ -5579,6 +5579,7 @@ metadata/_edit_lock_ = true
 [connection signal="body_entered" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_exited"]
 [connection signal="timeout" from="ghostlayer/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="ghostlayer/Timer2" to="CanvasLayer/CanvasModulate/box2" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]
