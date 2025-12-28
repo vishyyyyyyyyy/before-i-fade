@@ -649,9 +649,9 @@ position = Vector2(-274.5, -97.5)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ghostlayer" type="CanvasLayer" parent="."]
 
-[node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_lqku5")]
+[node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_lqku5")]
 position = Vector2(1907, 882)
 scale = Vector2(3, 3)
 

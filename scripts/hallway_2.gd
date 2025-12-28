@@ -1,6 +1,10 @@
 extends Node2D
 
 func _ready() -> void:
+	if Global.character == "girlGhost":
+		$CanvasLayer3/CanvasModulate/Girlframe5.visible=false
+	if Global.character == "boyGhost":
+		$CanvasLayer3/CanvasModulate/Girlframe5.visible=true
 	
 	if Global.reusablehallway ==5:
 		$CanvasLayer/Label5.visible=true
@@ -26,6 +30,7 @@ func _ready() -> void:
 		$"CanvasLayer/scene trigger/CollisionShape2D".disabled=true
 		$"CanvasLayer/scene trigger/CollisionShape2D2".disabled=false
 		Global.reusablehallway  = 3
+		$CanvasLayer/Label6.visible=true
 		$CanvasLayer/blobGhostPlayer.position.x = 178
 		
 	

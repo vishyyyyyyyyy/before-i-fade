@@ -1702,10 +1702,10 @@ tracks/12/path = NodePath("ghosttext5/GirlGhost2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_p08rk"]
@@ -1865,10 +1865,10 @@ tracks/12/path = NodePath("ghosttext5/BoyGhost2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l4del"]
@@ -1967,6 +1967,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghostlayer/AnimationPlayer/AudioStreamPlayer:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l6qon"]
@@ -3641,7 +3653,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext6"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -4228,7 +4239,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext5"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -4459,8 +4469,10 @@ text = "\"AHHHH!\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/AnimationPlayer"]
+stream = ExtResource("50_ju1eb")
+volume_db = 24.0
 
 [node name="pastchar1" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../..")

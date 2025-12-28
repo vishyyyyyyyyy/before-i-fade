@@ -166,14 +166,13 @@ text = "Enter the kitchen."
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer"]
-visible = false
 offset_left = 845.0
 offset_top = 1196.0
 offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("14_g8go6")
 theme_override_font_sizes/font_size = 32
-text = "Enter the livingroom."
+text = "Enter the attic."
 horizontal_alignment = 1
 
 [node name="scenetrigger" type="Area2D" parent="CanvasLayer"]

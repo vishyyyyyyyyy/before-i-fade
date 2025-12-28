@@ -754,6 +754,17 @@ theme_override_font_sizes/font_size = 32
 text = "Enter the kitchen."
 horizontal_alignment = 1
 
+[node name="Label6" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 845.0
+offset_top = 1196.0
+offset_right = 1481.0
+offset_bottom = 1228.0
+theme_override_fonts/font = ExtResource("15_8gnqt")
+theme_override_font_sizes/font_size = 32
+text = "Read the new diary entry."
+horizontal_alignment = 1
+
 [node name="Label5" type="Label" parent="CanvasLayer"]
 visible = false
 offset_left = 845.0
@@ -794,6 +805,7 @@ shape = SubResource("RectangleShape2D_w57m6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/StaticBody2D"]
 position = Vector2(1163, 238.5)
 shape = SubResource("RectangleShape2D_yjeik")
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="CanvasLayer/scene trigger" to="CanvasLayer/scene trigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CanvasLayer/scene trigger" to="CanvasLayer/scene trigger" method="_on_body_exited"]

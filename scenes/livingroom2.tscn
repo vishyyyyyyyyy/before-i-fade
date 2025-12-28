@@ -164,9 +164,9 @@ horizontal_alignment = 1
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
 position = Vector2(1296, 1035)
 scale = Vector2(7.02344, 7.02344)
+color = Color(0, 0.992157, 0.815686, 1)
 
 [node name="Tv" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
-visible = false
 texture = ExtResource("51_2axsk")
 
 [node name="scene collisions" type="Node" parent="."]

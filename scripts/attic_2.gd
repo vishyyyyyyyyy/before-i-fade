@@ -18,7 +18,7 @@ func _ready() -> void:
 		await $ghostlayer/chars2girl.animation_finished
 		$ghostlayer/Label2.visible=false
 		$ghostlayer/AnimationPlayer.play("end")
-
+		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/Phone2.visible=false
 		$ghostlayer/Phone.visible=false
 		$ghostlayer/blobGhostPlayer.position.x=1205
@@ -37,6 +37,7 @@ func _ready() -> void:
 		await $ghostlayer/chars2boy.animation_finished
 		$ghostlayer/Label2.visible=false
 		$ghostlayer/AnimationPlayer.play("end")
+		$ghostlayer/idle/boy.visible=false
 		$ghostlayer/Phone2.visible=false
 		$ghostlayer/Phone.visible=false
 		$ghostlayer/blobGhostPlayer.position.x=1205

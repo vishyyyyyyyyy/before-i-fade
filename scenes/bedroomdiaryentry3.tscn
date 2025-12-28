@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://c2s68u53x2urt"]
 
-[ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_k28sk"]
+[ext_resource type="Script" uid="uid://bbnovbfkyhpbv" path="res://scripts/bedroomdiaryentry_3.gd" id="1_k28sk"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_25v77"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="3_xqchu"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="4_2ji4l"]
@@ -285,9 +285,9 @@ position = Vector2(-274.5, -97.5)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ghostlayer" type="CanvasLayer" parent="."]
 
-[node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_vdrtn")]
+[node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_vdrtn")]
 position = Vector2(299, 914)
 scale = Vector2(3, 3)
 
@@ -391,7 +391,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("27_mqa23")
 theme_override_font_sizes/font_size = 32
-text = "\"Why are they after my money. I jsut wanna live a peaceful life."
+text = "\"Why are they after my money. I just wanna live a peaceful life."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0

@@ -406,6 +406,7 @@ func choice1():
 
 func choice2():
 	Global.ending = 2
+	$ghostlayer/ColorRect.visible=false
 	$ghostlayer/ghosttext6/GirlGhost.visible=false
 	$ghostlayer/ghosttext6/BoyGhost.visible=false
 	$ghostlayer/choice.visible=false
@@ -416,6 +417,14 @@ func choice2():
 	if Global.character =="boyGhost":
 		$ghostlayer/ghosttext7.play("boy")
 	await $ghostlayer/ghosttext7.animation_finished
+	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
+	$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
+	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/Label14.visible=true
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
 	

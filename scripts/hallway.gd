@@ -232,6 +232,15 @@ func _on_button_pressed():
 func hallwaypuzzle():
 	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
+	$CanvasLayer3/CanvasModulate/Auntframe5.visible=false
+	$CanvasLayer3/CanvasModulate/Boyframe5.visible=false
+	$CanvasLayer3/CanvasModulate/Friendframe5.visible=false
+	$CanvasLayer3/CanvasModulate/Girlframe5.visible=false
+	$CanvasLayer3/CanvasModulate/Neigborframe5.visible=false
+	$CanvasLayer3/CanvasModulate/Picturepiece.visible=true
+	$CanvasLayer3/CanvasModulate/Picturepiece2.visible=true
+	$CanvasLayer3/CanvasModulate/Picturepiece3.visible=true
+	$CanvasLayer3/CanvasModulate/Picturepiece4.visible=true
 	$CanvasLayer/Node3/Timer.visible=false
 	$CanvasLayer/Node3/Label5.visible=false
 	await get_tree().create_timer(2).timeout
@@ -275,11 +284,25 @@ func _on_timer_2_timeout() -> void:
 	resetpuzzle()
 
 func resetpuzzle():
+	# Reset pieces
 	for piece in piece_start_positions.keys():
 		piece.position = piece_start_positions[piece]
+		if piece.has_method("reset"):
+			piece.reset()
+
+	# Reset slots
+	for slot in $CanvasLayer/puzzle/slots.get_children():
+		if slot.has_method("reset"):
+			slot.reset()
+
 	$CanvasLayer/Node3/Timer2.start()
+
 	
 func afterpuzzle():
+	$CanvasLayer3/CanvasModulate/Picturepiece.visible=false
+	$CanvasLayer3/CanvasModulate/Picturepiece2.visible=false
+	$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
+	$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 	$CanvasLayer/Label8.visible=false
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Timer.visible=false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://cej7k2chluc7a"]
+[gd_scene load_steps=24 format=3 uid="uid://cej7k2chluc7a"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_4yfk6"]
+[ext_resource type="Script" uid="uid://cwedp3r37vlym" path="res://scripts/hallway_3.gd" id="1_a4a8b"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_a4a8b"]
 [ext_resource type="Texture2D" uid="uid://i4g7gamj3615" path="res://assets/blankpicture.png" id="3_v5q2n"]
 [ext_resource type="Texture2D" uid="uid://c4pughfwspf4j" path="res://assets/auntframe.png" id="4_dkdtg"]
@@ -44,6 +45,7 @@ size = Vector2(169, 1323)
 size = Vector2(2346, 497)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_a4a8b")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 

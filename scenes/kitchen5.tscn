@@ -172,7 +172,6 @@ text = "Exit the attic to read the new diary entry."
 horizontal_alignment = 1
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
 color = Color(0, 0.992157, 0.815686, 1)

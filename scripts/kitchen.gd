@@ -168,6 +168,9 @@ func _on_object_clicked(text: String, area_name: String):
 		$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
 		$explore/CanvasLayer/island/CollisionShape2D.disabled=false
 		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
+		$ghostlayer/explorelabel.visible=true
+		
+		
 		
 	if area_name == "island" and all_non_photos_clicked():
 		print("yes")

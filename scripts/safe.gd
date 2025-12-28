@@ -87,10 +87,10 @@ func _on_text_entered(new_text: String) -> void:
 		if Global.character == "girlGhost":
 			$"../ghosttext5".play("girl")
 		await $"../ghosttext5".animation_finished
-		$"../TileMap3".visible=true
+		$"../TileMap3".visible=false
 		$"../Opensafe".visible=false
 		$"../Label7".visible=true
-		$"../../SceneTrigger/CollisionShape2D".disabled=true
+		$"../../SceneTrigger/CollisionShape2D".disabled=false
 		
 
 func _on_timer_2_timeout() -> void:

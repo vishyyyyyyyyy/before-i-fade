@@ -2860,6 +2860,7 @@ metadata/_edit_lock_ = true
 [node name="fridge" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
+label_text = "Click objects around the kitchen to investigate."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/fridge"]
 position = Vector2(2145.25, 207.5)
