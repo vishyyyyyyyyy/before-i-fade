@@ -76,6 +76,7 @@ size = Vector2(209.5, 49)
 script = ExtResource("1_wvc7n")
 
 [node name="Menucard" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(1170, 642)
 scale = Vector2(9.88086, 10.2381)
@@ -84,6 +85,7 @@ texture = ExtResource("2_p36n8")
 [node name="ending1" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="ending1"]
+visible = false
 z_index = 1
 offset_left = 862.0
 offset_top = 365.0
@@ -96,6 +98,7 @@ text = "Ending 1:"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="ending1"]
+visible = false
 z_index = 1
 offset_left = 853.0
 offset_top = 369.0
@@ -108,6 +111,7 @@ text = "Ending 1:"
 horizontal_alignment = 1
 
 [node name="subtitle" type="Label" parent="ending1"]
+visible = false
 z_index = 2
 offset_left = 788.0
 offset_top = 607.0
@@ -122,6 +126,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="subtitle2" type="Label" parent="ending1"]
+visible = false
 z_index = 2
 offset_left = 858.0
 offset_top = 495.0
@@ -246,6 +251,7 @@ Vishalya Sairam
 
 Music & Sound:
 Phone Ringing — Dragon Studio
+Police Siren -Dragon Studio
 Story of Maple — Final Gate Studios
 Correct Buzzer — u_a5z4rtk6yn
 Incorrect Buzzer — logicallism

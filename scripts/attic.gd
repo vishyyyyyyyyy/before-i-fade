@@ -339,7 +339,6 @@ func resetpuzzle():
 	$CanvasLayer/CanvasModulate/box2/box12/Box.visible=true
 	on_button_pressed()
 
-
 func challengecompleted():
 	await get_tree().create_timer(2).timeout
 	$ghostlayer/Timer.visible=false

@@ -131,7 +131,7 @@ scale = Vector2(3, 3)
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
 script = ExtResource("9_o8dxv")
-target_scene = "res://scenes/livingroom2.tscn"
+target_scene = "res://scenes/livingroom4.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
 position = Vector2(9.5, 886)
@@ -149,7 +149,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("10_vbe0n")
 theme_override_font_sizes/font_size = 32
-text = "Enter the attic."
+text = "Go back to the attic."
 horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="ghostlayer"]

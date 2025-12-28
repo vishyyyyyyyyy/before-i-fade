@@ -1774,6 +1774,7 @@ texture = ExtResource("10_04rxg")
 [node name="SceneTrigger" type="Area2D" parent="."]
 position = Vector2(556, 1203)
 script = ExtResource("11_lgyf2")
+target_scene = "res://scenes/hallway6.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(-274.5, -97.5)
@@ -1787,6 +1788,7 @@ position = Vector2(347, 914)
 scale = Vector2(3, 3)
 
 [node name="TileMap3" type="TileMap" parent="ghostlayer"]
+visible = false
 modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-290, -2418)
 scale = Vector2(5, 5)
