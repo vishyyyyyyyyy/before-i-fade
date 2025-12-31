@@ -295,6 +295,9 @@ func resetpuzzle():
 		if slot.has_method("reset"):
 			slot.reset()
 
+	print("Puzzle reset")
+
+
 	$CanvasLayer/Node3/Timer2.start()
 
 	

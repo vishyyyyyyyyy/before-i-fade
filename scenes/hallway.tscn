@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="31_ydsot"]
 [ext_resource type="Texture2D" uid="uid://bttq88nuj6a35" path="res://assets/pixel-characters/neighbor3.png" id="32_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="33_3cp5q"]
-[ext_resource type="Script" path="res://scenes/slot.gd" id="34_rx3tq"]
+[ext_resource type="Script" uid="uid://ye7bofo5hhyd" path="res://scenes/slot.gd" id="34_rx3tq"]
 [ext_resource type="Script" uid="uid://caqps3d53w80h" path="res://scenes/piece.gd" id="35_klhg5"]
 [ext_resource type="Texture2D" uid="uid://bxqxsc21h3m0q" path="res://assets/hallwayPuzzlePics/auntframeTopLeft.png" id="35_woyx4"]
 [ext_resource type="Texture2D" uid="uid://c8nqhyeb8c5v6" path="res://assets/hallwayPuzzlePics/auntframeTopRight.png" id="37_ydsot"]

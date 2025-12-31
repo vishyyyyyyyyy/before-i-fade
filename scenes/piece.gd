@@ -52,3 +52,7 @@ func snap_to_slot(slot):
 	locked = true
 	slot.occupied = true
 	emit_signal("piece_snapped")  # ← Notify the Puzzle scene
+
+func reset():
+	locked = false
+	z_index = 0
