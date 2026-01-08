@@ -13,8 +13,17 @@ func _ready():
 	$Node3/Menucard.visible=true
 	$Node3/ColorRect.visible=true
 	$Node3/continue.visible=true
+	$TextureRect/TextureButton.disabled=true
+	$TextureRect/TextureButton2.disabled=true
+	$TextureRect/TextureButton3.disabled=true
+	$TextureRect/TextureButton4.disabled=true
+	$TextureRect/TextureButton.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$TextureRect/TextureButton2.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$TextureRect/TextureButton3.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Node3/continue.pressed.connect(_on_continue_pressed)
 	name_input.text_submitted.connect(_on_name_submitted)
+	$diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 
 
 var diary_started := false
@@ -34,10 +43,6 @@ func _on_name_submitted(text: String):
 func _on_continue_pressed():
 	print("Node was clicked!")
 	$Timer2.start()
-	$TextureRect/TextureButton.disabled=true
-	$TextureRect/TextureButton2.disabled=true
-	$TextureRect/TextureButton3.disabled=true
-	$TextureRect/TextureButton4.disabled=true
 	$desk/CollisionShape2D.disabled=true
 	$AnimationPlayer.play("text")
 	await $AnimationPlayer.animation_finished
@@ -52,32 +57,48 @@ func _on_desk_clicked():
 	$TextureRect/TextureButton2.disabled=false
 	$TextureRect/TextureButton3.disabled=false
 	$TextureRect/TextureButton4.disabled=false
+	$TextureRect/TextureButton.mouse_filter = Control.MOUSE_FILTER_STOP
+	$TextureRect/TextureButton2.mouse_filter = Control.MOUSE_FILTER_STOP
+	$TextureRect/TextureButton3.mouse_filter = Control.MOUSE_FILTER_STOP
+	$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
 
 func _on_texture_button_pressed() -> void:
-	$CanvasLayer4/CanvasModulate.color = Color(0, 0, 0, 1)
+	$CanvasLayer4/CanvasModulate.color =  Color(0.442, 0.429, 0.419)
+	$CanvasLayer2/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer/CanvasModulate.color =  Color(1, 1, 1)
 	code = code + "P"
 	count += 1
 	check_code()
 
 
 func _on_texture_button_2_pressed() -> void:
-	$CanvasLayer2/CanvasModulate.color = Color(0, 0, 0, 1)
+	$CanvasLayer2/CanvasModulate.color = Color(0.442, 0.429, 0.419)
+	$CanvasLayer/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer4/CanvasModulate.color =  Color(1, 1, 1)
 	code = code + "y"
 	count += 1
 	check_code()
 
 func _on_texture_button_3_pressed() -> void:
-	$CanvasLayer3/CanvasModulate.color = Color(0, 0, 0, 1)
+	$CanvasLayer3/CanvasModulate.color = Color(0.442, 0.429, 0.419)
+	$CanvasLayer4/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer2/CanvasModulate.color =  Color(1, 1, 1)
 	code = code + "g"
 	count += 1
 	check_code()
 
 func _on_texture_button_4_pressed() -> void:
-	$CanvasLayer/CanvasModulate.color = Color(0, 0, 0, 1)
+	$CanvasLayer/CanvasModulate.color = Color(0.442, 0.429, 0.419)
+	$CanvasLayer4/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color =  Color(1, 1, 1)
+	$CanvasLayer2/CanvasModulate.color =  Color(1, 1, 1)
 	code = code + 'p'
 	count += 1
 	check_code()
@@ -96,6 +117,12 @@ func check_code():
 			$Timer2.stop() 
 			$AudioStreamPlayer.play()
 			$CanvasLayer5/Correct.visible = true
+			$TextureRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$TextureRect.visible=false
+			$TextureRect/TextureButton.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$TextureRect/TextureButton2.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$TextureRect/TextureButton3.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			await get_tree().create_timer(2).timeout
 			$CanvasLayer5/Correct.visible = false
 			$AnimationPlayer/Label.visible=false
@@ -144,6 +171,10 @@ func wrong():
 	$AnimationPlayer.play("text")
 	
 func correct():
+	$CanvasLayer4.visible=false
+	$CanvasLayer3.visible=false
+	$CanvasLayer2.visible=false
+	$CanvasLayer.visible=false
 	$Node4/ColorRect3.visible=true
 	$Node4/Diarypage.visible=true
 	$Node4/Label2.visible=true
@@ -151,7 +182,12 @@ func correct():
 	$Node4/Label3.visible=true
 	$Label2.visible=false
 	$Timer.visible=false
-	await get_tree().create_timer(5).timeout
+	$diarycontinue.visible=true
+	$diarycontinue/CollisionShape2D.disabled=false
+
+func diarypagecontinue():
+	$diarycontinue.visible=false
+	$diarycontinue/CollisionShape2D.disabled=true
 	$"CanvasLayer".visible = false
 	$"CanvasLayer2".visible = false
 	$"CanvasLayer3".visible = false
@@ -174,8 +210,7 @@ func correct():
 		await $AnimationPlayer2.animation_finished
 		$LineEdit.editable=true
 		$LineEdit.visible=true
-
-
+	
 func play_diary_sequence():
 	$desk/CollisionShape2D.disabled=true
 	if Global.character == "girlGhost":

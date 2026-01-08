@@ -5258,6 +5258,7 @@ offset_right = 540.0
 offset_bottom = 400.0
 theme_override_fonts/font = ExtResource("35_gkdoc")
 text = "Continue"
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/continue"]
 z_index = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=27 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="13_6cdou"]
 [ext_resource type="Texture2D" uid="uid://dg275asuk42en" path="res://assets/ghost1.png" id="15_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://b273rhwtioqyc" path="res://assets/ghost2.png" id="16_mxgkd"]
+[ext_resource type="Script" uid="uid://dwp182xjopjlf" path="res://scripts/mainmenucontinue.gd" id="17_g6gyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l48gv"]
 size = Vector2(209.5, 49)
@@ -23,12 +24,15 @@ size = Vector2(209.5, 49)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecwwl"]
 size = Vector2(208, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dmrc"]
+size = Vector2(209.5, 49)
+
 [sub_resource type="Animation" id="Animation_kk3ma"]
 length = 0.001
 
 [sub_resource type="Animation" id="Animation_ecwwl"]
 resource_name = "fade_in"
-length = 5.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,7 +40,7 @@ tracks/0/path = NodePath(".:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.133333, 3.03333),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -245,9 +249,9 @@ texture = ExtResource("6_ufwb2")
 
 [node name="Label" type="Label" parent="Node/Title"]
 z_index = 1
-offset_left = 926.0
+offset_left = 910.0
 offset_top = 349.0
-offset_right = 1439.0
+offset_right = 1459.0
 offset_bottom = 496.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("4_70i5f")
@@ -258,9 +262,9 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Node/Title"]
 z_index = 1
-offset_left = 917.0
+offset_left = 901.0
 offset_top = 353.0
-offset_right = 1430.0
+offset_right = 1450.0
 offset_bottom = 500.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("4_70i5f")
@@ -282,137 +286,49 @@ text = "This game is best played with
 a keyboard, mouse and music on."
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2303.0
-offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117182, 0.0425973, 0.151198, 1)
-metadata/_edit_lock_ = true
-
-[node name="Node2" type="Node" parent="."]
-
-[node name="Title2" type="Node" parent="Node2"]
-
-[node name="Label" type="Label" parent="Node2/Title2"]
-visible = false
-z_index = 1
-offset_left = 926.0
-offset_top = 349.0
-offset_right = 1439.0
-offset_bottom = 496.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("4_70i5f")
-theme_override_font_sizes/font_size = 72
-text = "Warning"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Node2/Title2"]
-visible = false
-z_index = 1
-offset_left = 917.0
-offset_top = 353.0
-offset_right = 1430.0
-offset_bottom = 500.0
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("4_70i5f")
-theme_override_font_sizes/font_size = 72
-text = "Warning"
-horizontal_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2"]
-root_node = NodePath("Label")
-libraries = {
-&"": SubResource("AnimationLibrary_nrnbx")
-}
-
-[node name="Label" type="Label" parent="Node2/AnimationPlayer"]
-z_index = 2
-offset_left = 881.0
-offset_top = 568.0
-offset_right = 1457.0
-offset_bottom = 630.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("7_6cdou")
-theme_override_font_sizes/font_size = 24
-text = "This game discusses topics about death, murder, and blood."
-horizontal_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Node3" type="Node" parent="."]
-
-[node name="Title" type="Node" parent="Node3"]
-
-[node name="Label" type="Label" parent="Node3/Title"]
-visible = false
-z_index = 1
-offset_left = 907.0
-offset_top = 344.0
-offset_right = 1456.0
-offset_bottom = 491.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("4_70i5f")
-theme_override_font_sizes/font_size = 72
-text = "Controls"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Node3/Title"]
-visible = false
-z_index = 1
-offset_left = 898.0
-offset_top = 348.0
-offset_right = 1447.0
-offset_bottom = 495.0
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("4_70i5f")
-theme_override_font_sizes/font_size = 72
-text = "Controls"
-horizontal_alignment = 1
-
 [node name="Downarrow" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
-position = Vector2(951, 883)
-scale = Vector2(3.5, 3.5)
+position = Vector2(943, 853)
+scale = Vector2(3.42, 3.42)
 texture = ExtResource("8_ufwb2")
 
 [node name="Uparrow" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
-position = Vector2(950, 644)
-scale = Vector2(3.5, 3.5)
+position = Vector2(941.5, 619.5)
+scale = Vector2(3.24219, 3.24219)
 texture = ExtResource("9_6cdou")
 
 [node name="LeftArrow" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
-position = Vector2(820, 760)
-scale = Vector2(3.5, 3.5)
+position = Vector2(820, 734)
+scale = Vector2(3.42, 3.42)
 texture = ExtResource("10_i42df")
 
 [node name="Rightarrow" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
-position = Vector2(1079, 763)
-scale = Vector2(3.5, 3.5)
+position = Vector2(1063, 733)
+scale = Vector2(3.42, 3.42)
 texture = ExtResource("11_7jp70")
 
 [node name="Mouse" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
-position = Vector2(1447, 764)
+position = Vector2(1415, 748)
 scale = Vector2(3.70313, 3.70313)
 texture = ExtResource("12_mxgkd")
 
 [node name="Label" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = 642.0
-offset_top = 512.0
-offset_right = 1282.0
-offset_bottom = 547.0
+offset_left = 769.0
+offset_top = 487.0
+offset_right = 1097.0
+offset_bottom = 522.0
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 16
@@ -423,10 +339,11 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = 1090.0
-offset_top = 512.0
-offset_right = 1730.0
-offset_bottom = 547.0
+offset_left = 1246.0
+offset_top = 488.0
+offset_right = 1550.0
+offset_bottom = 526.0
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 16
@@ -437,10 +354,11 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = 1008.0
-offset_top = 992.0
-offset_right = 1348.0
-offset_bottom = 1027.0
+offset_left = -403.0
+offset_top = 894.184
+offset_right = -63.0
+offset_bottom = 929.184
+scale = Vector2(1.1, 1.1)
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 16
@@ -449,19 +367,86 @@ between rooms"
 horizontal_alignment = 1
 
 [node name="Door" type="Sprite2D" parent="."]
-visible = false
 z_index = 2
-position = Vector2(1182, 1120)
-scale = Vector2(3, 3)
+position = Vector2(-221, 990.184)
+scale = Vector2(2.2685, 2.2685)
 texture = ExtResource("13_6cdou")
 
 [node name="Door2" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.0941176, 0.321569, 0.278431, 1)
 z_index = 2
-position = Vector2(1183, 1186)
-scale = Vector2(3, 3)
+position = Vector2(-220, 1040.18)
+scale = Vector2(2.2685, 2.2685)
 texture = ExtResource("13_6cdou")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117182, 0.0425973, 0.151198, 1)
+metadata/_edit_lock_ = true
+
+[node name="continue" type="Area2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(228, 315)
+scale = Vector2(2, 2)
+script = ExtResource("17_g6gyw")
+normal_texture = ExtResource("2_13sgg")
+hover_texture = ExtResource("3_i6lef")
+
+[node name="Sprite2D" type="Sprite2D" parent="continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("2_13sgg")
+
+[node name="Label" type="Label" parent="continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("4_70i5f")
+text = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_3dmrc")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("Label")
+libraries = {
+&"": SubResource("AnimationLibrary_nrnbx")
+}
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+visible = false
+z_index = 2
+anchors_preset = -1
+anchor_left = -0.0477431
+anchor_right = -0.0664063
+anchor_bottom = -0.00848765
+offset_left = 845.0
+offset_top = 572.0
+offset_right = 1759.0
+offset_bottom = 634.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 24
+text = "This game discusses topics 
+about death, murder, and blood."
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Node4" type="Node" parent="."]
 
@@ -536,3 +521,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_exited" from="Node/Music" to="." method="_on_menu_banner_mouse_exited"]
 [connection signal="mouse_exited" from="Node/Music" to="Node/Music" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="Node/Music" to="Node/Music" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="continue" to="continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="continue" to="continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="continue" to="continue" method="_on_mouse_shape_exited"]
