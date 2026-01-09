@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=143 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="42_p08rk"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="43_l4del"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="44_mg2tc"]
+[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="49_bgrwk"]
 [ext_resource type="Script" uid="uid://ct8nuphlvm8xq" path="res://scripts/choice_1.gd" id="49_ju1eb"]
 [ext_resource type="AudioStream" uid="uid://d4jro2agjq5ka" path="res://assets/audio/knife.mp3" id="50_ju1eb"]
 
@@ -3104,6 +3105,9 @@ size = Vector2(286, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsvsk"]
 size = Vector2(209.5, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p08rk"]
+size = Vector2(209.5, 49)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ju1eb"]
 size = Vector2(516, 117)
 
@@ -5274,6 +5278,36 @@ volume_db = 20.0
 stream = ExtResource("43_l4del")
 volume_db = 20.0
 
+[node name="diarycontinue" type="Area2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(2231.61, 1004.51)
+scale = Vector2(8.19532, 8.19532)
+script = ExtResource("49_bgrwk")
+normal_texture = ExtResource("40_ju1eb")
+hover_texture = ExtResource("41_bgrwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/diarycontinue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("40_ju1eb")
+
+[node name="Label" type="Label" parent="ghostlayer/diarycontinue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("35_gkdoc")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/diarycontinue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_p08rk")
+disabled = true
+
 [node name="Diarypage" type="Sprite2D" parent="ghostlayer"]
 visible = false
 z_index = 3
@@ -5584,3 +5618,6 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_shape_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=134 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -80,6 +80,7 @@
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="63_knauv"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="71_ggb88"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="75_knauv"]
+[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="80_cvtdl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bic"]
 texture = ExtResource("1_mwmjw")
@@ -1430,6 +1431,9 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xp3y8"]
+size = Vector2(209.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40l35"]
 size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f125y"]
@@ -2802,6 +2806,35 @@ theme_override_font_sizes/font_size = 32
 text = "Exit the kitchen to read the new diary entry."
 horizontal_alignment = 1
 
+[node name="diarycontinue" type="Area2D" parent="CanvasLayer4/Node3"]
+z_index = 3
+position = Vector2(252, 146)
+scale = Vector2(2, 2)
+script = ExtResource("80_cvtdl")
+normal_texture = ExtResource("27_tpccs")
+hover_texture = ExtResource("28_hxncp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer4/Node3/diarycontinue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("27_tpccs")
+
+[node name="Label" type="Label" parent="CanvasLayer4/Node3/diarycontinue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("22_5hhqf")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer4/Node3/diarycontinue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_40l35")
+disabled = true
+
 [node name="explore" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="explore"]
@@ -2940,3 +2973,6 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_shape_exited"]
