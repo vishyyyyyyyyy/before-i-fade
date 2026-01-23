@@ -2,16 +2,20 @@ extends Node
 
 var music_on := true
 var music_player: AudioStreamPlayer
+var saved_position := 0.0
 
 # --- NEW ---
 var playlists := {
 	"menu": [
 		preload("res://assets/audio/Story of Maple_mp3.mp3"),
+		preload("res://assets/audio/explore-the-universe-and-beyond-117949.mp3"),
+		preload("res://assets/audio/adventure-cinematic-music-faith-journey-324896.mp3")
 	],
-	"level1": [
-
+	"puzzle1": [
+		preload("res://assets/audio/kerosene-loop-at-different-pitches-190120.mp3")
 	],
-	"boss": [
+	"puzzle2": [
+		preload("res://assets/audio/puzzle-game-bright-casual-video-game-music-249202.mp3")
 	]
 }
 
@@ -57,7 +61,9 @@ func _on_music_finished():
 
 func toggle_music():
 	music_on = !music_on
+
 	if music_on:
-		_play_current_track()
+		music_player.play(saved_position)
 	else:
+		saved_position = music_player.get_playback_position()
 		music_player.stop()
