@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$CanvasLayer3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer3/AnimationPlayer/girlWalk.visible = false
 	$CanvasLayer3/AnimationPlayer/boyWalk.visible = false
 	if (Global.character == "girlGhost"):
@@ -178,6 +179,8 @@ func afterpuzzle():
 	$CanvasLayer3/Node3/Label5.visible=true
 	$CanvasLayer3/Label4.visible=false
 	await get_tree().create_timer(2).timeout
+	$CanvasLayer3/diarycontinue/CollisionShape2D.disabled=false
+	$CanvasLayer3/diarycontinue.visible=true
 	$CanvasLayer/TileMap.visible=false
 	$CanvasLayer3/Node3/Timer.visible=false
 	$"CanvasLayer3/Past Tiles".visible=false
@@ -197,7 +200,10 @@ func afterpuzzle():
 	$CanvasLayer3/Label2.visible=true
 	$CanvasLayer3/Label.visible=true
 	$CanvasLayer3/Label3.visible=true
-	await get_tree().create_timer(2).timeout
+
+func diarypagecontinue():
+	$CanvasLayer3/diarycontinue/CollisionShape2D.disabled=true
+	$CanvasLayer3/diarycontinue.visible=false
 	$CanvasLayer3/ColorRect3.visible=false
 	$CanvasLayer3/Diarypage.visible=false
 	$CanvasLayer3/Label2.visible=false
@@ -206,8 +212,6 @@ func afterpuzzle():
 	$CanvasLayer3/comb/CollisionShape2D.disabled=false
 	$CanvasLayer3/Label6.visible=true
 	modulatebackghost()
-
-
 
 func combpress():
 	$CanvasLayer3/Label6.visible=false

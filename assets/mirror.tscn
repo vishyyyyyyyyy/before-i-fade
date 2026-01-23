@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dx0sbj1tdfhed"]
+[gd_scene load_steps=29 format=3 uid="uid://dx0sbj1tdfhed"]
 
 [ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_eo0g1"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_mbs1g"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="9_qpcod"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="10_btchy"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="11_rrng2"]
+[ext_resource type="Script" uid="uid://bsl6nif7t81j0" path="res://scripts/choosechar2.gd" id="12_mbs1g"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="12_r25wp"]
 [ext_resource type="Texture2D" uid="uid://cxrmcl03gnmff" path="res://assets/sponge.png" id="13_1pyd4"]
 [ext_resource type="Script" uid="uid://b4t4hmayx8ad3" path="res://scripts/sponge.gd" id="14_dq2pt"]
@@ -305,11 +306,9 @@ _data = {
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_eo0g1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 offset_right = 2303.0
 offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
 [node name="boy" type="TextureButton" parent="ColorRect"]
@@ -320,6 +319,7 @@ offset_left = 922.0
 offset_top = 375.0
 offset_right = 1391.0
 offset_bottom = 457.979
+mouse_filter = 1
 disabled = true
 
 [node name="girl" type="TextureButton" parent="ColorRect"]
@@ -328,6 +328,7 @@ offset_left = 920.0
 offset_top = 658.0
 offset_right = 1397.0
 offset_bottom = 785.0
+mouse_filter = 1
 disabled = true
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -422,9 +423,9 @@ visible = false
 z_index = 1
 position = Vector2(1153, 682)
 scale = Vector2(3, 3)
-script = ExtResource("8_132wt")
+script = ExtResource("12_mbs1g")
 normal_texture = ExtResource("9_qpcod")
-hover_texture = ExtResource("9_qpcod")
+hover_texture = ExtResource("10_btchy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 z_index = 1
@@ -435,7 +436,7 @@ texture = ExtResource("9_qpcod")
 z_index = 1
 offset_left = -29.1552
 offset_top = 0.168945
-offset_right = -1.15523
+offset_right = -1.1552
 offset_bottom = 8.16895
 scale = Vector2(2.26111, 2.26111)
 theme_override_fonts/font = ExtResource("11_rrng2")
@@ -614,8 +615,11 @@ texture = ExtResource("16_bndbn")
 
 [connection signal="pressed" from="ColorRect/boy" to="Area2D" method="_on_boy_pressed"]
 [connection signal="pressed" from="ColorRect/girl" to="Area2D" method="_on_girl_pressed"]
+[connection signal="pressed" from="ColorRect/girl" to="Area2D2" method="_on_girl_pressed"]
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Area2D/Label" to="Area2D" method="_on_label_mouse_entered"]
 [connection signal="mouse_entered" from="Area2D2" to="Area2D" method="_on_area_2d_2_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D2" to="Area2D2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D2" to="Area2D" method="_on_area_2d_2_mouse_exited"]
+[connection signal="mouse_exited" from="Area2D2" to="Area2D2" method="_on_mouse_exited"]

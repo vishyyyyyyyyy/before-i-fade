@@ -20,13 +20,12 @@ func _on_mouse_exited():
 	
 var selected_character := ""
 
-func _on_boy_pressed() -> void:
-	if selected_character == "boy":
-		Global.character = "boyGhost"
-		Global.pastChar = "pastBoy"
+func _on_girl_pressed() -> void:
+	if selected_character == "girl":
+		Global.character = "girlGhost"
+		Global.pastChar = "pastGirl"
 		emit_signal("char_chosen")
 	else:
-		selected_character = "boy"
-		$"../BoyGhost".visible = true
-		$"../GirlGhost".visible = false
-		
+		selected_character = "girl"
+		$"../BoyGhost".visible = false
+		$"../GirlGhost".visible = true

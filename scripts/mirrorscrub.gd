@@ -36,6 +36,7 @@ func on_cleaned():
 	dirty_sprite.visible = false
 	clean_sprite.modulate.a = 1.0
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$CollisionPolygon2D.disabled=true
 	$"../../Sponge".visible=false
 	$"../../Label2".visible=false
 	$"../../Label3".visible=true
@@ -43,7 +44,6 @@ func on_cleaned():
 	$"../../ColorRect/girl".disabled = false
 	$"../../Area2D2".visible=true
 	$"../../Area2D".visible=true
-	await get_tree().create_timer(1.0).timeout
 	$"../../Area2D/CollisionShape2D3".disabled=false
 	$"../../Area2D2/CollisionShape2D3".disabled=false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

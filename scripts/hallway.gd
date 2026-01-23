@@ -8,6 +8,7 @@ var clicked_objects := {}
 var piece_start_positions := {}
 
 func _ready() -> void:
+	$CanvasLayer/Node3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer/AnimationPlayer/neighbor.visible = false
 	$CanvasLayer/AnimationPlayer/neighborRight.visible = false
 	$CanvasLayer/AnimationPlayer/neighborLeft.visible = false
@@ -322,7 +323,13 @@ func afterpuzzle():
 	$CanvasLayer/Node3/Label4.visible=true
 	$CanvasLayer/Node3/Label6.visible=true
 	$CanvasLayer/Node3/Label7.visible=true
-	await get_tree().create_timer(5).timeout
+	$CanvasLayer/Node3/diarycontinue.visible = true
+	$CanvasLayer/Node3/diarycontinue/CollisionShape2D.disabled=false
+	
+	
+func diarypagecontinue():
+	$CanvasLayer/Node3/diarycontinue.visible = false
+	$CanvasLayer/Node3/diarycontinue/CollisionShape2D.disabled=true
 	$CanvasLayer/Node3/ColorRect.visible=false
 	$CanvasLayer/Node3/Diarypage.visible=false
 	$CanvasLayer/Node3/Label4.visible=false

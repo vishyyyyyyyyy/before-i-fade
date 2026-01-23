@@ -14,6 +14,7 @@ func _ready() -> void:
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
 	$ghostlayer/choice.choice1.connect(choice1)
 	$ghostlayer/choice.choice2.connect(choice2)
+	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	text()
 	
 	
@@ -328,8 +329,12 @@ func challengecompleted():
 	$ghostlayer/Label10.visible=true
 	$ghostlayer/Label11.visible=true
 	$ghostlayer/Label12.visible=true
-	await get_tree().create_timer(5).timeout
-	##animaiton
+	$ghostlayer/diarycontinue.visible=true
+	$ghostlayer/diarycontinue/CollisionShape2D.disabled=false
+
+func diarypagecontinue():
+	$ghostlayer/diarycontinue.visible=false
+	$ghostlayer/diarycontinue/CollisionShape2D.disabled=true
 	$ghostlayer/ColorRect.visible=false
 	$ghostlayer/Diarypage.visible=false
 	$ghostlayer/Label10.visible=false

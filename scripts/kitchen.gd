@@ -12,6 +12,7 @@ func _ready() -> void:
 	Global.kitchen =2
 	Global.livingroom =0
 	
+	$CanvasLayer4/Node3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/AnimationPlayer/girl.visible = false
 	$ghostlayer/AnimationPlayer/aunt.visible = false
 	$ghostlayer/AnimationPlayer/girlSide.visible = false
@@ -254,7 +255,13 @@ func challengecompleted():
 	$CanvasLayer4/Node3/Label7.visible=true
 	$CanvasLayer4/Node3/Label8.visible=true
 	$ghostlayer/blobGhostPlayer.position.x=1153
-	await get_tree().create_timer(5).timeout
+	$CanvasLayer4/Node3/diarycontinue.visible=true
+	$CanvasLayer4/Node3/diarycontinue/CollisionShape2D.disabled=false
+
+	
+func diarypagecontinue():
+	$CanvasLayer4/Node3/diarycontinue.visible=false
+	$CanvasLayer4/Node3/diarycontinue/CollisionShape2D.disabled=true
 	$CanvasLayer4/Node3/Diarypage.visible=false
 	$CanvasLayer4/Node3/ColorRect.visible=false
 	$CanvasLayer4/Node3/Diarypage.visible=false

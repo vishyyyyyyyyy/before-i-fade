@@ -18,6 +18,7 @@ func _ready() -> void:
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
 	text()
@@ -199,7 +200,12 @@ func challengecompleted():
 	$ghostlayer/Label10.visible=true
 	$ghostlayer/Label11.visible=true
 	$ghostlayer/Label12.visible=true
-	await get_tree().create_timer(5).timeout
+	$ghostlayer/diarycontinue.visible=true
+	$ghostlayer/diarycontinue/CollisionShape2D.disabled=false
+
+func diarypagecontinue():
+	$ghostlayer/diarycontinue.visible=false
+	$ghostlayer/diarycontinue/CollisionShape2D.disabled=true
 	$ghostlayer/ColorRect.visible=false
 	$ghostlayer/Diarypage.visible=false
 	$ghostlayer/Label10.visible=false
