@@ -170,6 +170,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/AnimationPlayer2/skip:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_tcvsn"]
 resource_name = "girlghost"
@@ -205,7 +217,7 @@ tracks/2/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2, 6.03333),
+"times": PackedFloat32Array(2, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -217,7 +229,7 @@ tracks/3/path = NodePath("CanvasLayer/AnimationPlayer2/Label2:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2, 5.03333),
+"times": PackedFloat32Array(2, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -229,7 +241,7 @@ tracks/4/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.06667, 8.96667),
+"times": PackedFloat32Array(5, 8.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -241,7 +253,7 @@ tracks/5/path = NodePath("CanvasLayer/AnimationPlayer2/Label3:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(6, 7.03333),
+"times": PackedFloat32Array(5, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -253,7 +265,7 @@ tracks/6/path = NodePath("CanvasLayer/AnimationPlayer2/GirlGhost2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2, 6, 9),
+"times": PackedFloat32Array(0, 2, 5, 9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false]
@@ -266,6 +278,18 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/AnimationPlayer2/skip:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -428,6 +452,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../AnimationPlayer/skip:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_q87as"]
 resource_name = "friendtextGIRL"
@@ -575,6 +611,18 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../AnimationPlayer/skip:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g4nwc"]
@@ -862,7 +910,7 @@ tracks/3/path = NodePath("../AnimationPlayer/Label2:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3.06667, 5.03333),
+"times": PackedFloat32Array(3, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -874,7 +922,7 @@ tracks/4/path = NodePath("../AnimationPlayer/Label3:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(7.06667, 8.96667),
+"times": PackedFloat32Array(7, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -898,6 +946,18 @@ tracks/6/path = NodePath("../AnimationPlayer/BoyGhost:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../AnimationPlayer/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -950,7 +1010,7 @@ tracks/3/path = NodePath("../AnimationPlayer/Label2:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3.06667, 5.03333),
+"times": PackedFloat32Array(3, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -962,7 +1022,7 @@ tracks/4/path = NodePath("../AnimationPlayer/Label3:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(7.06667, 8.96667),
+"times": PackedFloat32Array(7, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -986,6 +1046,18 @@ tracks/6/path = NodePath("../AnimationPlayer/GirlGhost:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../AnimationPlayer/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1128,6 +1200,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../AnimationPlayer2/skip:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_jqxsm"]
 resource_name = "girldiarytext"
@@ -1199,7 +1283,7 @@ tracks/5/path = NodePath("../AnimationPlayer2/Label3:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8.1, 10.0333),
+"times": PackedFloat32Array(8, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -1211,7 +1295,7 @@ tracks/6/path = NodePath("../AnimationPlayer2/Label4:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(12.0333, 16.9),
+"times": PackedFloat32Array(12.0333, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1223,7 +1307,7 @@ tracks/7/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(12.0667, 14.0333),
+"times": PackedFloat32Array(12, 14),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -1248,6 +1332,18 @@ tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(4, 17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../AnimationPlayer2/skip:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1406,6 +1502,8 @@ theme_override_font_sizes/font_size = 32
 text = "\"Is that ...me?!\""
 horizontal_alignment = 1
 vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="CanvasLayer/AnimationPlayer2"]
 visible = false
@@ -1426,6 +1524,8 @@ theme_override_font_sizes/font_size = 32
 text = "“That’s me… but from before I died.”"
 horizontal_alignment = 1
 vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="CanvasLayer/AnimationPlayer2"]
 visible = false
@@ -1446,6 +1546,8 @@ theme_override_font_sizes/font_size = 32
 text = "\"Being in the past is creeping me out.\""
 horizontal_alignment = 1
 vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/AnimationPlayer2"]
 visible = false
@@ -1479,6 +1581,24 @@ position = Vector2(2026, 724)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_ij3ta")
 
+[node name="skip" type="Label" parent="CanvasLayer/AnimationPlayer2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_flduu")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../AnimationPlayer2")
 libraries = {
@@ -1486,6 +1606,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1637,6 +1758,24 @@ scale = Vector2(0.492667, 0.480667)
 texture = ExtResource("23_urv0e")
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2303.97)
+
+[node name="skip" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_flduu")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -1886,6 +2025,24 @@ position = Vector2(2026, 724)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
 
+[node name="skip" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_flduu")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="Deskcloseup" type="Sprite2D" parent="Node"]
 visible = false
 position = Vector2(1173, 643)
@@ -1939,6 +2096,8 @@ theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
 text = "\"My diary... Maybe it has answers to how I became a ghost.\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="Node/AnimationPlayer2"]
 visible = false
@@ -1958,6 +2117,8 @@ theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
 text = "“Huh. There's a color pattern that's locking the diary.”"
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="Node/AnimationPlayer2"]
 visible = false
@@ -1977,6 +2138,8 @@ theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
 text = "\"Maybe I left something in my room to help me unlock it.\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="Node/AnimationPlayer2"]
 visible = false
@@ -1996,6 +2159,8 @@ theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
 text = "\"I feel a little dizzy, I don't think I'll be able to stay in the past any longer...\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="Node/AnimationPlayer2"]
 visible = false
@@ -2012,6 +2177,24 @@ z_as_relative = false
 position = Vector2(2026, 724)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
+
+[node name="skip" type="Label" parent="Node/AnimationPlayer2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_flduu")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="ColorRect2" type="ColorRect" parent="Node"]
 offset_left = -17.0

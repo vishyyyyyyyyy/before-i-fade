@@ -7,6 +7,23 @@ extends Node2D
 var clicked_objects := {} 
 var deskcounter:= 0
 
+var segment_data := [
+	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] },
+	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 6.0] }
+	
+]
+@onready var anim_players := [
+	$CanvasLayer/AnimationPlayer2,
+	$CanvasLayer/AnimationPlayer,
+]
+var anim_index := 0
+var anim: AnimationPlayer
+var dialogue_active := false
+var segment_index := 0
+var animating := true
+var segment_starts
+var segment_ends
+
 func _ready():
 	$Node2/Area2D.pressed.connect(_on_desk_area_pressed)
 	$Node/Deskcloseup.visible=false
@@ -28,6 +45,85 @@ func _ready():
 		)
 	modulate()
 	
+
+func start_dialogue(index: int):
+	# Safety
+	if index >= anim_players.size():
+		return
+
+	# Stop all animations
+	for a in anim_players:
+		a.stop()
+
+	anim_index = index
+	anim = anim_players[anim_index]
+
+	segment_starts = segment_data[anim_index].starts
+	segment_ends   = segment_data[anim_index].ends
+
+	segment_index = 0
+	animating = true
+	dialogue_active = true
+	
+	var anim_name := ""
+	
+	if anim_index == 0:
+		if Global.character =="girlGhost":
+			anim_name = "girlghost"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boyghost"
+		else:
+			print("error animating text")
+	
+	if anim_index == 1:
+		if Global.character =="girlGhost":
+			anim_name = "girlghost"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boyghost"
+		else:
+			print("error animating text")
+	
+	anim.play(anim_name)
+
+
+func _input(event):
+	if not dialogue_active:
+		return
+
+	if event.is_action_pressed("ui_accept") and not event.is_echo():
+		textskip()
+
+func end_dialogue():
+	dialogue_active = false
+	anim.stop()
+
+	print("Dialogue finished:", anim_index)
+	if anim_index == 0:
+		pass
+	if anim_index ==1:
+		pass
+		
+		
+	anim_index += 1
+
+
+func textskip():
+	
+	if animating:
+		anim.seek(segment_ends[segment_index], true)
+		anim.pause()
+		animating = false
+	else:
+		segment_index += 1
+		if segment_index < segment_starts.size():
+			anim.seek(segment_starts[segment_index], true)
+			anim.play()
+			animating = true
+		else:
+			end_dialogue()
+	
 func modulate():
 	if Global.character == "girlGhost":
 		await get_tree().create_timer(0.5).timeout
@@ -46,6 +142,8 @@ func modulate():
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer2.play("girlghost")
+		start_dialogue(0)
+		dialogue_active = true
 		await $CanvasLayer/AnimationPlayer2.animation_finished
 		$CanvasLayer/AnimationPlayer3/friend.visible = true
 		await get_tree().create_timer(1.0).timeout
@@ -76,6 +174,8 @@ func modulate():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
 		$CanvasLayer/AnimationPlayer2.play("boyghost")
+		start_dialogue(0)
+		dialogue_active = true
 		await $CanvasLayer/AnimationPlayer2.animation_finished
 		$CanvasLayer/AnimationPlayer3/friend.visible = true
 		await get_tree().create_timer(1.0).timeout

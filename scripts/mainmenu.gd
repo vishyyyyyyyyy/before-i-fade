@@ -1,5 +1,7 @@
 extends Node2D
 func _ready() -> void:
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	#$Node/Play/CollisionShape2D.disabled=true
 	#$Node/Music/CollisionShape2D.disabled=true
 	#$Node4/AnimationPlayer.play("fadein")

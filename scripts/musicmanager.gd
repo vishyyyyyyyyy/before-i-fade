@@ -1,6 +1,6 @@
 extends Node
 
-var music_on := true
+var music_on := false
 var music_player: AudioStreamPlayer
 var saved_position := 0.0
 

@@ -50,6 +50,54 @@ size = Vector2(361, 27)
 
 [sub_resource type="Animation" id="Animation_lv7wv"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_lj4hb"]
 resource_name = "type_text"
@@ -61,7 +109,7 @@ tracks/0/path = NodePath("../AnimationPlayer/Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.04),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -98,18 +146,6 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(2.96667, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AnimationPlayer/skip:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -247,24 +283,8 @@ libraries = {
 }
 autoplay = "type_text"
 
-[node name="skip" type="Label" parent="CanvasLayer/AnimationPlayer"]
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 883.0
-offset_top = -33.0
-offset_right = 1135.0
-offset_bottom = -17.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("9_hdjrh")
-theme_override_font_sizes/font_size = 16
-text = "(SPACE to skip text)"
-
 [node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -284,7 +304,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="CanvasLayer/AnimationPlayer"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
