@@ -25,6 +25,14 @@ func _ready():
 	start_dialogue(0)
 	dialogue_active = true
 	await $AnimationPlayer.animation_finished
+	
+func _process(_delta):
+	if not dialogue_active or not animating:
+		return
+
+	if anim.get_current_animation_position() >= segment_ends[segment_index]:
+		anim.pause()
+		animating = false
 
 func scrubmirror():
 	$Label2.visible=true
@@ -49,6 +57,7 @@ func _on_char_chosen():
 	print("Player chose a character!")
 	print(Global.character)
 	start_dialogue(1)
+	dialogue_active = true
 
 
 func start_dialogue(index: int):
@@ -107,9 +116,7 @@ func end_dialogue():
 		
 	anim_index += 1
 
-
 func textskip():
-	
 	if animating:
 		anim.seek(segment_ends[segment_index], true)
 		anim.pause()

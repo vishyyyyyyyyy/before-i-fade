@@ -36,7 +36,7 @@ length = 3.0
 
 [sub_resource type="Animation" id="Animation_ikp7u"]
 resource_name = "text"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -555,6 +555,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5

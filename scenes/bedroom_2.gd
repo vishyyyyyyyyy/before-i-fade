@@ -8,7 +8,7 @@ var clicked_objects := {}
 var deskcounter:= 0
 
 var segment_data := [
-	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] },
+	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] }, 
 	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 6.0] }
 	
 ]
@@ -78,15 +78,14 @@ func start_dialogue(index: int):
 	
 	if anim_index == 1:
 		if Global.character =="girlGhost":
-			anim_name = "girlghost"
+			anim_name = "friendtextGIRL"
 
 		elif Global.character =="boyGhost":
-			anim_name ="boyghost"
+			anim_name ="friendtexttBOY"
 		else:
 			print("error animating text")
 	
-	anim.play(anim_name)
-
+	anim.play(anim_name)     
 
 func _input(event):
 	if not dialogue_active:
@@ -101,7 +100,17 @@ func end_dialogue():
 
 	print("Dialogue finished:", anim_index)
 	if anim_index == 0:
-		pass
+		print("jjiiii")
+		print("FIRST DIALOGUE FINISHED")
+		$CanvasLayer/AnimationPlayer2/Label.visible=false
+		$CanvasLayer/AnimationPlayer2/Label2.visible=false
+		$CanvasLayer/AnimationPlayer2/Label3.visible=false
+		$CanvasLayer/AnimationPlayer2/GirlGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/GirlGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
+		$CanvasLayer/AnimationPlayer2/skip.visible=false
 	if anim_index ==1:
 		pass
 		
@@ -121,7 +130,8 @@ func textskip():
 			anim.seek(segment_starts[segment_index], true)
 			anim.play()
 			animating = true
-		else:
+		if segment_index == segment_starts.size():
+			print("call end dialogue")
 			end_dialogue()
 	
 func modulate():
@@ -141,21 +151,20 @@ func modulate():
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
-		$CanvasLayer/AnimationPlayer2.play("girlghost")
 		start_dialogue(0)
 		dialogue_active = true
-		await $CanvasLayer/AnimationPlayer2.animation_finished
-		$CanvasLayer/AnimationPlayer3/friend.visible = true
-		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
-		await $CanvasLayer/AnimationPlayer.animation_finished
-		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
-		$CanvasLayer/AnimationPlayer3/girlWalk.visible = true
-		$CanvasLayer/AnimationPlayer3.play("exitGirl")
-		await $CanvasLayer/AnimationPlayer3.animation_finished
-		$Label3.visible=true
-		unlock_explore()
+		
+		#$CanvasLayer/AnimationPlayer3/friend.visible = true
+		#await get_tree().create_timer(1.0).timeout
+		#$CanvasLayer/AnimationPlayer.play("friendtextGIRL")
+		#await $CanvasLayer/AnimationPlayer.animation_finished
+		#await get_tree().create_timer(1.0).timeout
+		#$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
+		#$CanvasLayer/AnimationPlayer3/girlWalk.visible = true
+		#$CanvasLayer/AnimationPlayer3.play("exitGirl")
+		#await $CanvasLayer/AnimationPlayer3.animation_finished
+		#$Label3.visible=true
+		#unlock_explore()
 		
 	if Global.character == "boyGhost":
 		await get_tree().create_timer(0.5).timeout
@@ -173,21 +182,20 @@ func modulate():
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
-		$CanvasLayer/AnimationPlayer2.play("boyghost")
 		start_dialogue(0)
 		dialogue_active = true
-		await $CanvasLayer/AnimationPlayer2.animation_finished
-		$CanvasLayer/AnimationPlayer3/friend.visible = true
-		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/AnimationPlayer.play("friendtextBOY")
-		await $CanvasLayer/AnimationPlayer.animation_finished
-		await get_tree().create_timer(1.0).timeout
-		$CanvasLayer/AnimationPlayer3/boyIdle.visible = false
-		$CanvasLayer/AnimationPlayer3/boyWalk.visible = true
-		$CanvasLayer/AnimationPlayer3.play("exit")
-		await $CanvasLayer/AnimationPlayer3.animation_finished
-		$Label3.visible=true
-		unlock_explore()
+		
+		#$CanvasLayer/AnimationPlayer3/friend.visible = true
+		#await get_tree().create_timer(1.0).timeout
+		#$CanvasLayer/AnimationPlayer.play("friendtextBOY")
+		#await $CanvasLayer/AnimationPlayer.animation_finished
+		#await get_tree().create_timer(1.0).timeout
+		#$CanvasLayer/AnimationPlayer3/boyIdle.visible = false
+		#$CanvasLayer/AnimationPlayer3/boyWalk.visible = true
+		#$CanvasLayer/AnimationPlayer3.play("exit")
+		#await $CanvasLayer/AnimationPlayer3.animation_finished
+		#$Label3.visible=true
+		#unlock_explore()
 
 		
 func unlock_explore():
