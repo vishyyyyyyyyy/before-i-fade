@@ -18,6 +18,7 @@ var segment_starts
 var segment_ends
 
 func _ready():
+	print("SCENE:", get_tree().current_scene.name)
 	$ColorRect/boy.disabled=true
 	$ColorRect/girl.disabled=true
 	$Node/Area2D/CollisionPolygon2D.disabled=true
