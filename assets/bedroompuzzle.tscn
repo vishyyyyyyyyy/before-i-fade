@@ -153,6 +153,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/skip:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfdvt"]
 _data = {
@@ -229,7 +241,7 @@ tracks/4/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(8.1, 11.0333),
+"times": PackedFloat32Array(8.1, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -265,7 +277,7 @@ tracks/7/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(13.1, 15.0333),
+"times": PackedFloat32Array(13, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -305,6 +317,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../AnimationPlayer2/skip:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_mktfx"]
@@ -377,7 +401,7 @@ tracks/5/path = NodePath("../AnimationPlayer2/Label4:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(8.06667, 10.0667),
+"times": PackedFloat32Array(8, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -413,7 +437,7 @@ tracks/8/path = NodePath("../AnimationPlayer2/Label5:visible_ratio")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(11.0333, 13.0667),
+"times": PackedFloat32Array(11, 13),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -441,6 +465,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../AnimationPlayer2/skip:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fekwh"]
@@ -863,7 +899,6 @@ libraries = {
 }
 
 [node name="Label2" type="Label" parent="AnimationPlayer"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -881,6 +916,9 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"Let me quickly unlock my diary and travel back to the present.\""
 horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
 visible = false
@@ -901,6 +939,8 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"The lock seems to be related to the order and colors on the bed!\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="AnimationPlayer"]
 visible = false
@@ -922,6 +962,23 @@ theme_override_font_sizes/font_size = 32
 text = "
 Interact with the desk again to enter the combination."
 horizontal_alignment = 1
+
+[node name="skip" type="Label" parent="AnimationPlayer"]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Node3" type="Node" parent="."]
 
@@ -1328,6 +1385,8 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"What the... Why're the pages ripped out?\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="AnimationPlayer2"]
 visible = false
@@ -1348,6 +1407,8 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"Well, I found one anyways. Maybe I'll find more later.\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="AnimationPlayer2"]
 visible = false
@@ -1368,6 +1429,8 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"Too bad I don't remember my name...\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="AnimationPlayer2"]
 visible = false
@@ -1388,6 +1451,8 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "\"I guess I'll just go with...\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label6" type="Label" parent="AnimationPlayer2"]
 visible = false
@@ -1409,6 +1474,23 @@ theme_override_font_sizes/font_size = 32
 text = "Type your ghost's name.
 Press enter key to save."
 horizontal_alignment = 1
+
+[node name="skip" type="Label" parent="AnimationPlayer2"]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Desk2" type="Sprite2D" parent="."]
 visible = false

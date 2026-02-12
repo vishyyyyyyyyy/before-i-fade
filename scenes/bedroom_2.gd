@@ -9,12 +9,16 @@ var deskcounter:= 0
 
 var segment_data := [
 	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] }, 
-	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }
+	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] },
+	{ "starts": [0.0, 3.0, 7.0], "ends": [1.0, 5.0, 9.0] }, #photo
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, #diary
 	
 ]
 @onready var anim_players := [
 	$CanvasLayer/AnimationPlayer2,
 	$CanvasLayer/AnimationPlayer,
+	$Node/AnimationPlayer, #family photo player
+	$Node/AnimationPlayer2 #diary player
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -23,7 +27,8 @@ var segment_index := 0
 var animating := true
 var segment_starts
 var segment_ends
-
+	
+signal dialogue_finished(index)
 
 
 func _ready():
@@ -58,7 +63,6 @@ func _process(_delta):
 	if anim.get_current_animation_position() >= segment_ends[segment_index]:
 		anim.pause()
 		animating = false
-
 
 func start_dialogue(index: int):
 	# Safety
@@ -108,8 +112,61 @@ func start_dialogue(index: int):
 			anim_name ="friendtextBOY"
 		else:
 			print("error animating text")
+			
+	if anim_index == 2:
+		print("photo anim")
+		$CanvasLayer/AnimationPlayer2/GirlGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/GirlGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
+		$CanvasLayer/AnimationPlayer/Label.visible=false
+		$CanvasLayer/AnimationPlayer/Label2.visible=false
+		$CanvasLayer/AnimationPlayer/Label3.visible=false
+		$"CanvasLayer/AnimationPlayer/Friend label".visible=false
+		$CanvasLayer/AnimationPlayer/YNlabel.visible=false
+		$CanvasLayer/AnimationPlayer/Friend.visible=false
+		$CanvasLayer/AnimationPlayer/Friend2.visible=false
+		$CanvasLayer/AnimationPlayer/Girl.visible=false
+		$CanvasLayer/AnimationPlayer/Girl2.visible=false
+		$CanvasLayer/AnimationPlayer/Boy.visible=false
+		$CanvasLayer/AnimationPlayer/Boy2.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girlfamilyphoto"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boyfamilyphoto"
+		else:
+			print("error animating text")
 	
-	anim.play(anim_name)     
+	if anim_index == 3:
+		print("diary anim")
+		$CanvasLayer/AnimationPlayer2/GirlGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/GirlGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost2.visible=false
+		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
+		$CanvasLayer/AnimationPlayer/Label.visible=false
+		$CanvasLayer/AnimationPlayer/Label2.visible=false
+		$CanvasLayer/AnimationPlayer/Label3.visible=false
+		$"CanvasLayer/AnimationPlayer/Friend label".visible=false
+		$CanvasLayer/AnimationPlayer/YNlabel.visible=false
+		$CanvasLayer/AnimationPlayer/Friend.visible=false
+		$CanvasLayer/AnimationPlayer/Friend2.visible=false
+		$CanvasLayer/AnimationPlayer/Girl.visible=false
+		$CanvasLayer/AnimationPlayer/Girl2.visible=false
+		$CanvasLayer/AnimationPlayer/Boy.visible=false
+		$CanvasLayer/AnimationPlayer/Boy2.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girldairytext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boydiarytext"
+		else:
+			print("error animating text")
+	anim.play(anim_name) 
+	   
+	await dialogue_finished 
 
 func _input(event):
 	if not dialogue_active:
@@ -152,8 +209,25 @@ func end_dialogue():
 		$CanvasLayer/AnimationPlayer/Boy2.visible=false
 		leaveroomandexplore()
 		
+	if anim_index ==2:
+		$Node/AnimationPlayer/Label1.visible=false
+		$Node/AnimationPlayer/Label2.visible=false
+		$Node/AnimationPlayer/Label3.visible=false
+		$Node/AnimationPlayer/GirlGhost.visible=false
+		$Node/AnimationPlayer/BoyGhost.visible = false
+		$Node/AnimationPlayer/skip.visible=false
 		
-	anim_index += 1
+	if anim_index ==3:
+		$Node/AnimationPlayer2/Label.visible=false
+		$Node/AnimationPlayer2/BoyGhost.visible=false
+		$Node/AnimationPlayer2/GirlGhost.visible=false
+		$Node/AnimationPlayer2/Label4.visible=false
+		$Node/AnimationPlayer2/Label3.visible=false
+		$Node/AnimationPlayer2/Label2.visible=false
+		$Node/AnimationPlayer2/Label.visible=false
+		$Node/AnimationPlayer2/Deskcloseup2.visible=false
+		
+	emit_signal("dialogue_finished", anim_index)
 
 
 func textskip():
@@ -192,7 +266,7 @@ func modulate():
 		$CanvasModulate/Calendar2.visible=true
 		start_dialogue(0)
 		dialogue_active = true
-	
+	 
 		
 	if Global.character == "boyGhost":
 		await get_tree().create_timer(0.5).timeout
@@ -319,10 +393,27 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			"familyphoto":
 				if Global.character == "boyGhost":
 					$Label3.visible=false
-					$Node/AnimationPlayer.play("boyfamilyphoto")
+					await start_dialogue(2)
+					#hidestuff from animation
+					$Node/AnimationPlayer/Label1.visible=false
+					$Node/AnimationPlayer/Label2.visible=false
+					$Node/AnimationPlayer/Label3.visible=false
+					$Node/AnimationPlayer/GirlGhost.visible=false
+					$Node/AnimationPlayer/BoyGhost.visible = false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/BoyGhost.visible=false
+					$Node/AnimationPlayer2/GirlGhost.visible=false
+					$Node/AnimationPlayer2/Label4.visible=false
+					$Node/AnimationPlayer2/Label3.visible=false
+					$Node/AnimationPlayer2/Label2.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/Deskcloseup2.visible=false
+					print("after photo anim done")
+					#$Node/AnimationPlayer.play("boyfamilyphoto")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
-					await $Node/AnimationPlayer.animation_finished
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Label3.visible=true
@@ -330,10 +421,26 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					
 				else:
 					$Label3.visible=false
-					$Node/AnimationPlayer.play("girlfamilyphoto")
+					await start_dialogue(2)
+					#hidestuff from animation
+					$Node/AnimationPlayer/Label1.visible=false
+					$Node/AnimationPlayer/Label2.visible=false
+					$Node/AnimationPlayer/Label3.visible=false
+					$Node/AnimationPlayer/GirlGhost.visible=false
+					$Node/AnimationPlayer/BoyGhost.visible = false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/BoyGhost.visible=false
+					$Node/AnimationPlayer2/GirlGhost.visible=false
+					$Node/AnimationPlayer2/Label4.visible=false
+					$Node/AnimationPlayer2/Label3.visible=false
+					$Node/AnimationPlayer2/Label2.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/Deskcloseup2.visible=false
+					#$Node/AnimationPlayer.play("girlfamilyphoto")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
-					await $Node/AnimationPlayer.animation_finished
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Label3.visible=true
@@ -341,26 +448,56 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			"diary":
 				if Global.character == "boyGhost":
 					$Label3.visible=false
-					$Node/AnimationPlayer2.play("boydiarytext")
+					await start_dialogue(3)
+					#hidestuff from animation
+					$Node/AnimationPlayer/Label1.visible=false
+					$Node/AnimationPlayer/Label2.visible=false
+					$Node/AnimationPlayer/Label3.visible=false
+					$Node/AnimationPlayer/GirlGhost.visible=false
+					$Node/AnimationPlayer/BoyGhost.visible = false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/BoyGhost.visible=false
+					$Node/AnimationPlayer2/GirlGhost.visible=false
+					$Node/AnimationPlayer2/Label4.visible=false
+					$Node/AnimationPlayer2/Label3.visible=false
+					$Node/AnimationPlayer2/Label2.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/Deskcloseup2.visible=false
+					#$Node/AnimationPlayer2.play("boydiarytext")
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
-					await $Node/AnimationPlayer2.animation_finished
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Label3.visible=true
 					deskcounter +=1
 				else:
 					$Label3.visible=false
-					$Node/AnimationPlayer2.play("girldiarytext")
+					await start_dialogue(3)
+					#hidestuff from animation
+					$Node/AnimationPlayer/Label1.visible=false
+					$Node/AnimationPlayer/Label2.visible=false
+					$Node/AnimationPlayer/Label3.visible=false
+					$Node/AnimationPlayer/GirlGhost.visible=false
+					$Node/AnimationPlayer/BoyGhost.visible = false
+					$Node/AnimationPlayer/skip.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/BoyGhost.visible=false
+					$Node/AnimationPlayer2/GirlGhost.visible=false
+					$Node/AnimationPlayer2/Label4.visible=false
+					$Node/AnimationPlayer2/Label3.visible=false
+					$Node/AnimationPlayer2/Label2.visible=false
+					$Node/AnimationPlayer2/Label.visible=false
+					$Node/AnimationPlayer2/Deskcloseup2.visible=false
+					#$Node/AnimationPlayer2.play("girldiarytext")
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=true
-					await $Node/AnimationPlayer2.animation_finished
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Label3.visible=true
 					deskcounter +=1
 					
-		if deskcounter >1:
+		if deskcounter > 1:
 			$Label3.visible=false
 			$Node2/Area2D/CollisionShape2D.disabled=false
 			$Node2/Area2D.visible=true
