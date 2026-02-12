@@ -6,6 +6,28 @@ var code = ""
 var count = 0
 var time_left_seconds
 
+
+var segment_data := [
+	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #puzzle instructions
+	{ "starts": [0.0, 4.0, 8.0, 13.0], "ends": [2.0, 6.0, 11.0, 15.0] },  #open diary
+	{ "starts": [0.0, 6.0, 10.0], "ends": [2.0, 8.0, 12.0] }, #read diary entry
+]
+@onready var anim_players := [
+	$AnimationPlayer,
+	$AnimationPlayer2,
+	$AnimationPlayer3
+]
+var anim_index := 0
+var anim: AnimationPlayer
+var dialogue_active := false
+var segment_index := 0
+var animating := true
+var segment_starts
+var segment_ends
+	
+signal dialogue_finished(index)
+
+
 func _ready():
 	$Node3/Label2.visible=true
 	$Node3/Label.visible=true
@@ -29,12 +51,51 @@ func _ready():
 var diary_started := false
 
 func _input(event):
-	if diary_started:
+	if not dialogue_active or diary_started:
 		return
 
 	if event.is_action_pressed("ui_accept") and diary_started:
 		diary_started = false
 		play_diary_sequence()
+	
+	if event.is_action_pressed("ui_accept") and not event.is_echo():
+		textskip()
+
+func end_dialogue():
+	dialogue_active = false
+	anim.stop()
+
+	print("Dialogue finished:", anim_index)
+	if anim_index == 0:
+		$AnimationPlayer/skip.visible=false
+
+	if anim_index ==1:
+		pass
+		
+	if anim_index ==2:
+		$AnimationPlayer/skip.visible=false
+		$AnimationPlayer2/skip.visible=false
+		$AnimationPlayer3/skip.visible=false
+		
+
+	emit_signal("dialogue_finished", anim_index)
+
+func textskip():
+	if animating:
+		anim.seek(segment_ends[segment_index], true)
+		anim.pause()
+		animating = false
+	else:
+		segment_index += 1 
+
+		if segment_index < segment_starts.size():
+			anim.seek(segment_starts[segment_index], true)
+			anim.play()
+			animating = true
+		else:
+			print("call end dialogue")
+			end_dialogue()
+
 
 func _on_name_submitted(text: String):
 	print("Player name:", text)
@@ -47,8 +108,7 @@ func _on_continue_pressed():
 	print("Node was clicked!")
 	$Timer2.start()
 	$desk/CollisionShape2D.disabled=true
-	$AnimationPlayer.play("text")
-	await $AnimationPlayer.animation_finished
+	await start_dialogue(0)
 	$desk/CollisionShape2D.disabled=false
 	$Node3/continue/CollisionShape2D.disabled=true
 	$desk.clicked.connect(_on_desk_clicked)
@@ -68,6 +128,73 @@ func _on_desk_clicked():
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
+	
+	if not dialogue_active or not animating:
+		return
+	
+	if anim.current_animation == "":
+		return # No animation playing, skip
+
+	if anim.get_current_animation_position() >= segment_ends[segment_index]:
+		anim.pause()
+		animating = false
+
+func start_dialogue(index: int):
+	# Safety
+	if index >= anim_players.size():
+		return
+
+	# Stop all animations
+	for a in anim_players:
+		a.stop()
+
+	anim_index = index
+	anim = anim_players[anim_index]
+
+	segment_starts = segment_data[anim_index].starts
+	segment_ends   = segment_data[anim_index].ends
+
+	segment_index = 0
+	animating = true
+	dialogue_active = true
+	
+	var anim_name := ""
+	
+	if anim_index == 0:
+		anim_name = "text"
+	
+	if anim_index == 1:
+		print("2nd anim6")
+		$AnimationPlayer/skip.visible=false
+		$AnimationPlayer/Label3.visible=false
+		$AnimationPlayer/Label.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girlnametext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boynametext"
+		else:
+			print("error animating text")
+			
+	if anim_index == 2:
+		$AnimationPlayer/skip.visible=false
+		$AnimationPlayer2/skip.visible=false
+		$AnimationPlayer/Label3.visible=false
+		$AnimationPlayer/Label.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girldiaryentry1"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boydiaryentry1"
+		else:
+			print("error animating text")
+			
+	anim.play(anim_name) 
+	   
+	await dialogue_finished 
+
 
 func _on_texture_button_pressed() -> void:
 	$CanvasLayer4/CanvasModulate.color =  Color(0.442, 0.429, 0.419)
@@ -153,7 +280,7 @@ func reset_puzzle():
 	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
-	$AnimationPlayer.play("text")
+	await start_dialogue(0)
 	$Timer2.start()
 	
 func wrong():
@@ -203,39 +330,40 @@ func diarypagecontinue():
 	$Node4/Label3.visible=false
 	$Desk2.visible=true
 	if Global.character == "girlGhost":
-		$AnimationPlayer2.play("girlnametext")
-		await $AnimationPlayer2.animation_finished
+		await start_dialogue(1)
+		$AnimationPlayer2/Label6.visible=true
 		diary_started=true
 		$LineEdit.editable=true
 		$LineEdit.visible=true
 		
 	if Global.character == "boyGhost":
-		$AnimationPlayer2.play("boynametext")
-		await $AnimationPlayer2.animation_finished
+		await start_dialogue(1)
+		$AnimationPlayer2/Label6.visible=true
 		diary_started=true
 		$LineEdit.editable=true
 		$LineEdit.visible=true
 	
 func play_diary_sequence():
+	print("playing diary sequence?")
+	$AnimationPlayer2/Label6.visible=false
 	$desk/CollisionShape2D.disabled=true
 	if Global.character == "girlGhost":
-		$AnimationPlayer2/Label6.visible=false
 		$LineEdit.editable=false
 		$LineEdit.visible=false
 		$Diaryentry1.visible=true
 		$Deskcloseup2.visible=false
-		$AnimationPlayer3.play("girldiaryentry1")
+		await start_dialogue(2)
 		$Desk2.visible=false
-		await $AnimationPlayer3.animation_finished
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
-		$Label6.visible=true
+		$CanvasLayer6/Label6.visible=true
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false
 		$AnimationPlayer2/GirlGhost.visible=false
 		$AnimationPlayer2/BoyGhost.visible=false
 		$Diaryentry1.visible=false
 		$CanvasModulate/Calendar2.visible=true
+		$AnimationPlayer3/skip.visible=false
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate.color = Color(1,1,1,1)
@@ -244,7 +372,7 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$SceneTrigger/CollisionShape2D.disabled=false
-		$Label6.visible=true
+		$CanvasLayer6/Label6.visible=true
 		
 	if Global.character == "boyGhost":
 		$AnimationPlayer2/Label6.visible=false
@@ -252,18 +380,18 @@ func play_diary_sequence():
 		$LineEdit.visible=false
 		$Diaryentry1.visible=true
 		$Deskcloseup2.visible=false
-		$AnimationPlayer3.play("boydiaryentry1")
+		await start_dialogue(2)
 		$Desk2.visible=false
-		await $AnimationPlayer3.animation_finished
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
-		$Label6.visible=true
+		$CanvasLayer6/Label6.visible=true
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false
 		$AnimationPlayer2/GirlGhost.visible=false
 		$AnimationPlayer2/BoyGhost.visible=false
 		$Diaryentry1.visible=false
 		$CanvasModulate/Calendar2.visible=true
+		$AnimationPlayer3/skip.visible=false
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate.color = Color(1,1,1,1)
@@ -272,4 +400,4 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$SceneTrigger/CollisionShape2D.disabled=false
-		$Label6.visible=true
+		$CanvasLayer6/Label6.visible=true
