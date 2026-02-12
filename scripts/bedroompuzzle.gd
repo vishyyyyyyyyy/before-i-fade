@@ -32,13 +32,16 @@ func _input(event):
 	if diary_started:
 		return
 
-	if event.is_action_pressed("ui_accept"):
-		diary_started = true
+	if event.is_action_pressed("ui_accept") and diary_started:
+		diary_started = false
 		play_diary_sequence()
 
 func _on_name_submitted(text: String):
 	print("Player name:", text)
 	Global.charName = text
+
+	diary_started = false
+	play_diary_sequence()
 
 func _on_continue_pressed():
 	print("Node was clicked!")
@@ -202,12 +205,14 @@ func diarypagecontinue():
 	if Global.character == "girlGhost":
 		$AnimationPlayer2.play("girlnametext")
 		await $AnimationPlayer2.animation_finished
+		diary_started=true
 		$LineEdit.editable=true
 		$LineEdit.visible=true
 		
 	if Global.character == "boyGhost":
 		$AnimationPlayer2.play("boynametext")
 		await $AnimationPlayer2.animation_finished
+		diary_started=true
 		$LineEdit.editable=true
 		$LineEdit.visible=true
 	
