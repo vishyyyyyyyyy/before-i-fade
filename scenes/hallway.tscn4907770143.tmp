@@ -81,7 +81,7 @@ length = 0.001
 
 [sub_resource type="Animation" id="Animation_tb454"]
 resource_name = "boy"
-length = 16.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -185,7 +185,7 @@ tracks/8/path = NodePath("../ghosttext4/BoyGhost:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 16),
+"times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -197,7 +197,7 @@ tracks/9/path = NodePath("../ghosttext4/skip:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 16),
+"times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -827,10 +827,10 @@ tracks/1/path = NodePath("neighbor talk/neighbor:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 9, 9.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -901,6 +901,18 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_lyhqc"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ghosttext3/skip:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_84wcw"]
 resource_name = "boytext"
@@ -996,7 +1008,7 @@ tracks/7/path = NodePath("../ghosttext3/Label4:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(16, 18),
+"times": PackedFloat32Array(16, 18.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -1144,7 +1156,7 @@ tracks/7/path = NodePath("../ghosttext3/Label4:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(16, 18),
+"times": PackedFloat32Array(16, 18.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -1852,8 +1864,6 @@ offset_bottom = 1224.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"What was my neighbor doing here ALONE?\""
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="CanvasLayer/ghosttext2"]
 visible = false
@@ -1865,8 +1875,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"I thought my friend killed me, but maybe my neighbor did it?\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="CanvasLayer/ghosttext2"]
 visible = false
@@ -1878,8 +1886,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"I'm getting really scared.\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="CanvasLayer/ghosttext2"]
 visible = false
@@ -1891,8 +1897,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"Anyways, let me investigate this hallway.\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/ghosttext2"]
 visible = false
@@ -2087,8 +2091,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"These photos...\""
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="CanvasLayer/ghosttext3"]
 visible = false
@@ -2100,8 +2102,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"They're the only people I've talked to recently\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="CanvasLayer/ghosttext3"]
 visible = false
@@ -2113,8 +2113,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"My friend, my neighbor, my ex, and my aunt.\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="CanvasLayer/ghosttext3"]
 visible = false
@@ -2126,8 +2124,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"I wonder why they were broken in the present?\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="CanvasLayer/ghosttext3"]
 visible = false
@@ -2139,8 +2135,6 @@ theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"Maybe I can try fixing the photos in the present?\" "
 horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/ghosttext3"]
 visible = false
@@ -2157,7 +2151,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_bje8i")
 
 [node name="skip" type="Label" parent="CanvasLayer/ghosttext3"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5

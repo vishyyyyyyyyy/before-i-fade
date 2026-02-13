@@ -7,6 +7,33 @@ var time_left_seconds
 var clicked_objects := {} 
 var piece_start_positions := {}
 
+
+var segment_data := [
+	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #ghosttext1 
+	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #neighbor
+	{ "starts": [0.0, 4.0, 10.0, 14.0], "ends": [2.0, 6.0, 12.0, 16.0] }, #ghosttext2
+	{ "starts": [0.0, 4.0, 10.0, 16.0, 20.0], "ends": [2.0, 8.0, 14.0, 18.0, 24.0] }, #ghosttext3
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] } #ghosttext4
+]
+@onready var anim_players := [
+	$CanvasLayer/ghosttext1,
+	$"CanvasLayer/neighbor talk",
+	$CanvasLayer/ghosttext2,
+	$CanvasLayer/ghosttext3,
+	$CanvasLayer/ghosttext4
+]
+var anim_index := 0
+var anim: AnimationPlayer
+var dialogue_active := false
+var segment_index := 0
+var animating := true
+var segment_starts
+var segment_ends
+	
+signal dialogue_finished(index)
+
+
+
 func _ready() -> void:
 	$CanvasLayer/Node3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer/AnimationPlayer/neighbor.visible = false
@@ -25,16 +52,200 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
 	$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
+
+	if not dialogue_active or not animating:
+		return
 	
+	if anim.current_animation == "":
+		return # No animation playing, skip
+
+	if anim.get_current_animation_position() >= segment_ends[segment_index]:
+		anim.pause()
+		animating = false
+
+func start_dialogue(index: int):
+	# Safety
+	if index >= anim_players.size():
+		return
+
+	# Stop all animations
+	for a in anim_players:
+		a.stop()
+
+	anim_index = index
+	anim = anim_players[anim_index]
+
+	segment_starts = segment_data[anim_index].starts
+	segment_ends   = segment_data[anim_index].ends
+
+	segment_index = 0
+	animating = true
+	dialogue_active = true
+	
+	var anim_name := ""
+	
+	if anim_index == 0:
+		if Global.character =="girlGhost":
+			anim_name = "girltext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boytext"
+		else:
+			print("error animating text")
+	
+	if anim_index == 1:
+		$CanvasLayer/ghosttext1/Label2.visible=false
+		$CanvasLayer/ghosttext1/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		$CanvasLayer/ghosttext1/BoyGhost.visible=false
+		$CanvasLayer/ghosttext1/skip.visible=false
+	
+		anim_name = "neighbortext"
+	
+	if anim_index == 2:
+		$CanvasLayer/ghosttext1/Label2.visible=false
+		$CanvasLayer/ghosttext1/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		$CanvasLayer/ghosttext1/BoyGhost.visible=false
+		$CanvasLayer/ghosttext1/skip.visible=false
+		
+		$"CanvasLayer/neighbor talk/neighborlabel".visible=false
+		$"CanvasLayer/neighbor talk/neighbor".visible=false
+		$"CanvasLayer/neighbor talk/skip".visible=false
+		$"CanvasLayer/neighbor talk/Label2".visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girlghosttext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boyghosttext"
+		else:
+			print("error animating text")
+	if anim_index == 3: 
+		$"CanvasLayer/ghosttext2/Label4".visible=false
+		$CanvasLayer/ghosttext2/BoyGhost.visible=false
+		$CanvasLayer/ghosttext2/skip.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		
+		$CanvasLayer/ghosttext1/Label2.visible=false
+		$CanvasLayer/ghosttext1/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		$CanvasLayer/ghosttext1/BoyGhost.visible=false
+		$CanvasLayer/ghosttext1/skip.visible=false
+		
+		$"CanvasLayer/neighbor talk/neighborlabel".visible=false
+		$"CanvasLayer/neighbor talk/neighbor".visible=false
+		$"CanvasLayer/neighbor talk/skip".visible=false
+		$"CanvasLayer/neighbor talk/Label2".visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girltext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boytext"
+		else:
+			print("error animating text")
+		
+	if anim_index == 4:
+		$CanvasLayer/ghosttext3/Label5.visible=false
+		$CanvasLayer/ghosttext3/BoyGhost.visible=false
+		$CanvasLayer/ghosttext3/GirlGhost.visible=false
+		$CanvasLayer/ghosttext3/skip.visible=false
+		
+		$"CanvasLayer/ghosttext2/Label4".visible=false
+		$CanvasLayer/ghosttext2/BoyGhost.visible=false
+		$CanvasLayer/ghosttext2/skip.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		
+		$CanvasLayer/ghosttext1/Label2.visible=false
+		$CanvasLayer/ghosttext1/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		$CanvasLayer/ghosttext1/BoyGhost.visible=false
+		$CanvasLayer/ghosttext1/skip.visible=false
+		
+		$"CanvasLayer/neighbor talk/neighborlabel".visible=false
+		$"CanvasLayer/neighbor talk/neighbor".visible=false
+		$"CanvasLayer/neighbor talk/skip".visible=false
+		$"CanvasLayer/neighbor talk/Label2".visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+		
+		
+	anim.play(anim_name) 
+	   
+	await dialogue_finished 
+
+func _input(event):
+	if not dialogue_active:
+		return
+
+	if event.is_action_pressed("ui_accept") and not event.is_echo():
+		textskip()	
+
+func end_dialogue():
+	dialogue_active = false
+	anim.stop()
+
+	print("Dialogue finished:", anim_index)
+	if anim_index == 0:
+		$CanvasLayer/ghosttext1/Label2.visible=false
+		$CanvasLayer/ghosttext1/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		$CanvasLayer/ghosttext1/BoyGhost.visible=false
+		$CanvasLayer/ghosttext1/skip.visible=false
+			
+	if anim_index ==1:
+		$"CanvasLayer/neighbor talk/neighborlabel".visible=false
+		$"CanvasLayer/neighbor talk/neighbor".visible=false
+		$"CanvasLayer/neighbor talk/skip".visible=false
+		$"CanvasLayer/neighbor talk/Label2".visible=false
+	
+	if anim_index == 2:
+		$"CanvasLayer/ghosttext2/Label4".visible=false
+		$CanvasLayer/ghosttext2/BoyGhost.visible=false
+		$CanvasLayer/ghosttext2/skip.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		
+	if anim_index == 3:	
+		$CanvasLayer/ghosttext3/Label5.visible=false
+		$CanvasLayer/ghosttext3/BoyGhost.visible=false
+		$CanvasLayer/ghosttext3/GirlGhost.visible=false
+		$CanvasLayer/ghosttext3/skip.visible=false
+	
+	if anim_index == 4:
+		$CanvasLayer/ghosttext4/Label4.visible=false
+		$CanvasLayer/ghosttext4/GirlGhost.visible=false
+		$CanvasLayer/ghosttext4/BoyGhost.visible=false
+		$CanvasLayer/ghosttext4/skip.visible=false
+		
+	emit_signal("dialogue_finished", anim_index)
+
+
+
+func textskip():
+	if animating:
+		anim.seek(segment_ends[segment_index], true)
+		anim.pause()
+		animating = false
+	else:
+		segment_index += 1 
+
+		if segment_index < segment_starts.size():
+			anim.seek(segment_starts[segment_index], true)
+			anim.play()
+			animating = true
+		else:
+			print("call end dialogue")
+			end_dialogue()
+
+
 func ghosttext1():
-	if Global.character == "girlGhost":
-		$CanvasLayer/ghosttext1.play("girltext")
-		await $CanvasLayer/ghosttext1.animation_finished
-		modulate()
-	if Global.character == "boyGhost":
-		$CanvasLayer/ghosttext1.play("boytext")
-		await $CanvasLayer/ghosttext1.animation_finished
-		modulate()
+	await start_dialogue(0)
+	modulate()
 		#
 func modulate():
 	if Global.character == "girlGhost":
@@ -73,14 +284,14 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 		$CanvasLayer/AnimationPlayer/neighbor.visible = true
-		await get_tree().create_timer(0.5).timeout
-		$"CanvasLayer/neighbor talk".play("neighbortext")
-		await $"CanvasLayer/neighbor talk".animation_finished
+		print("hi1")
+		await get_tree().create_timer(1).timeout
+		print("h2")
+		await start_dialogue(1)
 		$CanvasLayer/AnimationPlayer/neighbor.visible = false
 		$CanvasLayer/AnimationPlayer.play("neighborPhotos")
 		await $CanvasLayer/AnimationPlayer.animation_finished
-		$CanvasLayer/ghosttext2.play("girlghosttext")
-		await $CanvasLayer/ghosttext2.animation_finished
+		await start_dialogue(2)
 		$CanvasLayer/Label.visible=true
 		$explore/CanvasLayer/flowers/CollisionShape2D.disabled=false
 		$explore/CanvasLayer/flowers/CollisionShape2D2.disabled=false
@@ -123,13 +334,11 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 		await get_tree().create_timer(0.5).timeout
-		$"CanvasLayer/neighbor talk".play("neighbortext")
-		await $"CanvasLayer/neighbor talk".animation_finished
+		await start_dialogue(1)
 		$CanvasLayer/AnimationPlayer/neighbor.visible = false
 		$CanvasLayer/AnimationPlayer.play("neighborPhotos")
 		await $CanvasLayer/AnimationPlayer.animation_finished
-		$CanvasLayer/ghosttext2.play("boyghosttext")
-		await $CanvasLayer/ghosttext2.animation_finished
+		await start_dialogue(2)
 		$CanvasLayer/Label.visible=true
 		$explore/CanvasLayer/flowers/CollisionShape2D.disabled=false
 		$explore/CanvasLayer/flowers/CollisionShape2D2.disabled=false
@@ -177,8 +386,7 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Boyframe.visible=true
 			$CanvasLayer/Friendframe.visible=true
 			$CanvasLayer/Neigborframe.visible=true
-			$CanvasLayer/ghosttext3.play("girltext")
-			await $CanvasLayer/ghosttext3.animation_finished
+			await start_dialogue(3)
 			$CanvasLayer/TileMap3.visible=false
 			$CanvasLayer/Auntframe.visible=false
 			$CanvasLayer/Boyframe.visible=false
@@ -191,8 +399,7 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Friendframe.visible=true
 			$CanvasLayer/Girlframe.visible=true
 			$CanvasLayer/Neigborframe.visible=true
-			$CanvasLayer/ghosttext3.play("boytext")
-			await $CanvasLayer/ghosttext3.animation_finished
+			await start_dialogue(3)
 			$CanvasLayer/TileMap3.visible=false
 			$CanvasLayer/Auntframe.visible=false
 			$CanvasLayer/Friendframe.visible=false
@@ -349,13 +556,12 @@ func diarypagecontinue():
 	$CanvasLayer/Neighbornote3.visible=true
 	if Global.character == "girlGhost":
 		$CanvasLayer/Boyframe.visible=true
-		$CanvasLayer/ghosttext4.play("girl")
+		await start_dialogue(4)
 	elif Global.character == "boyGhost":
 		$CanvasLayer/Girlframe.visible=true
-		$CanvasLayer/ghosttext4.play("boy")
+		await start_dialogue(4)
 	$CanvasLayer/blobGhostPlayer.position.x = 1166
 	$CanvasLayer/blobGhostPlayer.position.y = 520
-	await $CanvasLayer/ghosttext4.animation_finished
 	$CanvasLayer/Neighbornote3.visible=false
 	$CanvasLayer/TileMap3.visible=false
 	$CanvasLayer/Auntframe.visible=false
