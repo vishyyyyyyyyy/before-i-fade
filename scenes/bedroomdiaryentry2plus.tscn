@@ -109,6 +109,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer4/diaryentry2/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_stnjj"]
 resource_name = "girltext"
@@ -144,6 +156,18 @@ tracks/2/path = NodePath("../CanvasLayer4/diaryentry2/GirlGhost:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer4/diaryentry2/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -199,6 +223,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer4/diaryentry3/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_ryjlh"]
 resource_name = "girltext"
@@ -234,6 +270,18 @@ tracks/2/path = NodePath("../CanvasLayer4/diaryentry3/GirlGhost:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer4/diaryentry3/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -289,6 +337,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry4/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_4oxbo"]
 resource_name = "girl"
@@ -324,6 +384,18 @@ tracks/2/path = NodePath("diaryentry4/GirlGhost:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry4/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -379,6 +451,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry5/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_b8r27"]
 resource_name = "girl"
@@ -414,6 +498,18 @@ tracks/2/path = NodePath("diaryentry5/GirlGhost:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry5/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -469,6 +565,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../diaryentry6/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_xnet5"]
 resource_name = "girl"
@@ -504,6 +612,18 @@ tracks/2/path = NodePath("../../diaryentry6/GirlGhost:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../diaryentry6/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -786,8 +906,24 @@ theme_override_font_sizes/font_size = 32
 text = "\"November 2nd. My Bff say's she's okay, but I can tell something's wrong. Hope she's okay...\""
 horizontal_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="diaryentry3" type="AnimationPlayer" parent="CanvasLayer4"]
 root_node = NodePath("../../desk")
@@ -832,6 +968,24 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="diaryentry4" type="AnimationPlayer" parent="CanvasLayer4"]
 libraries = {
 &"": SubResource("AnimationLibrary_yq1p1")
@@ -871,6 +1025,26 @@ theme_override_font_sizes/font_size = 32
 text = "\"November 4th, whenever my aunt shows up, I can't breathe... She's such a pain. LEAVE ME ALONE."
 horizontal_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry4"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="diaryentry5" type="AnimationPlayer" parent="CanvasLayer4"]
 libraries = {
@@ -914,6 +1088,24 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry5"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="diaryentry6" type="AnimationPlayer" parent="CanvasLayer4"]
 root_node = NodePath("../diaryentry5/Label")
 libraries = {
@@ -954,8 +1146,24 @@ theme_override_font_sizes/font_size = 32
 text = "\"WHY ME.\""
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry6"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_kaovn")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Node" type="Node" parent="."]
 
@@ -977,7 +1185,7 @@ shape = SubResource("RectangleShape2D_kvaqh")
 debug_color = Color(0.664694, 0.31491, 1, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="desk"]
-z_index = 6
+z_index = 10
 position = Vector2(-244.667, -79.6667)
 scale = Vector2(0.293333, 0.221)
 polygon = PackedVector2Array(-114.773, -269.985, 615.909, -253.394, 567.045, 55.8069, 539.773, 441.931, -205.682, 432.881)

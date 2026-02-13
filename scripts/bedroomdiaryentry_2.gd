@@ -1,5 +1,26 @@
 extends Node2D
 
+var segment_data := [
+	{ "starts": [0.0], "ends": [4.0] }, 
+	{ "starts": [0.0], "ends": [3.0] }, 
+	{ "starts": [0.0], "ends": [2.0] }, 
+	
+]
+@onready var anim_players := [
+	$CanvasLayer4/diaryentry2,
+	$CanvasLayer4/diaryentry3,
+	$CanvasLayer4/diaryentry4,
+]
+var anim_index := 0
+var anim: AnimationPlayer
+var dialogue_active := false
+var segment_index := 0
+var animating := true
+var segment_starts
+var segment_ends
+	
+signal dialogue_finished(index)
+
 
 func _ready() -> void:
 	$CanvasLayer5/Label.visible=true
@@ -8,66 +29,171 @@ func _ready() -> void:
 	$desk.diaryentry4.connect(diaryentry4)
 	if Global.reusabledesk >=2:
 		$ghostlayer/blobGhostPlayer.position.x = 200
+
+func _process(_delta):
+	if not dialogue_active or not animating:
+		return
 	
+	if anim.current_animation == "":
+		return # No animation playing, skip
+
+	if anim.get_current_animation_position() >= segment_ends[segment_index]:
+		anim.pause()
+		animating = false
+
+func start_dialogue(index: int):
+	# Safety
+	if index >= anim_players.size():
+		return
+
+	# Stop all animations
+	for a in anim_players:
+		a.stop()
+
+	anim_index = index
+	anim = anim_players[anim_index]
+
+	segment_starts = segment_data[anim_index].starts
+	segment_ends   = segment_data[anim_index].ends
+
+	segment_index = 0
+	animating = true
+	dialogue_active = true
+	
+	var anim_name := ""
+	
+	if anim_index == 0:
+		if Global.character =="girlGhost":
+			anim_name = "girltext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boytext"
+		else:
+			print("error animating text")
+	
+	if anim_index == 1:
+		$CanvasLayer4/diaryentry2/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry2/GirlGhost2.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost2.visible=false
+		$CanvasLayer4/diaryentry2/Label.visible=false
+		$CanvasLayer4/diaryentry2/skip.visible=false
+
+		if Global.character =="girlGhost":
+			anim_name = "girltext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boytext"
+		else:
+			print("error animating text")
+	
+	if anim_index ==2:
+		$CanvasLayer4/diaryentry2/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry2/GirlGhost2.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost2.visible=false
+		$CanvasLayer4/diaryentry2/Label.visible=false
+		$CanvasLayer4/diaryentry2/skip.visible=false
+		
+		$CanvasLayer4/diaryentry3/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry3/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry3/Label.visible=false
+		$CanvasLayer4/diaryentry3/skip.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girltext"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boytext"
+		else:
+			print("error animating text")
+	anim.play(anim_name) 
+	   
+	await dialogue_finished 
+
+
+
+func _input(event):
+	if not dialogue_active:
+		return
+
+	if event.is_action_pressed("ui_accept") and not event.is_echo():
+		textskip()	
+
+
+
+func end_dialogue():
+	dialogue_active = false
+	anim.stop()
+
+	print("Dialogue finished:", anim_index)
+	if anim_index == 0:
+		$CanvasLayer4/diaryentry2/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry2/GirlGhost2.visible=false
+		$CanvasLayer4/diaryentry2/BoyGhost2.visible=false
+		$CanvasLayer4/diaryentry2/Label.visible=false
+		$CanvasLayer4/diaryentry2/skip.visible=false
+		
+			
+	if anim_index ==1:
+		$CanvasLayer4/diaryentry3/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry3/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry3/Label.visible=false
+		$CanvasLayer4/diaryentry3/skip.visible=false
+		
+	if anim_index == 2: 
+		$CanvasLayer4/diaryentry4/GirlGhost.visible=false
+		$CanvasLayer4/diaryentry4/BoyGhost.visible=false
+		$CanvasLayer4/diaryentry4/Label.visible=false
+		$CanvasLayer4/diaryentry4/skip.visible=false
+		
+	emit_signal("dialogue_finished", anim_index)
+
+
+
+func textskip():
+	if animating:
+		anim.seek(segment_ends[segment_index], true)
+		anim.pause()
+		animating = false
+	else:
+		segment_index += 1 
+
+		if segment_index < segment_starts.size():
+			anim.seek(segment_starts[segment_index], true)
+			anim.play()
+			animating = true
+		else:
+			print("call end dialogue")
+			end_dialogue()
+
 func diaryentry2():
-	if Global.character=="boyGhost":
-		$CanvasLayer4/diaryentry2.play("boytext")
-		await $CanvasLayer4/diaryentry2.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-	if Global.character=="girlGhost":
-		$CanvasLayer4/diaryentry2.play("girltext")
-		await $CanvasLayer4/diaryentry2.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+	
+	await start_dialogue(0)
+	$ghostlayer/blobGhostPlayer.position.x=1907
+	$ghostlayer/blobGhostPlayer.position.y=602
+	$CanvasLayer4/Area2D.visible=true
+	$desk/CollisionPolygon2D.disabled=true
+	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 		
 func diaryentry3():
-	if Global.character=="boyGhost":
-		$CanvasLayer4/diaryentry3.play("boytext")
-		await $CanvasLayer4/diaryentry3.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-		Global.reusablehallway = 1
-	if Global.character=="girlGhost":
-		$CanvasLayer4/diaryentry3.play("girltext")
-		await $CanvasLayer4/diaryentry3.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-		Global.reusablehallway = 1
+	await start_dialogue(1)
+	$ghostlayer/blobGhostPlayer.position.x=1907
+	$ghostlayer/blobGhostPlayer.position.y=602
+	$CanvasLayer4/Area2D.visible=true
+	$desk/CollisionPolygon2D.disabled=true
+	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+	Global.reusablehallway = 1
 
 
 func diaryentry4():
-	if Global.character=="boyGhost":
-		$CanvasLayer4/diaryentry4.play("boy")
-		await $CanvasLayer4/diaryentry4.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-		$CanvasLayer5/Label4.visible=true
-		$SceneTrigger/CollisionShape2D.disabled=true
-		Global.reusablehallway = 4
-	if Global.character=="girlGhost":
-		$CanvasLayer4/diaryentry4.play("girl")
-		await $CanvasLayer4/diaryentry4.animation_finished
-		$ghostlayer/blobGhostPlayer.position.x=1907
-		$ghostlayer/blobGhostPlayer.position.y=602
-		$CanvasLayer4/Area2D.visible=true
-		$desk/CollisionPolygon2D.disabled=true
-		$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
-		$CanvasLayer5/Label4.visible=true
-		$SceneTrigger/CollisionShape2D.disabled=true
-		Global.reusablehallway = 4
+	await start_dialogue(2)
+	$ghostlayer/blobGhostPlayer.position.x=1907
+	$ghostlayer/blobGhostPlayer.position.y=602
+	$CanvasLayer4/Area2D.visible=true
+	$desk/CollisionPolygon2D.disabled=true
+	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
+	$CanvasLayer5/Label4.visible=true
+	$SceneTrigger/CollisionShape2D.disabled=true
+	Global.reusablehallway = 4
