@@ -608,6 +608,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext1/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_04r7s"]
 resource_name = "girl"
@@ -696,6 +708,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext1/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vu36g"]
 _data = {
@@ -705,7 +729,7 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_soh4j"]
-length = 4.0
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_n1eef"]
 resource_name = "boy"
@@ -958,6 +982,18 @@ tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(12, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../extext/skip:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 28),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1218,6 +1254,18 @@ tracks/20/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../extext/skip:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nou7j"]
 _data = {
@@ -1228,102 +1276,6 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_8wvgp"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext2/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext2/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext2/Label2:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext2/Label2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext2/Label3:visible_ratio")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext2/Label3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ghosttext2/GirlGhost:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ghosttext2/BoyGhost:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_2anki"]
 resource_name = "boy"
@@ -1407,6 +1359,18 @@ tracks/6/path = NodePath("ghosttext2/BoyGhost:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext2/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1496,6 +1460,18 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext2/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1598,6 +1574,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext3/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_tj75g"]
 resource_name = "girl"
@@ -1681,6 +1669,18 @@ tracks/6/path = NodePath("ghosttext3/GirlGhost:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ghosttext3/skip:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1850,6 +1850,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ghosttext4/skip:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_x6klw"]
 resource_name = "girl"
@@ -1993,6 +2005,18 @@ tracks/11/path = NodePath("ghosttext4/GirlGhost:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ghosttext4/skip:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0, 16),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -2566,6 +2590,24 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext1"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="extext" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../ghosttext1")
 libraries = {
@@ -2875,6 +2917,24 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="skip" type="Label" parent="ghostlayer/extext"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -10.0
 offset_top = 1124.0
@@ -2922,6 +2982,8 @@ text = "\"Omg. Why was everyone after my money.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/ghosttext2"]
 visible = false
@@ -2944,6 +3006,8 @@ text = "\"Maybe they plotted a murder together.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="ghostlayer/ghosttext2"]
 visible = false
@@ -2966,6 +3030,26 @@ text = "\"I'll investigate this room for any clues.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="explorelabel" type="Label" parent="ghostlayer"]
 visible = false
@@ -3069,6 +3153,24 @@ vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="ghostlayer/ghosttext3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer"]
 visible = false
@@ -3486,6 +3588,24 @@ visible = false
 position = Vector2(1122, 698)
 scale = Vector2(10, 10)
 texture = ExtResource("45_u7681")
+
+[node name="skip" type="Label" parent="ghostlayer/ghosttext4"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
 script = ExtResource("50_vl3qy")

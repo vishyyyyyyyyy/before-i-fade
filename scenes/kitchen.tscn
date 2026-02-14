@@ -2211,6 +2211,7 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("11_88wuv")
 
 [node name="skip" type="Label" parent="CanvasLayer2/CanvasModulate/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2656,12 +2657,14 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="CanvasLayer4/Node3/ghosttext2"]
+visible = false
 z_index = 4
 position = Vector2(2002, 695)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("10_bs8bs")
 
 [node name="BoyGhost" type="Sprite2D" parent="CanvasLayer4/Node3/ghosttext2"]
+visible = false
 z_index = 2
 position = Vector2(2007, 725)
 scale = Vector2(0.472, 0.460139)
