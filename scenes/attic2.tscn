@@ -107,6 +107,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ghosttext/skip:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_sgp6l"]
 resource_name = "girl"
@@ -166,6 +178,18 @@ tracks/4/path = NodePath("ghosttext/GirlGhost:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ghosttext/skip:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1084,7 +1108,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_3gmu6")
 
 [node name="skip" type="Label" parent="ghostlayer/ghosttext"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1192,6 +1215,8 @@ text = "\"S..Stay away f..from m..me\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="chars2boy" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../idle")
