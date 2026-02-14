@@ -1083,6 +1083,24 @@ position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_3gmu6")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -5.0
 offset_top = 1117.0
