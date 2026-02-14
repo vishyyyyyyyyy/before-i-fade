@@ -5,6 +5,41 @@ extends Node2D
 var clicked_objects := {} 
 var time_left_seconds
 
+var segment_data := [
+	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, 
+	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0, 18.0], "ends": [2.0, 6.0, 10.0, 16.0, 18.0, 20.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
+	{ "starts": [0.0], "ends": [2.0] }, #pastchar1
+	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, #pastchar2
+	
+]
+@onready var anim_players := [
+	$ghostlayer/ghosttext,
+	$ghostlayer/ghosttext2,
+	$ghostlayer/ghosttext3,
+	$ghostlayer/ghosttext4,
+	$ghostlayer/ghosttext5,
+	$ghostlayer/ghosttext6,
+	$ghostlayer/ghosttext7,
+	$ghostlayer/pastchar1,
+	$ghostlayer/pastchar2
+]
+var anim_index := 0
+var anim: AnimationPlayer
+var dialogue_active := false
+var segment_index := 0
+var animating := true
+var segment_starts
+var segment_ends
+	
+signal dialogue_finished(index)
+
+
+
 func _ready() -> void:
 	presentbox()
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
@@ -21,30 +56,556 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
+	
+	if not dialogue_active or not animating:
+		return
+	
+	if anim.current_animation == "":
+		return # No animation playing, skip
+
+	if anim.get_current_animation_position() >= segment_ends[segment_index]:
+		anim.pause()
+		animating = false
+
+func start_dialogue(index: int):
+	# Safety
+	if index >= anim_players.size():
+		return
+
+	# Stop all animations
+	for a in anim_players:
+		a.stop()
+
+	anim_index = index
+	anim = anim_players[anim_index]
+
+	segment_starts = segment_data[anim_index].starts
+	segment_ends   = segment_data[anim_index].ends
+
+	segment_index = 0
+	animating = true
+	dialogue_active = true
+	
+	var anim_name := ""
+	
+	if anim_index == 0:
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+	
+	if anim_index == 1:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+			
+	if anim_index == 2:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		 
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+			
+	if anim_index == 3:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+	
+	if anim_index == 4:
+		$"ghostlayer/pastchar2/Ex label".visible=false
+		$ghostlayer/pastchar2/Label3.visible=false
+		$ghostlayer/pastchar2/skip.visible=false
+		$"ghostlayer/pastchar2/YN label".visible=false
+		$ghostlayer/pastchar2/Boy1.visible=false
+		$ghostlayer/pastchar2/Boy2.visible=false
+		$ghostlayer/pastchar2/Boy3.visible=false
+		$ghostlayer/pastchar2/Girl.visible=false
+		$ghostlayer/pastchar2/Girl2.visible=false
+		$ghostlayer/pastchar2/Girl3.visible=false
+		$ghostlayer/pastchar2/Boy4.visible=false
+		$ghostlayer/pastchar2/Boy5.visible=false
+		$ghostlayer/pastchar2/Boy6.visible=false
+		$ghostlayer/pastchar2/Girl4.visible=false
+		$ghostlayer/pastchar2/Girl5.visible=false
+		$ghostlayer/pastchar2/Girl6.visible=false
+		
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+	
+	if anim_index == 5:
+		$"ghostlayer/pastchar2/Ex label".visible=false
+		$ghostlayer/pastchar2/Label3.visible=false
+		$ghostlayer/pastchar2/skip.visible=false
+		$"ghostlayer/pastchar2/YN label".visible=false
+		$ghostlayer/pastchar2/Boy1.visible=false
+		$ghostlayer/pastchar2/Boy2.visible=false
+		$ghostlayer/pastchar2/Boy3.visible=false
+		$ghostlayer/pastchar2/Girl.visible=false
+		$ghostlayer/pastchar2/Girl2.visible=false
+		$ghostlayer/pastchar2/Girl3.visible=false
+		$ghostlayer/pastchar2/Boy4.visible=false
+		$ghostlayer/pastchar2/Boy5.visible=false
+		$ghostlayer/pastchar2/Boy6.visible=false
+		$ghostlayer/pastchar2/Girl4.visible=false
+		$ghostlayer/pastchar2/Girl5.visible=false
+		$ghostlayer/pastchar2/Girl6.visible=false
+		
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		
+		$ghostlayer/ghosttext5/Label6.visible=false
+		$ghostlayer/ghosttext5/skip.visible=false
+		$ghostlayer/ghosttext5/BoyGhost2.visible=false
+		$ghostlayer/ghosttext5/GirlGhost2.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+			
+	if anim_index == 6:
+		$"ghostlayer/pastchar2/Ex label".visible=false
+		$ghostlayer/pastchar2/Label3.visible=false
+		$ghostlayer/pastchar2/skip.visible=false
+		$"ghostlayer/pastchar2/YN label".visible=false
+		$ghostlayer/pastchar2/Boy1.visible=false
+		$ghostlayer/pastchar2/Boy2.visible=false
+		$ghostlayer/pastchar2/Boy3.visible=false
+		$ghostlayer/pastchar2/Girl.visible=false
+		$ghostlayer/pastchar2/Girl2.visible=false
+		$ghostlayer/pastchar2/Girl3.visible=false
+		$ghostlayer/pastchar2/Boy4.visible=false
+		$ghostlayer/pastchar2/Boy5.visible=false
+		$ghostlayer/pastchar2/Boy6.visible=false
+		$ghostlayer/pastchar2/Girl4.visible=false
+		$ghostlayer/pastchar2/Girl5.visible=false
+		$ghostlayer/pastchar2/Girl6.visible=false
+		
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		
+		$ghostlayer/ghosttext5/Label6.visible=false
+		$ghostlayer/ghosttext5/skip.visible=false
+		$ghostlayer/ghosttext5/BoyGhost2.visible=false
+		$ghostlayer/ghosttext5/GirlGhost2.visible=false
+		
+		$ghostlayer/ghosttext6/Label4.visible=false
+		$ghostlayer/ghosttext6/GirlGhost.visible=false
+		$ghostlayer/ghosttext6/BoyGhost.visible=false
+		$ghostlayer/ghosttext6/skip.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+			
+	if anim_index == 7:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		
+		$ghostlayer/ghosttext5/Label6.visible=false
+		$ghostlayer/ghosttext5/skip.visible=false
+		$ghostlayer/ghosttext5/BoyGhost2.visible=false
+		$ghostlayer/ghosttext5/GirlGhost2.visible=false
+		
+		$ghostlayer/ghosttext6/Label4.visible=false
+		$ghostlayer/ghosttext6/GirlGhost.visible=false
+		$ghostlayer/ghosttext6/BoyGhost.visible=false
+		$ghostlayer/ghosttext6/skip.visible=false
+		
+		$ghostlayer/ghosttext7/Label5.visible=false
+		$ghostlayer/ghosttext7/GirlGhost.visible=false
+		$ghostlayer/ghosttext7/BoyGhost.visible=false
+		$ghostlayer/ghosttext7/skip.visible=false
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+	
+	if anim_index == 8:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+		
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		
+		$ghostlayer/ghosttext5/Label6.visible=false
+		$ghostlayer/ghosttext5/skip.visible=false
+		$ghostlayer/ghosttext5/BoyGhost2.visible=false
+		$ghostlayer/ghosttext5/GirlGhost2.visible=false
+		
+		$ghostlayer/ghosttext6/Label4.visible=false
+		$ghostlayer/ghosttext6/GirlGhost.visible=false
+		$ghostlayer/ghosttext6/BoyGhost.visible=false
+		$ghostlayer/ghosttext6/skip.visible=false
+		
+		$ghostlayer/ghosttext7/Label5.visible=false
+		$ghostlayer/ghosttext7/GirlGhost.visible=false
+		$ghostlayer/ghosttext7/BoyGhost.visible=false
+		$ghostlayer/ghosttext7/skip.visible=false
+		
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+		if Global.character =="girlGhost":
+			anim_name = "girl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="boy"
+		else:
+			print("error animating text")
+	anim.play(anim_name) 
+	   
+	await dialogue_finished 
+
+
+
+func _input(event):
+	if not dialogue_active:
+		return
+
+	if event.is_action_pressed("ui_accept") and not event.is_echo():
+		textskip()	
+
+
+
+func end_dialogue():
+	dialogue_active = false
+	anim.stop()
+
+	print("Dialogue finished:", anim_index)
+	if anim_index == 0:
+		$ghostlayer/ghosttext/Label2.visible=false
+		$ghostlayer/ghosttext/GirlGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost.visible=false
+		$ghostlayer/ghosttext/BoyGhost2.visible=false
+		$ghostlayer/ghosttext/GirlGhost2.visible=false
+		$ghostlayer/ghosttext/skip.visible=false
+			
+	if anim_index ==1:
+		$ghostlayer/ghosttext2/Label3.visible=false
+		$ghostlayer/ghosttext2/BoyGhost.visible=false
+		$ghostlayer/ghosttext2/GirlGhost.visible=false
+		$ghostlayer/ghosttext2/BoyGhost2.visible=false
+		$ghostlayer/ghosttext2/GirlGhost2.visible=false
+		$ghostlayer/ghosttext2/skip.visible=false
+		
+	if anim_index ==2:
+		$ghostlayer/ghosttext3/Label6.visible=false
+		$ghostlayer/ghosttext3/BoyGhost.visible=false
+		$ghostlayer/ghosttext3/GirlGhost.visible=false
+		$ghostlayer/ghosttext3/skip.visible=false
+		
+	if anim_index == 3:
+		$ghostlayer/ghosttext4/Label4.visible=false
+		$ghostlayer/ghosttext4/GirlGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost.visible=false
+		$ghostlayer/ghosttext4/BoyGhost2.visible=false
+		$ghostlayer/ghosttext4/GirlGhost2.visible=false
+		$ghostlayer/ghosttext4/skip.visible=false
+		
+	if anim_index == 4:
+		$ghostlayer/ghosttext5/Label6.visible=false
+		$ghostlayer/ghosttext5/skip.visible=false
+		$ghostlayer/ghosttext5/BoyGhost2.visible=false
+		$ghostlayer/ghosttext5/GirlGhost2.visible=false
+		
+	if anim_index == 5:
+		$ghostlayer/ghosttext6/Label4.visible=false
+		$ghostlayer/ghosttext6/GirlGhost.visible=false
+		$ghostlayer/ghosttext6/BoyGhost.visible=false
+		$ghostlayer/ghosttext6/skip.visible=false
+		
+	if anim_index == 6:
+		$ghostlayer/ghosttext7/Label5.visible=false
+		$ghostlayer/ghosttext7/GirlGhost.visible=false
+		$ghostlayer/ghosttext7/BoyGhost.visible=false
+		$ghostlayer/ghosttext7/skip.visible=false
+	
+	if anim_index == 7:
+		$ghostlayer/pastchar1/Boy.visible=false
+		$ghostlayer/pastchar1/Girl.visible=false
+		$"ghostlayer/pastchar1/YN label".visible=false
+		$ghostlayer/pastchar1/Label.visible=false
+		$ghostlayer/pastchar1/skip.visible=false
+		
+	if anim_index == 8:
+		$ghostlayer/pastchar2/Label3.visible=false
+		$ghostlayer/pastchar2/skip.visible=false
+		$"ghostlayer/pastchar2/YN label".visible=false
+		$ghostlayer/pastchar2/Boy1.visible=false
+		$ghostlayer/pastchar2/Boy2.visible=false
+		$ghostlayer/pastchar2/Boy3.visible=false
+		$ghostlayer/pastchar2/Girl.visible=false
+		$ghostlayer/pastchar2/Girl2.visible=false
+		$ghostlayer/pastchar2/Girl3.visible=false
+		$ghostlayer/pastchar2/Boy4.visible=false
+		$ghostlayer/pastchar2/Boy5.visible=false
+		$ghostlayer/pastchar2/Boy6.visible=false
+		$ghostlayer/pastchar2/Girl4.visible=false
+		$ghostlayer/pastchar2/Girl5.visible=false
+		$ghostlayer/pastchar2/Girl6.visible=false
+		$"ghostlayer/pastchar2/Ex label".visible=false
+	emit_signal("dialogue_finished", anim_index)
+
+
+
+func textskip():
+	if animating:
+		anim.seek(segment_ends[segment_index], true)
+		anim.pause()
+		animating = false
+	else:
+		segment_index += 1 
+
+		if segment_index < segment_starts.size():
+			anim.seek(segment_starts[segment_index], true)
+			anim.play()
+			animating = true
+		else:
+			print("call end dialogue")
+			end_dialogue()
 
 
 func text():
-	if Global.character == "girlGhost":
-		$ghostlayer/ghosttext.play("girl")
-	if Global.character == "boyGhost":
-		$ghostlayer/ghosttext.play("boy")
-	await $ghostlayer/ghosttext.animation_finished
+	await start_dialogue(0)
 	await atticmodulate()
-	if Global.character == "girlGhost":
-		$ghostlayer/pastchar1.play("girl")
-	if Global.character == "boyGhost":
-		$ghostlayer/pastchar1.play("boy")
-	await $ghostlayer/pastchar1.animation_finished
+	await start_dialogue(7)
 	$ghostlayer/idle/girl.visible=false
 	$ghostlayer/idle/boy.visible=false
 	$ghostlayer/AnimationPlayer.play("death")
 	await $ghostlayer/AnimationPlayer.animation_finished
 	$ghostlayer/Bloodblanket.visible=true
-	if Global.character == "girlGhost":
-		$ghostlayer/ghosttext2.play("girl")
-	if Global.character == "boyGhost":
-		$ghostlayer/ghosttext2.play("boy")
-	await $ghostlayer/ghosttext2.animation_finished
+	await start_dialogue(1)
 	$ghostlayer/explorelabel.visible=true
 	unlockexplore()
 
@@ -163,11 +724,7 @@ func _on_object_clicked(text: String, area_name: String):
 		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 		presentbox()
-		if Global.character == "girlGhost":
-			$ghostlayer/ghosttext3.play("girl")
-		if Global.character == "boyGhost":
-			$ghostlayer/ghosttext3.play("boy")
-		await $ghostlayer/ghosttext3.animation_finished
+		await start_dialogue(2)
 		challenge()
 	
 		
@@ -184,8 +741,7 @@ func afterpuzzle():
 	if Global.character == "girlGhost":
 		$ghostlayer/chars2girl.play("girl")
 		await $ghostlayer/chars2girl.animation_finished
-		$ghostlayer/pastchar2.play("girl")
-		await $ghostlayer/pastchar2.animation_finished
+		await start_dialogue(8)
 		$ghostlayer/chars2girl.play("kill")
 		$ghostlayer/idle/girl.visible=false
 		await $ghostlayer/chars2girl.animation_finished
@@ -194,8 +750,7 @@ func afterpuzzle():
 	if Global.character == "boyGhost":
 		$ghostlayer/chars2boy.play("boy")
 		await $ghostlayer/chars2boy.animation_finished
-		$ghostlayer/pastchar2.play("boy")
-		await $ghostlayer/pastchar2.animation_finished
+		await start_dialogue(8)
 		$ghostlayer/idle/boy.visible=false
 		$ghostlayer/chars2boy.play("death")
 		await $ghostlayer/chars2boy.animation_finished
@@ -343,11 +898,7 @@ func diarypagecontinue():
 	$ghostlayer/Insidebox.visible=true
 	$ghostlayer/Glove.visible=true
 	$ghostlayer/Bloodblanket.visible=false
-	if Global.character == "girlGhost":
-		$ghostlayer/ghosttext4.play("girl")
-	if Global.character == "boyGhost":
-		$ghostlayer/ghosttext4.play("boy")
-	await $ghostlayer/ghosttext4.animation_finished
+	await start_dialogue(3)
 	$ghostlayer/Insidebox.visible=false
 	$ghostlayer/Glove.visible=false
 	#$ghostlayer/Label14.visible=true
@@ -357,11 +908,7 @@ func diarypagecontinue():
 	await afterpuzzle()
 	$ghostlayer/AnimationPlayer.play("death")
 	await $ghostlayer/AnimationPlayer.animation_finished
-	if Global.character == "girlGhost":
-		$ghostlayer/ghosttext5.play("girl")
-	if Global.character == "boyGhost":
-		$ghostlayer/ghosttext5.play("boy")
-	await $ghostlayer/ghosttext5.animation_finished
+	await start_dialogue(4)
 	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/choice.visible=true
 	$ghostlayer/choice/CollisionShape2D.disabled=false
@@ -375,11 +922,7 @@ func choice1():
 	$ghostlayer/choice/CollisionShape2D.disabled=true
 	$ghostlayer/choice/CollisionShape2D2.disabled=true
 	$ghostlayer/ColorRect.visible=false
-	if Global.character =="girlGhost":
-		$ghostlayer/ghosttext6.play("girl")
-	if Global.character =="boyGhost":
-		$ghostlayer/ghosttext6.play("boy")
-	await $ghostlayer/ghosttext6.animation_finished
+	await start_dialogue(5)
 	var player = $ghostlayer/blobGhostPlayer
 	await fade_out_node(player, 2.5)
 	await get_tree().create_timer(0.5).timeout
@@ -393,11 +936,7 @@ func choice2():
 	$ghostlayer/choice.visible=false
 	$ghostlayer/choice/CollisionShape2D.disabled=true
 	$ghostlayer/choice/CollisionShape2D2.disabled=true
-	if Global.character =="girlGhost":
-		$ghostlayer/ghosttext7.play("girl")
-	if Global.character =="boyGhost":
-		$ghostlayer/ghosttext7.play("boy")
-	await $ghostlayer/ghosttext7.animation_finished
+	await start_dialogue(6)
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	await get_tree().create_timer(0.5).timeout

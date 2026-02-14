@@ -198,6 +198,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ghosttext4/skip:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_11ib6"]
 resource_name = "girl"
@@ -317,6 +329,18 @@ tracks/9/path = NodePath("../ghosttext4/GirlGhost:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../ghosttext4/skip:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0, 16),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -444,6 +468,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ghostlayer/ghosttext6/skip:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_mg2tc"]
 resource_name = "girl"
@@ -556,6 +592,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ghostlayer/ghosttext6/skip:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ahi42"]
 _data = {
@@ -642,6 +690,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ghosttext/skip:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_afc35"]
 resource_name = "girl"
@@ -714,6 +774,18 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ghosttext/skip:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -828,6 +900,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext2/skip:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_6i1t2"]
 resource_name = "girl"
@@ -928,6 +1012,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../ghosttext2/skip:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_afc35"]
@@ -1099,6 +1195,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ghosttext3/skip:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_gkdoc"]
 resource_name = "girl"
@@ -1259,6 +1367,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ghosttext3/skip:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_11ib6"]
 _data = {
@@ -1405,6 +1525,18 @@ tracks/10/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ghosttext7/skip:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_ahi42"]
 resource_name = "girl"
@@ -1536,6 +1668,18 @@ tracks/10/path = NodePath("ghosttext7/GirlGhost:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ghosttext7/skip:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1711,6 +1855,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ghosttext5/skip:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_bgrwk"]
 resource_name = "girl"
@@ -1866,6 +2022,18 @@ tracks/12/path = NodePath("ghosttext5/GirlGhost2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
+"times": PackedFloat32Array(0, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ghosttext5/skip:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0, 22),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -2042,6 +2210,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghostlayer/pastchar1/skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_4ctr3"]
 resource_name = "girl"
@@ -2089,6 +2269,18 @@ tracks/3/path = NodePath("ghostlayer/pastchar1/YN label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghostlayer/pastchar1/skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -2336,6 +2528,18 @@ tracks/18/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("ghostlayer/pastchar2/skip:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_cswo8"]
 resource_name = "girl"
@@ -2567,6 +2771,18 @@ tracks/18/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("ghostlayer/pastchar2/skip:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g2gqq"]
@@ -3650,6 +3866,24 @@ position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_kbsqw")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext4"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ghosttext6" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -3657,6 +3891,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext6"]
+visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -3765,6 +4000,24 @@ position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("13_4oqm8")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext6"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ghosttext" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_4ctr3")
@@ -3845,6 +4098,24 @@ position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_kbsqw")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ghosttext2" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../AnimationPlayer")
 libraries = {
@@ -3872,6 +4143,8 @@ text = "\"I just... witnessed my own death.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/ghosttext2"]
 visible = false
@@ -3893,6 +4166,8 @@ theme_override_font_sizes/font_size = 32
 text = "\"I didn't see who killed me though...\""
 horizontal_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="ghostlayer/ghosttext2"]
 visible = false
@@ -3913,6 +4188,8 @@ theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
 text = "\"One more investigation should give me the all the clues I need.\""
 horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext2"]
 visible = false
@@ -3941,6 +4218,24 @@ z_index = 4
 position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_kbsqw")
+
+[node name="skip" type="Label" parent="ghostlayer/ghosttext2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Glove" type="Sprite2D" parent="ghostlayer"]
 visible = false
@@ -4102,6 +4397,24 @@ position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("13_4oqm8")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext3"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ghosttext7" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_4lyew")
@@ -4237,12 +4550,31 @@ position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("13_4oqm8")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext7"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="ghosttext5" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_l4del")
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext5"]
+visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -4413,6 +4745,24 @@ position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_kbsqw")
 
+[node name="skip" type="Label" parent="ghostlayer/ghosttext5"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -4522,7 +4872,7 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="ghostlayer/pastchar1"]
 visible = false
-z_index = 3
+z_index = 5
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -4541,6 +4891,26 @@ text = "\"S..Stay away f..from m..me\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="ghostlayer/pastchar1"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="pastchar2" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../..")
@@ -4608,6 +4978,8 @@ text = "\"Hey.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4630,6 +5002,8 @@ text = "\"What are you doing here?\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4652,6 +5026,8 @@ text = "\"I need money. NOW.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4674,6 +5050,8 @@ text = "\"I already told yo-\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label6" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4696,6 +5074,8 @@ text = "\"I'M NOT ASKING.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4718,6 +5098,8 @@ text = "\"S..Stay away f..from m..me\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Boy1" type="Sprite2D" parent="ghostlayer/pastchar2"]
 visible = false
@@ -4814,6 +5196,24 @@ scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("26_3ft4n")
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2340.02)
+
+[node name="skip" type="Label" parent="ghostlayer/pastchar2"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="chars2boy" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../idle")
@@ -5280,9 +5680,9 @@ volume_db = 20.0
 
 [node name="diarycontinue" type="Area2D" parent="ghostlayer"]
 visible = false
-z_index = 3
-position = Vector2(2231.61, 1004.51)
-scale = Vector2(8.19532, 8.19532)
+z_index = 5
+position = Vector2(244, 11)
+scale = Vector2(2, 2)
 script = ExtResource("49_bgrwk")
 normal_texture = ExtResource("40_ju1eb")
 hover_texture = ExtResource("41_bgrwk")
