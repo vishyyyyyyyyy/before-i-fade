@@ -40,31 +40,44 @@ func player_movement_blob(delta):
 	move_and_slide()
 	
 func player_movement(delta):
+	var moving := false
+
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
 		play_anim(1)
-		velocity.x = speed
-		velocity.y = 0
+		velocity = Vector2(speed, 0)
+		moving = true
+
 	elif Input.is_action_pressed("ui_left"):
 		current_dir = "left"
 		play_anim(1)
-		velocity.x = -speed
-		velocity.y = 0
+		velocity = Vector2(-speed, 0)
+		moving = true
+
 	elif Input.is_action_pressed("ui_down"):
 		current_dir = "down"
 		play_anim(1)
-		velocity.x = 0
-		velocity.y = speed
+		velocity = Vector2(0, speed)
+		moving = true
+
 	elif Input.is_action_pressed("ui_up"):
 		current_dir = "up"
 		play_anim(1)
-		velocity.x = 0
-		velocity.y = -speed
+		velocity = Vector2(0, -speed)
+		moving = true
+
 	else:
 		play_anim(0)
-		velocity.x = 0
-		velocity.y = 0
-		
+		velocity = Vector2.ZERO
+
+	# 🔊 Audio control
+	if moving:
+		if not $AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.pitch_scale = randf_range(2.5, 2.75)
+			$AudioStreamPlayer2D.play()
+	else:
+		$AudioStreamPlayer2D.stop()
+
 	move_and_slide()
 	
 func play_anim(movement):
