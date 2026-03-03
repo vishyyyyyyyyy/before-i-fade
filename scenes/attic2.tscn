@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b8ipl8wqkiwa5"]
+[gd_scene load_steps=81 format=3 uid="uid://b8ipl8wqkiwa5"]
 
 [ext_resource type="Script" uid="uid://dw0d0wru3kifh" path="res://scripts/attic_2.gd" id="1_j8y3x"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_qjqex"]
@@ -16,7 +16,9 @@
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_sho2i"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_usgkx"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_3gmu6"]
+[ext_resource type="Texture2D" uid="uid://dqb3ctdacm17d" path="res://assets/phonephone.png" id="25_riwes"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="26_6m3e2"]
+[ext_resource type="Texture2D" uid="uid://dif4xkplkl0ih" path="res://assets/closeupphone.png" id="26_u68vj"]
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="28_sjdb1"]
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="29_8l5q7"]
 [ext_resource type="Texture2D" uid="uid://cjfc5v8aq2wl0" path="res://assets/phone2.png" id="29_hoxtk"]
@@ -1457,3 +1459,13 @@ position = Vector2(-3.5, 21.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/leftwallcollision"]
 position = Vector2(-66.5, 651.5)
 shape = SubResource("RectangleShape2D_5pnpo")
+
+[node name="Phonephone" type="Sprite2D" parent="."]
+position = Vector2(-1126, 549)
+scale = Vector2(4.875, 4.875)
+texture = ExtResource("25_riwes")
+
+[node name="Closeupphone" type="Sprite2D" parent="."]
+position = Vector2(-579, 586)
+scale = Vector2(5.54688, 5.54688)
+texture = ExtResource("26_u68vj")
