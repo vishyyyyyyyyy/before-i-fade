@@ -1,6 +1,6 @@
 # 🌙 Before I Fade
 
-**Before I Fade** is a 2D narrative puzzle game where you play as a ghost waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder before you fade.
+**Before I Fade** is a 2D narrative puzzle game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder before you fade.
 
 🕯️ **Genre:** Narrative / Puzzle / Mystery  
 ⏱️ **Playtime:** ~30 minutes  
@@ -10,8 +10,7 @@
 ---
 
 ## 🕯️ About the Game
-
-You search through your house for clues about how you died and who murdered you. As a ghost, revisiting rooms floods you with memories, forcing you to relive fragments of the past. Solve puzzles under time pressure to move forward safely and collect diary pages that reveal more about your past self.
+You explore your house for any clues you can find related to who murdered you and why. As a ghost, revisiting each room floods you with memories, forcing you to relive fragments of the past. Solve puzzles under time pressure to move forward safely and collect diary pages that reveal more about your past and more about the potential suspects.
 
 As the truth comes into focus, you’re faced with one final choice:  
 **let the past fade away, or make sure it’s finally heard.**
