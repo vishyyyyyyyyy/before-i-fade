@@ -10,7 +10,7 @@
 ---
 
 ## 🕯️ About the Game
-You explore your house for any clues you can find related to who murdered you and why. As a ghost, revisiting each room floods you with memories, forcing you to relive fragments of the past. Solve puzzles under time pressure to move forward safely and collect diary pages that reveal more about your past and more about the potential suspects.
+You play as a ghost, and your goal is to collect diary pages to find clues about who murdered you and why. Explore the entire house and complete puzzles within time limits to find them. Visiting each room floods your memories, forcing you to relive fragments of what happened in the past, moving you one step closer towards solving this murder mystery.
 
 As the truth comes into focus, you’re faced with one final choice:  
 **let the past fade away, or make sure it’s finally heard.**
