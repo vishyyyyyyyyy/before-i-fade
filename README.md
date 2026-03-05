@@ -2,8 +2,8 @@
 
 **Before I Fade** is a 2D narrative puzzle game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder before you fade.
 
-🕯️ **Genre:** Narrative / Puzzle / Mystery  
-⏱️ **Playtime:** ~30 minutes  
+🕯️ **Genre:** Narrative / Puzzle / Mystery
+⏱️ **Playtime:** ~30 minutes - 60 minutes
 🎮 **Engine:** Godot  
 🎨 **Style:** 2D Visual Novel  
 
@@ -24,6 +24,69 @@ There are **two possible endings**.
 - **Arrow Keys** - Move around the house  
 - **Left Click / Click + Drag** - Interact with objects and puzzles
 - **Space / Enter** - Skip dialogues
+- **long press and move mouse** - Scrub mirror 
+
+---
+
+## 💭 Why We Made This
+
+We wanted to make a game showcasing the changing of time through multiple ways
+
+```
+“what about something like find out why you die
+like you be the ghost and you try to retrace your steps and figure out what happened to you”
+```
+Quote  straight from out planning doc
+
+We were really drawn to the murder mystery concept and wanted the changing of time to be physical, emotional and in every puzzle.
+
+We included the "changing of time" through
+- Being able to travel between present and past memories with the obvious gloomy present color scheme vs the bright and joyful past color scheme
+- Calendar detailing
+- Timers in puzzles
+- Time loop paradox (iykyk😉)
+
+---
+
+## 🔮 Future Improvements
+
+We are currently working on creating a new release with even better features to make the game more enjoyable! Expect these changes soon~
+- Adding a more detailed ending 2
+- Adding camera properties for dramatic effects
+- Incorporating a lives system during challenges
+- Loading splash screen
+- Moving closer to objects to interact 
+- Rereading diary page entries
+- Settings menu from in game
+- Mobile support c:
+
+---
+
+## 🎶 Credits
+
+This game was created for Codédex's Monthly Challenge Game Jam under the theme: the changing of time
+
+Created by Vishalya Sairam and Aadityan Anbumani
+
+All art in the game is hand drawn by me! (✿◠‿◠)
+
+Music & Sound (from pixabay):
+
+- Phone Ringing — Dragon Studio
+
+- Police Siren -Dragon Studio
+
+- Story of Maple — Final Gate Studios
+
+- Correct Buzzer — u_a5z4rtk6yn
+
+- Incorrect Buzzer — logicallism
+
+- Piano notes — u_c58whxla22
+
+Fonts:
+
+- Pixel Operator — Webfontfree
 
 ---
 
@@ -41,4 +104,3 @@ https://vishyyyyyyyyy.itch.io/before-i-fade
 3. Run the main scene  
 
 ---
-
