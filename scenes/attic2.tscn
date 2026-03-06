@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b8ipl8wqkiwa5"]
+[gd_scene load_steps=104 format=3 uid="uid://b8ipl8wqkiwa5"]
 
 [ext_resource type="Script" uid="uid://dw0d0wru3kifh" path="res://scripts/attic_2.gd" id="1_j8y3x"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_qjqex"]
@@ -11,21 +11,37 @@
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="11_mlsbu"]
 [ext_resource type="Texture2D" uid="uid://b0b3ysid1vjiy" path="res://assets/bloodblanket.png" id="12_vbuwi"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="13_7kx0a"]
+[ext_resource type="Texture2D" uid="uid://cqn562k81icad" path="res://assets/closedphone.png" id="13_u68vj"]
 [ext_resource type="AudioStream" uid="uid://bsosxkgv6x18d" path="res://assets/audio/police-siren.mp3" id="14_82lia"]
 [ext_resource type="Texture2D" uid="uid://c1xtxs4dhlk0t" path="res://assets/insidebox.png" id="14_cpefd"]
+[ext_resource type="Texture2D" uid="uid://dq0m2w177664a" path="res://assets/phonemusicl.png" id="15_5dkuy"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_sho2i"]
+[ext_resource type="Script" uid="uid://b8u2lom0u7ex1" path="res://scenes/phonecontrol.gd" id="16_rxo1j"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_usgkx"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_3gmu6"]
+[ext_resource type="Texture2D" uid="uid://cbayhd0omiy0i" path="res://assets/phonenotesl.png" id="17_usyq1"]
+[ext_resource type="Texture2D" uid="uid://cfkenqms3ny7k" path="res://assets/phonecalc.png" id="18_oww6b"]
+[ext_resource type="Texture2D" uid="uid://m0thph0x8rwl" path="res://assets/phonemail.png" id="20_tc51w"]
 [ext_resource type="Texture2D" uid="uid://dqb3ctdacm17d" path="res://assets/phonephone.png" id="25_riwes"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="26_6m3e2"]
 [ext_resource type="Texture2D" uid="uid://dif4xkplkl0ih" path="res://assets/closeupphone.png" id="26_u68vj"]
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="28_sjdb1"]
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="29_8l5q7"]
 [ext_resource type="Texture2D" uid="uid://cjfc5v8aq2wl0" path="res://assets/phone2.png" id="29_hoxtk"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="33_67i3a"]
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="33_bdede"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="34_nx5b8"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="34_t75hn"]
+[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="35_5ornb"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="35_8nag0"]
+[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="36_axtma"]
 [ext_resource type="Texture2D" uid="uid://b1fhrsdhko6kt" path="res://assets/pixel-characters/girl3.png" id="36_wemfo"]
+[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="37_7b7e7"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="38_dwrl6"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="39_lubtl"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="40_7mjb8"]
+[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="41_j8y3x"]
+[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="42_qjqex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx7od"]
 texture = ExtResource("2_qjqex")
@@ -42,282 +58,6 @@ texture = ExtResource("3_8nww1")
 
 [sub_resource type="TileSet" id="TileSet_131wt"]
 sources/0 = SubResource("TileSetAtlasSource_naci5")
-
-[sub_resource type="Animation" id="Animation_riwes"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_u68vj"]
-resource_name = "boy"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext/Label2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext/Label2:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext/Label:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext/BoyGhost:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext/skip:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_sgp6l"]
-resource_name = "girl"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghosttext/Label2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghosttext/Label2:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghosttext/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghosttext/Label:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ghosttext/GirlGhost:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ghosttext/skip:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u68vj"]
-_data = {
-&"RESET": SubResource("Animation_riwes"),
-&"boy": SubResource("Animation_u68vj"),
-&"girl": SubResource("Animation_sgp6l")
-}
-
-[sub_resource type="Animation" id="Animation_gx42x"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_waqk1"]
-resource_name = "boy"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghostlayer/pastchar1/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghostlayer/pastchar1/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghostlayer/pastchar1/Boy:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghostlayer/pastchar1/YN label:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_4ctr3"]
-resource_name = "girl"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghostlayer/pastchar1/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ghostlayer/pastchar1/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ghostlayer/pastchar1/Girl:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ghostlayer/pastchar1/YN label:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbw0u"]
-_data = {
-&"RESET": SubResource("Animation_gx42x"),
-&"boy": SubResource("Animation_waqk1"),
-&"girl": SubResource("Animation_4ctr3")
-}
 
 [sub_resource type="Animation" id="Animation_ioplr"]
 length = 0.001
@@ -817,6 +557,374 @@ _data = {
 &"kill": SubResource("Animation_f3qo7")
 }
 
+[sub_resource type="Animation" id="Animation_sjdb1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_rxo1j"]
+resource_name = "phoneopen"
+length = 1.84
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../open phone:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../unlockphone:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.63),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../open phone:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(8.76563, -0.25, 0, 0.25, 0, 19.771, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1.6)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../open phone:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(8.76563, -0.25, 0, 0.25, 0, 19.771, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.6, 1.6)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../phone instructions:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.63),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoxtk"]
+_data = {
+&"RESET": SubResource("Animation_sjdb1"),
+&"phoneopen": SubResource("Animation_rxo1j")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u68vj"]
+size = Vector2(176, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxo1j"]
+size = Vector2(176, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dkuy"]
+size = Vector2(115, 92)
+
+[sub_resource type="Animation" id="Animation_riwes"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_u68vj"]
+resource_name = "boy"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext/Label2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghosttext/Label:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghosttext/BoyGhost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ghosttext/skip:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sgp6l"]
+resource_name = "girl"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghosttext/Label2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghosttext/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghosttext/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghosttext/Label:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ghosttext/GirlGhost:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ghosttext/skip:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u68vj"]
+_data = {
+&"RESET": SubResource("Animation_riwes"),
+&"boy": SubResource("Animation_u68vj"),
+&"girl": SubResource("Animation_sgp6l")
+}
+
+[sub_resource type="Animation" id="Animation_gx42x"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_waqk1"]
+resource_name = "boy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghostlayer/pastchar1/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghostlayer/pastchar1/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghostlayer/pastchar1/Boy:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghostlayer/pastchar1/YN label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_4ctr3"]
+resource_name = "girl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghostlayer/pastchar1/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ghostlayer/pastchar1/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ghostlayer/pastchar1/Girl:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ghostlayer/pastchar1/YN label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbw0u"]
+_data = {
+&"RESET": SubResource("Animation_gx42x"),
+&"boy": SubResource("Animation_waqk1"),
+&"girl": SubResource("Animation_4ctr3")
+}
+
 [sub_resource type="Animation" id="Animation_8aqb0"]
 length = 0.001
 
@@ -914,6 +1022,9 @@ _data = {
 &"RESET": SubResource("Animation_ksd2x"),
 &"end": SubResource("Animation_l1ln3")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nww1"]
+size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajrb"]
 size = Vector2(1534.67, 151.667)
@@ -1034,192 +1145,6 @@ texture = ExtResource("12_vbuwi")
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("13_7kx0a")]
 position = Vector2(2173, 913)
 scale = Vector2(3, 3)
-
-[node name="Insidebox" type="Sprite2D" parent="ghostlayer"]
-visible = false
-modulate = Color(0, 0.992157, 0.815686, 1)
-position = Vector2(1150, 470)
-scale = Vector2(0.781333, 0.674)
-texture = ExtResource("14_cpefd")
-
-[node name="ghosttext" type="AnimationPlayer" parent="ghostlayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_u68vj")
-}
-
-[node name="Label" type="Label" parent="ghostlayer/ghosttext"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 32
-text = "“Before I fade, time finally moves on.”"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="ghostlayer/ghosttext"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 32
-text = "“The past can’t hurt me anymore.” "
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
-visible = false
-z_index = 4
-position = Vector2(298, 695)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("16_usgkx")
-
-[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
-visible = false
-z_index = 2
-position = Vector2(303, 725)
-scale = Vector2(0.472, 0.460139)
-texture = ExtResource("17_3gmu6")
-
-[node name="skip" type="Label" parent="ghostlayer/ghosttext"]
-visible = false
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 883.0
-offset_top = -33.0
-offset_right = 1135.0
-offset_bottom = -17.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 16
-text = "(SPACE to skip text)"
-
-[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
-offset_left = -5.0
-offset_top = 1117.0
-offset_right = 2312.0
-offset_bottom = 1307.0
-color = Color(0.117647, 0.0431373, 0.152941, 1)
-
-[node name="Label2" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 5
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 32
-text = "You arrive in the attic and start recording."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="pastchar1" type="AnimationPlayer" parent="ghostlayer"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_nbw0u")
-}
-
-[node name="Boy" type="Sprite2D" parent="ghostlayer/pastchar1"]
-visible = false
-position = Vector2(279, 531)
-scale = Vector2(0.516547, 0.516547)
-texture = ExtResource("26_6m3e2")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2289.55)
-
-[node name="Girl" type="Sprite2D" parent="ghostlayer/pastchar1"]
-visible = false
-position = Vector2(262, 547)
-scale = Vector2(0.489333, 0.489333)
-texture = ExtResource("29_8l5q7")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2340.02)
-
-[node name="YN label" type="Label" parent="ghostlayer/pastchar1"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -1417.0
-offset_top = -150.0
-offset_right = -225.0
-offset_bottom = -83.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 32
-text = "Past you
-"
-horizontal_alignment = 1
-
-[node name="Label" type="Label" parent="ghostlayer/pastchar1"]
-visible = false
-z_index = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -852.0
-offset_top = -123.0
-offset_right = 756.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 10
-theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 32
-text = "\"S..Stay away f..from m..me\""
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="chars2boy" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../idle")
@@ -1346,6 +1271,414 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("closedphone")
+libraries = {
+&"": SubResource("AnimationLibrary_hoxtk")
+}
+
+[node name="closedphone" type="Sprite2D" parent="ghostlayer/AnimationPlayer2"]
+visible = false
+position = Vector2(1196, 399)
+scale = Vector2(10.4358, 10.4358)
+texture = ExtResource("13_u68vj")
+
+[node name="open phone" type="Sprite2D" parent="ghostlayer/AnimationPlayer2"]
+visible = false
+z_index = 2
+position = Vector2(1197, 803)
+scale = Vector2(19.771, 19.771)
+texture = ExtResource("28_sjdb1")
+
+[node name="unlockphone" type="Sprite2D" parent="ghostlayer/AnimationPlayer2"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("26_u68vj")
+
+[node name="phone instructions" type="Label" parent="ghostlayer/AnimationPlayer2"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 976.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "Quick! Dial 911 and set up your camera to record the scene for evidence!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="phonemusic" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("15_5dkuy")
+
+[node name="recphone" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(267, 632)
+scale = Vector2(8.76563, 8.80563)
+texture = ExtResource("29_hoxtk")
+
+[node name="phonenotes" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("17_usyq1")
+
+[node name="phonecalc" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("18_oww6b")
+
+[node name="phonephone" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("25_riwes")
+
+[node name="phonemail" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1194, 553)
+scale = Vector2(8.82031, 8.82031)
+texture = ExtResource("20_tc51w")
+
+[node name="Area2D" type="Area2D" parent="ghostlayer"]
+script = ExtResource("16_rxo1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1039, 209)
+shape = SubResource("RectangleShape2D_u68vj")
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1365, 209)
+shape = SubResource("RectangleShape2D_rxo1j")
+disabled = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1038, 442)
+shape = SubResource("RectangleShape2D_rxo1j")
+disabled = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1356, 436)
+shape = SubResource("RectangleShape2D_rxo1j")
+disabled = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1038, 663)
+shape = SubResource("RectangleShape2D_rxo1j")
+disabled = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1357, 668)
+shape = SubResource("RectangleShape2D_rxo1j")
+disabled = true
+
+[node name="1" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(976, 475)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="2" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1112, 475)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="3" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1256, 475)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="4" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1403, 471)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="5" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(968, 599)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="6" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1110, 599)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="7" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1257, 600)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="8" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1404, 598)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="9" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(971, 722)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="0" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1114, 719)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="check" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1253, 719)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="delete" type="CollisionShape2D" parent="ghostlayer/Area2D"]
+z_index = 9
+position = Vector2(1405, 722)
+shape = SubResource("RectangleShape2D_5dkuy")
+disabled = true
+
+[node name="phonetext" type="Label" parent="ghostlayer"]
+z_index = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -1038.0
+offset_right = 245.0
+offset_bottom = -922.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Insidebox" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0, 0.992157, 0.815686, 1)
+position = Vector2(1150, 470)
+scale = Vector2(0.781333, 0.674)
+texture = ExtResource("14_cpefd")
+
+[node name="ghosttext" type="AnimationPlayer" parent="ghostlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_u68vj")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/ghosttext"]
+z_index = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "“Before I fade, time finally moves on.”"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "“The past can’t hurt me anymore.” "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 4
+position = Vector2(298, 695)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_usgkx")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 2
+position = Vector2(303, 725)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_3gmu6")
+
+[node name="skip" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
+z_index = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
+z_index = 2
+offset_left = -5.0
+offset_top = 1117.0
+offset_right = 2312.0
+offset_bottom = 1307.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="Label2" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 5
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -596.0
+offset_top = -140.0
+offset_right = 596.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "You arrive in the attic and start recording."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pastchar1" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_nbw0u")
+}
+
+[node name="Boy" type="Sprite2D" parent="ghostlayer/pastchar1"]
+visible = false
+position = Vector2(279, 531)
+scale = Vector2(0.516547, 0.516547)
+texture = ExtResource("26_6m3e2")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2289.55)
+
+[node name="Girl" type="Sprite2D" parent="ghostlayer/pastchar1"]
+visible = false
+position = Vector2(262, 547)
+scale = Vector2(0.489333, 0.489333)
+texture = ExtResource("29_8l5q7")
+region_enabled = true
+region_rect = Rect2(0, 0, 3000, 2340.02)
+
+[node name="YN label" type="Label" parent="ghostlayer/pastchar1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1417.0
+offset_top = -150.0
+offset_right = -225.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "Past you
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="ghostlayer/pastchar1"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 756.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+text = "\"S..Stay away f..from m..me\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
 [node name="idle" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_yeiuc")
@@ -1366,18 +1699,6 @@ visible = false
 position = Vector2(824, 783)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_8copa")
-
-[node name="Phone" type="Sprite2D" parent="ghostlayer"]
-visible = false
-position = Vector2(264.36, 629.36)
-scale = Vector2(9.24, 9.24)
-texture = ExtResource("28_sjdb1")
-
-[node name="Phone2" type="Sprite2D" parent="ghostlayer"]
-visible = false
-position = Vector2(264.36, 629.36)
-scale = Vector2(9.24, 9.24)
-texture = ExtResource("29_hoxtk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -1417,6 +1738,149 @@ autowrap_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/AnimationPlayer"]
 stream = ExtResource("14_82lia")
+volume_db = 20.0
+
+[node name="ColorRect" type="ColorRect" parent="ghostlayer"]
+visible = false
+z_index = 2
+offset_right = 2303.0
+offset_bottom = 1291.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.768627)
+
+[node name="Menucard" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(1195, 566)
+scale = Vector2(7.94531, 7.94531)
+texture = ExtResource("33_67i3a")
+
+[node name="Label3" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -344.0
+offset_right = 236.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("34_t75hn")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -340.0
+offset_right = 274.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("34_t75hn")
+theme_override_font_sizes/font_size = 64
+text = "Puzzle"
+
+[node name="Label4" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 3
+offset_left = 848.0
+offset_top = 452.0
+offset_right = 1543.0
+offset_bottom = 593.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 24
+text = "Time is running out. Interact with the past carefully... Mistakes leave scars that cannot be erased."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 2
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("35_5ornb")
+
+[node name="Label5" type="Label" parent="ghostlayer"]
+visible = false
+z_index = 2
+offset_left = 38.0
+offset_top = 54.0
+offset_right = 214.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 54
+text = "10.0"
+
+[node name="Timer2" type="Timer" parent="ghostlayer"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Correct" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 5
+position = Vector2(1262, 627)
+scale = Vector2(11.2539, 11.2539)
+texture = ExtResource("36_axtma")
+
+[node name="Wrong" type="Sprite2D" parent="ghostlayer"]
+visible = false
+z_index = 5
+position = Vector2(1258, 649)
+scale = Vector2(8.23438, 8.23438)
+texture = ExtResource("37_7b7e7")
+
+[node name="continue" type="Area2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(245, 12)
+scale = Vector2(2, 2)
+script = ExtResource("38_dwrl6")
+normal_texture = ExtResource("39_lubtl")
+hover_texture = ExtResource("40_7mjb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/continue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("39_lubtl")
+
+[node name="Label" type="Label" parent="ghostlayer/continue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("34_t75hn")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/continue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_8nww1")
+disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
+stream = ExtResource("41_j8y3x")
+volume_db = 20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
+stream = ExtResource("42_qjqex")
 volume_db = 20.0
 
 [node name="scene collisions" type="Node" parent="."]
@@ -1460,12 +1924,7 @@ position = Vector2(-3.5, 21.5)
 position = Vector2(-66.5, 651.5)
 shape = SubResource("RectangleShape2D_5pnpo")
 
-[node name="Phonephone" type="Sprite2D" parent="."]
-position = Vector2(-1126, 549)
-scale = Vector2(4.875, 4.875)
-texture = ExtResource("25_riwes")
-
-[node name="Closeupphone" type="Sprite2D" parent="."]
-position = Vector2(-579, 586)
-scale = Vector2(5.54688, 5.54688)
-texture = ExtResource("26_u68vj")
+[connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/Area2D" method="_on_timer_2_timeout"]
+[connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]

@@ -1612,6 +1612,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1828,6 +1829,7 @@ sprite_frames = SubResource("SpriteFrames_ncy4w")
 [node name="girlWalk" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer3"]
 visible = false
 z_index = -2
+position = Vector2(0, 354.179)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer3/girlWalk"]

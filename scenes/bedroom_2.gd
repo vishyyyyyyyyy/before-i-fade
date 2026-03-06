@@ -307,7 +307,7 @@ func leaveroomandexplore():
 		$Label3.visible=true
 		unlock_explore()
 	if Global.character == "girlGhost":
-		await $CanvasLayer/AnimationPlayer.animation_finished
+		print("hiii")
 		await get_tree().create_timer(1.0).timeout
 		$CanvasLayer/AnimationPlayer3/girlIdle.visible = false
 		$CanvasLayer/AnimationPlayer3/girlWalk.visible = true

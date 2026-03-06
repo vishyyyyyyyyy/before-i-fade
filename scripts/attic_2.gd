@@ -1,5 +1,7 @@
 extends Node2D
 
+var time_left_seconds
+
 var segment_data := [
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, 	
 ]
@@ -17,6 +19,9 @@ var segment_ends
 signal dialogue_finished(index)
 
 func _process(_delta):
+	time_left_seconds = $ghostlayer/Timer2.time_left
+	$ghostlayer/Label5.text = "%.1f" % time_left_seconds
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -102,16 +107,27 @@ func textskip():
 			end_dialogue()
 
 func _ready() -> void:
+	$ghostlayer/continue.pressed.connect(on_button_pressed)
+	$ghostlayer/Area2D.challengecompleted.connect(challengecompleted)
 	Global.ending= 2
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/Bloodblanket.visible=true
 	await atticmodulate()
-	$ghostlayer/Label2.visible=true
-	$ghostlayer/Phone.visible=true
-	await get_tree().create_timer(0.5).timeout
-	$ghostlayer/Phone2.visible=true
-	await get_tree().create_timer(2).timeout
+	$ghostlayer/AnimationPlayer2.play("phoneopen")
+	await $ghostlayer/AnimationPlayer2.animation_finished
+	$ghostlayer/continue/CollisionShape2D.disabled=false
+	$ghostlayer/continue.visible=true
+	$ghostlayer/Timer.visible=true
+	$ghostlayer/Label5.visible=true
+	$ghostlayer/Label4.visible=true
+	$ghostlayer/Label.visible=true
+	$ghostlayer/Label3.visible=true
+	$ghostlayer/Menucard.visible=true
+	$ghostlayer/ColorRect.visible=true
+	
+func challengecompleted():
+	$ghostlayer/recphone.visible=true
 	if Global.character == "girlGhost":
 		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/chars2girl.play("kill")
@@ -119,8 +135,7 @@ func _ready() -> void:
 		$ghostlayer/Label2.visible=false
 		$ghostlayer/AnimationPlayer.play("end")
 		$ghostlayer/idle/girl.visible=false
-		$ghostlayer/Phone2.visible=false
-		$ghostlayer/Phone.visible=false
+		$ghostlayer/recphone.visible=false
 		$ghostlayer/blobGhostPlayer.position.x=1205
 		$ghostlayer/blobGhostPlayer.position.y=641
 		await $ghostlayer/AnimationPlayer.animation_finished
@@ -146,7 +161,31 @@ func _ready() -> void:
 		await get_tree().create_timer(0.3).timeout
 		await fade_out_node($ghostlayer/blobGhostPlayer, 2.5)
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
-		
+
+func on_button_pressed():
+	$ghostlayer/Label4.visible=false
+	$ghostlayer/Timer2.start()
+	$ghostlayer/AnimationPlayer2/closedphone.visible=false
+	$"ghostlayer/AnimationPlayer2/open phone".visible=false
+	$ghostlayer/Area2D/CollisionShape2D.disabled= false
+	$ghostlayer/Area2D/CollisionShape2D2.disabled=false
+	$ghostlayer/Area2D/CollisionShape2D3.disabled= false
+	$ghostlayer/Area2D/CollisionShape2D4.disabled= false
+	$ghostlayer/Area2D/CollisionShape2D5.disabled= false
+	$ghostlayer/Area2D/CollisionShape2D6.disabled = false
+	
+
+
+func _on_timer_2_timeout() -> void:
+	$"../Node3/Wrong".visible=true
+	$"../Node3/AudioStreamPlayer2".play()
+	await get_tree().create_timer(2).timeout
+	$"../Node3/Wrong".visible=false
+	$"../Node3/Timer2".start()
+
+
+
+	
 
 	
 func atticmodulate():
