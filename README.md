@@ -1,11 +1,9 @@
-# 🌙 Before I Fade
+# 👻 Before I Fade
 
-**Before I Fade** is a 2D narrative puzzle game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder before you fade.
+<img width="1900" height="1100" alt="Screenshot 2026-03-07 100537" src="https://github.com/user-attachments/assets/977c6b43-aa4b-4bdc-ba54-bb440089ce4e" />
 
-🕯️ **Genre:** Narrative / Puzzle / Mystery
-⏱️ **Playtime:** ~30 minutes - 60 minutes
-🎮 **Engine:** Godot  
-🎨 **Style:** 2D Visual Novel  
+
+**Before I Fade** is a murder mystery themed, 2D visual novel game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder _before you fade_.
 
 ---
 
@@ -21,22 +19,27 @@ There are **two possible endings**.
 
 ## 🎮 Controls
 
+<img width="1000" height="700" alt="Screenshot 2026-03-07 100559" src="https://github.com/user-attachments/assets/0294b887-8aba-432f-b273-e8060f3cbee1" />
+
+
 - **Arrow Keys** - Move around the house  
 - **Left Click / Click + Drag** - Interact with objects and puzzles
 - **Space / Enter** - Skip dialogues
-- **long press and move mouse** - Scrub mirror 
+- **long press and move mouse** - Scrub mirror
+
+  
 
 ---
 
 ## 💭 Why We Made This
 
-We wanted to make a game showcasing the changing of time through multiple ways
+We wanted to make a game showcasing the theme, "changing of time",  through multiple ways
 
 ```
 “what about something like find out why you die
 like you be the ghost and you try to retrace your steps and figure out what happened to you”
 ```
-Quote  straight from out planning doc
+Quote straight from our planning doc
 
 We were really drawn to the murder mystery concept and wanted the changing of time to be physical, emotional and in every puzzle.
 
@@ -87,20 +90,14 @@ Music & Sound (from pixabay):
 Fonts:
 
 - Pixel Operator — Webfontfree
-
+  
+Engine:
+- Made with love in Godot💖
 ---
 
-## ▶️ Play the Game
+## ▶️Where to play
 
-👉 **Play on itch.io:**  
+**Play directly on itch.io (´▽`ʃ♡ƪ):**  
 https://vishyyyyyyyyy.itch.io/before-i-fade
-
----
-
-## 🛠️ How to Run the Project
-
-1. Download or clone this repository  
-2. Open the project in **Godot**  
-3. Run the main scene  
 
 ---
