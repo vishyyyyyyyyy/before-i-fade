@@ -17,6 +17,9 @@ func play():
 	$Node/Music/CollisionShape2D.disabled=true
 	$Node/Title/Label.text = "Controls"
 	$Node/Title/Label2.text= "Controls"
+	$Uibox.visible=true
+	$Uibox2.visible=true
+	$Uibox3.visible=true
 	$subtitle.visible=false
 	$Downarrow.visible=true
 	$Uparrow.visible=true
