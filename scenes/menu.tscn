@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=32 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -173,6 +173,43 @@ tracks/8/keys = {
 _data = {
 &"RESET": SubResource("Animation_mxgkd"),
 &"fadein": SubResource("Animation_7jp70")
+}
+
+[sub_resource type="Animation" id="Animation_81l6r"]
+resource_name = "modulate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rsfmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oi1it"]
+_data = {
+&"RESET": SubResource("Animation_rsfmq"),
+&"modulate": SubResource("Animation_81l6r")
 }
 
 [node name="Node2D2" type="Node2D"]
@@ -559,6 +596,20 @@ visible = false
 position = Vector2(1830, 477)
 scale = Vector2(7.5586, 7.5586)
 texture = ExtResource("19_81l6r")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oi1it")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="AnimationPlayer2"]
+z_index = 2
+offset_left = -40.0
+offset_right = 2319.0
+offset_bottom = 1318.0
+mouse_filter = 2
+color = Color(0.129412, 0, 0.0980392, 1)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]
