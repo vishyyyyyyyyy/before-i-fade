@@ -69,7 +69,7 @@ We are currently working on creating a new release with even better features to 
 
 This game was created for Codédex's Monthly Challenge Game Jam under the theme: the changing of time
 
-Created by Vishalya Sairam and Aadityan Anbumani
+Created by Vishalya Sairam and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
 
 All art in the game is hand drawn by me! (✿◠‿◠)
 
