@@ -1765,7 +1765,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "\"Auntie, this it the 3rd time you've visited this week\""
+text = "\"Auntie, this it the 3rd time you've visited this week.\""
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -1916,7 +1916,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "\"First my friend asking for money,then my neighbor acting weird, and now my aunt wanting control of my assets?\""
+text = "\"First my friend asking for money, then my neighbor acting weird, and now my aunt wanting control of my assets?\""
 horizontal_alignment = 1
 autowrap_mode = 2
 

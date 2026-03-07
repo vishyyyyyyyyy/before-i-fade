@@ -1720,7 +1720,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
-text = "Exit the hallway to read the new diary entry"
+text = "Exit the hallway to read the new diary entry."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1758,7 +1758,7 @@ offset_right = 1621.0
 offset_bottom = 1224.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
-text = "\"Huh? What's that note\""
+text = "\"Huh? What's that note.\""
 vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -2098,7 +2098,7 @@ offset_right = 1911.0
 offset_bottom = 1259.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
-text = "\"They're the only people I've talked to recently\" "
+text = "\"They're the only people I've talked to recently.\" "
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -2183,7 +2183,7 @@ offset_right = 1911.0
 offset_bottom = 1259.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
-text = "Click objects in the hallway to investigate"
+text = "Click objects in the hallway to investigate."
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -2194,7 +2194,7 @@ offset_right = 1911.0
 offset_bottom = 1259.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
-text = "Click objects in the hallway to investigate"
+text = "Click objects in the hallway to investigate."
 horizontal_alignment = 1
 
 [node name="Node3" type="Node" parent="CanvasLayer"]

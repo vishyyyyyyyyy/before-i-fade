@@ -107,18 +107,18 @@ Don't know how to use this plugin? Here are the steps:
 1. Turn on the plugin in your plugins. In your `Project -> Project Settings -> Plugins -> `Click the `Enable` checkbox near this plugin
 2. If prompted for API key, provide it from Wakatime website
 3. if there is an issue with it, please manually create `~/.wakatime.cfg` file with these contents:
-    ```sh
-    [settings]
-    api_key=xxxx
-    ```
-    Where xxxx is your api key
+	```sh
+	[settings]
+	api_key=xxxx
+	```
+	Where xxxx is your api key
 <br /><br />
 If you are coming from Hack Club use this:
-    ```sh
-    [settings]
-    api_url = https://hackatime.hackclub.com/api/hackatime/v1
-    api_key=xxxx
-    ```
+	```sh
+	[settings]
+	api_url = https://hackatime.hackclub.com/api/hackatime/v1
+	api_key=xxxx
+	```
 4. Wakatime CLI should have been installed automatically along with Ouch! Decompression library
 5. Work on your project! You should see your results on either Wakatime or Hackatime!
 6. You can also see your time at the bottom panel

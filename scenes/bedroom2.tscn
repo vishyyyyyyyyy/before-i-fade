@@ -1498,7 +1498,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
-text = "\"Is that ...me?!\""
+text = "\"Is that... me?!\""
 horizontal_alignment = 1
 vertical_alignment = 2
 visible_characters = 0
@@ -1649,7 +1649,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
-text = "\"I was just about to leave\""
+text = "\"I was just about to leave...\""
 horizontal_alignment = 1
 vertical_alignment = 2
 visible_characters = 0
@@ -2230,7 +2230,7 @@ offset_right = 2319.72
 offset_bottom = 994.723
 theme_override_fonts/font = ExtResource("21_tcvsn")
 theme_override_font_sizes/font_size = 32
-text = "Leave desk"
+text = "Leave desk."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2/Area2D"]
 position = Vector2(2162, 975.125)
