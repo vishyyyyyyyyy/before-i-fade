@@ -279,9 +279,9 @@ script = ExtResource("1_0wiv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ptdhe")
-animation = &"boyGhost_idle"
+animation = &"blob_forward"
 autoplay = "blob_forward"
-frame_progress = 0.347558
+frame_progress = 0.373734
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 2)
