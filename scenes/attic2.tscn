@@ -621,18 +621,6 @@ tracks/4/keys = {
 "points": PackedFloat32Array(8.76563, -0.25, 0, 0.25, 0, 19.771, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0.6, 1.6)
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../phone instructions:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.63),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hoxtk"]
 _data = {
@@ -1153,7 +1141,6 @@ libraries = {
 }
 
 [node name="boy" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/boy"]
 position = Vector2(825, 782)
@@ -1162,7 +1149,6 @@ sprite_frames = SubResource("SpriteFrames_ioplr")
 
 [node name="girl" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
 visible = false
-position = Vector2(-505, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/girl"]
 position = Vector2(2136, 783)
@@ -1180,7 +1166,7 @@ autoplay = "default"
 
 [node name="girlSide" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
 visible = false
-position = Vector2(100, 0)
+position = Vector2(610, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/girlSide"]
 position = Vector2(1543, 814)
@@ -1287,7 +1273,7 @@ texture = ExtResource("13_u68vj")
 visible = false
 z_index = 2
 position = Vector2(1197, 803)
-scale = Vector2(19.771, 19.771)
+scale = Vector2(8.76563, 8.76563)
 texture = ExtResource("28_sjdb1")
 
 [node name="unlockphone" type="Sprite2D" parent="ghostlayer/AnimationPlayer2"]
@@ -1297,8 +1283,7 @@ position = Vector2(1194, 553)
 scale = Vector2(8.82031, 8.82031)
 texture = ExtResource("26_u68vj")
 
-[node name="phone instructions" type="Label" parent="ghostlayer/AnimationPlayer2"]
-visible = false
+[node name="phone instructions" type="Label" parent="ghostlayer"]
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5

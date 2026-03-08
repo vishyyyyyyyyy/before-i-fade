@@ -118,8 +118,6 @@ func _ready() -> void:
 	await $ghostlayer/AnimationPlayer2.animation_finished
 	$ghostlayer/continue/CollisionShape2D.disabled=false
 	$ghostlayer/continue.visible=true
-	$ghostlayer/Timer.visible=true
-	$ghostlayer/Label5.visible=true
 	$ghostlayer/Label4.visible=true
 	$ghostlayer/Label.visible=true
 	$ghostlayer/Label3.visible=true
@@ -127,44 +125,53 @@ func _ready() -> void:
 	$ghostlayer/ColorRect.visible=true
 	
 func challengecompleted():
+	$ghostlayer/Timer.visible=false
 	$ghostlayer/recphone.visible=true
+	$ghostlayer/Label5.visible=false
+	
 	if Global.character == "girlGhost":
 		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/chars2girl.play("kill")
 		await $ghostlayer/chars2girl.animation_finished
 		$ghostlayer/Label2.visible=false
-		$ghostlayer/AnimationPlayer.play("end")
-		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/recphone.visible=false
+		$ghostlayer/AnimationPlayer.play("end")
+		await $ghostlayer/AnimationPlayer.animation_finished
+		$ghostlayer/chars2girl/boy.visible=false
+		$ghostlayer/chars2girl/girl.visible=false
+		$ghostlayer/idle/girl.visible=false
 		$ghostlayer/blobGhostPlayer.position.x=1205
 		$ghostlayer/blobGhostPlayer.position.y=641
-		await $ghostlayer/AnimationPlayer.animation_finished
 		await start_dialogue(0)
 		await get_tree().create_timer(0.3).timeout
 		await fade_out_node($ghostlayer/blobGhostPlayer, 2.5)
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 		
-		
 	if Global.character == "boyGhost":
-		$ghostlayer/idle/boy.visible=true
-		$ghostlayer/chars2boy.play("death")
+		$ghostlayer/idle/boy.visible=false
+		$ghostlayer/chars2boy.play("boy")
 		await $ghostlayer/chars2boy.animation_finished
 		$ghostlayer/Label2.visible=false
+		$ghostlayer/recphone.visible=false
 		$ghostlayer/AnimationPlayer.play("end")
+		await $ghostlayer/AnimationPlayer.animation_finished
+		$ghostlayer/chars2boy/boy.visible=false
+		$ghostlayer/chars2boy/girl.visible=false
 		$ghostlayer/idle/boy.visible=false
-		$ghostlayer/Phone2.visible=false
-		$ghostlayer/Phone.visible=false
+		$ghostlayer/recphone.visible=false
 		$ghostlayer/blobGhostPlayer.position.x=1205
 		$ghostlayer/blobGhostPlayer.position.y=641
-		await $ghostlayer/AnimationPlayer.animation_finished
 		await start_dialogue(0)
 		await get_tree().create_timer(0.3).timeout
 		await fade_out_node($ghostlayer/blobGhostPlayer, 2.5)
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 
 func on_button_pressed():
+	$ghostlayer/Label5.visible=true
+	$ghostlayer/Timer.visible=true
 	$ghostlayer/Label4.visible=false
 	$ghostlayer/Timer2.start()
+	$"ghostlayer/phone instructions".visible=true
 	$ghostlayer/AnimationPlayer2/closedphone.visible=false
 	$"ghostlayer/AnimationPlayer2/open phone".visible=false
 	$ghostlayer/Area2D/CollisionShape2D.disabled= false
@@ -174,19 +181,6 @@ func on_button_pressed():
 	$ghostlayer/Area2D/CollisionShape2D5.disabled= false
 	$ghostlayer/Area2D/CollisionShape2D6.disabled = false
 	
-
-
-func _on_timer_2_timeout() -> void:
-	$"../Node3/Wrong".visible=true
-	$"../Node3/AudioStreamPlayer2".play()
-	await get_tree().create_timer(2).timeout
-	$"../Node3/Wrong".visible=false
-	$"../Node3/Timer2".start()
-
-
-
-	
-
 	
 func atticmodulate():
 	##past char in modulations

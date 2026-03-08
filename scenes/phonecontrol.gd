@@ -11,22 +11,46 @@ func _input_event(viewport, event, shape_idx):
 
 		if counter == 0:
 			if shape_idx == 0 :
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonemusic".visible=true
 				await get_tree().create_timer(1).timeout
 				incorrect1()
 
 			elif shape_idx == 1:
 				$"../recphone".visible=true
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				await get_tree().create_timer(1).timeout
 				incorrect1()
 				
 			elif shape_idx == 2:
 				$"../phonenotes".visible = true
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				await get_tree().create_timer(1).timeout
 				incorrect1()
 				
 			elif shape_idx == 3:
 				$"../phonecalc".visible = true
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				await get_tree().create_timer(1).timeout
 				incorrect1()
 				
@@ -54,6 +78,12 @@ func _input_event(viewport, event, shape_idx):
 				
 			elif shape_idx == 5:
 				$"../phonemail".visible = true
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				await get_tree().create_timer(1).timeout
 				incorrect1()
 				
@@ -128,6 +158,12 @@ func _input_event(viewport, event, shape_idx):
 			$delete.disabled=true
 			
 			if shape_idx == 0 :
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonemusic".visible=true
 				await get_tree().create_timer(1).timeout
 				incorrect2()
@@ -136,22 +172,46 @@ func _input_event(viewport, event, shape_idx):
 				correct()
 				
 			elif shape_idx == 2:
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonenotes".visible = true
 				await get_tree().create_timer(1).timeout
 				incorrect2()
 				
 			elif shape_idx == 3:
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonecalc".visible = true
 				await get_tree().create_timer(1).timeout
 				incorrect2()
 				
 			elif shape_idx == 4:
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonephone".visible = true
 				await get_tree().create_timer(1).timeout
 				incorrect2()
 				
 				
 			elif shape_idx == 5:
+				$CollisionShape2D.disabled= true
+				$CollisionShape2D2.disabled=true
+				$CollisionShape2D3.disabled= true
+				$CollisionShape2D4.disabled= true
+				$CollisionShape2D5.disabled= true
+				$CollisionShape2D6.disabled = true
 				$"../phonemail".visible = true
 				await get_tree().create_timer(1).timeout
 				incorrect2()
@@ -167,14 +227,23 @@ func correct():
 	$"../Correct".visible=true
 	$"../AudioStreamPlayer".play() 
 	$"../Timer2".stop()
-	$"../AnimationPlayer2/phone instructions".visible=false
+	$"../phone instructions".visible=false
 	await get_tree().create_timer(2).timeout
+	
 	$"../AnimationPlayer2/unlockphone".visible=false
 	$"../Correct".visible = false
 	emit_signal("challengecompleted")
 
 
 func incorrect1():
+	$CollisionShape2D.disabled= false
+	$CollisionShape2D2.disabled=false
+	$CollisionShape2D3.disabled= false
+	$CollisionShape2D4.disabled= false
+	$CollisionShape2D5.disabled= false
+	$CollisionShape2D6.disabled = false
+	$"../phonetext".text=""	
+	phonecode = ""
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
 	counter = 0
@@ -209,6 +278,14 @@ func incorrect2():
 	
 
 func _on_timer_2_timeout() -> void:
+	phonecode =""
+	$CollisionShape2D.disabled= false
+	$CollisionShape2D2.disabled=false
+	$CollisionShape2D3.disabled= false
+	$CollisionShape2D4.disabled= false
+	$CollisionShape2D5.disabled= false
+	$CollisionShape2D6.disabled = false
+	$"../phonetext".text=""	
 	$"../phonemusic".visible=false
 	$"../recphone".visible=false
 	$"../phonenotes".visible=false
@@ -216,7 +293,20 @@ func _on_timer_2_timeout() -> void:
 	$"../phonephone".visible=false
 	$"../phonemail".visible=false
 	$"../Wrong".visible=true
+	$"1".disabled=true
+	$"2".disabled=true
+	$"3".disabled=true
+	$"4".disabled =true
+	$"5".disabled= true
+	$"6".disabled = true
+	$"7".disabled = true
+	$"8".disabled=true
+	$"9".disabled = true
+	$"0".disabled=true
+	$check.disabled=true
+	$delete.disabled=true
 	$"../AudioStreamPlayer2".play()
 	counter = 0
 	await get_tree().create_timer(2).timeout
 	$"../Timer2".start()
+	$"../Wrong".visible=false
