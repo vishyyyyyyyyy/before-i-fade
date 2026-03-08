@@ -54,6 +54,12 @@ func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
 	
+	var timer = $ghostlayer/Timer2
+
+	if not timer.is_stopped():
+		var t = timer.time_left / timer.wait_time
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -399,6 +405,8 @@ func challenge():
 	$ghostlayer/continue/CollisionShape2D.disabled=false
 
 func pressed():
+	MusicManager.play_scene_music("puzzle2")
+	MusicManager.music_player.pitch_scale = 0.75
 	$ghostlayer/Label9.visible=true
 	$ghostlayer/Label.visible=true
 	$ghostlayer/Label2.visible=true
@@ -424,6 +432,8 @@ func pressed():
 	$ghostlayer/pianokeys/CollisionShape2D9.disabled=false
 	
 func challengecompleted():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$ghostlayer/Label.visible=false
 	$ghostlayer/Label2.visible=false
 	$ghostlayer/Label3.visible=false

@@ -57,6 +57,14 @@ func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
 	
+	# --- music speed control ---
+	if not $ghostlayer/Timer2.is_stopped():
+		var total_time = $ghostlayer/Timer2.wait_time
+		var t = time_left_seconds / total_time
+		
+		# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -770,6 +778,8 @@ func challenge():
 	
 	
 func on_button_pressed():
+	MusicManager.music_player.pitch_scale = 0.75
+	MusicManager.play_scene_music("menu")
 	$ghostlayer/Label9.visible=true
 	$ghostlayer/Timer.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
@@ -872,6 +882,8 @@ func presentbox():
 	
 
 func challengecompleted():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	await get_tree().create_timer(2).timeout
 	$ghostlayer/Timer.visible=false
 	$ghostlayer/Correct.visible=false

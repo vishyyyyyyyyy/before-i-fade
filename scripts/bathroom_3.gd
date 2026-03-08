@@ -89,6 +89,17 @@ func _ready() -> void:
 	$CanvasLayer3/comb.combpress.connect(combpress)
 	
 func _process(_delta):
+	var timer = $CanvasLayer3/Node3/Timer2
+	
+	if not timer.is_stopped():
+		var time_left = timer.time_left
+		var total_time = timer.wait_time
+		
+		var t = time_left / total_time
+		
+		# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -271,6 +282,8 @@ func friendCall():
 		await $CanvasLayer3/friendphone.animation_finished
 		
 func _on_button_pressed():
+	MusicManager.play_scene_music("puzzle2")
+	MusicManager.music_player.pitch_scale = 0.75
 	print("Signal received in main script!")
 	$CanvasLayer3/presenttile.visible=true
 	$CanvasLayer3/pasttile.visible=true
@@ -319,6 +332,8 @@ func enable_show_tilecollision():
 
 
 func afterpuzzle():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$CanvasLayer3/PresentTile/tile1.visible=false
 	$CanvasLayer3/PresentTile/tile1/CollisionShape2D.disabled=true
 	$CanvasLayer3/PresentTile/tile2.visible=false

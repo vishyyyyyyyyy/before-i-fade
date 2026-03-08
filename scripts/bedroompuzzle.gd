@@ -105,6 +105,8 @@ func _on_name_submitted(text: String):
 	play_diary_sequence()
 
 func _on_continue_pressed():
+	MusicManager.play_scene_music("puzzle2")
+	MusicManager.music_player.pitch_scale = 0.75
 	print("Node was clicked!")
 	$Timer2.start()
 	$desk/CollisionShape2D.disabled=true
@@ -128,6 +130,11 @@ func _on_desk_clicked():
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
+	
+	var total_time = $Timer2.wait_time
+	var t = time_left_seconds / total_time   # 1 → start, 0 → end
+	
+	MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
 	
 	if not dialogue_active or not animating:
 		return
@@ -244,6 +251,7 @@ func check_code():
 	if count == 4:
 		
 		if code == "ypPg":
+			MusicManager.play_scene_music("menu")
 			$Timer2.stop() 
 			$AudioStreamPlayer.play()
 			$CanvasLayer5/Correct.visible = true

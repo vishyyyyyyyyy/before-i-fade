@@ -3,6 +3,7 @@ extends Node
 var music_on := true
 var music_player: AudioStreamPlayer
 var saved_position := 0.0
+var playlist_positions := {}
 
 # --- NEW ---
 var playlists := {
@@ -32,8 +33,13 @@ func _ready():
 	play_scene_music("menu")
 
 func play_scene_music(scene_name: String):
+
+	# save current position before switching
+	if current_scene_music != "":
+		playlist_positions[current_scene_music] = music_player.get_playback_position()
+
 	if current_scene_music == scene_name:
-		return # already playing correct music
+		return
 
 	if not playlists.has(scene_name):
 		push_warning("No music defined for scene: " + scene_name)
@@ -50,7 +56,12 @@ func _play_current_track():
 		return
 
 	music_player.stream = current_playlist[current_index]
-	music_player.play()
+
+	var start_pos = 0.0
+	if playlist_positions.has(current_scene_music):
+		start_pos = playlist_positions[current_scene_music]
+
+	music_player.play(start_pos)
 
 func _on_music_finished():
 	if not music_on:

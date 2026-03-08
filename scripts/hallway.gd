@@ -52,6 +52,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
 	$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
+	
+	# --- music speed control ---
+	if not $CanvasLayer/Node3/Timer2.is_stopped():
+		var total_time = $CanvasLayer/Node3/Timer2.wait_time
+		var t = time_left_seconds / total_time
+		
+		# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
 
 	if not dialogue_active or not animating:
 		return
@@ -414,6 +422,8 @@ func all_non_photos_clicked() -> bool:
 	return true
 #
 func _on_button_pressed():
+	MusicManager.play_scene_music("puzzle2")
+	MusicManager.music_player.pitch_scale = 0.75
 	$CanvasLayer/Node3/Timer2.start()
 	$CanvasLayer/Node3/Timer.visible=true
 	$CanvasLayer/Node3/Label5.visible=true
@@ -484,6 +494,8 @@ func _on_piece_snapped():
 			
 			
 func _on_timer_2_timeout() -> void:
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$CanvasLayer/Node3/Wrong.visible=true
 	$CanvasLayer/Node3/AudioStreamPlayer2.play()
 	$CanvasLayer/Node3/Timer2.stop()
@@ -510,6 +522,8 @@ func resetpuzzle():
 
 	
 func afterpuzzle():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$CanvasLayer3/CanvasModulate/Picturepiece.visible=false
 	$CanvasLayer3/CanvasModulate/Picturepiece2.visible=false
 	$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false

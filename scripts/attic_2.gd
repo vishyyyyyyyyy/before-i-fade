@@ -22,6 +22,14 @@ func _process(_delta):
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label5.text = "%.1f" % time_left_seconds
 	
+	# --- music speed control ---
+	if not $ghostlayer/Timer2.is_stopped():
+		var total_time = $ghostlayer/Timer2.wait_time
+		var t = time_left_seconds / total_time
+		
+		# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -125,6 +133,8 @@ func _ready() -> void:
 	$ghostlayer/ColorRect.visible=true
 	
 func challengecompleted():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$ghostlayer/Timer.visible=false
 	$ghostlayer/recphone.visible=true
 	$ghostlayer/Label5.visible=false
@@ -167,6 +177,8 @@ func challengecompleted():
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 
 func on_button_pressed():
+	MusicManager.music_player.pitch_scale = 0.75
+	MusicManager.play_scene_music("puzzle2")
 	$ghostlayer/Label5.visible=true
 	$ghostlayer/Timer.visible=true
 	$ghostlayer/Label4.visible=false

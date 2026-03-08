@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="24_pp5hi"]
 [ext_resource type="Texture2D" uid="uid://f5d746pti7ia" path="res://assets/pixel-characters/friend2.png" id="25_kefea"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="26_kefea"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="34_tvp18"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="34_tvp18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_ksqid")

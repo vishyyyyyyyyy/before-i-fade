@@ -60,6 +60,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer4/Node3/Timer2.time_left
 	$CanvasLayer4/Node3/Label5.text = "%.1f" % time_left_seconds
+	
+	# --- music speed control ---
+	if not $CanvasLayer4/Node3/Timer2.is_stopped():
+		var total_time = $CanvasLayer4/Node3/Timer2.wait_time
+		var t = time_left_seconds / total_time
+		
+		# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if not dialogue_active or not animating:
 		return
 	
@@ -498,6 +507,8 @@ func all_non_photos_clicked() -> bool:
 	return true
 
 func on_button_pressed():
+	MusicManager.play_scene_music("puzzle2")
+	MusicManager.music_player.pitch_scale = 0.75
 	$ghostlayer/explorelabel.visible=false
 	$CanvasLayer4/Node3/Timer.visible=true
 	$CanvasLayer4/Node3/Label5.visible=true
@@ -530,6 +541,8 @@ func kitchenpuzzle():
 	
 	
 func challengecompleted():
+	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.play_scene_music("menu")
 	$CanvasLayer4/Node3/Label6.visible=false
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer4/ColorRect3.visible=false
