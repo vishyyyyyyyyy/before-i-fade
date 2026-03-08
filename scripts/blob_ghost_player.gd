@@ -70,13 +70,6 @@ func player_movement(delta):
 		play_anim(0)
 		velocity = Vector2.ZERO
 
-	# 🔊 Audio control
-	if moving:
-		if not $AudioStreamPlayer2D.playing:
-			$AudioStreamPlayer2D.pitch_scale = randf_range(2.5, 2.75)
-			$AudioStreamPlayer2D.play()
-	else:
-		$AudioStreamPlayer2D.stop()
 
 	move_and_slide()
 	

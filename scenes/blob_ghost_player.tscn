@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ddnbl1leq11wi"]
+[gd_scene load_steps=43 format=3 uid="uid://ddnbl1leq11wi"]
 
 [ext_resource type="Script" uid="uid://b5e3kb0umj1fm" path="res://scripts/blob_ghost_player.gd" id="1_0wiv0"]
 [ext_resource type="Texture2D" uid="uid://b3ignrcxjpdvq" path="res://assets/pixel-characters/ghost.png" id="1_5vdww"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://pt145wujmyx3" path="res://assets/pixel-characters/girlghostforward2.png" id="6_1s1oc"]
 [ext_resource type="Texture2D" uid="uid://b1jrjxquji2m1" path="res://assets/pixel-characters/girlghostside.png" id="7_305ux"]
 [ext_resource type="Texture2D" uid="uid://00xjc5ix86os" path="res://assets/pixel-characters/girlghostidle.png" id="9_305ux"]
-[ext_resource type="AudioStream" uid="uid://df5tj0pqj7x08" path="res://assets/audio/Human Footstep 7.mp3" id="11_305ux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wiv0"]
 atlas = ExtResource("1_5vdww")
@@ -281,13 +280,8 @@ script = ExtResource("1_0wiv0")
 sprite_frames = SubResource("SpriteFrames_ptdhe")
 animation = &"blob_forward"
 autoplay = "blob_forward"
-frame_progress = 0.373734
+frame_progress = 0.0829839
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 2)
 shape = SubResource("CapsuleShape2D_bk85j")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_305ux")
-volume_db = 8.0
-parameters/looping = true
