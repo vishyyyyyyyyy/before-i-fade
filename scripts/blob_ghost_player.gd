@@ -84,24 +84,32 @@ func play_anim(movement):
 	var dir = current_dir
 	var anim = $AnimatedSprite2D
 	
+	if movement == 0:
+		anim.speed_scale = 0.4   # slowwww for idl
+	else:
+		anim.speed_scale = 1.0   # normal
+	
 	if dir == "right":
 		anim.flip_h = false
 		if movement == 1:
 			anim.play(currentChar + "_sideways")
 		elif movement == 0:
 			anim.play(currentChar + "_idle")
+
 	elif dir == "left":
 		anim.flip_h = true
 		if movement == 1:
 			anim.play(currentChar + "_sideways")
 		elif movement == 0:
 			anim.play(currentChar + "_idle")
+
 	elif dir == "down":
 		anim.flip_h = false
 		if movement == 1:
 			anim.play(currentChar + "_backward")
 		elif movement == 0:
 			anim.play(currentChar + "_idle")
+
 	elif dir == "up":
 		anim.flip_h = false
 		if movement == 1:

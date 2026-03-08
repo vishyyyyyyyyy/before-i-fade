@@ -175,6 +175,21 @@ _data = {
 &"fadein": SubResource("Animation_7jp70")
 }
 
+[sub_resource type="Animation" id="Animation_rsfmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_81l6r"]
 resource_name = "modulate"
 length = 3.0
@@ -189,21 +204,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_rsfmq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer2/ColorRect2:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.129412, 0, 0.0980392, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oi1it"]
