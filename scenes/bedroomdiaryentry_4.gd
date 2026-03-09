@@ -17,7 +17,6 @@ var segment_ends
 	
 signal dialogue_finished(index)
 
-
 func _ready() -> void:
 	$CanvasLayer5/Label.visible=true
 	$ghostlayer/LineEdit.editable =false

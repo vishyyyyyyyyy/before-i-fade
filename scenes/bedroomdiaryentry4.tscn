@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=90 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_04rxg"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="11_lgyf2"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_iasxt"]
+[ext_resource type="VideoStream" uid="uid://dyt6ydv0hwhor" path="res://assets/vhs overlay.ogv" id="13_ejxh8"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_ju714"]
 [ext_resource type="Texture2D" uid="uid://b13iitm0q6bvt" path="res://assets/diarynolock.png" id="14_0fb3i"]
 [ext_resource type="Texture2D" uid="uid://djh5rej5r0557" path="res://assets/diaryentry6.png" id="16_gr0fs"]
@@ -2567,7 +2568,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/pastvideo"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2756,6 +2756,15 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ghostlayer"]
+modulate = Color(1, 1, 1, 0.223529)
+offset_left = -9.0
+offset_right = 2330.0
+offset_bottom = 1171.0
+mouse_filter = 2
+stream = ExtResource("13_ejxh8")
+expand = true
 
 [node name="Opensafe" type="Sprite2D" parent="ghostlayer"]
 visible = false

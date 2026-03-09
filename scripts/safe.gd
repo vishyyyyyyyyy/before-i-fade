@@ -6,7 +6,7 @@ var segment_data := [
 	{ "starts": [0.0, 4.0,], "ends": [2.0, 6.0] },  
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] },
 	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, #diary
-	{ "starts": [0.0, 5.0, 10.0, 12.0, 15.0, 20.0, 25.0], "ends": [2.0, 7.0, 12.0, 17.0, 22.0, 28.0] }, #diary
+	{ "starts": [0.0, 5.0, 10.0, 15.0, 20.0, 25.0], "ends": [2.0, 7.0, 12.0, 17.0, 22.0, 28.0] }, #diary
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, 
 ]
 @onready var anim_players := [
@@ -306,7 +306,9 @@ func _on_text_entered(new_text: String) -> void:
 		await start_dialogue(2)
 		$"../Opensafe".visible=false
 		$"../Recordscreen".visible=true
+		$"../VideoStreamPlayer".play()
 		await start_dialogue(3)
+		$"../VideoStreamPlayer".stop()
 		$"../Recordscreen".visible=false
 		$"../Opensafe".visible=true
 		await start_dialogue(4)
