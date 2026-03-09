@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=135 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="26_cvtdl"]
 [ext_resource type="Texture2D" uid="uid://dllleie8dya53" path="res://assets/kitchen4.png" id="26_d7r0a"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_j5uij"]
+[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="27_40l35"]
 [ext_resource type="Texture2D" uid="uid://mrjhghow33oy" path="res://assets/kitchen5.png" id="27_frf47"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_tpccs"]
 [ext_resource type="Texture2D" uid="uid://cwemow836riju" path="res://assets/kitchen6.png" id="28_1siqs"]
@@ -2108,6 +2109,11 @@ scale = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/AnimationPlayer/boySide"]
 position = Vector2(384, 227)
 sprite_frames = SubResource("SpriteFrames_4a0qq")
+
+[node name="Camera2D" type="Camera2D" parent="ghostlayer"]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("27_40l35")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

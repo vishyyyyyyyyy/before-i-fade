@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=144 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -52,6 +52,7 @@
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="49_bgrwk"]
 [ext_resource type="Script" uid="uid://ct8nuphlvm8xq" path="res://scripts/choice_1.gd" id="49_ju1eb"]
 [ext_resource type="AudioStream" uid="uid://d4jro2agjq5ka" path="res://assets/audio/knife.mp3" id="50_ju1eb"]
+[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="52_p08rk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx7od"]
 texture = ExtResource("1_qajrb")
@@ -5855,6 +5856,11 @@ disabled = true
 [node name="knife" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("50_ju1eb")
 volume_db = 20.0
+
+[node name="Camera2D" type="Camera2D" parent="ghostlayer"]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("52_p08rk")
 
 [node name="scene collisions" type="Node" parent="."]
 

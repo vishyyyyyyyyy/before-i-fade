@@ -3,7 +3,7 @@ extends Camera2D
 var shake_strength: float = 0.0
 var shake_timer: float = 0.0
 
-@onready var player_layer =$".." 
+@onready var player_layer = $".."
 
 func _process(delta):
 	if shake_timer > 0:
@@ -17,6 +17,7 @@ func _process(delta):
 	else:
 		offset = Vector2.ZERO
 		player_layer.offset = Vector2.ZERO
+
 
 func shake(strength: float, duration: float):
 	shake_strength = strength

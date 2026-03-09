@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://b8ipl8wqkiwa5"]
+[gd_scene load_steps=105 format=3 uid="uid://b8ipl8wqkiwa5"]
 
 [ext_resource type="Script" uid="uid://dw0d0wru3kifh" path="res://scripts/attic_2.gd" id="1_j8y3x"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_qjqex"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="40_7mjb8"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="41_j8y3x"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="42_qjqex"]
+[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="43_t75hn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx7od"]
 texture = ExtResource("2_qjqex")
@@ -1867,6 +1868,11 @@ volume_db = 20.0
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("42_qjqex")
 volume_db = 20.0
+
+[node name="Camera2D" type="Camera2D" parent="ghostlayer"]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("43_t75hn")
 
 [node name="scene collisions" type="Node" parent="."]
 

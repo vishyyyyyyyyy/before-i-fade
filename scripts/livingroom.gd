@@ -302,6 +302,7 @@ func textskip():
 
 
 func modulatelivingroom():
+	$CanvasLayer3/Camera2D.shake(2, 1.4)
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
 	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
 	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)

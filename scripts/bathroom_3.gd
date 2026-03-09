@@ -41,6 +41,7 @@ func _ready() -> void:
 	if (Global.character == "boyGhost"):
 		$CanvasLayer3/AnimationPlayer/boy.visible = true
 	$CanvasLayer/TileMap.visible=false
+	$CanvasLayer3/Camera2D.shake(2, 1.4)
 	$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 	$CanvasModulate.color = Color(1,1,1,1)
 	$CanvasLayer4/CanvasModulate2.color = Color(1,1,1,1)

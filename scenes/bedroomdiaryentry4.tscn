@@ -1185,6 +1185,9 @@ _data = {
 &"girl": SubResource("Animation_hmrut")
 }
 
+[sub_resource type="Animation" id="Animation_g2c65"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_wly0k"]
 resource_name = "record"
 length = 3.0
@@ -1201,9 +1204,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [false, true, false]
 }
-
-[sub_resource type="Animation" id="Animation_g2c65"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k7q8l"]
 _data = {

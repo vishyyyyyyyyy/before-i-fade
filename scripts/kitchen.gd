@@ -370,6 +370,7 @@ func start():
 		unlock_explore()
 		
 func kitchenmodulate():
+	$CanvasLayer3/Camera2D.shake(2, 1.4)
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = true
 	if (Global.character == "boyGhost"):

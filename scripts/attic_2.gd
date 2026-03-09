@@ -196,6 +196,7 @@ func on_button_pressed():
 	
 func atticmodulate():
 	##past char in modulations
+	$CanvasLayer3/Camera2D.shake(2, 1.4)
 	if Global.character =="boyGhost":
 		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
 		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)

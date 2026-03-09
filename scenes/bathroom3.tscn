@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=104 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="45_a8ml4"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="45_vsaef"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="46_bsxvx"]
+[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="49_4kitr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("2_wmlgl")
@@ -2988,6 +2989,11 @@ sprite_frames = SubResource("SpriteFrames_e0e3o")
 autoplay = "default"
 frame_progress = 0.518036
 flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer3"]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("49_4kitr")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("14_ys5x2")

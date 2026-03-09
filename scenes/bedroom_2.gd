@@ -248,7 +248,7 @@ func textskip():
 
 	
 func modulate():
-	$CanvasLayer/Camera2D.shake(1.5, 1.4)
+	$CanvasLayer/Camera2D.shake(2, 1.4)
 	if Global.character == "girlGhost":
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer/AnimationPlayer3/girlIdle.visible = true
