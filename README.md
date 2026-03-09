@@ -31,6 +31,14 @@ There are **two possible endings**.
 
 ---
 
+## 💻Tools and Languages
+
+- Godot Engine
+- GDScript
+- Aseprite
+- HTML5 build
+---
+
 ## 💭 Why We Made This
 
 We wanted to make a game showcasing the theme, "changing of time",  through multiple ways
