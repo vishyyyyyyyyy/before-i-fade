@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=94 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dw2aixe3reksm" path="res://scripts/safe.gd" id="18_fy4la"]
 [ext_resource type="Texture2D" uid="uid://de3qmwhq12kg4" path="res://assets/recordscreen.png" id="18_hmrut"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="18_vtl2l"]
+[ext_resource type="Texture2D" uid="uid://efx5gq5g6wb4" path="res://assets/recscreen2.png" id="19_6l7om"]
 [ext_resource type="Texture2D" uid="uid://dr8hrs7pxpysn" path="res://assets/opensafe.png" id="19_e2iyk"]
 [ext_resource type="Texture2D" uid="uid://csv18wi781khx" path="res://assets/ghostvideoboy.png" id="19_ejxh8"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="19_hmrut"]
@@ -31,10 +32,10 @@
 [ext_resource type="Script" uid="uid://do2jm7d8ej7l5" path="res://scripts/leavedesk6.gd" id="21_ocxwn"]
 [ext_resource type="Texture2D" uid="uid://du2gg3wgeki28" path="res://assets/fridge.png" id="21_rfqt8"]
 [ext_resource type="Texture2D" uid="uid://dlm6o0fiqxnma" path="res://assets/vignette.png" id="22_abimk"]
-[ext_resource type="Texture2D" uid="uid://wigvrdbhxpbh" path="res://assets/safenote.png" id="22_g2c65"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="22_wly0k"]
 [ext_resource type="Script" uid="uid://cm22fx8v0grcd" path="res://scenes/desk5.gd" id="23_bne4e"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="23_rpoo5"]
+[ext_resource type="Texture2D" uid="uid://duvxalrw3avp1" path="res://assets/exnote.png" id="24_6l7om"]
 [ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="25_gr0fs"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="26_mt0nl"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="27_vtl2l"]
@@ -1182,6 +1183,32 @@ _data = {
 &"RESET": SubResource("Animation_ejxh8"),
 &"boy": SubResource("Animation_6l7om"),
 &"girl": SubResource("Animation_hmrut")
+}
+
+[sub_resource type="Animation" id="Animation_wly0k"]
+resource_name = "record"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_g2c65"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7q8l"]
+_data = {
+&"RESET": SubResource("Animation_g2c65"),
+&"record": SubResource("Animation_wly0k")
 }
 
 [sub_resource type="Animation" id="Animation_f847w"]
@@ -2561,6 +2588,19 @@ position = Vector2(1163, 554.5)
 scale = Vector2(0.774667, 0.6115)
 texture = ExtResource("18_hmrut")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("Recordscreen2")
+libraries = {
+&"": SubResource("AnimationLibrary_k7q8l")
+}
+
+[node name="Recordscreen2" type="Sprite2D" parent="ghostlayer/AnimationPlayer"]
+visible = false
+modulate = Color(0, 0.992157, 0.815686, 1)
+position = Vector2(1163, 554.5)
+scale = Vector2(0.774667, 0.6115)
+texture = ExtResource("19_6l7om")
+
 [node name="pastvideo" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../Recordscreen")
 libraries = {
@@ -2568,6 +2608,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/pastvideo"]
+visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2776,7 +2817,7 @@ texture = ExtResource("19_e2iyk")
 visible = false
 position = Vector2(805, 550)
 scale = Vector2(6.10938, 6.10938)
-texture = ExtResource("22_g2c65")
+texture = ExtResource("24_6l7om")
 
 [node name="Safecloseup" type="Sprite2D" parent="ghostlayer"]
 visible = false

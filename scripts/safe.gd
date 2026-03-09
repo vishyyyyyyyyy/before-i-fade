@@ -307,8 +307,11 @@ func _on_text_entered(new_text: String) -> void:
 		$"../Opensafe".visible=false
 		$"../Recordscreen".visible=true
 		$"../VideoStreamPlayer".play()
+		$"../AnimationPlayer".play("record")
 		await start_dialogue(3)
 		$"../VideoStreamPlayer".stop()
+		$"../AnimationPlayer".stop()
+		$"../AnimationPlayer/Recordscreen2".visible=false
 		$"../Recordscreen".visible=false
 		$"../Opensafe".visible=true
 		await start_dialogue(4)
