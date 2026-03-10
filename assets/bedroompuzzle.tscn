@@ -1207,7 +1207,7 @@ offset_bottom = 1087.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 25.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]
