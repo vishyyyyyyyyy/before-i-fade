@@ -53,6 +53,12 @@ func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer/Node3/Timer2.time_left
 	$CanvasLayer/Node3/Label5.text = "%.1f" % time_left_seconds
 	
+	if time_left_seconds < 11.0:
+			if int(Time.get_ticks_msec() / 300) % 3 == 0:
+				$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(1,0,0))
+			else:
+				$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
+				
 	# --- music speed control ---
 	if not $CanvasLayer/Node3/Timer2.is_stopped():
 		var total_time = $CanvasLayer/Node3/Timer2.wait_time
@@ -505,6 +511,9 @@ func _on_timer_2_timeout() -> void:
 	$CanvasLayer/Node3/Timer2.stop()
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Wrong.visible=false
+	$Label2.add_theme_color_override("font_color", Color(0,0,0))
+	
+	$CanvasLayer/Node3/Timer2.start()
 	resetpuzzle()
 
 func resetpuzzle():
@@ -520,9 +529,6 @@ func resetpuzzle():
 			slot.reset()
 
 	print("Puzzle reset")
-
-
-	$CanvasLayer/Node3/Timer2.start()
 
 	
 func afterpuzzle():
