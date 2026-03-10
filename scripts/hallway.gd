@@ -356,17 +356,20 @@ func modulate():
 		unlock_explore()
 #
 func unlock_explore():
-	$CanvasLayer/Label.visible=true
+	$CanvasLayer/Label.visible = true
 	
 	var areas = {
 		"photos": $explore/CanvasLayer/photos,
 		"lamp": $explore/CanvasLayer/lamp,
 		"flowers": $explore/CanvasLayer/flowers
 	}
-	for name in areas.keys():
-			var area_node = areas[name]
-			if area_node is Area2D:
-				area_node.clicked.connect(func(text):
+
+	for name in areas:
+		var area_node = areas[name]
+
+		if area_node is Area2D:
+			area_node.clicked.connect(
+				func(text):
 					_on_object_clicked(text, name)
 			)
 func _on_object_clicked(text: String, area_name: String):

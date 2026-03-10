@@ -1505,15 +1505,15 @@ size = Vector2(169, 1323)
 size = Vector2(2346, 497)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bje8i"]
-radius = 73.0
-height = 274.0
+radius = 100.0
+height = 358.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyikb"]
-radius = 64.0
-height = 530.0
+radius = 99.0
+height = 636.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frgbo"]
-size = Vector2(913, 206)
+size = Vector2(913, 359)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_y7q4l")
@@ -3032,7 +3032,7 @@ debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 script = ExtResource("21_xyikb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/photos"]
-position = Vector2(1137.5, 296)
+position = Vector2(1137.5, 372.5)
 shape = SubResource("RectangleShape2D_frgbo")
 disabled = true
 debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)

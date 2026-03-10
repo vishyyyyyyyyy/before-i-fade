@@ -3,6 +3,21 @@ signal clicked(text)
 
 @export var label_text: String = ""
 
-func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+var player_inside := false
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = true
+
+func _on_body_exited(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = false
+
+func _input(event):
+	if player_inside and event.is_action_pressed("interact"):
+		print("interact pressed on area")
 		emit_signal("clicked", label_text)
