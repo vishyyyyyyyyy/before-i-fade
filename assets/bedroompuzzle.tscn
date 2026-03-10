@@ -1211,11 +1211,13 @@ wait_time = 15.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(128, 80)
 scale = Vector2(3.91016, 3.91016)
 texture = ExtResource("24_w7ttg")
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 38.0
 offset_top = 54.0
 offset_right = 214.0
