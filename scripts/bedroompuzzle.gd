@@ -364,7 +364,6 @@ func play_diary_sequence():
 		$Desk2.visible=false
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
-		$CanvasLayer6/Label6.visible=true
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false
 		$AnimationPlayer2/GirlGhost.visible=false
@@ -372,6 +371,7 @@ func play_diary_sequence():
 		$Diaryentry1.visible=false
 		$CanvasModulate/Calendar2.visible=true
 		$AnimationPlayer3/skip.visible=false
+		$Camera2D.shake(2, 1.4)
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate.color = Color(1,1,1,1)
@@ -380,6 +380,7 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$SceneTrigger/CollisionShape2D.disabled=false
+		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer6/Label6.visible=true
 		
 	if Global.character == "boyGhost":
@@ -392,7 +393,6 @@ func play_diary_sequence():
 		$Desk2.visible=false
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
-		$CanvasLayer6/Label6.visible=true
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false
 		$AnimationPlayer2/GirlGhost.visible=false
@@ -400,6 +400,7 @@ func play_diary_sequence():
 		$Diaryentry1.visible=false
 		$CanvasModulate/Calendar2.visible=true
 		$AnimationPlayer3/skip.visible=false
+		$Camera2D.shake(2, 1.4)
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate.color = Color(1,1,1,1)
@@ -408,4 +409,5 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 		$SceneTrigger/CollisionShape2D.disabled=false
+		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer6/Label6.visible=true

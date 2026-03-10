@@ -256,6 +256,7 @@ func ghosttext1():
 	modulate()
 		#
 func modulate():
+	$CanvasLayer/Camera2D.shake(2, 1.4)
 	if Global.character == "girlGhost":
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)

@@ -620,7 +620,7 @@ func text():
 	
 func atticmodulate():
 	##past char in modulations
-	$CanvasLayer3/Camera2D.shake(2, 1.4)
+	$ghostlayer/Camera2D.shake(2, 1.4)
 	if Global.character =="boyGhost":
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 

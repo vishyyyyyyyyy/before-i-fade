@@ -302,7 +302,7 @@ func textskip():
 
 
 func modulatelivingroom():
-	$CanvasLayer3/Camera2D.shake(2, 1.4)
+	$ghostlayer/Camera2D.shake(2, 0.8)
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
 	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
 	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
@@ -475,6 +475,7 @@ func diarypagecontinue():
 	$ghostlayer/Music.visible=false
 	$ghostlayer/Music2.visible=false
 	$ghostlayer/Music3.visible=false
+	$ghostlayer/Camera2D.shake(1.8, 1.4)
 	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
@@ -487,5 +488,6 @@ func diarypagecontinue():
 	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
+	await get_tree().create_timer(0.4).timeout
 	$ghostlayer/Label14.visible=true
 	

@@ -370,7 +370,7 @@ func start():
 		unlock_explore()
 		
 func kitchenmodulate():
-	$CanvasLayer3/Camera2D.shake(2, 1.4)
+	$ghostlayer/Camera2D.shake(2, 1.4)
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = true
 	if (Global.character == "boyGhost"):
@@ -573,6 +573,7 @@ func diarypagecontinue():
 	$CanvasLayer4/Node3/Label5.visible=false
 	$CanvasLayer4/Node3/Timer.visible=false
 	#$CanvasLayer4/Node3/Label11.visible=false
+	$ghostlayer/Camera2D.shake(2, 1.4)
 	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
 	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://tosd2lbj70hu"]
+[gd_scene load_steps=30 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
 [ext_resource type="Script" uid="uid://sny0cu5i00sb" path="res://scripts/bedroom.gd" id="1_lj4hb"]
@@ -12,7 +12,9 @@
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="9_hdjrh"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="9_wx2xb"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_lv7wv"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="12_mk2nf"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_k5fq4"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="14_4wfg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("1_j7co6")
@@ -342,6 +344,55 @@ shape = SubResource("RectangleShape2D_k5fq4")
 position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_k5fq4")
 
+[node name="CanvasPause" type="CanvasLayer" parent="."]
+process_mode = 2
+physics_interpolation_mode = 2
+
+[node name="PauseMenu" type="Control" parent="CanvasPause"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasPause/PauseMenu"]
+modulate = Color(0.129412, 0, 0.0980392, 1)
+layout_mode = 0
+offset_top = -5.0
+offset_right = 2330.0
+offset_bottom = 1295.0
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 1013.0
+offset_top = 260.0
+offset_right = 1286.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Paused"
+
+[node name="resume" type="Button" parent="CanvasPause/PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 365.0
+offset_right = 1396.0
+offset_bottom = 591.0
+icon = ExtResource("14_4wfg3")
+
+[node name="quit" type="Button" parent="CanvasPause/PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 979.0
+offset_top = 692.0
+offset_right = 1304.0
+offset_bottom = 932.0
+text = "Quit"
+
+[node name="Menubanner2" type="Sprite2D" parent="."]
+position = Vector2(-523, 178)
+texture = ExtResource("12_mk2nf")
+
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CanvasPause/PauseMenu/Panel/resume" to="." method="_on_resume_pressed"]

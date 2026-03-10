@@ -7,6 +7,14 @@ var animating := true
 @onready var anim := $CanvasLayer/AnimationPlayer
 
 
+@onready var pause_menu = $CanvasPause/PauseMenu
+
+
+
+func toggle_pause():
+	get_tree().paused = !get_tree().paused
+	pause_menu.visible = get_tree().paused
+	
 func _ready():
 	$SceneTrigger/CollisionShape2D.disabled =true
 	$CanvasLayer/AnimationPlayer.play("type_text")
@@ -26,6 +34,9 @@ func _input(event):
 
 	if event.is_action_pressed("ui_accept"):
 		textskip()
+	
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
 
 func end_dialogue():
 	dialogue_active = false
@@ -49,3 +60,8 @@ func textskip():
 		else:
 			end_dialogue()
   
+
+
+func _on_resume_pressed() -> void:
+	get_tree().paused = false
+	$CanvasPause/PauseMenu.visible = false

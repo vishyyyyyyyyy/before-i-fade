@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=112 format=3 uid="uid://3ulr6k8q2lmt"]
 
 [ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://t6dt2i0x4ram" path="res://assets/hallwayPuzzlePics/boyframeTopRight.png" id="49_wdffw"]
 [ext_resource type="Texture2D" uid="uid://clknjbrjmyblp" path="res://assets/hallwayPuzzlePics/boyframeBottomLeft.png" id="50_lip3m"]
 [ext_resource type="Texture2D" uid="uid://jckxys6vwb0b" path="res://assets/hallwayPuzzlePics/boyframeBottomRight.png" id="51_0qhv5"]
+[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="56_sm38h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjeik"]
 texture = ExtResource("1_yjeik")
@@ -2956,6 +2957,11 @@ position = Vector2(2016.5, 257)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("56_sm38h")
 
 [node name="scenecollisions" type="Node" parent="."]
 

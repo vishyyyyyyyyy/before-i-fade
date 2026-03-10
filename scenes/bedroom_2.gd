@@ -342,6 +342,7 @@ func unlock_explore():
 			area_node.clicked.connect(func(text):
 				_on_object_clicked(text, name)
 			)
+			
 func _on_object_clicked(text: String, area_name: String):
 	# If desk clicked before finishing others
 	if area_name == "desk" and not all_non_desk_clicked():

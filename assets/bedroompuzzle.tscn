@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=70 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_cqub6"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_eg4gs"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="37_votow"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="38_g7k7r"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="39_duejm"]
+[ext_resource type="Script" uid="uid://cufnm60md4frp" path="res://scripts/camera_2dNOPLAYERLAYER.gd" id="41_duejm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("2_eg4gs")
@@ -1017,8 +1018,10 @@ autowrap_mode = 2
 [node name="ColorRect" type="ColorRect" parent="Node3"]
 visible = false
 z_index = 1
-offset_right = 2303.0
-offset_bottom = 1291.0
+offset_left = -21.0
+offset_top = -15.0
+offset_right = 2322.0
+offset_bottom = 1306.0
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.670588)
 
@@ -1640,6 +1643,11 @@ theme_override_fonts/font = ExtResource("19_j63wt")
 theme_override_font_sizes/font_size = 32
 text = "Enter the bathroom again."
 horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+modulate = Color(0.823936, 0.405335, 1, 1)
+position = Vector2(1153, 644)
+script = ExtResource("41_duejm")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

@@ -425,6 +425,7 @@ func combpress():
 		
 func modulatebackghost():
 	$CanvasLayer/TileMap.visible=false
+	$CanvasLayer/Camera2D.shake(2, 1.4)
 	$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.323, 0.28)
 	$CanvasLayer4/CanvasModulate2.color= Color(0.094, 0.323, 0.28)

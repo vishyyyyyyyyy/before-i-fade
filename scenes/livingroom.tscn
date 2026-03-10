@@ -53,7 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://ccaltmne4kumu" path="res://assets/auntletter.png" id="45_u7681"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="47_3rg1y"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="50_vl3qy"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="52_l1jrp"]
+[ext_resource type="Script" uid="uid://cd352y0kdt4h0" path="res://scripts/cameralivingroom.gd" id="52_l1jrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
