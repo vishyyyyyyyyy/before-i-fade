@@ -98,6 +98,12 @@ func _process(_delta):
 		
 		var t = time_left / total_time
 		
+		if time_left < 11.0:
+			if int(Time.get_ticks_msec() / 300) % 3 == 0:
+				$CanvasLayer3/Node3/Label5.add_theme_color_override("font_color", Color(1,0,0))
+			else:
+				$CanvasLayer3/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
+		
 		# start slow (0.75) → end normal (1.0)
 		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
 	
@@ -425,7 +431,7 @@ func combpress():
 		
 func modulatebackghost():
 	$CanvasLayer/TileMap.visible=false
-	$CanvasLayer/Camera2D.shake(2, 1.4)
+	$CanvasLayer3/Camera2D.shake(2, 1.4)
 	$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.323, 0.28)
 	$CanvasLayer4/CanvasModulate2.color= Color(0.094, 0.323, 0.28)
