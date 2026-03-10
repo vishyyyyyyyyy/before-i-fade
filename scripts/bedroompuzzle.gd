@@ -110,6 +110,8 @@ func _on_continue_pressed():
 	print("Node was clicked!")
 	$Timer2.start()
 	$desk/CollisionShape2D.disabled=true
+	$Label2.visible=true
+	$Timer.visible=true
 	await start_dialogue(0)
 	$desk/CollisionShape2D.disabled=false
 	$Node3/continue/CollisionShape2D.disabled=true
@@ -134,7 +136,7 @@ func _process(delta: float) -> void:
 	
 	var total_time = $Timer2.wait_time
 	var t = time_left_seconds / total_time  
-	if time_left_seconds <= 10.0:
+	if time_left_seconds < 11.0:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$Label2.add_theme_color_override("font_color", Color(1,0,0))
 		else:
@@ -254,6 +256,8 @@ func _on_timer_2_timeout() -> void:
 	$CanvasLayer5/Wrong.visible = true
 	$AudioStreamPlayer2.play()
 	await get_tree().create_timer(2).timeout
+	$Label2.add_theme_color_override("font_color", Color(0,0,0))
+	$Timer2.start()
 	reset_puzzle()
 	
 func check_code():
@@ -298,7 +302,6 @@ func reset_puzzle():
 	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
 	await start_dialogue(0)
-	$Timer2.start()
 	
 func wrong():
 	code = ""
