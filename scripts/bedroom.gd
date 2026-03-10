@@ -13,6 +13,7 @@ var escCounter = 0
 
 
 func toggle_pause():
+	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused
 	$CanvasPause/ColorRect2.visible=true
@@ -90,12 +91,14 @@ func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 
 
 func _on_controls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#$CanvasPause/settingsControl.visible=true
-	#$CanvasPause/PauseMenu.visible=false
-	pass
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$CanvasPause/settingsControl.visible=true
+		$CanvasPause/PauseMenu.visible=false
 
 
 func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#get_tree().paused = false
-	#get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	pass
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	
+ 

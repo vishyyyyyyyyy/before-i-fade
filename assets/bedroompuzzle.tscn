@@ -1111,11 +1111,6 @@ theme_override_font_sizes/font_size = 32
 text = "Press the colors in order to unlock the diary."
 horizontal_alignment = 1
 
-[node name="Timer" type="Sprite2D" parent="."]
-position = Vector2(128, 80)
-scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("24_w7ttg")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("25_g7k7r")
@@ -1212,8 +1207,13 @@ offset_bottom = 1087.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
+
+[node name="Timer" type="Sprite2D" parent="."]
+position = Vector2(128, 80)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("24_w7ttg")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 38.0

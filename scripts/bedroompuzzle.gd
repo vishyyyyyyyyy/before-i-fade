@@ -127,17 +127,24 @@ func _on_desk_clicked():
 	$TextureRect/TextureButton3.mouse_filter = Control.MOUSE_FILTER_STOP
 	$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_STOP
 
+
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
 	
 	var total_time = $Timer2.wait_time
-	var t = time_left_seconds / total_time   # 1 → start, 0 → end
+	var t = time_left_seconds / total_time  
+	if time_left_seconds <= 10.0:
+		if int(Time.get_ticks_msec() / 300) % 3 == 0:
+			$Label2.add_theme_color_override("font_color", Color(1,0,0))
+		else:
+			$Label2.add_theme_color_override("font_color", Color(0,0,0))
 	
 	MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
 	
 	if not dialogue_active or not animating:
 		return
+		
 	
 	if anim.current_animation == "":
 		return # No animation playing, skip
@@ -145,6 +152,8 @@ func _process(delta: float) -> void:
 	if anim.get_current_animation_position() >= segment_ends[segment_index]:
 		anim.pause()
 		animating = false
+	
+
 
 func start_dialogue(index: int):
 	# Safety
