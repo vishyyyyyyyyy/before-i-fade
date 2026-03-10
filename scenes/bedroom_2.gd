@@ -6,6 +6,7 @@ extends Node2D
 
 var clicked_objects := {} 
 var deskcounter:= 0
+var interact_target: String = ""
 
 var segment_data := [
 	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] }, 
@@ -54,6 +55,8 @@ func _ready():
 	modulate()
 	
 func _process(_delta):
+	if interact_target != "":
+		print("near:", interact_target)
 	if not dialogue_active or not animating:
 		return
 	
@@ -326,7 +329,6 @@ func unlock_explore():
 	$explore/desk/CollisionShape2D.disabled = false
 	$explore/rug/CollisionShape2D.disabled = false
 
-	# Connect Area2D clicked signals
 	var areas = {
 		"safe": $explore/safe,
 		"bed": $explore/bed,
@@ -338,7 +340,10 @@ func unlock_explore():
 
 	for name in areas.keys():
 		var area_node = areas[name]
+
 		if area_node is Area2D:
+
+			# CONNECT CLICK SIGNAL
 			area_node.clicked.connect(func(text):
 				_on_object_clicked(text, name)
 			)

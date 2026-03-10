@@ -844,23 +844,23 @@ animations = [{
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rik1q"]
-size = Vector2(187, 192)
+size = Vector2(190, 277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rme15"]
-size = Vector2(617, 320)
+size = Vector2(424, 453)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7ukq"]
-size = Vector2(387.25, 382)
+size = Vector2(387.25, 516)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij3ta"]
-size = Vector2(284, 211)
+size = Vector2(244, 338)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcvsn"]
-radius = 127.0
+radius = 131.0
 height = 490.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flduu"]
-size = Vector2(290, 397)
+size = Vector2(370, 322)
 
 [sub_resource type="Animation" id="Animation_ij3ta"]
 length = 0.001
@@ -1847,7 +1847,7 @@ autoplay = "default"
 frame_progress = 0.619869
 
 [node name="Catrug" type="Sprite2D" parent="."]
-position = Vector2(1797, 651)
+position = Vector2(1560, 674)
 rotation = 1.5708
 scale = Vector2(5.36234, 5.36234)
 texture = ExtResource("13_4saaw")
@@ -1893,7 +1893,7 @@ label_text = "A locked safe."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/safe"]
 z_index = 1
-position = Vector2(206.5, 667)
+position = Vector2(208, 709.5)
 shape = SubResource("RectangleShape2D_rik1q")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
@@ -1904,7 +1904,7 @@ script = ExtResource("19_rme15")
 label_text = "A bed with 4 flowers."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/bed"]
-position = Vector2(411.5, 736)
+position = Vector2(508, 802.5)
 shape = SubResource("RectangleShape2D_rme15")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
@@ -1915,7 +1915,7 @@ script = ExtResource("19_rme15")
 label_text = "A window."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/window"]
-position = Vector2(1157.38, 450)
+position = Vector2(1157.38, 517)
 shape = SubResource("RectangleShape2D_r7ukq")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
@@ -1926,7 +1926,7 @@ script = ExtResource("19_rme15")
 label_text = "A calendar dated November 6th."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/calendar"]
-position = Vector2(1863, 487.5)
+position = Vector2(1843, 551)
 shape = SubResource("RectangleShape2D_ij3ta")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
@@ -1937,7 +1937,7 @@ script = ExtResource("19_rme15")
 label_text = "A cute cat rug."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/rug"]
-position = Vector2(1768, 985)
+position = Vector2(1532, 1005)
 shape = SubResource("CapsuleShape2D_tcvsn")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
@@ -1948,7 +1948,7 @@ script = ExtResource("19_rme15")
 label_text = "Investigate the bedroom by clicking on objects."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/desk"]
-position = Vector2(2124, 863.5)
+position = Vector2(2084, 901)
 shape = SubResource("RectangleShape2D_flduu")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)

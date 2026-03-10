@@ -4,11 +4,11 @@ var segment_ends   := [2.0, 6.0]
 var dialogue_active := false
 var segment_index := 0
 var animating := true
+var player_in_area = false
 @onready var anim := $CanvasLayer3/AnimationPlayer
 
 func _ready():
 	
-	$SceneTrigger/CollisionShape2D.disabled=true
 	$CanvasLayer3/AnimationPlayer.play("text")
 	dialogue_active = true  
 	await $CanvasLayer3/AnimationPlayer.animation_finished
@@ -22,6 +22,8 @@ func _process(_delta):
 	if animating and anim.current_animation_position >= segment_ends[segment_index]:
 		anim.pause()
 		animating = false
+	if player_in_area and Input.is_action_just_pressed("interact"):
+		get_tree().change_scene_to_file("res://scenes/mirror.tscn")
 
 func _input(event):
 	if not dialogue_active:
@@ -35,7 +37,6 @@ func end_dialogue():
 	anim.stop()
 	print("Dialogue finished")
 	$CanvasLayer3/Label3.visible=true
-	$SceneTrigger/CollisionShape2D.disabled = false
 
 func textskip():
 	if animating:
@@ -51,4 +52,10 @@ func textskip():
 		else:
 			end_dialogue()
 			
-  
+ 
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	player_in_area = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	player_in_area = false

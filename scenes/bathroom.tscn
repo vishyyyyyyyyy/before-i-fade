@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hktmcl6xg08u"]
+[gd_scene load_steps=25 format=3 uid="uid://hktmcl6xg08u"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_gknyc"]
 [ext_resource type="Script" uid="uid://dp3auqvxnpfao" path="res://scripts/bathroom.gd" id="1_n5w2q"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="10_c0g1v"]
 [ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_2v03t"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_ym42y"]
-[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_xd8h1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("1_gknyc")
@@ -104,11 +103,11 @@ _data = {
 &"text": SubResource("Animation_ym42y")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jasiq"]
+size = Vector2(525, 483.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
 size = Vector2(1534.67, 133.333)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohm1j"]
-size = Vector2(361, 439)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
@@ -290,6 +289,13 @@ theme_override_font_sizes/font_size = 32
 text = "Click the Mirror."
 horizontal_alignment = 1
 
+[node name="Area2D" type="Area2D" parent="CanvasLayer3"]
+position = Vector2(1760, 647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/Area2D"]
+position = Vector2(271.5, 166.25)
+shape = SubResource("RectangleShape2D_jasiq")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
@@ -297,17 +303,6 @@ scale = Vector2(1.5, 1.5)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_m8av8")
-
-[node name="SceneTrigger" type="Area2D" parent="."]
-position = Vector2(556, 1203)
-script = ExtResource("13_xd8h1")
-target_scene = "res://scenes/mirror.tscn"
-requires_interaction = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(1486, -931.5)
-shape = SubResource("RectangleShape2D_ohm1j")
-debug_color = Color(1, 1, 1, 0.42)
 
 [node name="leftwallcollision" type="StaticBody2D" parent="."]
 
@@ -328,4 +323,5 @@ position = Vector2(1165.38, 293)
 shape = SubResource("RectangleShape2D_l23g3")
 
 [connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CanvasLayer3/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CanvasLayer3/Area2D" to="." method="_on_area_2d_body_exited"]
