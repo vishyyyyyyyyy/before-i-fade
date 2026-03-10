@@ -1,5 +1,14 @@
 extends Node2D
 func _ready() -> void:
+	Global.character = "blob"
+	Global.bathroomCount = 0
+	Global.pastChar = ""
+	Global.reusabledesk = 0
+	Global.reusablehallway = 0
+	Global.kitchen = 0
+	Global.livingroom = 0
+	Global.charName = ""
+	Global.ending= 0
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	$AnimationPlayer2.play("modulate")
@@ -7,6 +16,7 @@ func _ready() -> void:
 	$Node/Play/CollisionShape2D.disabled=false
 	$Node/Music/CollisionShape2D.disabled=false
 	$Node/Play.play.connect(play)
+	
 	
 func play():
 	$Node/Play.visible=false

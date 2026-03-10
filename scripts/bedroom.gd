@@ -4,6 +4,7 @@ var segment_ends   := [2.0, 7.0]
 var dialogue_active := false
 var segment_index := 0
 var animating := true
+var escCounter = 0
 @onready var anim := $CanvasLayer/AnimationPlayer
 
 
@@ -14,8 +15,14 @@ var animating := true
 func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused
+	$CanvasPause/ColorRect2.visible=true
+	$CanvasPause/Menucard2.visible=true
 	
 func _ready():
+	if MusicManager.music_on:
+		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
+	else:
+		$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
 	$SceneTrigger/CollisionShape2D.disabled =true
 	$CanvasLayer/AnimationPlayer.play("type_text")
 	dialogue_active = true  
@@ -62,6 +69,33 @@ func textskip():
   
 
 
-func _on_resume_pressed() -> void:
-	get_tree().paused = false
-	$CanvasPause/PauseMenu.visible = false
+func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			get_tree().paused = false
+			$CanvasPause/PauseMenu.visible = false
+			$CanvasPause/PauseMenu/resume/Label.text = "Game Resumed"
+			$CanvasPause/ColorRect2.visible=false
+			$CanvasPause/Menucard2.visible=false
+			print("pressed") 
+
+
+func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		MusicManager.toggle_music()
+
+		if MusicManager.music_on:
+			$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
+		else:
+			$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
+
+
+func _on_controls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#$CanvasPause/settingsControl.visible=true
+	#$CanvasPause/PauseMenu.visible=false
+	pass
+
+
+func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#get_tree().paused = false
+	#get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	pass
