@@ -420,10 +420,12 @@ func unlock_explore():
 		"sink": $explore/CanvasLayer/sink,
 		"island": $explore/CanvasLayer/island
 	}
-	for name in areas.keys():
-			var area_node = areas[name]
-			if area_node is Area2D:
-				area_node.clicked.connect(func(text):
+	for name in areas:
+		var area_node = areas[name]
+
+		if area_node is Area2D:
+			area_node.clicked.connect(
+				func(text):
 					_on_object_clicked(text, name)
 			)
 func _on_object_clicked(text: String, area_name: String):

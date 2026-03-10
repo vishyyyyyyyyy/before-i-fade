@@ -2035,30 +2035,30 @@ _data = {
 size = Vector2(53, 318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2anki"]
-size = Vector2(314, 469)
+size = Vector2(314, 533)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj75g"]
-size = Vector2(206.5, 534)
+size = Vector2(206.5, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n8s8"]
-size = Vector2(534, 256)
+size = Vector2(594, 301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhao1"]
-size = Vector2(302, 307)
+size = Vector2(327, 318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw8nr"]
-size = Vector2(392, 290)
+size = Vector2(392, 305)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soh4j"]
 radius = 94.1509
 height = 316.31
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1eef"]
-radius = 93.0188
-height = 263.707
+radius = 110.337
+height = 322.096
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nou7j"]
-size = Vector2(402.785, 164.951)
+size = Vector2(402.785, 187.964)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
 size = Vector2(1534.67, 151.667)
@@ -3641,7 +3641,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A cozy bookshelf with a little pet fish!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/bookshelf"]
-position = Vector2(184, 306.5)
+position = Vector2(184, 338.5)
 shape = SubResource("RectangleShape2D_2anki")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3651,7 +3651,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A handown clock from your mother."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/clock"]
-position = Vector2(501.75, 276)
+position = Vector2(501.75, 308)
 shape = SubResource("RectangleShape2D_tj75g")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3661,7 +3661,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A comfortable yellow couch."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/couch"]
-position = Vector2(1303, 515)
+position = Vector2(1302, 537.5)
 shape = SubResource("RectangleShape2D_2n8s8")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3671,7 +3671,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A coffee table... and cake? "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/table"]
-position = Vector2(768, 743.5)
+position = Vector2(773.5, 749)
 shape = SubResource("RectangleShape2D_mhao1")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3681,7 +3681,7 @@ script = ExtResource("26_8wvgp")
 label_text = "An old tv."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/tv"]
-position = Vector2(1297, 954)
+position = Vector2(1297, 946.5)
 shape = SubResource("RectangleShape2D_vw8nr")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3714,7 +3714,7 @@ position = Vector2(-314, -188)
 script = ExtResource("26_8wvgp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/piano"]
-position = Vector2(2422.95, 409.522)
+position = Vector2(2422.88, 421.028)
 rotation = -3.13514
 shape = SubResource("RectangleShape2D_nou7j")
 disabled = true

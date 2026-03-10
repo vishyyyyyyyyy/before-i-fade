@@ -3341,7 +3341,7 @@ size = Vector2(2346, 497)
 size = Vector2(53.6667, 26.1667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbw0u"]
-size = Vector2(402, 311)
+size = Vector2(402, 535)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_waqk1"]
 radius = 47.5383
@@ -5912,7 +5912,7 @@ script = ExtResource("34_waqk1")
 label_text = "A small window, barely any light passes through. "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/window"]
-position = Vector2(1183, 261.5)
+position = Vector2(1183, 373.5)
 shape = SubResource("RectangleShape2D_nbw0u")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)

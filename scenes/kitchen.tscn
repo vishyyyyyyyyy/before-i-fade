@@ -1570,20 +1570,20 @@ size = Vector2(209.5, 49)
 size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f125y"]
-size = Vector2(327, 232)
+size = Vector2(327, 363.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n55t6"]
-size = Vector2(309, 244)
+size = Vector2(309, 320.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fr5pv"]
-size = Vector2(259.5, 437)
+size = Vector2(259.5, 518)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0mf2"]
-radius = 80.0
-height = 273.5
+radius = 130.0
+height = 340.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gswy"]
-size = Vector2(639, 102)
+size = Vector2(744, 142)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
 size = Vector2(418.667, 260.958)
@@ -2245,6 +2245,7 @@ offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="CanvasLayer4"]
+visible = false
 z_index = 2
 offset_left = -17.0
 offset_top = -2.0
@@ -3091,25 +3092,25 @@ script = ExtResource("23_n55t6")
 label_text = "Just an ordinary pink cabinet."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
-position = Vector2(165, 319)
+position = Vector2(165, 356.438)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
-position = Vector2(814, 318)
+position = Vector2(814, 331.5)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
-position = Vector2(1520, 318)
+position = Vector2(1520, 325.75)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="explore/CanvasLayer/cabinet"]
-position = Vector2(1838, 312)
+position = Vector2(1838, 318.875)
 shape = SubResource("RectangleShape2D_f125y")
 disabled = true
 metadata/_edit_lock_ = true
@@ -3120,7 +3121,7 @@ script = ExtResource("23_n55t6")
 label_text = "A one-of-a-kind, premium pink oven."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/oven"]
-position = Vector2(492.5, 315)
+position = Vector2(492.5, 346.375)
 shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
 metadata/_edit_lock_ = true
@@ -3131,7 +3132,7 @@ script = ExtResource("23_n55t6")
 label_text = "Is that the same sink from the bathroom?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/sink"]
-position = Vector2(1156, 311)
+position = Vector2(1156, 317.813)
 shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
 metadata/_edit_lock_ = true
@@ -3142,7 +3143,7 @@ script = ExtResource("23_n55t6")
 label_text = "Click objects around the kitchen to investigate."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/fridge"]
-position = Vector2(2145.25, 207.5)
+position = Vector2(2145.25, 248)
 shape = SubResource("RectangleShape2D_fr5pv")
 disabled = true
 metadata/_edit_lock_ = true
@@ -3169,7 +3170,7 @@ position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/island"]
-position = Vector2(1144.5, 729)
+position = Vector2(1131, 709)
 shape = SubResource("RectangleShape2D_1gswy")
 disabled = true
 
