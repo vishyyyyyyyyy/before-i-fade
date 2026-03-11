@@ -1,49 +1,49 @@
 [gd_scene load_steps=70 format=3 uid="uid://ude0i3qr7e54"]
 
-[ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_cqub6"]
-[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_eg4gs"]
-[ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="3_utaeq"]
-[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="4_mktfx"]
-[ext_resource type="Texture2D" uid="uid://6q3uqgo3oetd" path="res://assets/desk.png" id="5_ubqon"]
-[ext_resource type="Texture2D" uid="uid://cum4c3gbr24je" path="res://assets/bed.png" id="6_fekwh"]
-[ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_5mquo"]
-[ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_5nrpb"]
-[ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_votow"]
-[ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_g7k7r"]
-[ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="11_duejm"]
-[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_u1h6i"]
-[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_itrys"]
-[ext_resource type="Script" uid="uid://1n07g0srhaep" path="res://scripts/deskpuzzle.gd" id="14_pyjth"]
-[ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="15_0lw2a"]
-[ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="16_pow7j"]
-[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="17_104he"]
-[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="18_5r5vc"]
-[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="19_j63wt"]
-[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="20_rxy44"]
-[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="21_n1abp"]
-[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="22_ctrn6"]
-[ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="23_n1xth"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="24_w7ttg"]
-[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="25_g7k7r"]
-[ext_resource type="Texture2D" uid="uid://duxj7h0rflf2m" path="res://assets/pink.png" id="25_lvg4h"]
-[ext_resource type="Texture2D" uid="uid://c7kudhf4qan8u" path="res://assets/yello.png" id="26_75xt0"]
-[ext_resource type="Texture2D" uid="uid://cc42dam8nltxv" path="res://assets/green.png" id="27_y1bah"]
-[ext_resource type="Texture2D" uid="uid://dj78avoi0oiqr" path="res://assets/purple.png" id="28_dcmy5"]
-[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_nhd7d"]
-[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_t5b10"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="31_sqenr"]
-[ext_resource type="Texture2D" uid="uid://c0187ehsqv43i" path="res://assets/desk2.png" id="32_eg4gs"]
-[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="32_mktfx"]
-[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="33_ubqon"]
-[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="35_fekwh"]
-[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="36_5mquo"]
-[ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="37_votow"]
-[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="38_g7k7r"]
-[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="39_duejm"]
-[ext_resource type="Script" uid="uid://cufnm60md4frp" path="res://scripts/camera_2dNOPLAYERLAYER.gd" id="41_duejm"]
+[ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rrknc"]
+[ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_knt1j"]
+[ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="3_n12it"]
+[ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="4_xjppy"]
+[ext_resource type="Texture2D" uid="uid://6q3uqgo3oetd" path="res://assets/desk.png" id="5_2srh7"]
+[ext_resource type="Texture2D" uid="uid://cum4c3gbr24je" path="res://assets/bed.png" id="6_gyyxh"]
+[ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_pr0aa"]
+[ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_ktly3"]
+[ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_v5em8"]
+[ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_h4mcl"]
+[ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="11_ywywf"]
+[ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_31wqi"]
+[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="13_g3xtp"]
+[ext_resource type="Script" uid="uid://1n07g0srhaep" path="res://scripts/deskpuzzle.gd" id="14_irwd8"]
+[ext_resource type="Texture2D" uid="uid://rekqbluktbpu" path="res://assets/deskcloseup.png" id="15_l2bps"]
+[ext_resource type="Script" uid="uid://du8h8agw58eca" path="res://scripts/leavedesk.gd" id="16_vkpj4"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="17_v8erk"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="18_v6bv0"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="19_oagvq"]
+[ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="20_5yl42"]
+[ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="21_2206w"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="22_ja1k8"]
+[ext_resource type="Texture2D" uid="uid://b6u7idh0k1icm" path="res://assets/diary colorlock.png" id="23_btwxq"]
+[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="24_wob5r"]
+[ext_resource type="Texture2D" uid="uid://duxj7h0rflf2m" path="res://assets/pink.png" id="25_44yrj"]
+[ext_resource type="Texture2D" uid="uid://c7kudhf4qan8u" path="res://assets/yello.png" id="26_ymhpy"]
+[ext_resource type="Texture2D" uid="uid://cc42dam8nltxv" path="res://assets/green.png" id="27_mbiwl"]
+[ext_resource type="Texture2D" uid="uid://dj78avoi0oiqr" path="res://assets/purple.png" id="28_t3s75"]
+[ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_w08ox"]
+[ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_ymrjm"]
+[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="31_moudo"]
+[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="32_sopt5"]
+[ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="33_csq0v"]
+[ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="34_i3nlh"]
+[ext_resource type="Texture2D" uid="uid://c0187ehsqv43i" path="res://assets/desk2.png" id="35_8re52"]
+[ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="36_nvjgw"]
+[ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="37_a1ui7"]
+[ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="38_pg5wp"]
+[ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="39_c3yyd"]
+[ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="40_h05ix"]
+[ext_resource type="Script" uid="uid://cufnm60md4frp" path="res://scripts/camera_2dNOPLAYERLAYER.gd" id="41_rnpfi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
-texture = ExtResource("2_eg4gs")
+texture = ExtResource("2_knt1j")
 0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 
@@ -51,7 +51,7 @@ texture = ExtResource("2_eg4gs")
 sources/0 = SubResource("TileSetAtlasSource_lv7wv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx2xb"]
-texture = ExtResource("3_utaeq")
+texture = ExtResource("3_n12it")
 0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
 
@@ -674,7 +674,7 @@ _data = {
 }
 
 [node name="Node2D2" type="Node2D"]
-script = ExtResource("1_cqub6")
+script = ExtResource("1_rrknc")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -695,51 +695,51 @@ layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0
 [node name="Door" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(2024, 1127)
 scale = Vector2(3.5, 3.5)
-texture = ExtResource("4_mktfx")
+texture = ExtResource("4_xjppy")
 
 [node name="Door2" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(282.001, 1129)
 scale = Vector2(3.5, 3.5)
-texture = ExtResource("4_mktfx")
+texture = ExtResource("4_xjppy")
 
 [node name="Desk" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(2078, 642)
 scale = Vector2(6, 6)
-texture = ExtResource("5_ubqon")
+texture = ExtResource("5_2srh7")
 
 [node name="Bed" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(477, 339)
 scale = Vector2(6, 6)
-texture = ExtResource("6_fekwh")
+texture = ExtResource("6_gyyxh")
 
 [node name="Safe" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(209, 665)
 scale = Vector2(2, 2)
-texture = ExtResource("7_5mquo")
+texture = ExtResource("7_pr0aa")
 
 [node name="Window" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(1188, 111)
 scale = Vector2(4, 4)
-texture = ExtResource("8_5nrpb")
+texture = ExtResource("8_ktly3")
 
 [node name="Calendar" type="Sprite2D" parent="CanvasModulate"]
 visible = false
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
-texture = ExtResource("9_votow")
+texture = ExtResource("9_v5em8")
 
 [node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
-texture = ExtResource("10_g7k7r")
+texture = ExtResource("10_h4mcl")
 
 [node name="Catrug" type="Sprite2D" parent="CanvasModulate"]
 position = Vector2(1797, 651)
 rotation = 1.5708
 scale = Vector2(5.36234, 5.36234)
-texture = ExtResource("11_duejm")
+texture = ExtResource("11_ywywf")
 
-[node name="blobGhostPlayer" parent="CanvasModulate" instance=ExtResource("12_u1h6i")]
+[node name="blobGhostPlayer" parent="CanvasModulate" instance=ExtResource("12_31wqi")]
 position = Vector2(1912, 535)
 scale = Vector2(3, 3)
 
@@ -776,7 +776,7 @@ shape = SubResource("RectangleShape2D_8gd2a")
 
 [node name="SceneTrigger" type="Area2D" parent="."]
 position = Vector2(556, 1203)
-script = ExtResource("13_itrys")
+script = ExtResource("13_g3xtp")
 target_scene = "res://scenes/bathroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
@@ -802,7 +802,7 @@ shape = SubResource("RectangleShape2D_k5fq4")
 [node name="desk" type="Area2D" parent="."]
 position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("14_pyjth")
+script = ExtResource("14_irwd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
 position = Vector2(631.333, -455.583)
@@ -814,7 +814,7 @@ shape = SubResource("RectangleShape2D_m6olq")
 visible = false
 position = Vector2(1173, 643)
 scale = Vector2(0.88, 0.663)
-texture = ExtResource("15_0lw2a")
+texture = ExtResource("15_l2bps")
 
 [node name="familyphoto" type="Area2D" parent="Node"]
 position = Vector2(1173, 643)
@@ -847,13 +847,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="Node2"]
 visible = false
 position = Vector2(-135, -8)
-script = ExtResource("16_pow7j")
+script = ExtResource("16_vkpj4")
 
 [node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
 z_index = 1
 position = Vector2(2165.72, 946.723)
 scale = Vector2(7.5738, 7.5738)
-texture = ExtResource("17_104he")
+texture = ExtResource("17_v8erk")
 
 [node name="Label" type="Label" parent="Node2/Area2D"]
 z_index = 1
@@ -861,7 +861,7 @@ offset_left = 2015.72
 offset_top = 962.723
 offset_right = 2319.72
 offset_bottom = 994.723
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 theme_override_font_sizes/font_size = 32
 text = "Leave desk"
 
@@ -890,7 +890,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"Let me quickly unlock my diary and travel back to the present.\""
 horizontal_alignment = 1
@@ -913,7 +913,7 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"The lock seems to be related to the order and colors on the bed!\""
 horizontal_alignment = 1
@@ -935,7 +935,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "
 Interact with the desk again to enter the combination."
@@ -955,7 +955,7 @@ offset_right = 1135.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
@@ -976,7 +976,7 @@ offset_bottom = -280.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 theme_override_font_sizes/font_size = 64
 text = "Puzzle"
 
@@ -995,7 +995,7 @@ offset_bottom = -268.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 theme_override_font_sizes/font_size = 64
 text = "Puzzle"
 
@@ -1008,7 +1008,7 @@ offset_right = 1543.0
 offset_bottom = 586.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 24
 text = "Ghosts can only remain in the
 past briefly. Solve puzzles within the time limit to progress the story."
@@ -1030,22 +1030,22 @@ visible = false
 z_index = 1
 position = Vector2(1195, 566)
 scale = Vector2(7.94531, 7.94531)
-texture = ExtResource("20_rxy44")
+texture = ExtResource("20_5yl42")
 
 [node name="continue" type="Area2D" parent="Node3"]
 visible = false
 z_index = 1
 position = Vector2(245, 12)
 scale = Vector2(2, 2)
-script = ExtResource("21_n1abp")
-normal_texture = ExtResource("17_104he")
-hover_texture = ExtResource("22_ctrn6")
+script = ExtResource("21_2206w")
+normal_texture = ExtResource("17_v8erk")
+hover_texture = ExtResource("22_ja1k8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node3/continue"]
 z_index = 1
 position = Vector2(475, 372)
 scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("17_104he")
+texture = ExtResource("17_v8erk")
 
 [node name="Label" type="Label" parent="Node3/continue"]
 z_index = 1
@@ -1053,7 +1053,7 @@ offset_left = 418.0
 offset_top = 378.0
 offset_right = 540.0
 offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 text = "Continue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node3/continue"]
@@ -1089,7 +1089,7 @@ polygon = PackedVector2Array(210.478, 335.803, 210.478, 365.052, 131.345, 421.66
 visible = false
 position = Vector2(886, 651)
 scale = Vector2(1.22578, 0.923516)
-texture = ExtResource("23_n1xth")
+texture = ExtResource("23_btwxq")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -1106,14 +1106,14 @@ offset_bottom = 1224.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "Press the colors in order to unlock the diary."
 horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("25_g7k7r")
+script = ExtResource("24_wob5r")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
 position = Vector2(952, 615)
@@ -1121,7 +1121,7 @@ position = Vector2(952, 615)
 [node name="Pink" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
 position = Vector2(-29, 0)
 scale = Vector2(1.07033, 1)
-texture = ExtResource("25_lvg4h")
+texture = ExtResource("25_44yrj")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -1131,7 +1131,7 @@ visible = false
 [node name="Yello" type="Sprite2D" parent="CanvasLayer2/CanvasModulate"]
 position = Vector2(883, 632)
 scale = Vector2(1.24385, 1)
-texture = ExtResource("26_75xt0")
+texture = ExtResource("26_ymhpy")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 visible = false
@@ -1141,7 +1141,7 @@ visible = false
 [node name="Green" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 position = Vector2(946, 612)
 scale = Vector2(1.01567, 1.034)
-texture = ExtResource("27_y1bah")
+texture = ExtResource("27_mbiwl")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 visible = false
@@ -1151,7 +1151,7 @@ visible = false
 [node name="Purple" type="Sprite2D" parent="CanvasLayer4/CanvasModulate"]
 position = Vector2(914, 595)
 scale = Vector2(1.02717, 1.059)
-texture = ExtResource("28_dcmy5")
+texture = ExtResource("28_t3s75")
 
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
 
@@ -1159,14 +1159,14 @@ texture = ExtResource("28_dcmy5")
 visible = false
 position = Vector2(1262, 627)
 scale = Vector2(11.2539, 11.2539)
-texture = ExtResource("29_nhd7d")
+texture = ExtResource("29_w08ox")
 
 [node name="Wrong" type="Sprite2D" parent="CanvasLayer5"]
 visible = false
 z_index = 1
 position = Vector2(1258, 649)
 scale = Vector2(8.23438, 8.23438)
-texture = ExtResource("30_t5b10")
+texture = ExtResource("30_ymrjm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -1214,7 +1214,7 @@ one_shot = true
 visible = false
 position = Vector2(128, 80)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("24_w7ttg")
+texture = ExtResource("31_moudo")
 
 [node name="Label2" type="Label" parent="."]
 visible = false
@@ -1223,7 +1223,7 @@ offset_top = 54.0
 offset_right = 214.0
 offset_bottom = 127.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 54
 text = "30.0"
 
@@ -1242,7 +1242,7 @@ color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
 visible = false
 position = Vector2(1199, 518.25)
 scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("31_sqenr")
+texture = ExtResource("32_sopt5")
 
 [node name="Label2" type="Label" parent="Node4"]
 visible = false
@@ -1259,7 +1259,7 @@ offset_bottom = -326.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 theme_override_font_sizes/font_size = 64
 text = "Diary Page"
 
@@ -1278,7 +1278,7 @@ offset_bottom = -314.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 theme_override_font_sizes/font_size = 64
 text = "Diary Page"
 
@@ -1291,7 +1291,7 @@ offset_right = 1616.0
 offset_bottom = 767.25
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 24
 text = "You earned: Diary Page #1
 Access diary from desk to read contents"
@@ -1303,15 +1303,15 @@ visible = false
 z_index = 3
 position = Vector2(252, 146)
 scale = Vector2(2, 2)
-script = ExtResource("25_g7k7r")
-normal_texture = ExtResource("17_104he")
-hover_texture = ExtResource("22_ctrn6")
+script = ExtResource("24_wob5r")
+normal_texture = ExtResource("17_v8erk")
+hover_texture = ExtResource("22_ja1k8")
 
 [node name="Sprite2D" type="Sprite2D" parent="diarycontinue"]
 z_index = 1
 position = Vector2(475, 372)
 scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("17_104he")
+texture = ExtResource("17_v8erk")
 
 [node name="Label" type="Label" parent="diarycontinue"]
 z_index = 1
@@ -1319,7 +1319,7 @@ offset_left = 418.0
 offset_top = 378.0
 offset_right = 540.0
 offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("18_5r5vc")
+theme_override_fonts/font = ExtResource("18_v6bv0")
 text = "Continue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="diarycontinue"]
@@ -1339,7 +1339,7 @@ z_index = 2
 z_as_relative = false
 position = Vector2(2026, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("32_mktfx")
+texture = ExtResource("33_csq0v")
 
 [node name="BoyGhost" type="Sprite2D" parent="AnimationPlayer2"]
 visible = false
@@ -1347,7 +1347,7 @@ z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("33_ubqon")
+texture = ExtResource("34_i3nlh")
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
 visible = false
@@ -1364,7 +1364,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"What the... Why're the pages ripped out?\""
 horizontal_alignment = 1
@@ -1387,7 +1387,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"Well, I found one anyways. Maybe I'll find more later.\""
 horizontal_alignment = 1
@@ -1410,7 +1410,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"Too bad I don't remember my name...\""
 horizontal_alignment = 1
@@ -1433,7 +1433,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"I guess I'll just go with...\""
 horizontal_alignment = 1
@@ -1456,7 +1456,7 @@ offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "Type your ghost's name.
 Press enter key to save."
@@ -1476,14 +1476,14 @@ offset_right = 1135.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
 [node name="Desk2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(817, 512)
-texture = ExtResource("32_eg4gs")
+texture = ExtResource("35_8re52")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 visible = false
@@ -1492,23 +1492,23 @@ offset_top = 647.0
 offset_right = 1004.0
 offset_bottom = 695.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 40
 text = "NAME"
 clear_button_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("35_fekwh")
+stream = ExtResource("36_nvjgw")
 volume_db = 20.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("36_5mquo")
+stream = ExtResource("37_a1ui7")
 volume_db = 20.0
 
 [node name="Diaryentry1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(820, 507)
-texture = ExtResource("37_votow")
+texture = ExtResource("38_pg5wp")
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1521,14 +1521,14 @@ z_index = 2
 z_as_relative = false
 position = Vector2(2026, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("32_mktfx")
+texture = ExtResource("33_csq0v")
 
 [node name="GirlGhost2" type="Sprite2D" parent="AnimationPlayer3"]
 visible = false
 z_index = 2
 position = Vector2(2026, 692)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("38_g7k7r")
+texture = ExtResource("39_c3yyd")
 
 [node name="BoyGhost" type="Sprite2D" parent="AnimationPlayer3"]
 visible = false
@@ -1536,14 +1536,14 @@ z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("33_ubqon")
+texture = ExtResource("34_i3nlh")
 
 [node name="BoyGhost2" type="Sprite2D" parent="AnimationPlayer3"]
 visible = false
 z_index = 2
 position = Vector2(2024, 722)
 scale = Vector2(0.472, 0.460139)
-texture = ExtResource("39_duejm")
+texture = ExtResource("40_h05ix")
 
 [node name="Label" type="Label" parent="AnimationPlayer3"]
 visible = false
@@ -1560,7 +1560,7 @@ offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"November First, I've been stressed lately... Everyone seems tense around me... Maybe i'm just overthinking...\""
 horizontal_alignment = 1
@@ -1581,7 +1581,7 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"What if I didn't just die. What if I was murdered!?\""
 horizontal_alignment = 1
@@ -1601,7 +1601,7 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "\"Okay, let's calm down and check the bathroom for any clues.\""
 horizontal_alignment = 1
@@ -1620,7 +1620,7 @@ offset_right = 1135.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
@@ -1641,7 +1641,7 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("19_j63wt")
+theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 32
 text = "Enter the bathroom again."
 horizontal_alignment = 1
@@ -1649,7 +1649,7 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
-script = ExtResource("41_duejm")
+script = ExtResource("41_rnpfi")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

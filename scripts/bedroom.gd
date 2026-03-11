@@ -37,14 +37,15 @@ func _process(_delta):
 		animating = false
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()
+		
 	if not dialogue_active:
 		return
 
 	if event.is_action_pressed("ui_accept"):
 		textskip()
 	
-	if event.is_action_pressed("ui_cancel"):
-		toggle_pause()
 
 func end_dialogue():
 	dialogue_active = false
@@ -102,3 +103,11 @@ func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
  
+
+func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		get_tree().paused = !get_tree().paused
+		pause_menu.visible = get_tree().paused
+		$CanvasPause/PauseMenu.visible=false
+		$CanvasPause/ColorRect2.visible=false
+		$CanvasPause/Menucard2.visible=false
