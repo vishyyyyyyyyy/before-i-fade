@@ -35,9 +35,16 @@ func _ready() -> void:
 	$"../LineEdit".connect("text_submitted", Callable(self, "_on_text_entered"))
 
 func _process(delta: float) -> void:
+	
 	time_left_seconds = $"../Timer2".time_left
 	$"../Label5".text = "%.1f" % time_left_seconds
 	
+	if time_left_seconds < 6:
+		if int(Time.get_ticks_msec() / 300) % 3 == 0:
+			$"../Label5".add_theme_color_override("font_color", Color(1,0,0))
+		else:
+			$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
+			
 	if not dialogue_active or not animating:
 		return
 	
@@ -327,9 +334,10 @@ func _on_timer_2_timeout() -> void:
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
+	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
+	$"../Timer2".start()
 	reset()
 
 func reset():
 	$"../LineEdit".text = ""  
 	$"../Wrong".visible=false
-	$"../Timer2".start()
