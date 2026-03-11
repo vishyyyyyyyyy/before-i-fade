@@ -21,7 +21,13 @@ func _ready() -> void:
 	$CanvasLayer5/Label.visible=true
 	$ghostlayer/LineEdit.editable =false
 	$desk.diaryentry5.connect(diaryentry5)
-	$CanvasLayer4/Area2D.pressed.connect(pressed)
+	$CanvasLayer4/Area2D.input_event.connect(_on_area_input)
+
+func _on_area_input(viewport, event, shape_idx):
+	if event is InputEventMouseButton \
+	and event.pressed \
+	and event.button_index == MOUSE_BUTTON_LEFT:
+		pressed()
 
 func _process(_delta):
 	if not dialogue_active or not animating:

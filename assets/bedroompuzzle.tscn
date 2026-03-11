@@ -80,7 +80,7 @@ size = Vector2(361, 27)
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6olq"]
-size = Vector2(187.667, 270.5)
+size = Vector2(262.666, 270.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcvsn"]
 size = Vector2(723.864, 714.932)
@@ -805,7 +805,7 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("14_pyjth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
-position = Vector2(668.833, -455.583)
+position = Vector2(631.333, -455.583)
 shape = SubResource("RectangleShape2D_m6olq")
 
 [node name="Node" type="Node" parent="."]

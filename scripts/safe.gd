@@ -39,6 +39,13 @@ func _process(delta: float) -> void:
 	time_left_seconds = $"../Timer2".time_left
 	$"../Label5".text = "%.1f" % time_left_seconds
 	
+	# --- music speed control ---
+	if not $"../Timer2".is_stopped():
+		var total_time = $"../Timer2".wait_time
+		var t = time_left_seconds / total_time
+			# start slow (0.75) → end normal (1.0)
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+	
 	if time_left_seconds < 6:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$"../Label5".add_theme_color_override("font_color", Color(1,0,0))
@@ -286,6 +293,8 @@ func _input_event(viewport, event, shape_idx):
 		$"../continue/CollisionShape2D".disabled=false
 
 func pressed():
+	MusicManager.music_player.pitch_scale = 0.75
+	MusicManager.play_scene_music("puzzle1")
 	$"../Timer".visible = true
 	$"../Label4".visible=false
 	$"../Label5".visible = true
@@ -297,6 +306,8 @@ func pressed():
 
 func _on_text_entered(new_text: String) -> void:
 	if new_text.strip_edges().to_lower() == "fade":
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
 		print("Correct!")
 		$"../LineEdit".visible=false
 		$"../Timer2".stop()
