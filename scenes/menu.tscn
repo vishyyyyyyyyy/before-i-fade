@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=38 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b273rhwtioqyc" path="res://assets/ghost2.png" id="16_mxgkd"]
 [ext_resource type="Script" uid="uid://dwp182xjopjlf" path="res://scripts/mainmenucontinue.gd" id="17_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://47oit4ajd7wn" path="res://assets/uibox.png" id="18_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://dpwnpo4ghnthn" path="res://assets/space.png" id="24_ffqrc"]
 [ext_resource type="Texture2D" uid="uid://bwwgw04dn4og2" path="res://assets/e.png" id="24_x16fv"]
 [ext_resource type="Texture2D" uid="uid://dkaqcqckdfy84" path="res://assets/esc.png" id="25_ffqrc"]
 
@@ -454,15 +455,16 @@ horizontal_alignment = 1
 visible = false
 z_index = 2
 offset_left = 1825.0
-offset_top = 723.0
+offset_top = 715.0
 offset_right = 2269.0
-offset_bottom = 774.0
+offset_bottom = 793.0
 scale = Vector2(0.895561, 0.895561)
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 24
 text = "Press ESC key to access
-in game settings"
+in game settings. SPACE
+to skip dialogue."
 horizontal_alignment = 1
 
 [node name="Door" type="Sprite2D" parent="."]
@@ -670,7 +672,7 @@ texture = ExtResource("24_x16fv")
 visible = false
 position = Vector2(2032, 866)
 scale = Vector2(3.25781, 3.25781)
-texture = ExtResource("25_ffqrc")
+texture = ExtResource("24_ffqrc")
 
 [node name="Esc2" type="Sprite2D" parent="."]
 visible = false

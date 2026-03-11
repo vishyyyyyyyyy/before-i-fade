@@ -9,9 +9,6 @@ var escCounter = 0
 
 
 @onready var pause_menu = $CanvasPause/PauseMenu
-
-
-
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
 	get_tree().paused = !get_tree().paused
@@ -111,3 +108,8 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		$CanvasPause/PauseMenu.visible=false
 		$CanvasPause/ColorRect2.visible=false
 		$CanvasPause/Menucard2.visible=false
+
+
+func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	$CanvasPause/settingsControl.visible=false
+	$CanvasPause/PauseMenu.visible=true
