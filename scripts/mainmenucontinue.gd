@@ -35,11 +35,20 @@ func _input_event(viewport, event, shape_idx):
 			$"../Label".visible=false
 			$"../Label2".visible=false
 			$"../Label3".visible=false
+			$"../Label4".visible=false
 			$"../Door".visible=false
 			$"../Door2".visible=false
 			$"../Uibox".visible=false
 			$"../Uibox2".visible=false
 			$"../Uibox3".visible=false
+			$"../Uibox4".visible=false
+			$"../E".visible=false
+			$"../Esc".visible=false
+			$"../Esc2".visible=false
+			$"../s".visible=false
+			$"../w".visible=false
+			$"../a".visible=false
+			$"../d".visible=false
 			$"../AnimationPlayer".play("fade_in")
 			$"../AnimationPlayer/Label".visible=true
 	if counter == 2:

@@ -37,9 +37,18 @@ func play():
 	$Label.visible=true
 	$Label2.visible=true
 	$Label3.visible=true
+	$Label4.visible=true
 	$Door.visible=true
 	$Door2.visible=true
 	$continue.visible=true
+	$Uibox4.visible=true
+	$E.visible=true
+	$Esc.visible=true
+	$Esc2.visible=true
+	$s.visible=true
+	$w.visible=true
+	$a.visible=true
+	$d.visible=true
 	$continue/CollisionShape2D.disabled=false
 	
 	
