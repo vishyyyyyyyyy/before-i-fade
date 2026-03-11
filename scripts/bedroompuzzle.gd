@@ -136,6 +136,7 @@ func _process(delta: float) -> void:
 	
 	var total_time = $Timer2.wait_time
 	var t = time_left_seconds / total_time  
+	
 	if time_left_seconds < 11.0:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$Label2.add_theme_color_override("font_color", Color(1,0,0))

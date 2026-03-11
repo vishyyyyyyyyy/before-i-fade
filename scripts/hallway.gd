@@ -511,7 +511,7 @@ func _on_timer_2_timeout() -> void:
 	$CanvasLayer/Node3/Timer2.stop()
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Wrong.visible=false
-	$Label2.add_theme_color_override("font_color", Color(0,0,0))
+	$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	$CanvasLayer/Node3/Timer2.start()
 	resetpuzzle()
 
