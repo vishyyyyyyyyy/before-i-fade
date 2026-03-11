@@ -61,6 +61,13 @@ func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer4/Node3/Timer2.time_left
 	$CanvasLayer4/Node3/Label5.text = "%.1f" % time_left_seconds
 	
+	if time_left_seconds < 11.0:
+			if int(Time.get_ticks_msec() / 300) % 3 == 0:
+				$CanvasLayer4/Node3/Label5.add_theme_color_override("font_color", Color(1,0,0))
+			else:
+				$CanvasLayer4/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
+				
+	
 	# --- music speed control ---
 	if not $CanvasLayer4/Node3/Timer2.is_stopped():
 		var total_time = $CanvasLayer4/Node3/Timer2.wait_time

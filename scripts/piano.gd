@@ -116,7 +116,6 @@ func reset_to_beginning():
 	selected.clear()
 	input_locked = false
 	hidepianotile()
-	$"../Timer2".start()
 	$"../Music2".visible = false
 	$"../Music3".visible = false
 
@@ -125,5 +124,7 @@ func _on_timer_2_timeout() -> void:
 	$"../Wrong".visible = true
 	$"../AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
+	$"../Label8".add_theme_color_override("font_color", Color(0,0,0))
+	$"../Timer2".start()
 	$"../Wrong".visible = false
 	reset_to_beginning()

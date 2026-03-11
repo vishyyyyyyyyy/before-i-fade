@@ -221,6 +221,7 @@ func _on_timer_2_timeout() -> void:
 	$"../Node3/Wrong".visible=true
 	$"../Node3/AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
+	$"../Node3/Label5".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Node3/Wrong".visible=false
 	$CollisionShape2D.disabled=false
 	$CollisionShape2D3.disabled=false

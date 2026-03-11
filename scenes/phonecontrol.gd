@@ -308,5 +308,6 @@ func _on_timer_2_timeout() -> void:
 	$"../AudioStreamPlayer2".play()
 	counter = 0
 	await get_tree().create_timer(2).timeout
+	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()
 	$"../Wrong".visible=false

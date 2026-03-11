@@ -1811,10 +1811,10 @@ offset_bottom = 127.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_sho2i")
 theme_override_font_sizes/font_size = 54
-text = "10.0"
+text = "15.0"
 
 [node name="Timer2" type="Timer" parent="ghostlayer"]
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="ghostlayer"]

@@ -29,6 +29,12 @@ func _process(_delta):
 		
 		# start slow (0.75) → end normal (1.0)
 		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+		
+	if time_left_seconds < 6:
+		if int(Time.get_ticks_msec() / 300) % 3 == 0:
+			$ghostlayer/Label5.add_theme_color_override("font_color", Color(1,0,0))
+		else:
+			$ghostlayer/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	
 	if not dialogue_active or not animating:
 		return

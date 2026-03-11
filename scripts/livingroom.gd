@@ -55,6 +55,12 @@ func _process(delta: float) -> void:
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
 	
 	var timer = $ghostlayer/Timer2
+	
+	if time_left_seconds < 11.0:
+			if int(Time.get_ticks_msec() / 300) % 3 == 0:
+				$ghostlayer/Label8.add_theme_color_override("font_color", Color(1,0,0))
+			else:
+				$ghostlayer/Label8.add_theme_color_override("font_color", Color(0,0,0))
 
 	if not timer.is_stopped():
 		var t = timer.time_left / timer.wait_time

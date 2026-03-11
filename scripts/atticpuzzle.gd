@@ -59,6 +59,8 @@ func _on_timer_2_timeout() -> void:
 	$"../../../ghostlayer/Wrong".visible=true
 	$"../../../ghostlayer/AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
+	$"../../../ghostlayer/Label8".add_theme_color_override("font_color", Color(0,0,0))
+	$"../../../ghostlayer/Timer2".start()
 	$"../../../ghostlayer/Wrong".visible=false
 	resetpuzzle()	
 	
@@ -118,7 +120,6 @@ func resetpuzzle():
 	$box10/Box.visible=false
 	$box11/Box.visible=false
 	$box12/Box.visible=false
-	$"../../../ghostlayer/Timer2".start()
 	$"..".color = Color(1,1,1,1)
 	$"../../../CanvasLayer2/CanvasModulate".color =Color(1,1,1,1)
 	$"../../../ghostlayer/past".visible=true
