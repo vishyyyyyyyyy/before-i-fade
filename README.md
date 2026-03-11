@@ -19,13 +19,13 @@ There are **two possible endings**.
 
 ## 🎮 Controls
 
-<img width="1000" height="700" alt="Screenshot 2026-03-07 100559" src="https://github.com/user-attachments/assets/0294b887-8aba-432f-b273-e8060f3cbee1" />
+<img width="1000" height="700" alt="Screenshot 2026-03-11 085118" src="https://github.com/user-attachments/assets/201d1b4b-55de-48fc-b363-abda16fe0ce2" />
 
 
-- **Arrow Keys** - Move around the house  
-- **Left Click / Click + Drag** - Interact with objects and puzzles
+- **Arrow Keys / WASD** - Move around the house  
+- **Left Click / Click + Drag / E** - Interact with objects and puzzles
 - **Space / Enter** - Skip dialogues
-- **long press and move mouse** - Scrub mirror
+- **ESC** - Access in game settings menu
 
   
 
@@ -77,7 +77,7 @@ We are currently working on creating a new release with even better features to 
 
 This game was created for Codédex's Monthly Challenge Game Jam under the theme: the changing of time
 
-Created by Vishalya Sairam and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
+Created by [Vishalya Sairam](https://github.com/vishyyyyyyyyy) and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
 
 All art in the game is hand drawn by me! (✿◠‿◠)
 
