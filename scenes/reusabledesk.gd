@@ -3,18 +3,34 @@ signal diaryentry2
 signal diaryentry3
 signal diaryentry4
 
+var player_inside := false
+
 func _ready() -> void:
-	pass
-	
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = true
+
+func _on_body_exited(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = false
+
+func _process(delta):
+	if player_inside and Input.is_action_just_pressed("interact"):
+		open_desk()
+
 func _input_event(viewport, event, shape_idx):
+	if not player_inside:
+		return
+
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:
-	
+
 		if shape_idx == 0:
-			$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
-			$CollisionPolygon2D.disabled = false
-			print("Clicked shape 1")
+			open_desk()
 
 		elif Global.reusabledesk == 1 and shape_idx == 1:
 			$"../CanvasLayer5/Label".visible = false
@@ -26,7 +42,7 @@ func _input_event(viewport, event, shape_idx):
 
 		elif Global.reusabledesk == 2 and shape_idx == 2:
 			$CollisionShape2D.disabled = true
-			$"../CanvasLayer4/Area2D/CollisionShape2D".disabled=true
+			$"../CanvasLayer4/Area2D/CollisionShape2D".disabled = true
 			print("Clicked shape 2")
 			$"../CanvasLayer5/Label".visible = false
 			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible = true
@@ -40,6 +56,7 @@ func _input_event(viewport, event, shape_idx):
 			Global.reusabledesk = 4
 			emit_signal("diaryentry4")
 
-		
-		
-				
+func open_desk():
+	$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
+	$CollisionPolygon2D.disabled = false
+	print("Clicked shape 1")
