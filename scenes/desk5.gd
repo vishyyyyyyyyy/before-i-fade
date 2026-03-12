@@ -59,12 +59,14 @@ func _input_event(viewport, event, shape_idx):
 	if not player_inside:
 		return
 	
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton \
+	and event.pressed \
+	and event.button_index == MOUSE_BUTTON_LEFT:
 
 		if shape_idx == 0:
-			open_desk()
+			pass
 
-		if shape_idx == 2:
+		if shape_idx == 1:
 			open_diary()
 
 func open_desk():

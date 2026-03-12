@@ -24,6 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bwwgw04dn4og2" path="res://assets/e.png" id="24_x16fv"]
 [ext_resource type="Texture2D" uid="uid://dkaqcqckdfy84" path="res://assets/esc.png" id="25_ffqrc"]
 
+[sub_resource type="Animation" id="Animation_lnf0i"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_6wigr"]
 resource_name = "fadeinbutton"
 tracks/0/type = "value"
@@ -50,9 +53,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_lnf0i"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ffqrc"]
 _data = {

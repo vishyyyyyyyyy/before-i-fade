@@ -420,7 +420,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("27_mqa23")
 theme_override_font_sizes/font_size = 32
-text = "\"Why are they after my money. I just wanna live a peaceful life."
+text = "\"Why are they after my money. I just wanna live a peaceful life.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -437,7 +437,7 @@ mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="desk" type="Area2D" parent="."]
-position = Vector2(1907, 882)
+position = Vector2(1916, 882)
 scale = Vector2(3, 3)
 script = ExtResource("23_i2gc4")
 
@@ -447,7 +447,7 @@ shape = SubResource("RectangleShape2D_kvaqh")
 debug_color = Color(0.664694, 0.31491, 1, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="desk"]
-z_index = 6
+z_index = 7
 position = Vector2(-244.667, -79.6667)
 scale = Vector2(0.293333, 0.221)
 polygon = PackedVector2Array(-114.773, -269.985, 615.909, -253.394, 567.045, 55.8069, 539.773, 441.931, -205.682, 432.881)
