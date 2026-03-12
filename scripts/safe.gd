@@ -29,6 +29,8 @@ signal dialogue_finished(index)
 
 func _ready() -> void:
 	# Assuming LineEdit is $LineEdit
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 	$"../continue".pressed.connect(pressed)
 	$"../LineEdit".text = ""
 	$"../LineEdit".editable = false 
@@ -45,7 +47,27 @@ func _process(delta: float) -> void:
 		var t = time_left_seconds / total_time
 			# start slow (0.75) → end normal (1.0)
 		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
-	
+		
+	if player_inside and Input.is_action_just_pressed("interact"):
+		$CollisionShape2D.disabled=true
+		$"../Label".visible = false
+		$"../Safecloseup".visible = true
+		$"../TileMap3".visible = true
+		await start_dialogue(0)
+		if Global.character == "girlGhost":
+			$"../fridgememory".play("girl")
+		if Global.character == "boyGhost":
+			$"../fridgememory".play("boy")
+		await $"../fridgememory".animation_finished
+		await start_dialogue(1)
+		$"../ColorRect".visible = true
+		$"../Menucard".visible = true
+		$"../Label2".visible = true
+		$"../Label3".visible = true
+		$"../Label4".visible = true
+		$"../continue".visible = true
+		$"../continue/CollisionShape2D".disabled=false
+		
 	if time_left_seconds < 6:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$"../Label5".add_theme_color_override("font_color", Color(1,0,0))
@@ -268,29 +290,23 @@ func textskip():
 			print("call end dialogue")
 			end_dialogue()
 
+var player_inside := false
+var desk_opened := false
+
+
+func _on_body_entered(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = true
+
+func _on_body_exited(body):
+	if body.name == "blobGhostPlayer":
+		player_inside = false
+
 
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton \
-	and event.pressed \
-	and event.button_index == MOUSE_BUTTON_LEFT:
-		$CollisionShape2D.disabled=true
-		$"../Label".visible = false
-		$"../Safecloseup".visible = true
-		$"../TileMap3".visible = true
-		await start_dialogue(0)
-		if Global.character == "girlGhost":
-			$"../fridgememory".play("girl")
-		if Global.character == "boyGhost":
-			$"../fridgememory".play("boy")
-		await $"../fridgememory".animation_finished
-		await start_dialogue(1)
-		$"../ColorRect".visible = true
-		$"../Menucard".visible = true
-		$"../Label2".visible = true
-		$"../Label3".visible = true
-		$"../Label4".visible = true
-		$"../continue".visible = true
-		$"../continue/CollisionShape2D".disabled=false
+	# Only allow mouse clicks if player is inside the desk area
+	if not player_inside:
+		return
 
 func pressed():
 	MusicManager.music_player.pitch_scale = 0.75

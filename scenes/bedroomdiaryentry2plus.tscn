@@ -657,7 +657,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvaqh"]
-size = Vector2(94, 130.333)
+size = Vector2(121, 130.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_treqh"]
 size = Vector2(67.5, 66.5)
@@ -1208,7 +1208,7 @@ scale = Vector2(3, 3)
 script = ExtResource("28_sl28a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
-position = Vector2(84, -120.167)
+position = Vector2(70.5, -120.167)
 shape = SubResource("RectangleShape2D_kvaqh")
 debug_color = Color(0.664694, 0.31491, 1, 0.42)
 
