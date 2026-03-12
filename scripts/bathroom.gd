@@ -70,8 +70,10 @@ func textskip():
  
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	player_in_area = true
-	$CanvasLayer2/Node2D/EAnim.play("E")
+	if body.name == "blobGhostPlayer":
+		player_in_area = true
+		$CanvasLayer2/Node2D/EAnim.play("E")
+	print(body.name)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	player_in_area = false
