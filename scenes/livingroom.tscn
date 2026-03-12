@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=151 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -54,6 +54,23 @@
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="47_3rg1y"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="50_vl3qy"]
 [ext_resource type="Script" uid="uid://cd352y0kdt4h0" path="res://scripts/cameralivingroom.gd" id="52_l1jrp"]
+[ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="55_4vit2"]
+[ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="56_nvfrc"]
+[ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="57_wxavf"]
+[ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="58_oy38f"]
+[ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="59_72nc8"]
+[ext_resource type="Texture2D" uid="uid://bcp8s81nfrhth" path="res://assets/a.png" id="60_7ff34"]
+[ext_resource type="Texture2D" uid="uid://dh1r0kfl87ugx" path="res://assets/rightarrow.png" id="61_367s7"]
+[ext_resource type="Texture2D" uid="uid://dwdssvj7spq7r" path="res://assets/d.png" id="62_8xq3h"]
+[ext_resource type="Texture2D" uid="uid://c4s7qsieuj4n2" path="res://assets/mouse.png" id="63_kg10a"]
+[ext_resource type="Texture2D" uid="uid://47oit4ajd7wn" path="res://assets/uibox.png" id="64_m2uk2"]
+[ext_resource type="Texture2D" uid="uid://bwwgw04dn4og2" path="res://assets/e.png" id="65_t7t5v"]
+[ext_resource type="Texture2D" uid="uid://dpwnpo4ghnthn" path="res://assets/space.png" id="66_85q52"]
+[ext_resource type="Texture2D" uid="uid://dkaqcqckdfy84" path="res://assets/esc.png" id="67_xgcxe"]
+[ext_resource type="Script" uid="uid://buakat1k0uwpu" path="res://scripts/resumebutton.gd" id="68_lomuv"]
+[ext_resource type="Texture2D" uid="uid://dkf5snmrmnkth" path="res://assets/xnormal.png" id="69_fuy3b"]
+[ext_resource type="Texture2D" uid="uid://w5ub3h82fk8n" path="res://assets/xhover.png" id="70_g0t4l"]
+[ext_resource type="Script" uid="uid://b6vw3f3w8nb7y" path="res://scripts/close.gd" id="71_me6ps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
 texture = ExtResource("1_35nt2")
@@ -2081,6 +2098,15 @@ size = Vector2(258, 160.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
 size = Vector2(379, 249.438)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thh0c"]
+size = Vector2(67.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f3qs"]
+size = Vector2(209.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7afl"]
+size = Vector2(209, 51.5)
+
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_po3oh")
 
@@ -3789,6 +3815,539 @@ scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_24a1y")
 metadata/_edit_lock_ = true
 
+[node name="CanvasPause" type="CanvasLayer" parent="."]
+process_mode = 2
+physics_interpolation_mode = 2
+layer = 10
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasPause"]
+visible = false
+z_index = 2
+offset_left = -36.0
+offset_top = -14.0
+offset_right = 2314.0
+offset_bottom = 1353.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.639216)
+metadata/_edit_lock_ = true
+
+[node name="Menucard2" type="Sprite2D" parent="CanvasPause"]
+visible = false
+modulate = Color(1, 1, 1, 0.6)
+position = Vector2(1148, -123)
+scale = Vector2(26.2969, 26.2969)
+texture = ExtResource("27_4gjkn")
+metadata/_edit_lock_ = true
+
+[node name="settingsControl" type="Control" parent="CanvasPause"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 385.0
+offset_top = 749.0
+offset_right = 425.0
+offset_bottom = 789.0
+
+[node name="Downarrow" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-94.0591, -98.8548)
+scale = Vector2(2.34283, 2.34283)
+texture = ExtResource("55_4vit2")
+
+[node name="s" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-89.4993, 184.705)
+scale = Vector2(2.31671, 2.31671)
+texture = ExtResource("56_nvfrc")
+
+[node name="Uparrow" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-95.0591, -185.855)
+scale = Vector2(2.22102, 2.22102)
+texture = ExtResource("57_wxavf")
+
+[node name="w" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-91.0593, 97.1452)
+scale = Vector2(2.22102, 2.22102)
+texture = ExtResource("58_oy38f")
+
+[node name="LeftArrow" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-183.059, -97.8549)
+scale = Vector2(2.34283, 2.34283)
+texture = ExtResource("59_72nc8")
+
+[node name="a" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-180.059, 186.145)
+scale = Vector2(2.34283, 2.34283)
+texture = ExtResource("60_7ff34")
+
+[node name="Rightarrow" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-7.0592, -98.8549)
+scale = Vector2(2.34283, 2.34283)
+texture = ExtResource("61_367s7")
+
+[node name="d" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(-1.05911, 185.145)
+scale = Vector2(2.34283, 2.34283)
+texture = ExtResource("62_8xq3h")
+
+[node name="Mouse" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(486, -109.782)
+scale = Vector2(2.89404, 2.89404)
+texture = ExtResource("63_kg10a")
+
+[node name="Label" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 0
+offset_left = -314.0
+offset_top = -20.0
+offset_right = 178.0
+offset_bottom = 31.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 24
+text = "Use arrow keys or W/A/S/D
+to move the player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 0
+offset_left = 265.0
+offset_top = -47.7817
+offset_right = 748.0
+offset_bottom = 57.2183
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 24
+text = "Use left click/hold or E to
+to interact with objects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 0
+offset_left = 881.0
+offset_top = -25.0
+offset_right = 1307.0
+offset_bottom = 26.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 24
+text = "Pass through doors
+to move between rooms"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 0
+offset_left = 1440.0
+offset_top = -34.0
+offset_right = 1884.0
+offset_bottom = 44.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 24
+text = "Press ESC key to access
+in game settings. SPACE
+to skip dialogue."
+horizontal_alignment = 1
+
+[node name="Door2" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 3
+position = Vector2(1073, -110.816)
+scale = Vector2(2.88051, 2.88051)
+texture = ExtResource("5_k00ks")
+
+[node name="Door" type="Sprite2D" parent="CanvasPause/settingsControl"]
+modulate = Color(0.0941176, 0.321569, 0.278431, 1)
+z_index = 3
+position = Vector2(1074, 163.184)
+scale = Vector2(2.88051, 2.88051)
+texture = ExtResource("5_k00ks")
+
+[node name="Uibox" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(-94, 6.10352e-05)
+scale = Vector2(4.90625, 4.90625)
+texture = ExtResource("64_m2uk2")
+metadata/_edit_lock_ = true
+
+[node name="Uibox2" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(1060, -2)
+scale = Vector2(4.90625, 4.90625)
+texture = ExtResource("64_m2uk2")
+metadata/_edit_lock_ = true
+
+[node name="Uibox3" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(484, 6.10352e-05)
+scale = Vector2(4.90625, 4.90625)
+texture = ExtResource("64_m2uk2")
+metadata/_edit_lock_ = true
+
+[node name="Uibox4" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(1634, 6.10352e-05)
+scale = Vector2(4.90625, 4.90625)
+texture = ExtResource("64_m2uk2")
+metadata/_edit_lock_ = true
+
+[node name="E" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(489, 152.218)
+scale = Vector2(3.59312, 3.59312)
+texture = ExtResource("65_t7t5v")
+
+[node name="Esc" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(1647, 117)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("66_85q52")
+
+[node name="Esc2" type="Sprite2D" parent="CanvasPause/settingsControl"]
+z_index = 2
+position = Vector2(1647, -123)
+scale = Vector2(3.25781, 3.25781)
+texture = ExtResource("67_xgcxe")
+
+[node name="settingsclose" type="Area2D" parent="CanvasPause/settingsControl"]
+process_mode = 2
+z_index = 2
+position = Vector2(185, -352)
+scale = Vector2(2, 2)
+script = ExtResource("68_lomuv")
+normal_texture = ExtResource("69_fuy3b")
+hover_texture = ExtResource("70_g0t4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/settingsControl/settingsclose"]
+z_index = 3
+position = Vector2(802, -132.5)
+scale = Vector2(2.22, 2.22)
+texture = ExtResource("69_fuy3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/settingsControl/settingsclose"]
+process_mode = 2
+z_index = 3
+position = Vector2(802.25, -132.25)
+shape = SubResource("RectangleShape2D_thh0c")
+
+[node name="Label6" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = -579.0
+offset_right = 982.0
+offset_bottom = -515.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+
+[node name="Label7" type="Label" parent="CanvasPause/settingsControl"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 501.0
+offset_top = -575.0
+offset_right = 989.0
+offset_bottom = -503.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 64
+text = "Controls"
+
+[node name="PauseMenu" type="Control" parent="CanvasPause"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="CanvasPause/PauseMenu"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 931.0
+offset_top = 170.0
+offset_right = 1411.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 938.0
+offset_top = 174.0
+offset_right = 1418.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="close" type="Area2D" parent="CanvasPause/PauseMenu"]
+process_mode = 2
+z_index = 2
+position = Vector2(570, 397)
+scale = Vector2(2, 2)
+script = ExtResource("71_me6ps")
+normal_texture = ExtResource("69_fuy3b")
+hover_texture = ExtResource("70_g0t4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/PauseMenu/close"]
+z_index = 3
+position = Vector2(802, -132.5)
+scale = Vector2(2.22, 2.22)
+texture = ExtResource("69_fuy3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/PauseMenu/close"]
+process_mode = 2
+z_index = 3
+position = Vector2(802.25, -132.25)
+shape = SubResource("RectangleShape2D_thh0c")
+
+[node name="resume" type="Area2D" parent="CanvasPause/PauseMenu"]
+process_mode = 2
+z_index = 2
+position = Vector2(-233, -240)
+scale = Vector2(2, 2)
+script = ExtResource("68_lomuv")
+normal_texture = ExtResource("32_hh60n")
+hover_texture = ExtResource("33_wfb7x")
+
+[node name="info" type="Label" parent="CanvasPause/PauseMenu/resume"]
+z_index = 1
+anchors_preset = -1
+anchor_top = -1.4
+anchor_right = 3.3
+anchor_bottom = -1.4
+offset_left = 316.0
+offset_top = 318.5
+offset_right = 618.0
+offset_bottom = 340.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 16
+text = "Click to Resume Game:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/PauseMenu/resume"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("32_hh60n")
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu/resume"]
+z_index = 1
+offset_left = 388.5
+offset_top = 378.0
+offset_right = 558.5
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("16_tj75g")
+text = "Game Paused"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/PauseMenu/resume"]
+process_mode = 2
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_3f3qs")
+
+[node name="music" type="Area2D" parent="CanvasPause/PauseMenu"]
+process_mode = 2
+z_index = 2
+position = Vector2(-233, -8)
+scale = Vector2(2, 2)
+script = ExtResource("68_lomuv")
+normal_texture = ExtResource("32_hh60n")
+hover_texture = ExtResource("33_wfb7x")
+
+[node name="info" type="Label" parent="CanvasPause/PauseMenu/music"]
+z_index = 1
+anchors_preset = -1
+anchor_top = -1.4
+anchor_right = 3.3
+anchor_bottom = -1.4
+offset_left = 304.0
+offset_top = 338.5
+offset_right = 642.0
+offset_bottom = 360.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 16
+text = "Toggle Music On and Off:"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/PauseMenu/music"]
+z_index = 1
+position = Vector2(475, 388)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("32_hh60n")
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu/music"]
+z_index = 1
+offset_left = 414.0
+offset_top = 394.0
+offset_right = 536.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("16_tj75g")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/PauseMenu/music"]
+process_mode = 2
+z_index = 1
+position = Vector2(475, 403.25)
+shape = SubResource("RectangleShape2D_l7afl")
+
+[node name="controls" type="Area2D" parent="CanvasPause/PauseMenu"]
+process_mode = 2
+z_index = 2
+position = Vector2(648, -276)
+scale = Vector2(2, 2)
+script = ExtResource("68_lomuv")
+normal_texture = ExtResource("32_hh60n")
+hover_texture = ExtResource("33_wfb7x")
+
+[node name="info" type="Label" parent="CanvasPause/PauseMenu/controls"]
+z_index = 1
+anchors_preset = -1
+anchor_top = -1.4
+anchor_right = 3.3
+anchor_bottom = -1.4
+offset_left = 304.0
+offset_top = 334.5
+offset_right = 642.0
+offset_bottom = 356.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 16
+text = "View Controls:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/PauseMenu/controls"]
+z_index = 1
+position = Vector2(475, 388)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("32_hh60n")
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu/controls"]
+z_index = 1
+offset_left = 414.0
+offset_top = 394.0
+offset_right = 536.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("16_tj75g")
+text = "Controls"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/PauseMenu/controls"]
+process_mode = 2
+z_index = 1
+position = Vector2(475, 403.25)
+shape = SubResource("RectangleShape2D_l7afl")
+
+[node name="main menu" type="Area2D" parent="CanvasPause/PauseMenu"]
+process_mode = 2
+z_index = 2
+position = Vector2(648, -12)
+scale = Vector2(2, 2)
+script = ExtResource("68_lomuv")
+normal_texture = ExtResource("32_hh60n")
+hover_texture = ExtResource("33_wfb7x")
+
+[node name="info" type="Label" parent="CanvasPause/PauseMenu/main menu"]
+z_index = 1
+anchors_preset = -1
+anchor_top = -1.4
+anchor_right = 3.3
+anchor_bottom = -1.4
+offset_left = 304.0
+offset_top = 338.5
+offset_right = 642.0
+offset_bottom = 360.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_tj75g")
+theme_override_font_sizes/font_size = 16
+text = "Start Over: "
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasPause/PauseMenu/main menu"]
+z_index = 1
+position = Vector2(475, 388)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("32_hh60n")
+
+[node name="Label" type="Label" parent="CanvasPause/PauseMenu/main menu"]
+z_index = 1
+offset_left = 414.0
+offset_top = 394.0
+offset_right = 536.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("16_tj75g")
+text = "Main Menu"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasPause/PauseMenu/main menu"]
+process_mode = 2
+z_index = 1
+position = Vector2(475, 403.25)
+shape = SubResource("RectangleShape2D_l7afl")
+
 [connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/pianokeys" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
@@ -3798,3 +4357,21 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_shape_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_shape_exited"]
 [connection signal="body_entered" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_exited"]
+[connection signal="input_event" from="CanvasPause/settingsControl/settingsclose" to="." method="_on_settingsclose_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasPause/PauseMenu/close" to="." method="_on_close_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/PauseMenu/close" to="CanvasPause/PauseMenu/close" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/PauseMenu/close" to="CanvasPause/PauseMenu/close" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasPause/PauseMenu/resume" to="." method="_on_resume_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/PauseMenu/resume" to="CanvasPause/PauseMenu/resume" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/PauseMenu/resume" to="CanvasPause/PauseMenu/resume" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasPause/PauseMenu/music" to="." method="_on_music_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/PauseMenu/music" to="CanvasPause/PauseMenu/music" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/PauseMenu/music" to="CanvasPause/PauseMenu/music" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasPause/PauseMenu/controls" to="." method="_on_controls_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/PauseMenu/controls" to="CanvasPause/PauseMenu/controls" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/PauseMenu/controls" to="CanvasPause/PauseMenu/controls" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
+[connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
