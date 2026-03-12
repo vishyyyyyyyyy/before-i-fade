@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=103 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bpoi2xwk8svwu" path="res://assets/bathtub.png" id="8_fffvf"]
 [ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_2u65w"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="10_25jch"]
-[ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_c2g0u"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_bm87y"]
 [ext_resource type="Texture2D" uid="uid://bm3prv258iged" path="res://assets/characters/friend.png" id="13_2u65w"]
 [ext_resource type="Texture2D" uid="uid://pxbus3w8iv4f" path="res://assets/comb.png" id="13_6wssb"]
@@ -1618,18 +1617,8 @@ offset_left = -17.0
 offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
+mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 1)
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer3/ColorRect2"]
-layout_mode = 0
-offset_left = 1203.0
-offset_top = -661.0
-offset_right = 1533.0
-offset_bottom = -314.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer3/ColorRect2/TextureButton"]
-stream = ExtResource("11_c2g0u")
-volume_db = 24.0
 
 [node name="comb" type="Area2D" parent="CanvasLayer3"]
 visible = false
@@ -1890,28 +1879,23 @@ texture = ExtResource("3_c2g0u")
 script = ExtResource("18_tbr22")
 
 [node name="tile1" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
-position = Vector2(0, 3.05176e-05)
+position = Vector2(1437, 270)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile1"]
 z_index = 3
-position = Vector2(1438, 269)
 scale = Vector2(7.19189, 7.44828)
 texture = ExtResource("3_kc3g8")
 region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile1"]
-visible = false
 z_index = 3
-position = Vector2(1438, 269)
 shape = SubResource("RectangleShape2D_tbr22")
 disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile2" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("20_oyxel")
 
@@ -1925,7 +1909,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile2"]
-visible = false
 z_index = 3
 position = Vector2(1672, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -1933,7 +1916,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile3" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("20_oyxel")
 
@@ -1947,7 +1929,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile3"]
-visible = false
 z_index = 3
 position = Vector2(1902.5, 270)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -1955,7 +1936,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile4" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("19_oyxel")
 
@@ -1968,7 +1948,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile4"]
-visible = false
 z_index = 3
 position = Vector2(2128.5, 271)
 shape = SubResource("RectangleShape2D_oyxel")
@@ -1976,7 +1955,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile5" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -1989,7 +1967,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile5"]
-visible = false
 z_index = 3
 position = Vector2(1438, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -1997,7 +1974,6 @@ disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile6" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -2010,7 +1986,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile6"]
-visible = false
 z_index = 3
 position = Vector2(1672, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2018,7 +1993,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile7" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -2031,7 +2005,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile7"]
-visible = false
 z_index = 3
 position = Vector2(1902.5, 270)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2039,7 +2012,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile8" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -2052,7 +2024,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile8"]
-visible = false
 z_index = 3
 position = Vector2(2128.5, 271)
 shape = SubResource("RectangleShape2D_oyxel")
@@ -2060,29 +2031,25 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile9" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
-position = Vector2(0, 457)
+position = Vector2(1438, 727)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile9"]
 modulate = Color(0.839216, 1, 0.690196, 1)
 z_index = 3
-position = Vector2(1438, 269)
 scale = Vector2(7.19189, 7.44828)
 texture = ExtResource("3_kc3g8")
 region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile9"]
-visible = false
 z_index = 3
-position = Vector2(1438, 269)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tbr22")
 disabled = true
-debug_color = Color(0.729412, 0.580392, 0.745098, 1)
+debug_color = Color(0.395973, 0.00152295, 0.57244, 0.419608)
 
 [node name="tile10" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 457)
 script = ExtResource("20_oyxel")
 
@@ -2096,7 +2063,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile10"]
-visible = false
 z_index = 3
 position = Vector2(1672, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2104,7 +2070,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile11" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 457)
 script = ExtResource("19_oyxel")
 
@@ -2117,7 +2082,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile11"]
-visible = false
 z_index = 3
 position = Vector2(1902.5, 270)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2125,7 +2089,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile12" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 457)
 script = ExtResource("19_oyxel")
 
@@ -2138,7 +2101,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile12"]
-visible = false
 z_index = 3
 position = Vector2(2128.5, 271)
 shape = SubResource("RectangleShape2D_oyxel")
@@ -2146,7 +2108,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile13" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 685)
 script = ExtResource("20_oyxel")
 
@@ -2160,7 +2121,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile13"]
-visible = false
 z_index = 3
 position = Vector2(1438, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2168,7 +2128,6 @@ disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile14" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 685)
 script = ExtResource("19_oyxel")
 
@@ -2181,7 +2140,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile14"]
-visible = false
 z_index = 3
 position = Vector2(1672, 269)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2189,7 +2147,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile15" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 685)
 script = ExtResource("20_oyxel")
 
@@ -2203,7 +2160,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile15"]
-visible = false
 z_index = 3
 position = Vector2(1902.5, 270)
 shape = SubResource("RectangleShape2D_tbr22")
@@ -2211,7 +2167,6 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile16" type="Area2D" parent="CanvasLayer3/PresentTile"]
-visible = false
 position = Vector2(0, 685)
 script = ExtResource("19_oyxel")
 
@@ -2224,7 +2179,6 @@ region_enabled = true
 region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile16"]
-visible = false
 z_index = 3
 position = Vector2(2128.5, 271)
 shape = SubResource("RectangleShape2D_oyxel")
@@ -3028,7 +2982,6 @@ metadata/_edit_lock_ = true
 stream = ExtResource("23_25jch")
 volume_db = 20.0
 
-[connection signal="pressed" from="CanvasLayer3/ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_shape_exited"]

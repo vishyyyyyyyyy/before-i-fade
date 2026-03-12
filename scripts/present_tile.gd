@@ -70,7 +70,7 @@ func _on_tile_color_changed(tile_name: String, color: String):
 
 func _on_timer_2_timeout() -> void:
 	print("lose")
-	$"../Node3/Timer2".stop
+	$"../Node3/Timer2".stop()
 	$"../Node3/Wrong".visible=true
 	$"../Node3/AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
@@ -89,6 +89,25 @@ func check_solution():
 			emit_signal("challengecompleted")
 			
 func resetpuzzle():
+	selected_colors = {
+	"tile1": "white",
+	"tile2": "green",
+	"tile3": "green",
+	"tile4": "white",
+	"tile5": "white",
+	"tile6": "white",
+	"tile7": "white",
+	"tile8": "white",
+	"tile9": "green",
+	"tile10": "green",
+	"tile11": "white",
+	"tile12": "white",
+	"tile13": "green",
+	"tile14": "white",
+	"tile15": "green",
+	"tile16": "white"
+}
+
 	$tile1/whitetile.modulate=Color(1,1,1,1)
 	$tile2/greentile.modulate=Color(0.863, 1.0, 0.729)
 	$tile3/greentile.modulate=Color(0.863, 1.0, 0.729)
