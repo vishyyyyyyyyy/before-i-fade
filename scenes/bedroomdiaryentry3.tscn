@@ -353,6 +353,7 @@ offset_left = 88.0
 offset_top = -103.0
 offset_right = 123.0
 offset_bottom = 337.0
+mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
@@ -432,6 +433,7 @@ offset_left = -17.0
 offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
+mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="desk" type="Area2D" parent="."]
