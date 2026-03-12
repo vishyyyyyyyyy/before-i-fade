@@ -9,44 +9,17 @@ func toggle_pause():
 	$CanvasPause/Menucard2.visible=true
 
 
-func _ready() -> void:
+func _ready():
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
 
-	
-	if Global.reusablehallway ==4:
-		$ghostlayer/Label.visible=true
-		$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
-		$ghostlayer/scenetrigger/CollisionShape2D2.disabled=false
-		Global.kitchen = 4
-		print(Global.kitchen)
-		
-	if Global.livingroom == 1:
-		Global.kitchen = 5
-		$ghostlayer/scenetrigger/CollisionShape2D2.disabled=true
-		$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-		$ghostlayer/blobGhostPlayer.position.x=2137
-		$ghostlayer/Label13.visible=true
-		print("bathroom count: " + str(Global.bathroomCount))
-		print("reusabledesk count: " + str(Global.reusabledesk))
-		print("reusablehallway count: " + str(Global.reusablehallway))
-		print("kitchen: " + str(Global.kitchen))
-		print("livingroom: " + str(Global.livingroom))
-
-
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		toggle_pause()
-		
-		#var bathroomCount = 0
-#var pastChar = ""
-#var reusabledesk = 0
-#var reusablehallway = 0
-#var kitchen = 0
-#var livingroom = 0
+
 
 func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
