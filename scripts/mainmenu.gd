@@ -12,7 +12,8 @@ func _ready() -> void:
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	$AnimationPlayer2.play("modulate")
-	await $AnimationPlayer2.animation_finished
+	await get_tree().create_timer(2).timeout
+	$Node/AnimationPlayer.play("fadeinbutton")
 	$Node/Play/CollisionShape2D.disabled=false
 	$Node/Music/CollisionShape2D.disabled=false
 	$Node/Play.play.connect(play)
