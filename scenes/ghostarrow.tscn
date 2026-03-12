@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://k1rwedfqgrba" path="res://assets/ghostarrow.png" id="1_6mpr2"]
 
+[sub_resource type="Animation" id="Animation_6mpr2"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_15if8"]
 resource_name = "arrow"
 length = 2.5
@@ -54,9 +57,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_6mpr2"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnsqg"]
 _data = {

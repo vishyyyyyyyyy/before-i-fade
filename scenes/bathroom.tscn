@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://hktmcl6xg08u"]
+[gd_scene load_steps=50 format=3 uid="uid://hktmcl6xg08u"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_gknyc"]
 [ext_resource type="Script" uid="uid://dp3auqvxnpfao" path="res://scripts/bathroom.gd" id="1_n5w2q"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bpoi2xwk8svwu" path="res://assets/bathtub.png" id="8_hq5ij"]
 [ext_resource type="Texture2D" uid="uid://dmncwjc6b51p7" path="res://assets/flowerpainting.png" id="9_c0g1v"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="10_c0g1v"]
+[ext_resource type="PackedScene" uid="uid://cfxvj84ji0s13" path="res://scenes/ghostE.tscn" id="10_lxtqw"]
 [ext_resource type="AudioStream" uid="uid://bri4fe7ksimmo" path="res://assets/toilet-flush-fx-3-424983.mp3" id="11_2v03t"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_ym42y"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="14_cricm"]
@@ -202,6 +203,12 @@ texture = ExtResource("8_hq5ij")
 position = Vector2(982, 265)
 scale = Vector2(3.10156, 3.10156)
 texture = ExtResource("9_c0g1v")
+
+[node name="Node2D" parent="CanvasLayer2" instance=ExtResource("10_lxtqw")]
+
+[node name="letterE" parent="CanvasLayer2/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2030, 319)
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 
@@ -906,3 +913,5 @@ shape = SubResource("RectangleShape2D_2bjx6")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="CanvasLayer2/Node2D"]
