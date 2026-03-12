@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=133 format=3 uid="uid://3ulr6k8q2lmt"]
 
 [ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c1iy5twsdku11" path="res://assets/friendframe.png" id="11_gvesl"]
 [ext_resource type="Texture2D" uid="uid://rhqcxbl4moqm" path="res://assets/girlframe.png" id="12_yar4q"]
 [ext_resource type="Texture2D" uid="uid://btq4355tuyrd4" path="res://assets/neigborframe.png" id="13_y7q4l"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="14_oskrs"]
 [ext_resource type="Texture2D" uid="uid://bi1sjlkbtaujm" path="res://assets/neighbornote2.png" id="15_a7ten"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="15_s8q44"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_xgli8"]
@@ -1666,6 +1667,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_ew26q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource("14_oskrs")]
+
+[node name="Ghostarrow" parent="CanvasLayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(2162, 851)
+rotation = 1.5708
 
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("8_nlnob")]
 position = Vector2(2188, 840)
@@ -3626,3 +3634,5 @@ shape = SubResource("RectangleShape2D_wtfse")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="CanvasLayer/Node2D"]

@@ -24,9 +24,7 @@ func _ready():
 	$SceneTrigger/CollisionShape2D.disabled =true
 	$CanvasLayer/AnimationPlayer.play("type_text")
 	dialogue_active = true  
-	await $CanvasLayer/AnimationPlayer.animation_finished
-	$CanvasLayer/Label3.visible=true
-	$SceneTrigger/CollisionShape2D.disabled = false
+	
 
 func _process(_delta):
 	if animating and anim.current_animation_position >= segment_ends[segment_index]:
@@ -51,6 +49,7 @@ func end_dialogue():
 	print("Dialogue finished")
 	$CanvasLayer/Label3.visible = true
 	$SceneTrigger/CollisionShape2D.disabled = false
+	$CanvasLayer/Node2D/arrow.play("arrow")
 
 func textskip():
 	if animating:

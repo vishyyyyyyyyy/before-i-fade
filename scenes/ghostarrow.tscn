@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://pwy7nrc227m2"]
+
+[ext_resource type="Texture2D" uid="uid://k1rwedfqgrba" path="res://assets/ghostarrow.png" id="1_6mpr2"]
+
+[sub_resource type="Animation" id="Animation_15if8"]
+resource_name = "arrow"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.9, 2.9), Vector2(2.9, 2.9), Vector2(2.85, 2.85), Vector2(2.9, 2.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.537255), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6mpr2"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pnsqg"]
+_data = {
+&"RESET": SubResource("Animation_6mpr2"),
+&"arrow": SubResource("Animation_15if8")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="arrow" type="AnimationPlayer" parent="."]
+root_node = NodePath("Ghostarrow")
+libraries = {
+&"": SubResource("AnimationLibrary_pnsqg")
+}
+
+[node name="Ghostarrow" type="Sprite2D" parent="arrow"]
+position = Vector2(-9.53674e-07, -24)
+rotation = -3.14159
+scale = Vector2(2.9, 2.9)
+texture = ExtResource("1_6mpr2")

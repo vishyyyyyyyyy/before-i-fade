@@ -20,6 +20,7 @@ func _ready() -> void:
 		$ghostlayer/Label.visible=true
 		$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
 		$ghostlayer/scenetrigger/CollisionShape2D2.disabled=false
+		$ghostlayer/Node2D/arrow.play("arrow")
 		Global.kitchen = 4
 		print(Global.kitchen)
 		

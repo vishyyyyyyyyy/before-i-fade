@@ -983,6 +983,7 @@ func choice2():
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
 	$ghostlayer/Label14.visible=true
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
+	$ghostlayer/Node2D/arrow.play("arrow")
 	
 	
 func fade_out_node(node: CanvasItem, duration := 2.0) -> void:

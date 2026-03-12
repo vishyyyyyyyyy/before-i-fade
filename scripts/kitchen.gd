@@ -630,6 +630,7 @@ func diarypagecontinue():
 	$CanvasLayer4/ColorRect2.visible=false
 	$CanvasLayer4/Node3/Label11.visible=true
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
+	$ghostlayer/Node2D/arrow.play("arrow")
 	
 	print("bathroom count: " + str(Global.bathroomCount))
 	print("reusabledesk count: " + str(Global.reusabledesk))

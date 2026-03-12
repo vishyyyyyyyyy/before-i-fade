@@ -133,10 +133,11 @@ func _on_desk_clicked():
 func _process(delta: float) -> void:
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
+	$Label2.add_theme_color_override("font_color", Color(0,0,0))
 	
 	var total_time = $Timer2.wait_time
-	var t = time_left_seconds / total_time  
-	
+	var t = time_left_seconds / total_time 
+	 
 	if time_left_seconds < 11.0:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$Label2.add_theme_color_override("font_color", Color(1,0,0))

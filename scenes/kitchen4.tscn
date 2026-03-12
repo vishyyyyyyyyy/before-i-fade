@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cxot8lfnfn4mu"]
+[gd_scene load_steps=48 format=3 uid="uid://cxot8lfnfn4mu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_u8kgb"]
 [ext_resource type="Script" uid="uid://seia6kkj8dn2" path="res://scripts/kitchen3-7.gd" id="1_vr4i5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="6_7ajdd"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="7_fhpuf"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="8_ee1dp"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="9_k705k"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="9_tpylm"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="10_7ppa7"]
 [ext_resource type="Texture2D" uid="uid://cpk4ccxrq31fi" path="res://assets/island.png" id="11_dbkfa"]
@@ -149,6 +150,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_fhpuf")
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="ghostlayer" instance=ExtResource("9_k705k")]
+
+[node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(2156, 885)
+rotation = 1.5708
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -831,3 +839,5 @@ shape = SubResource("RectangleShape2D_ciycf")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="ghostlayer/Node2D"]

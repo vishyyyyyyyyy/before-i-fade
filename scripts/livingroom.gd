@@ -514,7 +514,7 @@ func diarypagecontinue():
 	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
 	await get_tree().create_timer(0.4).timeout
 	$ghostlayer/Label14.visible=true
-	
+	$ghostlayer/Node2D/arrow.play("arrow")
 
 func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

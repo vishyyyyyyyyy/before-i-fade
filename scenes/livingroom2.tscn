@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://e6i77khglxfu"]
+[gd_scene load_steps=53 format=3 uid="uid://e6i77khglxfu"]
 
 [ext_resource type="Script" uid="uid://dj6wox3yyy2w" path="res://scripts/livingroom2-4.gd" id="1_t2tn1"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_rr778"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cxta5qoyvmrtq" path="res://assets/flower.png" id="8_mo3dl"]
 [ext_resource type="Texture2D" uid="uid://dv3jxi8g6xc6o" path="res://assets/bluerug.png" id="9_q5pev"]
 [ext_resource type="Texture2D" uid="uid://dya8ub8gb3ao3" path="res://assets/coffeetable.png" id="10_xdnw1"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="12_5dhep"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="15_0vg6y"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="16_5dhep"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="16_g5srb"]
@@ -160,6 +161,12 @@ scale = Vector2(3, 3)
 texture = ExtResource("15_0vg6y")
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="ghostlayer" instance=ExtResource("12_5dhep")]
+
+[node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(2049, 964)
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -823,3 +830,5 @@ shape = SubResource("RectangleShape2D_q5pev")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="ghostlayer/Node2D"]

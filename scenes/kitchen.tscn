@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=156 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="7_bs8bs"]
 [ext_resource type="Texture2D" uid="uid://8gki14vxatem" path="res://assets/sink.png" id="8_88wuv"]
 [ext_resource type="Texture2D" uid="uid://b4h1ps8unjwmi" path="res://assets/stool.png" id="9_acu1m"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="9_t56f6"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="10_bs8bs"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="10_cwf2y"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="10_f125y"]
@@ -1695,6 +1696,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_bs8bs")
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="ghostlayer" instance=ExtResource("9_t56f6")]
+
+[node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(152, 888)
+rotation = 4.71239
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -3800,3 +3808,5 @@ shape = SubResource("RectangleShape2D_s4afo")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="ghostlayer/Node2D"]

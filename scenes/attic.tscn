@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=165 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_7xawx"]
 [ext_resource type="Texture2D" uid="uid://c1xtxs4dhlk0t" path="res://assets/insidebox.png" id="11_nhg3k"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="12_l6qon"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="12_w3nd6"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="13_4oqm8"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="14_kbsqw"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="15_l00gg"]
@@ -3741,6 +3742,12 @@ texture = ExtResource("8_26uk4")
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 
+[node name="Node2D" parent="ghostlayer" instance=ExtResource("12_w3nd6")]
+
+[node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(2166, 974)
+
 [node name="Bloodblanket" type="Sprite2D" parent="ghostlayer"]
 position = Vector2(1151, 851)
 scale = Vector2(4.45313, 4.45313)
@@ -6604,3 +6611,5 @@ shape = SubResource("RectangleShape2D_n8j5g")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="ghostlayer/Node2D"]

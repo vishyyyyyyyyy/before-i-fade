@@ -33,6 +33,7 @@ func _ready() -> void:
 	
 	if Global.reusablehallway ==4:
 		$CanvasLayer/Label5.visible=true
+		$CanvasLayer/Node2D/arrow.play("arrow")
 		$CanvasLayer/blobGhostPlayer.position.x = 2188.0
 		Global.kitchen = 3
 		$"CanvasLayer/scene trigger/CollisionShape2D".disabled=false
@@ -40,6 +41,7 @@ func _ready() -> void:
 	
 	
 	if Global.reusablehallway == 1:
+		$CanvasLayer/Node2D/arrow.play("arrow")
 		$CanvasLayer/Label4.visible=true
 		Global.kitchen =1
 		
