@@ -1879,6 +1879,7 @@ texture = ExtResource("3_c2g0u")
 script = ExtResource("18_tbr22")
 
 [node name="tile1" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(1437, 270)
 script = ExtResource("19_oyxel")
 
@@ -1896,6 +1897,7 @@ disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile2" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("20_oyxel")
 
@@ -1916,6 +1918,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile3" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("20_oyxel")
 
@@ -1936,6 +1939,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile4" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 3.05176e-05)
 script = ExtResource("19_oyxel")
 
@@ -1955,6 +1959,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile5" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -1974,6 +1979,7 @@ disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile6" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -1993,6 +1999,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile7" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -2012,6 +2019,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile8" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 228)
 script = ExtResource("19_oyxel")
 
@@ -2031,6 +2039,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile9" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(1438, 727)
 script = ExtResource("20_oyxel")
 
@@ -2050,6 +2059,7 @@ disabled = true
 debug_color = Color(0.395973, 0.00152295, 0.57244, 0.419608)
 
 [node name="tile10" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 457)
 script = ExtResource("20_oyxel")
 
@@ -2070,6 +2080,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile11" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 457)
 script = ExtResource("19_oyxel")
 
@@ -2089,6 +2100,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile12" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 457)
 script = ExtResource("19_oyxel")
 
@@ -2108,6 +2120,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile13" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 685)
 script = ExtResource("20_oyxel")
 
@@ -2128,6 +2141,7 @@ disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile14" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 685)
 script = ExtResource("19_oyxel")
 
@@ -2147,6 +2161,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile15" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 685)
 script = ExtResource("20_oyxel")
 
@@ -2167,6 +2182,7 @@ disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile16" type="Area2D" parent="CanvasLayer3/PresentTile"]
+visible = false
 position = Vector2(0, 685)
 script = ExtResource("19_oyxel")
 
