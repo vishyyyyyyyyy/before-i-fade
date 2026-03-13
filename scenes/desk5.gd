@@ -45,10 +45,13 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "blobGhostPlayer":
 		player_inside = true
+		$Node2D/EAnim.play("E")
 
 func _on_body_exited(body):
 	if body.name == "blobGhostPlayer":
 		player_inside = false
+		$Node2D/EAnim.stop()
+		$Node2D/EAnim/letterE.visible = false
 
 func _process(delta):
 	if player_inside and Input.is_action_just_pressed("interact"):

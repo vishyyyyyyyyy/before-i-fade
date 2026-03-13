@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c1iy5twsdku11" path="res://assets/friendframe.png" id="11_gvesl"]
 [ext_resource type="Texture2D" uid="uid://rhqcxbl4moqm" path="res://assets/girlframe.png" id="12_yar4q"]
 [ext_resource type="Texture2D" uid="uid://btq4355tuyrd4" path="res://assets/neigborframe.png" id="13_y7q4l"]
-[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="14_oskrs"]
 [ext_resource type="Texture2D" uid="uid://bi1sjlkbtaujm" path="res://assets/neighbornote2.png" id="15_a7ten"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="15_s8q44"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_xgli8"]
@@ -59,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://jckxys6vwb0b" path="res://assets/hallwayPuzzlePics/boyframeBottomRight.png" id="51_0qhv5"]
 [ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="56_sm38h"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="58_tghjq"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="59_h6wc0"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="59_oskrs"]
 [ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="60_h6wc0"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="61_l2r63"]
@@ -1668,13 +1668,6 @@ texture = ExtResource("7_ew26q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource("14_oskrs")]
-
-[node name="Ghostarrow" parent="CanvasLayer/Node2D/arrow" index="0"]
-visible = false
-position = Vector2(2162, 851)
-rotation = 1.5708
-
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("8_nlnob")]
 position = Vector2(2188, 840)
 scale = Vector2(3, 3)
@@ -3051,6 +3044,24 @@ shape = SubResource("CapsuleShape2D_bje8i")
 disabled = true
 debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 
+[node name="Node2D" parent="explore/CanvasLayer/flowers" instance=ExtResource("59_h6wc0")]
+visible = false
+position = Vector2(1969, 451)
+scale = Vector2(3, 3)
+
+[node name="letterE" parent="explore/CanvasLayer/flowers/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2114, 466)
+
+[node name="Node2D2" parent="explore/CanvasLayer/flowers" instance=ExtResource("59_h6wc0")]
+visible = false
+position = Vector2(1969, 451)
+scale = Vector2(3, 3)
+
+[node name="letterE" parent="explore/CanvasLayer/flowers/Node2D2/EAnim" index="0"]
+visible = false
+position = Vector2(385, 460)
+
 [node name="lamp" type="Area2D" parent="explore/CanvasLayer"]
 script = ExtResource("21_xyikb")
 label_text = "A tall lamp."
@@ -3062,6 +3073,13 @@ shape = SubResource("CapsuleShape2D_xyikb")
 disabled = true
 debug_color = Color(0.699247, 0.0570169, 0.288902, 0.42)
 
+[node name="Node2D" parent="explore/CanvasLayer/lamp" instance=ExtResource("59_h6wc0")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/lamp/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2080, 198)
+
 [node name="photos" type="Area2D" parent="explore/CanvasLayer"]
 script = ExtResource("21_xyikb")
 
@@ -3070,6 +3088,13 @@ position = Vector2(1137.5, 372.5)
 shape = SubResource("RectangleShape2D_frgbo")
 disabled = true
 debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
+
+[node name="Node2D" parent="explore/CanvasLayer/photos" instance=ExtResource("59_h6wc0")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/photos/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1153, 135)
 
 [node name="Node" type="Node" parent="."]
 
@@ -3635,4 +3660,7 @@ shape = SubResource("RectangleShape2D_wtfse")
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
 
-[editable path="CanvasLayer/Node2D"]
+[editable path="explore/CanvasLayer/flowers/Node2D"]
+[editable path="explore/CanvasLayer/flowers/Node2D2"]
+[editable path="explore/CanvasLayer/lamp/Node2D"]
+[editable path="explore/CanvasLayer/photos/Node2D"]

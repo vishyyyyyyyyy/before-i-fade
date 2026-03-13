@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=113 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="24_pp5hi"]
 [ext_resource type="Texture2D" uid="uid://f5d746pti7ia" path="res://assets/pixel-characters/friend2.png" id="25_kefea"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="26_kefea"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="30_cjbtu"]
 [ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="34_tvp18"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="35_pu7wy"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="36_cjbtu"]
@@ -863,23 +864,23 @@ animations = [{
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rik1q"]
-size = Vector2(190, 277)
+size = Vector2(190, 231)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rme15"]
-size = Vector2(424, 453)
+size = Vector2(424, 312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7ukq"]
-size = Vector2(387.25, 516)
+size = Vector2(387.25, 435)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij3ta"]
-size = Vector2(244, 338)
+size = Vector2(244, 279)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcvsn"]
 radius = 131.0
 height = 490.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flduu"]
-size = Vector2(370, 322)
+size = Vector2(370, 262)
 
 [sub_resource type="Animation" id="Animation_ij3ta"]
 length = 0.001
@@ -1921,10 +1922,17 @@ label_text = "A locked safe."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/safe"]
 z_index = 1
-position = Vector2(208, 709.5)
+position = Vector2(208, 686.5)
 shape = SubResource("RectangleShape2D_rik1q")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Node2D" parent="explore/safe" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/safe/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(214, 512)
 
 [node name="bed" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
@@ -1932,10 +1940,17 @@ script = ExtResource("19_rme15")
 label_text = "A bed with 4 flowers."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/bed"]
-position = Vector2(508, 802.5)
+position = Vector2(508, 732)
 shape = SubResource("RectangleShape2D_rme15")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Node2D" parent="explore/bed" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/bed/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(825, 425)
 
 [node name="window" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
@@ -1943,10 +1958,17 @@ script = ExtResource("19_rme15")
 label_text = "A window."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/window"]
-position = Vector2(1157.38, 517)
+position = Vector2(1157.38, 476.5)
 shape = SubResource("RectangleShape2D_r7ukq")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Node2D" parent="explore/window" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/window/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1441, 145)
 
 [node name="calendar" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
@@ -1954,10 +1976,17 @@ script = ExtResource("19_rme15")
 label_text = "A calendar dated November 6th."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/calendar"]
-position = Vector2(1843, 551)
+position = Vector2(1843, 521.5)
 shape = SubResource("RectangleShape2D_ij3ta")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Node2D" parent="explore/calendar" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/calendar/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1679, 168)
 
 [node name="rug" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
@@ -1970,16 +1999,30 @@ shape = SubResource("CapsuleShape2D_tcvsn")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
 
+[node name="Node2D" parent="explore/rug" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/rug/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1349, 668)
+
 [node name="desk" type="Area2D" parent="explore"]
 position = Vector2(29, -338)
 script = ExtResource("19_rme15")
 label_text = "Investigate the bedroom by clicking on objects."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/desk"]
-position = Vector2(2084, 901)
+position = Vector2(2084, 931)
 shape = SubResource("RectangleShape2D_flduu")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Node2D" parent="explore/desk" instance=ExtResource("30_cjbtu")]
+visible = false
+
+[node name="letterE" parent="explore/desk/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2155, 777)
 
 [node name="Node" type="Node" parent="."]
 
@@ -2828,3 +2871,10 @@ shape = SubResource("RectangleShape2D_ndld2")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="explore/safe/Node2D"]
+[editable path="explore/bed/Node2D"]
+[editable path="explore/window/Node2D"]
+[editable path="explore/calendar/Node2D"]
+[editable path="explore/rug/Node2D"]
+[editable path="explore/desk/Node2D"]

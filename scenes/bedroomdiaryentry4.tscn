@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=115 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scenes/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -44,6 +44,7 @@
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="31_6l7om"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="32_wly0k"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="44_1qjkc"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="44_pf06f"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="45_pf06f"]
 [ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="46_qc3h3"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="47_wkym6"]
@@ -2882,6 +2883,13 @@ position = Vector2(206, 665)
 shape = SubResource("RectangleShape2D_ocxwn")
 disabled = true
 
+[node name="Node2D" parent="ghostlayer/Area2D" instance=ExtResource("44_pf06f")]
+visible = false
+
+[node name="letterE" parent="ghostlayer/Area2D/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(358, 662)
+
 [node name="LineEdit" type="LineEdit" parent="ghostlayer"]
 visible = false
 offset_left = 577.0
@@ -3295,6 +3303,13 @@ scale = Vector2(0.293333, 0.221)
 polygon = PackedVector2Array(-114.773, -269.985, 615.909, -253.394, 567.045, 55.8069, 539.773, 441.931, -205.682, 432.881)
 disabled = true
 metadata/_edit_lock_ = true
+
+[node name="Node2D" parent="desk" instance=ExtResource("44_pf06f")]
+visible = false
+
+[node name="letterE" parent="desk/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2150, 781)
 
 [node name="Node2" type="Node" parent="."]
 
@@ -3948,3 +3963,6 @@ shape = SubResource("RectangleShape2D_2pmr0")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="ghostlayer/Area2D/Node2D"]
+[editable path="desk/Node2D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=83 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://vqm3edpyvlhw" path="res://assets/diaryentry2.png" id="25_ke1p7"]
 [ext_resource type="Script" uid="uid://c7k3krgtmjpbd" path="res://scenes/reusableleavedesk.gd" id="25_stnjj"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="27_7ccer"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="27_c20of"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="28_c20of"]
 [ext_resource type="Script" uid="uid://cutoxgrc2wkfv" path="res://scenes/reusabledesk.gd" id="28_sl28a"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="29_dwit2"]
@@ -1219,6 +1220,11 @@ scale = Vector2(0.293333, 0.221)
 polygon = PackedVector2Array(-114.773, -269.985, 615.909, -253.394, 567.045, 55.8069, 539.773, 441.931, -205.682, 432.881)
 disabled = true
 
+[node name="Node2D" parent="desk" instance=ExtResource("27_c20of")]
+
+[node name="letterE" parent="desk/Node2D/EAnim" index="0"]
+position = Vector2(2153, 812)
+
 [node name="Node2" type="Node" parent="."]
 
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
@@ -1820,3 +1826,5 @@ shape = SubResource("RectangleShape2D_nj512")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="desk/Node2D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://c2s68u53x2urt"]
+[gd_scene load_steps=63 format=3 uid="uid://c2s68u53x2urt"]
 
 [ext_resource type="Script" uid="uid://bbnovbfkyhpbv" path="res://scripts/bedroomdiaryentry_3.gd" id="1_k28sk"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_25v77"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="18_bnqre"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="21_0vequ"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_wdnfu"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="23_6hfgn"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="23_cmfj1"]
 [ext_resource type="Script" uid="uid://cm22fx8v0grcd" path="res://scenes/desk5.gd" id="23_i2gc4"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="23_l6478"]
@@ -452,6 +453,13 @@ position = Vector2(-244.667, -79.6667)
 scale = Vector2(0.293333, 0.221)
 polygon = PackedVector2Array(-114.773, -269.985, 615.909, -253.394, 567.045, 55.8069, 539.773, 441.931, -205.682, 432.881)
 disabled = true
+
+[node name="Node2D" parent="desk" instance=ExtResource("23_6hfgn")]
+visible = false
+
+[node name="letterE" parent="desk/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2153, 790)
 
 [node name="Node2" type="Node" parent="."]
 
@@ -1031,3 +1039,5 @@ shape = SubResource("RectangleShape2D_2yjug")
 [connection signal="input_event" from="CanvasPause/PauseMenu/main menu" to="." method="_on_main_menu_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
+
+[editable path="desk/Node2D"]
