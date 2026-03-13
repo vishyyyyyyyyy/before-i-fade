@@ -1,6 +1,7 @@
 extends Area2D
 
 var current_color = "green"
+signal color_changed(tile_name: String, color: String)
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:

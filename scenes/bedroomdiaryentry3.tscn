@@ -185,7 +185,7 @@ size = Vector2(209.5, 49)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yjug"]
 size = Vector2(209, 51.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_k28sk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
