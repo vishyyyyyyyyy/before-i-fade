@@ -74,8 +74,7 @@ func _ready():
 	$Node/diary.input_event.connect(func(area, event, shape_idx):
 		_on_area_clicked(area, event, shape_idx, "diary")
 		)
-		
-	Global.bedroomfail = true
+	
 	if Global.bedroomfail == true:
 		$CanvasLayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()

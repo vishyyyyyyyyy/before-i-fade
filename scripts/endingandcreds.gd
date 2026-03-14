@@ -1,8 +1,8 @@
 extends Node2D
 func _ready() -> void:
 	$continue.pressed.connect(pressed)
-	
 	$Menucard.visible=true
+	fade_out_music()
 	
 	if Global.ending  == 1:
 		$ending1/Label.visible=true
@@ -31,3 +31,6 @@ func pressed():
 	$AnimationPlayer/Label2.visible=true
 	$AnimationPlayer.play("type")
 	
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)

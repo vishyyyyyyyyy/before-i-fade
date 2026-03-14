@@ -216,6 +216,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+visible = false
 offset_right = 2303.0
 offset_bottom = 1291.0
 mouse_filter = 2
@@ -223,6 +224,7 @@ color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 offset_left = 323.0
 offset_top = 576.0
@@ -238,6 +240,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 offset_left = 317.0
 offset_top = 578.0

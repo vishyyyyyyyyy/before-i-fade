@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=140 format=3 uid="uid://3ulr6k8q2lmt"]
 
 [ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://btq4355tuyrd4" path="res://assets/neigborframe.png" id="13_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bi1sjlkbtaujm" path="res://assets/neighbornote2.png" id="15_a7ten"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="15_s8q44"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="15_swrf8"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_xgli8"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_172kp"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="17_bje8i"]
@@ -25,10 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="21_x4bkm"]
 [ext_resource type="Script" uid="uid://b2dd6uqysp2n3" path="res://scripts/explorehallway.gd" id="21_xyikb"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_1m42w"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="23_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="24_3cp5q"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="25_l2r63"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="25_rx3tq"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_klhg5"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="26_swrf8"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="27_7qrb5"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_lrdi4"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_u2q5v"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_olmwx"]
@@ -91,6 +94,120 @@ texture = ExtResource("2_nlnob")
 
 [sub_resource type="TileSet" id="TileSet_y7q4l"]
 sources/0 = SubResource("TileSetAtlasSource_nlnob")
+
+[sub_resource type="Animation" id="Animation_swrf8"]
+resource_name = "repeatboy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hallwayfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hallwayfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hallwayfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hallwayfailghost/BoyGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_7qrb5"]
+resource_name = "repeatgirl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hallwayfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hallwayfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hallwayfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hallwayfailghost/GirlGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_axhgs"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8eh23"]
+_data = {
+&"RESET": SubResource("Animation_axhgs"),
+&"repeatboy": SubResource("Animation_swrf8"),
+&"repeatgirl": SubResource("Animation_7qrb5")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb454"]
 size = Vector2(34, 320)
@@ -1235,7 +1352,7 @@ length = 0.001
 
 [sub_resource type="Animation" id="Animation_3cp5q"]
 resource_name = "neighborPhotos"
-length = 10.0
+length = 9.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1291,7 +1408,7 @@ tracks/4/path = NodePath("AnimationPlayer/neighborForward:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(2, 3, 7),
+"times": PackedFloat32Array(2, 3, 5.73333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
@@ -1303,7 +1420,7 @@ tracks/5/path = NodePath("AnimationPlayer/neighborBackward:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7, 8),
+"times": PackedFloat32Array(5.73333, 6.73333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1315,7 +1432,7 @@ tracks/6/path = NodePath("AnimationPlayer/neighborBackward:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(7, 8),
+"times": PackedFloat32Array(5.73333, 6.73333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 270)]
@@ -1327,7 +1444,7 @@ tracks/7/path = NodePath("AnimationPlayer/neighborLeft:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(8, 10),
+"times": PackedFloat32Array(6.73333, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1064, 0), Vector2(0, 0)]
@@ -1339,7 +1456,7 @@ tracks/8/path = NodePath("AnimationPlayer/neighborLeft:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(8, 10),
+"times": PackedFloat32Array(6.73333, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1363,7 +1480,7 @@ tracks/10/path = NodePath("AnimationPlayer/neighborLook:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(3, 7),
+"times": PackedFloat32Array(3, 5.73333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1671,6 +1788,68 @@ texture = ExtResource("7_ew26q")
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("8_nlnob")]
 position = Vector2(2188, 840)
 scale = Vector2(3, 3)
+
+[node name="failpuzzlecutscene" parent="CanvasLayer" instance=ExtResource("15_swrf8")]
+
+[node name="hallwayfailghost" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_8eh23")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/hallwayfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer/hallwayfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_172kp")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/hallwayfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_bje8i")
+
+[node name="skip" type="Label" parent="CanvasLayer/hallwayfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_xgli8")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="scenetrigger" type="Area2D" parent="CanvasLayer"]
 script = ExtResource("15_s8q44")
@@ -2298,24 +2477,71 @@ autowrap_mode = 2
 [node name="Timer" type="Sprite2D" parent="CanvasLayer/Node3"]
 visible = false
 z_index = 2
-position = Vector2(128, 80)
+position = Vector2(264, 72)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("23_gmxc1")
+texture = ExtResource("25_l2r63")
+
+[node name="Heart" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+position = Vector2(277, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("26_swrf8")
+
+[node name="Heart2" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+position = Vector2(357, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("26_swrf8")
+
+[node name="Heart3" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+z_index = 2
+position = Vector2(440, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("26_swrf8")
+
+[node name="Heart4" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 2
+position = Vector2(277, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("27_7qrb5")
+
+[node name="Heart5" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 2
+position = Vector2(357, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("27_7qrb5")
+
+[node name="Heart6" type="Sprite2D" parent="CanvasLayer/Node3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 2
+position = Vector2(440, 77)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("27_7qrb5")
 
 [node name="Label5" type="Label" parent="CanvasLayer/Node3"]
 visible = false
 z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
+offset_left = 46.0
+offset_top = 41.0
+offset_right = 228.0
+offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_xgli8")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 56
 text = "45.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 45.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
@@ -2476,6 +2702,8 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3cp5q")
 
 [node name="neighborRight" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+position = Vector2(1029, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborRight"]
 position = Vector2(96, 786)
@@ -2485,7 +2713,8 @@ autoplay = "default"
 frame_progress = 0.383255
 
 [node name="neighborLeft" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
-position = Vector2(1064, 0)
+visible = false
+position = Vector2(450.519, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborLeft"]
 position = Vector2(96, 786)
@@ -2496,6 +2725,8 @@ frame_progress = 0.710977
 flip_h = true
 
 [node name="neighborForward" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+position = Vector2(0, -270)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborForward"]
 position = Vector2(1152, 788)
@@ -2505,6 +2736,8 @@ autoplay = "default"
 frame_progress = 0.127123
 
 [node name="neighborBackward" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+position = Vector2(0, 270)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborBackward"]
 position = Vector2(1139, 448)
@@ -2514,6 +2747,7 @@ autoplay = "default"
 frame_progress = 0.596963
 
 [node name="neighborLook" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborLook"]
 position = Vector2(1152, 521)

@@ -9,8 +9,6 @@ var music_start_time = 0.0
 
 var hearts = 3
 
-
-
 var segment_data := [
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #puzzle instructions
 	{ "starts": [0.0, 4.0, 8.0, 13.0], "ends": [2.0, 6.0, 11.0, 15.0] },  #open diary
@@ -158,8 +156,6 @@ func _on_desk_clicked():
 
 
 func _process(delta: float) -> void:
-	#if $Timer2.is_stopped and !_on_continue_pressed():
-		#MusicManager.music_player.pitch_scale = 0.75
 
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
@@ -167,8 +163,6 @@ func _process(delta: float) -> void:
 	
 	var total_time = $Timer2.wait_time
 	var t = time_left_seconds / total_time 
-	#var elapsed = (Time.get_ticks_msec() / 1000.0) - music_start_time
-	#var duration = $Timer2.wait_time
 	 
 	if time_left_seconds < 11.0 and !$Timer2.is_stopped():
 		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
@@ -339,6 +333,7 @@ func check_code():
 	if count == 4:
 		
 		if code == "ypPg":
+			Global.bedroomfail = false
 			MusicManager.play_scene_music("menu")
 			$Timer2.stop() 
 			$AudioStreamPlayer.play()

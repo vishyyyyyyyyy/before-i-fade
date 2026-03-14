@@ -13,14 +13,16 @@ var segment_data := [
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #neighbor
 	{ "starts": [0.0, 4.0, 10.0, 14.0], "ends": [2.0, 6.0, 12.0, 16.0] }, #ghosttext2
 	{ "starts": [0.0, 4.0, 10.0, 16.0, 20.0], "ends": [2.0, 8.0, 14.0, 18.0, 24.0] }, #ghosttext3
-	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] } #ghosttext4
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, #ghosttext4
+	{ "starts": [0.0], "ends": [2.0] } #bedroom fail 
 ]
 @onready var anim_players := [
 	$CanvasLayer/ghosttext1,
 	$"CanvasLayer/neighbor talk",
 	$CanvasLayer/ghosttext2,
 	$CanvasLayer/ghosttext3,
-	$CanvasLayer/ghosttext4
+	$CanvasLayer/ghosttext4,
+	$CanvasLayer/hallwayfailghost
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -44,9 +46,29 @@ func toggle_pause():
 	
 signal dialogue_finished(index)
 
+var hearts = 3
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
 
 
-func _ready() -> void:
+func _ready():
+	Global.hallwayfail = true
+	if Global.hallwayfail == true:
+		$CanvasLayer/hallwayfailghost/Label.text  = repeat_lines.pick_random()
+		fade_out_music()
+		$CanvasLayer/failpuzzlecutscene/AnimationPlayer.play("text")
+		await get_tree().create_timer(16).timeout
+		await start_dialogue(5)
+	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
+		
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -58,7 +80,7 @@ func _ready() -> void:
 	$CanvasLayer/AnimationPlayer/neighborForward.visible = false
 	$CanvasLayer/AnimationPlayer/neighborBackward.visible = false
 	$CanvasLayer/AnimationPlayer/neighborLook.visible = false
-	Global.reusabledesk =2
+	Global.reusabledesk = 2
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	ghosttext1()
 	for piece in $CanvasLayer/puzzle/pieces.get_children():
@@ -94,6 +116,10 @@ func _process(delta: float) -> void:
 		anim.pause()
 		animating = false
 
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+	
 func start_dialogue(index: int):
 	# Safety
 	if index >= anim_players.size():
@@ -116,6 +142,11 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+		
 		if Global.character =="girlGhost":
 			anim_name = "girltext"
 
@@ -125,6 +156,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 1:
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+		
 		$CanvasLayer/ghosttext1/Label2.visible=false
 		$CanvasLayer/ghosttext1/GirlGhost.visible=false
 		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
@@ -134,6 +170,11 @@ func start_dialogue(index: int):
 		anim_name = "neighbortext"
 	
 	if anim_index == 2:
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+		
 		$CanvasLayer/ghosttext1/Label2.visible=false
 		$CanvasLayer/ghosttext1/GirlGhost.visible=false
 		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
@@ -152,6 +193,11 @@ func start_dialogue(index: int):
 		else:
 			print("error animating text")
 	if anim_index == 3: 
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+		
 		$"CanvasLayer/ghosttext2/Label4".visible=false
 		$CanvasLayer/ghosttext2/BoyGhost.visible=false
 		$CanvasLayer/ghosttext2/skip.visible=false
@@ -176,6 +222,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 		
 	if anim_index == 4:
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+			
 		$CanvasLayer/ghosttext3/Label5.visible=false
 		$CanvasLayer/ghosttext3/BoyGhost.visible=false
 		$CanvasLayer/ghosttext3/GirlGhost.visible=false
@@ -205,6 +256,14 @@ func start_dialogue(index: int):
 		else:
 			print("error animating text")
 		
+	if anim_index == 5: 
+		if Global.character =="girlGhost":
+			anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
+		else:
+			print("error animating text")		
 		
 	anim.play(anim_name) 
 	   
@@ -256,6 +315,12 @@ func end_dialogue():
 		$CanvasLayer/ghosttext4/BoyGhost.visible=false
 		$CanvasLayer/ghosttext4/skip.visible=false
 		
+	if anim_index == 5:
+		$CanvasLayer/hallwayfailghost/Label.visible=false
+		$CanvasLayer/hallwayfailghost/GirlGhost.visible=false
+		$CanvasLayer/hallwayfailghost/BoyGhost.visible=false
+		$CanvasLayer/hallwayfailghost/skip.visible=false
+		
 	emit_signal("dialogue_finished", anim_index)
 
 
@@ -284,6 +349,7 @@ func ghosttext1():
 func modulate():
 	$CanvasLayer/Camera2D.shake(2, 1.4)
 	if Global.character == "girlGhost":
+		$CanvasLayer/AnimationPlayer/neighbor.visible=true
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
@@ -296,6 +362,7 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 		$CanvasLayer/AnimationPlayer/neighbor.visible = true
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer/neighbor.visible=false
 		$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 		$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=false
@@ -308,6 +375,7 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=true
 		$CanvasLayer/AnimationPlayer/neighbor.visible = false
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer/neighbor.visible=true
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
@@ -335,6 +403,7 @@ func modulate():
 		unlock_explore()
 		
 	if Global.character == "boyGhost":
+		$CanvasLayer/AnimationPlayer/neighbor.visible=true
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
@@ -346,6 +415,7 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer/neighbor.visible=false
 		$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 		$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=false
@@ -356,8 +426,8 @@ func modulate():
 		$CanvasLayer3/CanvasModulate/Picturepiece2.visible=true
 		$CanvasLayer3/CanvasModulate/Picturepiece3.visible=true
 		$CanvasLayer3/CanvasModulate/Picturepiece4.visible=true
-		
 		await get_tree().create_timer(0.5).timeout
+		$CanvasLayer/AnimationPlayer/neighbor.visible=true
 		$CanvasLayer3/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
@@ -459,6 +529,16 @@ func _on_button_pressed():
 	$CanvasLayer/Node3/Label5.visible=true
 	$CanvasLayer/puzzle.visible=true
 	$CanvasLayer/Label8.visible=true
+	if hearts == 3:
+			$CanvasLayer/Node3/Heart.visible=true
+			$CanvasLayer/Node3/Heart2.visible=true
+			$CanvasLayer/Node3/Heart3.visible=true
+	if hearts == 2:
+			$CanvasLayer/Node3/Heart.visible=true
+			$CanvasLayer/Node3/Heart2.visible=true
+	if hearts == 1:
+			$CanvasLayer/Node3/Heart.visible=true
+			
 	if Global.character== "girlGhost":
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
 		$CanvasLayer3/CanvasModulate/Boyframe5.visible=true
@@ -474,9 +554,6 @@ func _on_button_pressed():
 		$CanvasLayer/puzzle/pieces/piece15.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomLeft.png")
 		$CanvasLayer/puzzle/pieces/piece16.texture = load("res://assets/hallwayPuzzlePics/girlframeBottomRight.png")
 		
-
-		
-	
 func hallwaypuzzle():
 	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.322, 0.278)
@@ -517,18 +594,39 @@ func _on_piece_snapped():
 			print("Picture", picture_id, "complete!")
 		if (check_picture_complete(0) && check_picture_complete(1) && check_picture_complete(2) && check_picture_complete(3)):
 			print("puzzle complete!")
+			Global.hallwayfail = false
 			$CanvasLayer/Node3/Timer2.stop()
 			$CanvasLayer/Node3/Correct.visible=true
 			$CanvasLayer/Node3/AudioStreamPlayer.play()
 			afterpuzzle()
 			
 			
-func _on_timer_2_timeout() -> void:
+func _on_timer_2_timeout():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	$CanvasLayer/Node3/Wrong.visible=true
 	$CanvasLayer/Node3/AudioStreamPlayer2.play()
 	$CanvasLayer/Node3/Timer2.stop()
+	hearts -= 1
+	if hearts  ==2:
+		$CanvasLayer/Node3/Heart3.visible=false
+		$CanvasLayer/Node3/Heart6.visible=true
+		
+	elif hearts  ==1:
+		$CanvasLayer/Node3/Heart2.visible=false
+		$CanvasLayer/Node3/Heart5.visible=true
+
+	elif hearts <= 0:
+		$CanvasLayer/Node3/Heart.visible=false
+		$CanvasLayer/Node3/Heart4.visible=true
+		Global.hallwayfail = true
+		$CanvasLayer/Node3/Timer2.stop() 
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/hallway.tscn")
+		return
+	
+	else:
+		return
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Wrong.visible=false
 	$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))

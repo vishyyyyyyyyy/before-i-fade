@@ -13,3 +13,4 @@ var charName = ""
 
 var ending= 0
 var bedroomfail= false
+var hallwayfail= false
