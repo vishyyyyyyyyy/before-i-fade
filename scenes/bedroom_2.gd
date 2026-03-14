@@ -63,7 +63,13 @@ func _ready():
 	$Node/diary.input_event.connect(func(area, event, shape_idx):
 		_on_area_clicked(area, event, shape_idx, "diary")
 		)
-	modulate()
+		
+	if Global.bedroomfail == true:
+		$CanvasLayer/failpuzzlecutscene/AnimationPlayer.play("text")
+		await $CanvasLayer/failpuzzlecutscene/AnimationPlayer.animation_finished
+		modulate()
+	else:
+		modulate()
 	
 func _process(_delta):
 	if interact_target != "":
@@ -530,7 +536,7 @@ func _on_desk_area_pressed():
 	$Node2/Area2D.visible=false
 	$Node/familyphoto/CollisionShape2D.disabled=true
 	$Node/diary/CollisionPolygon2D.disabled=true
-	get_tree().change_scene_to_file("res://assets/bedroompuzzle.tscn")
+	get_tree().change_scene_to_file("res://scenes/bedroompuzzle.tscn")
 	
 
 

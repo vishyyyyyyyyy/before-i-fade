@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=114 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scenes/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_4saaw"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_rik1q"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="14_vthm4"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="15_rme15"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="16_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_ij3ta"]
@@ -1512,6 +1513,9 @@ script = ExtResource("34_tvp18")
 position = Vector2(1907, 882)
 scale = Vector2(3, 3)
 
+[node name="failpuzzlecutscene" parent="CanvasLayer" instance=ExtResource("14_vthm4")]
+visible = false
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -1928,11 +1932,13 @@ disabled = true
 debug_color = Color(0, 0, 0, 0.42)
 
 [node name="Node2D" parent="explore/safe" instance=ExtResource("30_cjbtu")]
-visible = false
 
 [node name="letterE" parent="explore/safe/Node2D/EAnim" index="0"]
 visible = false
+modulate = Color(1, 1, 1, 0.987258)
 position = Vector2(214, 512)
+scale = Vector2(2.49794, 2.49794)
+offset = Vector2(0, -0.30847)
 
 [node name="bed" type="Area2D" parent="explore"]
 position = Vector2(29, -338)

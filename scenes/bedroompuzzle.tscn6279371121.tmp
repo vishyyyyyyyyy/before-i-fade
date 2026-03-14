@@ -1259,52 +1259,44 @@ wait_time = 25.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(264, 80)
 scale = Vector2(3.91016, 3.91016)
 texture = ExtResource("32_n12it")
 
 [node name="Heart" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(275, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("33_n12it")
 
 [node name="Heart2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(355, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("33_n12it")
 
 [node name="Heart3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(438, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("33_n12it")
 
 [node name="Heart4" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
 position = Vector2(275, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("34_xjppy")
 
 [node name="Heart5" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
 position = Vector2(355, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("34_xjppy")
 
 [node name="Heart6" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
 position = Vector2(438, 85)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("34_xjppy")
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 offset_left = 38.0
 offset_top = 54.0
 offset_right = 214.0

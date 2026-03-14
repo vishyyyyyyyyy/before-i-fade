@@ -6,6 +6,9 @@ var code = ""
 var count = 0
 var time_left_seconds
 
+var hearts = 3
+
+
 
 var segment_data := [
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #puzzle instructions
@@ -29,6 +32,7 @@ signal dialogue_finished(index)
 
 
 func _ready():
+	
 	$Node3/Label2.visible=true
 	$Node3/Label.visible=true
 	$Node3/Label3.visible=true
@@ -53,7 +57,6 @@ var diary_started := false
 func _input(event):
 	if not dialogue_active or diary_started:
 		return
-
 	if event.is_action_pressed("ui_accept") and diary_started:
 		diary_started = false
 		play_diary_sequence()
@@ -67,7 +70,16 @@ func end_dialogue():
 
 	print("Dialogue finished:", anim_index)
 	if anim_index == 0:
+		$AnimationPlayer/Label3.visible=true
 		$AnimationPlayer/skip.visible=false
+		$AnimationPlayer/Bedss.visible=false
+		$AnimationPlayer/Label4.visible=false
+		$Timer.visible=true
+		$Heart.visible=true
+		$Heart2.visible=true
+		$Heart3.visible=true
+		$Label2.visible=true
+		
 
 	if anim_index ==1:
 		pass
@@ -76,6 +88,8 @@ func end_dialogue():
 		$AnimationPlayer/skip.visible=false
 		$AnimationPlayer2/skip.visible=false
 		$AnimationPlayer3/skip.visible=false
+		$AnimationPlayer/Bedss.visible=false
+		$AnimationPlayer/Label4.visible=false
 		
 
 	emit_signal("dialogue_finished", anim_index)
@@ -108,11 +122,13 @@ func _on_continue_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
 	print("Node was clicked!")
+	await start_dialogue(0)
+	$CanvasModulate/blobGhostPlayer.position.x =506.0 
+	$CanvasModulate/blobGhostPlayer.position.y =533 #1912.0 orignal, 535.0
 	$Timer2.start()
 	$desk/CollisionShape2D.disabled=true
 	$Label2.visible=true
 	$Timer.visible=true
-	await start_dialogue(0)
 	$desk/CollisionShape2D.disabled=false
 	$Node3/continue/CollisionShape2D.disabled=true
 	$desk.clicked.connect(_on_desk_clicked)
@@ -157,6 +173,10 @@ func _process(delta: float) -> void:
 		anim.pause()
 		animating = false
 	
+	#if $AnimationPlayer/Label3.visible:
+		#$Node/Bedss.visible = false
+	#elif $AnimationPlayer/Label.visible:
+		#$Node/Bedss.visible = true
 
 
 func start_dialogue(index: int):
@@ -255,9 +275,26 @@ func _on_texture_button_4_pressed() -> void:
 			
 
 func _on_timer_2_timeout() -> void:
+	hearts -= 1
+	if hearts  ==2:
+		$Heart3.visible=false
+		$Heart6.visible=true
+		
+	elif hearts  ==1:
+		$Heart2.visible=false
+		$Heart5.visible=true
+
+	elif hearts <= 0:
+		$Heart.visible=false
+		$Heart4.visible=true
+		Global.bedroomfail = true
+		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+	
+	else:
+		return
 	$CanvasLayer5/Wrong.visible = true
 	$AudioStreamPlayer2.play()
-	await get_tree().create_timer(2).timeout
+		
 	$Label2.add_theme_color_override("font_color", Color(0,0,0))
 	$Timer2.start()
 	reset_puzzle()
@@ -288,11 +325,17 @@ func check_code():
 			$CanvasLayer5/Correct.visible = false
 			wrong()
 			
+
 func reset_puzzle():
 	code = ""
 	count = 0
 	$CanvasLayer5/Wrong.visible = false
+	$AnimationPlayer/Label3.visible=false
 	$CanvasLayer5/Correct.visible = false
+	$CanvasLayer3.visible=false
+	$CanvasLayer2.visible=false
+	$CanvasLayer4.visible=false
+	$CanvasLayer.visible=false
 	
 	$"Deskcloseup2".visible=false
 	$"CanvasLayer".visible = false
@@ -306,11 +349,34 @@ func reset_puzzle():
 	await start_dialogue(0)
 	
 func wrong():
+	hearts -= 1
+	if hearts  ==2:
+		$Heart3.visible=false
+		$Heart6.visible=true
+		
+	elif hearts  ==1:
+		$Heart2.visible=false
+		$Heart5.visible=true
+
+	elif hearts <= 0:
+		$Heart.visible=false
+		$Heart4.visible=true
+		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+	
+	else:
+		return
+	$TextureRect/TextureButton.disabled= true
+	$TextureRect/TextureButton2.disabled= true
+	$TextureRect/TextureButton3.disabled= true
+	$TextureRect/TextureButton4.disabled= true
+	
 	code = ""
 	count = 0
-	$CanvasLayer5/Wrong.visible = false
+	$CanvasLayer5/Wrong.visible = true
 	$CanvasLayer5/Correct.visible = false
 	
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer5/Wrong.visible = false
 	$"Deskcloseup2".visible=false
 	$"CanvasLayer".visible = false
 	$"CanvasLayer2".visible = false
@@ -320,7 +386,7 @@ func wrong():
 	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
-	$AnimationPlayer.play("text")
+	reset_puzzle()
 	
 func correct():
 	$CanvasLayer4.visible=false
