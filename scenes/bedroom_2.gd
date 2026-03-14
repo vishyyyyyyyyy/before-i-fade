@@ -13,13 +13,15 @@ var segment_data := [
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] },
 	{ "starts": [0.0, 3.0, 7.0], "ends": [1.0, 5.0, 9.0] }, #photo
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, #diary
+	{ "starts": [0.0], "ends": [2.0] } #bedroom fail 
 	
 ]
 @onready var anim_players := [
 	$CanvasLayer/AnimationPlayer2,
 	$CanvasLayer/AnimationPlayer,
 	$Node/AnimationPlayer, #family photo player
-	$Node/AnimationPlayer2 #diary player
+	$Node/AnimationPlayer2, #diary player
+	$CanvasLayer/bedroomfailghost # bedroom fail
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -30,6 +32,15 @@ var segment_starts
 var segment_ends
 	
 signal dialogue_finished(index)
+
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
 
 @onready var pause_menu = $CanvasPause/PauseMenu
 func toggle_pause():
@@ -64,12 +75,21 @@ func _ready():
 		_on_area_clicked(area, event, shape_idx, "diary")
 		)
 		
+	Global.bedroomfail = true
 	if Global.bedroomfail == true:
+		$CanvasLayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
+		fade_out_music()
 		$CanvasLayer/failpuzzlecutscene/AnimationPlayer.play("text")
-		await $CanvasLayer/failpuzzlecutscene/AnimationPlayer.animation_finished
+		await get_tree().create_timer(16).timeout
 		modulate()
 	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
 		modulate()
+
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
 	
 func _process(_delta):
 	if interact_target != "":
@@ -106,6 +126,10 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$CanvasLayer/bedroomfailghost/Label.visible=false
+		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer/bedroomfailghost/skip.visible=false
 		if Global.character =="girlGhost":
 			anim_name = "girlghost"
 
@@ -116,6 +140,11 @@ func start_dialogue(index: int):
 	
 	if anim_index == 1:
 		print("2nd anim6")
+		$CanvasLayer/bedroomfailghost/Label.visible=false
+		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer/bedroomfailghost/skip.visible=false
+	
 		$CanvasLayer/AnimationPlayer2/Label.visible=false
 		$CanvasLayer/AnimationPlayer2/Label2.visible=false
 		$CanvasLayer/AnimationPlayer2/Label3.visible=false
@@ -135,6 +164,10 @@ func start_dialogue(index: int):
 			
 	if anim_index == 2:
 		print("photo anim")
+		$CanvasLayer/bedroomfailghost/Label.visible=false
+		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer/bedroomfailghost/skip.visible=false
 		$CanvasLayer/AnimationPlayer2/GirlGhost.visible=false
 		$CanvasLayer/AnimationPlayer2/GirlGhost2.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
@@ -161,6 +194,10 @@ func start_dialogue(index: int):
 	
 	if anim_index == 3:
 		print("diary anim")
+		$CanvasLayer/bedroomfailghost/Label.visible=false
+		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer/bedroomfailghost/skip.visible=false
 		$CanvasLayer/AnimationPlayer2/GirlGhost.visible=false
 		$CanvasLayer/AnimationPlayer2/GirlGhost2.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
@@ -184,6 +221,16 @@ func start_dialogue(index: int):
 			anim_name ="boydiarytext"
 		else:
 			print("error animating text")
+			
+	if anim_index ==4:
+		if Global.character =="girlGhost":
+			anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
+		else:
+			print("error animating text")
+		
 	anim.play(anim_name) 
 	   
 	await dialogue_finished 
@@ -250,6 +297,12 @@ func end_dialogue():
 		$Node/AnimationPlayer2/Label.visible=false
 		$Node/AnimationPlayer2/Deskcloseup2.visible=false
 		
+	if anim_index ==4 :
+		$CanvasLayer/bedroomfailghost/Label.visible=false
+		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer/bedroomfailghost/skip.visible=false
+		
 	emit_signal("dialogue_finished", anim_index)
 
 
@@ -288,6 +341,8 @@ func modulate():
 		$CanvasLayer2/CanvasModulate2.color = Color(1,1,1,1)
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
+		if Global.bedroomfail ==true:
+			await start_dialogue(4)
 		start_dialogue(0)
 		dialogue_active = true
 	 
@@ -308,6 +363,8 @@ func modulate():
 		$CanvasModulate.color = Color(1,1,1,1)
 		$CanvasModulate/Calendar2.visible=true
 		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
+		if Global.bedroomfail ==true:
+			await start_dialogue(4)
 		start_dialogue(0)
 		dialogue_active = true
 

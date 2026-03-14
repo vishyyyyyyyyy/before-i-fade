@@ -5,6 +5,7 @@ extends Node2D
 var code = ""
 var count = 0
 var time_left_seconds
+var music_start_time = 0.0
 
 var hearts = 3
 
@@ -27,12 +28,12 @@ var segment_index := 0
 var animating := true
 var segment_starts
 var segment_ends
-	
+
 signal dialogue_finished(index)
 
 
 func _ready():
-	
+	MusicManager.music_player.pitch_scale = 1.0
 	$Node3/Label2.visible=true
 	$Node3/Label.visible=true
 	$Node3/Label3.visible=true
@@ -70,15 +71,23 @@ func end_dialogue():
 
 	print("Dialogue finished:", anim_index)
 	if anim_index == 0:
+		$desk/CollisionShape2D.disabled=false
 		$AnimationPlayer/Label3.visible=true
 		$AnimationPlayer/skip.visible=false
 		$AnimationPlayer/Bedss.visible=false
 		$AnimationPlayer/Label4.visible=false
 		$Timer.visible=true
-		$Heart.visible=true
-		$Heart2.visible=true
-		$Heart3.visible=true
+		if hearts == 3:
+			$Heart.visible=true
+			$Heart2.visible=true
+			$Heart3.visible=true
+		if hearts == 2:
+			$Heart.visible=true
+			$Heart2.visible=true
+		if hearts == 1:
+			$Heart.visible=true
 		$Label2.visible=true
+		$Timer2.start()
 		
 
 	if anim_index ==1:
@@ -121,6 +130,8 @@ func _on_name_submitted(text: String):
 func _on_continue_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
+	music_start_time = Time.get_ticks_msec() / 1000.0
+	#MusicManager.music_player.pitch_scale = 0.75
 	print("Node was clicked!")
 	await start_dialogue(0)
 	$CanvasModulate/blobGhostPlayer.position.x =506.0 
@@ -147,20 +158,25 @@ func _on_desk_clicked():
 
 
 func _process(delta: float) -> void:
+	#if $Timer2.is_stopped and !_on_continue_pressed():
+		#MusicManager.music_player.pitch_scale = 0.75
+
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
 	$Label2.add_theme_color_override("font_color", Color(0,0,0))
 	
 	var total_time = $Timer2.wait_time
 	var t = time_left_seconds / total_time 
+	#var elapsed = (Time.get_ticks_msec() / 1000.0) - music_start_time
+	#var duration = $Timer2.wait_time
 	 
-	if time_left_seconds < 11.0:
+	if time_left_seconds < 11.0 and !$Timer2.is_stopped():
+		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$Label2.add_theme_color_override("font_color", Color(1,0,0))
 		else:
 			$Label2.add_theme_color_override("font_color", Color(0,0,0))
-	
-	MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+
 	
 	if not dialogue_active or not animating:
 		return
@@ -274,7 +290,16 @@ func _on_texture_button_4_pressed() -> void:
 	check_code()
 			
 
-func _on_timer_2_timeout() -> void:
+func _on_timer_2_timeout():
+	$Timer2.stop()
+	$TextureRect/TextureButton.disabled= true
+	$TextureRect/TextureButton2.disabled= true
+	$TextureRect/TextureButton3.disabled= true
+	$TextureRect/TextureButton4.disabled= true
+	$CanvasLayer5/Wrong.visible = true
+	$AudioStreamPlayer2.play()
+	
+	MusicManager.music_player.pitch_scale = 1.0
 	hearts -= 1
 	if hearts  ==2:
 		$Heart3.visible=false
@@ -288,15 +313,26 @@ func _on_timer_2_timeout() -> void:
 		$Heart.visible=false
 		$Heart4.visible=true
 		Global.bedroomfail = true
+		$Timer2.stop() 
+		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+		return
 	
 	else:
 		return
-	$CanvasLayer5/Wrong.visible = true
-	$AudioStreamPlayer2.play()
 		
+	await get_tree().create_timer(2).timeout
+	$CanvasLayer5/Wrong.visible = false
+	$"Deskcloseup2".visible=false
+	$"CanvasLayer".visible = false
+	$"CanvasLayer2".visible = false
+	$"CanvasLayer3".visible = false
+	$"CanvasLayer4".visible = false
+	$CanvasLayer/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
+	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
 	$Label2.add_theme_color_override("font_color", Color(0,0,0))
-	$Timer2.start()
 	reset_puzzle()
 	
 func check_code():
@@ -329,6 +365,7 @@ func check_code():
 func reset_puzzle():
 	code = ""
 	count = 0
+	$desk/CollisionShape2D.disabled=true
 	$CanvasLayer5/Wrong.visible = false
 	$AnimationPlayer/Label3.visible=false
 	$CanvasLayer5/Correct.visible = false
@@ -349,6 +386,16 @@ func reset_puzzle():
 	await start_dialogue(0)
 	
 func wrong():
+	$TextureRect/TextureButton.disabled= true
+	$TextureRect/TextureButton2.disabled= true
+	$TextureRect/TextureButton3.disabled= true
+	$TextureRect/TextureButton4.disabled= true
+	
+	code = ""
+	count = 0
+	$CanvasLayer5/Wrong.visible = true
+	$CanvasLayer5/Correct.visible = false
+	
 	hearts -= 1
 	if hearts  ==2:
 		$Heart3.visible=false
@@ -361,19 +408,15 @@ func wrong():
 	elif hearts <= 0:
 		$Heart.visible=false
 		$Heart4.visible=true
+		$Timer2.stop() 
+		await get_tree().create_timer(1).timeout
+		Global.bedroomfail = true
 		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+		return
 	
 	else:
 		return
-	$TextureRect/TextureButton.disabled= true
-	$TextureRect/TextureButton2.disabled= true
-	$TextureRect/TextureButton3.disabled= true
-	$TextureRect/TextureButton4.disabled= true
-	
-	code = ""
-	count = 0
-	$CanvasLayer5/Wrong.visible = true
-	$CanvasLayer5/Correct.visible = false
+		
 	
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer5/Wrong.visible = false

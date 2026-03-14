@@ -823,6 +823,7 @@ script = ExtResource("14_irwd8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
 position = Vector2(631.333, -455.583)
 shape = SubResource("RectangleShape2D_m6olq")
+disabled = true
 
 [node name="Node2D" parent="desk" instance=ExtResource("15_knt1j")]
 visible = false
@@ -905,6 +906,7 @@ scale = Vector2(3.18158, 3.18158)
 texture = ExtResource("20_2srh7")
 
 [node name="Label2" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -991,6 +993,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="skip" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1255,7 +1258,7 @@ offset_bottom = 1087.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 25.0
+wait_time = 30.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]

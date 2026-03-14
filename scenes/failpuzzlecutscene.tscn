@@ -216,7 +216,6 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
-visible = false
 offset_right = 2303.0
 offset_bottom = 1291.0
 mouse_filter = 2
@@ -224,7 +223,6 @@ color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-visible = false
 z_index = 1
 offset_left = 323.0
 offset_top = 576.0
@@ -233,14 +231,13 @@ offset_bottom = 723.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "Something happened here…"
+text = "It can't end like this."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="AnimationPlayer"]
-visible = false
 z_index = 1
 offset_left = 317.0
 offset_top = 578.0
@@ -249,7 +246,7 @@ offset_bottom = 725.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "Something happened here…"
+text = "It can't end like this."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -265,7 +262,7 @@ offset_bottom = 723.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "I know it did."
+text = "I need to know the truth."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -281,7 +278,7 @@ offset_bottom = 727.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "I know it did."
+text = "I need to know the truth."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -297,7 +294,7 @@ offset_bottom = 723.0
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "If only I had a little more time... "
+text = "One more time..."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -313,7 +310,7 @@ offset_bottom = 727.0
 theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_rkoc2")
 theme_override_font_sizes/font_size = 72
-text = "If only I had a little more time... "
+text = "One more time..."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0

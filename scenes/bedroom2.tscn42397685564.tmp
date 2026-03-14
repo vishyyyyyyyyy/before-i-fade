@@ -90,9 +90,6 @@ size = Vector2(2309.25, 174.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
 size = Vector2(361, 27)
 
-[sub_resource type="Animation" id="Animation_mpcww"]
-length = 0.001
-
 [sub_resource type="Animation" id="Animation_vthm4"]
 resource_name = "repeatboy"
 length = 4.0
@@ -144,6 +141,9 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+
+[sub_resource type="Animation" id="Animation_mpcww"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_l4xn1"]
 resource_name = "repeatgirl"
