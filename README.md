@@ -55,7 +55,7 @@ There are **two possible endings**.
 **Reusable scenes:**
 - managed global variables to increment scene counters for correct scene triggers
 
-**Visual Effects: **
+**Visual Effects:**
 - Camera shake effects
 - Modulations to add ghostly effects 
 - Animated overlays and hover states
