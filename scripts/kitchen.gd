@@ -11,7 +11,8 @@ var segment_data := [
 	{ "starts": [0.0, 6.0, 10.0], "ends": [3.0, 8.0, 13.0] }, #ghost think ab aunt
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, #fridge
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }, #b4 challenge
-	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] } #after challenge
+	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, #after challenge
+	{ "starts": [0.0], "ends": [2.0] }, #fail puzzle
 	
 ]
 @onready var anim_players := [
@@ -20,7 +21,8 @@ var segment_data := [
 	$ghostlayer/ghosttext2,
 	$CanvasLayer2/CanvasModulate/AnimationPlayer, #fridge
 	$CanvasLayer4/Node3/ghosttext, #b4 challenge
-	$CanvasLayer4/Node3/ghosttext2 #after challenge
+	$CanvasLayer4/Node3/ghosttext2, #after challenge
+	$ghostlayer/kitchenfailghost #fail puzzle
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -33,6 +35,17 @@ var segment_ends
 signal dialogue_finished(index)
 
 @onready var pause_menu = $CanvasPause/PauseMenu
+
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
+
+
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
 	get_tree().paused = !get_tree().paused
@@ -41,8 +54,31 @@ func toggle_pause():
 	$CanvasPause/Menucard2.visible=true
 
 
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 
 func _ready() -> void:
+	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
+	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
+	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
+	#Global.kitchenfail = true
+	$CanvasLayer4/ColorRect2.visible=false
+	if Global.kitchenfail == true:
+		$ghostlayer/kitchenfailghost/Label.text  = repeat_lines.pick_random()
+		$CanvasLayer2/failpuzzlecutscene/AnimationPlayer.play("text")
+		fade_out_music()
+		await get_tree().create_timer(16).timeout
+		fade_in_music()
+		await start_dialogue(6)
+	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
+		
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -65,9 +101,6 @@ func _ready() -> void:
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
 	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer4/foodchoice.challengecompleted.connect(challengecompleted)
-	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
 	start()
 	
 func _process(delta: float) -> void:
@@ -121,6 +154,10 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
 		
 		if Global.character =="girlGhost":
 			anim_name = "girl"
@@ -131,6 +168,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 1:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
+		
 		$ghostlayer/ghosttext1/GirlGhost.visible=false
 		$ghostlayer/ghosttext1/BoyGhost.visible=false
 		$ghostlayer/ghosttext1/Label.visible=false
@@ -144,6 +186,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 2:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
+		
 		$ghostlayer/aunttext/aunt2.visible=false
 		$ghostlayer/ghosttext1/GirlGhost.visible=false
 		$ghostlayer/ghosttext1/BoyGhost.visible=false
@@ -169,6 +216,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 3:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
+		
 		$ghostlayer/ghosttext2/Label3.visible=false
 		$ghostlayer/ghosttext2/GirlGhost.visible=false
 		$ghostlayer/ghosttext2/BoyGhost.visible=false
@@ -199,6 +251,11 @@ func start_dialogue(index: int):
 		
 		
 	if anim_index == 4:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
+		
 		$CanvasLayer2/CanvasModulate/AnimationPlayer/Label2.visible=false
 		$CanvasLayer2/CanvasModulate/AnimationPlayer/GirlGhost.visible=false
 		$CanvasLayer2/CanvasModulate/AnimationPlayer/BoyGhost.visible=false
@@ -234,6 +291,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index ==5:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
+		
 		
 		$CanvasLayer4/Node3/ghosttext/Label3.visible=false
 		$CanvasLayer4/Node3/ghosttext/GirlGhost.visible=false
@@ -273,7 +335,15 @@ func start_dialogue(index: int):
 			anim_name ="boy"
 		else:
 			print("error animating text")
-		
+	
+	if anim_index == 6: 
+		if Global.character =="girlGhost":
+			anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
+		else:
+			print("error animating text")
 	anim.play(anim_name) 
 	   
 	await dialogue_finished 
@@ -340,6 +410,12 @@ func end_dialogue():
 		$CanvasLayer4/Node3/ghosttext2/GirlGhost2.visible=false
 		$CanvasLayer4/Node3/ghosttext2/skip.visible=false
 		$CanvasLayer4/Node3/ghosttext2/BoyGhost2.visible=false
+		
+	if anim_index ==6:
+		$ghostlayer/kitchenfailghost/Label.visible=false
+		$ghostlayer/kitchenfailghost/GirlGhost.visible=false
+		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
+		$ghostlayer/kitchenfailghost/skip.visible=false
 		
 		
 	emit_signal("dialogue_finished", anim_index)
@@ -535,6 +611,9 @@ func all_non_photos_clicked() -> bool:
 func on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
+	$CanvasLayer4/Node3/Heart.visible=true
+	$CanvasLayer4/Node3/Heart2.visible=true
+	$CanvasLayer4/Node3/Heart3.visible=true
 	$ghostlayer/explorelabel.visible=false
 	$CanvasLayer4/Node3/Timer.visible=true
 	$CanvasLayer4/Node3/Label5.visible=true

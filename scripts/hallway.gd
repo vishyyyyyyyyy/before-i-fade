@@ -33,7 +33,6 @@ var segment_starts
 var segment_ends
 
 
-
 @onready var pause_menu = $CanvasPause/PauseMenu
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
@@ -42,8 +41,6 @@ func toggle_pause():
 	$CanvasPause/ColorRect2.visible=true
 	$CanvasPause/Menucard2.visible=true
 
-
-	
 signal dialogue_finished(index)
 
 var hearts = 3
@@ -58,12 +55,14 @@ var repeat_lines = [
 
 
 func _ready():
-	Global.hallwayfail = true
+	#Global.hallwayfail = true
 	if Global.hallwayfail == true:
 		$CanvasLayer/hallwayfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()
 		$CanvasLayer/failpuzzlecutscene/AnimationPlayer.play("text")
 		await get_tree().create_timer(16).timeout
+		fade_in_music()
+		MusicManager.play_scene_music("menu")
 		await start_dialogue(5)
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
@@ -118,7 +117,11 @@ func _process(delta: float) -> void:
 
 func fade_out_music():
 	var tween = create_tween()
-	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 8.0)
+
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 	
 func start_dialogue(index: int):
 	# Safety

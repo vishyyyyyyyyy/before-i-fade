@@ -95,6 +95,9 @@ texture = ExtResource("2_nlnob")
 [sub_resource type="TileSet" id="TileSet_y7q4l"]
 sources/0 = SubResource("TileSetAtlasSource_nlnob")
 
+[sub_resource type="Animation" id="Animation_axhgs"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_swrf8"]
 resource_name = "repeatboy"
 length = 4.0
@@ -198,9 +201,6 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
-
-[sub_resource type="Animation" id="Animation_axhgs"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8eh23"]
 _data = {
@@ -1797,7 +1797,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/hallwayfailghost"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1826,7 +1825,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_172kp")
 
 [node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/hallwayfailghost"]
-visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
@@ -1834,7 +1832,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_bje8i")
 
 [node name="skip" type="Label" parent="CanvasLayer/hallwayfailghost"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2541,7 +2538,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 5.0
+wait_time = 45.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]

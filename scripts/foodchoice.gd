@@ -6,6 +6,9 @@ var stirring := false
 var stir_stage := 0
 var stir_timer := 0.0
 
+var hearts = 3
+
+
 signal challengecompleted
 
 func _ready() -> void:
@@ -178,6 +181,7 @@ func end_stirring():
 
 
 func _on_timer_2_timeout() -> void:
+	end_stirring()
 	$"../Sugar".visible = false
 	$"../Brocoli".visible = false
 	$"../Avocado".visible = false
@@ -219,6 +223,27 @@ func _on_timer_2_timeout() -> void:
 	$CollisionShape2D2.disabled=true
 	$CollisionShape2D4.disabled=true
 	$"../Node3/Wrong".visible=true
+	
+	hearts -= 1
+	if hearts  ==2:
+		$"../Node3/Heart3".visible=false
+		$"../Node3/Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Node3/Heart2".visible=false
+		$"../Node3/Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Node3/Heart".visible=false
+		$"../Node3/Heart4".visible=true
+		Global.hallwayfail = true
+		$"../Node3/Timer2".stop()
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
+		return
+	else:
+		return
+		
 	$"../Node3/AudioStreamPlayer2".play()
 	await get_tree().create_timer(2).timeout
 	$"../Node3/Label5".add_theme_color_override("font_color", Color(0,0,0))
@@ -259,13 +284,40 @@ func correct():
 	$"../Node3/AudioStreamPlayer".play() 
 	$"../Node3/Timer2".stop()
 	await get_tree().create_timer(2).timeout
+	$"../Node3/Heart".visible=false
+	$"../Node3/Heart2".visible=false 
+	$"../Node3/Heart3".visible=false
+	$"../Node3/Heart4".visible=false
+	$"../Node3/Heart5".visible=false
+	$"../Node3/Heart6".visible=false
 	$"../Node3/Correct".visible = false
 	emit_signal("challengecompleted")
 
 
 func incorrect():
+	end_stirring()
 	$"../Node3/Wrong".visible=true
 	$"../Node3/AudioStreamPlayer2".play()
+	hearts -= 1
+	if hearts  ==2:
+		$"../Node3/Heart3".visible=false
+		$"../Node3/Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Node3/Heart2".visible=false
+		$"../Node3/Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Node3/Heart".visible=false
+		$"../Node3/Heart4".visible=true
+		Global.hallwayfail = true
+		$"../Node3/Timer2".stop()
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
+		return
+	else:
+		return
+		
 	await get_tree().create_timer(2).timeout
 	$"../Sugar".visible = false
 	$"../Brocoli".visible = false

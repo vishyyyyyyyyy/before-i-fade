@@ -75,11 +75,14 @@ func _ready():
 		_on_area_clicked(area, event, shape_idx, "diary")
 		)
 	
+	#Global.bedroomfail = true
 	if Global.bedroomfail == true:
 		$CanvasLayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()
 		$CanvasLayer/failpuzzlecutscene/AnimationPlayer.play("text")
 		await get_tree().create_timer(16).timeout
+		fade_in_music()
+		MusicManager.play_scene_music("menu")
 		modulate()
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
@@ -89,6 +92,10 @@ func _ready():
 func fade_out_music():
 	var tween = create_tween()
 	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+	
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 	
 func _process(_delta):
 	if interact_target != "":
