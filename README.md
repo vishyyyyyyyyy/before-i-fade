@@ -31,6 +31,37 @@ There are **two possible endings**.
 
 ---
 
+## ⚙️ Core Systems
+Puzzles:
+- Built using Area2D with collision shapes and Texture2D buttons to detect input
+- Puzzle state stored using lists and dictionaries
+- Solutions checked dynamically
+- Utilize Godot signals to connect subscript challenges to main script for story progression
+
+Timer:
+- Timer node updated every frame using process() and displayed in a label
+- Force updating timer color theme with ```add_theme_color_override``` on even numbered seconds remaining
+
+Interactions:
+- Player interactions detected using Area2D Zones
+- Mapping input to esc, space, e, and left click
+
+Dialogues:
+- dialogues accessed using ```seek()``` in animation player to allow user input space for skip
+- keyframing visibility and characters displayed
+- storing time start and time end segments to seek to when input pressed
+- ```end_dialogue()``` called for immediate next story progression
+
+Reusable scenes:
+- managed global variables to increment scene counters for correct scene triggers
+
+Visual Effects: 
+- Camera shake effects
+- Modulations to add ghostly effects 
+- Animated overlays and hover states
+
+---
+
 ## 💻Tools and Languages
 
 - Godot Engine

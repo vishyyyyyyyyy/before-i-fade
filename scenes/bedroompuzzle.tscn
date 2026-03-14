@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=72 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rrknc"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_knt1j"]
@@ -31,9 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://dj78avoi0oiqr" path="res://assets/purple.png" id="28_t3s75"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_w08ox"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_ymrjm"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="31_moudo"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="32_n12it"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="32_sopt5"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="33_csq0v"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="33_n12it"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="34_i3nlh"]
 [ext_resource type="Texture2D" uid="uid://c0187ehsqv43i" path="res://assets/desk2.png" id="35_8re52"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="36_nvjgw"]
@@ -1219,13 +1220,26 @@ wait_time = 25.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(128, 80)
+position = Vector2(264, 80)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("31_moudo")
+texture = ExtResource("32_n12it")
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(275, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("33_n12it")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+position = Vector2(355, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("33_n12it")
+
+[node name="Heart3" type="Sprite2D" parent="."]
+position = Vector2(438, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("33_n12it")
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 offset_left = 38.0
 offset_top = 54.0
 offset_right = 214.0
