@@ -2388,17 +2388,17 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -596.0
-offset_top = -118.0
+offset_top = -142.0
 offset_right = 596.0
-offset_bottom = 8.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "\"There's only 4 magnet letters on the fridge (A, F, E, D). I wonder what it means.\"
-"
+text = "\"There's only 4 magnet letters on the fridge (A, F, E, D). I wonder what it means.\""
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -2411,9 +2411,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -126.0
-offset_right = 596.0
+offset_left = -748.0
+offset_top = -150.0
+offset_right = 740.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2421,6 +2422,7 @@ theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
 text = "\"I'll try to remember this incase it's somthing important.\""
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -3191,7 +3193,7 @@ text = "Follow the recipie instructions to bake cookies"
 horizontal_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer4/Node3"]
-wait_time = 4.0
+wait_time = 30.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer4/Node3"]

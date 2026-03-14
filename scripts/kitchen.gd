@@ -73,6 +73,8 @@ func _ready() -> void:
 		$CanvasLayer2/failpuzzlecutscene/AnimationPlayer.play("text")
 		fade_out_music()
 		await get_tree().create_timer(16).timeout
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
 		fade_in_music()
 		await start_dialogue(6)
 	else:

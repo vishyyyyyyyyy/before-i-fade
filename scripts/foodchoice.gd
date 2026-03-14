@@ -236,7 +236,7 @@ func _on_timer_2_timeout() -> void:
 	elif hearts <= 0:
 		$"../Node3/Heart".visible=false
 		$"../Node3/Heart4".visible=true
-		Global.hallwayfail = true
+		Global.kitchenfail = true
 		$"../Node3/Timer2".stop()
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
@@ -310,7 +310,7 @@ func incorrect():
 	elif hearts <= 0:
 		$"../Node3/Heart".visible=false
 		$"../Node3/Heart4".visible=true
-		Global.hallwayfail = true
+		Global.kitchenfail = true
 		$"../Node3/Timer2".stop()
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
