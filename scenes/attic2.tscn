@@ -2170,6 +2170,7 @@ physics_interpolation_mode = 2
 layer = 10
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasPause"]
+visible = false
 z_index = 2
 offset_left = -36.0
 offset_top = -14.0

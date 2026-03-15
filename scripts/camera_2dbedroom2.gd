@@ -4,7 +4,7 @@ var shake_strength: float = 0.0
 var shake_timer: float = 0.0
 
 @onready var player_layer = $".."
-@onready var furniture = $"../../CanvasModulate"
+@onready var furniture = [$"../../CanvasModulate/Desk", $"../../CanvasModulate/Bed", $"../../CanvasModulate/Safe", $"../../CanvasModulate/Window", $"../../CanvasModulate/Calendar", $"../../CanvasModulate/Calendar2"]
 
 func _process(delta):
 	if shake_timer > 0:
@@ -15,11 +15,13 @@ func _process(delta):
 		)
 		offset = shake_offset
 		player_layer.offset = shake_offset
-		furniture.offset = shake_offset
+		for item in furniture:
+			item.offset = shake_offset
 	else:
 		offset = Vector2.ZERO
 		player_layer.offset = Vector2.ZERO
-		furniture.offset = Vector2.ZERO
+	for item in furniture:
+		item.offset = Vector2.ZERO
 
 
 func shake(strength: float, duration: float):

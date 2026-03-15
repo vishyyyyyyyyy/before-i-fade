@@ -221,7 +221,7 @@ func start_dialogue(index: int):
 		$CanvasLayer/AnimationPlayer/Boy.visible=false
 		$CanvasLayer/AnimationPlayer/Boy2.visible=false
 		if Global.character =="girlGhost":
-			anim_name = "girldairytext"
+			anim_name = "girldiarytext"
 
 		elif Global.character =="boyGhost":
 			anim_name ="boydiarytext"
@@ -436,6 +436,8 @@ func _on_object_clicked(text: String, area_name: String):
 	if area_name == "desk" and not all_non_desk_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
+		await get_tree().create_timer(2.0).timeout
+		narration_label.text= 'Investigate the bedroom by pressing "E" to interact with objects.'
 		return
 	
 	# Mark this area as clicked
@@ -447,7 +449,12 @@ func _on_object_clicked(text: String, area_name: String):
 
 	# If desk clicked after everything else, trigger scene change
 	if area_name == "desk" and all_non_desk_clicked():
+		narration_label.visible=true
+		$Label3.text= 'Investigate the desk by clicking objects.'
 		diaryOverlay()
+	else:
+		await get_tree().create_timer(2.0).timeout
+		narration_label.text= 'Investigate the bedroom by pressing "E" to interact with objects.'
 		
 func all_non_desk_clicked() -> bool:
 	var non_desk = ["safe", "bed", "window", "calendar", "rug"]
@@ -482,7 +489,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 		match area_name:
 			"familyphoto":
 				if Global.character == "boyGhost":
-					$Label3.visible=false
+					narration_label.visible=false
 					await start_dialogue(2)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -506,11 +513,11 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
-					$Label3.visible=true
+					narration_label.visible=true
 					deskcounter +=1
 					
 				else:
-					$Label3.visible=false
+					narration_label.visible=false
 					await start_dialogue(2)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -533,11 +540,11 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
-					$Label3.visible=true
+					narration_label.visible=true
 					deskcounter +=1
 			"diary":
 				if Global.character == "boyGhost":
-					$Label3.visible=false
+					narration_label.visible=false
 					await start_dialogue(3)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -559,10 +566,10 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
-					$Label3.visible=true
+					narration_label.visible=true
 					deskcounter +=1
 				else:
-					$Label3.visible=false
+					narration_label.visible=false
 					await start_dialogue(3)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -584,10 +591,10 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
-					$Label3.visible=true
+					narration_label.visible=true
 					deskcounter +=1
 					
-		if deskcounter > 1:
+		if deskcounter == 2:
 			$Label3.visible=false
 			$Node2/Area2D/CollisionShape2D.disabled=false
 			$Node2/Area2D.visible=true
@@ -605,7 +612,6 @@ func _on_desk_area_pressed():
 
 func _on_animation_player_3_animation_started(anim_name: StringName) -> void:
 	pass # Replace with function body.
-
 
 
 func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

@@ -2087,7 +2087,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("11_flduu")
 theme_override_font_sizes/font_size = 32
-text = "Investigate the bedroom by pressing \"E\" to interact with objects."
+text = "Investigate the bedroom by clicking on objects."
 horizontal_alignment = 1
 
 [node name="explore" type="Node2D" parent="."]
@@ -2179,7 +2179,6 @@ debug_color = Color(0, 0, 0, 0.42)
 visible = false
 
 [node name="letterE" parent="explore/rug/Node2D/EAnim" index="0"]
-visible = false
 position = Vector2(1349, 668)
 
 [node name="desk" type="Area2D" parent="explore"]
