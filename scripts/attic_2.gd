@@ -3,10 +3,12 @@ extends Node2D
 var time_left_seconds
 
 var segment_data := [
-	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, 	
+	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] },
+	{ "starts": [0.0], "ends": [2.0] }, 	
 ]
 @onready var anim_players := [
-	$ghostlayer/ghosttext
+	$ghostlayer/ghosttext,
+	$ghostlayer/bedroomfailghost
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -17,6 +19,16 @@ var segment_starts
 var segment_ends
 	
 signal dialogue_finished(index)
+
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
+
 
 @onready var pause_menu = $CanvasPause/PauseMenu
 func toggle_pause():
@@ -78,6 +90,11 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		if Global.character =="girlGhost":
 			anim_name = "girl"
 
@@ -85,6 +102,16 @@ func start_dialogue(index: int):
 			anim_name ="boy"
 		else:
 			print("error animating text")
+	
+	if anim_index == 1:
+		if Global.character =="girlGhost":
+			anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
+		else:
+			print("error animating text")
+		
 			
 	anim.play(anim_name) 
 	   
@@ -113,6 +140,12 @@ func end_dialogue():
 		$ghostlayer/ghosttext/GirlGhost.visible=false
 		$ghostlayer/ghosttext/BoyGhost.visible=false
 		$ghostlayer/ghosttext/skip.visible=false
+	
+	if anim_index ==1:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
 		
 	emit_signal("dialogue_finished", anim_index)
 
@@ -132,8 +165,28 @@ func textskip():
 		else:
 			print("call end dialogue")
 			end_dialogue()
+			
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
 
-func _ready() -> void:
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
+
+
+func _ready():
+	#Global.attic2fail = true
+	if Global.attic2fail == true:
+		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
+		fade_out_music()
+		$ghostlayer/failpuzzlecutscene/AnimationPlayer.play("text")
+		await get_tree().create_timer(16).timeout
+		await start_dialogue(1)
+	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
+		
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -158,6 +211,12 @@ func _ready() -> void:
 func challengecompleted():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
+	$ghostlayer/Heart.visible=false
+	$ghostlayer/Heart2.visible=false
+	$ghostlayer/Heart3.visible=false
+	$ghostlayer/Heart4.visible=false
+	$ghostlayer/Heart5.visible=false
+	$ghostlayer/Heart6.visible=false
 	$ghostlayer/Timer.visible=false
 	$ghostlayer/recphone.visible=true
 	$ghostlayer/Label5.visible=false
@@ -204,6 +263,12 @@ func on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	$ghostlayer/Label5.visible=true
 	$ghostlayer/Timer.visible=true
+	$ghostlayer/Heart.visible=true
+	$ghostlayer/Heart2.visible=true
+	$ghostlayer/Heart3.visible=true
+	$ghostlayer/Heart4.visible=false
+	$ghostlayer/Heart5.visible=false
+	$ghostlayer/Heart6.visible=false
 	$ghostlayer/Label4.visible=false
 	$ghostlayer/Timer2.start()
 	$"ghostlayer/phone instructions".visible=true

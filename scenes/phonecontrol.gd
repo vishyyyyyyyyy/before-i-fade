@@ -2,6 +2,8 @@ extends Area2D
 
 var counter = 0
 var phonecode =""
+var hearts = 3
+
 signal challengecompleted
 
 func _input_event(viewport, event, shape_idx):
@@ -247,6 +249,26 @@ func incorrect1():
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
 	counter = 0
+	hearts -= 1
+	if hearts  ==2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart4".visible=true
+		Global.attic2fail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/attic2.tscn")
+		return
+	
+	else:
+		return
+
 	await get_tree().create_timer(2).timeout
 	$"../Wrong".visible=false
 	$"../phonemusic".visible=false
@@ -261,6 +283,24 @@ func incorrect2():
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
 	counter = 0
+	if hearts  ==2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart4".visible=true
+		Global.attic2fail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/attic2.tscn")
+		return
+	
+	else:
+		return
 	await get_tree().create_timer(2).timeout
 	$"../Wrong".visible=false
 	$"../phonemusic".visible=false
@@ -277,7 +317,7 @@ func incorrect2():
 	$CollisionShape2D6.disabled = false
 	
 
-func _on_timer_2_timeout() -> void:
+func _on_timer_2_timeout():
 	phonecode =""
 	$CollisionShape2D.disabled= false
 	$CollisionShape2D2.disabled=false
@@ -307,6 +347,26 @@ func _on_timer_2_timeout() -> void:
 	$delete.disabled=true
 	$"../AudioStreamPlayer2".play()
 	counter = 0
+	hearts -=1
+	if hearts  == 2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart4".visible=true
+		Global.attic2fail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/attic2.tscn")
+		return
+	
+	else:
+		pass
+		
 	await get_tree().create_timer(2).timeout
 	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()

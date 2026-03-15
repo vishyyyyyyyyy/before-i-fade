@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://b8ipl8wqkiwa5"]
+[gd_scene load_steps=132 format=3 uid="uid://b8ipl8wqkiwa5"]
 
 [ext_resource type="Script" uid="uid://dw0d0wru3kifh" path="res://scripts/attic_2.gd" id="1_j8y3x"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_qjqex"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bsosxkgv6x18d" path="res://assets/audio/police-siren.mp3" id="14_82lia"]
 [ext_resource type="Texture2D" uid="uid://c1xtxs4dhlk0t" path="res://assets/insidebox.png" id="14_cpefd"]
 [ext_resource type="Texture2D" uid="uid://dq0m2w177664a" path="res://assets/phonemusicl.png" id="15_5dkuy"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="15_cpefd"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="15_sho2i"]
 [ext_resource type="Script" uid="uid://b8u2lom0u7ex1" path="res://scenes/phonecontrol.gd" id="16_rxo1j"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_usgkx"]
@@ -32,11 +33,13 @@
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="33_bdede"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="34_nx5b8"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="34_t75hn"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="35_5ornb"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="35_7kx0a"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="35_8nag0"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="36_axtma"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="36_cpefd"]
 [ext_resource type="Texture2D" uid="uid://b1fhrsdhko6kt" path="res://assets/pixel-characters/girl3.png" id="36_wemfo"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="37_7b7e7"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="37_sho2i"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="38_dwrl6"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="39_lubtl"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="40_7mjb8"]
@@ -817,6 +820,120 @@ _data = {
 &"girl": SubResource("Animation_sgp6l")
 }
 
+[sub_resource type="Animation" id="Animation_sho2i"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_usgkx"]
+resource_name = "repeatboy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/BoyGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3gmu6"]
+resource_name = "repeatgirl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/GirlGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6awvt"]
+_data = {
+&"RESET": SubResource("Animation_sho2i"),
+&"repeatboy": SubResource("Animation_usgkx"),
+&"repeatgirl": SubResource("Animation_3gmu6")
+}
+
 [sub_resource type="Animation" id="Animation_gx42x"]
 length = 0.001
 
@@ -1311,15 +1428,16 @@ scale = Vector2(8.82031, 8.82031)
 texture = ExtResource("26_u68vj")
 
 [node name="phone instructions" type="Label" parent="ghostlayer"]
+visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -852.0
+offset_left = -908.0
 offset_top = -123.0
-offset_right = 976.0
+offset_right = 920.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -1330,6 +1448,8 @@ text = "Quick! Dial 911 and set up your camera to record the scene for evidence!
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="failpuzzlecutscene" parent="ghostlayer" instance=ExtResource("15_cpefd")]
 
 [node name="phonemusic" type="Sprite2D" parent="ghostlayer"]
 visible = false
@@ -1518,6 +1638,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/ghosttext"]
+visible = false
 z_index = 4
 anchors_preset = 7
 anchor_left = 0.5
@@ -1603,6 +1724,66 @@ offset_top = 1117.0
 offset_right = 2312.0
 offset_bottom = 1307.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
+
+[node name="bedroomfailghost" type="AnimationPlayer" parent="ghostlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_6awvt")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_usgkx")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_3gmu6")
+
+[node name="skip" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("15_sho2i")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Label2" type="Label" parent="ghostlayer"]
 visible = false
@@ -1822,25 +2003,65 @@ autowrap_mode = 2
 
 [node name="Timer" type="Sprite2D" parent="ghostlayer"]
 visible = false
-z_index = 2
-position = Vector2(128, 80)
+position = Vector2(256, 64)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("35_5ornb")
+texture = ExtResource("35_7kx0a")
+
+[node name="Heart" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(267, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("36_cpefd")
+
+[node name="Heart2" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(347, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("36_cpefd")
+
+[node name="Heart3" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(430, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("36_cpefd")
+
+[node name="Heart4" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(267, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("37_sho2i")
+
+[node name="Heart5" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(347, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("37_sho2i")
+
+[node name="Heart6" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(430, 69)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("37_sho2i")
 
 [node name="Label5" type="Label" parent="ghostlayer"]
 visible = false
 z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 212.0
+offset_bottom = 103.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_sho2i")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 56
 text = "15.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="ghostlayer"]
-wait_time = 15.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="ghostlayer"]
