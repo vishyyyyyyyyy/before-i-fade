@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=111 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -26,6 +26,7 @@
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="15_gaq0e"]
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="16_qr1ii"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="16_utq20"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="17_mc686"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Script" uid="uid://des6a3n5gl1xa" path="res://scripts/present_tile.gd" id="18_tbr22"]
@@ -41,16 +42,18 @@
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="28_6wssb"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="29_tf7d5"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="30_tbr22"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="33_oyxel"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="35_qcjub"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="36_675fu"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="39_5i0mt"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="40_utq20"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="40_vsaef"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="41_obg0h"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="41_tq2xr"]
 [ext_resource type="Texture2D" uid="uid://b1fhrsdhko6kt" path="res://assets/pixel-characters/girl3.png" id="44_tq2xr"]
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="45_a8ml4"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="45_vsaef"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="46_bsxvx"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="49_4kitr"]
+[ext_resource type="Script" uid="uid://6c5h48ynl6r3" path="res://scripts/camera_2dbathroom.gd" id="51_5i0mt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("2_wmlgl")
@@ -191,6 +194,120 @@ size = Vector2(219, 212)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyxel"]
 size = Vector2(211, 210)
+
+[sub_resource type="Animation" id="Animation_obg0h"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_e0e3o"]
+resource_name = "repeatboy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/BoyGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_gylui"]
+resource_name = "repeatgirl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/GirlGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cb40o"]
+_data = {
+&"RESET": SubResource("Animation_obg0h"),
+&"repeatboy": SubResource("Animation_e0e3o"),
+&"repeatgirl": SubResource("Animation_gylui")
+}
 
 [sub_resource type="Animation" id="Animation_7egjw"]
 length = 0.001
@@ -1253,78 +1370,6 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_a8ml4"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer3/AnimationPlayer/girl:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer3/AnimationPlayer/girlWalk:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer3/AnimationPlayer/girlWalk:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1947, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer3/AnimationPlayer/boy:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasLayer3/AnimationPlayer/boyWalk:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasLayer3/AnimationPlayer/boyWalk:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_bsxvx"]
 resource_name = "boyExit"
@@ -1646,6 +1691,29 @@ visible = false
 visible = false
 position = Vector2(2210, 845)
 
+[node name="failpuzzlecutscene" parent="CanvasLayer3" instance=ExtResource("16_utq20")]
+
+[node name="ColorRect" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="0"]
+z_index = 3
+
+[node name="Label" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="1"]
+z_index = 7
+
+[node name="Label2" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="2"]
+z_index = 7
+
+[node name="Label3" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="3"]
+z_index = 7
+
+[node name="Label4" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="4"]
+z_index = 7
+
+[node name="Label5" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="5"]
+z_index = 7
+
+[node name="Label6" parent="CanvasLayer3/failpuzzlecutscene/AnimationPlayer" index="6"]
+z_index = 7
+
 [node name="blobGhostPlayer" parent="CanvasLayer3" instance=ExtResource("12_bm87y")]
 z_index = 2
 position = Vector2(158, 840)
@@ -1786,30 +1854,32 @@ autowrap_mode = 2
 visible = false
 z_index = 3
 offset_left = 121.0
-offset_top = 80.0
+offset_top = 126.0
 offset_right = 982.0
-offset_bottom = 143.0
+offset_bottom = 189.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 40
 text = "PAST TILE"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Present Tiles" type="Label" parent="CanvasLayer3"]
 visible = false
 z_index = 3
 offset_left = 1349.0
-offset_top = 91.0
+offset_top = 137.0
 offset_right = 2210.0
-offset_bottom = 154.0
+offset_bottom = 200.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 40
 text = "PRESENT TILE"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="CanvasLayer3"]
@@ -1872,14 +1942,14 @@ horizontal_alignment = 1
 [node name="presenttile" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
 z_index = 3
-position = Vector2(1787, 612)
+position = Vector2(1787, 644)
 scale = Vector2(7.19189, 7.19189)
 texture = ExtResource("3_kc3g8")
 
 [node name="pasttile" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
 z_index = 3
-position = Vector2(565, 608)
+position = Vector2(565, 640)
 scale = Vector2(7.19189, 7.19189)
 texture = ExtResource("3_c2g0u")
 
@@ -1888,7 +1958,7 @@ script = ExtResource("18_tbr22")
 
 [node name="tile1" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(1437, 270)
+position = Vector2(1437, 302)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile1"]
@@ -1906,7 +1976,7 @@ debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile2" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 3.05176e-05)
+position = Vector2(0, 32)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile2"]
@@ -1927,7 +1997,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile3" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 3.05176e-05)
+position = Vector2(0, 32)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile3"]
@@ -1948,7 +2018,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile4" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 3.05176e-05)
+position = Vector2(0, 32)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile4"]
@@ -1968,7 +2038,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile5" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 228)
+position = Vector2(0, 260)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile5"]
@@ -1988,7 +2058,7 @@ debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile6" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 228)
+position = Vector2(0, 260)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile6"]
@@ -2008,7 +2078,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile7" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 228)
+position = Vector2(0, 260)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile7"]
@@ -2028,7 +2098,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile8" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 228)
+position = Vector2(0, 260)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile8"]
@@ -2067,7 +2137,7 @@ debug_color = Color(0.395973, 0.00152295, 0.57244, 0.419608)
 
 [node name="tile10" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 457)
+position = Vector2(0, 489)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile10"]
@@ -2088,7 +2158,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile11" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 457)
+position = Vector2(0, 489)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile11"]
@@ -2108,7 +2178,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile12" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 457)
+position = Vector2(0, 489)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile12"]
@@ -2128,7 +2198,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile13" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 685)
+position = Vector2(0, 717)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile13"]
@@ -2149,7 +2219,7 @@ debug_color = Color(0.729412, 0.580392, 0.745098, 1)
 
 [node name="tile14" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 685)
+position = Vector2(0, 717)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile14"]
@@ -2169,7 +2239,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile15" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 685)
+position = Vector2(0, 717)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile15"]
@@ -2190,7 +2260,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile16" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(0, 685)
+position = Vector2(0, 717)
 script = ExtResource("19_oyxel")
 
 [node name="whitetile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile16"]
@@ -2207,6 +2277,111 @@ position = Vector2(2128.5, 271)
 shape = SubResource("RectangleShape2D_oyxel")
 disabled = true
 debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
+
+[node name="Timer" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+position = Vector2(255, 56)
+scale = Vector2(3.91016, 3.91016)
+texture = ExtResource("39_5i0mt")
+
+[node name="Heart" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+position = Vector2(266, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("40_utq20")
+
+[node name="Heart2" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+position = Vector2(346, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("40_utq20")
+
+[node name="Heart3" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+position = Vector2(429, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("40_utq20")
+
+[node name="Heart4" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(266, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_obg0h")
+
+[node name="Heart5" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(346, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_obg0h")
+
+[node name="Heart6" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(429, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_obg0h")
+
+[node name="bedroomfailghost" type="AnimationPlayer" parent="CanvasLayer3"]
+libraries = {
+&"": SubResource("AnimationLibrary_cb40o")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer3/bedroomfailghost"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_wwfem")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="CanvasLayer3/bedroomfailghost"]
+visible = false
+z_index = 3
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("13_kc3g8")
+
+[node name="BoyGhost" type="Sprite2D" parent="CanvasLayer3/bedroomfailghost"]
+visible = false
+z_index = 3
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("14_celu3")
+
+[node name="skip" type="Label" parent="CanvasLayer3/bedroomfailghost"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_wwfem")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="ghosttalk" type="AnimationPlayer" parent="CanvasLayer3"]
 root_node = NodePath("../..")
@@ -2842,24 +3017,19 @@ the puzzle before the time ends."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Timer" type="Sprite2D" parent="CanvasLayer3/Node3"]
-visible = false
-z_index = 2
-position = Vector2(128, 80)
-scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("33_oyxel")
-
 [node name="Label5" type="Label" parent="CanvasLayer3/Node3"]
 visible = false
 z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 210.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 56
 text = "15.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer3/Node3"]
 wait_time = 15.0
@@ -2934,6 +3104,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_a8ml4")
 
 [node name="girlWalk" type="CharacterBody2D" parent="CanvasLayer3/AnimationPlayer"]
+visible = false
 z_index = -2
 position = Vector2(-1947, 0)
 
@@ -2956,6 +3127,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_qyk23")
 
 [node name="boyWalk" type="CharacterBody2D" parent="CanvasLayer3/AnimationPlayer"]
+visible = false
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/boyWalk"]
@@ -2970,7 +3142,7 @@ flip_h = true
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer3"]
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
-script = ExtResource("49_4kitr")
+script = ExtResource("51_5i0mt")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("14_ys5x2")
@@ -3017,3 +3189,4 @@ volume_db = 20.0
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 
 [editable path="CanvasLayer3/comb/Node2D"]
+[editable path="CanvasLayer3/failpuzzlecutscene"]

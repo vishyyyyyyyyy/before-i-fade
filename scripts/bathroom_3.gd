@@ -5,12 +5,14 @@ var segment_data := [
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, #friend phone call
 	{ "starts": [0.0, 4.0, 8.0, 12.0, 20.0], "ends": [2.0, 6.0, 10.0, 16.0, 24.0] }, #ghost say friend annoying
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }, #find comb
+	{ "starts": [0.0], "ends": [2.0] }, #fail puzzle
 ]
 @onready var anim_players := [
 	$CanvasLayer3/ghosttalk, #ghost enter bathroom
 	$CanvasLayer3/friendphone ,
 	$CanvasLayer3/ghosttalk2,
-	$CanvasLayer3/ghosttalk3 #find comb
+	$CanvasLayer3/ghosttalk3,  #find comb
+	$CanvasLayer3/bedroomfailghost # fail 
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -22,9 +24,36 @@ var segment_ends
 	
 signal dialogue_finished(index)
 
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
+
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.bathroomfail = true
+	if Global.bathroomfail == true:
+		$CanvasLayer3/bedroomfailghost/Label.text  = repeat_lines.pick_random()
+		fade_out_music()
+		$CanvasLayer3/failpuzzlecutscene/AnimationPlayer.play("text")
+		await get_tree().create_timer(16).timeout
+		await start_dialogue(4)
+	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
 	$CanvasLayer3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer3/AnimationPlayer/girlWalk.visible = false
 	$CanvasLayer3/AnimationPlayer/boyWalk.visible = false
@@ -139,6 +168,10 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$CanvasLayer3/bedroomfailghost/Label.visible=false
+		$CanvasLayer3/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/skip.visible=false
 		
 		if Global.character =="girlGhost":
 			anim_name = "girltext"
@@ -149,6 +182,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 1:
+		$CanvasLayer3/bedroomfailghost/Label.visible=false
+		$CanvasLayer3/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/skip.visible=false
+			
 		$CanvasLayer3/ghosttalk/skip.visible=false
 		$CanvasLayer3/ghosttalk/Label.visible=false
 		$CanvasLayer3/ghosttalk/BoyGhost.visible=false
@@ -163,6 +201,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 2:
+		$CanvasLayer3/bedroomfailghost/Label.visible=false
+		$CanvasLayer3/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/skip.visible=false
+			
 		$CanvasLayer3/ghosttalk/skip.visible=false
 		$CanvasLayer3/ghosttalk/Label.visible=false
 		$CanvasLayer3/ghosttalk/BoyGhost.visible=false
@@ -184,6 +227,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 3:
+		$CanvasLayer3/bedroomfailghost/Label.visible=false
+		$CanvasLayer3/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/skip.visible=false
+		
 		$CanvasLayer3/ghosttalk/skip.visible=false
 		$CanvasLayer3/ghosttalk/Label.visible=false
 		$CanvasLayer3/ghosttalk/BoyGhost.visible=false
@@ -210,7 +258,14 @@ func start_dialogue(index: int):
 			anim_name ="boyghost"
 		else:
 			print("error animating text")
-		
+	if anim_index == 4:
+		if Global.character =="girlGhost":
+				anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
+		else:
+			print("error animating text")
 		
 	anim.play(anim_name) 
 	   
@@ -259,8 +314,13 @@ func end_dialogue():
 		$CanvasLayer3/ghosttalk3/BoyGhost.visible=false
 		$CanvasLayer3/ghosttalk3/GirlGhost2.visible=false
 		$CanvasLayer3/ghosttalk3/BoyGhost2.visible=false
-		
-		
+	
+	if anim_index ==4 :
+		$CanvasLayer3/bedroomfailghost/Label.visible=false
+		$CanvasLayer3/bedroomfailghost/GirlGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/BoyGhost.visible=false
+		$CanvasLayer3/bedroomfailghost/skip.visible=false
+			
 	emit_signal("dialogue_finished", anim_index)
 
 func textskip():
@@ -341,6 +401,7 @@ func enable_show_tilecollision():
 func afterpuzzle():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
+	
 	$CanvasLayer3/PresentTile/tile1/CollisionShape2D.disabled=true
 	$CanvasLayer3/PresentTile/tile2/CollisionShape2D.disabled=true
 	$CanvasLayer3/PresentTile/tile3/CollisionShape2D.disabled=true
@@ -366,6 +427,12 @@ func afterpuzzle():
 	$CanvasLayer3/Node3/Label5.visible=true
 	$CanvasLayer3/Label4.visible=false
 	await get_tree().create_timer(2).timeout
+	$CanvasLayer3/Heart.visible=false
+	$CanvasLayer3/Heart2.visible=false
+	$CanvasLayer3/Heart3.visible=false
+	$CanvasLayer3/Heart4.visible=false
+	$CanvasLayer3/Heart5.visible=false
+	$CanvasLayer3/Heart6.visible=false
 	$CanvasLayer3/PresentTile/tile16.visible=false
 	$CanvasLayer3/PresentTile/tile15.visible=false
 	$CanvasLayer3/PresentTile/tile14.visible=false

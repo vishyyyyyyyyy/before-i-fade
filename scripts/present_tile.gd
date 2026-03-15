@@ -41,7 +41,9 @@ var selected_colors = {
 	"tile16": "white"
 }
 
-func _ready():
+var hearts = 3
+
+func _ready(): 
 	$tile1.connect("color_changed", Callable(self, "_on_tile_color_changed"))
 	$tile2.connect("color_changed", Callable(self, "_on_tile_color_changed"))
 	$tile3.connect("color_changed", Callable(self, "_on_tile_color_changed"))
@@ -73,6 +75,25 @@ func _on_timer_2_timeout() -> void:
 	$"../Node3/Timer2".stop()
 	$"../Node3/Wrong".visible=true
 	$"../Node3/AudioStreamPlayer2".play()
+	hearts -= 1
+	if hearts  ==2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart3".visible=true
+		Global.hallwayfail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/bathroom3.tscn")
+		return
+	
+	else:
+		return
 	await get_tree().create_timer(2).timeout
 	$"../Node3/Wrong".visible=false
 	resetpuzzle()	

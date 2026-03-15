@@ -65,7 +65,7 @@ func _ready():
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
-	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
+	#$ghostlayer/scentrigger/CollisionShape2D.disabled=false
 	$CanvasLayer/AnimationPlayer/boy.visible = false
 	$CanvasLayer/AnimationPlayer/girl.visible = false
 	$CanvasLayer/AnimationPlayer/boySide.visible = false

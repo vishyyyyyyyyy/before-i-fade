@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_yahhj"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_flduu"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
+[ext_resource type="Script" uid="uid://bnwstwedtvh1x" path="res://scripts/camera_2dbedroom2.gd" id="12_vthm4"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_4saaw"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_rik1q"]
 [ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="14_vthm4"]
@@ -35,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://f5d746pti7ia" path="res://assets/pixel-characters/friend2.png" id="25_kefea"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="26_kefea"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="30_cjbtu"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="34_tvp18"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="35_pu7wy"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="36_cjbtu"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="37_vthm4"]
@@ -1621,7 +1621,7 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
-script = ExtResource("34_tvp18")
+script = ExtResource("12_vthm4")
 
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("12_0xrbb")]
 position = Vector2(1907, 882)
@@ -1664,6 +1664,7 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_rik1q")
 
 [node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/bedroomfailghost"]
+visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
@@ -1671,6 +1672,7 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
 
 [node name="skip" type="Label" parent="CanvasLayer/bedroomfailghost"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
