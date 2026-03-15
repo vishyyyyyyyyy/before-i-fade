@@ -60,6 +60,11 @@ There are **two possible endings**.
 - Modulations to add ghostly effects 
 - Animated overlays and hover states
 
+**Challenge Lives**
+- Heart UI dynamically updated when fail at a puzzle
+- When hearts are all broken, system triggers a transition to reset scene
+- Global variables used to track puzzle fail state and time loop dialogue
+
 ---
 
 ## 💻Tools and Languages
@@ -93,30 +98,25 @@ We included the "changing of time" through
 ## 🔮 Future Improvements
 
 We are currently working on creating a new release with even better features to make the game more enjoyable! Expect these changes soon~
-- Adding a more detailed ending 2
 - Adding camera properties for dramatic effects
-- Incorporating a lives system during challenges
 - Loading splash screen
-- Moving closer to objects to interact 
 - Rereading diary page entries
-- Settings menu from in game
 - Mobile support c:
 
 ---
 
 ## 🎶 Credits
 
-This game was created for Codédex's Monthly Challenge Game Jam under the theme: the changing of time
-
 Created by [Vishalya Sairam](https://github.com/vishyyyyyyyyy) and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
 
-All art in the game is hand drawn by me! (✿◠‿◠)
+Art:
+- Hand drawn by Vishalya Sairam (✿◠‿◠)
 
-Music & Sound (from pixabay):
+Music & Sound (from Pixabay):
 
 - Phone Ringing — Dragon Studio
 
-- Police Siren -Dragon Studio
+- Police Siren — Dragon Studio
 
 - Story of Maple — Final Gate Studios
 
@@ -125,6 +125,16 @@ Music & Sound (from pixabay):
 - Incorrect Buzzer — logicallism
 
 - Piano notes — u_c58whxla22
+  
+- Explore the Universe and Beyond — Musictown
+
+- Kerosene — LBDLPROD
+
+- Puzzle Game — Cyberwave-Orchestra
+
+
+Video Overlay:
+- Damage Film Effects — Atomic Dreams
 
 Fonts:
 
