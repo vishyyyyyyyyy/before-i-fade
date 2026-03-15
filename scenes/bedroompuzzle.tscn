@@ -1074,7 +1074,7 @@ offset_top = -15.0
 offset_right = 2322.0
 offset_bottom = 1306.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.670588)
+color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
 [node name="Menucard" type="Sprite2D" parent="Node3"]
 visible = false
@@ -1326,7 +1326,7 @@ offset_top = -12.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
+color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
 [node name="Diarypage" type="Sprite2D" parent="Node4"]
 visible = false

@@ -44,7 +44,7 @@ func fade_in_music():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.bathroomfail = true
+	#Global.bathroomfail = true
 	if Global.bathroomfail == true:
 		$CanvasLayer3/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()
@@ -355,7 +355,7 @@ func _on_button_pressed():
 	$CanvasLayer3/presenttile.visible=true
 	$CanvasLayer3/pasttile.visible=true
 	$CanvasLayer3/Node3/ColorRect.visible=true
-	$CanvasLayer3/Node3/Timer.visible=true
+	$CanvasLayer3/Timer.visible=true
 	$"CanvasLayer3/Past Tiles".visible=true
 	$"CanvasLayer3/Present Tiles".visible=true
 	$CanvasLayer3/Node3/Label5.visible=true

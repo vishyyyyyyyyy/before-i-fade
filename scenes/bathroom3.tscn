@@ -190,7 +190,7 @@ _data = {
 size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbr22"]
-size = Vector2(219, 212)
+size = Vector2(221.5, 216)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyxel"]
 size = Vector2(211, 210)
@@ -1757,7 +1757,7 @@ offset_top = -12.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
+color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
 [node name="diarycontinue" type="Area2D" parent="CanvasLayer3"]
 visible = false
@@ -1854,9 +1854,9 @@ autowrap_mode = 2
 visible = false
 z_index = 3
 offset_left = 121.0
-offset_top = 126.0
+offset_top = 118.0
 offset_right = 982.0
-offset_bottom = 189.0
+offset_bottom = 181.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("13_wwfem")
@@ -1870,9 +1870,9 @@ autowrap_mode = 2
 visible = false
 z_index = 3
 offset_left = 1349.0
-offset_top = 137.0
+offset_top = 121.0
 offset_right = 2210.0
-offset_bottom = 200.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("13_wwfem")
@@ -1970,6 +1970,7 @@ region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile1"]
 z_index = 3
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_tbr22")
 disabled = true
 debug_color = Color(0.729412, 0.580392, 0.745098, 1)
@@ -2118,7 +2119,7 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="tile9" type="Area2D" parent="CanvasLayer3/PresentTile"]
 visible = false
-position = Vector2(1438, 727)
+position = Vector2(1438, 757)
 script = ExtResource("20_oyxel")
 
 [node name="greentile" type="Sprite2D" parent="CanvasLayer3/PresentTile/tile9"]
@@ -2131,6 +2132,7 @@ region_rect = Rect2(0, 1.87774, 30.9647, 29.0405)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/PresentTile/tile9"]
 z_index = 3
+position = Vector2(1.25, 1)
 shape = SubResource("RectangleShape2D_tbr22")
 disabled = true
 debug_color = Color(0.395973, 0.00152295, 0.57244, 0.419608)
@@ -2280,24 +2282,28 @@ debug_color = Color(0.576202, 0.00238652, 0.822891, 0.42)
 
 [node name="Timer" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
+z_index = 3
 position = Vector2(255, 56)
 scale = Vector2(3.91016, 3.91016)
 texture = ExtResource("39_5i0mt")
 
 [node name="Heart" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
+z_index = 3
 position = Vector2(266, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("40_utq20")
 
 [node name="Heart2" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
+z_index = 3
 position = Vector2(346, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("40_utq20")
 
 [node name="Heart3" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
+z_index = 3
 position = Vector2(429, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("40_utq20")
@@ -2305,6 +2311,7 @@ texture = ExtResource("40_utq20")
 [node name="Heart4" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
 modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 3
 position = Vector2(266, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("41_obg0h")
@@ -2312,6 +2319,7 @@ texture = ExtResource("41_obg0h")
 [node name="Heart5" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
 modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 3
 position = Vector2(346, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("41_obg0h")
@@ -2319,6 +2327,7 @@ texture = ExtResource("41_obg0h")
 [node name="Heart6" type="Sprite2D" parent="CanvasLayer3"]
 visible = false
 modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+z_index = 3
 position = Vector2(429, 61)
 scale = Vector2(3.14063, 3.14063)
 texture = ExtResource("41_obg0h")
@@ -2954,7 +2963,7 @@ z_index = 2
 offset_right = 2303.0
 offset_bottom = 1291.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.92549)
+color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
 [node name="Menucard" type="Sprite2D" parent="CanvasLayer3/Node3"]
 visible = false
@@ -3019,7 +3028,7 @@ autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="CanvasLayer3/Node3"]
 visible = false
-z_index = 2
+z_index = 4
 offset_left = 28.0
 offset_top = 27.0
 offset_right = 210.0
