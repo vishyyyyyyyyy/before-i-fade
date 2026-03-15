@@ -2061,7 +2061,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="ghostlayer"]
-wait_time = 2.0
+wait_time = 15.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="ghostlayer"]

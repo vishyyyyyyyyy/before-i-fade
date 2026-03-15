@@ -9,6 +9,13 @@ func _ready() -> void:
 	Global.livingroom = 0
 	Global.charName = ""
 	Global.ending= 0
+	Global.bedroomfail= false
+	Global.hallwayfail= false
+	Global.kitchenfail= false
+	Global.livingroomfail= false
+	Global.attic1fail = false
+	Global.bedroomdiary4fail = false
+	Global.attic2fail = false
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	$AnimationPlayer2.play("modulate")

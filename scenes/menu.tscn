@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=38 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -21,7 +21,9 @@
 [ext_resource type="Script" uid="uid://dwp182xjopjlf" path="res://scripts/mainmenucontinue.gd" id="17_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://47oit4ajd7wn" path="res://assets/uibox.png" id="18_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://dpwnpo4ghnthn" path="res://assets/space.png" id="24_ffqrc"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="24_g54pe"]
 [ext_resource type="Texture2D" uid="uid://bwwgw04dn4og2" path="res://assets/e.png" id="24_x16fv"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="25_48ryc"]
 [ext_resource type="Texture2D" uid="uid://dkaqcqckdfy84" path="res://assets/esc.png" id="25_ffqrc"]
 
 [sub_resource type="Animation" id="Animation_lnf0i"]
@@ -374,6 +376,36 @@ in game settings. SPACE
 to skip dialogue."
 horizontal_alignment = 1
 
+[node name="Label5" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 492.0
+offset_top = 459.0
+offset_right = 1987.0
+offset_bottom = 542.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 40
+text = "During challenge puzzle
+ you have three hearts."
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 620.0
+offset_top = 808.0
+offset_right = 1856.0
+offset_bottom = 891.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 40
+text = "Mistakes or running out
+of time will cost a heart."
+horizontal_alignment = 1
+
 [node name="Door" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
@@ -390,6 +422,7 @@ scale = Vector2(2.88051, 2.88051)
 texture = ExtResource("13_6cdou")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 2303.0
 offset_bottom = 1291.0
 mouse_filter = 2
@@ -525,6 +558,31 @@ visible = false
 position = Vector2(2032, 626)
 scale = Vector2(3.25781, 3.25781)
 texture = ExtResource("25_ffqrc")
+
+[node name="Brokenheart" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.486275, 0.486275, 0.486275, 0.545098)
+position = Vector2(1158, 980)
+scale = Vector2(7.52, 7.52)
+texture = ExtResource("24_g54pe")
+
+[node name="Heart" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(974, 660)
+scale = Vector2(7.52, 7.52)
+texture = ExtResource("25_48ryc")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1166, 660)
+scale = Vector2(7.52, 7.52)
+texture = ExtResource("25_48ryc")
+
+[node name="Heart3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1358, 660)
+scale = Vector2(7.52, 7.52)
+texture = ExtResource("25_48ryc")
 
 [connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]

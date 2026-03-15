@@ -25,8 +25,8 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		counter +=1
 		if counter == 1:
-			$"../Node/Title/Label".text = "Warning"
-			$"../Node/Title/Label2".text = "Warning"
+			$"../Node/Title/Label".text = "Puzzles"
+			$"../Node/Title/Label2".text = "Puzzles"
 			$"../Downarrow".visible=false
 			$"../Uparrow".visible=false
 			$"../LeftArrow".visible=false
@@ -49,7 +49,24 @@ func _input_event(viewport, event, shape_idx):
 			$"../w".visible=false
 			$"../a".visible=false
 			$"../d".visible=false
+			$"../Brokenheart".visible=true
+			$"../Heart".visible=true
+			$"../Heart2".visible=true
+			$"../Heart3".visible=true
+			$"../Label5".visible=true
+			$"../Label6".visible=true
+			
+		if counter == 2:
+			$"../Brokenheart".visible=false
+			$"../Heart".visible=false
+			$"../Heart2".visible=false
+			$"../Heart3".visible=false
+			$"../Label5".visible=false
+			$"../Label6".visible=false
+			$"../Node/Title/Label".text = "Warning"
+			$"../Node/Title/Label2".text = "Warning"
 			$"../AnimationPlayer".play("fade_in")
 			$"../AnimationPlayer/Label".visible=true
-	if counter == 2:
-		get_tree().change_scene_to_file("res://scenes/bedroom.tscn")
+			
+		if counter == 3:
+			get_tree().change_scene_to_file("res://scenes/bedroom.tscn")
