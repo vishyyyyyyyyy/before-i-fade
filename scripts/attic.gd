@@ -67,7 +67,7 @@ func fade_in_music():
 
 
 func _ready():
-	Global.attic1fail = true
+	#Global.attic1fail = true
 	if Global.attic1fail == true:
 		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()
