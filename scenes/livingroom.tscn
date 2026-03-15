@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=159 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -41,7 +41,6 @@
 [ext_resource type="AudioStream" uid="uid://d06ati6ujtqxn" path="res://assets/audio/b.mp3" id="24_vdshs"]
 [ext_resource type="Script" uid="uid://dnok83lpeteey" path="res://scripts/livingroomexplore.gd" id="26_8wvgp"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="27_4gjkn"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="28_t4ss2"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_d61ai"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_trqwp"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="31_y0t83"]
@@ -50,6 +49,9 @@
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="34_bng4i"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="35_dg5mc"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="36_xnj5d"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="40_oy38f"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="41_72nc8"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="42_7ff34"]
 [ext_resource type="Texture2D" uid="uid://d1td3envmaoap" path="res://assets/auntletter2.png" id="44_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://ccaltmne4kumu" path="res://assets/auntletter.png" id="45_u7681"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="47_3rg1y"]
@@ -57,6 +59,7 @@
 [ext_resource type="Script" uid="uid://cd352y0kdt4h0" path="res://scripts/cameralivingroom.gd" id="52_l1jrp"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="55_4vit2"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="56_nvfrc"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="57_72nc8"]
 [ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="57_wxavf"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="58_oy38f"]
 [ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="59_72nc8"]
@@ -91,126 +94,6 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 
 [sub_resource type="Animation" id="Animation_3rg1y"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/boy:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/girl:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/girlSide:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/girlSide:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(610, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/boyDown:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimationPlayer/girlDown:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimationPlayer/girlDown:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("AnimationPlayer/boyDown:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 265)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AnimationPlayer/boySide:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("AnimationPlayer/boySide:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_vl3qy"]
 resource_name = "exit"
@@ -515,6 +398,120 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_7ff34"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_367s7"]
+resource_name = "repeatboy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/BoyGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8xq3h"]
+resource_name = "repeatgirl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/GirlGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kg10a"]
+_data = {
+&"RESET": SubResource("Animation_7ff34"),
+&"repeatboy": SubResource("Animation_367s7"),
+&"repeatgirl": SubResource("Animation_8xq3h")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soh4j"]
 size = Vector2(259.303, 643.194)
@@ -2186,6 +2183,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_l08cl")
 
 [node name="boySide" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/boySide"]
 position = Vector2(1187, 796)
@@ -2196,7 +2194,7 @@ frame_progress = 0.552767
 flip_h = true
 
 [node name="girlSide" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
-position = Vector2(610, 0)
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/girlSide"]
 position = Vector2(1405, 535)
@@ -2206,7 +2204,7 @@ autoplay = "default"
 frame_progress = 0.379236
 
 [node name="boyDown" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
-position = Vector2(0, 265)
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/boyDown"]
 position = Vector2(1177, 513)
@@ -2216,6 +2214,7 @@ autoplay = "default"
 frame_progress = 0.911966
 
 [node name="girlDown" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/girlDown"]
 position = Vector2(2023, 536)
@@ -2252,11 +2251,72 @@ rotation = 4.71239
 position = Vector2(192, 869)
 scale = Vector2(3, 3)
 
+[node name="bedroomfailghost" type="AnimationPlayer" parent="ghostlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_kg10a")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("16_tlixj")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("17_306lt")
+
+[node name="skip" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("18_rq2ij")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="Music" type="Sprite2D" parent="ghostlayer"]
 visible = false
 position = Vector2(1182, 638)
 scale = Vector2(0.804001, 0.720001)
 texture = ExtResource("15_xddai")
+metadata/_edit_lock_ = true
 
 [node name="Music2" type="Sprite2D" parent="ghostlayer"]
 visible = false
@@ -2280,10 +2340,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -892.0
-offset_top = -1289.0
-offset_right = -706.0
-offset_bottom = -1190.0
+offset_left = -860.0
+offset_top = -1177.0
+offset_right = -674.0
+offset_bottom = -1078.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -2303,10 +2363,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -892.0
-offset_top = -1001.0
-offset_right = -706.0
-offset_bottom = -902.0
+offset_left = -860.0
+offset_top = -889.0
+offset_right = -674.0
+offset_bottom = -790.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -2326,10 +2386,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 684.0
-offset_top = -1289.0
-offset_right = 870.0
-offset_bottom = -1190.0
+offset_left = 676.0
+offset_top = -1177.0
+offset_right = 862.0
+offset_bottom = -1078.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -2349,10 +2409,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 684.0
-offset_top = -1001.0
-offset_right = 870.0
-offset_bottom = -902.0
+offset_left = 676.0
+offset_top = -889.0
+offset_right = 862.0
+offset_bottom = -790.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -3277,22 +3337,62 @@ autowrap_mode = 2
 
 [node name="Timer" type="Sprite2D" parent="ghostlayer"]
 visible = false
-z_index = 2
-position = Vector2(128, 80)
+position = Vector2(248, 56)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("28_t4ss2")
+texture = ExtResource("40_oy38f")
+
+[node name="Heart" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(259, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_72nc8")
+
+[node name="Heart2" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(339, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_72nc8")
+
+[node name="Heart3" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(422, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("41_72nc8")
+
+[node name="Heart4" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(259, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("42_7ff34")
+
+[node name="Heart5" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(339, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("42_7ff34")
+
+[node name="Heart6" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(422, 61)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("42_7ff34")
 
 [node name="Label8" type="Label" parent="ghostlayer"]
 visible = false
 z_index = 2
-offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 207.0
+offset_bottom = 99.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 56
 text = "30.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label9" type="Label" parent="ghostlayer"]
 visible = false
@@ -3663,8 +3763,13 @@ position = Vector2(1296, 1035)
 scale = Vector2(7.02344, 7.02344)
 
 [node name="Tv" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
-visible = false
 texture = ExtResource("4_po3oh")
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="."]
+
+[node name="failpuzzlecutscene" parent="CanvasLayer5" instance=ExtResource("57_72nc8")]
+z_index = 9
+z_as_relative = false
 
 [node name="explore" type="Node" parent="."]
 

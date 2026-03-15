@@ -15,3 +15,4 @@ var ending= 0
 var bedroomfail= false
 var hallwayfail= false
 var kitchenfail= false
+var livingroomfail= false

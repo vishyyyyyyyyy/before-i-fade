@@ -21,6 +21,8 @@ var current_solution := 0
 var selected := []
 var input_locked := false
 
+var hearts = 3
+
 # Called when the node enters the scene tree
 func _ready() -> void:
 	start_solution()
@@ -76,6 +78,27 @@ func check_solution():
 	else:
 		$"../Wrong".visible=true
 		$"../AudioStreamPlayer2".play()
+		
+		hearts -= 1
+		if hearts  ==2:
+			$"../Heart3".visible=false
+			$"../Heart6".visible=true
+			
+		elif hearts  ==1:
+			$"../Heart2".visible=false
+			$"../Heart5".visible=true
+
+		elif hearts <= 0:
+			$"../Heart".visible=false
+			$"../Heart4".visible=true
+			Global.livingroomfail = true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
+			return
+			
+		else:
+			return
+			
 		await get_tree().create_timer(2).timeout
 		$"../Wrong".visible=false
 		start_solution()
@@ -123,6 +146,27 @@ func reset_to_beginning():
 func _on_timer_2_timeout() -> void:
 	$"../Wrong".visible = true
 	$"../AudioStreamPlayer2".play()
+	hearts -= 1
+	if hearts  ==2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  ==1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart4".visible=true
+		Global.hallwayfail = true
+		$CanvasLayer/Node3/Timer2.stop() 
+		Global.livingroomfail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
+		return
+		
+	else:
+		return
 	await get_tree().create_timer(2).timeout
 	$"../Label8".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()

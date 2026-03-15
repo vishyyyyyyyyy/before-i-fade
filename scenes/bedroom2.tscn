@@ -1636,7 +1636,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/bedroomfailghost"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1665,7 +1664,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("14_rik1q")
 
 [node name="BoyGhost" type="Sprite2D" parent="CanvasLayer/bedroomfailghost"]
-visible = false
 z_index = 2
 z_as_relative = false
 position = Vector2(2026, 724)
@@ -1673,7 +1671,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("15_rme15")
 
 [node name="skip" type="Label" parent="CanvasLayer/bedroomfailghost"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
