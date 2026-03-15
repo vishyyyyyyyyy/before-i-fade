@@ -23,6 +23,8 @@ var segment_index := 0
 var animating := true
 var segment_starts
 var segment_ends
+
+var hearts = 3
 	
 signal dialogue_finished(index)
 
@@ -314,6 +316,9 @@ func _input_event(viewport, event, shape_idx):
 func pressed():
 	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("puzzle1")
+	$"../Heart".visible=true
+	$"../Heart2".visible=true
+	$"../Heart3".visible=true
 	$"../Timer".visible = true
 	$"../Label4".visible=false
 	$"../Label5".visible = true
@@ -337,6 +342,12 @@ func _on_text_entered(new_text: String) -> void:
 		$"../Timer".visible=false
 		$"../Label5".visible=false
 		await get_tree().create_timer(2).timeout
+		$"../Heart".visible=false
+		$"../Heart2".visible=false
+		$"../Heart3".visible=false
+		$"../Heart4".visible=false
+		$"../Heart5".visible=false
+		$"../Heart6".visible=false
 		$"../Correct".visible=false
 		$"../Safecloseup".visible=false
 		$"../Opensafe".visible=true
@@ -363,6 +374,26 @@ func _on_timer_2_timeout() -> void:
 	$"../Timer2".stop()
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
+	hearts -= 1
+	if hearts  == 2:
+		$"../Heart3".visible=false
+		$"../Heart6".visible=true
+		
+	elif hearts  == 1:
+		$"../Heart2".visible=false
+		$"../Heart5".visible=true
+
+	elif hearts <= 0:
+		$"../Heart".visible=false
+		$"../Heart4".visible=true
+		Global.bedroomdiary4fail = true
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scenes/bedroomdiaryentry4.tscn")
+		return
+	
+	else:
+		return
+
 	await get_tree().create_timer(2).timeout
 	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()
