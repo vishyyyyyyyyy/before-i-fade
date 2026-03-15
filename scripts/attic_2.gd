@@ -44,6 +44,7 @@ func _process(_delta):
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label5.text = "%.1f" % time_left_seconds
 	
+	$ghostlayer/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	# --- music speed control ---
 	if not $ghostlayer/Timer2.is_stopped():
 		var total_time = $ghostlayer/Timer2.wait_time

@@ -5,6 +5,7 @@ var shake_timer: float = 0.0
 
 @onready var player_layer = $".."
 @onready var box = $"../../CanvasLayer"
+@onready var label = $"../AnimationPlayer/Label"
 
 func _process(delta):
 	if shake_timer > 0:

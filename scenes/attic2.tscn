@@ -1270,6 +1270,7 @@ texture = ExtResource("11_mlsbu")
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 
 [node name="Bloodblanket" type="Sprite2D" parent="ghostlayer"]
+visible = false
 position = Vector2(1151, 851)
 scale = Vector2(4.45313, 4.45313)
 texture = ExtResource("12_vbuwi")
@@ -1285,6 +1286,7 @@ libraries = {
 }
 
 [node name="boy" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/boy"]
 position = Vector2(825, 782)

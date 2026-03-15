@@ -5037,6 +5037,8 @@ text = "\"AHHHH!\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/AnimationPlayer"]
 stream = ExtResource("50_ju1eb")

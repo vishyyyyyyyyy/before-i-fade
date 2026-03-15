@@ -722,6 +722,7 @@ func text():
 	$ghostlayer/idle/girl.visible=false
 	$ghostlayer/idle/boy.visible=false
 	$ghostlayer/AnimationPlayer.play("death")
+	$ghostlayer/Camera2D.shake(2, 1.4)
 	await $ghostlayer/AnimationPlayer.animation_finished
 	$ghostlayer/Bloodblanket.visible=true
 	await start_dialogue(1)
