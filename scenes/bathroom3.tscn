@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=104 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dp20ox41l74bi" path="res://scripts/comb.gd" id="13_675fu"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="13_kc3g8"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_wwfem"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="14_4kitr"]
 [ext_resource type="Texture2D" uid="uid://cp4oxhsbc7n7a" path="res://assets/characters/friend2.png" id="14_25jch"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="14_celu3"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="14_myyx2"]
@@ -142,8 +143,8 @@ sources/0 = SubResource("TileSetAtlasSource_3ouov")
 size = Vector2(1534.67, 118)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcjub"]
-radius = 35.4565
-height = 180.0
+radius = 63.0518
+height = 250.067
 
 [sub_resource type="Animation" id="Animation_4kitr"]
 length = 0.001
@@ -1638,6 +1639,13 @@ scale = Vector2(0.543478, 0.543478)
 shape = SubResource("CapsuleShape2D_qcjub")
 disabled = true
 
+[node name="Node2D" parent="CanvasLayer3/comb" instance=ExtResource("14_4kitr")]
+visible = false
+
+[node name="letterE" parent="CanvasLayer3/comb/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2210, 845)
+
 [node name="blobGhostPlayer" parent="CanvasLayer3" instance=ExtResource("12_bm87y")]
 z_index = 2
 position = Vector2(158, 840)
@@ -3007,3 +3015,5 @@ volume_db = 20.0
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+
+[editable path="CanvasLayer3/comb/Node2D"]
