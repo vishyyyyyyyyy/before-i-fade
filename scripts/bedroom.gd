@@ -22,6 +22,13 @@ func _ready():
 	else:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
 	$SceneTrigger/CollisionShape2D.disabled =true
+	$CanvasLayer/AnimationPlayer2.play("panandzoom")
+	dialogue_active = false
+	await $CanvasLayer/AnimationPlayer2.animation_finished
+	$Ghost1.visible=false
+	$CanvasLayer/blobGhostPlayer.visible=true
+	$CanvasLayer/blobGhostPlayer.position.x = 1209.0
+	$CanvasLayer/blobGhostPlayer.position.y = 528.0
 	$CanvasLayer/AnimationPlayer.play("type_text")
 	dialogue_active = true  
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://tosd2lbj70hu"]
+[gd_scene load_steps=57 format=3 uid="uid://tosd2lbj70hu"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_j7co6"]
 [ext_resource type="Script" uid="uid://sny0cu5i00sb" path="res://scripts/bedroom.gd" id="1_lj4hb"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="14_4wfg3"]
 [ext_resource type="Script" uid="uid://buakat1k0uwpu" path="res://scripts/resumebutton.gd" id="14_bd3ru"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="14_cs7aj"]
+[ext_resource type="Texture2D" uid="uid://dg275asuk42en" path="res://assets/ghost1.png" id="15_15if8"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="16_ipco6"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="17_cs7aj"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="18_08d0o"]
@@ -143,6 +144,43 @@ _data = {
 &"type_text": SubResource("Animation_lj4hb")
 }
 
+[sub_resource type="Animation" id="Animation_tl7to"]
+resource_name = "panandzoom"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4.5, 4.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1149, 959), Vector2(1149, 639)]
+}
+
+[sub_resource type="Animation" id="Animation_15if8"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3yip"]
+_data = {
+&"RESET": SubResource("Animation_15if8"),
+&"panandzoom": SubResource("Animation_tl7to")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
 size = Vector2(169, 1323)
 
@@ -165,61 +203,70 @@ mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="CanvasModulate2" type="CanvasModulate" parent="CanvasLayer2"]
-position = Vector2(2024, 1127)
-scale = Vector2(3.5, 3.5)
-color = Color(0.0938939, 0.322573, 0.279504, 1)
-
-[node name="Door" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
-texture = ExtResource("4_d74ih")
-
-[node name="Door2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
-position = Vector2(-497.714, 0.571442)
-texture = ExtResource("4_d74ih")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(3.08037e-06, 0.993911, 0.816257, 1)
-
-[node name="TileMap2" type="TileMap" parent="CanvasModulate"]
+[node name="TileMap2" type="TileMap" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-70.895, 53.39)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_wx2xb")
 format = 2
 layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 327685, 0, 0, 131121, 0, 0)
 
-[node name="TileMap" type="TileMap" parent="CanvasModulate"]
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-81.75, 53.39)
 scale = Vector2(1.5, 1.5)
 tile_set = SubResource("TileSet_ecit3")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621447, 0, 0, 2621455, 0, 0, 2621463, 0, 0, 2621471, 0, 0, 2621479, 0, 0, 2621487, 0, 0, 2621495, 0, 0, 2621503, 0, 0, 2621511, 0, 0, 2621519, 0, 0, 2621527, 0, 0, 2097159, 0, 0, 2097167, 0, 0, 2097175, 0, 0, 2097183, 0, 0, 2097191, 0, 0, 2097199, 0, 0, 2097207, 0, 0, 2097215, 0, 0, 2097223, 0, 0, 2097231, 0, 0, 2097239, 0, 0, 1572871, 0, 0, 1572879, 0, 0, 1572887, 0, 0, 1572895, 0, 0, 1572903, 0, 0, 1572911, 0, 0, 1572919, 0, 0, 1572927, 0, 0, 1572935, 0, 0, 1572943, 0, 0, 1572951, 0, 0, 1048583, 0, 0, 1048591, 0, 0, 1048599, 0, 0, 1048607, 0, 0, 1048615, 0, 0, 1048623, 0, 0, 1048631, 0, 0, 1048639, 0, 0, 1048647, 0, 0, 1048655, 0, 0, 1048663, 0, 0, 1048671, 0, 0, 1572959, 0, 0, 2097247, 0, 0, 2621535, 0, 0)
 
-[node name="Desk" type="Sprite2D" parent="CanvasModulate"]
+[node name="Desk" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(2078, 642)
 scale = Vector2(6, 6)
 texture = ExtResource("3_ammhk")
 
-[node name="Bed" type="Sprite2D" parent="CanvasModulate"]
+[node name="Bed" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(477, 339)
 scale = Vector2(6, 6)
 texture = ExtResource("3_5gvsb")
 
-[node name="Safe" type="Sprite2D" parent="CanvasModulate"]
+[node name="Safe" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(209, 665)
 scale = Vector2(2, 2)
 texture = ExtResource("5_d74ih")
 
-[node name="Window" type="Sprite2D" parent="CanvasModulate"]
+[node name="Window" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1188, 111)
 scale = Vector2(4, 4)
 texture = ExtResource("7_u3ncq")
 
-[node name="Calendar2" type="Sprite2D" parent="CanvasModulate"]
+[node name="Calendar2" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("8_ysy21")
+
+[node name="Door" type="Sprite2D" parent="."]
+modulate = Color(0.0941176, 0.321569, 0.278431, 1)
+position = Vector2(2024, 1127)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_d74ih")
+
+[node name="Door2" type="Sprite2D" parent="."]
+modulate = Color(0.0941176, 0.321569, 0.278431, 1)
+position = Vector2(282.001, 1129)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4_d74ih")
+
+[node name="Catrug" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
+position = Vector2(1797, 651)
+rotation = 1.5708
+scale = Vector2(5.36234, 5.36234)
+texture = ExtResource("13_k5fq4")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -17.0
@@ -282,9 +329,9 @@ root_node = NodePath("../blobGhostPlayer")
 libraries = {
 &"": SubResource("AnimationLibrary_k5fq4")
 }
-autoplay = "type_text"
 
 [node name="skip" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -303,6 +350,7 @@ text = "(SPACE to skip text)"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -360,14 +408,19 @@ text = "Enter the bathroom."
 horizontal_alignment = 1
 
 [node name="blobGhostPlayer" parent="CanvasLayer" instance=ExtResource("9_wx2xb")]
+visible = false
 position = Vector2(1209, 528)
 scale = Vector2(3, 3)
 
-[node name="Catrug" type="Sprite2D" parent="."]
-position = Vector2(1797, 651)
-rotation = 1.5708
-scale = Vector2(5.36234, 5.36234)
-texture = ExtResource("13_k5fq4")
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("Camera2D")
+libraries = {
+&"": SubResource("AnimationLibrary_u3yip")
+}
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/AnimationPlayer2"]
+position = Vector2(1149, 959)
+zoom = Vector2(4.5, 4.5)
 
 [node name="leftwallcollision" type="StaticBody2D" parent="."]
 
@@ -380,6 +433,11 @@ shape = SubResource("RectangleShape2D_k5fq4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_k5fq4")
+
+[node name="Ghost1" type="Sprite2D" parent="."]
+position = Vector2(1208.75, 527.25)
+scale = Vector2(2.9775, 2.9775)
+texture = ExtResource("15_15if8")
 
 [node name="CanvasPause" type="CanvasLayer" parent="."]
 process_mode = 2
