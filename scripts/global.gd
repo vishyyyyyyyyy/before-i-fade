@@ -16,3 +16,6 @@ var bedroomfail= false
 var hallwayfail= false
 var kitchenfail= false
 var livingroomfail= false
+var attic1fail = false
+var bedroomdiary4fail = false
+var attic2fail = false

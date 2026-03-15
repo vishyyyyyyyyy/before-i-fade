@@ -15,6 +15,7 @@ var segment_data := [
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
 	{ "starts": [0.0], "ends": [2.0] }, #pastchar1
 	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, #pastchar2
+	{ "starts": [0.0], "ends": [2.0] }, #fail puzzle
 	
 ]
 @onready var anim_players := [
@@ -26,7 +27,8 @@ var segment_data := [
 	$ghostlayer/ghosttext6,
 	$ghostlayer/ghosttext7,
 	$ghostlayer/pastchar1,
-	$ghostlayer/pastchar2
+	$ghostlayer/pastchar2,
+	$ghostlayer/bedroomfailghost
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -38,6 +40,15 @@ var segment_ends
 	
 signal dialogue_finished(index)
 
+var repeat_lines = [
+	'"I feel like I\'ve been here before..."',
+	'"This place feels familiar."',
+	'"Didn\'t I just do this?"',
+	'"Why am I back here again?"',
+	'"I swear I was just here."',
+	'"Something isn\'t right..."'
+]
+
 @onready var pause_menu = $CanvasPause/PauseMenu
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
@@ -46,9 +57,27 @@ func toggle_pause():
 	$CanvasPause/ColorRect2.visible=true
 	$CanvasPause/Menucard2.visible=true
 
+func fade_out_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", -40, 5.0)
+
+func fade_in_music():
+	var tween = create_tween()
+	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 
 
-func _ready() -> void:
+func _ready():
+	Global.attic1fail = true
+	if Global.attic1fail == true:
+		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
+		fade_out_music()
+		$ghostlayer/failpuzzlecutscene/AnimationPlayer.play("text")
+		await get_tree().create_timer(16).timeout
+		await start_dialogue(9)
+	else:
+		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.play_scene_music("menu")
+
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -115,6 +144,11 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		if Global.character =="girlGhost":
 			anim_name = "girl"
 
@@ -124,6 +158,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 1:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$ghostlayer/pastchar1/Boy.visible=false
 		$ghostlayer/pastchar1/Girl.visible=false
 		$"ghostlayer/pastchar1/YN label".visible=false
@@ -146,6 +185,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 2:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$ghostlayer/pastchar1/Boy.visible=false
 		$ghostlayer/pastchar1/Girl.visible=false
 		$"ghostlayer/pastchar1/YN label".visible=false
@@ -174,6 +218,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 3:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$ghostlayer/pastchar1/Boy.visible=false
 		$ghostlayer/pastchar1/Girl.visible=false
 		$"ghostlayer/pastchar1/YN label".visible=false
@@ -208,6 +257,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 4:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$"ghostlayer/pastchar2/Ex label".visible=false
 		$ghostlayer/pastchar2/Label3.visible=false
 		$ghostlayer/pastchar2/skip.visible=false
@@ -265,6 +319,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 5:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$"ghostlayer/pastchar2/Ex label".visible=false
 		$ghostlayer/pastchar2/Label3.visible=false
 		$ghostlayer/pastchar2/skip.visible=false
@@ -327,6 +386,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 6:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 		$"ghostlayer/pastchar2/Ex label".visible=false
 		$ghostlayer/pastchar2/Label3.visible=false
 		$ghostlayer/pastchar2/skip.visible=false
@@ -394,6 +458,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index == 7:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+
 		$ghostlayer/pastchar1/Boy.visible=false
 		$ghostlayer/pastchar1/Girl.visible=false
 		$"ghostlayer/pastchar1/YN label".visible=false
@@ -449,6 +518,11 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 8:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+			
 		$ghostlayer/pastchar1/Boy.visible=false
 		$ghostlayer/pastchar1/Girl.visible=false
 		$"ghostlayer/pastchar1/YN label".visible=false
@@ -507,6 +581,15 @@ func start_dialogue(index: int):
 
 		elif Global.character =="boyGhost":
 			anim_name ="boy"
+		else:
+			print("error animating text")
+			
+	if anim_index == 9:
+		if Global.character =="girlGhost":
+			anim_name = "repeatgirl"
+
+		elif Global.character =="boyGhost":
+			anim_name ="repeatboy"
 		else:
 			print("error animating text")
 	anim.play(anim_name) 
@@ -604,6 +687,13 @@ func end_dialogue():
 		$ghostlayer/pastchar2/Girl5.visible=false
 		$ghostlayer/pastchar2/Girl6.visible=false
 		$"ghostlayer/pastchar2/Ex label".visible=false
+		
+	if anim_index == 9:
+		$ghostlayer/bedroomfailghost/Label.visible=false
+		$ghostlayer/bedroomfailghost/GirlGhost.visible=false
+		$ghostlayer/bedroomfailghost/BoyGhost.visible=false
+		$ghostlayer/bedroomfailghost/skip.visible=false
+		
 	emit_signal("dialogue_finished", anim_index)
 
 
@@ -804,6 +894,9 @@ func challenge():
 func on_button_pressed():
 	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("menu")
+	$ghostlayer/Heart.visible=true
+	$ghostlayer/Heart2.visible=true
+	$ghostlayer/Heart3.visible=true
 	$ghostlayer/Label9.visible=true
 	$ghostlayer/Timer.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
@@ -909,6 +1002,12 @@ func challengecompleted():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	await get_tree().create_timer(2).timeout
+	$ghostlayer/Heart.visible=false
+	$ghostlayer/Heart2.visible=false
+	$ghostlayer/Heart3.visible=false
+	$ghostlayer/Heart4.visible=false
+	$ghostlayer/Heart5.visible=false
+	$ghostlayer/Heart6.visible=false
 	$ghostlayer/Timer.visible=false
 	$ghostlayer/Correct.visible=false
 	$ghostlayer/Label8.visible=false

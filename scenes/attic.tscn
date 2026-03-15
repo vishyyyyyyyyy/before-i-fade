@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=172 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="13_4oqm8"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="14_kbsqw"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="15_l00gg"]
+[ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="15_u7edh"]
 [ext_resource type="Texture2D" uid="uid://b0b3ysid1vjiy" path="res://assets/bloodblanket.png" id="16_6i1t2"]
 [ext_resource type="Texture2D" uid="uid://datm15yt00are" path="res://assets/glove.png" id="17_gx42x"]
 [ext_resource type="Texture2D" uid="uid://dw0uoin8aslmd" path="res://assets/blood2.png" id="17_lkkgl"]
@@ -40,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="34_f3qo7"]
 [ext_resource type="Script" uid="uid://cf4pipl81y47g" path="res://scripts/exploreattic.gd" id="34_waqk1"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="35_gkdoc"]
-[ext_resource type="Texture2D" uid="uid://b5wdnog7he4r" path="res://assets/timer.png" id="36_h7llc"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="37_11ib6"]
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="37_nhg3k"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="38_11ib6"]
@@ -48,8 +48,11 @@
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="40_ju1eb"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="41_bgrwk"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="42_p08rk"]
+[ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="43_dosur"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="43_l4del"]
+[ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="44_lfgyo"]
 [ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="44_mg2tc"]
+[ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="45_h76dr"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="49_bgrwk"]
 [ext_resource type="Script" uid="uid://ct8nuphlvm8xq" path="res://scripts/choice_1.gd" id="49_ju1eb"]
 [ext_resource type="AudioStream" uid="uid://d4jro2agjq5ka" path="res://assets/audio/knife.mp3" id="50_ju1eb"]
@@ -90,6 +93,120 @@ sources/0 = SubResource("TileSetAtlasSource_naci5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7llc"]
 size = Vector2(52.5, 35.5)
+
+[sub_resource type="Animation" id="Animation_7ff34"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_367s7"]
+resource_name = "repeatboy"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/BoyGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8xq3h"]
+resource_name = "repeatgirl"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bedroomfailghost/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bedroomfailghost/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bedroomfailghost/skip:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bedroomfailghost/GirlGhost:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdm3v"]
+_data = {
+&"RESET": SubResource("Animation_7ff34"),
+&"repeatboy": SubResource("Animation_367s7"),
+&"repeatgirl": SubResource("Animation_8xq3h")
+}
 
 [sub_resource type="Animation" id="Animation_ap3yg"]
 length = 0.001
@@ -3757,6 +3874,68 @@ texture = ExtResource("16_6i1t2")
 position = Vector2(2205, 913)
 scale = Vector2(3, 3)
 
+[node name="failpuzzlecutscene" parent="ghostlayer" instance=ExtResource("15_u7edh")]
+
+[node name="bedroomfailghost" type="AnimationPlayer" parent="ghostlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_fdm3v")
+}
+
+[node name="Label" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -93.0
+offset_right = 272.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GirlGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 692)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("12_l6qon")
+
+[node name="BoyGhost" type="Sprite2D" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 2
+z_as_relative = false
+position = Vector2(2026, 724)
+scale = Vector2(0.472, 0.460139)
+texture = ExtResource("13_4oqm8")
+
+[node name="skip" type="Label" parent="ghostlayer/bedroomfailghost"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
+
 [node name="Insidebox" type="Sprite2D" parent="ghostlayer"]
 visible = false
 modulate = Color(0, 0.992157, 0.815686, 1)
@@ -5611,10 +5790,48 @@ text = "Present"
 
 [node name="Timer" type="Sprite2D" parent="ghostlayer"]
 visible = false
-z_index = 2
-position = Vector2(128, 80)
+position = Vector2(264, 80)
 scale = Vector2(3.91016, 3.91016)
-texture = ExtResource("36_h7llc")
+texture = ExtResource("43_dosur")
+
+[node name="Heart" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(275, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("44_lfgyo")
+
+[node name="Heart2" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(355, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("44_lfgyo")
+
+[node name="Heart3" type="Sprite2D" parent="ghostlayer"]
+visible = false
+position = Vector2(438, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("44_lfgyo")
+
+[node name="Heart4" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(275, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("45_h76dr")
+
+[node name="Heart5" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(355, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("45_h76dr")
+
+[node name="Heart6" type="Sprite2D" parent="ghostlayer"]
+visible = false
+modulate = Color(0.435294, 0.435294, 0.435294, 0.435294)
+position = Vector2(438, 85)
+scale = Vector2(3.14063, 3.14063)
+texture = ExtResource("45_h76dr")
 
 [node name="Label8" type="Label" parent="ghostlayer"]
 visible = false
