@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=164 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -91,6 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="85_bsq0n"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="86_fgbbe"]
 [ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="87_b4rv0"]
+[ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="87_oo0tm"]
 [ext_resource type="Texture2D" uid="uid://bcp8s81nfrhth" path="res://assets/a.png" id="88_oo0tm"]
 [ext_resource type="Texture2D" uid="uid://dh1r0kfl87ugx" path="res://assets/rightarrow.png" id="89_7alxu"]
 [ext_resource type="Texture2D" uid="uid://dwdssvj7spq7r" path="res://assets/d.png" id="90_bar5q"]
@@ -1714,8 +1715,8 @@ size = Vector2(309, 320.375)
 size = Vector2(259.5, 518)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0mf2"]
-radius = 130.0
-height = 340.0
+radius = 155.0
+height = 366.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gswy"]
 size = Vector2(744, 142)
@@ -3391,6 +3392,34 @@ shape = SubResource("RectangleShape2D_f125y")
 disabled = true
 metadata/_edit_lock_ = true
 
+[node name="Node2D" parent="explore/CanvasLayer/cabinet" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/cabinet/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(177, 149)
+
+[node name="Node2D2" parent="explore/CanvasLayer/cabinet" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/cabinet/Node2D2/EAnim" index="0"]
+visible = false
+position = Vector2(822, 146)
+
+[node name="Node2D3" parent="explore/CanvasLayer/cabinet" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/cabinet/Node2D3/EAnim" index="0"]
+visible = false
+position = Vector2(1532, 149)
+
+[node name="Node2D4" parent="explore/CanvasLayer/cabinet" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/cabinet/Node2D4/EAnim" index="0"]
+visible = false
+position = Vector2(1829, 141)
+
 [node name="oven" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
@@ -3401,6 +3430,13 @@ position = Vector2(492.5, 346.375)
 shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
 metadata/_edit_lock_ = true
+
+[node name="Node2D" parent="explore/CanvasLayer/oven" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/oven/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(505, 141)
 
 [node name="sink" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -3413,6 +3449,13 @@ shape = SubResource("RectangleShape2D_n55t6")
 disabled = true
 metadata/_edit_lock_ = true
 
+[node name="Node2D" parent="explore/CanvasLayer/sink" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/sink/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1241, 138)
+
 [node name="fridge" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
@@ -3423,6 +3466,13 @@ position = Vector2(2145.25, 248)
 shape = SubResource("RectangleShape2D_fr5pv")
 disabled = true
 metadata/_edit_lock_ = true
+
+[node name="Node2D" parent="explore/CanvasLayer/fridge" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/fridge/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(2166, 121)
 
 [node name="chair" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
@@ -3441,6 +3491,20 @@ shape = SubResource("CapsuleShape2D_k0mf2")
 disabled = true
 metadata/_edit_lock_ = true
 
+[node name="Node2D" parent="explore/CanvasLayer/chair" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/chair/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(787, 944)
+
+[node name="Node2D2" parent="explore/CanvasLayer/chair" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/chair/Node2D2/EAnim" index="0"]
+visible = false
+position = Vector2(1509, 948)
+
 [node name="island" type="Area2D" parent="explore/CanvasLayer"]
 position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
@@ -3449,6 +3513,13 @@ script = ExtResource("23_n55t6")
 position = Vector2(1131, 709)
 shape = SubResource("RectangleShape2D_1gswy")
 disabled = true
+
+[node name="Node2D" parent="explore/CanvasLayer/island" instance=ExtResource("87_oo0tm")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/island/Node2D/EAnim" index="0"]
+visible = false
+position = Vector2(1544, 737)
 
 [node name="scene collisions" type="Node" parent="."]
 
@@ -4053,3 +4124,13 @@ shape = SubResource("RectangleShape2D_s4afo")
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
 
 [editable path="ghostlayer/Node2D"]
+[editable path="explore/CanvasLayer/cabinet/Node2D"]
+[editable path="explore/CanvasLayer/cabinet/Node2D2"]
+[editable path="explore/CanvasLayer/cabinet/Node2D3"]
+[editable path="explore/CanvasLayer/cabinet/Node2D4"]
+[editable path="explore/CanvasLayer/oven/Node2D"]
+[editable path="explore/CanvasLayer/sink/Node2D"]
+[editable path="explore/CanvasLayer/fridge/Node2D"]
+[editable path="explore/CanvasLayer/chair/Node2D"]
+[editable path="explore/CanvasLayer/chair/Node2D2"]
+[editable path="explore/CanvasLayer/island/Node2D"]
