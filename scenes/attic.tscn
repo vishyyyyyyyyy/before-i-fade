@@ -56,9 +56,9 @@
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="49_bgrwk"]
 [ext_resource type="Script" uid="uid://ct8nuphlvm8xq" path="res://scripts/choice_1.gd" id="49_ju1eb"]
 [ext_resource type="AudioStream" uid="uid://d4jro2agjq5ka" path="res://assets/audio/knife.mp3" id="50_ju1eb"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="52_p08rk"]
 [ext_resource type="Texture2D" uid="uid://bfhai65murx0h" path="res://assets/downarrow.png" id="54_hifsb"]
 [ext_resource type="Texture2D" uid="uid://b43pqibld1d8s" path="res://assets/s.png" id="55_w3nd6"]
+[ext_resource type="Script" uid="uid://d03xaeh1y2b8l" path="res://scripts/camera_2dattic.gd" id="56_lfgyo"]
 [ext_resource type="Texture2D" uid="uid://lkxqy1qe176v" path="res://assets/uparrow.png" id="56_u7edh"]
 [ext_resource type="Texture2D" uid="uid://bs6gow1rackk4" path="res://assets/w.png" id="57_igas7"]
 [ext_resource type="Texture2D" uid="uid://bnq2e7tsasytr" path="res://assets/leftarrow.png" id="58_dosur"]
@@ -6111,7 +6111,7 @@ volume_db = 20.0
 [node name="Camera2D" type="Camera2D" parent="ghostlayer"]
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
-script = ExtResource("52_p08rk")
+script = ExtResource("56_lfgyo")
 
 [node name="scene collisions" type="Node" parent="."]
 

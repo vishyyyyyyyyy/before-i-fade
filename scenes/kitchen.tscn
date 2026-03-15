@@ -39,11 +39,11 @@
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="26_cvtdl"]
 [ext_resource type="Texture2D" uid="uid://dllleie8dya53" path="res://assets/kitchen4.png" id="26_d7r0a"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="26_j5uij"]
-[ext_resource type="Script" uid="uid://dclb2l0gi5qi7" path="res://scripts/camera_2d.gd" id="27_40l35"]
 [ext_resource type="Texture2D" uid="uid://mrjhghow33oy" path="res://assets/kitchen5.png" id="27_frf47"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="27_tpccs"]
 [ext_resource type="Texture2D" uid="uid://cwemow836riju" path="res://assets/kitchen6.png" id="28_1siqs"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="28_hxncp"]
+[ext_resource type="Script" uid="uid://dfm6yy6ti6isa" path="res://scripts/camera_2dkitchen.gd" id="28_oo0tm"]
 [ext_resource type="Texture2D" uid="uid://cns2v2bojd3og" path="res://assets/kitchen7.png" id="29_gho0h"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_w3dxo"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="30_cuqh1"]
@@ -2337,7 +2337,7 @@ sprite_frames = SubResource("SpriteFrames_4a0qq")
 [node name="Camera2D" type="Camera2D" parent="ghostlayer"]
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
-script = ExtResource("27_40l35")
+script = ExtResource("28_oo0tm")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
