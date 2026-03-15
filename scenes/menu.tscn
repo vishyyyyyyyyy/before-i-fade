@@ -115,7 +115,7 @@ tracks/0/keys = {
 "values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oi1it"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x16fv"]
 _data = {
 &"RESET": SubResource("Animation_rsfmq"),
 &"modulate": SubResource("Animation_81l6r")
@@ -528,7 +528,7 @@ metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_oi1it")
+&"": SubResource("AnimationLibrary_x16fv")
 }
 
 [node name="ColorRect2" type="ColorRect" parent="AnimationPlayer2"]
