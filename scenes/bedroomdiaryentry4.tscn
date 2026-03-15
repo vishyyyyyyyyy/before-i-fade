@@ -2163,8 +2163,6 @@ text = "\"I wish there was something I could do.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/ghosttext"]
 visible = false
@@ -2473,8 +2471,6 @@ theme_override_font_sizes/font_size = 32
 text = "\"There's no money in here...\""
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2497,8 +2493,6 @@ text = "\"Huh? There's a note.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2517,12 +2511,10 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 32
-text = "\"STAY AWAY FROM THEM!\""
+text = "\"STAY AWAY FROM EX!\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2545,8 +2537,6 @@ text = "\"It's almost like my past self knew about my ex's murdeorus intentions.
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2569,8 +2559,6 @@ text = "\"There's a USB here too.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label6" type="Label" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2593,8 +2581,6 @@ text = "\"Let's see what's on it.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext4"]
 visible = false
@@ -2760,10 +2746,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
+offset_left = -876.0
+offset_top = -132.0
+offset_right = 876.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2772,8 +2758,6 @@ theme_override_font_sizes/font_size = 32
 text = "“Hey… if you’re seeing this, it means you’ve uncovered who killed us.”"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/pastvideo"]
 visible = false
@@ -2784,9 +2768,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -596.0
-offset_top = -140.0
+offset_top = -132.0
 offset_right = 596.0
-offset_bottom = -24.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2795,8 +2779,6 @@ theme_override_font_sizes/font_size = 32
 text = "“I saw it too… our ex, the murder…”"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="ghostlayer/pastvideo"]
 visible = false
@@ -2807,9 +2789,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -596.0
-offset_top = -140.0
+offset_top = -132.0
 offset_right = 596.0
-offset_bottom = -24.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2818,8 +2800,6 @@ theme_override_font_sizes/font_size = 32
 text = "“I left this recording for you, to guide you.”"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="ghostlayer/pastvideo"]
 visible = false
@@ -2830,9 +2810,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -820.0
-offset_top = -140.0
+offset_top = -132.0
 offset_right = 814.0
-offset_bottom = -23.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2842,8 +2822,6 @@ text = "“Listen carefully… you’re not just seeing me, you’re seeing a ve
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="ghostlayer/pastvideo"]
 visible = false
@@ -2853,10 +2831,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -596.0
-offset_top = -140.0
-offset_right = 596.0
-offset_bottom = -24.0
+offset_left = -708.0
+offset_top = -132.0
+offset_right = 708.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2865,8 +2843,6 @@ theme_override_font_sizes/font_size = 32
 text = "“Go back to the attic… record everything… and call 911.”"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label6" type="Label" parent="ghostlayer/pastvideo"]
 visible = false
@@ -2877,9 +2853,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -596.0
-offset_top = -140.0
+offset_top = -132.0
 offset_right = 596.0
-offset_bottom = -24.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 15
@@ -2888,8 +2864,6 @@ theme_override_font_sizes/font_size = 32
 text = "“Do it carefully… I couldn’t stop it last time.”"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Ghostvideoboy" type="Sprite2D" parent="ghostlayer/pastvideo"]
 visible = false
@@ -3219,26 +3193,30 @@ texture = ExtResource("34_scnf6")
 visible = false
 z_index = 2
 offset_left = 38.0
-offset_top = 54.0
-offset_right = 214.0
-offset_bottom = 127.0
+offset_top = 48.0
+offset_right = 220.0
+offset_bottom = 121.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("22_wly0k")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 56
 text = "10.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="ghostlayer"]
 visible = false
 z_index = 5
-offset_left = 314.0
-offset_top = 1192.0
-offset_right = 2010.0
-offset_bottom = 1265.0
+offset_left = 306.0
+offset_top = 1176.0
+offset_right = 2002.0
+offset_bottom = 1249.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 32
-text = "Unscramble the fridge magnets (A, F, E, D) and type it into the safe, press enter to save."
+text = "Unscramble the fridge magnets (A, F, E, D) and type it into the safe.
+press enter to save."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="ghostlayer"]
 visible = false

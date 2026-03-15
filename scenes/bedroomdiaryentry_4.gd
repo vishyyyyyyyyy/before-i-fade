@@ -47,7 +47,7 @@ func fade_in_music():
 
 
 func _ready():
-	Global.bedroomdiary4fail = true
+	#Global.bedroomdiary4fail = true
 	if Global.bedroomdiary4fail == true:
 		$CanvasLayer5/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()

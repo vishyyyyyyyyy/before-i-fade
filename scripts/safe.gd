@@ -339,9 +339,9 @@ func _on_text_entered(new_text: String) -> void:
 		$"../AudioStreamPlayer".play()
 		$"../LineEdit".editable = false
 		$"../Label6".visible=false
+		await get_tree().create_timer(2).timeout
 		$"../Timer".visible=false
 		$"../Label5".visible=false
-		await get_tree().create_timer(2).timeout
 		$"../Heart".visible=false
 		$"../Heart2".visible=false
 		$"../Heart3".visible=false

@@ -76,6 +76,7 @@ func open_desk():
 	if desk_opened:
 		return # already opened
 	$"../CanvasLayer3/CanvasModulate/Desk1".visible = true
+	$"../CanvasLayer3/CanvasModulate/ColorRect2".visible=true
 	$CollisionPolygon2D.disabled = false
 	print("Clicked shape 1")
 	desk_opened = true
