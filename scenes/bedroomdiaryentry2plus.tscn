@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=84 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_1vrlx"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_wv56w"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="11_xnet5"]
+[ext_resource type="PackedScene" uid="uid://c12dpqq3hlyho" path="res://assets/ghostarrow.tscn" id="12_dwit2"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_lqku5"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_kaovn"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_7ccer"]
@@ -799,6 +800,12 @@ shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="ghostlayer" instance=ExtResource("12_dwit2")]
+
+[node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(279, 968)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_lqku5")]
 position = Vector2(1902, 912)
@@ -1828,4 +1835,5 @@ shape = SubResource("RectangleShape2D_nj512")
 [connection signal="mouse_entered" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
 
+[editable path="ghostlayer/Node2D"]
 [editable path="desk/Node2D"]

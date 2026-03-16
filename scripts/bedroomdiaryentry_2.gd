@@ -115,10 +115,10 @@ func start_dialogue(index: int):
 		$CanvasLayer4/diaryentry3/skip.visible=false
 		
 		if Global.character =="girlGhost":
-			anim_name = "girltext"
+			anim_name = "girl"
 
 		elif Global.character =="boyGhost":
-			anim_name ="boytext"
+			anim_name ="boy"
 		else:
 			print("error animating text")
 	anim.play(anim_name) 
@@ -151,6 +151,7 @@ func end_dialogue():
 		$CanvasLayer4/diaryentry2/BoyGhost2.visible=false
 		$CanvasLayer4/diaryentry2/Label.visible=false
 		$CanvasLayer4/diaryentry2/skip.visible=false
+		$ghostlayer/Node2D/arrow.play("arrow")
 		
 			
 	if anim_index ==1:

@@ -8,6 +8,7 @@ var player_inside := false
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	#Global.reusabledesk = 2
 
 func _on_body_entered(body):
 	if body.name == "blobGhostPlayer":
@@ -32,9 +33,6 @@ func _input_event(viewport, event, shape_idx):
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:
 
-		if shape_idx == 0:
-			open_desk()
-
 		if Global.reusabledesk == 1 and shape_idx == 1:
 			$"../CanvasLayer5/Label".visible = false
 			print("Clicked shape 2")
@@ -43,7 +41,7 @@ func _input_event(viewport, event, shape_idx):
 			$"../CanvasLayer3/CanvasModulate/Diaryentry2".visible = true
 			emit_signal("diaryentry2")
 
-		if Global.reusabledesk == 2 and shape_idx == 2:
+		elif Global.reusabledesk == 2 and shape_idx == 1:
 			$CollisionShape2D.disabled = true
 			$"../CanvasLayer4/Area2D/CollisionShape2D".disabled = true
 			print("Clicked shape 2")
@@ -51,7 +49,7 @@ func _input_event(viewport, event, shape_idx):
 			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible = true
 			emit_signal("diaryentry3")
 		
-		if Global.reusabledesk == 3 and shape_idx == 2:
+		elif Global.reusabledesk == 3 and shape_idx == 1:
 			$CollisionShape2D.disabled = true
 			print("Clicked shape 2")
 			$"../CanvasLayer5/Label".visible = false
