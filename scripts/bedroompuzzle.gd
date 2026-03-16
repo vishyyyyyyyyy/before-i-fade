@@ -27,6 +27,12 @@ var animating := true
 var segment_starts
 var segment_ends
 
+@onready var furniture = [$CanvasModulate/TileMap2, $CanvasModulate/TileMap, $CanvasModulate/Desk, $CanvasModulate/Bed, 
+				$CanvasModulate/Safe, $CanvasModulate/Window, $CanvasModulate/Calendar, $CanvasModulate/Calendar2, 
+				$CanvasModulate/Catrug
+				]
+@onready var doors = [$CanvasModulate/Door,
+			$CanvasModulate/Door2,]
 signal dialogue_finished(index)
 
 
@@ -132,8 +138,8 @@ func _on_continue_pressed():
 	#MusicManager.music_player.pitch_scale = 0.75
 	print("Node was clicked!")
 	await start_dialogue(0)
-	$CanvasModulate/blobGhostPlayer.position.x =506.0 
-	$CanvasModulate/blobGhostPlayer.position.y =533 #1912.0 orignal, 535.0
+	$blobGhostPlayer.position.x =506.0 
+	$blobGhostPlayer.position.y =533 #1912.0 orignal, 535.0
 	$Timer2.start()
 	$desk/CollisionShape2D.disabled=true
 	$Label2.visible=true
@@ -427,6 +433,12 @@ func wrong():
 	reset_puzzle()
 	
 func correct():
+	$Heart.visible=false
+	$Heart2.visible=false
+	$Heart3.visible=false
+	$Heart4.visible=false
+	$Heart5.visible=false
+	$Heart6.visible=false
 	$CanvasLayer4.visible=false
 	$CanvasLayer3.visible=false
 	$CanvasLayer2.visible=false
@@ -480,7 +492,7 @@ func play_diary_sequence():
 		$Deskcloseup2.visible=false
 		await start_dialogue(2)
 		$Desk2.visible=false
-		await get_tree().create_timer(2).timeout
+		#await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false
@@ -490,13 +502,22 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$AnimationPlayer3/skip.visible=false
 		$Camera2D.shake(2, 1.4)
-		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		for item in furniture:
+			item.modulate = Color(0.0, 0.994, 0.816)
+		for item in doors:
+			item.modulate= Color(0.094, 0.322, 0.278)
 		await get_tree().create_timer(0.5).timeout
-		$CanvasModulate.color = Color(1,1,1,1)
+		for item in furniture:
+			item.modulate = Color(1, 1, 1, 1)
+		for item in doors:
+			item.modulate = Color(1, 1, 1, 1)
 		$CanvasModulate/Calendar2.visible=false
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate/Calendar2.visible=true
-		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		for item in furniture:
+			item.modulate = Color(0.0, 0.994, 0.816)
+		for item in doors:
+			item.modulate = Color(0.094, 0.322, 0.278)
 		$SceneTrigger/CollisionShape2D.disabled=false
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer6/Label6.visible=true
@@ -519,13 +540,22 @@ func play_diary_sequence():
 		$CanvasModulate/Calendar2.visible=true
 		$AnimationPlayer3/skip.visible=false
 		$Camera2D.shake(2, 1.4)
-		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		for item in furniture:
+			item.modulate = Color(0.0, 0.994, 0.816)
+		for item in doors:
+			item.modulate = Color(0.094, 0.322, 0.278)
 		await get_tree().create_timer(0.5).timeout
-		$CanvasModulate.color = Color(1,1,1,1)
+		for item in furniture:
+			item.modulate = Color(1, 1, 1, 1)
+		for item in doors:
+			item.modulate = Color(1, 1, 1, 1)
 		$CanvasModulate/Calendar2.visible=false
 		await get_tree().create_timer(0.5).timeout
 		$CanvasModulate/Calendar2.visible=true
-		$CanvasModulate.color = Color(0.0, 0.994, 0.816)
+		for item in furniture:
+			item.modulate = Color(0.0, 0.994, 0.816)
+		for item in doors:
+			item.modulate = Color(0.094, 0.322, 0.278)
 		$SceneTrigger/CollisionShape2D.disabled=false
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer6/Label6.visible=true
