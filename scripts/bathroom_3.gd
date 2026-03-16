@@ -499,7 +499,6 @@ func combpress():
 	$CanvasLayer3/Comb2.visible=false
 	$CanvasLayer3/Label7.visible=true
 	$Area2D/CollisionShape2D.disabled=false
-	$CanvasLayer3/Node2D/arrow.play("arrow")
 		
 func modulatebackghost():
 	$CanvasLayer/TileMap.visible=false

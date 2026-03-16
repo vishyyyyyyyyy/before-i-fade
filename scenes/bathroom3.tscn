@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=111 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="16_qr1ii"]
 [ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="16_utq20"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="17_mc686"]
-[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="17_obg0h"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Script" uid="uid://des6a3n5gl1xa" path="res://scripts/present_tile.gd" id="18_tbr22"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
@@ -1720,13 +1719,6 @@ z_index = 2
 position = Vector2(158, 840)
 scale = Vector2(4, 4)
 
-[node name="Node2D" parent="CanvasLayer3" instance=ExtResource("17_obg0h")]
-
-[node name="Ghostarrow" parent="CanvasLayer3/Node2D/arrow" index="0"]
-visible = false
-position = Vector2(159, 959)
-rotation = 4.71239
-
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
 root_node = NodePath("Phone")
 libraries = {
@@ -3209,4 +3201,3 @@ volume_db = 20.0
 
 [editable path="CanvasLayer3/comb/Node2D"]
 [editable path="CanvasLayer3/failpuzzlecutscene"]
-[editable path="CanvasLayer3/Node2D"]

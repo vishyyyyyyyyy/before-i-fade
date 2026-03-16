@@ -5,7 +5,8 @@ extends Node2D
 @onready var explore_node: Node2D = $explore 
 
 var clicked_objects := {} 
-var deskcounter:= 0
+var diarypress = false
+var photopress = false
 var interact_target: String = ""
 
 var segment_data := [
@@ -132,6 +133,7 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		$CanvasLayer/bedroomfailghost/Label.visible=false
 		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
 		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
@@ -146,6 +148,7 @@ func start_dialogue(index: int):
 	
 	if anim_index == 1:
 		print("2nd anim6")
+		
 		$CanvasLayer/bedroomfailghost/Label.visible=false
 		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
 		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
@@ -170,6 +173,9 @@ func start_dialogue(index: int):
 			
 	if anim_index == 2:
 		print("photo anim")
+		$Node/AnimationPlayer2/skip.visible=false
+		
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		$CanvasLayer/bedroomfailghost/Label.visible=false
 		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
 		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
@@ -179,6 +185,8 @@ func start_dialogue(index: int):
 		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost2.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
+		$CanvasLayer/AnimationPlayer2/skip.visible=false
+		
 		$CanvasLayer/AnimationPlayer/Label.visible=false
 		$CanvasLayer/AnimationPlayer/Label2.visible=false
 		$CanvasLayer/AnimationPlayer/Label3.visible=false
@@ -190,6 +198,7 @@ func start_dialogue(index: int):
 		$CanvasLayer/AnimationPlayer/Girl2.visible=false
 		$CanvasLayer/AnimationPlayer/Boy.visible=false
 		$CanvasLayer/AnimationPlayer/Boy2.visible=false
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		if Global.character =="girlGhost":
 			anim_name = "girlfamilyphoto"
 
@@ -200,6 +209,8 @@ func start_dialogue(index: int):
 	
 	if anim_index == 3:
 		print("diary anim")
+		
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		$CanvasLayer/bedroomfailghost/Label.visible=false
 		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
 		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
@@ -209,6 +220,8 @@ func start_dialogue(index: int):
 		$CanvasLayer/AnimationPlayer2/BoyGhost.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost2.visible=false
 		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
+		
+		$CanvasLayer/AnimationPlayer2/skip.visible=false
 		$CanvasLayer/AnimationPlayer/Label.visible=false
 		$CanvasLayer/AnimationPlayer/Label2.visible=false
 		$CanvasLayer/AnimationPlayer/Label3.visible=false
@@ -220,6 +233,7 @@ func start_dialogue(index: int):
 		$CanvasLayer/AnimationPlayer/Girl2.visible=false
 		$CanvasLayer/AnimationPlayer/Boy.visible=false
 		$CanvasLayer/AnimationPlayer/Boy2.visible=false
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		if Global.character =="girlGhost":
 			anim_name = "girldiarytext"
 
@@ -229,6 +243,7 @@ func start_dialogue(index: int):
 			print("error animating text")
 			
 	if anim_index ==4:
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		if Global.character =="girlGhost":
 			anim_name = "repeatgirl"
 
@@ -257,7 +272,6 @@ func end_dialogue():
 
 	print("Dialogue finished:", anim_index)
 	if anim_index == 0:
-		print("jjiiii")
 		print("FIRST DIALOGUE FINISHED")
 		$CanvasLayer/AnimationPlayer2/Label.visible=false
 		$CanvasLayer/AnimationPlayer2/Label2.visible=false
@@ -272,6 +286,7 @@ func end_dialogue():
 		
 			
 	if anim_index ==1:
+		$CanvasLayer/AnimationPlayer/skip.visible=false
 		$CanvasLayer/AnimationPlayer/Label.visible=false
 		$CanvasLayer/AnimationPlayer/Label2.visible=false
 		$CanvasLayer/AnimationPlayer/Label3.visible=false
@@ -302,6 +317,7 @@ func end_dialogue():
 		$Node/AnimationPlayer2/Label2.visible=false
 		$Node/AnimationPlayer2/Label.visible=false
 		$Node/AnimationPlayer2/Deskcloseup2.visible=false
+		$Node/AnimationPlayer2/skip.visible=false
 		
 	if anim_index ==4 :
 		$CanvasLayer/bedroomfailghost/Label.visible=false
@@ -514,7 +530,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
 					narration_label.visible=true
-					deskcounter +=1
+					photopress = true
 					
 				else:
 					narration_label.visible=false
@@ -541,7 +557,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					$Node/diary/CollisionPolygon2D.disabled=false
 					narration_label.visible=true
-					deskcounter +=1
+					photopress=true
 			"diary":
 				if Global.character == "boyGhost":
 					narration_label.visible=false
@@ -567,7 +583,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					narration_label.visible=true
-					deskcounter +=1
+					diarypress=true
 				else:
 					narration_label.visible=false
 					await start_dialogue(3)
@@ -592,9 +608,9 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=false
 					$Node/familyphoto/CollisionShape2D.disabled=false
 					narration_label.visible=true
-					deskcounter +=1
+					diarypress=true
 					
-		if deskcounter == 2:
+		if diarypress and photopress:
 			$Label3.visible=false
 			$Node2/Area2D/CollisionShape2D.disabled=false
 			$Node2/Area2D.visible=true

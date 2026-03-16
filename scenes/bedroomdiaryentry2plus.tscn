@@ -658,7 +658,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvaqh"]
-size = Vector2(121, 130.333)
+size = Vector2(121, 150.667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_treqh"]
 size = Vector2(67.5, 66.5)
@@ -801,7 +801,7 @@ disabled = true
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_lqku5")]
-position = Vector2(1907, 882)
+position = Vector2(1902, 912)
 scale = Vector2(3, 3)
 
 [node name="Catrug" type="Sprite2D" parent="."]
@@ -1209,7 +1209,7 @@ scale = Vector2(3, 3)
 script = ExtResource("28_sl28a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
-position = Vector2(70.5, -120.167)
+position = Vector2(70.5, -110)
 shape = SubResource("RectangleShape2D_kvaqh")
 debug_color = Color(0.664694, 0.31491, 1, 0.42)
 
@@ -1223,6 +1223,7 @@ disabled = true
 [node name="Node2D" parent="desk" instance=ExtResource("27_c20of")]
 
 [node name="letterE" parent="desk/Node2D/EAnim" index="0"]
+visible = false
 position = Vector2(2153, 812)
 
 [node name="Node2" type="Node" parent="."]
