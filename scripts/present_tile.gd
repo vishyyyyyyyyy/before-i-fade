@@ -128,6 +128,23 @@ func resetpuzzle():
 	"tile15": "green",
 	"tile16": "white"
 }
+	$tile1.current_color = "white"
+	$tile2.current_color = "green"
+	$tile3.current_color = "green"
+	$tile4.current_color = "white"
+	$tile5.current_color = "white"
+	$tile6.current_color = "white"
+	$tile7.current_color = "white"
+	$tile8.current_color = "white"
+	$tile9.current_color = "green"
+	$tile10.current_color = "green"
+	$tile11.current_color = "white"
+	$tile12.current_color = "white"
+	$tile13.current_color = "green"
+	$tile14.current_color = "white"
+	$tile15.current_color = "green"
+	$tile16.current_color = "white"
+
 
 	$tile1/whitetile.modulate=Color(1,1,1,1)
 	$tile2/greentile.modulate=Color(0.863, 1.0, 0.729)
@@ -145,5 +162,6 @@ func resetpuzzle():
 	$tile14/whitetile.modulate=Color(1,1,1,1)
 	$tile15/greentile.modulate=Color(0.863, 1.0, 0.729)
 	$tile16/whitetile.modulate=Color(1,1,1,1)
+
 	$"../Node3/Timer2".start()
 	

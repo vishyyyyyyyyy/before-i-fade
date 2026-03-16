@@ -351,6 +351,9 @@ func friendCall():
 func _on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
+	$CanvasLayer3/Heart.visible=true
+	$CanvasLayer3/Heart2.visible=true
+	$CanvasLayer3/Heart3.visible=true
 	print("Signal received in main script!")
 	$CanvasLayer3/presenttile.visible=true
 	$CanvasLayer3/pasttile.visible=true
@@ -452,7 +455,7 @@ func afterpuzzle():
 	$CanvasLayer3/diarycontinue/CollisionShape2D.disabled=false
 	$CanvasLayer3/diarycontinue.visible=true
 	$CanvasLayer/TileMap.visible=false
-	$CanvasLayer3/Node3/Timer.visible=false
+	$CanvasLayer3/Timer.visible=false
 	$"CanvasLayer3/Past Tiles".visible=false
 	$"CanvasLayer3/Present Tiles".visible=false
 	$CanvasLayer3/pasttile.visible=false
@@ -480,8 +483,8 @@ func diarypagecontinue():
 	$CanvasLayer3/Label.visible=false
 	$CanvasLayer3/Label3.visible=false
 	$CanvasLayer3/comb/CollisionShape2D.disabled=false
+	await modulatebackghost()
 	$CanvasLayer3/Label6.visible=true
-	modulatebackghost()
 
 func combpress():
 	$CanvasLayer3/Label6.visible=false
@@ -495,6 +498,8 @@ func combpress():
 	$CanvasLayer3/comb.visible=true
 	$CanvasLayer3/Comb2.visible=false
 	$CanvasLayer3/Label7.visible=true
+	$Area2D/CollisionShape2D.disabled=false
+	$CanvasLayer3/Node2D/arrow.play("arrow")
 		
 func modulatebackghost():
 	$CanvasLayer/TileMap.visible=false
@@ -511,4 +516,3 @@ func modulatebackghost():
 	$CanvasModulate.color = Color(0.0, 0.994, 0.816)
 	$CanvasLayer2/CanvasModulate.color = Color(0.094, 0.323, 0.28)
 	$CanvasLayer4/CanvasModulate2.color= Color(0.094, 0.323, 0.28)
-	$Area2D/CollisionShape2D.disabled=false

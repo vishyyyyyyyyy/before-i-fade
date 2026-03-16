@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=112 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="16_qr1ii"]
 [ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="16_utq20"]
 [ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="17_mc686"]
+[ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="17_obg0h"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Script" uid="uid://des6a3n5gl1xa" path="res://scripts/present_tile.gd" id="18_tbr22"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
@@ -146,7 +147,7 @@ sources/0 = SubResource("TileSetAtlasSource_3ouov")
 size = Vector2(1534.67, 118)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcjub"]
-radius = 63.0518
+radius = 100.359
 height = 250.067
 
 [sub_resource type="Animation" id="Animation_4kitr"]
@@ -1689,7 +1690,7 @@ visible = false
 
 [node name="letterE" parent="CanvasLayer3/comb/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(2210, 845)
+position = Vector2(2202, 853)
 
 [node name="failpuzzlecutscene" parent="CanvasLayer3" instance=ExtResource("16_utq20")]
 
@@ -1718,6 +1719,13 @@ z_index = 7
 z_index = 2
 position = Vector2(158, 840)
 scale = Vector2(4, 4)
+
+[node name="Node2D" parent="CanvasLayer3" instance=ExtResource("17_obg0h")]
+
+[node name="Ghostarrow" parent="CanvasLayer3/Node2D/arrow" index="0"]
+visible = false
+position = Vector2(159, 959)
+rotation = 4.71239
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer3"]
 root_node = NodePath("Phone")
@@ -1917,7 +1925,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 32
-text = "Press the new object that appeared."
+text = "Interact with the new object."
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="CanvasLayer3"]
@@ -2556,9 +2564,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -596.0
+offset_left = -692.0
 offset_top = -134.0
-offset_right = 596.0
+offset_right = 692.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -2567,6 +2575,7 @@ theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 32
 text = "\"Wait a minute... This floor tile pattern looks a little different compared to the present tile pattern.\""
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -2580,9 +2589,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -596.0
-offset_top = -101.0
+offset_top = -122.0
 offset_right = 596.0
-offset_bottom = -64.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 10
@@ -2590,6 +2599,7 @@ theme_override_fonts/font = ExtResource("13_wwfem")
 theme_override_font_sizes/font_size = 32
 text = "\"Let me try to replicate this pattern in the present. Maybe I'll end up remembering more?\""
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -3199,3 +3209,4 @@ volume_db = 20.0
 
 [editable path="CanvasLayer3/comb/Node2D"]
 [editable path="CanvasLayer3/failpuzzlecutscene"]
+[editable path="CanvasLayer3/Node2D"]
