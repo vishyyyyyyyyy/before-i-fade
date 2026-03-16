@@ -205,6 +205,8 @@ func start_dialogue(index: int):
 		$CanvasLayer/ghosttext2/BoyGhost.visible=false
 		$CanvasLayer/ghosttext2/skip.visible=false
 		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost2.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
 		
 		$CanvasLayer/ghosttext1/Label2.visible=false
 		$CanvasLayer/ghosttext1/GirlGhost.visible=false
@@ -239,6 +241,8 @@ func start_dialogue(index: int):
 		$CanvasLayer/ghosttext2/BoyGhost.visible=false
 		$CanvasLayer/ghosttext2/skip.visible=false
 		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost2.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
 		
 		$CanvasLayer/ghosttext1/Label2.visible=false
 		$CanvasLayer/ghosttext1/GirlGhost.visible=false
@@ -305,6 +309,9 @@ func end_dialogue():
 		$CanvasLayer/ghosttext2/BoyGhost.visible=false
 		$CanvasLayer/ghosttext2/skip.visible=false
 		$CanvasLayer/ghosttext2/GirlGhost.visible=false
+		$CanvasLayer/ghosttext2/GirlGhost2.visible=false
+		$CanvasLayer/ghosttext2/BoyGhost2.visible=false
+		
 		
 	if anim_index == 3:	
 		$CanvasLayer/ghosttext3/Label5.visible=false
@@ -476,6 +483,8 @@ func _on_object_clicked(text: String, area_name: String):
 	if area_name == "photos" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
+		await get_tree().create_timer(2.0).timeout
+		narration_label.text= 'Interact with objects in the hallway to investigate.'
 		return
 # Mark this area as clicked
 	clicked_objects[area_name] = true
@@ -661,6 +670,12 @@ func afterpuzzle():
 	$CanvasLayer/Label8.visible=false
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Timer.visible=false
+	$CanvasLayer/Node3/Heart.visible=false
+	$CanvasLayer/Node3/Heart2.visible=false
+	$CanvasLayer/Node3/Heart3.visible=false
+	$CanvasLayer/Node3/Heart4.visible=false
+	$CanvasLayer/Node3/Heart5.visible=false
+	$CanvasLayer/Node3/Heart6.visible=false
 	$CanvasLayer/Node3/Label5.visible=false
 	$CanvasLayer/Node3/Correct.visible=false
 	$CanvasLayer/puzzle.visible=false
@@ -704,8 +719,7 @@ func diarypagecontinue():
 	elif Global.character == "boyGhost":
 		$CanvasLayer/Girlframe.visible=true
 		await start_dialogue(4)
-		
-	$CanvasLayer/Node2D/arrow.play("arrow")
+		 
 	$CanvasLayer/blobGhostPlayer.position.x = 1166
 	$CanvasLayer/blobGhostPlayer.position.y = 520
 	$CanvasLayer/Neighbornote3.visible=false
@@ -717,6 +731,7 @@ func diarypagecontinue():
 	$CanvasLayer/Boyframe.visible=false
 	$CanvasLayer/Girlframe.visible=false
 	$CanvasLayer/scenetrigger/CollisionShape2D.disabled=false
+	$CanvasLayer/Node2D/arrow.play("arrow")
 	$CanvasLayer/Label7.visible=true
 
 func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
