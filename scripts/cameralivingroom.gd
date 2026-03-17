@@ -5,7 +5,6 @@ var shake_timer: float = 0.0
 
 @onready var player_layer = $".."
 @onready var furniture = $"../../CanvasLayer"
-@onready var tv = $"../../CanvasLayer3"
 
 func _process(delta):
 	if shake_timer > 0:
@@ -17,12 +16,10 @@ func _process(delta):
 		offset = shake_offset
 		player_layer.offset = shake_offset
 		furniture.offset = shake_offset
-		tv.offset = shake_offset
 	else:
 		offset = Vector2.ZERO
 		player_layer.offset = Vector2.ZERO
 		furniture.offset = Vector2.ZERO
-		tv.offset = Vector2.ZERO
 
 
 func shake(strength: float, duration: float):

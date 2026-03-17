@@ -596,12 +596,6 @@ func _on_object_clicked(text: String, area_name: String):
 		$explore/chair/CollisionShape2D2.disabled=false
 		$ghostlayer/explorelabel.visible=true
 		narration_label.text= 'Interact with objects around the kitchen to investigate.'
-		
-	# Update label
-	narration_label.text = text
-	narration_label.visible = true
-	await get_tree().create_timer(2.0).timeout
-	narration_label.text= 'Interact with objects around the kitchen to investigate.'
 	
 		
 	if area_name == "island" and all_non_photos_clicked():
@@ -629,6 +623,12 @@ func _on_object_clicked(text: String, area_name: String):
 		$CanvasLayer4/Node3/continue/CollisionShape2D.disabled=false
 		$CanvasLayer4/Node3/continue.visible=true
 		kitchenpuzzle()
+	
+		# Update label
+	narration_label.text = text
+	narration_label.visible = true
+	await get_tree().create_timer(2.0).timeout
+	narration_label.text= 'Interact with objects around the kitchen to investigate.'
 		
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["cabinet", "oven", "sink", "fridge", "chair"]

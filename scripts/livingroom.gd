@@ -1,6 +1,23 @@
 extends Node2D
 
 
+@onready var furniture = [
+	$CanvasLayer/CanvasModulate/TileMap2,
+	$CanvasLayer/CanvasModulate/TileMap,
+	$CanvasLayer/CanvasModulate/Couch,
+	$CanvasLayer/CanvasModulate/Clock,
+	$CanvasLayer/CanvasModulate/Shelf,
+	$CanvasLayer/CanvasModulate/Piano,
+	$CanvasLayer/CanvasModulate/Flower,
+	$CanvasLayer/CanvasModulate/Bluerug,
+	$CanvasLayer/CanvasModulate/Coffeetable,
+	$ghostlayer/Tv
+]
+@onready var doors = [
+		$CanvasLayer/CanvasModulate/Door, 
+		$CanvasLayer/CanvasModulate/Door2
+]
+
 @onready var narration_label: Label = $ghostlayer/explorelabel
 @onready var explore_node: Node = $explore
 var clicked_objects := {} 
@@ -72,10 +89,12 @@ func _ready():
 	$CanvasLayer/AnimationPlayer/girlSide.visible = false
 	$CanvasLayer/AnimationPlayer/boyDown.visible = false
 	$CanvasLayer/AnimationPlayer/girlDown.visible = false
-	$CanvasLayer3/CanvasModulate/Tv.visible=true
-	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
-	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-	$CanvasLayer3/CanvasModulate.color = Color(0.0, 0.992, 0.816)
+	$ghostlayer/Tv.visible=true
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate =Color( 0.094, 0.323, 0.28) 
+	
 	#Global.livingroomfail = true
 	if Global.livingroomfail == true:
 		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
@@ -392,21 +411,24 @@ func textskip():
 
 func modulatelivingroom():
 	$ghostlayer/Camera2D.shake(2, 0.8)
-	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
-	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
-	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1, 1, 1, 1)
+	for item in doors:
+		item.modulate =Color(1,1,1,1) 
 	$CanvasLayer/AnimationPlayer/boy.visible = true
 	$CanvasLayer/AnimationPlayer/girl.visible = true
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
-	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate =Color( 0.094, 0.323, 0.28) 
 	$CanvasLayer/AnimationPlayer/boy.visible = false
 	$CanvasLayer/AnimationPlayer/girl.visible = false
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
-	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
-	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1, 1, 1, 1)
+	for item in doors:
+		item.modulate =Color(1,1,1,1) 
 	$CanvasLayer/AnimationPlayer/boy.visible = true
 	$CanvasLayer/AnimationPlayer/girl.visible = true
 	await start_dialogue(1)
@@ -418,24 +440,24 @@ func modulatelivingroom():
 
 func unlockexplore():
 	$ghostlayer/explorelabel.visible=true
-	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/clock/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/couch/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/table/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/tv/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/rug/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/flower/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/piano/CollisionShape2D.disabled=false
+	$explore/bookshelf/CollisionShape2D.disabled=false
+	$explore/clock/CollisionShape2D.disabled=false
+	$explore/couch/CollisionShape2D.disabled=false
+	$explore/table/CollisionShape2D.disabled=false
+	$explore/tv/CollisionShape2D.disabled=false
+	$explore/rug/CollisionShape2D.disabled=false
+	$explore/flower/CollisionShape2D.disabled=false
+	$explore/piano/CollisionShape2D.disabled=false
 	
 	var areas = {
-		"bookshelf": $explore/CanvasLayer/bookshelf,
-		"clock": $explore/CanvasLayer/clock,
-		"couch": $explore/CanvasLayer/couch,
-		"table": $explore/CanvasLayer/table,
-		"tv": $explore/CanvasLayer/tv,
-		"rug": $explore/CanvasLayer/rug,
-		"flower": $explore/CanvasLayer/flower,
-		"piano": $explore/CanvasLayer/piano,
+		"bookshelf": $explore/bookshelf,
+		"clock": $explore/clock,
+		"couch": $explore/couch,
+		"table": $explore/table,
+		"tv": $explore/tv,
+		"rug": $explore/rug,
+		"flower": $explore/flower,
+		"piano": $explore/piano,
 		
 	}
 	for name in areas:
@@ -451,19 +473,20 @@ func _on_object_clicked(text: String, area_name: String):
 	if area_name == "piano" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
+		await get_tree().create_timer(2.0).timeout
+		narration_label.text= 'Interact with objects around the living room to investigate.'
 		return
 # Mark this area as clicked
 	clicked_objects[area_name] = true
 
+	if area_name == "piano" and all_non_photos_clicked():
+		print("yes")
+		challenge()  
+		
 	# Update label
 	narration_label.text = text
 	narration_label.visible = true
-	
-	if area_name == "piano" and all_non_photos_clicked():
-		print("yes")
-		challenge()
-	
-		
+
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["bookshelf", "clock", "table", "couch", "tv", "flower", "rug"]
 	for name in non_desk:
@@ -473,15 +496,15 @@ func all_non_photos_clicked() -> bool:
 
 func challenge():
 	$ghostlayer/explorelabel.visible=false
-	$CanvasLayer3/CanvasModulate/Tv.visible=false
-	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/clock/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/couch/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/table/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/tv/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/rug/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/flower/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/piano/CollisionShape2D.disabled=true
+	$ghostlayer/Tv.visible=false
+	$explore/bookshelf/CollisionShape2D.disabled=true
+	$explore/clock/CollisionShape2D.disabled=true
+	$explore/couch/CollisionShape2D.disabled=true
+	$explore/table/CollisionShape2D.disabled=true
+	$explore/tv/CollisionShape2D.disabled=true
+	$explore/rug/CollisionShape2D.disabled=true
+	$explore/flower/CollisionShape2D.disabled=true
+	$explore/piano/CollisionShape2D.disabled=true
 	$ghostlayer/Music.visible=true
 	$ghostlayer/Label.visible=true
 	$ghostlayer/Label2.visible=true
@@ -540,14 +563,14 @@ func challengecompleted():
 	$ghostlayer/Label3.visible=false
 	$ghostlayer/Label4.visible=false
 	$ghostlayer/Label9.visible=false
-	$explore/CanvasLayer/bookshelf/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/clock/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/couch/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/table/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/tv/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/rug/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/flower/CollisionShape2D.disabled=true
-	$explore/CanvasLayer/piano/CollisionShape2D.disabled=true
+	$explore/bookshelf/CollisionShape2D.disabled=true
+	$explore/clock/CollisionShape2D.disabled=true
+	$explore/couch/CollisionShape2D.disabled=true
+	$explore/table/CollisionShape2D.disabled=true
+	$explore/tv/CollisionShape2D.disabled=true
+	$explore/rug/CollisionShape2D.disabled=true
+	$explore/flower/CollisionShape2D.disabled=true
+	$explore/piano/CollisionShape2D.disabled=true
 	$ghostlayer/pianokeys/CollisionShape2D6/ColorRect.visible=false
 	$ghostlayer/Correct.visible=false
 	$ghostlayer/ColorRect.visible=true
@@ -569,24 +592,30 @@ func diarypagecontinue():
 	$ghostlayer/blobGhostPlayer.position.x = 2128
 	$ghostlayer/blobGhostPlayer.position.y = 399
 	await start_dialogue(4)
-	$CanvasLayer3/CanvasModulate/Tv.visible=true
+	$ghostlayer/Tv.visible=true
 	$ghostlayer/blobGhostPlayer.position.x = 2128
 	$ghostlayer/blobGhostPlayer.position.y = 399
 	$ghostlayer/Music.visible=false
 	$ghostlayer/Music2.visible=false
 	$ghostlayer/Music3.visible=false
 	$ghostlayer/Camera2D.shake(1.8, 1.4)
-	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
-	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate =Color( 0.094, 0.323, 0.28) 
+	$ghostlayer/Tv.color = Color(0.0, 0.992, 0.816)
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
-	$CanvasLayer4/CanvasModulate.color = Color(1,1,1,1) 
-	$CanvasLayer3/CanvasModulate.color =Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1,1,1,1)
+	for item in doors:
+		item.modulate =Color( 1,1,1,1) 
+	$ghostlayer/Tv.color = Color(1,1,1,1)
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.color = Color(0.0, 0.992, 0.816)
-	$CanvasLayer4/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-	$CanvasLayer3/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate =Color( 0.094, 0.323, 0.28) 
+	$ghostlayer/Tv.color = Color(0.0, 0.992, 0.816)
 	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
 	await get_tree().create_timer(0.4).timeout
 	$ghostlayer/Label14.visible=true

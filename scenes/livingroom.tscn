@@ -2057,7 +2057,7 @@ size = Vector2(314, 533)
 size = Vector2(206.5, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n8s8"]
-size = Vector2(594, 301)
+size = Vector2(594, 276)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhao1"]
 size = Vector2(327, 318)
@@ -2067,7 +2067,7 @@ size = Vector2(392, 305)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soh4j"]
 radius = 94.1509
-height = 316.31
+height = 361.523
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1eef"]
 radius = 110.337
@@ -2089,7 +2089,7 @@ size = Vector2(2346, 375.5)
 size = Vector2(613, 298)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwc7q"]
-size = Vector2(578.5, 95.5)
+size = Vector2(578.5, 113.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
 size = Vector2(258, 160.25)
@@ -2153,7 +2153,7 @@ scale = Vector2(3.34375, 3.34375)
 texture = ExtResource("9_xddai")
 
 [node name="Bluerug" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(2117, 526)
+position = Vector2(2109, 518)
 scale = Vector2(3.875, 2.54688)
 texture = ExtResource("10_tlixj")
 
@@ -2161,6 +2161,17 @@ texture = ExtResource("10_tlixj")
 position = Vector2(768, 795)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("11_1wnl2")
+
+[node name="Door" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(-2.99998, 867)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("5_k00ks")
+
+[node name="Door2" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+position = Vector2(2053, 1127)
+scale = Vector2(3, 3)
+texture = ExtResource("5_k00ks")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -2224,21 +2235,6 @@ sprite_frames = SubResource("SpriteFrames_kg10a")
 autoplay = "default"
 frame_progress = 0.718874
 
-[node name="CanvasLayer4" type="CanvasLayer" parent="."]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer4"]
-
-[node name="Door" type="Sprite2D" parent="CanvasLayer4/CanvasModulate"]
-position = Vector2(-2.99998, 867)
-rotation = 1.5708
-scale = Vector2(3, 3)
-texture = ExtResource("5_k00ks")
-
-[node name="Door2" type="Sprite2D" parent="CanvasLayer4/CanvasModulate"]
-position = Vector2(2053, 1127)
-scale = Vector2(3, 3)
-texture = ExtResource("5_k00ks")
-
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 
 [node name="Node2D" parent="ghostlayer" instance=ExtResource("16_nvfrc")]
@@ -2251,6 +2247,11 @@ rotation = 4.71239
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_7ef23")]
 position = Vector2(192, 869)
 scale = Vector2(3, 3)
+
+[node name="Tv" type="Sprite2D" parent="ghostlayer"]
+position = Vector2(1296, 1035)
+scale = Vector2(7.02344, 7.02344)
+texture = ExtResource("4_po3oh")
 
 [node name="bedroomfailghost" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -3149,13 +3150,13 @@ text = "(SPACE to skip text)"
 
 [node name="explorelabel" type="Label" parent="ghostlayer"]
 visible = false
-offset_left = 508.0
+offset_left = 436.0
 offset_top = 1201.0
-offset_right = 1828.0
+offset_right = 1940.0
 offset_bottom = 1233.0
 theme_override_fonts/font = ExtResource("18_rq2ij")
 theme_override_font_sizes/font_size = 32
-text = "Explore the living room by clicking objects."
+text = "Interact with objects around the living room to investigate."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3757,164 +3758,152 @@ modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
 script = ExtResource("52_l1jrp")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
-position = Vector2(1296, 1035)
-scale = Vector2(7.02344, 7.02344)
-
-[node name="Tv" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
-texture = ExtResource("4_po3oh")
-
 [node name="CanvasLayer5" type="CanvasLayer" parent="."]
 
 [node name="failpuzzlecutscene" parent="CanvasLayer5" instance=ExtResource("57_72nc8")]
 z_index = 9
 z_as_relative = false
 
-[node name="explore" type="Node" parent="."]
+[node name="explore" type="CanvasLayer" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="explore"]
-
-[node name="bookshelf" type="Area2D" parent="explore/CanvasLayer"]
+[node name="bookshelf" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A cozy bookshelf with a little pet fish!"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/bookshelf"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/bookshelf"]
 position = Vector2(184, 338.5)
 shape = SubResource("RectangleShape2D_2anki")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/bookshelf" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/bookshelf" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/bookshelf/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/bookshelf/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(183, 129)
+position = Vector2(175, 174)
 
-[node name="clock" type="Area2D" parent="explore/CanvasLayer"]
+[node name="clock" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A handown clock from your mother."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/clock"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/clock"]
 position = Vector2(501.75, 308)
 shape = SubResource("RectangleShape2D_tj75g")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/clock" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/clock" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/clock/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/clock/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(677, 246)
+position = Vector2(504, 277)
 
-[node name="couch" type="Area2D" parent="explore/CanvasLayer"]
+[node name="couch" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A comfortable yellow couch."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/couch"]
-position = Vector2(1302, 537.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/couch"]
+position = Vector2(1302, 525)
 shape = SubResource("RectangleShape2D_2n8s8")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/couch" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/couch" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/couch/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/couch/Node2D/EAnim" index="0"]
 visible = false
 position = Vector2(1305, 336)
 
-[node name="table" type="Area2D" parent="explore/CanvasLayer"]
+[node name="table" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A coffee table... and cake? "
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/table"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/table"]
 position = Vector2(773.5, 749)
 shape = SubResource("RectangleShape2D_mhao1")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/table" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/table" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/table/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/table/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(763, 578)
+position = Vector2(785, 583)
 
-[node name="tv" type="Area2D" parent="explore/CanvasLayer"]
+[node name="tv" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "An old tv."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/tv"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/tv"]
 position = Vector2(1297, 946.5)
 shape = SubResource("RectangleShape2D_vw8nr")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/tv" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/tv" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/tv/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/tv/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1560, 909)
+position = Vector2(1299, 923)
 
-[node name="rug" type="Area2D" parent="explore/CanvasLayer"]
+[node name="rug" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A blue rug."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/rug"]
-position = Vector2(2121, 513)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/rug"]
+position = Vector2(2121, 537)
 rotation = -1.59694
 shape = SubResource("CapsuleShape2D_soh4j")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/rug" instance=ExtResource("56_wxavf")]
-visible = false
+[node name="Node2D" parent="explore/rug" instance=ExtResource("56_wxavf")]
 
-[node name="letterE" parent="explore/CanvasLayer/rug/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/rug/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1919, 498)
+position = Vector2(2122, 503)
 
-[node name="flower" type="Area2D" parent="explore/CanvasLayer"]
+[node name="flower" type="Area2D" parent="explore"]
 position = Vector2(-314, -188)
 script = ExtResource("26_8wvgp")
 label_text = "More beautiful roses in a pot."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/flower"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/flower"]
 position = Vector2(2067, 461)
 rotation = -3.112
 shape = SubResource("CapsuleShape2D_n1eef")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/flower" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/flower" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/flower/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/flower/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1757, 87)
+position = Vector2(1757, 95)
 
-[node name="piano" type="Area2D" parent="explore/CanvasLayer"]
+[node name="piano" type="Area2D" parent="explore"]
 position = Vector2(-314, -188)
 script = ExtResource("26_8wvgp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/piano"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explore/piano"]
 position = Vector2(2422.88, 421.028)
 rotation = -3.13514
 shape = SubResource("RectangleShape2D_nou7j")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
-[node name="Node2D" parent="explore/CanvasLayer/piano" instance=ExtResource("56_wxavf")]
+[node name="Node2D" parent="explore/piano" instance=ExtResource("56_wxavf")]
 visible = false
 
-[node name="letterE" parent="explore/CanvasLayer/piano/Node2D/EAnim" index="0"]
+[node name="letterE" parent="explore/piano/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(2106, 91)
+position = Vector2(2106, 99)
 
 [node name="scene collisions" type="Node" parent="."]
 
@@ -3961,9 +3950,8 @@ metadata/_edit_lock_ = true
 [node name="couchcollision" type="StaticBody2D" parent="scene collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/couchcollision"]
-position = Vector2(1293, 529)
+position = Vector2(1293, 538.125)
 shape = SubResource("RectangleShape2D_kwc7q")
-metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(1086.5, 880.5)
@@ -4547,11 +4535,11 @@ shape = SubResource("RectangleShape2D_l7afl")
 [connection signal="mouse_exited" from="CanvasPause/PauseMenu/main menu" to="CanvasPause/PauseMenu/main menu" method="_on_mouse_exited"]
 
 [editable path="ghostlayer/Node2D"]
-[editable path="explore/CanvasLayer/bookshelf/Node2D"]
-[editable path="explore/CanvasLayer/clock/Node2D"]
-[editable path="explore/CanvasLayer/couch/Node2D"]
-[editable path="explore/CanvasLayer/table/Node2D"]
-[editable path="explore/CanvasLayer/tv/Node2D"]
-[editable path="explore/CanvasLayer/rug/Node2D"]
-[editable path="explore/CanvasLayer/flower/Node2D"]
-[editable path="explore/CanvasLayer/piano/Node2D"]
+[editable path="explore/bookshelf/Node2D"]
+[editable path="explore/clock/Node2D"]
+[editable path="explore/couch/Node2D"]
+[editable path="explore/table/Node2D"]
+[editable path="explore/tv/Node2D"]
+[editable path="explore/rug/Node2D"]
+[editable path="explore/flower/Node2D"]
+[editable path="explore/piano/Node2D"]
