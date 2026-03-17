@@ -1642,14 +1642,14 @@ size = Vector2(2331, 450)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bje8i"]
 radius = 100.0
-height = 358.0
+height = 284.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyikb"]
-radius = 99.0
-height = 636.0
+radius = 46.0
+height = 608.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frgbo"]
-size = Vector2(913, 359)
+size = Vector2(913, 322)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pyqm"]
 size = Vector2(67.5, 66.5)
@@ -3261,6 +3261,7 @@ shape = SubResource("RectangleShape2D_w57m6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/StaticBody2D"]
 position = Vector2(1155.5, 215)
 shape = SubResource("RectangleShape2D_yjeik")
+metadata/_edit_lock_ = true
 
 [node name="explore" type="Node" parent="."]
 
@@ -3324,7 +3325,7 @@ position = Vector2(2204, 233)
 script = ExtResource("21_xyikb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/photos"]
-position = Vector2(1137.5, 372.5)
+position = Vector2(1137.5, 354)
 shape = SubResource("RectangleShape2D_frgbo")
 disabled = true
 debug_color = Color(0.932792, 0.0788694, 0.608455, 0.42)
@@ -3870,6 +3871,10 @@ process_mode = 2
 z_index = 1
 position = Vector2(475, 403.25)
 shape = SubResource("RectangleShape2D_wtfse")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="CanvasLayer/scenetrigger" to="CanvasLayer/scenetrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CanvasLayer/scenetrigger" to="." method="_on_scenetrigger_body_exited"]

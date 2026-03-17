@@ -32,6 +32,7 @@ var animating := true
 var segment_starts
 var segment_ends
 
+@onready var  reset_timer = $Timer
 
 @onready var pause_menu = $CanvasPause/PauseMenu
 func toggle_pause():
@@ -55,6 +56,7 @@ var repeat_lines = [
 
 
 func _ready():
+	reset_timer.timeout.connect(_on_reset_timeout)
 	#Global.hallwayfail = true
 	if Global.hallwayfail == true:
 		$CanvasLayer/hallwayfailghost/Label.text  = repeat_lines.pick_random()
@@ -82,6 +84,7 @@ func _ready():
 	Global.reusabledesk = 2
 	$CanvasLayer/Node3/continue.pressed.connect(_on_button_pressed)
 	ghosttext1()
+	#unlock_explore()
 	for piece in $CanvasLayer/puzzle/pieces.get_children():
 		piece_start_positions[piece] = piece.position
 		piece.connect("piece_snapped", Callable(self, "_on_piece_snapped"))
@@ -478,23 +481,29 @@ func unlock_explore():
 				func(text):
 					_on_object_clicked(text, name)
 			)
+		
+var is_interacting = false
+	
 func _on_object_clicked(text: String, area_name: String):
-	# If desk clicked before finishing others
+# Immediately update label for any object
+	narration_label.text = text
+	narration_label.visible = true
+
+	# Mark this object as clicked
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
+
+	# If box clicked but not all others, show message and skip sequence
 	if area_name == "photos" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
-		await get_tree().create_timer(2.0).timeout
-		narration_label.text= 'Interact with objects in the hallway to investigate.'
+		reset_timer.start() 
 		return
-# Mark this area as clicked
-	clicked_objects[area_name] = true
-
-	# Update label
-	narration_label.text = text
-	narration_label.visible = true
-#
+		
+		
 	## If desk clicked after everything else, trigger scene change
 	if area_name == "photos" and all_non_photos_clicked():
+		narration_label.visible=false
 		$explore/CanvasLayer/flowers/CollisionShape2D.disabled=true
 		$explore/CanvasLayer/flowers/CollisionShape2D2.disabled=true
 		$explore/CanvasLayer/lamp/CollisionShape2D.disabled=true
@@ -513,6 +522,7 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Friendframe.visible=false
 			$CanvasLayer/Neigborframe.visible=false
 			hallwaypuzzle()
+			return
 		if Global.character == "boyGhost":
 			$CanvasLayer/TileMap3.visible=true
 			$CanvasLayer/Auntframe.visible=true
@@ -526,6 +536,13 @@ func _on_object_clicked(text: String, area_name: String):
 			$CanvasLayer/Girlframe.visible=false
 			$CanvasLayer/Neigborframe.visible=false
 			hallwaypuzzle()
+			return
+	reset_timer.start()
+	
+func _on_reset_timeout():
+	if not is_interacting:
+		narration_label.text = 'Investigate the hallway by pressing "E" to interact with objects.'
+		
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["lamp", "flowers"]
 	for name in non_desk:
