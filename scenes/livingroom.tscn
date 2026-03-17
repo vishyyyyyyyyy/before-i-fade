@@ -2092,7 +2092,7 @@ size = Vector2(613, 298)
 size = Vector2(578.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
-size = Vector2(287, 140)
+size = Vector2(286, 209)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
 size = Vector2(379, 168.438)
@@ -2153,12 +2153,12 @@ scale = Vector2(3.34375, 3.34375)
 texture = ExtResource("9_xddai")
 
 [node name="Bluerug" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(2109, 558)
+position = Vector2(2109, 582)
 scale = Vector2(3.875, 2.54688)
 texture = ExtResource("10_tlixj")
 
 [node name="Coffeetable" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(768, 795)
+position = Vector2(768, 779)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("11_1wnl2")
 
@@ -3236,7 +3236,7 @@ libraries = {
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext3"]
 visible = false
-z_index = 1
+z_index = 3
 position = Vector2(2010, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_tlixj")
@@ -3962,7 +3962,7 @@ position = Vector2(-314, -188)
 script = ExtResource("26_8wvgp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/piano"]
-position = Vector2(2422.88, 421.028)
+position = Vector2(2422.88, 389.028)
 rotation = -3.13514
 shape = SubResource("RectangleShape2D_nou7j")
 disabled = true
@@ -3974,6 +3974,8 @@ visible = false
 [node name="letterE" parent="explore/piano/Node2D/EAnim" index="0"]
 visible = false
 position = Vector2(2106, 99)
+
+[node name="Timer" type="Timer" parent="."]
 
 [node name="scene collisions" type="Node" parent="."]
 
@@ -3998,9 +4000,8 @@ metadata/_edit_lock_ = true
 position = Vector2(-7, 43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/wallcollision"]
-position = Vector2(1165, -3.75)
+position = Vector2(1165, -51.75)
 shape = SubResource("RectangleShape2D_po3oh")
-metadata/_edit_lock_ = true
 
 [node name="leftwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-3.5, 21.5)
@@ -4028,7 +4029,7 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-104, -90.1667)
+position = Vector2(-103.833, -101.667)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_ikg1h")
 

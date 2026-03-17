@@ -49,6 +49,7 @@ var segment_starts
 var segment_ends
 	
 signal dialogue_finished(index)
+@onready var reset_timer = $Timer
 
 var repeat_lines = [
 	'"I feel like I\'ve been here before..."',
@@ -78,6 +79,7 @@ func fade_in_music():
 
 
 func _ready():
+	reset_timer.timeout.connect(_on_reset_timeout)
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -108,9 +110,9 @@ func _ready():
 	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
-	#unlockexplore()
-	await start_dialogue(0)
-	await modulatelivingroom()
+	unlockexplore()
+	#await start_dialogue(0)
+	#await modulatelivingroom()
 	
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
@@ -439,6 +441,11 @@ func modulatelivingroom():
 	$ghostlayer/explorelabel.visible=true
 	unlockexplore()
 
+func _on_reset_timeout():
+	narration_label.text = "Interact with objects around the living room to investigate."
+	
+var is_interacting = false
+
 func unlockexplore():
 	$ghostlayer/explorelabel.visible=true
 	$explore/bookshelf/CollisionShape2D.disabled=false
@@ -461,35 +468,46 @@ func unlockexplore():
 		"piano": $explore/piano,
 		
 	}
+
 	for name in areas:
 		var area_node = areas[name]
+		var area_name = name  # capture safely
 
 		if area_node is Area2D:
 			area_node.clicked.connect(
 				func(text):
-					_on_object_clicked(text, name)
+					_on_object_clicked(text, area_name)
 			)
+			
 func _on_object_clicked(text: String, area_name: String):
-	# If desk clicked before finishing others
+
+	if is_interacting:
+		return
+
+	is_interacting = true
+
 	if area_name == "piano" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
-		await get_tree().create_timer(2.0).timeout
-		narration_label.text= 'Interact with objects around the living room to investigate.'
+		reset_timer.start()
+		await reset_timer.timeout
+		is_interacting = false
 		return
-# Mark this area as clicked
-	clicked_objects[area_name] = true
+
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
 
 	if area_name == "piano" and all_non_photos_clicked():
-		narration_label.visible=false
-		print("yes")
-		challenge()  
-		
-	# Update label
+		narration_label.visible = false
+		challenge()
+
 	narration_label.text = text
 	narration_label.visible = true
-	await get_tree().create_timer(2.0).timeout
-	narration_label.text= 'Interact with objects around the living room to investigate.'
+
+	reset_timer.start()
+	await reset_timer.timeout
+
+	is_interacting = false
 
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["bookshelf", "clock", "table", "couch", "tv", "flower", "rug"]

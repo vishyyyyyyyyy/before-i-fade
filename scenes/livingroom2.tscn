@@ -57,27 +57,6 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6klw"]
 size = Vector2(53, 318)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
-size = Vector2(1534.67, 151.667)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ef23"]
-size = Vector2(169, 1323)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_po3oh"]
-size = Vector2(2346, 375.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k00ks"]
-size = Vector2(613, 298)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwc7q"]
-size = Vector2(578.5, 95.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
-size = Vector2(258, 160.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
-size = Vector2(379, 249.438)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu8mh"]
 size = Vector2(67.5, 66.5)
 
@@ -86,6 +65,27 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5pev"]
 size = Vector2(209, 51.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dhep"]
+size = Vector2(1534.67, 151.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_057ql"]
+size = Vector2(169, 1323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl3tg"]
+size = Vector2(2346, 375.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5vqr"]
+size = Vector2(613, 298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxiwq"]
+size = Vector2(578.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qkah"]
+size = Vector2(286, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a64f"]
+size = Vector2(379, 168.438)
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_t2tn1")
@@ -207,75 +207,6 @@ color = Color(0, 0.992157, 0.815686, 1)
 
 [node name="Tv" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 texture = ExtResource("51_2axsk")
-
-[node name="scene collisions" type="Node" parent="."]
-
-[node name="textcollision" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(3527.5, 1868)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
-shape = SubResource("RectangleShape2D_1wnl2")
-metadata/_edit_lock_ = true
-
-[node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(-5.5, 21.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/rightwallcollision"]
-position = Vector2(2382, 642)
-shape = SubResource("RectangleShape2D_7ef23")
-metadata/_edit_lock_ = true
-
-[node name="wallcollision" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(-7, 43)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/wallcollision"]
-position = Vector2(1165, -3.75)
-shape = SubResource("RectangleShape2D_po3oh")
-metadata/_edit_lock_ = true
-
-[node name="leftwallcollision" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(-3.5, 21.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/leftwallcollision"]
-position = Vector2(-66.5, 651.5)
-shape = SubResource("RectangleShape2D_7ef23")
-metadata/_edit_lock_ = true
-
-[node name="shlef+clockcollision" type="StaticBody2D" parent="scene collisions"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/shlef+clockcollision"]
-position = Vector2(296.5, 139)
-shape = SubResource("RectangleShape2D_k00ks")
-metadata/_edit_lock_ = true
-
-[node name="couchcollision" type="StaticBody2D" parent="scene collisions"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/couchcollision"]
-position = Vector2(1293, 529)
-shape = SubResource("RectangleShape2D_kwc7q")
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(1086.5, 880.5)
-scale = Vector2(3, 3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-99.1667, -79.7917)
-scale = Vector2(0.333333, 0.333333)
-shape = SubResource("RectangleShape2D_ikg1h")
-metadata/_edit_lock_ = true
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="scene collisions"]
-position = Vector2(1086.5, 880.5)
-scale = Vector2(3, 3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
-position = Vector2(67, 27.4063)
-scale = Vector2(0.333333, 0.333333)
-shape = SubResource("RectangleShape2D_24a1y")
-metadata/_edit_lock_ = true
 
 [node name="CanvasPause" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -809,6 +740,72 @@ process_mode = 2
 z_index = 1
 position = Vector2(475, 403.25)
 shape = SubResource("RectangleShape2D_q5pev")
+
+[node name="scene collisions" type="Node" parent="."]
+
+[node name="textcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(3527.5, 1868)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
+position = Vector2(-1582.33, -443.167)
+shape = SubResource("RectangleShape2D_5dhep")
+metadata/_edit_lock_ = true
+
+[node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(-5.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/rightwallcollision"]
+position = Vector2(2382, 642)
+shape = SubResource("RectangleShape2D_057ql")
+metadata/_edit_lock_ = true
+
+[node name="wallcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(-7, 43)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/wallcollision"]
+position = Vector2(1165, -51.75)
+shape = SubResource("RectangleShape2D_wl3tg")
+
+[node name="leftwallcollision" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(-3.5, 21.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/leftwallcollision"]
+position = Vector2(-66.5, 651.5)
+shape = SubResource("RectangleShape2D_057ql")
+metadata/_edit_lock_ = true
+
+[node name="shlef+clockcollision" type="StaticBody2D" parent="scene collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/shlef+clockcollision"]
+position = Vector2(296.5, 139)
+shape = SubResource("RectangleShape2D_f5vqr")
+metadata/_edit_lock_ = true
+
+[node name="couchcollision" type="StaticBody2D" parent="scene collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/couchcollision"]
+position = Vector2(1293, 346)
+shape = SubResource("RectangleShape2D_yxiwq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(1086.5, 880.5)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
+position = Vector2(-103.833, -101.667)
+scale = Vector2(0.333333, 0.333333)
+shape = SubResource("RectangleShape2D_3qkah")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="scene collisions"]
+position = Vector2(1086.5, 880.5)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
+position = Vector2(67, 40.9063)
+scale = Vector2(0.333333, 0.333333)
+shape = SubResource("RectangleShape2D_0a64f")
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_exited"]
