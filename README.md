@@ -19,7 +19,7 @@ There are **two possible endings**.
 
 ## 🎮 Controls
 
-<img width="1000" height="700" alt="Screenshot 2026-03-11 085118" src="https://github.com/user-attachments/assets/201d1b4b-55de-48fc-b363-abda16fe0ce2" />
+<img width="1000" height="700" alt="Screenshot 2026-03-14 232730" src="https://github.com/user-attachments/assets/6c1bc373-018f-4aa4-9e75-872b902e4262" />
 
 
 - **Arrow Keys / WASD** - Move around the house  
@@ -32,6 +32,7 @@ There are **two possible endings**.
 ---
 
 ## ⚙️ Core Systems
+
 **Puzzles:**
 - Built using Area2D with collision shapes and Texture2D buttons to detect input
 - Puzzle state stored using lists and dictionaries
@@ -61,6 +62,9 @@ There are **two possible endings**.
 - Animated overlays and hover states
 
 **Challenge Lives**
+
+<img width="600" height="500" alt="Screenshot 2026-03-14 233135" src="https://github.com/user-attachments/assets/b891c7f1-f45d-4791-acae-d806b8d62680" />
+
 - Heart UI dynamically updated when fail at a puzzle
 - When hearts are all broken, system triggers a transition to reset scene
 - Global variables used to track puzzle fail state and time loop dialogue
