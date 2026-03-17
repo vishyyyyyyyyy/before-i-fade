@@ -9,6 +9,8 @@ var diarypress = false
 var photopress = false
 var interact_target: String = ""
 
+@onready var  reset_timer = $Timer
+
 var segment_data := [
 	{ "starts": [0.0, 2.0, 5.0], "ends": [1.0, 4.0, 7.0] }, 
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] },
@@ -52,6 +54,7 @@ func toggle_pause():
 	$CanvasPause/Menucard2.visible=true
 	
 func _ready():
+	reset_timer.timeout.connect(_on_reset_timeout)
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -88,6 +91,7 @@ func _ready():
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
 		MusicManager.play_scene_music("menu")
+		#unlock_explore()
 		modulate()
 
 func fade_out_music():
@@ -421,6 +425,7 @@ func leaveroomandexplore():
 		
 func unlock_explore():
 	# Enable collisions
+	
 	$explore/safe/CollisionShape2D.disabled = false
 	$explore/bed/CollisionShape2D.disabled = false
 	$explore/window/CollisionShape2D.disabled = false
@@ -446,31 +451,37 @@ func unlock_explore():
 			area_node.clicked.connect(func(text):
 				_on_object_clicked(text, name)
 			)
-			
-func _on_object_clicked(text: String, area_name: String):
-	# If desk clicked before finishing others
-	if area_name == "desk" and not all_non_desk_clicked():
-		narration_label.text = "Let's finish looking at everything else first."
-		narration_label.visible = true
-		await get_tree().create_timer(2.0).timeout
-		narration_label.text= 'Investigate the bedroom by pressing "E" to interact with objects.'
-		return
 	
-	# Mark this area as clicked
-	clicked_objects[area_name] = true
-
-	# Update label
+var is_interacting = false
+		
+func _on_object_clicked(text: String, area_name: String):
+# Immediately update label for any object
 	narration_label.text = text
 	narration_label.visible = true
 
+	# Mark this object as clicked
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
+
+	# If box clicked but not all others, show message and skip sequence
+	if area_name == "desk" and not all_non_desk_clicked():
+		narration_label.text = "Let's finish looking at everything else first."
+		narration_label.visible = true
+		reset_timer.start() 
+		return
+		
 	# If desk clicked after everything else, trigger scene change
 	if area_name == "desk" and all_non_desk_clicked():
 		narration_label.visible=true
 		narration_label.text= 'Investigate the desk by clicking objects.'
 		diaryOverlay()
-	else:
-		await get_tree().create_timer(2.0).timeout
-		narration_label.text= 'Investigate the bedroom by pressing "E" to interact with objects.'
+		return
+		
+	reset_timer.start()
+		
+func _on_reset_timeout():
+	if not is_interacting:
+		narration_label.text = 'Investigate the bedroom by pressing "E" to interact with objects.'
 		
 func all_non_desk_clicked() -> bool:
 	var non_desk = ["safe", "bed", "window", "calendar", "rug"]
@@ -506,6 +517,8 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			"familyphoto":
 				if Global.character == "boyGhost":
 					narration_label.visible=false
+					$Node/familyphoto/CollisionShape2D.disabled=true
+					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -534,6 +547,8 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					
 				else:
 					narration_label.visible=false
+					$Node/familyphoto/CollisionShape2D.disabled=true
+					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -560,6 +575,8 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					photopress=true
 			"diary":
 				if Global.character == "boyGhost":
+					$Node/diary/CollisionPolygon2D.disabled=true
+					$Node/familyphoto/CollisionShape2D.disabled=true
 					narration_label.visible=false
 					await start_dialogue(3)
 					#hidestuff from animation
@@ -586,6 +603,8 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					diarypress=true
 				else:
 					narration_label.visible=false
+					$Node/diary/CollisionPolygon2D.disabled=true
+					$Node/familyphoto/CollisionShape2D.disabled=true
 					await start_dialogue(3)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
