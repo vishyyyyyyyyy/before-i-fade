@@ -19,10 +19,11 @@ var segment_data := [
 	$ghostlayer/ghosttext1,
 	$ghostlayer/aunttext,
 	$ghostlayer/ghosttext2,
-	$CanvasLayer2/CanvasModulate/AnimationPlayer, #fridge
+	$ghostlayer/AnimationPlayer2, #fridge
 	$CanvasLayer4/Node3/ghosttext, #b4 challenge
 	$CanvasLayer4/Node3/ghosttext2, #after challenge
 	$ghostlayer/kitchenfailghost #fail puzzle
+	
 ]
 var anim_index := 0
 var anim: AnimationPlayer
@@ -45,6 +46,23 @@ var repeat_lines = [
 	'"Something isn\'t right..."'
 ]
 
+@onready var furniture = [
+				$CanvasModulate/TileMap2, 
+				#$CanvasModulate/TileMap,
+				$CanvasModulate/TileMap2, 
+				$CanvasModulate/Counter,
+				$CanvasModulate/Counter2,
+				$CanvasModulate/Counter4,
+				$CanvasModulate/Counter3,
+				$CanvasModulate/Fridge,
+				$CanvasModulate/Oven,
+				$CanvasModulate/Sink,
+				$ghostlayer/Island,
+				$ghostlayer/Stool,
+				$ghostlayer/Stool2
+				]
+@onready var doors = [$CanvasModulate/Door2, $CanvasModulate/Door]
+
 
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
@@ -63,9 +81,12 @@ func fade_in_music():
 	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 
 func _ready() -> void:
-	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
+	for item in furniture:
+		#print(item)
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		#print(item)
+		item.modulate= Color(0.094, 0.323, 0.28) 
 	#Global.kitchenfail = true
 	$CanvasLayer4/ColorRect2.visible=false
 	if Global.kitchenfail == true:
@@ -258,10 +279,10 @@ func start_dialogue(index: int):
 		$ghostlayer/kitchenfailghost/BoyGhost.visible=false
 		$ghostlayer/kitchenfailghost/skip.visible=false
 		
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/Label2.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/GirlGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/BoyGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/skip.visible=false
+		$ghostlayer/AnimationPlayer2/Label2.visible=false
+		$ghostlayer/AnimationPlayer2/GirlGhost.visible=false
+		$ghostlayer/AnimationPlayer2/BoyGhost.visible=false
+		$ghostlayer/AnimationPlayer2/skip.visible=false
 		
 		$ghostlayer/ghosttext2/Label3.visible=false
 		$ghostlayer/ghosttext2/GirlGhost.visible=false
@@ -304,10 +325,10 @@ func start_dialogue(index: int):
 		$CanvasLayer4/Node3/ghosttext/BoyGhost.visible=false
 		$CanvasLayer4/Node3/ghosttext/skip.visible=false
 		
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/Label2.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/GirlGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/BoyGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/skip.visible=false
+		$ghostlayer/AnimationPlayer2/Label2.visible=false
+		$ghostlayer/AnimationPlayer2/GirlGhost.visible=false
+		$ghostlayer/AnimationPlayer2/BoyGhost.visible=false
+		$ghostlayer/AnimationPlayer2/skip.visible=false
 		
 		$ghostlayer/ghosttext2/Label3.visible=false
 		$ghostlayer/ghosttext2/GirlGhost.visible=false
@@ -394,10 +415,10 @@ func end_dialogue():
 		$ghostlayer/ghosttext2/skip.visible=false
 
 	if anim_index == 3:
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/Label2.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/GirlGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/BoyGhost.visible=false
-		$CanvasLayer2/CanvasModulate/AnimationPlayer/skip.visible=false
+		$ghostlayer/AnimationPlayer2/Label2.visible=false
+		$ghostlayer/AnimationPlayer2/GirlGhost.visible=false
+		$ghostlayer/AnimationPlayer2/BoyGhost.visible=false
+		$ghostlayer/AnimationPlayer2/skip.visible=false
 		
 	if anim_index ==4:
 		$CanvasLayer4/Node3/ghosttext/Label3.visible=false
@@ -476,50 +497,53 @@ func kitchenmodulate():
 		$ghostlayer/AnimationPlayer/girl.visible = true
 	if (Global.character == "boyGhost"):
 		$ghostlayer/AnimationPlayer/boy.visible = true
-	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1, 1, 1, 1)
+	for item in doors:
+		item.modulate= Color(1, 1, 1, 1)
 	await get_tree().create_timer(0.5).timeout
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = false
 	if (Global.character == "boyGhost"):
 		$ghostlayer/AnimationPlayer/boy.visible = false
-	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
+	for item in furniture:
+		item.modulate = Color(0.0, 0.994, 0.816)
+	for item in doors:
+		item.modulate= Color(0.094, 0.322, 0.278)
 	await get_tree().create_timer(0.5).timeout
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = true
 	if (Global.character == "boyGhost"):
 		$ghostlayer/AnimationPlayer/boy.visible = true
-	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1, 1, 1, 1)
+	for item in doors:
+		item.modulate= Color(1, 1, 1, 1)
 	await get_tree().create_timer(0.5).timeout
 
 
 func unlock_explore():
-	$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=false
-	$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=false
-	$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=false
-	$explore/CanvasLayer/oven/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/sink/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/fridge/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/island/CollisionShape2D.disabled=false
-	$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
+	$explore/cabinet/CollisionShape2D.disabled=false
+	$explore/cabinet/CollisionShape2D2.disabled=false
+	$explore/cabinet/CollisionShape2D3.disabled=false
+	$explore/cabinet/CollisionShape2D4.disabled=false
+	$explore/oven/CollisionShape2D.disabled=false
+	$explore/cabinet/CollisionShape2D.disabled=false
+	$explore/sink/CollisionShape2D.disabled=false
+	$explore/fridge/CollisionShape2D.disabled=false
+	$explore/chair/CollisionShape2D.disabled=false
+	$explore/island/CollisionShape2D.disabled=false
+	$explore/chair/CollisionShape2D2.disabled=false
 	
 	$ghostlayer/explorelabel.visible=true
 	
 	var areas = {
-		"cabinet": $explore/CanvasLayer/cabinet,
-		"oven": $explore/CanvasLayer/oven,
-		"fridge": $explore/CanvasLayer/fridge,
-		"chair": $explore/CanvasLayer/chair,
-		"sink": $explore/CanvasLayer/sink,
-		"island": $explore/CanvasLayer/island
+		"cabinet": $explore/cabinet,
+		"oven": $explore/oven,
+		"fridge": $explore/fridge,
+		"chair": $explore/chair,
+		"sink": $explore/sink,
+		"island": $explore/island
 	}
 	for name in areas:
 		var area_node = areas[name]
@@ -534,61 +558,65 @@ func _on_object_clicked(text: String, area_name: String):
 	if area_name == "island" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
+		await get_tree().create_timer(2.0).timeout
+		narration_label.text= 'Interact with objects around the kitchen to investigate.'
 		return
 # Mark this area as clicked
 	clicked_objects[area_name] = true
-
+	
+	if area_name == "fridge":
+		$ghostlayer/TileMap3.visible=true
+		$ghostlayer/Fridge.visible=true
+		$ghostlayer/explorelabel.visible=false
+		$explore/cabinet/CollisionShape2D.disabled=false
+		$explore/cabinet/CollisionShape2D2.disabled=true
+		$explore/cabinet/CollisionShape2D3.disabled=true
+		$explore/cabinet/CollisionShape2D4.disabled=true
+		$explore/oven/CollisionShape2D.disabled=true
+		$explore/cabinet/CollisionShape2D.disabled=true
+		$explore/sink/CollisionShape2D.disabled=true
+		$explore/fridge/CollisionShape2D.disabled=true
+		$explore/chair/CollisionShape2D.disabled=true
+		$explore/chair/CollisionShape2D2.disabled=true
+		$explore/island/CollisionShape2D.disabled=true
+		await start_dialogue(3)
+		$ghostlayer/explorelabel.visible=true
+		$ghostlayer/TileMap3.visible=false
+		$ghostlayer/Fridge.visible=false
+		$explore/cabinet/CollisionShape2D.disabled=false
+		$explore/cabinet/CollisionShape2D2.disabled=false
+		$explore/cabinet/CollisionShape2D3.disabled=false
+		$explore/cabinet/CollisionShape2D4.disabled=false
+		$explore/oven/CollisionShape2D.disabled=false
+		$explore/cabinet/CollisionShape2D.disabled=false
+		$explore/sink/CollisionShape2D.disabled=false
+		$explore/fridge/CollisionShape2D.disabled=false
+		$explore/chair/CollisionShape2D.disabled=false
+		$explore/island/CollisionShape2D.disabled=false
+		$explore/chair/CollisionShape2D2.disabled=false
+		$ghostlayer/explorelabel.visible=true
+		narration_label.text= 'Interact with objects around the kitchen to investigate.'
+		
 	# Update label
 	narration_label.text = text
 	narration_label.visible = true
+	await get_tree().create_timer(2.0).timeout
+	narration_label.text= 'Interact with objects around the kitchen to investigate.'
 	
-	if area_name == "fridge":
-		$CanvasLayer2/CanvasModulate/TileMap3.visible=true
-		$CanvasLayer2/CanvasModulate/Fridge.visible=true
-		$ghostlayer/explorelabel.visible=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=true
-		$explore/CanvasLayer/oven/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/sink/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/island/CollisionShape2D.disabled=true
-		await start_dialogue(3)
-		$ghostlayer/explorelabel.visible=true
-		$CanvasLayer2/CanvasModulate/TileMap3.visible=false
-		$CanvasLayer2/CanvasModulate/Fridge.visible=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=false
-		$explore/CanvasLayer/oven/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/sink/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/chair/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/island/CollisionShape2D.disabled=false
-		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=false
-		$ghostlayer/explorelabel.visible=true
-		
-		
 		
 	if area_name == "island" and all_non_photos_clicked():
 		print("yes")
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D3.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D4.disabled=true
-		$explore/CanvasLayer/oven/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/cabinet/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/sink/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/fridge/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/island/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/chair/CollisionShape2D2.disabled=true
+		$explore/cabinet/CollisionShape2D.disabled=true
+		$explore/cabinet/CollisionShape2D2.disabled=true
+		$explore/cabinet/CollisionShape2D3.disabled=true
+		$explore/cabinet/CollisionShape2D4.disabled=true
+		$explore/oven/CollisionShape2D.disabled=true
+		$explore/cabinet/CollisionShape2D.disabled=true
+		$explore/sink/CollisionShape2D.disabled=true
+		$explore/fridge/CollisionShape2D.disabled=true
+		$explore/chair/CollisionShape2D.disabled=true
+		$explore/island/CollisionShape2D.disabled=true
+		$explore/chair/CollisionShape2D2.disabled=true
 		$ghostlayer/explorelabel.visible=false
 		$CanvasLayer4/ColorRect2.visible=true
 		$CanvasLayer4/Kitchen.visible=true
@@ -601,7 +629,6 @@ func _on_object_clicked(text: String, area_name: String):
 		$CanvasLayer4/Node3/continue/CollisionShape2D.disabled=false
 		$CanvasLayer4/Node3/continue.visible=true
 		kitchenpuzzle()
-		
 		
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["cabinet", "oven", "sink", "fridge", "chair"]
@@ -646,7 +673,6 @@ func kitchenpuzzle():
 	$CanvasLayer4/Kitchen.visible=true
 	$CanvasLayer4/foodchoice/CollisionShape2D4.disabled=true
 	
-	
 func challengecompleted():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
@@ -663,7 +689,6 @@ func challengecompleted():
 	$ghostlayer/blobGhostPlayer.position.x=1153
 	$CanvasLayer4/Node3/diarycontinue.visible=true
 	$CanvasLayer4/Node3/diarycontinue/CollisionShape2D.disabled=false
-
 	
 func diarypagecontinue():
 	$CanvasLayer4/Node3/diarycontinue.visible=false
@@ -680,25 +705,28 @@ func diarypagecontinue():
 	$CanvasLayer4/Node3/Timer.visible=false
 	#$CanvasLayer4/Node3/Label11.visible=false
 	$ghostlayer/Camera2D.shake(2, 1.4)
-	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28) 
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate= Color(0.094, 0.323, 0.28) 
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = false
 	if (Global.character == "boyGhost"):
 		$ghostlayer/AnimationPlayer/boy.visible = false
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer2/CanvasModulate.modulate = Color(1,1,1,1)
-	$CanvasLayer3/CanvasModulate.modulate = Color(1,1,1,1)
+	for item in furniture:
+		item.modulate = Color(1,1,1,1)
+	for item in doors:
+		item.modulate= Color(1,1,1,1) 
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = true
 	if (Global.character == "boyGhost"):
 		$ghostlayer/AnimationPlayer/boy.visible = true
 	await get_tree().create_timer(0.5).timeout
-	$CanvasLayer/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer2/CanvasModulate.modulate = Color(0.0, 0.992, 0.816)
-	$CanvasLayer3/CanvasModulate.modulate = Color(0.094, 0.323, 0.28)
+	for item in furniture:
+		item.modulate = Color(0.0, 0.992, 0.816)
+	for item in doors:
+		item.modulate= Color(0.094, 0.323, 0.28) 
 	if (Global.character == "girlGhost"):
 		$ghostlayer/AnimationPlayer/girl.visible = false
 	if (Global.character == "boyGhost"):
@@ -718,10 +746,8 @@ func diarypagecontinue():
 	print("reusablehallway count: " + str(Global.reusablehallway))
 	print("kitchen: " + str(Global.kitchen))
 	print("livingroom: " + str(Global.livingroom))
-	
-	
-	
-	
+
+
 func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			get_tree().paused = false
@@ -730,7 +756,6 @@ func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			$CanvasPause/ColorRect2.visible=false
 			$CanvasPause/Menucard2.visible=false
 			print("pressed") 
-
 
 func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -741,19 +766,15 @@ func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		else:
 			$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
 
-
 func _on_controls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		$CanvasPause/settingsControl.visible=true
 		$CanvasPause/PauseMenu.visible=false
 
-
 func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	
- 
 
 func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -762,7 +783,6 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		$CanvasPause/PauseMenu.visible=false
 		$CanvasPause/ColorRect2.visible=false
 		$CanvasPause/Menucard2.visible=false
-
 
 func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	$CanvasPause/settingsControl.visible=false

@@ -1715,17 +1715,17 @@ size = Vector2(309, 320.375)
 size = Vector2(259.5, 518)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0mf2"]
-radius = 139.0
-height = 374.0
+radius = 155.0
+height = 366.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gswy"]
-size = Vector2(705, 101)
+size = Vector2(744, 142)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
 size = Vector2(422.667, 222.291)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
-size = Vector2(1534.67, 128.333)
+size = Vector2(1534.67, 151.667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwf2y"]
 size = Vector2(169, 1323)
@@ -1822,7 +1822,6 @@ offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
-metadata/_edit_lock_ = true
 
 [node name="kitchenfailghost" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -2410,7 +2409,6 @@ scale = Vector2(0.472, 0.460139)
 texture = ExtResource("11_88wuv")
 
 [node name="skip" type="Label" parent="ghostlayer/AnimationPlayer2"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2429,15 +2427,14 @@ text = "(SPACE to skip text)"
 
 [node name="explorelabel" type="Label" parent="ghostlayer"]
 visible = false
-offset_left = 444.0
+offset_left = 588.0
 offset_top = 1199.0
-offset_right = 1852.0
+offset_right = 1740.0
 offset_bottom = 1231.0
 theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
-text = "Interact with objects around the kitchen to investigate."
+text = "Click objects around the kitchen to investigate."
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
 script = ExtResource("75_knauv")
@@ -3386,7 +3383,7 @@ visible = false
 
 [node name="letterE" parent="explore/cabinet/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(177, 141)
+position = Vector2(177, 149)
 
 [node name="Node2D2" parent="explore/cabinet" instance=ExtResource("87_oo0tm")]
 visible = false
@@ -3400,7 +3397,7 @@ visible = false
 
 [node name="letterE" parent="explore/cabinet/Node2D3/EAnim" index="0"]
 visible = false
-position = Vector2(1532, 141)
+position = Vector2(1532, 149)
 
 [node name="Node2D4" parent="explore/cabinet" instance=ExtResource("87_oo0tm")]
 visible = false
@@ -3421,6 +3418,7 @@ disabled = true
 metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/oven" instance=ExtResource("87_oo0tm")]
+visible = false
 
 [node name="letterE" parent="explore/oven/Node2D/EAnim" index="0"]
 visible = false
@@ -3442,11 +3440,12 @@ visible = false
 
 [node name="letterE" parent="explore/sink/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1169, 138)
+position = Vector2(1241, 138)
 
 [node name="fridge" type="Area2D" parent="explore"]
 position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
+label_text = "Click objects around the kitchen to investigate."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/fridge"]
 position = Vector2(2145.25, 248)
@@ -3455,10 +3454,11 @@ disabled = true
 metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/fridge" instance=ExtResource("87_oo0tm")]
+visible = false
 
 [node name="letterE" parent="explore/fridge/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(2166, 145)
+position = Vector2(2166, 121)
 
 [node name="chair" type="Area2D" parent="explore"]
 position = Vector2(6, 16)
@@ -3466,16 +3466,16 @@ script = ExtResource("23_n55t6")
 label_text = "2 chairs."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/chair"]
-position = Vector2(918, 968)
-rotation = 1.59851
+position = Vector2(957, 939)
 shape = SubResource("CapsuleShape2D_k0mf2")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="explore/chair"]
-position = Vector2(1360, 965)
-rotation = 1.58434
+position = Vector2(1321, 929)
 shape = SubResource("CapsuleShape2D_k0mf2")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/chair" instance=ExtResource("87_oo0tm")]
 visible = false
@@ -3496,7 +3496,7 @@ position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/island"]
-position = Vector2(1131.5, 705.5)
+position = Vector2(1131, 709)
 shape = SubResource("RectangleShape2D_1gswy")
 disabled = true
 
@@ -3522,7 +3522,7 @@ position = Vector2(3523.5, 1854.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -431.5)
+position = Vector2(-1582.33, -443.167)
 shape = SubResource("RectangleShape2D_mwmjw")
 metadata/_edit_lock_ = true
 
