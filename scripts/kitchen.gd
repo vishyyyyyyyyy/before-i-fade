@@ -63,6 +63,7 @@ var repeat_lines = [
 				]
 @onready var doors = [$CanvasModulate/Door2, $CanvasModulate/Door]
 
+@onready var reset_timer = $Timer
 
 func toggle_pause():
 	$CanvasPause/PauseMenu/resume/Label.text = "Game Paused"
@@ -81,6 +82,7 @@ func fade_in_music():
 	tween.tween_property(MusicManager.music_player, "volume_db", 0, 8.0)
 
 func _ready() -> void:
+	reset_timer.timeout.connect(_on_reset_timeout)
 	for item in furniture:
 		#print(item)
 		item.modulate = Color(0.0, 0.992, 0.816)
@@ -124,6 +126,7 @@ func _ready() -> void:
 	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
 	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer4/foodchoice.challengecompleted.connect(challengecompleted)
+	#unlock_explore()
 	start()
 	
 func _process(delta: float) -> void:
@@ -521,6 +524,8 @@ func kitchenmodulate():
 		item.modulate= Color(1, 1, 1, 1)
 	await get_tree().create_timer(0.5).timeout
 
+func _on_reset_timeout():
+	narration_label.text = "Interact with objects around the kitchen to investigate."
 
 func unlock_explore():
 	$explore/cabinet/CollisionShape2D.disabled=false
@@ -553,83 +558,90 @@ func unlock_explore():
 				func(text):
 					_on_object_clicked(text, name)
 			)
+			
+var is_interacting = false
+
+
 func _on_object_clicked(text: String, area_name: String):
-	# If desk clicked before finishing others
+	# Immediately update the label for any object
+	narration_label.text = text
+	narration_label.visible = true
+
+	# Mark this object as clicked
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
+
+
 	if area_name == "island" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
-		await get_tree().create_timer(2.0).timeout
-		narration_label.text= 'Interact with objects around the kitchen to investigate.'
+		reset_timer.start() 
 		return
-# Mark this area as clicked
-	clicked_objects[area_name] = true
-	
+
+
 	if area_name == "fridge":
-		$ghostlayer/TileMap3.visible=true
-		$ghostlayer/Fridge.visible=true
-		$ghostlayer/explorelabel.visible=false
-		$explore/cabinet/CollisionShape2D.disabled=false
-		$explore/cabinet/CollisionShape2D2.disabled=true
-		$explore/cabinet/CollisionShape2D3.disabled=true
-		$explore/cabinet/CollisionShape2D4.disabled=true
-		$explore/oven/CollisionShape2D.disabled=true
-		$explore/cabinet/CollisionShape2D.disabled=true
-		$explore/sink/CollisionShape2D.disabled=true
-		$explore/fridge/CollisionShape2D.disabled=true
-		$explore/chair/CollisionShape2D.disabled=true
-		$explore/chair/CollisionShape2D2.disabled=true
-		$explore/island/CollisionShape2D.disabled=true
+		$ghostlayer/TileMap3.visible = true
+		$ghostlayer/Fridge.visible = true
+		$ghostlayer/explorelabel.visible = false
+		$explore/cabinet/CollisionShape2D.disabled = false
+		$explore/cabinet/CollisionShape2D2.disabled = true
+		$explore/cabinet/CollisionShape2D3.disabled = true
+		$explore/cabinet/CollisionShape2D4.disabled = true
+		$explore/oven/CollisionShape2D.disabled = true
+		$explore/sink/CollisionShape2D.disabled = true
+		$explore/fridge/CollisionShape2D.disabled = true
+		$explore/chair/CollisionShape2D.disabled = true
+		$explore/chair/CollisionShape2D2.disabled = true
+		$explore/island/CollisionShape2D.disabled = true
+
 		await start_dialogue(3)
-		$ghostlayer/explorelabel.visible=true
-		$ghostlayer/TileMap3.visible=false
-		$ghostlayer/Fridge.visible=false
-		$explore/cabinet/CollisionShape2D.disabled=false
-		$explore/cabinet/CollisionShape2D2.disabled=false
-		$explore/cabinet/CollisionShape2D3.disabled=false
-		$explore/cabinet/CollisionShape2D4.disabled=false
-		$explore/oven/CollisionShape2D.disabled=false
-		$explore/cabinet/CollisionShape2D.disabled=false
-		$explore/sink/CollisionShape2D.disabled=false
-		$explore/fridge/CollisionShape2D.disabled=false
-		$explore/chair/CollisionShape2D.disabled=false
-		$explore/island/CollisionShape2D.disabled=false
-		$explore/chair/CollisionShape2D2.disabled=false
-		$ghostlayer/explorelabel.visible=true
-		narration_label.text= 'Interact with objects around the kitchen to investigate.'
-	
-		
+
+		$ghostlayer/explorelabel.visible = true
+		$ghostlayer/TileMap3.visible = false
+		$ghostlayer/Fridge.visible = false
+		$explore/cabinet/CollisionShape2D.disabled = false
+		$explore/cabinet/CollisionShape2D2.disabled = false
+		$explore/cabinet/CollisionShape2D3.disabled = false
+		$explore/cabinet/CollisionShape2D4.disabled = false
+		$explore/oven/CollisionShape2D.disabled = false
+		$explore/sink/CollisionShape2D.disabled = false
+		$explore/fridge/CollisionShape2D.disabled = false
+		$explore/chair/CollisionShape2D.disabled = false
+		$explore/chair/CollisionShape2D2.disabled = false
+		$explore/island/CollisionShape2D.disabled = false
+
+		narration_label.text = "Interact with objects around the kitchen to investigate."
+		return
+
 	if area_name == "island" and all_non_photos_clicked():
-		print("yes")
-		$explore/cabinet/CollisionShape2D.disabled=true
-		$explore/cabinet/CollisionShape2D2.disabled=true
-		$explore/cabinet/CollisionShape2D3.disabled=true
-		$explore/cabinet/CollisionShape2D4.disabled=true
-		$explore/oven/CollisionShape2D.disabled=true
-		$explore/cabinet/CollisionShape2D.disabled=true
-		$explore/sink/CollisionShape2D.disabled=true
-		$explore/fridge/CollisionShape2D.disabled=true
-		$explore/chair/CollisionShape2D.disabled=true
-		$explore/island/CollisionShape2D.disabled=true
-		$explore/chair/CollisionShape2D2.disabled=true
-		$ghostlayer/explorelabel.visible=false
-		$CanvasLayer4/ColorRect2.visible=true
-		$CanvasLayer4/Kitchen.visible=true
+		$explore/cabinet/CollisionShape2D.disabled = true
+		$explore/cabinet/CollisionShape2D2.disabled = true
+		$explore/cabinet/CollisionShape2D3.disabled = true
+		$explore/cabinet/CollisionShape2D4.disabled = true
+		$explore/oven/CollisionShape2D.disabled = true
+		$explore/sink/CollisionShape2D.disabled = true
+		$explore/fridge/CollisionShape2D.disabled = true
+		$explore/chair/CollisionShape2D.disabled = true
+		$explore/island/CollisionShape2D.disabled = true
+		$explore/chair/CollisionShape2D2.disabled = true
+		$ghostlayer/explorelabel.visible = false
+		$CanvasLayer4/ColorRect2.visible = true
+		$CanvasLayer4/Kitchen.visible = true
+
 		await start_dialogue(4)
-		$CanvasLayer4/Node3/ColorRect.visible=true
-		$CanvasLayer4/Node3/Menucard.visible=true
-		$CanvasLayer4/Node3/Label2.visible=true
-		$CanvasLayer4/Node3/Label.visible=true
-		$CanvasLayer4/Node3/Label3.visible=true
-		$CanvasLayer4/Node3/continue/CollisionShape2D.disabled=false
-		$CanvasLayer4/Node3/continue.visible=true
+
+		$CanvasLayer4/Node3/ColorRect.visible = true
+		$CanvasLayer4/Node3/Menucard.visible = true
+		$CanvasLayer4/Node3/Label2.visible = true
+		$CanvasLayer4/Node3/Label.visible = true
+		$CanvasLayer4/Node3/Label3.visible = true
+		$CanvasLayer4/Node3/continue/CollisionShape2D.disabled = false
+		$CanvasLayer4/Node3/continue.visible = true
 		kitchenpuzzle()
-	
-		# Update label
-	narration_label.text = text
-	narration_label.visible = true
-	await get_tree().create_timer(2.0).timeout
-	narration_label.text= 'Interact with objects around the kitchen to investigate.'
+		return
 		
+	reset_timer.start()
+	
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["cabinet", "oven", "sink", "fridge", "chair"]
 	for name in non_desk:

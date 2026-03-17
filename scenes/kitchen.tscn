@@ -1719,10 +1719,10 @@ radius = 139.0
 height = 374.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gswy"]
-size = Vector2(705, 101)
+size = Vector2(561, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
-size = Vector2(422.667, 222.291)
+size = Vector2(422.667, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
 size = Vector2(1534.67, 128.333)
@@ -3496,7 +3496,7 @@ position = Vector2(6, 16)
 script = ExtResource("23_n55t6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/island"]
-position = Vector2(1131.5, 705.5)
+position = Vector2(1131.5, 692)
 shape = SubResource("RectangleShape2D_1gswy")
 disabled = true
 
@@ -3514,7 +3514,7 @@ position = Vector2(1147, 1344)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/islandcollision"]
-position = Vector2(-5.33325, -331.812)
+position = Vector2(-5.33325, -296.667)
 shape = SubResource("RectangleShape2D_k1jr4")
 
 [node name="textcollision" type="StaticBody2D" parent="scene collisions"]
@@ -4079,6 +4079,10 @@ process_mode = 2
 z_index = 1
 position = Vector2(475, 403.25)
 shape = SubResource("RectangleShape2D_s4afo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_exited"]

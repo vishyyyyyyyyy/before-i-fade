@@ -3477,7 +3477,7 @@ size = Vector2(2346, 497)
 size = Vector2(53.6667, 26.1667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbw0u"]
-size = Vector2(402, 535)
+size = Vector2(339, 520.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_waqk1"]
 radius = 47.5383
@@ -3870,6 +3870,7 @@ position = Vector2(2166, 974)
 position = Vector2(1151, 851)
 scale = Vector2(4.45313, 4.45313)
 texture = ExtResource("16_6i1t2")
+metadata/_edit_lock_ = true
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("9_5pnpo")]
 position = Vector2(2205, 913)
@@ -5603,7 +5604,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "Click objects arround the attic to investigate"
+text = "Interact with objects arround the attic to investigate."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -6165,37 +6166,35 @@ script = ExtResource("34_waqk1")
 label_text = "A small window, barely any light passes through. "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/window"]
-position = Vector2(1183, 373.5)
+position = Vector2(1188.5, 251.75)
 shape = SubResource("RectangleShape2D_nbw0u")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
-metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/CanvasLayer/window" instance=ExtResource("58_lfgyo")]
 visible = false
 
 [node name="letterE" parent="explore/CanvasLayer/window/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1468, 298)
+position = Vector2(1188, 258)
 
 [node name="blanket" type="Area2D" parent="explore/CanvasLayer"]
 script = ExtResource("34_waqk1")
 label_text = "A bloody blanket covering your dead body."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/CanvasLayer/blanket"]
-position = Vector2(1164, 910)
+position = Vector2(1169, 934)
 rotation = 1.53949
 shape = SubResource("CapsuleShape2D_waqk1")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
-metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/CanvasLayer/blanket" instance=ExtResource("58_lfgyo")]
 visible = false
 
 [node name="letterE" parent="explore/CanvasLayer/blanket/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1172, 785)
+position = Vector2(1172, 825)
 
 [node name="box" type="Area2D" parent="explore/CanvasLayer"]
 script = ExtResource("34_waqk1")
@@ -6289,7 +6288,7 @@ visible = false
 
 [node name="letterE" parent="explore/CanvasLayer/box/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1167, 617)
+position = Vector2(1927, 545)
 
 [node name="CanvasPause" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -6823,6 +6822,10 @@ process_mode = 2
 z_index = 1
 position = Vector2(475, 403.25)
 shape = SubResource("RectangleShape2D_n8j5g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scenetrigger" to="ghostlayer/scenetrigger" method="_on_body_exited"]

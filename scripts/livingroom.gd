@@ -110,9 +110,9 @@ func _ready():
 	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
-	unlockexplore()
-	#await start_dialogue(0)
-	#await modulatelivingroom()
+	#unlockexplore()
+	await start_dialogue(0)
+	await modulatelivingroom()
 	
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left

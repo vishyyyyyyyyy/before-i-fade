@@ -5,6 +5,8 @@ extends Node2D
 var clicked_objects := {} 
 var time_left_seconds
 
+@onready var reset_timer = $Timer
+
 var segment_data := [
 	{ "starts": [0.0, 4.0], "ends": [2.0, 6.0] }, 
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }, 
@@ -67,6 +69,7 @@ func fade_in_music():
 
 
 func _ready():
+	reset_timer.timeout.connect(_on_reset_timeout)
 	#Global.attic1fail = true
 	if Global.attic1fail == true:
 		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
@@ -92,6 +95,7 @@ func _ready():
 	$ghostlayer/choice.choice1.connect(choice1)
 	$ghostlayer/choice.choice2.connect(choice2)
 	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	#unlockexplore()
 	text()
 	
 	
@@ -806,50 +810,64 @@ func unlockexplore():
 				func(text):
 					_on_object_clicked(text, name)
 			)
+			
+var is_interacting = false
+
 func _on_object_clicked(text: String, area_name: String):
-	# If desk clicked before finishing others
+	
+	# Immediately update label for any object
+	narration_label.text = text
+	narration_label.visible = true
+
+	# Mark this object as clicked
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
+
+	# If box clicked but not all others, show message and skip sequence
 	if area_name == "box" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
 		narration_label.visible = true
+		reset_timer.start() 
 		return
-# Mark this area as clicked
-	clicked_objects[area_name] = true
 
-	# Update label
-	narration_label.text = text
-	narration_label.visible = true
-	
+	# Full box sequence after all other objects clicked
 	if area_name == "box" and all_non_photos_clicked():
 		print("yes")
-		$explore/CanvasLayer/box/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D2.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D3.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D4.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D5.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D6.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D7.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D8.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D9.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D10.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D11.disabled=true
-		$explore/CanvasLayer/box/CollisionShape2D12.disabled=true
-		$explore/CanvasLayer/window/CollisionShape2D.disabled=true
-		$explore/CanvasLayer/blanket/CollisionShape2D.disabled=true
-		
-		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		narration_label.visible=false
+		$explore/CanvasLayer/box/CollisionShape2D.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D2.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D3.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D4.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D5.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D6.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D7.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D8.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D9.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D10.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D11.disabled = true
+		$explore/CanvasLayer/box/CollisionShape2D12.disabled = true
+		$explore/CanvasLayer/window/CollisionShape2D.disabled = true
+		$explore/CanvasLayer/blanket/CollisionShape2D.disabled = true
+
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28)
+		$CanvasLayer2/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 		presentbox()
 		await get_tree().create_timer(0.5).timeout
-		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 
-		$CanvasLayer2/CanvasModulate.color =Color(1,1,1,1)
+		$CanvasLayer/CanvasModulate.color = Color(1,1,1,1)
+		$CanvasLayer2/CanvasModulate.color = Color(1,1,1,1)
 		pastbox()
 		await get_tree().create_timer(0.5).timeout
-		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
-		$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
+		$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28)
+		$CanvasLayer2/CanvasModulate.color = Color(0.0, 0.992, 0.816)
 		presentbox()
 		await start_dialogue(2)
 		challenge()
-	
+
+	reset_timer.start()
+		
+func _on_reset_timeout():
+	if not is_interacting:
+		narration_label.text = "Interact with objects arround the attic to investigate."
 		
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["blanket", "window"]
