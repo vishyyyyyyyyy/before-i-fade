@@ -19,7 +19,7 @@ There are **two possible endings**.
 
 ## 🎮 Controls
 
-<img width="1000" height="700" alt="Screenshot 2026-03-14 232730" src="https://github.com/user-attachments/assets/6c1bc373-018f-4aa4-9e75-872b902e4262" />
+<img width="600" height="500" alt="Screenshot 2026-03-14 232730" src="https://github.com/user-attachments/assets/6c1bc373-018f-4aa4-9e75-872b902e4262" />
 
 
 - **Arrow Keys / WASD** - Move around the house  
