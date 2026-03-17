@@ -2057,13 +2057,13 @@ size = Vector2(314, 533)
 size = Vector2(206.5, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n8s8"]
-size = Vector2(594, 276)
+size = Vector2(629, 220)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhao1"]
-size = Vector2(327, 318)
+size = Vector2(327, 167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw8nr"]
-size = Vector2(392, 305)
+size = Vector2(392, 274)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soh4j"]
 radius = 94.1509
@@ -2089,13 +2089,13 @@ size = Vector2(2346, 375.5)
 size = Vector2(613, 298)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwc7q"]
-size = Vector2(578.5, 113.75)
+size = Vector2(578.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
-size = Vector2(258, 160.25)
+size = Vector2(287, 140)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
-size = Vector2(379, 249.438)
+size = Vector2(379, 168.438)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thh0c"]
 size = Vector2(67.5, 66.5)
@@ -2128,7 +2128,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2621446, 0, 0, 2621454, 0, 0, 2621462, 0, 0, 2621470, 0, 0, 2621478, 0, 0, 2621486, 0, 0, 2621494, 0, 0, 2621502, 0, 0, 2621510, 0, 0, 2621518, 0, 0, 2621526, 0, 0, 2621534, 0, 0, 2621542, 0, 0, 2097158, 0, 0, 2097166, 0, 0, 2097174, 0, 0, 2097182, 0, 0, 2097190, 0, 0, 2097198, 0, 0, 2097206, 0, 0, 2097214, 0, 0, 2097222, 0, 0, 2097230, 0, 0, 2097238, 0, 0, 2097246, 0, 0, 2097254, 0, 0, 1572870, 0, 0, 1572878, 0, 0, 1572886, 0, 0, 1572894, 0, 0, 1572902, 0, 0, 1572910, 0, 0, 1572918, 0, 0, 1572926, 0, 0, 1572934, 0, 0, 1572942, 0, 0, 1572950, 0, 0, 1572958, 0, 0, 1572966, 0, 0, 1048582, 0, 0, 1048590, 0, 0, 1048598, 0, 0, 1048606, 0, 0, 1048614, 0, 0, 1048622, 0, 0, 1048630, 0, 0, 1048638, 0, 0, 1048646, 0, 0, 1048654, 0, 0, 1048662, 0, 0, 1048670, 0, 0, 1048678, 0, 0)
 
 [node name="Couch" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(1304, 578)
+position = Vector2(1296, 514)
 scale = Vector2(5.34375, 5.34375)
 texture = ExtResource("3_7ef23")
 
@@ -2153,7 +2153,7 @@ scale = Vector2(3.34375, 3.34375)
 texture = ExtResource("9_xddai")
 
 [node name="Bluerug" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(2109, 518)
+position = Vector2(2109, 558)
 scale = Vector2(3.875, 2.54688)
 texture = ExtResource("10_tlixj")
 
@@ -2335,7 +2335,6 @@ texture = ExtResource("14_24a1y")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2358,7 +2357,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2381,7 +2379,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2404,7 +2401,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="ghostlayer"]
-visible = false
 z_index = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -2603,7 +2599,7 @@ libraries = {
 
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext1"]
 visible = false
-z_index = 1
+z_index = 3
 position = Vector2(2010, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_tlixj")
@@ -3805,7 +3801,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A comfortable yellow couch."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/couch"]
-position = Vector2(1302, 525)
+position = Vector2(1278, 384)
 shape = SubResource("RectangleShape2D_2n8s8")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3815,17 +3811,18 @@ visible = false
 
 [node name="letterE" parent="explore/couch/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1305, 336)
+position = Vector2(1297, 280)
 
 [node name="table" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
 label_text = "A coffee table... and cake? "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/table"]
-position = Vector2(773.5, 749)
+position = Vector2(773.5, 673.5)
 shape = SubResource("RectangleShape2D_mhao1")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
+metadata/_edit_lock_ = true
 
 [node name="Node2D" parent="explore/table" instance=ExtResource("56_wxavf")]
 visible = false
@@ -3839,7 +3836,7 @@ script = ExtResource("26_8wvgp")
 label_text = "An old tv."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/tv"]
-position = Vector2(1297, 946.5)
+position = Vector2(1297, 962)
 shape = SubResource("RectangleShape2D_vw8nr")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3856,7 +3853,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A blue rug."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/rug"]
-position = Vector2(2121, 537)
+position = Vector2(2121, 593)
 rotation = -1.59694
 shape = SubResource("CapsuleShape2D_soh4j")
 disabled = true
@@ -3866,7 +3863,7 @@ debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
 
 [node name="letterE" parent="explore/rug/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(2122, 503)
+position = Vector2(2114, 527)
 
 [node name="flower" type="Area2D" parent="explore"]
 position = Vector2(-314, -188)
@@ -3950,7 +3947,7 @@ metadata/_edit_lock_ = true
 [node name="couchcollision" type="StaticBody2D" parent="scene collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/couchcollision"]
-position = Vector2(1293, 538.125)
+position = Vector2(1293, 346)
 shape = SubResource("RectangleShape2D_kwc7q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="scene collisions"]
@@ -3958,17 +3955,16 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-99.1667, -79.7917)
+position = Vector2(-104, -90.1667)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_ikg1h")
-metadata/_edit_lock_ = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
-position = Vector2(67, 27.4063)
+position = Vector2(67, 40.9063)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_24a1y")
 metadata/_edit_lock_ = true

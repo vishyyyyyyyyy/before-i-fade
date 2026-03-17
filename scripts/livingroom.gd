@@ -108,8 +108,9 @@ func _ready():
 	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
-	await start_dialogue(0)
-	await modulatelivingroom()
+	unlockexplore()
+	#await start_dialogue(0)
+	#await modulatelivingroom()
 	
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
@@ -480,12 +481,15 @@ func _on_object_clicked(text: String, area_name: String):
 	clicked_objects[area_name] = true
 
 	if area_name == "piano" and all_non_photos_clicked():
+		narration_label.visible=false
 		print("yes")
 		challenge()  
 		
 	# Update label
 	narration_label.text = text
 	narration_label.visible = true
+	await get_tree().create_timer(2.0).timeout
+	narration_label.text= 'Interact with objects around the living room to investigate.'
 
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["bookshelf", "clock", "table", "couch", "tv", "flower", "rug"]
