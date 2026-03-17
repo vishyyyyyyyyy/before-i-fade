@@ -480,11 +480,14 @@ func unlockexplore():
 			)
 			
 func _on_object_clicked(text: String, area_name: String):
+# Immediately update label for any object
+	narration_label.text = text
+	narration_label.visible = true
 
-	if is_interacting:
-		return
+	# Mark this object as clicked
+	if not clicked_objects.has(area_name):
+		clicked_objects[area_name] = true
 
-	is_interacting = true
 
 	if area_name == "piano" and not all_non_photos_clicked():
 		narration_label.text = "Let's finish looking at everything else first."
@@ -494,20 +497,13 @@ func _on_object_clicked(text: String, area_name: String):
 		is_interacting = false
 		return
 
-	if not clicked_objects.has(area_name):
-		clicked_objects[area_name] = true
-
 	if area_name == "piano" and all_non_photos_clicked():
 		narration_label.visible = false
 		challenge()
-
-	narration_label.text = text
-	narration_label.visible = true
+		return
 
 	reset_timer.start()
-	await reset_timer.timeout
 
-	is_interacting = false
 
 func all_non_photos_clicked() -> bool:
 	var non_desk = ["bookshelf", "clock", "table", "couch", "tv", "flower", "rug"]
