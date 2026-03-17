@@ -1,5 +1,6 @@
 extends Node2D
 func _ready() -> void:
+	#Global.ending=1
 	$continue.pressed.connect(pressed)
 	$Menucard.visible=true
 	fade_out_music()

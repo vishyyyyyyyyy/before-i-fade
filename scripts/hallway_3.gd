@@ -10,7 +10,8 @@ func toggle_pause():
 
 
 func _ready() -> void:
-	$CanvasLayer/Node2D/arrow.play("arrow")
+	if get_tree().current_scene.scene_file_path == "res://scenes/hallway4.tscn":
+		$CanvasLayer/Node2D/arrow.play("arrow")
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:

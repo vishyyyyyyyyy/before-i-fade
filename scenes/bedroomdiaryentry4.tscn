@@ -1587,7 +1587,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocxwn"]
-size = Vector2(180, 188)
+size = Vector2(223, 214)
 
 [sub_resource type="Animation" id="Animation_04rxg"]
 length = 0.001
@@ -2971,7 +2971,7 @@ autowrap_mode = 2
 script = ExtResource("18_fy4la")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/Area2D"]
-position = Vector2(206, 665)
+position = Vector2(227.5, 678)
 shape = SubResource("RectangleShape2D_ocxwn")
 disabled = true
 

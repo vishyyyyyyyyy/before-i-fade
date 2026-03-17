@@ -81,9 +81,9 @@ script = ExtResource("1_xi64a")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-color = Color(0, 0.992157, 0.815686, 1)
 
 [node name="TileMap2" type="TileMap" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-83, 99)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_k1cyo")
@@ -97,36 +97,43 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2097155, 0, 0, 2097163, 0, 0, 2097171, 0, 0, 2097179, 0, 0, 2097187, 0, 0, 2097195, 0, 0, 2097203, 0, 0, 2097211, 0, 0, 2097219, 0, 0, 2097227, 0, 0, 1572867, 0, 0, 1572875, 0, 0, 1572883, 0, 0, 1572891, 0, 0, 1572899, 0, 0, 1572907, 0, 0, 1572915, 0, 0, 1572923, 0, 0, 1572931, 0, 0, 1572939, 0, 0, 1048579, 0, 0, 1048587, 0, 0, 1048595, 0, 0, 1048603, 0, 0, 1048611, 0, 0, 1048619, 0, 0, 1048627, 0, 0, 1048635, 0, 0, 1048643, 0, 0, 1048651, 0, 0)
 
 [node name="Counter" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(177, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("3_qrfeb")
 
 [node name="Counter2" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1840, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("3_qrfeb")
 
 [node name="Counter4" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1520, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("3_qrfeb")
 
 [node name="Counter3" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(816, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("3_qrfeb")
 
 [node name="Fridge" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(2155, 225)
 scale = Vector2(4.26563, 4.26563)
 texture = ExtResource("4_o51mx")
 
 [node name="Oven" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(496, 254)
 scale = Vector2(4, 4)
 texture = ExtResource("5_tqvbx")
 
 [node name="Sink" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1168, 264)
 scale = Vector2(4, 4)
 texture = ExtResource("6_khqus")

@@ -132,7 +132,7 @@ func start_dialogue(index: int):
 		$CanvasLayer4/diaryentry5/Label.visible=false
 		$CanvasLayer4/diaryentry5/skip.visible=false
 		if Global.character =="girlGhost":
-			anim_name = "friendtextGIRL"
+			anim_name = "girl"
 
 		elif Global.character =="boyGhost":
 			anim_name ="boy"
@@ -216,7 +216,6 @@ func diaryentry5():
 	await start_dialogue(0)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602
-	$CanvasLayer3/CanvasModulate/ColorRect2.visible=false
 	$ghostlayer/blobGhostPlayer.position.x=1897
 	$ghostlayer/blobGhostPlayer.position.y=555
 	$CanvasLayer4/Area2D.visible=true
@@ -225,6 +224,7 @@ func diaryentry5():
 	#$SceneTrigger/CollisionShape2D.disabled=true
 		
 func pressed():
+	$CanvasLayer3/CanvasModulate/ColorRect2.visible=false
 	$CanvasLayer3/CanvasModulate/ColorRect2.visible=false
 	await start_dialogue(1)
 	$ghostlayer/Label.visible=true
@@ -261,7 +261,6 @@ func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	
  
 
 func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
