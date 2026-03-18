@@ -173,7 +173,7 @@ offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("9_rlefo")]
-position = Vector2(201, 862)
+position = Vector2(2153, 862)
 scale = Vector2(3, 3)
 
 [node name="scenetrigger" type="Area2D" parent="ghostlayer"]
@@ -181,11 +181,11 @@ script = ExtResource("21_tavlr")
 target_scene = "res://scenes/livingroom2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
-position = Vector2(9.5, 886)
+position = Vector2(2274.5, 886)
 shape = SubResource("RectangleShape2D_wy14m")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
-position = Vector2(2277.5, 886)
+position = Vector2(29.5, 886)
 shape = SubResource("RectangleShape2D_wy14m")
 disabled = true
 

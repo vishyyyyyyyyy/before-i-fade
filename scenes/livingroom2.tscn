@@ -166,7 +166,8 @@ texture = ExtResource("15_0vg6y")
 
 [node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
 visible = false
-position = Vector2(2049, 964)
+position = Vector2(151, 864)
+rotation = 4.71239
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -176,7 +177,7 @@ offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("16_g5srb")]
-position = Vector2(192, 869)
+position = Vector2(2058, 921)
 scale = Vector2(3, 3)
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
@@ -184,8 +185,7 @@ script = ExtResource("50_7pft0")
 target_scene = "res://scenes/attic.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(2048.5, 1095)
-rotation = 1.5708
+position = Vector2(26.5, 863)
 shape = SubResource("RectangleShape2D_x6klw")
 
 [node name="Label" type="Label" parent="ghostlayer"]

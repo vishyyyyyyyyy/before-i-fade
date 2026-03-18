@@ -2241,11 +2241,11 @@ frame_progress = 0.718874
 
 [node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
 visible = false
-position = Vector2(152, 861)
-rotation = 4.71239
+position = Vector2(2052, 971)
+rotation = 3.14159
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("12_7ef23")]
-position = Vector2(192, 869)
+position = Vector2(2056, 924)
 scale = Vector2(3, 3)
 
 [node name="Tv" type="Sprite2D" parent="ghostlayer"]
@@ -2504,6 +2504,7 @@ script = ExtResource("16_2anki")
 position = Vector2(-1370.65, 350.625)
 shape = SubResource("RectangleShape2D_soh4j")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D"]
 visible = false
@@ -2522,6 +2523,7 @@ volume_db = 15.0
 position = Vector2(-1049.75, 350.694)
 shape = SubResource("RectangleShape2D_n1eef")
 disabled = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D2"]
 visible = false
@@ -2541,6 +2543,7 @@ position = Vector2(-733.83, 350.625)
 shape = SubResource("RectangleShape2D_soh4j")
 disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer/pianokeys/CollisionShape2D3"]
 visible = false
@@ -2673,14 +2676,14 @@ libraries = {
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext1"]
 visible = false
 z_index = 3
-position = Vector2(2010, 692)
+position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_tlixj")
 
 [node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext1"]
 visible = false
 z_index = 3
-position = Vector2(2015, 725)
+position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_306lt")
 
@@ -3116,14 +3119,14 @@ libraries = {
 [node name="GirlGhost" type="Sprite2D" parent="ghostlayer/ghosttext2"]
 visible = false
 z_index = 1
-position = Vector2(2010, 692)
+position = Vector2(298, 692)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("16_tlixj")
 
 [node name="BoyGhost" type="Sprite2D" parent="ghostlayer/ghosttext2"]
 visible = false
 z_index = 3
-position = Vector2(2015, 725)
+position = Vector2(303, 725)
 scale = Vector2(0.472, 0.460139)
 texture = ExtResource("17_306lt")
 
@@ -3818,7 +3821,8 @@ script = ExtResource("50_vl3qy")
 target_scene = "res://scenes/kitchen3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(16.5, 861)
+position = Vector2(2051, 1094)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_x6klw")
 disabled = true
 

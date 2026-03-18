@@ -169,7 +169,7 @@ offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("11_2o6p2")]
-position = Vector2(192, 869)
+position = Vector2(2062, 919)
 scale = Vector2(3, 3)
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
@@ -177,8 +177,7 @@ script = ExtResource("12_tlvx6")
 target_scene = "res://scenes/attic2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(2048.5, 1095)
-rotation = 1.5708
+position = Vector2(28.5, 861)
 shape = SubResource("RectangleShape2D_x6klw")
 
 [node name="Label" type="Label" parent="ghostlayer"]

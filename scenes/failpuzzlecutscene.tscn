@@ -217,11 +217,12 @@ libraries = {
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 visible = false
-offset_right = 2303.0
-offset_bottom = 1291.0
+offset_left = -331.0
+offset_top = -73.0
+offset_right = 2445.0
+offset_bottom = 1385.0
 mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
 visible = false

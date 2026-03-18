@@ -1813,8 +1813,8 @@ texture = ExtResource("7_bs8bs")
 
 [node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
 visible = false
-position = Vector2(152, 888)
-rotation = 4.71239
+position = Vector2(2154, 887)
+rotation = 1.5708
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -1885,7 +1885,7 @@ theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("10_cwf2y")]
-position = Vector2(201, 862)
+position = Vector2(2161, 862)
 scale = Vector2(3, 3)
 
 [node name="failpuzzlecutscene" parent="ghostlayer" instance=ExtResource("10_b4rv0")]
@@ -1893,6 +1893,7 @@ scale = Vector2(3, 3)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ghostlayer"]
 
 [node name="girl" type="CharacterBody2D" parent="ghostlayer/AnimationPlayer"]
+visible = false
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/AnimationPlayer/girl"]
@@ -1904,9 +1905,8 @@ visible = false
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/AnimationPlayer/aunt"]
-position = Vector2(742.667, 254.333)
+position = Vector2(41.3336, 273)
 sprite_frames = SubResource("SpriteFrames_40l35")
-flip_h = true
 
 [node name="girlSide" type="CharacterBody2D" parent="ghostlayer/AnimationPlayer"]
 visible = false
@@ -2444,7 +2444,7 @@ script = ExtResource("75_knauv")
 target_scene = "res://scenes/hallway2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
-position = Vector2(9.5, 886)
+position = Vector2(2274.5, 886)
 shape = SubResource("RectangleShape2D_wy14m")
 disabled = true
 

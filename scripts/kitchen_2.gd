@@ -20,6 +20,7 @@ func _ready() -> void:
 		$ghostlayer/Label.visible=true
 		$ghostlayer/scenetrigger/CollisionShape2D.disabled=true
 		$ghostlayer/scenetrigger/CollisionShape2D2.disabled=false
+		$ghostlayer/blobGhostPlayer.position.x=2137
 		$ghostlayer/Node2D/arrow.play("arrow")
 		Global.kitchen = 4
 		print(Global.kitchen)
@@ -28,7 +29,7 @@ func _ready() -> void:
 		Global.kitchen = 5
 		$ghostlayer/scenetrigger/CollisionShape2D2.disabled=true
 		$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
-		$ghostlayer/blobGhostPlayer.position.x=2137
+		$ghostlayer/blobGhostPlayer.position.x=177
 		$ghostlayer/Label13.visible=true
 		print("bathroom count: " + str(Global.bathroomCount))
 		print("reusabledesk count: " + str(Global.reusabledesk))

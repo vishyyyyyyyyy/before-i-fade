@@ -621,19 +621,16 @@ func diarypagecontinue():
 		item.modulate = Color(0.0, 0.992, 0.816)
 	for item in doors:
 		item.modulate =Color( 0.094, 0.323, 0.28) 
-	$ghostlayer/Tv.color = Color(0.0, 0.992, 0.816)
 	await get_tree().create_timer(0.5).timeout
 	for item in furniture:
 		item.modulate = Color(1,1,1,1)
 	for item in doors:
 		item.modulate =Color( 1,1,1,1) 
-	$ghostlayer/Tv.color = Color(1,1,1,1)
 	await get_tree().create_timer(0.5).timeout
 	for item in furniture:
 		item.modulate = Color(0.0, 0.992, 0.816)
 	for item in doors:
 		item.modulate =Color( 0.094, 0.323, 0.28) 
-	$ghostlayer/Tv.color = Color(0.0, 0.992, 0.816)
 	$ghostlayer/scentrigger/CollisionShape2D.disabled=false
 	await get_tree().create_timer(0.4).timeout
 	$ghostlayer/Label14.visible=true

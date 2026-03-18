@@ -207,6 +207,7 @@ texture = ExtResource("9_c0g1v")
 [node name="Node2D" parent="CanvasLayer2" instance=ExtResource("10_lxtqw")]
 
 [node name="letterE" parent="CanvasLayer2/Node2D/EAnim" index="0"]
+visible = false
 position = Vector2(2022, 375)
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
@@ -308,6 +309,7 @@ theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
 [node name="Label3" type="Label" parent="CanvasLayer3"]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -323,6 +325,7 @@ theme_override_fonts/font = ExtResource("11_ym42y")
 theme_override_font_sizes/font_size = 32
 text = "Walk up to the mirror and press \"E\" to interact."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="CanvasLayer3"]
 position = Vector2(2044, 735)

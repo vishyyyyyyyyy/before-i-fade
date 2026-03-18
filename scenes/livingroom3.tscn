@@ -139,6 +139,7 @@ scale = Vector2(3.875, 2.54688)
 texture = ExtResource("8_lj7lv")
 
 [node name="Coffeetable" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
+visible = false
 position = Vector2(768, 795)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("9_67gje")
@@ -169,7 +170,7 @@ offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("11_mco83")]
-position = Vector2(2076, 911)
+position = Vector2(182, 849)
 scale = Vector2(3, 3)
 
 [node name="scentrigger" type="Area2D" parent="ghostlayer"]
@@ -177,13 +178,13 @@ script = ExtResource("12_o617q")
 target_scene = "res://scenes/kitchen5.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(2048.5, 1095)
-rotation = 1.5708
+position = Vector2(24.5, 863)
 shape = SubResource("RectangleShape2D_x6klw")
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(29, 865)
+position = Vector2(2053, 1091)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_x6klw")
 
 [node name="Label" type="Label" parent="ghostlayer"]

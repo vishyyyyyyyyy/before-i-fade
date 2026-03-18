@@ -1798,6 +1798,7 @@ position = Vector2(2188, 840)
 scale = Vector2(3, 3)
 
 [node name="failpuzzlecutscene" parent="CanvasLayer" instance=ExtResource("15_swrf8")]
+position = Vector2(7, 0)
 
 [node name="hallwayfailghost" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
@@ -2550,6 +2551,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
+wait_time = 35.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
