@@ -10,6 +10,10 @@
 
 [sub_resource type="Animation" id="Animation_p36n8"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_wvc7n"]
+resource_name = "type"
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,46 +21,78 @@ tracks/0/path = NodePath("../subtitle:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../subtitle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_wvc7n"]
-resource_name = "type"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../subtitle:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../subtitle:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../subtitle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../subtitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Label2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Label2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -207,47 +243,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_5ue1b")
 }
 
-[node name="Label" type="Label" parent="AnimationPlayer"]
-visible = false
-z_index = 1
-offset_left = 862.0
-offset_top = 173.0
-offset_right = 1483.0
-offset_bottom = 320.0
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("3_5ue1b")
-theme_override_font_sizes/font_size = 72
-text = "Credits"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="AnimationPlayer"]
-visible = false
-z_index = 1
-offset_left = 853.0
-offset_top = 177.0
-offset_right = 1474.0
-offset_bottom = 324.0
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("3_5ue1b")
-theme_override_font_sizes/font_size = 72
-text = "Credits"
-horizontal_alignment = 1
-
 [node name="subtitle" type="Label" parent="AnimationPlayer"]
-z_index = 5
-offset_left = 788.0
-offset_top = 335.0
-offset_right = 1551.0
-offset_bottom = 1195.0
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_constants/line_spacing = 20
+z_index = 2
+offset_left = 781.0
+offset_top = 270.0
+offset_right = 1544.0
+offset_bottom = 1185.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("4_hr0jj")
 theme_override_font_sizes/font_size = 24
 text = "Created by:
 Vishalya Sairam and Aadityan Anbumani
 
+
 Art & Assets:
 Vishalya Sairam
+
 
 Music & Sound (from Pixabay):
 Phone Ringing — Dragon Studio
@@ -260,21 +271,52 @@ Explore the Universe and Beyond — Musictown
 Kerosene — LBDLPROD
 Puzzle Game — Cyberwave-Orchestra
 
+
 Video Overlay:
 Damage Film Effects — Atomic Dreams
+
 
 Fonts:
 Pixel Operator —  Webfontfree
 
+
 Made with love in Godot
 
-Time keeps moving."
+
+Time keeps moving.
+"
 horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 2
-max_lines_visible = 22
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+visible = false
+z_index = 1
+offset_left = 862.0
+offset_top = 69.0
+offset_right = 1483.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="AnimationPlayer"]
+visible = false
+z_index = 1
+offset_left = 853.0
+offset_top = 73.0
+offset_right = 1474.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_5ue1b")
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="continue" type="Area2D" parent="."]
 z_index = 3

@@ -31,6 +31,8 @@ func pressed():
 	$AnimationPlayer/Label.visible=true
 	$AnimationPlayer/Label2.visible=true
 	$AnimationPlayer.play("type")
+	await $AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
 func fade_out_music():
 	var tween = create_tween()
