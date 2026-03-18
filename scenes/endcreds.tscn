@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://7t53o3dj0qbw"]
+[gd_scene load_steps=14 format=3 uid="uid://7t53o3dj0qbw"]
 
 [ext_resource type="Script" uid="uid://dh38qqg8q2e4f" path="res://scripts/endingandcreds.gd" id="1_wvc7n"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="2_p36n8"]
@@ -107,6 +107,27 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvr4j"]
 size = Vector2(209.5, 49)
+
+[sub_resource type="Animation" id="Animation_hr0jj"]
+resource_name = "modulate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimationPlayer3/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvr4j"]
+_data = {
+&"modulate": SubResource("Animation_hr0jj")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wvc7n")
@@ -345,6 +366,22 @@ text = "Continue"
 z_index = 1
 position = Vector2(475.75, 387.25)
 shape = SubResource("RectangleShape2D_mvr4j")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_mvr4j")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="AnimationPlayer3"]
+z_index = 4
+offset_left = -40.0
+offset_right = 2319.0
+offset_bottom = 1318.0
+mouse_filter = 2
+color = Color(0.129412, 0, 0.0980392, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="continue" to="continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="continue" to="continue" method="_on_mouse_exited"]

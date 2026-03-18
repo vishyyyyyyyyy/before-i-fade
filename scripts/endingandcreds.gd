@@ -3,6 +3,7 @@ func _ready() -> void:
 	#Global.ending=1
 	$continue.pressed.connect(pressed)
 	$Menucard.visible=true
+	$AnimationPlayer3.play("modulate")
 	fade_out_music()
 	
 	if Global.ending  == 1:

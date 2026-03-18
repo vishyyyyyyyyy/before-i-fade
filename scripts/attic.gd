@@ -1085,6 +1085,8 @@ func choice1():
 	var player = $ghostlayer/blobGhostPlayer
 	await fade_out_node(player, 2.5)
 	await get_tree().create_timer(0.5).timeout
+	$ghostlayer/AnimationPlayer2.play("modulate")
+	await $ghostlayer/AnimationPlayer2.animation_finished
 	get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 
 func choice2():

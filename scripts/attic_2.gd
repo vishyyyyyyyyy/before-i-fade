@@ -239,6 +239,8 @@ func challengecompleted():
 		await start_dialogue(0)
 		await get_tree().create_timer(0.3).timeout
 		await fade_out_node($ghostlayer/blobGhostPlayer, 2.5)
+		$ghostlayer/AnimationPlayer3.play("modulate")
+		await $ghostlayer/AnimationPlayer3.animation_finished
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 		
 	if Global.character == "boyGhost":
@@ -258,6 +260,8 @@ func challengecompleted():
 		await start_dialogue(0)
 		await get_tree().create_timer(0.3).timeout
 		await fade_out_node($ghostlayer/blobGhostPlayer, 2.5)
+		$ghostlayer/AnimationPlayer3.play("modulate")
+		await $ghostlayer/AnimationPlayer3.animation_finished
 		get_tree().change_scene_to_file("res://scenes/endcreds.tscn")
 
 func on_button_pressed():

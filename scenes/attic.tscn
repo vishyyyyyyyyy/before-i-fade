@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=176 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -94,6 +94,31 @@ sources/0 = SubResource("TileSetAtlasSource_naci5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7llc"]
 size = Vector2(52.5, 35.5)
+
+[sub_resource type="Animation" id="Animation_lfgyo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_h76dr"]
+resource_name = "modulate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghostlayer/AnimationPlayer2/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 0), Color(0.129412, 0, 0.0980392, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_23alv"]
+_data = {
+&"RESET": SubResource("Animation_lfgyo"),
+&"modulate": SubResource("Animation_h76dr")
+}
 
 [sub_resource type="Animation" id="Animation_7ff34"]
 length = 0.001
@@ -3876,6 +3901,22 @@ metadata/_edit_lock_ = true
 position = Vector2(2205, 913)
 scale = Vector2(3, 3)
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_23alv")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer/AnimationPlayer2"]
+z_index = 3
+offset_left = -40.0
+offset_right = 2319.0
+offset_bottom = 1318.0
+mouse_filter = 2
+color = Color(0.129412, 0, 0.0980392, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
 [node name="failpuzzlecutscene" parent="ghostlayer" instance=ExtResource("15_u7edh")]
 
 [node name="bedroomfailghost" type="AnimationPlayer" parent="ghostlayer"]
@@ -5614,7 +5655,7 @@ z_index = 2
 offset_right = 2347.0
 offset_bottom = 1132.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
+color = Color(0.117647, 0.0431373, 0.152941, 0.784314)
 
 [node name="Menucard" type="Sprite2D" parent="ghostlayer"]
 visible = false
@@ -6312,7 +6353,7 @@ offset_top = -14.0
 offset_right = 2314.0
 offset_bottom = 1353.0
 mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.639216)
+color = Color(0.117647, 0.0431373, 0.152941, 0.784314)
 metadata/_edit_lock_ = true
 
 [node name="Menucard2" type="Sprite2D" parent="CanvasPause"]

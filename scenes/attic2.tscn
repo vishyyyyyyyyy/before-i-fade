@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://b8ipl8wqkiwa5"]
+[gd_scene load_steps=135 format=3 uid="uid://b8ipl8wqkiwa5"]
 
 [ext_resource type="Script" uid="uid://dw0d0wru3kifh" path="res://scripts/attic_2.gd" id="1_j8y3x"]
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="2_qjqex"]
@@ -1149,6 +1149,31 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nww1"]
 size = Vector2(209.5, 49)
 
+[sub_resource type="Animation" id="Animation_cpefd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6awvt"]
+resource_name = "modulate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghostlayer/AnimationPlayer3/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 0, 0.0980392, 0), Color(0.129412, 0, 0.0980392, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4jin"]
+_data = {
+&"RESET": SubResource("Animation_cpefd"),
+&"modulate": SubResource("Animation_6awvt")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajrb"]
 size = Vector2(1534.67, 151.667)
 
@@ -2122,6 +2147,22 @@ volume_db = 20.0
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
 script = ExtResource("43_t75hn")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="ghostlayer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_v4jin")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer/AnimationPlayer3"]
+z_index = 3
+offset_left = -40.0
+offset_right = 2319.0
+offset_bottom = 1318.0
+mouse_filter = 2
+color = Color(0.129412, 0, 0.0980392, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="scene collisions" type="Node" parent="."]
 
