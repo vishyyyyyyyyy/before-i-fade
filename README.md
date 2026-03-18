@@ -34,20 +34,28 @@ There are **two possible endings**.
 ## ⚙️ Core Systems
 
 **Puzzles:**
+<img width="600" height="500" alt="Screenshot 2026-03-18 184311" src="https://github.com/user-attachments/assets/f079db39-c92c-4ecf-b88b-8a5547ce4088" />
+
 - Built using Area2D with collision shapes and Texture2D buttons to detect input
 - Puzzle state stored using lists and dictionaries
 - Solutions checked dynamically
 - Utilize Godot signals to connect subscript challenges to main script for story progression
 
 **Timer:**
+<img width="600" height="500" alt="Screenshot 2026-03-18 184546" src="https://github.com/user-attachments/assets/adb81bfd-6b5e-475a-8328-00a92d8ebc89" />
+
 - Timer node updated every frame using process() and displayed in a label
 - Force updating timer color theme with ```add_theme_color_override``` on even numbered seconds remaining
 
 **Interactions:**
+<img width="600" height="500" alt="Screenshot 2026-03-18 184038" src="https://github.com/user-attachments/assets/4b9686ed-4d97-4326-a26b-cc7adc3d4947" />
+
 - Player interactions detected using Area2D Zones
 - Mapping input to esc, space, e, and left click
 
 **Dialogues:**
+<img width="600" height="500" alt="Screenshot 2026-03-18 184459" src="https://github.com/user-attachments/assets/e36e7763-6df1-4b28-b25f-647a47eb29e7" />
+
 - dialogues accessed using ```seek()``` in animation player to allow user input space for skip
 - keyframing visibility and characters displayed
 - storing time start and time end segments to seek to when input pressed
