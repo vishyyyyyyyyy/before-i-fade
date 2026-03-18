@@ -873,6 +873,8 @@ metadata/_edit_lock_ = true
 visible = false
 position = Vector2(-135, -8)
 script = ExtResource("16_vkpj4")
+normal_texture = ExtResource("17_v8erk")
+hover_texture = ExtResource("22_ja1k8")
 
 [node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
 z_index = 1
@@ -1259,7 +1261,7 @@ offset_bottom = 1087.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 25.0
 one_shot = true
 
 [node name="Timer" type="Sprite2D" parent="."]
@@ -1417,6 +1419,7 @@ text = "Continue"
 z_index = 1
 position = Vector2(475.75, 387.25)
 shape = SubResource("RectangleShape2D_duejm")
+disabled = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Desk2")
@@ -1741,6 +1744,8 @@ script = ExtResource("41_rnpfi")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node3/continue" to="Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_shape_exited"]

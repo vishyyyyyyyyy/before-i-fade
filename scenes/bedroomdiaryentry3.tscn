@@ -363,6 +363,8 @@ color = Color(0.117647, 0.0431373, 0.152941, 1)
 visible = false
 position = Vector2(-159, 48)
 script = ExtResource("17_i2gc4")
+normal_texture = ExtResource("21_0vequ")
+hover_texture = ExtResource("41_td3f0")
 
 [node name="Menubanner" type="Sprite2D" parent="CanvasLayer4/Area2D"]
 z_index = 1
@@ -1021,6 +1023,8 @@ shape = SubResource("RectangleShape2D_2yjug")
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]
+[connection signal="mouse_entered" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasPause/settingsControl/settingsclose" to="." method="_on_settingsclose_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_exited"]

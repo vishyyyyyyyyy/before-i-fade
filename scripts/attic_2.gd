@@ -51,7 +51,7 @@ func _process(_delta):
 		var t = time_left_seconds / total_time
 		
 		# start slow (0.75) → end normal (1.0)
-		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+		MusicManager.music_player.pitch_scale = lerp(0.75, 0.4, t)
 		
 	if time_left_seconds < 6:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
@@ -177,6 +177,7 @@ func fade_in_music():
 
 
 func _ready():
+	MusicManager.music_player.pitch_scale = 0.75
 	#Global.attic2fail = true
 	if Global.attic2fail == true:
 		$ghostlayer/bedroomfailghost/Label.text  = repeat_lines.pick_random()
@@ -185,7 +186,7 @@ func _ready():
 		await get_tree().create_timer(16).timeout
 		await start_dialogue(1)
 	else:
-		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.music_player.pitch_scale = 0.75
 		MusicManager.play_scene_music("menu")
 		
 	if MusicManager.music_on:
@@ -210,7 +211,7 @@ func _ready():
 	$ghostlayer/ColorRect.visible=true
 	
 func challengecompleted():
-	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("menu")
 	$ghostlayer/Heart.visible=false
 	$ghostlayer/Heart2.visible=false

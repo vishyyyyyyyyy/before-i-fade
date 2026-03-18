@@ -69,6 +69,7 @@ func fade_in_music():
 
 
 func _ready():
+	MusicManager.music_player.pitch_scale = 0.75
 	reset_timer.timeout.connect(_on_reset_timeout)
 	#Global.attic1fail = true
 	if Global.attic1fail == true:
@@ -78,7 +79,7 @@ func _ready():
 		await get_tree().create_timer(16).timeout
 		await start_dialogue(9)
 	else:
-		MusicManager.music_player.pitch_scale = 1.0
+		MusicManager.music_player.pitch_scale = 0.75
 		MusicManager.play_scene_music("menu")
 
 	if MusicManager.music_on:
@@ -108,7 +109,7 @@ func _process(delta: float) -> void:
 		var total_time = $ghostlayer/Timer2.wait_time
 		var t = time_left_seconds / total_time
 			# start slow (0.75) → end normal (1.0)
-		MusicManager.music_player.pitch_scale = lerp(1.0, 0.75, t)
+		MusicManager.music_player.pitch_scale = lerp(0.75, 0.4, t)
 		
 	if time_left_seconds < 11.0:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
@@ -1018,7 +1019,7 @@ func presentbox():
 	
 
 func challengecompleted():
-	MusicManager.music_player.pitch_scale = 1.0
+	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("menu")
 	await get_tree().create_timer(2).timeout
 	$ghostlayer/Heart.visible=false

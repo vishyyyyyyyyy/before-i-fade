@@ -275,3 +275,7 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	$CanvasPause/settingsControl.visible=false
 	$CanvasPause/PauseMenu.visible=true
+
+
+func _on_area_2d_mouse_entered() -> void:
+	pass # Replace with function body.

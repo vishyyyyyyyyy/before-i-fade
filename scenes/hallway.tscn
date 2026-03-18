@@ -2550,7 +2550,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 45.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
@@ -2755,6 +2754,7 @@ autoplay = "default"
 frame_progress = 0.596963
 
 [node name="neighborLook" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborLook"]
 position = Vector2(1152, 521)

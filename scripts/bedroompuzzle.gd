@@ -433,6 +433,7 @@ func wrong():
 	reset_puzzle()
 	
 func correct():
+	MusicManager.music_player.pitch_scale = 1.0
 	$Heart.visible=false
 	$Heart2.visible=false
 	$Heart3.visible=false

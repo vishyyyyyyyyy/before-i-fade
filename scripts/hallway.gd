@@ -56,6 +56,7 @@ var repeat_lines = [
 
 
 func _ready():
+	MusicManager.music_player.pitch_scale = 1.0
 	reset_timer.timeout.connect(_on_reset_timeout)
 	#Global.hallwayfail = true
 	if Global.hallwayfail == true:
