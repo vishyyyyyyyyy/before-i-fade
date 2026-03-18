@@ -3250,6 +3250,7 @@ scale = Vector2(8.23438, 8.23438)
 texture = ExtResource("27_vtl2l")
 
 [node name="continue" type="Area2D" parent="ghostlayer"]
+visible = false
 z_index = 3
 position = Vector2(245, 12)
 scale = Vector2(2, 2)

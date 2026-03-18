@@ -3,6 +3,7 @@ extends CharacterBody2D
 const speed = 280
 var current_dir = "none"
 var currentChar = Global.character
+var ghost_t := 0.0
 
 func _ready():
 	if (currentChar == "blob"):
@@ -15,7 +16,16 @@ func _physics_process(delta):
 		player_movement_blob(delta)
 	else:
 		player_movement(delta)
+	handle_ghost_fade(delta)
 
+func handle_ghost_fade(delta):
+	var anim = $AnimatedSprite2D
+	ghost_t += delta
+	
+	# fade in outt
+	var alpha = 0.95 + sin(ghost_t * 2.0) * 0.07
+	anim.modulate.a = alpha
+		
 func player_movement_blob(delta):
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
