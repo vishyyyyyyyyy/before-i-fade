@@ -1915,6 +1915,7 @@ scale = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/AnimationPlayer/girlSide"]
 position = Vector2(386, 224)
 sprite_frames = SubResource("SpriteFrames_cvtdl")
+flip_h = true
 
 [node name="boy" type="CharacterBody2D" parent="ghostlayer/AnimationPlayer"]
 visible = false
@@ -1931,6 +1932,7 @@ scale = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/AnimationPlayer/boySide"]
 position = Vector2(384, 227)
 sprite_frames = SubResource("SpriteFrames_4a0qq")
+flip_h = true
 
 [node name="Island" type="Sprite2D" parent="ghostlayer"]
 position = Vector2(1148, 805)

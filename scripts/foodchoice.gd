@@ -281,15 +281,16 @@ func correct():
 	$CollisionShape2D3.disabled=true
 	$CollisionShape2D2.disabled=true
 	$CollisionShape2D4.disabled=true
-	$"../Node3/AudioStreamPlayer".play() 
-	$"../Node3/Timer2".stop()
-	await get_tree().create_timer(2).timeout
 	$"../Node3/Heart".visible=false
 	$"../Node3/Heart2".visible=false 
 	$"../Node3/Heart3".visible=false
 	$"../Node3/Heart4".visible=false
 	$"../Node3/Heart5".visible=false
 	$"../Node3/Heart6".visible=false
+	$"../Node3/Timer".visible=false
+	$"../Node3/AudioStreamPlayer".play() 
+	$"../Node3/Timer2".stop()
+	await get_tree().create_timer(2).timeout
 	$"../Node3/Correct".visible = false
 	emit_signal("challengecompleted")
 

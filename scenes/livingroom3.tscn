@@ -139,7 +139,6 @@ scale = Vector2(3.875, 2.54688)
 texture = ExtResource("8_lj7lv")
 
 [node name="Coffeetable" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-visible = false
 position = Vector2(768, 795)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("9_67gje")

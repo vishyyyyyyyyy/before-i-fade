@@ -55,7 +55,7 @@ sources/0 = SubResource("TileSetAtlasSource_3fy06")
 size = Vector2(39, 330)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
-size = Vector2(418.667, 260.958)
+size = Vector2(394, 137.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
 size = Vector2(1534.67, 151.667)
@@ -253,7 +253,7 @@ position = Vector2(1147, 1344)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/islandcollision"]
-position = Vector2(-3.33331, -312.479)
+position = Vector2(9.00006, -250.667)
 shape = SubResource("RectangleShape2D_k1jr4")
 
 [node name="textcollision" type="StaticBody2D" parent="scene collisions"]

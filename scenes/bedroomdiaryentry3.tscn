@@ -125,6 +125,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry5/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_xnet5"]
 resource_name = "girl"
@@ -164,6 +176,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("diaryentry5/skip:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lqku5"]
@@ -426,8 +450,24 @@ theme_override_font_sizes/font_size = 32
 text = "\"Why are they after my money. I just wanna live a peaceful life.\""
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
+
+[node name="skip" type="Label" parent="CanvasLayer4/diaryentry5"]
+visible = false
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 883.0
+offset_top = -33.0
+offset_right = 1135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("27_mqa23")
+theme_override_font_sizes/font_size = 16
+text = "(SPACE to skip text)"
 
 [node name="Node" type="Node" parent="."]
 

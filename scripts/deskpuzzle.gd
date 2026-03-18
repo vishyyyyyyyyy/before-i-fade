@@ -13,11 +13,11 @@ func _process(delta):
 	if player_inside and Input.is_action_just_pressed("interact"):
 		open_desk()
 
-func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton \
-	and event.pressed \
-	and event.button_index == MOUSE_BUTTON_LEFT:
-		open_desk()
+#func _input_event(viewport, event, shape_idx):
+	#if event is InputEventMouseButton \
+	#and event.pressed \
+	#and event.button_index == MOUSE_BUTTON_LEFT:
+		#open_desk()
 
 func open_desk():
 	$"../Deskcloseup2".visible = true

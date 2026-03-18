@@ -1638,7 +1638,7 @@ size = Vector2(1534.67, 151.667)
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeik"]
-size = Vector2(2331, 450)
+size = Vector2(2331, 418)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bje8i"]
 radius = 100.0
@@ -1975,6 +1975,7 @@ offset_bottom = 1224.0
 theme_override_fonts/font = ExtResource("15_xgli8")
 theme_override_font_sizes/font_size = 32
 text = "\"Huh? What's that note.\""
+horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -3261,9 +3262,8 @@ shape = SubResource("RectangleShape2D_w57m6")
 [node name="StaticBody2D" type="StaticBody2D" parent="scenecollisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenecollisions/StaticBody2D"]
-position = Vector2(1155.5, 215)
+position = Vector2(1155.5, 199)
 shape = SubResource("RectangleShape2D_yjeik")
-metadata/_edit_lock_ = true
 
 [node name="explore" type="Node" parent="."]
 

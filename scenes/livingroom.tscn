@@ -1304,7 +1304,7 @@ tracks/0/path = NodePath("ghosttext2/Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.03333),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -1416,7 +1416,7 @@ tracks/1/path = NodePath("ghosttext2/Label:visible_ratio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.03333),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -3779,7 +3779,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Auntletter2" type="Sprite2D" parent="ghostlayer/ghosttext4"]
 visible = false
-position = Vector2(1113, 463)
+position = Vector2(1113, 501)
 scale = Vector2(10.4, 10.4)
 texture = ExtResource("44_xnj5d")
 

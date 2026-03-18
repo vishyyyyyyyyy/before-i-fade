@@ -94,7 +94,7 @@ func _ready():
 	$ghostlayer/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
 	$ghostlayer/choice.choice1.connect(choice1)
-	$ghostlayer/choice.choice2.connect(choice2)
+	$ghostlayer/choice2.choice2.connect(choice2)
 	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	#unlockexplore()
 	text()
@@ -104,7 +104,9 @@ func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
 	
-	# --- music speed control ---
+	$ghostlayer/Label8.add_theme_color_override("font_color", Color(0,0,0))
+	
+	#  music speed control
 	if not $ghostlayer/Timer2.is_stopped():
 		var total_time = $ghostlayer/Timer2.wait_time
 		var t = time_left_seconds / total_time
@@ -1066,16 +1068,18 @@ func diarypagecontinue():
 	await start_dialogue(4)
 	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/choice.visible=true
+	$ghostlayer/choice2.visible=true
 	$ghostlayer/choice/CollisionShape2D.disabled=false
-	$ghostlayer/choice/CollisionShape2D2.disabled=false
+	$ghostlayer/choice2/CollisionShape2D.disabled=false
 	
 func choice1():
 	Global.ending = 1
 	$ghostlayer/ghosttext6/GirlGhost.visible=false
 	$ghostlayer/ghosttext6/BoyGhost.visible=false
 	$ghostlayer/choice.visible=false
+	$ghostlayer/choice2.visible=false
 	$ghostlayer/choice/CollisionShape2D.disabled=true
-	$ghostlayer/choice/CollisionShape2D2.disabled=true
+	$ghostlayer/choice2/CollisionShape2D.disabled=true
 	$ghostlayer/ColorRect.visible=false
 	await start_dialogue(5)
 	var player = $ghostlayer/blobGhostPlayer
@@ -1089,8 +1093,9 @@ func choice2():
 	$ghostlayer/ghosttext6/GirlGhost.visible=false
 	$ghostlayer/ghosttext6/BoyGhost.visible=false
 	$ghostlayer/choice.visible=false
+	$ghostlayer/choice2.visible=false
 	$ghostlayer/choice/CollisionShape2D.disabled=true
-	$ghostlayer/choice/CollisionShape2D2.disabled=true
+	$ghostlayer/choice2/CollisionShape2D.disabled=true
 	await start_dialogue(6)
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
@@ -1164,3 +1169,7 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	$CanvasPause/settingsControl.visible=false
 	$CanvasPause/PauseMenu.visible=true
+
+
+func _on_choice_mouse_entered() -> void:
+	pass # Replace with function body.

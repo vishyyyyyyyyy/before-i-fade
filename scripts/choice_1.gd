@@ -3,7 +3,7 @@ extends Area2D
 @export var normal_texture: Texture2D
 @export var hover_texture: Texture2D
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Menubanner
 
 signal choice1
 signal choice2

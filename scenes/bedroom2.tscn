@@ -1521,6 +1521,7 @@ scale = Vector2(3.5, 3.5)
 color = Color(0.0938939, 0.322573, 0.279504, 1)
 
 [node name="Door" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
+position = Vector2(0, 0.571442)
 texture = ExtResource("2_yahhj")
 
 [node name="Door2" type="Sprite2D" parent="CanvasLayer2/CanvasModulate2"]
@@ -2473,6 +2474,8 @@ metadata/_edit_lock_ = true
 visible = false
 position = Vector2(-135, -8)
 script = ExtResource("23_flduu")
+normal_texture = ExtResource("22_flduu")
+hover_texture = ExtResource("53_hh58c")
 
 [node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
 z_index = 1

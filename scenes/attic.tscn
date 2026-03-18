@@ -3966,9 +3966,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -596.0
+offset_left = -737.0
 offset_top = -140.0
-offset_right = 596.0
+offset_right = 756.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -5853,15 +5853,16 @@ text = "20.0"
 visible = false
 z_index = 2
 offset_left = 30.0
-offset_top = 1192.0
+offset_top = 1176.0
 offset_right = 2274.0
-offset_bottom = 1265.0
+offset_bottom = 1249.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
 text = "Memorize the box layout in 10 seconds in the past, 
 then place them correctly in the next 10 seconds in the present."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label14" type="Label" parent="ghostlayer"]
 visible = false
@@ -6079,12 +6080,20 @@ position = Vector2(1186, 512.5)
 shape = SubResource("RectangleShape2D_ju1eb")
 disabled = true
 
-[node name="Menubanner2" type="Sprite2D" parent="ghostlayer/choice"]
+[node name="choice2" type="Area2D" parent="ghostlayer"]
+visible = false
+z_index = 3
+position = Vector2(0, -56)
+script = ExtResource("49_ju1eb")
+normal_texture = ExtResource("40_ju1eb")
+hover_texture = ExtResource("41_bgrwk")
+
+[node name="Menubanner" type="Sprite2D" parent="ghostlayer/choice2"]
 position = Vector2(1192, 749.5)
 scale = Vector2(9.49344, 9.49344)
 texture = ExtResource("40_ju1eb")
 
-[node name="Label2" type="Label" parent="ghostlayer/choice"]
+[node name="Label" type="Label" parent="ghostlayer/choice2"]
 z_index = 5
 anchors_preset = 7
 anchor_left = 0.5
@@ -6102,7 +6111,7 @@ theme_override_font_sizes/font_size = 32
 text = "Rewrite the past."
 horizontal_alignment = 1
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/choice"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/choice2"]
 position = Vector2(1188, 785)
 shape = SubResource("RectangleShape2D_ju1eb")
 disabled = true
@@ -6837,6 +6846,10 @@ one_shot = true
 [connection signal="mouse_entered" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="ghostlayer/choice" to="ghostlayer/choice" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ghostlayer/choice" to="ghostlayer/choice" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ghostlayer/choice2" to="ghostlayer/choice2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ghostlayer/choice2" to="ghostlayer/choice2" method="_on_mouse_exited"]
 [connection signal="input_event" from="CanvasPause/settingsControl/settingsclose" to="." method="_on_settingsclose_input_event"]
 [connection signal="mouse_entered" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasPause/settingsControl/settingsclose" to="CanvasPause/settingsControl/settingsclose" method="_on_mouse_exited"]

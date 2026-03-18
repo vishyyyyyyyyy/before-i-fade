@@ -89,9 +89,6 @@ size = Vector2(262.666, 270.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcvsn"]
 size = Vector2(723.864, 714.932)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
-size = Vector2(422, 107.75)
-
 [sub_resource type="Animation" id="Animation_u3ufv"]
 length = 0.001
 
@@ -191,6 +188,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxq3j"]
 size = Vector2(209.5, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
+size = Vector2(422, 107.75)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lfv2d"]
 
@@ -869,34 +869,6 @@ metadata/_edit_lock_ = true
 
 [node name="Node2" type="Node" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Node2"]
-visible = false
-position = Vector2(-135, -8)
-script = ExtResource("16_vkpj4")
-normal_texture = ExtResource("17_v8erk")
-hover_texture = ExtResource("22_ja1k8")
-
-[node name="Menubanner" type="Sprite2D" parent="Node2/Area2D"]
-z_index = 1
-position = Vector2(2165.72, 946.723)
-scale = Vector2(7.5738, 7.5738)
-texture = ExtResource("17_v8erk")
-
-[node name="Label" type="Label" parent="Node2/Area2D"]
-z_index = 1
-offset_left = 2015.72
-offset_top = 962.723
-offset_right = 2319.72
-offset_bottom = 994.723
-theme_override_fonts/font = ExtResource("18_v6bv0")
-theme_override_font_sizes/font_size = 32
-text = "Leave desk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2/Area2D"]
-position = Vector2(2162, 975.125)
-shape = SubResource("RectangleShape2D_0xrbb")
-disabled = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xfdvt")
@@ -1221,6 +1193,34 @@ z_index = 1
 position = Vector2(1258, 649)
 scale = Vector2(8.23438, 8.23438)
 texture = ExtResource("30_ymrjm")
+
+[node name="Area2D2" type="Area2D" parent="."]
+visible = false
+position = Vector2(-135, -8)
+script = ExtResource("16_vkpj4")
+normal_texture = ExtResource("17_v8erk")
+hover_texture = ExtResource("22_ja1k8")
+
+[node name="Menubanner" type="Sprite2D" parent="Area2D2"]
+z_index = 1
+position = Vector2(2165.72, 946.723)
+scale = Vector2(7.5738, 7.5738)
+texture = ExtResource("17_v8erk")
+
+[node name="Label" type="Label" parent="Area2D2"]
+z_index = 1
+offset_left = 2015.72
+offset_top = 962.723
+offset_right = 2319.72
+offset_bottom = 994.723
+theme_override_fonts/font = ExtResource("18_v6bv0")
+theme_override_font_sizes/font_size = 32
+text = "Leave desk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(2162, 975.125)
+shape = SubResource("RectangleShape2D_0xrbb")
+disabled = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -1744,11 +1744,11 @@ script = ExtResource("41_rnpfi")
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
-[connection signal="mouse_entered" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node3/continue" to="Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="Node3/continue" to="Node3/continue" method="_on_mouse_shape_exited"]
+[connection signal="mouse_entered" from="Area2D2" to="Area2D2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2" to="Area2D2" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]

@@ -670,8 +670,6 @@ func on_button_pressed():
 	
 func kitchenpuzzle():
 	$CanvasLayer4/ColorRect2.visible=true
-	$CanvasLayer4/ColorRect3.visible=true
-	$CanvasLayer4/ColorRect3.visible=true
 	$CanvasLayer4/Node3/Label6.visible=true
 	$CanvasLayer4/Label.visible=true
 	$CanvasLayer4/foodchoice.visible=true
