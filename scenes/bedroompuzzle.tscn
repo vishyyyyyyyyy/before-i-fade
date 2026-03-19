@@ -1319,7 +1319,6 @@ theme_override_font_sizes/font_size = 54
 text = "30.0"
 
 [node name="diarypage" parent="." instance=ExtResource("36_gyyxh")]
-visible = false
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Desk2")

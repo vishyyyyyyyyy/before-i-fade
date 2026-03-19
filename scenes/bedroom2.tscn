@@ -971,7 +971,7 @@ size = Vector2(511.5, 199.5)
 size = Vector2(399.005, 365.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij3ta"]
-size = Vector2(284, 158)
+size = Vector2(284, 169)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcvsn"]
 radius = 130.0
@@ -2127,7 +2127,7 @@ script = ExtResource("19_rme15")
 label_text = "A calendar dated November 6th."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/calendar"]
-position = Vector2(1863, 461)
+position = Vector2(1863, 466.5)
 shape = SubResource("RectangleShape2D_ij3ta")
 disabled = true
 debug_color = Color(0, 0, 0, 0.42)

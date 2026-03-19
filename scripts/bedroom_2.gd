@@ -460,6 +460,8 @@ func _on_object_clicked(text: String, area_name: String):
 		reset_timer.start() 
 		return
 		
+	reset_timer.start()
+	
 	# If desk clicked after everything else, trigger scene change
 	if area_name == "desk" and all_non_desk_clicked():
 		narration_label.visible=true
@@ -467,7 +469,7 @@ func _on_object_clicked(text: String, area_name: String):
 		diaryOverlay()
 		return
 		
-	reset_timer.start()
+
 		
 func _on_reset_timeout():
 	if not is_interacting:
@@ -507,6 +509,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			"familyphoto":
 				if Global.character == "boyGhost":
 					narration_label.visible=false
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
@@ -537,6 +540,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					
 				else:
 					narration_label.visible=false
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
@@ -568,6 +572,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					narration_label.visible=false
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					await start_dialogue(3)
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
@@ -593,6 +598,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					diarypress=true
 				else:
 					narration_label.visible=false
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					await start_dialogue(3)
