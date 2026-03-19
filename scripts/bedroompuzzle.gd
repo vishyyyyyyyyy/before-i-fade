@@ -27,6 +27,8 @@ var animating := true
 var segment_starts
 var segment_ends
 
+var fading_in := false
+
 @onready var furniture = [$CanvasModulate/TileMap2, $CanvasModulate/TileMap, $CanvasModulate/Desk, $CanvasModulate/Bed, 
 				$CanvasModulate/Safe, $CanvasModulate/Window, $CanvasModulate/Calendar, $CanvasModulate/Calendar2, 
 				$CanvasModulate/Catrug
@@ -95,7 +97,7 @@ func end_dialogue():
 		
 
 	if anim_index ==1:
-		pass
+		$AnimationPlayer2/skip.visible=false
 		
 	if anim_index ==2:
 		$AnimationPlayer/skip.visible=false
@@ -163,6 +165,13 @@ func _on_desk_clicked():
 
 func _process(delta: float) -> void:
 
+	if fading_in:
+		$Diaryentry1.modulate.a = lerp($Diaryentry1.modulate.a, 1.0, delta * 2.5)
+		
+		if $Diaryentry1.modulate.a > 0.99:
+			$Diaryentry1.modulate.a = 1.0
+			fading_in = false
+			
 	time_left_seconds = $Timer2.time_left
 	$Label2.text = "%.1f" % time_left_seconds
 	$Label2.add_theme_color_override("font_color", Color(0,0,0))
@@ -480,8 +489,11 @@ func play_diary_sequence():
 	if Global.character == "girlGhost":
 		$LineEdit.editable=false
 		$LineEdit.visible=false
-		$Diaryentry1.visible=true
 		$Deskcloseup2.visible=false
+		$Diaryentry1.visible = true
+		$Diaryentry1.modulate.a = 0.0
+		fading_in = true
+		await get_tree().create_timer(1).timeout
 		await start_dialogue(2)
 		$Desk2.visible=false
 		#await get_tree().create_timer(2).timeout
@@ -518,8 +530,11 @@ func play_diary_sequence():
 		$AnimationPlayer2/Label6.visible=false
 		$LineEdit.editable=false
 		$LineEdit.visible=false
-		$Diaryentry1.visible=true
 		$Deskcloseup2.visible=false
+		$Diaryentry1.visible = true
+		$Diaryentry1.modulate.a = 0.0
+		fading_in = true
+		await get_tree().create_timer(1).timeout
 		await start_dialogue(2)
 		$Desk2.visible=false
 		await get_tree().create_timer(2).timeout

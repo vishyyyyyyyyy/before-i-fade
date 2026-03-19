@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=66 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_7ccer"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="15_c20of"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="16_dwit2"]
+[ext_resource type="Texture2D" uid="uid://k2cb8pisayga" path="res://assets/diaryblankpage.png" id="16_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://bdl6a82of5gnp" path="res://assets/diaryentry3.png" id="17_3a4ms"]
+[ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="17_4oxbo"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="17_b0gkk"]
 [ext_resource type="Texture2D" uid="uid://8cbmphfxyax" path="res://assets/diaryentry4.png" id="18_jw3s4"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="24_0hctn"]
@@ -805,6 +807,20 @@ position = Vector2(-3.82253, 120.377)
 rotation = -1.5708
 scale = Vector2(0.144775, 0.12392)
 texture = ExtResource("32_0ogj2")
+
+[node name="Diaryentry1" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("17_4oxbo")
+
+[node name="Diaryblank" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("16_ryjlh")
 
 [node name="Diaryentry2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 visible = false

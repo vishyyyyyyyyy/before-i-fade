@@ -22,5 +22,6 @@ func _input_event(viewport, event, shape_idx):
 		$".".visible=false
 		$CollisionShape2D.disabled=true
 		$"../../CanvasLayer3/CanvasModulate/Diaryentry5".visible=false
+		$"../../CanvasLayer3/CanvasModulate/Diaryblank".visible=false
 		$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 		emit_signal("pressed")

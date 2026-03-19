@@ -201,6 +201,7 @@ func textskip():
 
 
 func diaryentry5():
+	await get_tree().create_timer(0.8).timeout
 	await start_dialogue(0)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602

@@ -53,7 +53,15 @@ func _on_body_exited(body):
 		$Node2D/EAnim.stop()
 		$Node2D/EAnim/letterE.visible = false
 
+var fading_in = false
+var diary
 func _process(delta):
+	if fading_in and diary != null and diary.visible:
+		diary.modulate.a = lerp(diary.modulate.a, 1.0, delta * 2.5)
+		if diary.modulate.a > 0.99:
+			diary.modulate.a = 1.0
+			fading_in = false
+			
 	if player_inside and Input.is_action_just_pressed("interact"):
 		open_desk()
 
@@ -87,6 +95,17 @@ func open_diary():
 	$CollisionShape2D.disabled = true
 	print("Clicked shape 2")
 	$"../CanvasLayer5/Label".visible = false
-	$"../CanvasLayer3/CanvasModulate/Diaryentry5".visible = true
 	Global.reusabledesk = 5
+	$"../CanvasLayer3/CanvasModulate/Diaryblank".visible=true
+	fade_in_diary($"../CanvasLayer3/CanvasModulate/Diaryentry5")
 	emit_signal("diaryentry5")
+
+func fade_in_diary(diary_node: Node2D, delay: float = 0.0) -> void:
+	if delay > 0:
+		await get_tree().create_timer(delay).timeout
+
+	diary_node.visible = true
+	diary_node.modulate.a = 0.0
+	fading_in = true
+
+	diary = diary_node

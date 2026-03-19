@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c2s68u53x2urt"]
+[gd_scene load_steps=44 format=3 uid="uid://c2s68u53x2urt"]
 
 [ext_resource type="Script" uid="uid://bbnovbfkyhpbv" path="res://scripts/bedroomdiaryentry_3.gd" id="1_k28sk"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_25v77"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_vdrtn"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_72ri4"]
 [ext_resource type="Texture2D" uid="uid://b13iitm0q6bvt" path="res://assets/diarynolock.png" id="14_l6478"]
+[ext_resource type="Texture2D" uid="uid://k2cb8pisayga" path="res://assets/diaryblankpage.png" id="15_rmsc1"]
 [ext_resource type="Script" uid="uid://wgsl8g0areyu" path="res://scripts/leavedeskdiary5.gd" id="17_i2gc4"]
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="18_bnqre"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="21_0vequ"]
@@ -338,6 +339,13 @@ position = Vector2(-3.82253, 120.377)
 rotation = -1.5708
 scale = Vector2(0.144775, 0.12392)
 texture = ExtResource("14_l6478")
+
+[node name="Diaryblank" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("15_rmsc1")
 
 [node name="Diaryentry5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 visible = false

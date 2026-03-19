@@ -24,6 +24,7 @@ signal dialogue_finished(index)
 
 
 func _ready() -> void:
+	#Global.reusabledesk = 2
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
@@ -177,7 +178,7 @@ func textskip():
 			end_dialogue()
 
 func diaryentry2():
-	
+	await get_tree().create_timer(0.8).timeout
 	await start_dialogue(0)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602
@@ -186,6 +187,7 @@ func diaryentry2():
 	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 		
 func diaryentry3():
+	await get_tree().create_timer(0.8).timeout
 	await start_dialogue(1)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602
@@ -196,6 +198,7 @@ func diaryentry3():
 
 
 func diaryentry4():
+	await get_tree().create_timer(0.8).timeoutd
 	await start_dialogue(2)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602
