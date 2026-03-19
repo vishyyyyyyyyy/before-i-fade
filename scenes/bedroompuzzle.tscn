@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=75 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rrknc"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_knt1j"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="39_c3yyd"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="40_h05ix"]
 [ext_resource type="Script" uid="uid://cufnm60md4frp" path="res://scripts/camera_2dNOPLAYERLAYER.gd" id="41_rnpfi"]
+[ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="46_gyyxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("2_knt1j")
@@ -1741,6 +1742,8 @@ horizontal_alignment = 1
 modulate = Color(0.823936, 0.405335, 1, 1)
 position = Vector2(1153, 644)
 script = ExtResource("41_rnpfi")
+
+[node name="CanvasPause" parent="." instance=ExtResource("46_gyyxh")]
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

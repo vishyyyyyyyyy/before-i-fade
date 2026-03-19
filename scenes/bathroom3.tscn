@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=112 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="45_vsaef"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="46_bsxvx"]
 [ext_resource type="Script" uid="uid://6c5h48ynl6r3" path="res://scripts/camera_2dbathroom.gd" id="51_5i0mt"]
+[ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="54_obg0h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
 texture = ExtResource("2_wmlgl")
@@ -3183,6 +3184,8 @@ shape = SubResource("RectangleShape2D_2v03t")
 position = Vector2(1165.38, 293)
 shape = SubResource("RectangleShape2D_l23g3")
 metadata/_edit_lock_ = true
+
+[node name="CanvasPause" parent="." instance=ExtResource("54_obg0h")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_25jch")
