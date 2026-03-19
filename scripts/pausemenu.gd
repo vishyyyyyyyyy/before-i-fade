@@ -3,6 +3,12 @@ extends CanvasLayer
 
 @onready var pause_menu = $PauseMenu
 
+func _ready() -> void:
+	if MusicManager.music_on:
+		$PauseMenu/music/Label.text = "Music: ON"
+	else:
+		$PauseMenu/music/Label.text = "Music: OFF"
+
 func toggle_pause():
 	$PauseMenu/resume/Label.text = "Game Paused"
 	get_tree().paused = !get_tree().paused

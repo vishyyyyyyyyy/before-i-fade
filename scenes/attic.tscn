@@ -6088,6 +6088,7 @@ position = Vector2(-66.5, 651.5)
 shape = SubResource("RectangleShape2D_5pnpo")
 
 [node name="diarypage" parent="." instance=ExtResource("57_4lyew")]
+visible = false
 
 [node name="CanvasPause" parent="." instance=ExtResource("57_ftj77")]
 
