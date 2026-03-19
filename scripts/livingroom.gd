@@ -99,7 +99,7 @@ func _ready():
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
 		MusicManager.play_scene_music("menu")
-	$diary/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
 	#unlockexplore()

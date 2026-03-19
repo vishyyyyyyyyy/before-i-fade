@@ -87,7 +87,7 @@ func _ready():
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
 	$ghostlayer/choice.choice1.connect(choice1)
 	$ghostlayer/choice2.choice2.connect(choice2)
-	$diary/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	#unlockexplore()
 	text()
 	
@@ -1024,14 +1024,13 @@ func challengecompleted():
 	$ghostlayer/Label8.visible=false
 	$ghostlayer/present.visible=false
 	$ghostlayer/present2.visible=false
-	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/Label9.visible=false
-	$diary.visible=true
-	$diary/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
 
 func diarypagecontinue():
-	$diary.visible=false
-	$diary/diarycontinue/CollisionShape2D.disabled=true
+	$diarypage.visible=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$ghostlayer/Insidebox.visible=true
 	$ghostlayer/Glove.visible=true
 	$ghostlayer/Bloodblanket.visible=false
