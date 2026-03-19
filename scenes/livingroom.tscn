@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=139 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -48,17 +48,16 @@
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="33_wfb7x"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="34_bng4i"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="35_dg5mc"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="36_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="40_oy38f"]
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="41_72nc8"]
 [ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="42_7ff34"]
 [ext_resource type="Texture2D" uid="uid://d1td3envmaoap" path="res://assets/auntletter2.png" id="44_xnj5d"]
 [ext_resource type="Texture2D" uid="uid://ccaltmne4kumu" path="res://assets/auntletter.png" id="45_u7681"]
-[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="47_3rg1y"]
 [ext_resource type="Script" uid="uid://dhnjborkcefxa" path="res://scripts/scenetrigger2.gd" id="50_vl3qy"]
 [ext_resource type="Script" uid="uid://cd352y0kdt4h0" path="res://scripts/cameralivingroom.gd" id="52_l1jrp"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="56_wxavf"]
 [ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="57_72nc8"]
+[ext_resource type="PackedScene" uid="uid://bec6ydncr8m54" path="res://scenes/diarypage.tscn" id="58_l08cl"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="60_58in4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_306lt"]
@@ -1696,9 +1695,6 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7681"]
-size = Vector2(209.5, 49)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1jrp"]
 size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_ciqo4"]
@@ -3525,97 +3521,6 @@ volume_db = 20.0
 stream = ExtResource("35_dg5mc")
 volume_db = 20.0
 
-[node name="diarycontinue" type="Area2D" parent="ghostlayer"]
-visible = false
-z_index = 3
-position = Vector2(252, 146)
-scale = Vector2(2, 2)
-script = ExtResource("47_3rg1y")
-normal_texture = ExtResource("32_hh60n")
-hover_texture = ExtResource("33_wfb7x")
-
-[node name="Sprite2D" type="Sprite2D" parent="ghostlayer/diarycontinue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("32_hh60n")
-
-[node name="Label" type="Label" parent="ghostlayer/diarycontinue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("16_tj75g")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/diarycontinue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_l1jrp")
-disabled = true
-
-[node name="Diarypage" type="Sprite2D" parent="ghostlayer"]
-visible = false
-z_index = 3
-position = Vector2(1199, 406.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("36_xnj5d")
-
-[node name="Label10" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -502.75
-offset_right = 348.0
-offset_bottom = -438.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label11" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -498.75
-offset_right = 342.0
-offset_bottom = -426.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("16_tj75g")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label12" type="Label" parent="ghostlayer"]
-visible = false
-z_index = 3
-offset_left = 755.0
-offset_top = 592.25
-offset_right = 1616.0
-offset_bottom = 655.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("18_rq2ij")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #5
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Label13" type="Label" parent="ghostlayer"]
 visible = false
 z_index = 5
@@ -3956,6 +3861,9 @@ position = Vector2(2106, 99)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="diarypage" parent="." instance=ExtResource("58_l08cl")]
+visible = false
+
 [node name="CanvasPause" parent="." instance=ExtResource("60_58in4")]
 
 [node name="scene collisions" type="Node" parent="."]
@@ -4028,9 +3936,6 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_shape_exited"]
-[connection signal="mouse_entered" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="ghostlayer/diarycontinue" to="ghostlayer/diarycontinue" method="_on_mouse_shape_exited"]
 [connection signal="body_entered" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ghostlayer/scentrigger" to="ghostlayer/scentrigger" method="_on_body_exited"]
 

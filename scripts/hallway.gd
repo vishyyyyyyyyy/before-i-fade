@@ -67,7 +67,7 @@ func _ready():
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: OFF"
-	$CanvasLayer/Node3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer/AnimationPlayer/neighbor.visible = false
 	$CanvasLayer/AnimationPlayer/neighborRight.visible = false
 	$CanvasLayer/AnimationPlayer/neighborLeft.visible = false
@@ -686,28 +686,13 @@ func afterpuzzle():
 	$CanvasLayer/Node3/Label5.visible=false
 	$CanvasLayer/Node3/Correct.visible=false
 	$CanvasLayer/puzzle.visible=false
-	$CanvasLayer/Node3/ColorRect.visible=true
-	$CanvasLayer/Node3/Diarypage.visible=true
-	$CanvasLayer/Node3/Label4.visible=true
-	$CanvasLayer/Node3/Label6.visible=true
-	$CanvasLayer/Node3/Label7.visible=true
-	$CanvasLayer/Node3/ColorRect.visible=true
-	$CanvasLayer/Node3/Diarypage.visible=true
-	$CanvasLayer/Node3/Label4.visible=true
-	$CanvasLayer/Node3/Label6.visible=true
-	$CanvasLayer/Node3/Label7.visible=true
-	$CanvasLayer/Node3/diarycontinue.visible = true
-	$CanvasLayer/Node3/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
 	
 	
 func diarypagecontinue():
-	$CanvasLayer/Node3/diarycontinue.visible = false
-	$CanvasLayer/Node3/diarycontinue/CollisionShape2D.disabled=true
-	$CanvasLayer/Node3/ColorRect.visible=false
-	$CanvasLayer/Node3/Diarypage.visible=false
-	$CanvasLayer/Node3/Label4.visible=false
-	$CanvasLayer/Node3/Label6.visible=false
-	$CanvasLayer/Node3/Label7.visible=false
+	$diarypage.visible=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$CanvasLayer/TileMap3.visible=true
 	$CanvasLayer/Auntframe.visible=true
 	$CanvasLayer/Friendframe.visible=true

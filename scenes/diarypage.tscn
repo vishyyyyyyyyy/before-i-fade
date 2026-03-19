@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://bec6ydncr8m54"]
+
+[ext_resource type="Script" uid="uid://b4qeu2sq1q1qm" path="res://scripts/diarypage.gd" id="1_yrequ"]
+[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="2_hw8te"]
+[ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="3_qoh3l"]
+[ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="4_pg8um"]
+[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="5_pg8um"]
+[ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="6_0ssx7"]
+[ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="7_rfssr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vipb"]
+size = Vector2(209.5, 49)
+
+[node name="diarypage" type="CanvasLayer"]
+layer = 4
+script = ExtResource("1_yrequ")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = -12.0
+offset_right = 2313.0
+offset_bottom = 1299.0
+mouse_filter = 2
+color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
+
+[node name="Diarypage" type="Sprite2D" parent="."]
+position = Vector2(1199, 534.25)
+scale = Vector2(4.09766, 4.09766)
+texture = ExtResource("2_hw8te")
+
+[node name="Label2" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -406.75
+offset_right = 348.0
+offset_bottom = -342.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("3_qoh3l")
+theme_override_font_sizes/font_size = 64
+text = "Diary Page"
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -402.75
+offset_right = 342.0
+offset_bottom = -330.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("3_qoh3l")
+theme_override_font_sizes/font_size = 64
+text = "Diary Page"
+
+[node name="Label3" type="Label" parent="."]
+z_index = 2
+offset_left = 755.0
+offset_top = 744.25
+offset_right = 1616.0
+offset_bottom = 807.25
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("4_pg8um")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="diarycontinue" type="Area2D" parent="."]
+z_index = 3
+position = Vector2(252, 186)
+scale = Vector2(2, 2)
+script = ExtResource("5_pg8um")
+normal_texture = ExtResource("6_0ssx7")
+hover_texture = ExtResource("7_rfssr")
+
+[node name="Sprite2D" type="Sprite2D" parent="diarycontinue"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("6_0ssx7")
+
+[node name="Label" type="Label" parent="diarycontinue"]
+z_index = 1
+offset_left = 418.0
+offset_top = 378.0
+offset_right = 540.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("3_qoh3l")
+text = "Continue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="diarycontinue"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_3vipb")
+disabled = true
+
+[connection signal="mouse_entered" from="diarycontinue" to="diarycontinue" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="diarycontinue" to="diarycontinue" method="_on_mouse_exited"]
+[connection signal="mouse_shape_exited" from="diarycontinue" to="diarycontinue" method="_on_mouse_shape_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=74 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rrknc"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_knt1j"]
@@ -33,12 +33,12 @@
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="29_w08ox"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="30_ymrjm"]
 [ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="32_n12it"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="32_sopt5"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="33_csq0v"]
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="33_n12it"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="34_i3nlh"]
 [ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="34_xjppy"]
 [ext_resource type="Texture2D" uid="uid://c0187ehsqv43i" path="res://assets/desk2.png" id="35_8re52"]
+[ext_resource type="PackedScene" uid="uid://bec6ydncr8m54" path="res://scenes/diarypage.tscn" id="36_gyyxh"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="36_nvjgw"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="37_a1ui7"]
 [ext_resource type="Texture2D" uid="uid://bctoup6xsllk8" path="res://assets/diaryentry1.png" id="38_pg5wp"]
@@ -194,9 +194,6 @@ size = Vector2(209.5, 49)
 size = Vector2(422, 107.75)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lfv2d"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_duejm"]
-size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_ubqon"]
 length = 0.001
@@ -690,7 +687,7 @@ _data = {
 &"girldiaryentry1": SubResource("Animation_u1h6i")
 }
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_rrknc")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -1321,106 +1318,8 @@ theme_override_fonts/font = ExtResource("19_oagvq")
 theme_override_font_sizes/font_size = 54
 text = "30.0"
 
-[node name="Node4" type="Node" parent="."]
-
-[node name="ColorRect3" type="ColorRect" parent="Node4"]
+[node name="diarypage" parent="." instance=ExtResource("36_gyyxh")]
 visible = false
-offset_left = -17.0
-offset_top = -12.0
-offset_right = 2313.0
-offset_bottom = 1299.0
-mouse_filter = 2
-color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
-
-[node name="Diarypage" type="Sprite2D" parent="Node4"]
-visible = false
-position = Vector2(1199, 518.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("32_sopt5")
-
-[node name="Label2" type="Label" parent="Node4"]
-visible = false
-z_index = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -390.75
-offset_right = 348.0
-offset_bottom = -326.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("18_v6bv0")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label" type="Label" parent="Node4"]
-visible = false
-z_index = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -386.75
-offset_right = 342.0
-offset_bottom = -314.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("18_v6bv0")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label3" type="Label" parent="Node4"]
-visible = false
-z_index = 2
-offset_left = 755.0
-offset_top = 704.25
-offset_right = 1616.0
-offset_bottom = 767.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("19_oagvq")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #1
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="diarycontinue" type="Area2D" parent="."]
-visible = false
-z_index = 3
-position = Vector2(252, 146)
-scale = Vector2(2, 2)
-script = ExtResource("24_wob5r")
-normal_texture = ExtResource("17_v8erk")
-hover_texture = ExtResource("22_ja1k8")
-
-[node name="Sprite2D" type="Sprite2D" parent="diarycontinue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("17_v8erk")
-
-[node name="Label" type="Label" parent="diarycontinue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("18_v6bv0")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="diarycontinue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_duejm")
-disabled = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Desk2")
@@ -1757,8 +1656,5 @@ script = ExtResource("41_rnpfi")
 [connection signal="pressed" from="TextureRect/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="TextureRect/TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="mouse_entered" from="diarycontinue" to="diarycontinue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="diarycontinue" to="diarycontinue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="diarycontinue" to="diarycontinue" method="_on_mouse_shape_exited"]
 
 [editable path="desk/Node2D"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=142 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -80,12 +80,10 @@
 [ext_resource type="Texture2D" uid="uid://be6knj2ymgex" path="res://assets/egg6.png" id="59_l68i3"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="62_nylry"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="63_knauv"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="71_ggb88"]
 [ext_resource type="Texture2D" uid="uid://cp8dng73cklin" path="res://assets/newtimer.png" id="74_oo0tm"]
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="75_7alxu"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="75_knauv"]
 [ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="76_bar5q"]
-[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="80_cvtdl"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="87_oo0tm"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="88_ut0vy"]
 
@@ -1686,9 +1684,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xp3y8"]
 size = Vector2(209.5, 49)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_40l35"]
-size = Vector2(209.5, 49)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f125y"]
 size = Vector2(327, 363.125)
 
@@ -3217,67 +3212,6 @@ volume_db = 20.0
 stream = ExtResource("30_cuqh1")
 volume_db = 20.0
 
-[node name="Diarypage" type="Sprite2D" parent="CanvasLayer4/Node3"]
-visible = false
-z_index = 3
-position = Vector2(1199, 406.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("71_ggb88")
-
-[node name="Label4" type="Label" parent="CanvasLayer4/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -502.75
-offset_right = 348.0
-offset_bottom = -438.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("22_5hhqf")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label7" type="Label" parent="CanvasLayer4/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -498.75
-offset_right = 342.0
-offset_bottom = -426.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("22_5hhqf")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label8" type="Label" parent="CanvasLayer4/Node3"]
-visible = false
-z_index = 3
-offset_left = 755.0
-offset_top = 592.25
-offset_right = 1616.0
-offset_bottom = 655.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("12_acu1m")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #4
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Label11" type="Label" parent="CanvasLayer4/Node3"]
 visible = false
 z_index = 5
@@ -3296,36 +3230,6 @@ theme_override_fonts/font = ExtResource("12_acu1m")
 theme_override_font_sizes/font_size = 32
 text = "Exit the kitchen to read the new diary entry."
 horizontal_alignment = 1
-
-[node name="diarycontinue" type="Area2D" parent="CanvasLayer4/Node3"]
-visible = false
-z_index = 3
-position = Vector2(252, 146)
-scale = Vector2(2, 2)
-script = ExtResource("80_cvtdl")
-normal_texture = ExtResource("27_tpccs")
-hover_texture = ExtResource("28_hxncp")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer4/Node3/diarycontinue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("27_tpccs")
-
-[node name="Label" type="Label" parent="CanvasLayer4/Node3/diarycontinue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("22_5hhqf")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer4/Node3/diarycontinue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_40l35")
-disabled = true
 
 [node name="explore" type="CanvasLayer" parent="."]
 
@@ -3537,9 +3441,6 @@ one_shot = true
 [connection signal="mouse_entered" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="CanvasLayer4/Node3/continue" to="CanvasLayer4/Node3/continue" method="_on_mouse_shape_exited"]
-[connection signal="mouse_entered" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="CanvasLayer4/Node3/diarycontinue" to="CanvasLayer4/Node3/diarycontinue" method="_on_mouse_shape_exited"]
 
 [editable path="ghostlayer/Node2D"]
 [editable path="explore/cabinet/Node2D"]

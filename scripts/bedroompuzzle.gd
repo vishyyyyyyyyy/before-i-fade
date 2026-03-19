@@ -54,7 +54,7 @@ func _ready():
 	$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$Node3/continue.pressed.connect(_on_continue_pressed)
 	name_input.text_submitted.connect(_on_name_submitted)
-	$diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 
 
 var diary_started := false
@@ -444,29 +444,20 @@ func correct():
 	$CanvasLayer3.visible=false
 	$CanvasLayer2.visible=false
 	$CanvasLayer.visible=false
-	$Node4/ColorRect3.visible=true
-	$Node4/Diarypage.visible=true
-	$Node4/Label2.visible=true
-	$Node4/Label.visible=true
-	$Node4/Label3.visible=true
 	$Label2.visible=false
 	$Timer.visible=false
-	$diarycontinue.visible=true
-	$diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
 
 func diarypagecontinue():
-	$diarycontinue.visible=false
-	$diarycontinue/CollisionShape2D.disabled=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$"CanvasLayer".visible = false
 	$"CanvasLayer2".visible = false
 	$"CanvasLayer3".visible = false
 	$"CanvasLayer4".visible = false
 	$CanvasLayer5/Correct.visible = false
-	$Node4/ColorRect3.visible=false
-	$Node4/Diarypage.visible=false
-	$Node4/Label2.visible=false
-	$Node4/Label.visible=false
-	$Node4/Label3.visible=false
+	$diarypage.visible=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$Desk2.visible=true
 	if Global.character == "girlGhost":
 		await start_dialogue(1)

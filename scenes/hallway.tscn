@@ -38,7 +38,6 @@
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="29_olmwx"]
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="30_odr86"]
 [ext_resource type="Texture2D" uid="uid://dr2d2gpc2ljrc" path="res://assets/pixel-characters/neighbor1.png" id="31_1m42w"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="31_ydsot"]
 [ext_resource type="Texture2D" uid="uid://bttq88nuj6a35" path="res://assets/pixel-characters/neighbor3.png" id="32_gmxc1"]
 [ext_resource type="Texture2D" uid="uid://dj68wvficonle" path="res://assets/pixel-characters/neighbor2.png" id="33_3cp5q"]
 [ext_resource type="Script" uid="uid://ye7bofo5hhyd" path="res://scripts/slot.gd" id="34_rx3tq"]
@@ -62,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://jckxys6vwb0b" path="res://assets/hallwayPuzzlePics/boyframeBottomRight.png" id="51_0qhv5"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="59_h6wc0"]
 [ext_resource type="Script" uid="uid://cd2e4p88vpmmt" path="res://scripts/camera_2dhallway.gd" id="59_swrf8"]
+[ext_resource type="PackedScene" uid="uid://bec6ydncr8m54" path="res://scenes/diarypage.tscn" id="62_fwk5y"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="63_y6ewp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjeik"]
@@ -2582,67 +2582,6 @@ volume_db = 20.0
 stream = ExtResource("30_odr86")
 volume_db = 20.0
 
-[node name="Diarypage" type="Sprite2D" parent="CanvasLayer/Node3"]
-visible = false
-z_index = 3
-position = Vector2(1199, 518.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("31_ydsot")
-
-[node name="Label4" type="Label" parent="CanvasLayer/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -390.75
-offset_right = 348.0
-offset_bottom = -326.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("22_1m42w")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label6" type="Label" parent="CanvasLayer/Node3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -386.75
-offset_right = 342.0
-offset_bottom = -314.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("22_1m42w")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label7" type="Label" parent="CanvasLayer/Node3"]
-visible = false
-z_index = 3
-offset_left = 755.0
-offset_top = 704.25
-offset_right = 1616.0
-offset_bottom = 767.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("15_xgli8")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #3
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="diarycontinue" type="Area2D" parent="CanvasLayer/Node3"]
 visible = false
 z_index = 3
@@ -3317,6 +3256,9 @@ position = Vector2(1153, 135)
 [node name="Node" type="Node" parent="."]
 
 [node name="CanvasPause" parent="." instance=ExtResource("63_y6ewp")]
+
+[node name="diarypage" parent="." instance=ExtResource("62_fwk5y")]
+visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

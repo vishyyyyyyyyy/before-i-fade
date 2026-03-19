@@ -87,7 +87,7 @@ func _ready():
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
 	$ghostlayer/choice.choice1.connect(choice1)
 	$ghostlayer/choice2.choice2.connect(choice2)
-	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diary/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	#unlockexplore()
 	text()
 	
@@ -1026,21 +1026,12 @@ func challengecompleted():
 	$ghostlayer/present2.visible=false
 	$ghostlayer/ColorRect.visible=true
 	$ghostlayer/Label9.visible=false
-	$ghostlayer/Diarypage.visible=true
-	$ghostlayer/Label10.visible=true
-	$ghostlayer/Label11.visible=true
-	$ghostlayer/Label12.visible=true
-	$ghostlayer/diarycontinue.visible=true
-	$ghostlayer/diarycontinue/CollisionShape2D.disabled=false
+	$diary.visible=true
+	$diary/diarycontinue/CollisionShape2D.disabled=false
 
 func diarypagecontinue():
-	$ghostlayer/diarycontinue.visible=false
-	$ghostlayer/diarycontinue/CollisionShape2D.disabled=true
-	$ghostlayer/ColorRect.visible=false
-	$ghostlayer/Diarypage.visible=false
-	$ghostlayer/Label10.visible=false
-	$ghostlayer/Label11.visible=false
-	$ghostlayer/Label12.visible=false
+	$diary.visible=false
+	$diary/diarycontinue/CollisionShape2D.disabled=true
 	$ghostlayer/Insidebox.visible=true
 	$ghostlayer/Glove.visible=true
 	$ghostlayer/Bloodblanket.visible=false
@@ -1111,5 +1102,3 @@ func fade_out_node(node: CanvasItem, duration := 2.0) -> void:
 		await get_tree().process_frame
 
 	node.modulate.a = 0.0
-
-	

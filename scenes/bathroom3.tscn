@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=110 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -20,14 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="14_4kitr"]
 [ext_resource type="Texture2D" uid="uid://cp4oxhsbc7n7a" path="res://assets/characters/friend2.png" id="14_25jch"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="14_celu3"]
-[ext_resource type="Texture2D" uid="uid://bivmo1xllaype" path="res://assets/diarypage.png" id="14_myyx2"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="14_ys5x2"]
 [ext_resource type="Texture2D" uid="uid://chnhh5xqwwo0s" path="res://assets/characters/girl2.png" id="15_c2g0u"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="15_gaq0e"]
 [ext_resource type="Texture2D" uid="uid://ds6qxedk13gka" path="res://assets/characters/girl.png" id="16_bm87y"]
 [ext_resource type="Texture2D" uid="uid://b1egkg5q4ow4m" path="res://assets/phone.png" id="16_qr1ii"]
 [ext_resource type="PackedScene" uid="uid://da28axgabs31w" path="res://scenes/failpuzzlecutscene.tscn" id="16_utq20"]
-[ext_resource type="Script" uid="uid://bi0mojwko84xb" path="res://scripts/diarypagecontinue.gd" id="17_mc686"]
 [ext_resource type="Texture2D" uid="uid://b12wy4b6ul5mg" path="res://assets/characters/boy1.png" id="17_wwfem"]
 [ext_resource type="Script" uid="uid://des6a3n5gl1xa" path="res://scripts/present_tile.gd" id="18_tbr22"]
 [ext_resource type="Texture2D" uid="uid://bsawpvj78ktw4" path="res://assets/characters/boy5.png" id="18_ys5x2"]
@@ -36,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="19_y84uo"]
 [ext_resource type="Texture2D" uid="uid://bk7thle808r7a" path="res://assets/characters/boy ghost 2.png" id="20_6wssb"]
 [ext_resource type="Script" uid="uid://bfpumlg0vkpbi" path="res://scripts/greentile.gd" id="20_oyxel"]
+[ext_resource type="PackedScene" uid="uid://bec6ydncr8m54" path="res://scenes/diarypage.tscn" id="22_obg0h"]
 [ext_resource type="AudioStream" uid="uid://djacvv0tinev7" path="res://assets/audio/phone-ringing-382734.mp3" id="23_25jch"]
 [ext_resource type="Texture2D" uid="uid://ti2kciknesb2" path="res://assets/characters/girl3.png" id="23_ys5x2"]
 [ext_resource type="Texture2D" uid="uid://dv746isbi2w8i" path="res://assets/menucard.png" id="27_y84uo"]
@@ -186,9 +185,6 @@ _data = {
 &"RESET": SubResource("Animation_4kitr"),
 &"phone": SubResource("Animation_mc686")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kitr"]
-size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbr22"]
 size = Vector2(221.5, 216)
@@ -1760,97 +1756,6 @@ offset_bottom = 1299.0
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
-[node name="diarycontinue" type="Area2D" parent="CanvasLayer3"]
-visible = false
-z_index = 3
-position = Vector2(252, 146)
-scale = Vector2(2, 2)
-script = ExtResource("17_mc686")
-normal_texture = ExtResource("29_tf7d5")
-hover_texture = ExtResource("30_tbr22")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer3/diarycontinue"]
-z_index = 1
-position = Vector2(475, 372)
-scale = Vector2(3.83789, 3.83789)
-texture = ExtResource("29_tf7d5")
-
-[node name="Label" type="Label" parent="CanvasLayer3/diarycontinue"]
-z_index = 1
-offset_left = 418.0
-offset_top = 378.0
-offset_right = 540.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("15_gaq0e")
-text = "Continue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer3/diarycontinue"]
-z_index = 1
-position = Vector2(475.75, 387.25)
-shape = SubResource("RectangleShape2D_4kitr")
-disabled = true
-
-[node name="Diarypage" type="Sprite2D" parent="CanvasLayer3"]
-visible = false
-z_index = 3
-position = Vector2(1199, 518.25)
-scale = Vector2(4.09766, 4.09766)
-texture = ExtResource("14_myyx2")
-
-[node name="Label2" type="Label" parent="CanvasLayer3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -390.75
-offset_right = 348.0
-offset_bottom = -326.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_fonts/font = ExtResource("15_gaq0e")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label" type="Label" parent="CanvasLayer3"]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -386.75
-offset_right = 342.0
-offset_bottom = -314.75
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
-theme_override_fonts/font = ExtResource("15_gaq0e")
-theme_override_font_sizes/font_size = 64
-text = "Diary Page"
-
-[node name="Label3" type="Label" parent="CanvasLayer3"]
-visible = false
-z_index = 3
-offset_left = 755.0
-offset_top = 704.25
-offset_right = 1616.0
-offset_bottom = 767.25
-theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
-theme_override_constants/line_spacing = 15
-theme_override_fonts/font = ExtResource("13_wwfem")
-theme_override_font_sizes/font_size = 24
-text = "You earned: Diary Page #2
-Access diary from desk to read contents"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Past Tiles" type="Label" parent="CanvasLayer3"]
 visible = false
 z_index = 3
@@ -3187,13 +3092,13 @@ metadata/_edit_lock_ = true
 
 [node name="CanvasPause" parent="." instance=ExtResource("54_obg0h")]
 
+[node name="diarypage" parent="." instance=ExtResource("22_obg0h")]
+visible = false
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_25jch")
 volume_db = 20.0
 
-[connection signal="mouse_entered" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_exited"]
-[connection signal="mouse_shape_exited" from="CanvasLayer3/diarycontinue" to="CanvasLayer3/diarycontinue" method="_on_mouse_shape_exited"]
 [connection signal="timeout" from="CanvasLayer3/Node3/Timer2" to="CanvasLayer3/PresentTile" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_exited"]

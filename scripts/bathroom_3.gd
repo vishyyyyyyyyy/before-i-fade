@@ -54,7 +54,7 @@ func _ready() -> void:
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
 		MusicManager.play_scene_music("menu")
-	$CanvasLayer3/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$CanvasLayer3/AnimationPlayer/girlWalk.visible = false
 	$CanvasLayer3/AnimationPlayer/boyWalk.visible = false
 	if (Global.character == "girlGhost"):
@@ -452,8 +452,6 @@ func afterpuzzle():
 	$CanvasLayer3/PresentTile/tile3.visible=false
 	$CanvasLayer3/PresentTile/tile2.visible=false
 	$CanvasLayer3/PresentTile/tile1.visible=false
-	$CanvasLayer3/diarycontinue/CollisionShape2D.disabled=false
-	$CanvasLayer3/diarycontinue.visible=true
 	$CanvasLayer/TileMap.visible=false
 	$CanvasLayer3/Timer.visible=false
 	$"CanvasLayer3/Past Tiles".visible=false
@@ -468,20 +466,12 @@ func afterpuzzle():
 	$CanvasLayer3/Node3/Label5.visible=false
 	$CanvasLayer3/comb.visible=true
 	$CanvasLayer3/Label4.visible=false
-	$CanvasLayer3/ColorRect3.visible=true
-	$CanvasLayer3/Diarypage.visible=true
-	$CanvasLayer3/Label2.visible=true
-	$CanvasLayer3/Label.visible=true
-	$CanvasLayer3/Label3.visible=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=true
 
 func diarypagecontinue():
-	$CanvasLayer3/diarycontinue/CollisionShape2D.disabled=true
-	$CanvasLayer3/diarycontinue.visible=false
-	$CanvasLayer3/ColorRect3.visible=false
-	$CanvasLayer3/Diarypage.visible=false
-	$CanvasLayer3/Label2.visible=false
-	$CanvasLayer3/Label.visible=false
-	$CanvasLayer3/Label3.visible=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=false
 	$CanvasLayer3/comb/CollisionShape2D.disabled=false
 	await modulatebackghost()
 	$CanvasLayer3/Label6.visible=true

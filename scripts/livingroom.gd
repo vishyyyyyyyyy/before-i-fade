@@ -99,7 +99,7 @@ func _ready():
 	else:
 		MusicManager.music_player.pitch_scale = 1.0
 		MusicManager.play_scene_music("menu")
-	$ghostlayer/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
+	$diary/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	$ghostlayer/pianokeys.challengecompleted.connect(challengecompleted)
 	$ghostlayer/continue.pressed.connect(pressed)
 	#unlockexplore()
@@ -581,22 +581,12 @@ func challengecompleted():
 	$explore/piano/CollisionShape2D.disabled=true
 	$ghostlayer/pianokeys/CollisionShape2D6/ColorRect.visible=false
 	$ghostlayer/Correct.visible=false
-	$ghostlayer/ColorRect.visible=true
-	$ghostlayer/Diarypage.visible=true
-	$ghostlayer/Label10.visible=true
-	$ghostlayer/Label11.visible=true
-	$ghostlayer/Label12.visible=true
-	$ghostlayer/diarycontinue.visible=true
-	$ghostlayer/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage.visible=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
 
 func diarypagecontinue():
-	$ghostlayer/diarycontinue.visible=false
-	$ghostlayer/diarycontinue/CollisionShape2D.disabled=true
-	$ghostlayer/ColorRect.visible=false
-	$ghostlayer/Diarypage.visible=false
-	$ghostlayer/Label10.visible=false
-	$ghostlayer/Label11.visible=false
-	$ghostlayer/Label12.visible=false
+	$diarypage.visible=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$ghostlayer/blobGhostPlayer.position.x = 2128
 	$ghostlayer/blobGhostPlayer.position.y = 399
 	await start_dialogue(4)
