@@ -58,7 +58,7 @@ There are **two possible endings**.
 
 **Dialogues:**
 
-<img width="600" height="500" alt="Screenshot 2026-03-18 184459" src="https://github.com/user-attachments/assets/e36e7763-6df1-4b28-b25f-647a47eb29e7" />
+<img width="600" height="500" alt="Screenshot 2026-03-18 183932" src="https://github.com/user-attachments/assets/f6b66ee1-5e93-4f43-b8e9-8f868d022ae2" />
 
 - dialogues accessed using ```seek()``` in animation player to allow user input space for skip
 - keyframing visibility and characters displayed
