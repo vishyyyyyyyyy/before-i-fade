@@ -83,15 +83,26 @@ func end_dialogue():
 		$AnimationPlayer/Bedss.visible=false
 		$AnimationPlayer/Label4.visible=false
 		$Timer.visible=true
-		if hearts == 3:
-			$Heart.visible=true
-			$Heart2.visible=true
-			$Heart3.visible=true
-		if hearts == 2:
-			$Heart.visible=true
-			$Heart2.visible=true
-		if hearts == 1:
-			$Heart.visible=true
+		if Global.hardmode == true:
+			if Global.hearts ==3:
+				$Heart.visible=true
+				$Heart2.visible=true
+				$Heart3.visible=true
+			if Global.hearts ==2:
+				$Heart.visible=true
+				$Heart2.visible=true
+			if Global.hearts ==1:
+				$Heart.visible=true
+		else:
+			if hearts == 3:
+				$Heart.visible=true
+				$Heart2.visible=true
+				$Heart3.visible=true
+			if hearts == 2:
+				$Heart.visible=true
+				$Heart2.visible=true
+			if hearts == 1:
+				$Heart.visible=true
 		$Label2.visible=true
 		$Timer2.start()
 		
@@ -309,26 +320,49 @@ func _on_timer_2_timeout():
 	$AudioStreamPlayer2.play()
 	
 	MusicManager.music_player.pitch_scale = 1.0
-	hearts -= 1
-	if hearts  ==2:
-		$Heart3.visible=false
-		$Heart6.visible=true
-		
-	elif hearts  ==1:
-		$Heart2.visible=false
-		$Heart5.visible=true
+	if Global.hardmode:
+		Global.hearts -=1
+		if Global.hearts  ==2:
+			$Heart3.visible=false
+			$Heart6.visible=true
+			
+		elif Global.hearts  ==1:
+			$Heart2.visible=false
+			$Heart5.visible=true
 
-	elif hearts <= 0:
-		$Heart.visible=false
-		$Heart4.visible=true
-		Global.bedroomfail = true
-		$Timer2.stop() 
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
-		return
-	
+		elif Global.hearts <= 0:
+			$Heart.visible=false
+			$Heart4.visible=true
+			Global.bedroomfail = true
+			$Timer2.stop() 
+			Global.hardmodefail=true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
+		
+		else:
+			return
 	else:
-		return
+		hearts -= 1
+		if hearts  ==2:
+			$Heart3.visible=false
+			$Heart6.visible=true
+			
+		elif hearts  ==1:
+			$Heart2.visible=false
+			$Heart5.visible=true
+
+		elif hearts <= 0:
+			$Heart.visible=false
+			$Heart4.visible=true
+			Global.bedroomfail = true
+			$Timer2.stop() 
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+			return
+		
+		else:
+			return
 		
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer5/Wrong.visible = false
@@ -405,41 +439,67 @@ func wrong():
 	count = 0
 	$CanvasLayer5/Wrong.visible = true
 	$CanvasLayer5/Correct.visible = false
-	
-	hearts -= 1
-	if hearts  ==2:
-		$Heart3.visible=false
-		$Heart6.visible=true
-		
-	elif hearts  ==1:
-		$Heart2.visible=false
-		$Heart5.visible=true
+	if Global.hardmode:
+		Global.hearts -=1
+		if Global.hearts  ==2:
+			$Heart3.visible=false
+			$Heart6.visible=true
+			
+		elif Global.hearts  ==1:
+			$Heart2.visible=false
+			$Heart5.visible=true
 
-	elif hearts <= 0:
-		$Heart.visible=false
-		$Heart4.visible=true
-		$Timer2.stop() 
-		await get_tree().create_timer(1).timeout
-		Global.bedroomfail = true
-		get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
-		return
-	
-	else:
-		return
+		elif Global.hearts <= 0:
+			$Heart.visible=false
+			$Heart4.visible=true
+			Global.bedroomfail = true
+			$Timer2.stop()
+			Global.hardmodefail=true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
 		
+		else:
+			return
+	else:
+		hearts -= 1
+		if hearts  ==2:
+			$Heart3.visible=false
+			$Heart6.visible=true
+			
+		elif hearts  ==1:
+			$Heart2.visible=false
+			$Heart5.visible=true
+
+		elif hearts <= 0:
+			$Heart.visible=false
+			$Heart4.visible=true
+			$Timer2.stop() 
+			await get_tree().create_timer(1).timeout
+			Global.bedroomfail = true
+			get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
+			return
+		
+		else:
+			return
+			
 	
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer5/Wrong.visible = false
-	$"Deskcloseup2".visible=false
-	$"CanvasLayer".visible = false
-	$"CanvasLayer2".visible = false
-	$"CanvasLayer3".visible = false
-	$"CanvasLayer4".visible = false
+	#$"Deskcloseup2".visible=false
+	#$"CanvasLayer".visible = false
+	#$"CanvasLayer2".visible = false
+	#$"CanvasLayer3".visible = false
+	#$"CanvasLayer4".visible = false
+	$TextureRect/TextureButton.disabled= false
+	$TextureRect/TextureButton2.disabled= false
+	$TextureRect/TextureButton3.disabled= false
+	$TextureRect/TextureButton4.disabled= false
 	$CanvasLayer/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer2/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer3/CanvasModulate.color = Color(1, 1, 1, 1)
 	$CanvasLayer4/CanvasModulate.color = Color(1, 1, 1, 1)
-	reset_puzzle()
+	#reset_puzzle()
 	
 func correct():
 	MusicManager.music_player.pitch_scale = 1.0

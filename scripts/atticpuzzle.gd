@@ -59,25 +59,46 @@ func _on_timer_2_timeout() -> void:
 	$"../../../ghostlayer/Timer2".stop()
 	$"../../../ghostlayer/Wrong".visible=true
 	$"../../../ghostlayer/AudioStreamPlayer2".play()
-	hearts -= 1
-	if hearts  ==2:
-		$"../../../ghostlayer/Heart3".visible=false
-		$"../../../ghostlayer/Heart6".visible=true
-		
-	elif hearts  ==1:
-		$"../../../ghostlayer/Heart2".visible=false
-		$"../../../ghostlayer/Heart5".visible=true
+	if Global.hardmode:
+		Global.hearts -= 1
+		if Global.hearts  ==2:
+			$"../../../ghostlayer/Heart3".visible=false
+			$"../../../ghostlayer/Heart6".visible=true
+			
+		elif Global.hearts  ==1:
+			$"../../../ghostlayer/Heart2".visible=false
+			$"../../../ghostlayer/Heart5".visible=true
 
-	elif hearts <= 0:
-		$"../../../ghostlayer/Heart".visible=false
-		$"../../../ghostlayer/Heart4".visible=true
-		Global.attic1fail = true
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/attic.tscn")
-		return
+		elif Global.hearts <= 0:
+			$"../../../ghostlayer/Heart".visible=false
+			$"../../../ghostlayer/Heart4".visible=true
+			Global.hardmodefail=true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
 
+		else:
+			return
 	else:
-		return
+		hearts -= 1
+		if hearts  ==2:
+			$"../../../ghostlayer/Heart3".visible=false
+			$"../../../ghostlayer/Heart6".visible=true
+			
+		elif hearts  ==1:
+			$"../../../ghostlayer/Heart2".visible=false
+			$"../../../ghostlayer/Heart5".visible=true
+
+		elif hearts <= 0:
+			$"../../../ghostlayer/Heart".visible=false
+			$"../../../ghostlayer/Heart4".visible=true
+			Global.attic1fail = true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/attic.tscn")
+			return
+
+		else:
+			return
 
 	await get_tree().create_timer(2).timeout
 	$"../../../ghostlayer/Label8".add_theme_color_override("font_color", Color(0,0,0))

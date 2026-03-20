@@ -120,6 +120,7 @@ func _ready() -> void:
 	
 func _process(_delta):
 	var timer = $CanvasLayer3/Node3/Timer2
+	$CanvasLayer3/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	
 	if not timer.is_stopped():
 		var time_left = timer.time_left
@@ -351,9 +352,24 @@ func friendCall():
 func _on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
-	$CanvasLayer3/Heart.visible=true
-	$CanvasLayer3/Heart2.visible=true
-	$CanvasLayer3/Heart3.visible=true
+	if Global.hardmode:
+		if Global.hearts==3:
+			$CanvasLayer3/Heart.visible=true
+			$CanvasLayer3/Heart2.visible=true
+			$CanvasLayer3/Heart3.visible=true
+		if Global.hearts==2:
+			$CanvasLayer3/Heart.visible=true
+			$CanvasLayer3/Heart2.visible=true
+			$CanvasLayer3/Heart6.visible=true
+		if Global.hearts==1:
+			$CanvasLayer3/Heart.visible=true
+			$CanvasLayer3/Heart6.visible=true
+			$CanvasLayer3/Heart5.visible=true
+	else:
+		$CanvasLayer3/Heart.visible=true
+		$CanvasLayer3/Heart2.visible=true
+		$CanvasLayer3/Heart3.visible=true
+	
 	print("Signal received in main script!")
 	$CanvasLayer3/presenttile.visible=true
 	$CanvasLayer3/pasttile.visible=true

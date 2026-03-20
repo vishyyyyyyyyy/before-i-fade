@@ -548,15 +548,29 @@ func _on_button_pressed():
 	$CanvasLayer/Node3/Label5.visible=true
 	$CanvasLayer/puzzle.visible=true
 	$CanvasLayer/Label8.visible=true
-	if hearts == 3:
+	if Global.hardmode:
+		if Global.hearts == 3:
 			$CanvasLayer/Node3/Heart.visible=true
 			$CanvasLayer/Node3/Heart2.visible=true
 			$CanvasLayer/Node3/Heart3.visible=true
-	if hearts == 2:
-			$CanvasLayer/Node3/Heart.visible=true
-			$CanvasLayer/Node3/Heart2.visible=true
-	if hearts == 1:
-			$CanvasLayer/Node3/Heart.visible=true
+		if Global.hearts == 2:
+				$CanvasLayer/Node3/Heart.visible=true
+				$CanvasLayer/Node3/Heart2.visible=true
+				$CanvasLayer/Node3/Heart6.visible=true
+		if Global.hearts == 1:
+				$CanvasLayer/Node3/Heart.visible=true
+				$CanvasLayer/Node3/Heart6.visible=true
+				$CanvasLayer/Node3/Heart5.visible=true
+	else:	
+		if hearts == 3:
+				$CanvasLayer/Node3/Heart.visible=true
+				$CanvasLayer/Node3/Heart2.visible=true
+				$CanvasLayer/Node3/Heart3.visible=true
+		if hearts == 2:
+				$CanvasLayer/Node3/Heart.visible=true
+				$CanvasLayer/Node3/Heart2.visible=true
+		if hearts == 1:
+				$CanvasLayer/Node3/Heart.visible=true
 			
 	if Global.character== "girlGhost":
 		$CanvasLayer3/CanvasModulate/Auntframe5.visible=true
@@ -626,26 +640,49 @@ func _on_timer_2_timeout():
 	$CanvasLayer/Node3/Wrong.visible=true
 	$CanvasLayer/Node3/AudioStreamPlayer2.play()
 	$CanvasLayer/Node3/Timer2.stop()
-	hearts -= 1
-	if hearts  ==2:
-		$CanvasLayer/Node3/Heart3.visible=false
-		$CanvasLayer/Node3/Heart6.visible=true
-		
-	elif hearts  ==1:
-		$CanvasLayer/Node3/Heart2.visible=false
-		$CanvasLayer/Node3/Heart5.visible=true
+	if Global.hardmode:
+		Global.hearts -= 1
+		if Global.hearts  ==2:
+			$CanvasLayer/Node3/Heart3.visible=false
+			$CanvasLayer/Node3/Heart6.visible=true
+			
+		elif Global.hearts  ==1:
+			$CanvasLayer/Node3/Heart2.visible=false
+			$CanvasLayer/Node3/Heart5.visible=true
 
-	elif hearts <= 0:
-		$CanvasLayer/Node3/Heart.visible=false
-		$CanvasLayer/Node3/Heart4.visible=true
-		Global.hallwayfail = true
-		$CanvasLayer/Node3/Timer2.stop() 
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/hallway.tscn")
-		return
+		elif Global.hearts <= 0:
+			$CanvasLayer/Node3/Heart.visible=false
+			$CanvasLayer/Node3/Heart4.visible=true
+			Global.hardmodefail=true
+			$CanvasLayer/Node3/Timer2.stop() 
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
+		
+		else:
+			return
 	
-	else:
-		return
+	else:	
+		hearts -= 1
+		if hearts  ==2:
+			$CanvasLayer/Node3/Heart3.visible=false
+			$CanvasLayer/Node3/Heart6.visible=true
+			
+		elif hearts  ==1:
+			$CanvasLayer/Node3/Heart2.visible=false
+			$CanvasLayer/Node3/Heart5.visible=true
+
+		elif hearts <= 0:
+			$CanvasLayer/Node3/Heart.visible=false
+			$CanvasLayer/Node3/Heart4.visible=true
+			Global.hallwayfail = true
+			$CanvasLayer/Node3/Timer2.stop() 
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/hallway.tscn")
+			return
+		
+		else:
+			return
 	await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/Wrong.visible=false
 	$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))

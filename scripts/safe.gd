@@ -316,9 +316,23 @@ func _input_event(viewport, event, shape_idx):
 func pressed():
 	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("puzzle1")
-	$"../Heart".visible=true
-	$"../Heart2".visible=true
-	$"../Heart3".visible=true
+	if Global.hardmode:
+		if Global.hearts == 3:
+			$"../Heart".visible=true
+			$"../Heart2".visible=true
+			$"../Heart3".visible=true
+		elif Global.hearts ==2:
+			$"../Heart".visible=true
+			$"../Heart2".visible=true
+			$"../Heart6".visible=true
+		else:
+			$"../Heart".visible=true
+			$"../Heart5".visible=true
+			$"../Heart6".visible=true
+	else:
+		$"../Heart".visible=true
+		$"../Heart2".visible=true
+		$"../Heart3".visible=true
 	$"../Timer".visible = true
 	$"../Label4".visible=false
 	$"../Label5".visible = true
@@ -374,25 +388,43 @@ func _on_timer_2_timeout() -> void:
 	$"../Timer2".stop()
 	$"../Wrong".visible=true
 	$"../AudioStreamPlayer2".play()
-	hearts -= 1
-	if hearts  == 2:
-		$"../Heart3".visible=false
-		$"../Heart6".visible=true
-		
-	elif hearts  == 1:
-		$"../Heart2".visible=false
-		$"../Heart5".visible=true
+	if Global.hardmode:
+		Global.hearts -= 1
+		if Global.hearts  == 2:
+			$"../Heart3".visible=false
+			$"../Heart6".visible=true
+			
+		elif Global.hearts  == 1:
+			$"../Heart2".visible=false
+			$"../Heart5".visible=true
 
-	elif hearts <= 0:
-		$"../Heart".visible=false
-		$"../Heart4".visible=true
-		Global.bedroomdiary4fail = true
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/bedroomdiaryentry4.tscn")
-		return
-	
+		elif Global.hearts <= 0:
+			$"../Heart".visible=false
+			$"../Heart4".visible=true
+			Global.hardmodefail=true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
 	else:
-		return
+		hearts -= 1
+		if hearts  == 2:
+			$"../Heart3".visible=false
+			$"../Heart6".visible=true
+			
+		elif hearts  == 1:
+			$"../Heart2".visible=false
+			$"../Heart5".visible=true
+
+		elif hearts <= 0:
+			$"../Heart".visible=false
+			$"../Heart4".visible=true
+			Global.bedroomdiary4fail = true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/bedroomdiaryentry4.tscn")
+			return
+		
+		else:
+			return
 
 	await get_tree().create_timer(2).timeout
 	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))

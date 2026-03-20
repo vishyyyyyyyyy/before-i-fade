@@ -2527,7 +2527,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Node3"]
-wait_time = 35.0
+wait_time = 40.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer/Node3"]
@@ -3258,7 +3258,6 @@ position = Vector2(1153, 135)
 [node name="CanvasPause" parent="." instance=ExtResource("63_y6ewp")]
 
 [node name="diarypage" parent="." instance=ExtResource("62_fwk5y")]
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

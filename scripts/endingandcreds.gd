@@ -29,6 +29,7 @@ func pressed():
 	$ending2/Label2.visible=false
 	$ending2/subtitle.visible=false
 	$ending2/subtitle2.visible=false
+	Global.hardmodefail=false
 	$AnimationPlayer.play("type")
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

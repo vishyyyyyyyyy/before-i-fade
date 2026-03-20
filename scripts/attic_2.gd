@@ -256,12 +256,26 @@ func on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	$ghostlayer/Label5.visible=true
 	$ghostlayer/Timer.visible=true
-	$ghostlayer/Heart.visible=true
-	$ghostlayer/Heart2.visible=true
-	$ghostlayer/Heart3.visible=true
-	$ghostlayer/Heart4.visible=false
-	$ghostlayer/Heart5.visible=false
-	$ghostlayer/Heart6.visible=false
+	if Global.hardmode: 
+		if Global.hearts == 3:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+			$ghostlayer/Heart3.visible=true
+		if Global.hearts == 2:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+			$ghostlayer/Heart6.visible=true
+		if Global.hearts == 1:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart5.visible=true
+			$ghostlayer/Heart6.visible=true
+	else:
+		$ghostlayer/Heart.visible=true
+		$ghostlayer/Heart2.visible=true
+		$ghostlayer/Heart3.visible=true
+		$ghostlayer/Heart4.visible=false
+		$ghostlayer/Heart5.visible=false
+		$ghostlayer/Heart6.visible=false
 	$ghostlayer/Label4.visible=false
 	$ghostlayer/Timer2.start()
 	$"ghostlayer/phone instructions".visible=true

@@ -16,23 +16,33 @@ func _ready() -> void:
 	Global.attic1fail = false
 	Global.bedroomdiary4fail = false
 	Global.attic2fail = false
+	Global.hardmode = false
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
-	$AnimationPlayer2.play("modulate")
-	await get_tree().create_timer(2).timeout
-	$Node/AnimationPlayer.play("fadeinbutton")
-	$Node/Play/CollisionShape2D.disabled=false
-	$Node/Music/CollisionShape2D.disabled=false
+	#Global.hardmodefail=true
+	if Global.hardmodefail:
+		$AnimationPlayer3.play("text")
+		await get_tree().create_timer(15).timeout
+		$Node/AnimationPlayer.play("fadeinbutton")
+		$Node/Play/CollisionShape2D.disabled=false
+		$Node/Music/CollisionShape2D.disabled=false
+	else:
+		$AnimationPlayer2.play("modulate")
+		await get_tree().create_timer(2).timeout
+		$Node/AnimationPlayer.play("fadeinbutton")
+		$Node/Play/CollisionShape2D.disabled=false
+		$Node/Music/CollisionShape2D.disabled=false
 	$Node/Play.play.connect(play)
 	
 	
 func play():
+	Global.hardmodefail = false
 	$Node/Play.visible=false
 	$Node/Play/CollisionShape2D.disabled=true
 	$Node/Music.visible=false
 	$Node/Music/CollisionShape2D.disabled=true
-	$Node/Title/Label.text = "Controls"
-	$Node/Title/Label2.text= "Controls"
+	$Node/Label.text = "Controls"
+	$Node/Label2.text= "Controls"
 	$Uibox.visible=true
 	$Uibox2.visible=true
 	$Uibox3.visible=true

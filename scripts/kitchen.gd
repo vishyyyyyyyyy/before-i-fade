@@ -115,7 +115,7 @@ func _ready() -> void:
 	$ghostlayer/AnimationPlayer/boySide.visible = false
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/ColorRect2.visible=false
-	$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
+	#$ghostlayer/scenetrigger/CollisionShape2D.disabled=false
 	$CanvasLayer4/Node3/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer4/foodchoice.challengecompleted.connect(challengecompleted)
 	#unlock_explore()
@@ -124,6 +124,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_left_seconds = $CanvasLayer4/Node3/Timer2.time_left
 	$CanvasLayer4/Node3/Label5.text = "%.1f" % time_left_seconds
+	$CanvasLayer4/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	
 	if time_left_seconds < 11.0:
 			if int(Time.get_ticks_msec() / 300) % 3 == 0:
@@ -642,9 +643,23 @@ func all_non_photos_clicked() -> bool:
 func on_button_pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
-	$CanvasLayer4/Node3/Heart.visible=true
-	$CanvasLayer4/Node3/Heart2.visible=true
-	$CanvasLayer4/Node3/Heart3.visible=true
+	if Global.hardmode:
+		if Global.hearts ==3:
+			$CanvasLayer4/Node3/Heart.visible=true
+			$CanvasLayer4/Node3/Heart2.visible=true
+			$CanvasLayer4/Node3/Heart3.visible=true
+		elif Global.hearts == 2:
+			$CanvasLayer4/Node3/Heart.visible=true
+			$CanvasLayer4/Node3/Heart2.visible=true
+			$CanvasLayer4/Node3/Heart6.visible=true
+		else:
+			$CanvasLayer4/Node3/Heart.visible=true
+			$CanvasLayer4/Node3/Heart6.visible=true
+			$CanvasLayer4/Node3/Heart5.visible=true
+	else:
+		$CanvasLayer4/Node3/Heart.visible=true
+		$CanvasLayer4/Node3/Heart2.visible=true
+		$CanvasLayer4/Node3/Heart3.visible=true
 	$ghostlayer/explorelabel.visible=false
 	$CanvasLayer4/Node3/Timer.visible=true
 	$CanvasLayer4/Node3/Label5.visible=true
@@ -681,9 +696,8 @@ func challengecompleted():
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/Label.visible=false
 	$diarypage.visible=true
-	$CanvasLayer4/Node3/diarycontinue/CollisionShape2D.disabled=false
+	$diarypage/diarycontinue/CollisionShape2D.disabled=false
 	$ghostlayer/blobGhostPlayer.position.x=1153
-	$CanvasLayer4/Node3/diarycontinue.visible=true
 	
 func diarypagecontinue():
 	$diarypage.visible=false

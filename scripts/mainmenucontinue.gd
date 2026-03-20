@@ -8,7 +8,8 @@ signal pressed
 var counter = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$"../easy".mode.connect(easymode)
+	$"../hard".mode.connect(hardmode)
 	
 func _on_mouse_entered():
 	sprite.texture = hover_texture
@@ -25,8 +26,8 @@ func _input_event(viewport, event, shape_idx):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		counter +=1
 		if counter == 1:
-			$"../Node/Title/Label".text = "Puzzles"
-			$"../Node/Title/Label2".text = "Puzzles"
+			$"../Node/Label".text = "Puzzles"
+			$"../Node/Label2".text = "Puzzles"
 			$"../Downarrow".visible=false
 			$"../Uparrow".visible=false
 			$"../LeftArrow".visible=false
@@ -57,16 +58,64 @@ func _input_event(viewport, event, shape_idx):
 			$"../Label6".visible=true
 			
 		if counter == 2:
-			$"../Brokenheart".visible=false
-			$"../Heart".visible=false
-			$"../Heart2".visible=false
-			$"../Heart3".visible=false
-			$"../Label5".visible=false
-			$"../Label6".visible=false
-			$"../Node/Title/Label".text = "Warning"
-			$"../Node/Title/Label2".text = "Warning"
-			$"../AnimationPlayer".play("fade_in")
-			$"../AnimationPlayer/Label".visible=true
+			$"../easy".visible=true
+			$"../hard".visible=true
+			$"../hard/CollisionShape2D".disabled=false
+			$"../easy/CollisionShape2D".disabled=false
+			$"../Uibox6".visible=true
+			$"../Label7".visible=true
+			$"../Uibox7".visible=true
+			$"../Label8".visible=true
+			$".".visible=false
+			$CollisionShape2D.disabled=true
 			
 		if counter == 3:
 			get_tree().change_scene_to_file("res://scenes/bedroom.tscn")
+
+func easymode():
+	Global.hardmode = false
+	$"../easy".visible=false
+	$"../hard".visible=false
+	$"../hard/CollisionShape2D".disabled=true
+	$"../easy/CollisionShape2D".disabled=true
+	$"../Uibox6".visible=false
+	$"../Label7".visible=false
+	$"../Uibox7".visible=false
+	$"../Label8".visible=false
+	$"../Brokenheart".visible=false
+	$"../Heart".visible=false
+	$"../Heart2".visible=false
+	$"../Heart3".visible=false
+	$"../Label5".visible=false
+	$"../Label6".visible=false
+	$"../Node/Label".text = "Warning"
+	$"../Node/Label2".text = "Warning"
+	$"../AnimationPlayer".play("fade_in")
+	await $"../AnimationPlayer".animation_finished
+	$".".visible=true
+	$CollisionShape2D.disabled=false
+	$"../AnimationPlayer/Label".visible=true
+
+func hardmode():
+	Global.hardmode == true
+	$"../easy".visible=false
+	$"../hard".visible=false
+	$"../hard/CollisionShape2D".disabled=true
+	$"../easy/CollisionShape2D".disabled=true
+	$"../Uibox6".visible=false
+	$"../Label7".visible=false
+	$"../Uibox7".visible=false
+	$"../Label8".visible=false
+	$"../Brokenheart".visible=false
+	$"../Heart".visible=false
+	$"../Heart2".visible=false
+	$"../Heart3".visible=false
+	$"../Label5".visible=false
+	$"../Label6".visible=false
+	$"../Node/Label".text = "Warning"
+	$"../Node/Label2".text = "Warning"
+	$"../AnimationPlayer".play("fade_in")
+	await $"../AnimationPlayer".animation_finished
+	$".".visible=true
+	$CollisionShape2D.disabled=false
+	$"../AnimationPlayer/Label".visible=true

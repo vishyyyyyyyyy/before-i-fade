@@ -109,6 +109,8 @@ func _ready():
 func _process(delta: float) -> void:
 	time_left_seconds = $ghostlayer/Timer2.time_left
 	$ghostlayer/Label8.text = "%.1f" % time_left_seconds
+	$ghostlayer/Label8.add_theme_color_override("font_color", Color(0,0,0))
+	
 	
 	var timer = $ghostlayer/Timer2
 	
@@ -530,9 +532,23 @@ func challenge():
 func pressed():
 	MusicManager.play_scene_music("puzzle2")
 	MusicManager.music_player.pitch_scale = 0.75
-	$ghostlayer/Heart.visible=true
-	$ghostlayer/Heart2.visible=true
-	$ghostlayer/Heart3.visible=true
+	if Global.hardmode:
+		if Global.hearts == 3:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+			$ghostlayer/Heart3.visible=true
+		elif Global.hearts ==2:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+			$ghostlayer/Heart6.visible=true
+		elif Global.hearts ==1:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart5.visible=true
+			$ghostlayer/Heart6.visible=true
+	else:	
+		$ghostlayer/Heart.visible=true
+		$ghostlayer/Heart2.visible=true
+		$ghostlayer/Heart3.visible=true
 	$ghostlayer/Label9.visible=true
 	$ghostlayer/Label.visible=true
 	$ghostlayer/Label2.visible=true

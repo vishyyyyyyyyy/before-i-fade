@@ -56,7 +56,7 @@ texture = ExtResource("4_onm5g")
 sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1534.67, 118)
+size = Vector2(1534.67, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
 size = Vector2(286, 393.5)
@@ -1555,6 +1555,7 @@ position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_rggls")
 
 [node name="DeskCollision" type="StaticBody2D" parent="."]
@@ -2480,6 +2481,8 @@ one_shot = true
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="mouse_entered" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_exited"]
 
 [editable path="explore/safe/Node2D"]
 [editable path="explore/bed/Node2D"]

@@ -905,9 +905,20 @@ func challenge():
 func on_button_pressed():
 	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("menu")
-	$ghostlayer/Heart.visible=true
-	$ghostlayer/Heart2.visible=true
-	$ghostlayer/Heart3.visible=true
+	if Global.hardmode:
+		if Global.hearts == 3:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+			$ghostlayer/Heart3.visible=true
+		elif Global.hearts == 2:
+			$ghostlayer/Heart.visible=true
+			$ghostlayer/Heart2.visible=true
+		else:
+			$ghostlayer/Heart.visible=true
+	else:
+		$ghostlayer/Heart.visible=true
+		$ghostlayer/Heart2.visible=true
+		$ghostlayer/Heart3.visible=true
 	$ghostlayer/Label9.visible=true
 	$ghostlayer/Timer.visible=true
 	$CanvasLayer/CanvasModulate.color = Color(1,1,1,1) 

@@ -75,25 +75,48 @@ func _on_timer_2_timeout() -> void:
 	$"../Node3/Timer2".stop()
 	$"../Node3/Wrong".visible=true
 	$"../Node3/AudioStreamPlayer2".play()
-	hearts -= 1
-	if hearts  ==2:
-		$"../Heart3".visible=false
-		$"../Heart6".visible=true
-		
-	elif hearts  ==1:
-		$"../Heart2".visible=false
-		$"../Heart5".visible=true
+	if Global.hardmode:
+		Global.hearts -= 1
+		if Global.hearts  ==2:
+			$"../Heart3".visible=false
+			$"../Heart6".visible=true
+			
+		elif Global.hearts  ==1:
+			$"../Heart2".visible=false
+			$"../Heart5".visible=true
 
-	elif hearts <= 0:
-		$"../Heart".visible=false
-		$"../Heart3".visible=true
-		Global.hallwayfail = true
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/bathroom3.tscn")
-		return
-	
+		elif Global.hearts <= 0:
+			$"../Heart".visible=false
+			$"../Heart3".visible=true
+			Global.hardmodefail=true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
+			return
+		
+		else:
+			return
+
+
 	else:
-		return
+		hearts -= 1
+		if hearts  ==2:
+			$"../Heart3".visible=false
+			$"../Heart6".visible=true
+			
+		elif hearts  ==1:
+			$"../Heart2".visible=false
+			$"../Heart5".visible=true
+
+		elif hearts <= 0:
+			$"../Heart".visible=false
+			$"../Heart3".visible=true
+			Global.hallwayfail = true
+			await get_tree().create_timer(2).timeout
+			get_tree().change_scene_to_file("res://scenes/bathroom3.tscn")
+			return
+		
+		else:
+			return
 	await get_tree().create_timer(2).timeout
 	$"../Node3/Wrong".visible=false
 	resetpuzzle()	

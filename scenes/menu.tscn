@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=42 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwgw04dn4og2" path="res://assets/e.png" id="24_x16fv"]
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="25_48ryc"]
 [ext_resource type="Texture2D" uid="uid://dkaqcqckdfy84" path="res://assets/esc.png" id="25_ffqrc"]
+[ext_resource type="Script" uid="uid://cqvn0urxwimcr" path="res://scripts/mode.gd" id="26_x16fv"]
 
 [sub_resource type="Animation" id="Animation_lnf0i"]
 length = 0.001
@@ -67,6 +68,211 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecwwl"]
 size = Vector2(208, 49)
+
+[sub_resource type="Animation" id="Animation_x16fv"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_g54pe"]
+resource_name = "text"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Label4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Label3:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label4:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Label5:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Label6:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Label5:visible_ratio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Label6:visible_ratio")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(8, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../ColorRect:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../ColorRect:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../Label6:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Label5:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(12, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48ryc"]
+_data = {
+&"RESET": SubResource("Animation_x16fv"),
+&"text": SubResource("Animation_g54pe")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dmrc"]
 size = Vector2(209.5, 49)
@@ -114,6 +320,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x16fv"]
 _data = {
@@ -131,6 +349,7 @@ one_shot = true
 [node name="Node" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Node"]
+visible = false
 offset_left = -128.0
 offset_top = -57.0
 offset_right = 2318.0
@@ -209,9 +428,7 @@ position = Vector2(1170, 642)
 scale = Vector2(9.88086, 10.2381)
 texture = ExtResource("6_ufwb2")
 
-[node name="Title" type="Node" parent="Node"]
-
-[node name="Label" type="Label" parent="Node/Title"]
+[node name="Label" type="Label" parent="Node"]
 z_index = 1
 offset_left = 800.0
 offset_top = 200.0
@@ -224,7 +441,7 @@ text = "Before I
 Fade"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Node/Title"]
+[node name="Label2" type="Label" parent="Node"]
 z_index = 1
 offset_left = 791.0
 offset_top = 204.0
@@ -238,7 +455,6 @@ Fade"
 horizontal_alignment = 1
 
 [node name="subtitle" type="Label" parent="."]
-visible = false
 z_index = 2
 offset_left = 765.0
 offset_top = 549.0
@@ -250,6 +466,118 @@ theme_override_font_sizes/font_size = 32
 text = "This game is best played with
 a keyboard, mouse and music on."
 horizontal_alignment = 1
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+root_node = NodePath("Label")
+libraries = {
+&"": SubResource("AnimationLibrary_48ryc")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer3"]
+visible = false
+z_index = 2
+offset_left = -331.0
+offset_top = -73.0
+offset_right = 2445.0
+offset_bottom = 1385.0
+mouse_filter = 2
+color = Color(0.117182, 0.0425973, 0.151198, 1)
+
+[node name="Label" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 323.0
+offset_top = 576.0
+offset_right = 1997.0
+offset_bottom = 723.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "It can't end like this."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 317.0
+offset_top = 578.0
+offset_right = 1991.0
+offset_bottom = 725.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "It can't end like this."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 323.0
+offset_top = 576.0
+offset_right = 1997.0
+offset_bottom = 723.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "I need to know the truth."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 318.0
+offset_top = 580.0
+offset_right = 1992.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "I need to know the truth."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label5" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 107.0
+offset_top = 576.0
+offset_right = 2213.0
+offset_bottom = 723.0
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "Better luck next time..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label6" type="Label" parent="AnimationPlayer3"]
+visible = false
+z_index = 3
+offset_left = 103.0
+offset_top = 580.0
+offset_right = 2209.0
+offset_bottom = 727.0
+theme_override_colors/font_color = Color(0.878431, 0.662745, 0.980392, 1)
+theme_override_fonts/font = ExtResource("4_70i5f")
+theme_override_font_sizes/font_size = 72
+text = "Better luck next time..."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Downarrow" type="Sprite2D" parent="."]
 visible = false
@@ -532,6 +860,7 @@ libraries = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="AnimationPlayer2"]
+visible = false
 z_index = 3
 offset_left = -40.0
 offset_right = 2319.0
@@ -584,6 +913,110 @@ position = Vector2(1358, 660)
 scale = Vector2(7.52, 7.52)
 texture = ExtResource("25_48ryc")
 
+[node name="Uibox6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(358, 714)
+scale = Vector2(5.57031, 5.57031)
+texture = ExtResource("18_3dmrc")
+
+[node name="Label7" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 95.0
+offset_top = 547.0
+offset_right = 685.0
+offset_bottom = 630.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 40
+text = "3 lives for
+each puzzle"
+horizontal_alignment = 1
+
+[node name="Uibox7" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1947, 714)
+scale = Vector2(5.57031, 5.57031)
+texture = ExtResource("18_3dmrc")
+
+[node name="Label8" type="Label" parent="."]
+visible = false
+z_index = 2
+offset_left = 1684.0
+offset_top = 547.0
+offset_right = 2274.0
+offset_bottom = 630.0
+scale = Vector2(0.895561, 0.895561)
+theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
+theme_override_fonts/font = ExtResource("7_6cdou")
+theme_override_font_sizes/font_size = 40
+text = "3 lives for the
+entire game"
+horizontal_alignment = 1
+
+[node name="easy" type="Area2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(-595, -22)
+scale = Vector2(2, 2)
+script = ExtResource("26_x16fv")
+normal_texture = ExtResource("2_13sgg")
+hover_texture = ExtResource("3_i6lef")
+
+[node name="Sprite2D" type="Sprite2D" parent="easy"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("2_13sgg")
+
+[node name="Label" type="Label" parent="easy"]
+z_index = 1
+offset_left = 407.5
+offset_top = 378.0
+offset_right = 545.5
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("4_70i5f")
+text = "Easy Mode"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easy"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_3dmrc")
+disabled = true
+
+[node name="hard" type="Area2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(999, -22)
+scale = Vector2(2, 2)
+script = ExtResource("26_x16fv")
+normal_texture = ExtResource("2_13sgg")
+hover_texture = ExtResource("3_i6lef")
+
+[node name="Sprite2D" type="Sprite2D" parent="hard"]
+z_index = 1
+position = Vector2(475, 372)
+scale = Vector2(3.83789, 3.83789)
+texture = ExtResource("2_13sgg")
+
+[node name="Label" type="Label" parent="hard"]
+z_index = 1
+offset_left = 407.5
+offset_top = 378.0
+offset_right = 545.5
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("4_70i5f")
+text = "Hard Mode"
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hard"]
+z_index = 1
+position = Vector2(475.75, 387.25)
+shape = SubResource("RectangleShape2D_3dmrc")
+disabled = true
+
 [connection signal="timeout" from="Timer" to="Node/Play" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="Node/Play" to="." method="_on_menu_banner_mouse_entered"]
 [connection signal="mouse_entered" from="Node/Play" to="Node/Play" method="_on_mouse_entered"]
@@ -599,3 +1032,9 @@ texture = ExtResource("25_48ryc")
 [connection signal="mouse_entered" from="continue" to="continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="continue" to="continue" method="_on_mouse_exited"]
 [connection signal="mouse_shape_exited" from="continue" to="continue" method="_on_mouse_shape_exited"]
+[connection signal="input_event" from="easy" to="easy" method="_on_input_event"]
+[connection signal="mouse_entered" from="easy" to="easy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="easy" to="easy" method="_on_mouse_exited"]
+[connection signal="input_event" from="hard" to="hard" method="_on_input_event"]
+[connection signal="mouse_entered" from="hard" to="hard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="hard" to="hard" method="_on_mouse_exited"]

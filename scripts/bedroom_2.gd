@@ -507,12 +507,15 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		match area_name:
 			"familyphoto":
+				$Node/familyphoto/CollisionShape2D.disabled=true
+				$Node/diary/CollisionPolygon2D.disabled=true
 				if Global.character == "boyGhost":
 					narration_label.visible=false
 					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
 					$Node/AnimationPlayer/Label2.visible=false
@@ -544,6 +547,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					$Node/diary/CollisionPolygon2D.disabled=true
 					await start_dialogue(2)
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					#hidestuff from animation
 					$Node/AnimationPlayer/Label1.visible=false
 					$Node/AnimationPlayer/Label2.visible=false
@@ -568,6 +572,8 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					narration_label.visible=true
 					photopress=true
 			"diary":
+				$Node/diary/CollisionPolygon2D.disabled=true
+				$Node/familyphoto/CollisionShape2D.disabled=true
 				if Global.character == "boyGhost":
 					$Node/diary/CollisionPolygon2D.disabled=true
 					$Node/familyphoto/CollisionShape2D.disabled=true
@@ -575,6 +581,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					narration_label.text = 'Investigate the desk by clicking objects.'
 					await start_dialogue(3)
 					#hidestuff from animation
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/AnimationPlayer/Label1.visible=false
 					$Node/AnimationPlayer/Label2.visible=false
 					$Node/AnimationPlayer/Label3.visible=false
@@ -603,6 +610,7 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 					$Node/familyphoto/CollisionShape2D.disabled=true
 					await start_dialogue(3)
 					#hidestuff from animation
+					narration_label.text = 'Investigate the desk by clicking objects.'
 					$Node/AnimationPlayer/Label1.visible=false
 					$Node/AnimationPlayer/Label2.visible=false
 					$Node/AnimationPlayer/Label3.visible=false

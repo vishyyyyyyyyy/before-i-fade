@@ -56,6 +56,6 @@ func _input_event(viewport, event, shape_idx):
 			$"../../CanvasLayer3/CanvasModulate/Desk1".visible=false
 			$"../../SceneTrigger/CollisionShape2D".disabled=false
 			$"../../CanvasLayer3/CanvasModulate/Diaryentry4".visible=false
-			$"../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
+			$"../../CanvasLayer3/CanvasModulate/Diaryentry3".visible=false
 			counter +=1
 		emit_signal("pressed")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://2rptg4abkfci"]
+[gd_scene load_steps=143 format=3 uid="uid://2rptg4abkfci"]
 
 [ext_resource type="Script" uid="uid://dqmokicf2s6ai" path="res://scripts/kitchen.gd" id="1_ktc20"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_mwmjw"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="75_7alxu"]
 [ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="75_knauv"]
 [ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="76_bar5q"]
+[ext_resource type="PackedScene" uid="uid://bec6ydncr8m54" path="res://scenes/diarypage.tscn" id="86_6jeki"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="87_oo0tm"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="88_ut0vy"]
 
@@ -2017,9 +2018,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1417.0
+offset_left = 239.0
 offset_top = -150.0
-offset_right = -225.0
+offset_right = 1431.0
 offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -2037,9 +2038,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 292.0
+offset_left = -1468.0
 offset_top = -152.0
-offset_right = 1484.0
+offset_right = -276.0
 offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -2050,7 +2051,7 @@ horizontal_alignment = 1
 
 [node name="Boy1" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(279, 531)
+position = Vector2(1943, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("10_f125y")
 region_enabled = true
@@ -2058,7 +2059,7 @@ region_rect = Rect2(0, 0, 3000, 2289.55)
 
 [node name="Boy2" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(279, 531)
+position = Vector2(1943, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("11_n55t6")
 region_enabled = true
@@ -2066,7 +2067,7 @@ region_rect = Rect2(0, 0, 3000, 2289.55)
 
 [node name="Boy3" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(279, 531)
+position = Vector2(1943, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("12_fr5pv")
 region_enabled = true
@@ -2075,7 +2076,7 @@ region_rect = Rect2(0, 0, 3000, 2289.55)
 [node name="aunt" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
 z_index = 2
-position = Vector2(2004, 621)
+position = Vector2(252, 621)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("13_k0mf2")
 region_enabled = true
@@ -2084,7 +2085,7 @@ region_rect = Rect2(0, 0, 3000, 2347.23)
 [node name="aunt2" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
 z_index = 2
-position = Vector2(2004, 620)
+position = Vector2(252, 620)
 scale = Vector2(0.43, 0.43)
 texture = ExtResource("14_1gswy")
 region_enabled = true
@@ -2092,7 +2093,7 @@ region_rect = Rect2(0, 0, 3000, 2347.23)
 
 [node name="Girl2" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(302, 547)
+position = Vector2(1966, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("15_ls4fu")
 region_enabled = true
@@ -2100,7 +2101,7 @@ region_rect = Rect2(0, 0, 3000, 2340.02)
 
 [node name="Girl3" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(302, 547)
+position = Vector2(1966, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("16_j1h31")
 region_enabled = true
@@ -2108,7 +2109,7 @@ region_rect = Rect2(0, 0, 3000, 2340.02)
 
 [node name="Girl" type="Sprite2D" parent="ghostlayer/aunttext"]
 visible = false
-position = Vector2(302, 547)
+position = Vector2(1966, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("17_mbcyj")
 region_enabled = true
@@ -2442,7 +2443,7 @@ z_index = 2
 offset_left = -17.0
 offset_top = -2.0
 offset_right = 2313.0
-offset_bottom = 547.0
+offset_bottom = 516.0
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.701961)
 
@@ -3387,6 +3388,8 @@ visible = false
 [node name="letterE" parent="explore/island/Node2D/EAnim" index="0"]
 visible = false
 position = Vector2(1144, 737)
+
+[node name="diarypage" parent="." instance=ExtResource("86_6jeki")]
 
 [node name="CanvasPause" parent="." instance=ExtResource("88_ut0vy")]
 

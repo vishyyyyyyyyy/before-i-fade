@@ -46,6 +46,7 @@ func end_dialogue():
 	print("Dialogue finished")
 	$CanvasLayer/Label3.visible = true
 	$SceneTrigger/CollisionShape2D.disabled = false
+	$CanvasLayer/AnimationPlayer/skip.visible=false
 	$CanvasLayer/Node2D/arrow.play("arrow")
 
 func textskip():

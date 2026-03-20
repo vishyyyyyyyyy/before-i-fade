@@ -3862,7 +3862,6 @@ position = Vector2(2106, 99)
 [node name="Timer" type="Timer" parent="."]
 
 [node name="diarypage" parent="." instance=ExtResource("58_l08cl")]
-visible = false
 
 [node name="CanvasPause" parent="." instance=ExtResource("60_58in4")]
 

@@ -2949,7 +2949,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="CanvasLayer3/Node3"]
-wait_time = 15.0
+wait_time = 20.0
 one_shot = true
 
 [node name="Correct" type="Sprite2D" parent="CanvasLayer3/Node3"]
@@ -3093,7 +3093,6 @@ metadata/_edit_lock_ = true
 [node name="CanvasPause" parent="." instance=ExtResource("54_obg0h")]
 
 [node name="diarypage" parent="." instance=ExtResource("22_obg0h")]
-visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_25jch")

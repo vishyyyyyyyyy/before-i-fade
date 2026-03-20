@@ -21,3 +21,7 @@ var livingroomfail= false
 var attic1fail = false
 var bedroomdiary4fail = false
 var attic2fail = false
+
+var hardmode = true
+var hearts = 3
+var hardmodefail=false

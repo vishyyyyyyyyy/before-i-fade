@@ -9,6 +9,7 @@ func _ready() -> void:
 	else:
 		$PauseMenu/music/Label.text = "Music: OFF"
 
+
 func toggle_pause():
 	$PauseMenu/resume/Label.text = "Game Paused"
 	get_tree().paused = !get_tree().paused
@@ -18,9 +19,8 @@ func toggle_pause():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and !get_tree().paused:
 		toggle_pause()
-		
 		
 func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -51,6 +51,7 @@ func _on_controls_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false
+		Global.hardmodefail=false
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
  
@@ -65,5 +66,6 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 
 
 func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	$settingsControl.visible=false
-	$PauseMenu.visible=true
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		$settingsControl.visible=false
+		$PauseMenu.visible=true
