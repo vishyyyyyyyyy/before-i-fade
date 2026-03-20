@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://hxlbodxn7xym"]
+[gd_scene load_steps=40 format=3 uid="uid://hxlbodxn7xym"]
 
 [ext_resource type="Script" uid="uid://dl8h3gjcn75j5" path="res://scripts/mainmenu.gd" id="1_7jp70"]
 [ext_resource type="Script" uid="uid://dh6h24fx1s7m" path="res://scripts/menu_banner.gd" id="1_v86rl"]
@@ -268,9 +268,38 @@ tracks/15/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_48ryc"]
+resource_name = "modulate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_48ryc"]
 _data = {
 &"RESET": SubResource("Animation_x16fv"),
+&"modulate": SubResource("Animation_48ryc"),
 &"text": SubResource("Animation_g54pe")
 }
 
@@ -300,43 +329,6 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_kk3ma"),
 &"fade_in": SubResource("Animation_ecwwl")
-}
-
-[sub_resource type="Animation" id="Animation_rsfmq"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_81l6r"]
-resource_name = "modulate"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer2/ColorRect2:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.129412, 0, 0.0980392, 1), Color(0.129412, 0, 0.0980392, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer2/ColorRect2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x16fv"]
-_data = {
-&"RESET": SubResource("Animation_rsfmq"),
-&"modulate": SubResource("Animation_81l6r")
 }
 
 [node name="Node2D2" type="Node2D"]
@@ -467,14 +459,13 @@ text = "This game is best played with
 a keyboard, mouse and music on."
 horizontal_alignment = 1
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("Label")
 libraries = {
 &"": SubResource("AnimationLibrary_48ryc")
 }
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer3"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer2"]
 z_index = 2
 offset_left = -331.0
 offset_top = -73.0
@@ -483,7 +474,7 @@ offset_bottom = 1385.0
 mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
 
-[node name="Label" type="Label" parent="AnimationPlayer3"]
+[node name="Label" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 323.0
@@ -499,7 +490,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Label2" type="Label" parent="AnimationPlayer3"]
+[node name="Label2" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 317.0
@@ -515,7 +506,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Label3" type="Label" parent="AnimationPlayer3"]
+[node name="Label3" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 323.0
@@ -531,7 +522,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Label4" type="Label" parent="AnimationPlayer3"]
+[node name="Label4" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 318.0
@@ -547,7 +538,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Label5" type="Label" parent="AnimationPlayer3"]
+[node name="Label5" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 107.0
@@ -563,7 +554,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Label6" type="Label" parent="AnimationPlayer3"]
+[node name="Label6" type="Label" parent="AnimationPlayer2"]
 visible = false
 z_index = 3
 offset_left = 103.0
@@ -852,22 +843,6 @@ visible = false
 position = Vector2(2019, 749)
 scale = Vector2(4.90625, 4.90625)
 texture = ExtResource("18_3dmrc")
-metadata/_edit_lock_ = true
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_x16fv")
-}
-
-[node name="ColorRect2" type="ColorRect" parent="AnimationPlayer2"]
-visible = false
-z_index = 3
-offset_left = -40.0
-offset_right = 2319.0
-offset_bottom = 1318.0
-mouse_filter = 2
-color = Color(0.129412, 0, 0.0980392, 1)
-metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="E" type="Sprite2D" parent="."]

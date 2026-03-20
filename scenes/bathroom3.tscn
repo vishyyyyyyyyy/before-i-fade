@@ -2528,6 +2528,7 @@ libraries = {
 
 [node name="Boy1" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(1999, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("17_wwfem")
@@ -2536,6 +2537,7 @@ region_rect = Rect2(0, 0, 3000, 2289.55)
 
 [node name="Boy2" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(1999, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("18_ys5x2")
@@ -2544,6 +2546,7 @@ region_rect = Rect2(0, 0, 3000, 2289.55)
 
 [node name="Boy3" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(1999, 531)
 scale = Vector2(0.516547, 0.516547)
 texture = ExtResource("19_wwfem")
@@ -2570,6 +2573,7 @@ region_rect = Rect2(0, 0, 3000, 2347.23)
 
 [node name="Girl2" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(2022, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("15_c2g0u")
@@ -2578,6 +2582,7 @@ region_rect = Rect2(0, 0, 3000, 2340.02)
 
 [node name="Girl3" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(2022, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("23_ys5x2")
@@ -2586,6 +2591,7 @@ region_rect = Rect2(0, 0, 3000, 2340.02)
 
 [node name="Girl" type="Sprite2D" parent="CanvasLayer3/friendphone"]
 visible = false
+z_index = 2
 position = Vector2(2022, 547)
 scale = Vector2(0.489333, 0.489333)
 texture = ExtResource("16_bm87y")

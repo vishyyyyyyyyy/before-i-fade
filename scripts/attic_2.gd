@@ -261,11 +261,11 @@ func on_button_pressed():
 			$ghostlayer/Heart.visible=true
 			$ghostlayer/Heart2.visible=true
 			$ghostlayer/Heart3.visible=true
-		if Global.hearts == 2:
+		elif Global.hearts == 2:
 			$ghostlayer/Heart.visible=true
 			$ghostlayer/Heart2.visible=true
 			$ghostlayer/Heart6.visible=true
-		if Global.hearts == 1:
+		else:
 			$ghostlayer/Heart.visible=true
 			$ghostlayer/Heart5.visible=true
 			$ghostlayer/Heart6.visible=true

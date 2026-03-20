@@ -21,7 +21,7 @@ func _ready() -> void:
 	MusicManager.play_scene_music("menu")
 	#Global.hardmodefail=true
 	if Global.hardmodefail:
-		$AnimationPlayer3.play("text")
+		$AnimationPlayer2.play("text")
 		await get_tree().create_timer(15).timeout
 		$Node/AnimationPlayer.play("fadeinbutton")
 		$Node/Play/CollisionShape2D.disabled=false

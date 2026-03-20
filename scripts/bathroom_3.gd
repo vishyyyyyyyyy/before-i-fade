@@ -357,11 +357,11 @@ func _on_button_pressed():
 			$CanvasLayer3/Heart.visible=true
 			$CanvasLayer3/Heart2.visible=true
 			$CanvasLayer3/Heart3.visible=true
-		if Global.hearts==2:
+		elif Global.hearts==2:
 			$CanvasLayer3/Heart.visible=true
 			$CanvasLayer3/Heart2.visible=true
 			$CanvasLayer3/Heart6.visible=true
-		if Global.hearts==1:
+		else:
 			$CanvasLayer3/Heart.visible=true
 			$CanvasLayer3/Heart6.visible=true
 			$CanvasLayer3/Heart5.visible=true

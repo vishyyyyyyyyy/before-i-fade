@@ -541,7 +541,7 @@ func pressed():
 			$ghostlayer/Heart.visible=true
 			$ghostlayer/Heart2.visible=true
 			$ghostlayer/Heart6.visible=true
-		elif Global.hearts ==1:
+		else:
 			$ghostlayer/Heart.visible=true
 			$ghostlayer/Heart5.visible=true
 			$ghostlayer/Heart6.visible=true

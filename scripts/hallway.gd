@@ -553,11 +553,11 @@ func _on_button_pressed():
 			$CanvasLayer/Node3/Heart.visible=true
 			$CanvasLayer/Node3/Heart2.visible=true
 			$CanvasLayer/Node3/Heart3.visible=true
-		if Global.hearts == 2:
+		elif Global.hearts == 2:
 				$CanvasLayer/Node3/Heart.visible=true
 				$CanvasLayer/Node3/Heart2.visible=true
 				$CanvasLayer/Node3/Heart6.visible=true
-		if Global.hearts == 1:
+		else:
 				$CanvasLayer/Node3/Heart.visible=true
 				$CanvasLayer/Node3/Heart6.visible=true
 				$CanvasLayer/Node3/Heart5.visible=true

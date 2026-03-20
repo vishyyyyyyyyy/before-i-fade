@@ -441,6 +441,7 @@ func wrong():
 	$CanvasLayer5/Correct.visible = false
 	if Global.hardmode:
 		Global.hearts -=1
+		print(Global.hearts)
 		if Global.hearts  ==2:
 			$Heart3.visible=false
 			$Heart6.visible=true
