@@ -74,6 +74,7 @@ func open_desk():
 	print("Clicked shape 1")
 
 func fade_in_diary(diary_node: Node2D, delay: float = 0.0) -> void:
+	$"../AudioStreamPlayer".play()
 	if delay > 0:
 		await get_tree().create_timer(delay).timeout
 

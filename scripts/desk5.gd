@@ -98,6 +98,7 @@ func open_diary():
 	Global.reusabledesk = 5
 	$"../CanvasLayer3/CanvasModulate/Diaryblank".visible=true
 	fade_in_diary($"../CanvasLayer3/CanvasModulate/Diaryentry5")
+	$"../AudioStreamPlayer".play()
 	emit_signal("diaryentry5")
 
 func fade_in_diary(diary_node: Node2D, delay: float = 0.0) -> void:

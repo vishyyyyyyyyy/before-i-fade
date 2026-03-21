@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=105 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scripts/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="44_pf06f"]
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="45_fmoy4"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="48_y6fpv"]
+[ext_resource type="AudioStream" uid="uid://bualpxysfkfcp" path="res://assets/audio/page turn.mp3" id="50_k81dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv7wv"]
 texture = ExtResource("3_v60m4")
@@ -3590,6 +3591,10 @@ theme_override_font_sizes/font_size = 16
 text = "(SPACE to skip text)"
 
 [node name="CanvasPause" parent="." instance=ExtResource("48_y6fpv")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_k81dp")
+volume_db = 5.0
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

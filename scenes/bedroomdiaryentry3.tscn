@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c2s68u53x2urt"]
+[gd_scene load_steps=45 format=3 uid="uid://c2s68u53x2urt"]
 
 [ext_resource type="Script" uid="uid://bbnovbfkyhpbv" path="res://scripts/bedroomdiaryentry_3.gd" id="1_k28sk"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_25v77"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://cm22fx8v0grcd" path="res://scripts/desk5.gd" id="23_i2gc4"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="24_1m4nm"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="25_3ikvl"]
+[ext_resource type="AudioStream" uid="uid://bualpxysfkfcp" path="res://assets/audio/page turn.mp3" id="27_f2rlh"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="27_mqa23"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="41_td3f0"]
 
@@ -510,6 +511,10 @@ text = "Exit the bedroom."
 horizontal_alignment = 1
 
 [node name="CanvasPause" parent="." instance=ExtResource("25_3ikvl")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_f2rlh")
+volume_db = 5.0
 
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
