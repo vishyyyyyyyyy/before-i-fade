@@ -6222,7 +6222,7 @@ visible = false
 
 [node name="letterE" parent="explore/CanvasLayer/box/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1927, 545)
+position = Vector2(1190, 570)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

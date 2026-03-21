@@ -35,6 +35,7 @@ func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		MusicManager.toggle_music()
+		MusicManager.toggle_audio() 
 
 		if MusicManager.music_on:
 			$PauseMenu/music/Label.text = "Music: ON"

@@ -117,7 +117,7 @@ size = Vector2(169, 1323)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l23g3"]
 size = Vector2(2309.25, 620)
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D7" type="Node2D"]
 script = ExtResource("1_n5w2q")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

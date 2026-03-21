@@ -1,9 +1,9 @@
 extends Node
 
-var music_on := false
+var music_on := true
 var music_player: AudioStreamPlayer
 var saved_position := 0.0
-var playlist_positions := {}
+var playlist_positions := {}	
 
 # --- NEW ---
 var playlists := {
@@ -30,6 +30,7 @@ func _ready():
 	music_player.finished.connect(_on_music_finished)
 
 	# Optional: default music
+	music_player.bus = "Music"  
 	play_scene_music("menu")
 
 func play_scene_music(scene_name: String):
@@ -78,3 +79,14 @@ func toggle_music():
 	else:
 		saved_position = music_player.get_playback_position()
 		music_player.stop()
+
+var audio_on := true
+
+func toggle_audio():
+	audio_on = !audio_on
+
+	var bus_idx = AudioServer.get_bus_index("Master")
+	if bus_idx != -1:
+		AudioServer.set_bus_mute(bus_idx, not audio_on)
+		
+		

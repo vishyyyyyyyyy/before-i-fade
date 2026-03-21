@@ -372,9 +372,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -272.0
+offset_left = -302.0
 offset_top = -93.0
-offset_right = 272.0
+offset_right = 302.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -414,6 +414,7 @@ libraries = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer/AnimationPlayer2"]
+visible = false
 z_index = 3
 offset_left = -40.0
 offset_right = 2319.0
