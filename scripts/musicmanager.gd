@@ -75,6 +75,8 @@ func toggle_music():
 	music_on = !music_on
 
 	if music_on:
+		if saved_position >= music_player.stream.get_length():
+			saved_position = 0.0  # reset if at end
 		music_player.play(saved_position)
 	else:
 		saved_position = music_player.get_playback_position()

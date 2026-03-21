@@ -13,7 +13,9 @@ config_version=5
 config/name="codedex 2025 winter game jam"
 run/main_scene="uid://ddp06h4s7fxje"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://assets/icon.svg"
+boot_splash/use_filter=false
+boot_splash/image="uid://ducjr21k7wt13"
+config/icon="uid://bc7gl164ux64b"
 
 [autoload]
 

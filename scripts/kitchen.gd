@@ -464,6 +464,7 @@ func start():
 		$ghostlayer/AnimationPlayer/boy.visible = false
 		$ghostlayer/AnimationPlayer/aunt.visible = true
 		$ghostlayer/AnimationPlayer/boySide.visible = true
+		await get_tree().create_timer(0.5).timeout
 		await start_dialogue(1)
 		$ghostlayer/AnimationPlayer/boy.visible = true
 		$ghostlayer/AnimationPlayer/aunt.visible = false
@@ -478,6 +479,7 @@ func start():
 		$ghostlayer/AnimationPlayer/girl.visible = false
 		$ghostlayer/AnimationPlayer/aunt.visible = true
 		$ghostlayer/AnimationPlayer/girlSide.visible = true
+		await get_tree().create_timer(0.5).timeout
 		await start_dialogue(1)
 		$ghostlayer/AnimationPlayer/girl.visible = true
 		$ghostlayer/AnimationPlayer/aunt.visible = false
@@ -692,7 +694,7 @@ func challengecompleted():
 	MusicManager.music_player.pitch_scale = 1.0
 	MusicManager.play_scene_music("menu")
 	$CanvasLayer4/Node3/Label6.visible=false
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
 	$CanvasLayer4/ColorRect3.visible=false
 	$CanvasLayer4/Label.visible=false
 	$diarypage.visible=true
@@ -701,7 +703,7 @@ func challengecompleted():
 	
 func diarypagecontinue():
 	$diarypage.visible=false
-	$CanvasLayer4/Node3/diarycontinue/CollisionShape2D.disabled=true
+	$diarypage/diarycontinue/CollisionShape2D.disabled=true
 	$CanvasLayer4/Kitchen9.visible=false
 	$CanvasLayer4/Kitchen.visible=false
 	$CanvasLayer4/Node3/Label5.visible=false

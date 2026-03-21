@@ -386,7 +386,7 @@ shape = SubResource("RectangleShape2D_l48gv")
 [node name="Music" type="Area2D" parent="Node"]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
-position = Vector2(221, 13)
+position = Vector2(213, 61)
 scale = Vector2(2, 2)
 script = ExtResource("5_mj5lg")
 normal_texture = ExtResource("2_13sgg")

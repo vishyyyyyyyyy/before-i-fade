@@ -504,9 +504,12 @@ func diaryOverlay():
 
 
 func _on_area_clicked(area, event, shape_idx, area_name):
+	narration_label.text = 'Investigate the desk by clicking objects.'
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		narration_label.text = 'Investigate the desk by clicking objects.'
 		match area_name:
 			"familyphoto":
+				
 				$Node/familyphoto/CollisionShape2D.disabled=true
 				$Node/diary/CollisionPolygon2D.disabled=true
 				if Global.character == "boyGhost":

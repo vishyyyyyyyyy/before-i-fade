@@ -348,6 +348,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="title image"]
+visible = false
 offset_right = 2309.0
 offset_bottom = 1318.0
 color = Color(0.129412, 0, 0.0980392, 0.0627451)

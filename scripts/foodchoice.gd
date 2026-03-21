@@ -312,6 +312,7 @@ func correct():
 	$"../Node3/Timer".visible=false
 	$"../Node3/AudioStreamPlayer".play() 
 	$"../Node3/Timer2".stop()
+	$"../Node3/Label5".visible=false
 	await get_tree().create_timer(2).timeout
 	$"../Node3/Correct".visible = false
 	emit_signal("challengecompleted")
@@ -409,6 +410,5 @@ func incorrect():
 	$CollisionShape2D2.disabled=false
 	counter =0
 	wrongcounter =0
-	$"../Node3/Timer2".start()
 
 	

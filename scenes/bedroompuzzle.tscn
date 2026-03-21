@@ -79,7 +79,7 @@ size = Vector2(187, 104)
 size = Vector2(2309.25, 174.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 27)
+size = Vector2(361, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
 size = Vector2(169, 1323)
@@ -794,7 +794,7 @@ script = ExtResource("13_g3xtp")
 target_scene = "res://scenes/bathroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(1462.5, -97.5)
+position = Vector2(1462.5, -105)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
