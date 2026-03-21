@@ -28,8 +28,9 @@ func _ready():
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 	music_player.finished.connect(_on_music_finished)
+	print(music_player.volume_db)
 
-	# Optional: default music
+	#default music
 	play_scene_music("menu")
 
 func play_scene_music(scene_name: String):
@@ -51,17 +52,24 @@ func play_scene_music(scene_name: String):
 
 	_play_current_track()
 
+#func _play_current_track():
+	#if not music_on or current_playlist.is_empty():
+		#return
+#
+	#music_player.stream = current_playlist[current_index]
+#
+	#var start_pos = 0.0
+	#if playlist_positions.has(current_scene_music):
+		#start_pos = playlist_positions[current_scene_music]
+#
+	#music_player.play(start_pos)
+
 func _play_current_track():
 	if not music_on or current_playlist.is_empty():
 		return
 
 	music_player.stream = current_playlist[current_index]
-
-	var start_pos = 0.0
-	if playlist_positions.has(current_scene_music):
-		start_pos = playlist_positions[current_scene_music]
-
-	music_player.play(start_pos)
+	music_player.play(0)
 
 func _on_music_finished():
 	if not music_on:

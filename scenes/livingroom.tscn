@@ -3738,7 +3738,7 @@ position = Vector2(175, 174)
 
 [node name="clock" type="Area2D" parent="explore"]
 script = ExtResource("26_8wvgp")
-label_text = "A handown clock from your mother."
+label_text = "A clock from your mother."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/clock"]
 position = Vector2(501.75, 308)

@@ -1,5 +1,6 @@
 extends Node2D
 func _ready() -> void:
+	MusicManager.music_player.volume_db = 0
 	Global.character = "blob"
 	Global.bathroomCount = 0
 	Global.pastChar = ""

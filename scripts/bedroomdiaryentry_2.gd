@@ -24,7 +24,7 @@ signal dialogue_finished(index)
 
 
 func _ready() -> void:
-	#Global.reusabledesk = 2
+	#Global.reusabledesk = 3
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
 	else:

@@ -132,9 +132,8 @@ texture = ExtResource("8_eq67j")
 [node name="Node2D" parent="ghostlayer" instance=ExtResource("9_8cuds")]
 
 [node name="Ghostarrow" parent="ghostlayer/Node2D/arrow" index="0"]
-visible = false
-position = Vector2(2149, 886)
-rotation = 1.5708
+position = Vector2(157, 886)
+rotation = 4.71239
 
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
@@ -227,6 +226,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 128, 109.25)
 
 [node name="CanvasPause" parent="." instance=ExtResource("15_7vnt1")]
+visible = false
 
 [node name="scene collisions" type="Node" parent="."]
 

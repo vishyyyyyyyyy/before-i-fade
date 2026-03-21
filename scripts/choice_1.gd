@@ -5,8 +5,7 @@ extends Area2D
 
 @onready var sprite: Sprite2D = $Menubanner
 
-signal choice1
-signal choice2
+signal choice
 
 func _on_mouse_entered():
 	sprite.texture = hover_texture
@@ -23,10 +22,5 @@ func _input_event(viewport, event, shape_idx):
 		
 		$"../ghosttext5/Label6".visible = false
 		
-		match shape_idx:
-			0:
-				print("choice 1 clicked")
-				emit_signal("choice1")
-			1:
-				print("choice 2 clicked")
-				emit_signal("choice2")
+		print("choice 1 clicked")
+		emit_signal("choice")

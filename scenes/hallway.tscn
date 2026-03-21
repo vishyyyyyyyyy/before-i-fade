@@ -3138,7 +3138,7 @@ metadata/_edit_lock_ = true
 
 [node name="Blankpicture4" type="Sprite2D" parent="CanvasLayer/puzzle"]
 z_index = -20
-position = Vector2(2016.5, 257)
+position = Vector2(2016.5, 268)
 scale = Vector2(5.02344, 5)
 texture = ExtResource("3_w57m6")
 metadata/_edit_lock_ = true

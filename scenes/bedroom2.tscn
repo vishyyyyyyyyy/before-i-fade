@@ -1478,7 +1478,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
 size = Vector2(422, 107.75)
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_wfgsr")
 
 [node name="ColorRect" type="ColorRect" parent="."]

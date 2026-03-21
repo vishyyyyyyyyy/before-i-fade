@@ -379,7 +379,7 @@ offset_left = -40.0
 offset_right = 2319.0
 offset_bottom = 1318.0
 mouse_filter = 2
-color = Color(0.129412, 0, 0.0980392, 0)
+color = Color(0.129412, 0, 0.0980392, 1)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 

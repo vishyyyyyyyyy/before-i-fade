@@ -12,7 +12,7 @@ var segment_data := [
 	{ "starts": [0.0, 4.0, 8.0], "ends": [2.0, 6.0, 10.0] }, 
 	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, 
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
-	{ "starts": [0.0, 4.0, 8.0, 12.0, 18.0], "ends": [2.0, 6.0, 10.0, 16.0, 18.0, 20.0] }, 
+	{ "starts": [0.0, 4.0, 8.0, 12.0, 14.0, 18.0], "ends": [2.0, 6.0, 10.0, 13.5, 16.0, 20.0] }, 
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
 	{ "starts": [0.0], "ends": [2.0] }, #pastchar1
@@ -61,6 +61,8 @@ func fade_in_music():
 
 
 func _ready():
+	$ghostlayer/choice.choice.connect(choice1)
+	$ghostlayer/choice2.choice.connect(choice2)
 	MusicManager.music_player.pitch_scale = 0.75
 	reset_timer.timeout.connect(_on_reset_timeout)
 	#Global.attic1fail = true
@@ -85,8 +87,8 @@ func _ready():
 	$ghostlayer/Bloodblanket.visible=true
 	$ghostlayer/continue.pressed.connect(on_button_pressed)
 	$CanvasLayer/CanvasModulate/box2.challengecompleted.connect(challengecompleted)
-	$ghostlayer/choice.choice1.connect(choice1)
-	$ghostlayer/choice2.choice2.connect(choice2)
+	$ghostlayer/choice.choice.connect(choice1)
+	$ghostlayer/choice2.choice.connect(choice2)
 	$diarypage/diarycontinue.diarypagecontinue.connect(diarypagecontinue)
 	#unlockexplore()
 	text()
@@ -1060,7 +1062,7 @@ func diarypagecontinue():
 	$ghostlayer/choice.visible=true
 	$ghostlayer/choice2.visible=true
 	$ghostlayer/choice/CollisionShape2D.disabled=false
-	$ghostlayer/choice2/CollisionShape2D.disabled=false
+	$ghostlayer/choice2/CollisionShape2D2.disabled=false
 	
 func choice1():
 	Global.ending = 1
@@ -1069,7 +1071,7 @@ func choice1():
 	$ghostlayer/choice.visible=false
 	$ghostlayer/choice2.visible=false
 	$ghostlayer/choice/CollisionShape2D.disabled=true
-	$ghostlayer/choice2/CollisionShape2D.disabled=true
+	$ghostlayer/choice2/CollisionShape2D2.disabled=true
 	$ghostlayer/ColorRect.visible=false
 	await start_dialogue(5)
 	var player = $ghostlayer/blobGhostPlayer
@@ -1087,7 +1089,7 @@ func choice2():
 	$ghostlayer/choice.visible=false
 	$ghostlayer/choice2.visible=false
 	$ghostlayer/choice/CollisionShape2D.disabled=true
-	$ghostlayer/choice2/CollisionShape2D.disabled=true
+	$ghostlayer/choice2/CollisionShape2D2.disabled=true
 	await start_dialogue(6)
 	$CanvasLayer/CanvasModulate.color = Color(0.094, 0.323, 0.28) 
 	$CanvasLayer2/CanvasModulate.color =Color(0.0, 0.992, 0.816)
