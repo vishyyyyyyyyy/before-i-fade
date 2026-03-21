@@ -198,7 +198,7 @@ func diaryentry3():
 
 
 func diaryentry4():
-	await get_tree().create_timer(0.8).timeoutd
+	await get_tree().create_timer(0.8).timeout
 	await start_dialogue(2)
 	$ghostlayer/blobGhostPlayer.position.x=1907
 	$ghostlayer/blobGhostPlayer.position.y=602
