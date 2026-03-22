@@ -79,18 +79,6 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 
 [sub_resource type="Animation" id="Animation_3rg1y"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_vl3qy"]
 resource_name = "exit"
@@ -2235,9 +2223,9 @@ sprite_frames = SubResource("SpriteFrames_kg10a")
 autoplay = "default"
 frame_progress = 0.718874
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimationPlayer"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CanvasLayer/AnimationPlayer"]
 stream = ExtResource("16_58in4")
-volume_db = 24.0
+volume_db = 10.0
 pitch_scale = 2.0
 parameters/looping = true
 

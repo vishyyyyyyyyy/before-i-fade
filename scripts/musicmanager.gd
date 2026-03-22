@@ -28,12 +28,18 @@ var current_scene_music := ""
 
 func _ready():
 	music_player = AudioStreamPlayer.new()
+	music_player.volume_db = -10
 	add_child(music_player)
 	music_player.finished.connect(_on_music_finished)
 	print(music_player.volume_db)
 
 	#default music
 	play_scene_music("menu")
+
+func _process(_delta):
+	if music_player.volume_db != -10:
+		print("Volume changed to: ", music_player.volume_db)
+		music_player.volume_db = -10
 
 func play_scene_music(scene_name: String):
 
@@ -77,7 +83,8 @@ func _play_current_track():
 		return
 
 	music_player.stream = current_playlist[current_index]
-
+	music_player.volume_db = -10
+	
 	var key = current_scene_music + "_" + str(current_index)
 	var start_pos = 0.0
 

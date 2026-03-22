@@ -67,18 +67,6 @@ sources/0 = SubResource("TileSetAtlasSource_naci5")
 
 [sub_resource type="Animation" id="Animation_ioplr"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../chars2boy/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_yeiuc"]
 resource_name = "boy"
@@ -427,18 +415,6 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_xncmy"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghostlayer/chars2girl/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_q3k7k"]
 resource_name = "girl"
@@ -1390,9 +1366,8 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2boy"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="ghostlayer/chars2boy"]
 stream = ExtResource("16_lubtl")
-volume_db = 24.0
 pitch_scale = 2.0
 parameters/looping = true
 
@@ -1459,9 +1434,9 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2girl"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="ghostlayer/chars2girl"]
 stream = ExtResource("16_lubtl")
-volume_db = 24.0
+volume_db = 10.0
 pitch_scale = 2.0
 parameters/looping = true
 

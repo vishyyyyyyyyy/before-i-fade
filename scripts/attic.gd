@@ -61,6 +61,7 @@ func fade_in_music():
 
 
 func _ready():
+	MusicManager.music_player.volume_db = -10
 	$ghostlayer/choice.choice.connect(choice1)
 	$ghostlayer/choice2.choice.connect(choice2)
 	MusicManager.music_player.pitch_scale = 0.75

@@ -45,6 +45,7 @@ func fade_in_music():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Global.bathroomfail = true
+	MusicManager.music_player.volume_db = -10
 	if Global.bathroomfail == true:
 		$CanvasLayer3/bedroomfailghost/Label.text  = repeat_lines.pick_random()
 		fade_out_music()

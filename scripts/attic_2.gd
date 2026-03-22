@@ -164,6 +164,7 @@ func fade_in_music():
 
 
 func _ready():
+	MusicManager.music_player.volume_db = -10
 	MusicManager.music_player.pitch_scale = 0.75
 	#Global.attic2fail = true
 	if Global.attic2fail == true:

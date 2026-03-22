@@ -1335,18 +1335,6 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_rx3tq"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_3cp5q"]
 resource_name = "neighborPhotos"
@@ -2652,8 +2640,6 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3cp5q")
 
 [node name="neighborRight" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
-visible = false
-position = Vector2(1029, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborRight"]
 position = Vector2(96, 786)
@@ -2664,6 +2650,7 @@ frame_progress = 0.383255
 
 [node name="neighborLeft" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(1064, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborLeft"]
 position = Vector2(96, 786)
@@ -2675,7 +2662,6 @@ flip_h = true
 
 [node name="neighborForward" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
-position = Vector2(0, -270)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborForward"]
 position = Vector2(1152, 788)
@@ -2686,7 +2672,6 @@ frame_progress = 0.127123
 
 [node name="neighborBackward" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
-position = Vector2(0, 270)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborBackward"]
 position = Vector2(1139, 448)
@@ -2703,9 +2688,9 @@ position = Vector2(1152, 521)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_t0wjw")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimationPlayer"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CanvasLayer/AnimationPlayer"]
 stream = ExtResource("41_770qv")
-volume_db = 24.0
+volume_db = 10.0
 pitch_scale = 2.0
 parameters/looping = true
 

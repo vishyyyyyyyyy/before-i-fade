@@ -2952,18 +2952,6 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_ioplr"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../chars2boy/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_yeiuc"]
 resource_name = "boy"
@@ -3324,18 +3312,6 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_xncmy"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ghostlayer/chars2girl/AudioStreamPlayer2D:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_q3k7k"]
 resource_name = "girl"
@@ -5534,7 +5510,6 @@ libraries = {
 }
 
 [node name="boy" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/boy"]
 position = Vector2(825, 782)
@@ -5543,7 +5518,6 @@ sprite_frames = SubResource("SpriteFrames_ioplr")
 
 [node name="girl" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
 visible = false
-position = Vector2(-505, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/girl"]
 position = Vector2(2136, 783)
@@ -5561,7 +5535,7 @@ autoplay = "default"
 
 [node name="girlSide" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
 visible = false
-position = Vector2(-550, 0)
+position = Vector2(610, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/girlSide"]
 position = Vector2(1543, 814)
@@ -5589,9 +5563,9 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2boy"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="ghostlayer/chars2boy"]
 stream = ExtResource("40_ftj77")
-volume_db = 24.0
+volume_db = 10.0
 pitch_scale = 2.0
 parameters/looping = true
 
@@ -5658,9 +5632,9 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2girl"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="ghostlayer/chars2girl"]
 stream = ExtResource("40_ftj77")
-volume_db = 24.0
+volume_db = 10.0
 pitch_scale = 2.0
 parameters/looping = true
 

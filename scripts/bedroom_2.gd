@@ -47,6 +47,7 @@ var repeat_lines = [
 
 	
 func _ready():
+	MusicManager.music_player.volume_db = -10
 	reset_timer.timeout.connect(_on_reset_timeout)
 	if MusicManager.music_on:
 		$CanvasPause/PauseMenu/music/Label.text = "Music: ON"
