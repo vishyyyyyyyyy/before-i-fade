@@ -55,7 +55,7 @@ size = Vector2(578.5, 32)
 size = Vector2(286, 84.999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2063f"]
-size = Vector2(379, 168.438)
+size = Vector2(379, 106.438)
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_q1cff")
@@ -135,8 +135,8 @@ texture = ExtResource("10_smktg")
 [node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
 offset_left = -17.0
 offset_top = 1120.0
-offset_right = 2313.0
-offset_bottom = 1299.0
+offset_right = 2319.0
+offset_bottom = 1314.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("11_2o6p2")]
@@ -232,10 +232,9 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
-position = Vector2(67, 40.9063)
+position = Vector2(67, 51.2396)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_2063f")
-metadata/_edit_lock_ = true
 
 [node name="CanvasPause" parent="." instance=ExtResource("16_72jy3")]
 
