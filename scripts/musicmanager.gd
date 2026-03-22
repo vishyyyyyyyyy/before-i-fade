@@ -90,11 +90,18 @@ func _play_current_track():
 	if playlist_positions.has(key):
 		start_pos = playlist_positions[key]
 
+	var length = music_player.stream.get_length()
+	if start_pos > length - 0.5:
+		start_pos = 0.0
+
 	music_player.play(start_pos)
 
 func _on_music_finished():
 	if not music_on:
 		return
+
+	var key = current_scene_music + "_" + str(current_index)
+	playlist_positions.erase(key) # reset so it starts fresh next time
 
 	current_index = (current_index + 1) % current_playlist.size()
 	_play_current_track()
