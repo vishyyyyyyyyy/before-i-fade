@@ -265,6 +265,7 @@ libraries = {
 }
 
 [node name="subtitle" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
 z_index = 2
 offset_left = 781.0
 offset_top = 270.0
@@ -288,7 +289,9 @@ Story of Maple — Final Gate Studios
 Correct Buzzer — u_a5z4rtk6yn
 Incorrect Buzzer — logicallism
 Piano notes — u_c58whxla22
-Explore the Universe and Beyond — Musictown
+Horror — SoundGalleryByDmitryTaras
+Horror Playhouse — geoffharvey
+Spooked — geoffharvey
 Kerosene — LBDLPROD
 Puzzle Game — Cyberwave-Orchestra
 
@@ -308,11 +311,9 @@ Time keeps moving.
 "
 horizontal_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 offset_left = 862.0
 offset_top = 69.0
@@ -326,7 +327,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="AnimationPlayer"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 offset_left = 853.0
 offset_top = 73.0

@@ -10,8 +10,9 @@ var playlist_indices := {}
 var playlists := {
 	"menu": [
 		preload("res://assets/audio/Story of Maple_mp3.mp3"),
-		preload("res://assets/audio/explore-the-universe-and-beyond-117949.mp3"),
-		preload("res://assets/audio/adventure-cinematic-music-faith-journey-324896.mp3")
+		preload("res://assets/audio/soundgallerybydmitrytaras-horror-118577.mp3"),
+		preload("res://assets/audio/geoffharvey-horror-playhouse-404813.mp3"),
+		preload("res://assets/audio/geoffharvey-spooked-164545.mp3")
 	],
 	"puzzle1": [
 		preload("res://assets/audio/kerosene-loop-at-different-pitches-190120.mp3")
