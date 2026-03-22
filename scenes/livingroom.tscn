@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://crlnw6linmkkf"]
+[gd_scene load_steps=140 format=3 uid="uid://crlnw6linmkkf"]
 
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_35nt2"]
 [ext_resource type="Script" uid="uid://bd2e0jr22vg31" path="res://scripts/livingroom.gd" id="1_po3oh"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b1fhrsdhko6kt" path="res://assets/pixel-characters/girl3.png" id="14_fipm8"]
 [ext_resource type="Texture2D" uid="uid://dj7uvdd22tg8v" path="res://assets/music.png" id="15_xddai"]
 [ext_resource type="Script" uid="uid://r4gf8gtexdav" path="res://scripts/piano.gd" id="16_2anki"]
+[ext_resource type="AudioStream" uid="uid://df5tj0pqj7x08" path="res://assets/audio/Human Footstep 7.mp3" id="16_58in4"]
 [ext_resource type="PackedScene" uid="uid://pwy7nrc227m2" path="res://scenes/ghostarrow.tscn" id="16_nvfrc"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="16_tj75g"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="16_tlixj"]
@@ -78,6 +79,18 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 
 [sub_resource type="Animation" id="Animation_3rg1y"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vl3qy"]
 resource_name = "exit"
@@ -201,6 +214,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-1067, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l1jrp"]
@@ -2167,6 +2192,7 @@ sprite_frames = SubResource("SpriteFrames_l08cl")
 
 [node name="boySide" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(-1067, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/boySide"]
 position = Vector2(1187, 796)
@@ -2178,6 +2204,7 @@ flip_h = true
 
 [node name="girlSide" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(610, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/girlSide"]
 position = Vector2(1405, 535)
@@ -2188,6 +2215,7 @@ frame_progress = 0.379236
 
 [node name="boyDown" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(0, 265)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/boyDown"]
 position = Vector2(1177, 513)
@@ -2198,6 +2226,7 @@ frame_progress = 0.911966
 
 [node name="girlDown" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(0, 366)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/girlDown"]
 position = Vector2(2023, 536)
@@ -2205,6 +2234,12 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_kg10a")
 autoplay = "default"
 frame_progress = 0.718874
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimationPlayer"]
+stream = ExtResource("16_58in4")
+volume_db = 24.0
+pitch_scale = 2.0
+parameters/looping = true
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://3ulr6k8q2lmt"]
+[gd_scene load_steps=123 format=3 uid="uid://3ulr6k8q2lmt"]
 
 [ext_resource type="Script" uid="uid://b6yixuasqpb1g" path="res://scripts/hallway.gd" id="1_y7q4l"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_yjeik"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cuitgl2oytd3c" path="res://assets/hallwayPuzzlePics/auntframeBottomLeft.png" id="38_a7ten"]
 [ext_resource type="Texture2D" uid="uid://c1xd133tmejk4" path="res://assets/hallwayPuzzlePics/auntframeBottomRight.png" id="39_s8q44"]
 [ext_resource type="Texture2D" uid="uid://dd16waex4y5re" path="res://assets/hallwayPuzzlePics/friendframeTopLeft.png" id="40_tb454"]
+[ext_resource type="AudioStream" uid="uid://df5tj0pqj7x08" path="res://assets/audio/Human Footstep 7.mp3" id="41_770qv"]
 [ext_resource type="Texture2D" uid="uid://cnef5ibvi3p2n" path="res://assets/hallwayPuzzlePics/friendframeTopRight.png" id="41_sm38h"]
 [ext_resource type="Texture2D" uid="uid://beihjtit2v6rv" path="res://assets/hallwayPuzzlePics/friendframeBottomLeft.png" id="42_ivync"]
 [ext_resource type="Texture2D" uid="uid://dvknksghvxcey" path="res://assets/hallwayPuzzlePics/friendframeBottomRight.png" id="43_kv4cf"]
@@ -1334,6 +1335,18 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_rx3tq"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_3cp5q"]
 resource_name = "neighborPhotos"
@@ -1469,6 +1482,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 3, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_klhg5"]
@@ -2639,7 +2664,6 @@ frame_progress = 0.383255
 
 [node name="neighborLeft" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
-position = Vector2(1064, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborLeft"]
 position = Vector2(96, 786)
@@ -2662,6 +2686,7 @@ frame_progress = 0.127123
 
 [node name="neighborBackward" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
 visible = false
+position = Vector2(0, 270)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborBackward"]
 position = Vector2(1139, 448)
@@ -2677,6 +2702,12 @@ visible = false
 position = Vector2(1152, 521)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_t0wjw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/AnimationPlayer"]
+stream = ExtResource("41_770qv")
+volume_db = 24.0
+pitch_scale = 2.0
+parameters/looping = true
 
 [node name="puzzle" type="Control" parent="CanvasLayer"]
 visible = false

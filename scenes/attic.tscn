@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://dqsmxtxsokfbn"]
+[gd_scene load_steps=156 format=3 uid="uid://dqsmxtxsokfbn"]
 
 [ext_resource type="Texture2D" uid="uid://wa64t1ak7lwx" path="res://assets/wood.png" id="1_qajrb"]
 [ext_resource type="Script" uid="uid://bk5u57vki4wpr" path="res://scripts/attic.gd" id="1_wdb1v"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://1yy8rn4rhjik" path="res://assets/correct.png" id="37_nhg3k"]
 [ext_resource type="Texture2D" uid="uid://cevc1478kyt0o" path="res://assets/wrong.png" id="38_11ib6"]
 [ext_resource type="Script" uid="uid://dvy6txn4gpti2" path="res://scripts/continue.gd" id="39_ap3yg"]
+[ext_resource type="AudioStream" uid="uid://df5tj0pqj7x08" path="res://assets/audio/Human Footstep 7.mp3" id="40_ftj77"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="40_ju1eb"]
 [ext_resource type="Texture2D" uid="uid://dyce6op8rlb3j" path="res://assets/menubanner2.png" id="41_bgrwk"]
 [ext_resource type="AudioStream" uid="uid://c3vhnpw3a7jet" path="res://assets/audio/correct.mp3" id="42_p08rk"]
@@ -2951,6 +2952,18 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_ioplr"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../chars2boy/AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_yeiuc"]
 resource_name = "boy"
@@ -3027,6 +3040,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-505, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../chars2boy/AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_8copa"]
 resource_name = "death"
@@ -3102,6 +3127,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-505, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../chars2boy/AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8copa"]
@@ -3287,6 +3324,18 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_xncmy"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghostlayer/chars2girl/AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_q3k7k"]
 resource_name = "girl"
@@ -3363,6 +3412,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ghostlayer/chars2girl/AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_f3qo7"]
 resource_name = "kill"
@@ -3438,6 +3499,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ghostlayer/chars2girl/AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f3qo7"]
@@ -5488,7 +5561,7 @@ autoplay = "default"
 
 [node name="girlSide" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
 visible = false
-position = Vector2(100, 0)
+position = Vector2(-550, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/girlSide"]
 position = Vector2(1543, 814)
@@ -5516,6 +5589,12 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2boy"]
+stream = ExtResource("40_ftj77")
+volume_db = 24.0
+pitch_scale = 2.0
+parameters/looping = true
+
 [node name="chars2girl" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -5541,7 +5620,7 @@ sprite_frames = SubResource("SpriteFrames_8copa")
 
 [node name="boySide" type="CharacterBody2D" parent="ghostlayer/chars2girl"]
 visible = false
-position = Vector2(-550, 0)
+position = Vector2(-1200, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2girl/boySide"]
 position = Vector2(2163, 796)
@@ -5578,6 +5657,12 @@ position = Vector2(2147, 831)
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gkdoc")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ghostlayer/chars2girl"]
+stream = ExtResource("40_ftj77")
+volume_db = 24.0
+pitch_scale = 2.0
+parameters/looping = true
 
 [node name="idle" type="AnimationPlayer" parent="ghostlayer"]
 libraries = {
@@ -6232,7 +6317,14 @@ visible = false
 
 [node name="letterE" parent="explore/CanvasLayer/box/Node2D/EAnim" index="0"]
 visible = false
-position = Vector2(1190, 570)
+position = Vector2(555, 554)
+
+[node name="Node2D2" parent="explore/CanvasLayer/box" instance=ExtResource("58_lfgyo")]
+visible = false
+
+[node name="letterE" parent="explore/CanvasLayer/box/Node2D2/EAnim" index="0"]
+visible = false
+position = Vector2(1927, 529)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -6254,3 +6346,4 @@ one_shot = true
 [editable path="explore/CanvasLayer/window/Node2D"]
 [editable path="explore/CanvasLayer/blanket/Node2D"]
 [editable path="explore/CanvasLayer/box/Node2D"]
+[editable path="explore/CanvasLayer/box/Node2D2"]
