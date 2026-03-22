@@ -468,6 +468,7 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -487,6 +488,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="skip" type="Label" parent="AnimationPlayer"]
+visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5

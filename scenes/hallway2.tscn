@@ -598,10 +598,10 @@ shape = SubResource("RectangleShape2D_gf1ow")
 disabled = true
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-offset_left = 4.0
+offset_left = -9.0
 offset_top = 1120.0
-offset_right = 2303.0
-offset_bottom = 1297.0
+offset_right = 2317.0
+offset_bottom = 1314.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="ghosttext2" type="AnimationPlayer" parent="CanvasLayer"]

@@ -947,12 +947,12 @@ texture = ExtResource("2_13sgg")
 
 [node name="Label" type="Label" parent="easy"]
 z_index = 1
-offset_left = 407.5
+offset_left = 391.0
 offset_top = 378.0
-offset_right = 545.5
+offset_right = 559.0
 offset_bottom = 400.0
 theme_override_fonts/font = ExtResource("4_70i5f")
-text = "Easy Mode"
+text = "Normal Mode"
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="easy"]

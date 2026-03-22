@@ -151,10 +151,10 @@ position = Vector2(180, 840)
 scale = Vector2(3, 3)
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-offset_left = 4.0
+offset_left = -24.0
 offset_top = 1120.0
-offset_right = 2303.0
-offset_bottom = 1297.0
+offset_right = 2349.0
+offset_bottom = 1337.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="Label4" type="Label" parent="CanvasLayer"]

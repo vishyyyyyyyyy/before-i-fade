@@ -602,7 +602,7 @@ func hallwaypuzzle():
 	$CanvasLayer3/CanvasModulate/Picturepiece4.visible=true
 	$CanvasLayer/Node3/Timer.visible=false
 	$CanvasLayer/Node3/Label5.visible=false
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
 	$CanvasLayer/Node3/ColorRect.visible=true
 	$CanvasLayer/Node3/Menucard.visible=true
 	$CanvasLayer/Node3/Label2.visible=true

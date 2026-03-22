@@ -1902,9 +1902,9 @@ scale = Vector2(1.98297, 1.98297)
 texture = ExtResource("15_a7ten")
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
-offset_left = 4.0
+offset_left = -16.0
 offset_top = 1120.0
-offset_right = 2303.0
+offset_right = 2311.0
 offset_bottom = 1297.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
@@ -2408,8 +2408,11 @@ vertical_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Node3"]
 visible = false
 z_index = 2
-offset_right = 2303.0
-offset_bottom = 1291.0
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 2271.0
+offset_bottom = 1275.0
+scale = Vector2(1.03738, 1.03289)
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.74902)
 
@@ -2640,6 +2643,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3cp5q")
 
 [node name="neighborRight" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborRight"]
 position = Vector2(96, 786)
