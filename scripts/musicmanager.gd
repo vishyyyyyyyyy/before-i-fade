@@ -2,7 +2,6 @@ extends Node
 
 var music_on := true
 var music_player: AudioStreamPlayer
-var saved_position := 0.0
 var playlist_positions := {} # key: "scene_index"
 var playlist_indices := {}
 
@@ -102,13 +101,15 @@ func _on_music_finished():
 
 func toggle_music():
 	music_on = !music_on
-
 	if music_on:
-		music_player.play(saved_position)
+		music_player.volume_db = -10
+		_play_current_track()
 	else:
-		saved_position = music_player.get_playback_position()
+		# Save position into the per-track system before stopping
+		var key = current_scene_music + "_" + str(current_index)
+		playlist_positions[key] = music_player.get_playback_position()
 		music_player.stop()
-		
+
 	var bus_idx = AudioServer.get_bus_index("Master")
 	if bus_idx != -1:
 		AudioServer.set_bus_mute(bus_idx, not music_on)

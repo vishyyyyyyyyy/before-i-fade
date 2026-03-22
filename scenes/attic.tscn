@@ -5510,6 +5510,7 @@ libraries = {
 }
 
 [node name="boy" type="CharacterBody2D" parent="ghostlayer/chars2boy"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghostlayer/chars2boy/boy"]
 position = Vector2(825, 782)
