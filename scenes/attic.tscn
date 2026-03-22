@@ -3552,7 +3552,7 @@ height = 363.124
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8peh4"]
 size = Vector2(206.5, 139.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_wdb1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
