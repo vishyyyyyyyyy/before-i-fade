@@ -3,7 +3,8 @@ extends Node
 var music_on := true
 var music_player: AudioStreamPlayer
 var saved_position := 0.0
-var playlist_positions := {}
+var playlist_positions := {} # key: "scene_index"
+var playlist_indices := {}
 
 # --- NEW ---
 var playlists := {
@@ -37,7 +38,10 @@ func play_scene_music(scene_name: String):
 
 	# save current position before switching
 	if current_scene_music != "":
-		playlist_positions[current_scene_music] = music_player.get_playback_position()
+		var key = current_scene_music + "_" + str(current_index)
+		playlist_positions[key] = music_player.get_playback_position()
+		
+	playlist_indices[current_scene_music] = current_index
 
 	if current_scene_music == scene_name:
 		return
@@ -48,7 +52,10 @@ func play_scene_music(scene_name: String):
 
 	current_scene_music = scene_name
 	current_playlist = playlists[scene_name]
-	current_index = 0
+	if playlist_indices.has(scene_name):
+		current_index = playlist_indices[scene_name]
+	else:
+		current_index = 0
 
 	_play_current_track()
 
@@ -69,7 +76,14 @@ func _play_current_track():
 		return
 
 	music_player.stream = current_playlist[current_index]
-	music_player.play(0)
+
+	var key = current_scene_music + "_" + str(current_index)
+	var start_pos = 0.0
+
+	if playlist_positions.has(key):
+		start_pos = playlist_positions[key]
+
+	music_player.play(start_pos)
 
 func _on_music_finished():
 	if not music_on:

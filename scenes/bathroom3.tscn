@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://btxcdkx1xcumt"]
+[gd_scene load_steps=111 format=3 uid="uid://btxcdkx1xcumt"]
 
 [ext_resource type="Script" uid="uid://ceyb0342e5wip" path="res://scripts/bathroom_3.gd" id="1_kc3g8"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_wmlgl"]
@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://bakhy1lvwd722" path="res://assets/pixel-characters/characters.png" id="45_a8ml4"]
 [ext_resource type="Texture2D" uid="uid://7u8gxi5vqyqy" path="res://assets/pixel-characters/girl1.png" id="45_vsaef"]
 [ext_resource type="Texture2D" uid="uid://c5j23mk1xr76c" path="res://assets/pixel-characters/boy3.png" id="46_bsxvx"]
+[ext_resource type="AudioStream" uid="uid://df5tj0pqj7x08" path="res://assets/audio/Human Footstep 7.mp3" id="50_obg0h"]
 [ext_resource type="Script" uid="uid://6c5h48ynl6r3" path="res://scripts/camera_2dbathroom.gd" id="51_5i0mt"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="54_obg0h"]
 
@@ -1367,6 +1368,18 @@ size = Vector2(209.5, 49)
 
 [sub_resource type="Animation" id="Animation_a8ml4"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer3/AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bsxvx"]
 resource_name = "boyExit"
@@ -1402,6 +1415,18 @@ tracks/2/path = NodePath("CanvasLayer3/AnimationPlayer/boyWalk:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer3/AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1446,6 +1471,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-1947, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer3/AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bsxvx"]
@@ -3051,6 +3088,7 @@ sprite_frames = SubResource("SpriteFrames_qyk23")
 
 [node name="boyWalk" type="CharacterBody2D" parent="CanvasLayer3/AnimationPlayer"]
 visible = false
+position = Vector2(-1929, 0)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer3/AnimationPlayer/boyWalk"]
@@ -3061,6 +3099,12 @@ sprite_frames = SubResource("SpriteFrames_e0e3o")
 autoplay = "default"
 frame_progress = 0.518036
 flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer3/AnimationPlayer"]
+stream = ExtResource("50_obg0h")
+volume_db = 24.0
+pitch_scale = 2.0
+parameters/looping = true
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer3"]
 modulate = Color(0.823936, 0.405335, 1, 1)
