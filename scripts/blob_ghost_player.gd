@@ -27,59 +27,46 @@ func handle_ghost_fade(delta):
 	anim.modulate.a = alpha
 		
 func player_movement_blob(delta):
+	var input_dir = Vector2.ZERO
+
 	if Input.is_action_pressed("ui_right"):
-		current_dir = "right"
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		current_dir = "left"
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_down"):
-		current_dir = "down"
-		velocity.x = 0
-		velocity.y = speed
-	elif Input.is_action_pressed("ui_up"):
-		current_dir = "up"
-		velocity.x = 0
-		velocity.y = -speed
+		input_dir.x += 1
+	if Input.is_action_pressed("ui_left"):
+		input_dir.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_dir.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_dir.y -= 1
+
+	if input_dir != Vector2.ZERO:
+		input_dir = input_dir.normalized()
+		velocity = input_dir * speed
+		update_direction(input_dir)
 	else:
-		velocity.x = 0
-		velocity.y = 0
-		
+		velocity = Vector2.ZERO
+
 	move_and_slide()
 	
 func player_movement(delta):
-	var moving := false
+	var input_dir = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):
-		current_dir = "right"
-		play_anim(1)
-		velocity = Vector2(speed, 0)
-		moving = true
+		input_dir.x += 1
+	if Input.is_action_pressed("ui_left"):
+		input_dir.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_dir.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_dir.y -= 1
 
-	elif Input.is_action_pressed("ui_left"):
-		current_dir = "left"
+	if input_dir != Vector2.ZERO:
+		input_dir = input_dir.normalized()
+		velocity = input_dir * speed
+		update_direction(input_dir)
 		play_anim(1)
-		velocity = Vector2(-speed, 0)
-		moving = true
-
-	elif Input.is_action_pressed("ui_down"):
-		current_dir = "down"
-		play_anim(1)
-		velocity = Vector2(0, speed)
-		moving = true
-
-	elif Input.is_action_pressed("ui_up"):
-		current_dir = "up"
-		play_anim(1)
-		velocity = Vector2(0, -speed)
-		moving = true
-
 	else:
-		play_anim(0)
 		velocity = Vector2.ZERO
-
+		play_anim(0)
 
 	move_and_slide()
 	
@@ -119,3 +106,16 @@ func play_anim(movement):
 			anim.play(currentChar + "_forward")
 		elif movement == 0:
 			anim.play(currentChar + "_idle")
+			
+func update_direction(dir: Vector2):
+	# prioritize horizontal movement (this handles diagonals)
+	if dir.x != 0:
+		if dir.x > 0:
+			current_dir = "right"
+		else:
+			current_dir = "left"
+	else:
+		if dir.y > 0:
+			current_dir = "down"
+		else:
+			current_dir = "up"
