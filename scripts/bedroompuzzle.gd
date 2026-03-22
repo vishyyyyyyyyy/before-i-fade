@@ -598,7 +598,6 @@ func play_diary_sequence():
 		await get_tree().create_timer(1).timeout
 		await start_dialogue(2)
 		$Desk2.visible=false
-		await get_tree().create_timer(2).timeout
 		$AnimationPlayer3/Label4.visible=false
 		$AnimationPlayer3/GirlGhost.visible=false
 		$AnimationPlayer3/BoyGhost.visible=false

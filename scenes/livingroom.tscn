@@ -2085,7 +2085,7 @@ size = Vector2(613, 298)
 size = Vector2(578.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
-size = Vector2(286, 165.5)
+size = Vector2(286, 84.499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
 size = Vector2(379, 168.438)
@@ -3940,7 +3940,7 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-78.8333, -101.083)
+position = Vector2(-78.8333, -114.583)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_ikg1h")
 

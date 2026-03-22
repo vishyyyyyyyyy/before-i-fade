@@ -2640,6 +2640,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3cp5q")
 
 [node name="neighborRight" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer/neighborRight"]
 position = Vector2(96, 786)
