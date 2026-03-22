@@ -806,6 +806,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer3/AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_urv0e"]
 resource_name = "exitGirl"
@@ -2017,6 +2029,7 @@ libraries = {
 [node name="boyWalk" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer3"]
 visible = false
 z_index = -2
+position = Vector2(0, 478)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer3/boyWalk"]
@@ -2055,7 +2068,6 @@ sprite_frames = SubResource("SpriteFrames_ncy4w")
 [node name="girlWalk" type="CharacterBody2D" parent="CanvasLayer/AnimationPlayer3"]
 visible = false
 z_index = -2
-position = Vector2(0, 477)
 scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer3/girlWalk"]
