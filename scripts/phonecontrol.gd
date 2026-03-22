@@ -307,6 +307,7 @@ func incorrect2():
 	hearts-=1
 	
 	if Global.hardmode:
+		Global.hearts-=1
 		if Global.hearts  ==2:
 			$"../Heart3".visible=false
 			$"../Heart6".visible=true
@@ -315,7 +316,7 @@ func incorrect2():
 			$"../Heart2".visible=false
 			$"../Heart5".visible=true
 
-		elif Global.hearts <= 0:
+		else :
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.hardmodefail=true
@@ -323,8 +324,6 @@ func incorrect2():
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
-		else:
-			return
 		
 	if hearts  ==2:
 		$"../Heart3".visible=false
@@ -334,16 +333,15 @@ func incorrect2():
 		$"../Heart2".visible=false
 		$"../Heart5".visible=true
 
-	elif hearts <= 0:
+	else:
 		$"../Heart".visible=false
 		$"../Heart4".visible=true
 		Global.attic2fail = true
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/attic2.tscn")
 		return
-	
-	else:
-		return
+
+		
 	await get_tree().create_timer(2).timeout
 	$"../Wrong".visible=false
 	$"../phonemusic".visible=false
@@ -392,6 +390,7 @@ func _on_timer_2_timeout():
 	counter = 0
 	hearts -=1
 	if Global.hardmode:
+		Global.hearts-=1
 		if Global.hearts  ==2:
 			$"../Heart3".visible=false
 			$"../Heart6".visible=true
