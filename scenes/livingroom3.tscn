@@ -52,7 +52,7 @@ size = Vector2(613, 298)
 size = Vector2(578.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm2bm"]
-size = Vector2(286, 209)
+size = Vector2(286, 181.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qs6v4"]
 size = Vector2(379, 168.438)
@@ -110,7 +110,7 @@ scale = Vector2(3.875, 2.54688)
 texture = ExtResource("8_lj7lv")
 
 [node name="Coffeetable" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(768, 795)
+position = Vector2(873, 741)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("9_67gje")
 
@@ -231,7 +231,7 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-103.833, -101.667)
+position = Vector2(-74.8333, -94.0833)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_gm2bm")
 

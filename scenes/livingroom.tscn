@@ -2059,16 +2059,16 @@ size = Vector2(53, 318)
 size = Vector2(314, 533)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj75g"]
-size = Vector2(206.5, 598)
+size = Vector2(157.5, 598)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n8s8"]
-size = Vector2(629, 220)
+size = Vector2(375.5, 220)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhao1"]
-size = Vector2(327, 167)
+size = Vector2(397, 206.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw8nr"]
-size = Vector2(392, 274)
+size = Vector2(346, 226)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soh4j"]
 radius = 94.1509
@@ -2097,7 +2097,7 @@ size = Vector2(613, 298)
 size = Vector2(578.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikg1h"]
-size = Vector2(286, 209)
+size = Vector2(286, 165.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
 size = Vector2(379, 168.438)
@@ -2154,7 +2154,7 @@ scale = Vector2(3.875, 2.54688)
 texture = ExtResource("10_tlixj")
 
 [node name="Coffeetable" type="Sprite2D" parent="CanvasLayer/CanvasModulate"]
-position = Vector2(768, 779)
+position = Vector2(862, 691)
 scale = Vector2(5.27344, 5.27344)
 texture = ExtResource("11_1wnl2")
 
@@ -3776,7 +3776,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A clock from your mother."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/clock"]
-position = Vector2(501.75, 308)
+position = Vector2(477.25, 308)
 shape = SubResource("RectangleShape2D_tj75g")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3793,7 +3793,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A comfortable yellow couch."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/couch"]
-position = Vector2(1278, 384)
+position = Vector2(1404.75, 384)
 shape = SubResource("RectangleShape2D_2n8s8")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3810,7 +3810,7 @@ script = ExtResource("26_8wvgp")
 label_text = "A coffee table... and cake? "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/table"]
-position = Vector2(773.5, 673.5)
+position = Vector2(865.5, 714)
 shape = SubResource("RectangleShape2D_mhao1")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3828,7 +3828,7 @@ script = ExtResource("26_8wvgp")
 label_text = "An old tv."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explore/tv"]
-position = Vector2(1297, 962)
+position = Vector2(1320, 986)
 shape = SubResource("RectangleShape2D_vw8nr")
 disabled = true
 debug_color = Color(0.905161, 0.000134381, 0.747517, 0.42)
@@ -3952,7 +3952,7 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D"]
-position = Vector2(-103.833, -101.667)
+position = Vector2(-78.8333, -101.083)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_ikg1h")
 
