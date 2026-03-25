@@ -57,6 +57,8 @@ func _on_char_chosen():
 	if character_selected:
 		return 
 	character_selected = true
+	$Area2D/CollisionShape2D3.disabled=true
+	$Area2D2/CollisionShape2D3.disabled=true
 	$Label3.visible=false
 	$Area2D.visible=false
 	$Area2D2.visible=false

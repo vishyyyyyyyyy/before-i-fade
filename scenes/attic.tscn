@@ -5691,10 +5691,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer"]
-visible = false
 z_index = 2
-offset_right = 2347.0
-offset_bottom = 1132.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 2339.0
+offset_bottom = 1124.0
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.784314)
 

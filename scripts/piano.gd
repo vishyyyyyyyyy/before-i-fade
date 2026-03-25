@@ -68,6 +68,7 @@ func check_solution():
 			$"../Correct".visible=true
 			$"../AudioStreamPlayer".play()
 			$"../Timer2".stop()
+			Global.livingroomfail = false
 			await get_tree().create_timer(2).timeout
 			$"../Timer".visible=false
 			$"../Label8".visible=false
@@ -180,7 +181,6 @@ func _on_timer_2_timeout() -> void:
 		elif Global.hearts <= 0:
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
-			Global.hallwayfail = true
 			$CanvasLayer/Node3/Timer2.stop() 
 			Global.hardmodefail=true
 			await get_tree().create_timer(2).timeout
@@ -202,7 +202,6 @@ func _on_timer_2_timeout() -> void:
 		elif hearts <= 0:
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
-			Global.hallwayfail = true
 			$CanvasLayer/Node3/Timer2.stop() 
 			Global.livingroomfail = true
 			await get_tree().create_timer(2).timeout

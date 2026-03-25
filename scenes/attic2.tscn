@@ -1975,7 +1975,9 @@ volume_db = 20.0
 [node name="ColorRect" type="ColorRect" parent="ghostlayer"]
 visible = false
 z_index = 2
-offset_right = 2303.0
+offset_left = -25.0
+offset_top = -23.0
+offset_right = 2340.0
 offset_bottom = 1291.0
 mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 0.74902)

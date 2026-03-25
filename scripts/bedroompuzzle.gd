@@ -333,7 +333,6 @@ func _on_timer_2_timeout():
 		elif Global.hearts <= 0:
 			$Heart.visible=false
 			$Heart4.visible=true
-			Global.bedroomfail = true
 			$Timer2.stop() 
 			Global.hardmodefail=true
 			await get_tree().create_timer(2).timeout
@@ -453,7 +452,6 @@ func wrong():
 		elif Global.hearts <= 0:
 			$Heart.visible=false
 			$Heart4.visible=true
-			Global.bedroomfail = true
 			$Timer2.stop()
 			Global.hardmodefail=true
 			await get_tree().create_timer(2).timeout
@@ -483,6 +481,7 @@ func wrong():
 		
 		else:
 			return
+			
 			
 	
 	await get_tree().create_timer(2).timeout
