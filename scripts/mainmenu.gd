@@ -1,5 +1,6 @@
 extends Node2D
 func _ready() -> void:
+	$AnimationPlayer2/ColorRect.modulate = Color(1.0, 1.0, 1.0)
 	MusicManager.music_player.volume_db = -10
 	Global.character = "blob"
 	Global.bathroomCount = 0

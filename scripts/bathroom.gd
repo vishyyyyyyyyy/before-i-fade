@@ -43,6 +43,7 @@ func end_dialogue():
 	print("Dialogue finished")
 	$CanvasLayer3/Label3.visible=true
 	$CanvasLayer3/AnimationPlayer/skip.visible=false
+	$CanvasLayer3/Area2D/CollisionShape2D.disabled=false
 
 func textskip():
 	if animating:

@@ -71,6 +71,18 @@ size = Vector2(208, 49)
 
 [sub_resource type="Animation" id="Animation_x16fv"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_48ryc"]
 resource_name = "modulate"
@@ -266,10 +278,10 @@ tracks/13/path = NodePath("../ColorRect:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(12, 16),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -475,7 +487,6 @@ mouse_filter = 2
 color = Color(0.117182, 0.0425973, 0.151198, 1)
 
 [node name="Label" type="Label" parent="AnimationPlayer2"]
-visible = false
 z_index = 3
 offset_left = 323.0
 offset_top = 576.0
@@ -491,7 +502,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="AnimationPlayer2"]
-visible = false
 z_index = 3
 offset_left = 317.0
 offset_top = 578.0

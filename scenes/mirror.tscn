@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bmki4flc2dqe4"]
+[gd_scene load_steps=32 format=3 uid="uid://bmki4flc2dqe4"]
 
 [ext_resource type="Script" uid="uid://c0udm0efr6080" path="res://scripts/mirror.gd" id="1_ne3vj"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_50nco"]
@@ -28,6 +28,67 @@ sources/0 = SubResource("TileSetAtlasSource_nfheo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt34r"]
 size = Vector2(1540, 120.667)
+
+[sub_resource type="Animation" id="Animation_du446"]
+resource_name = "fade_in"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Area2D2/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Area2D2/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pqoxl"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pdpl"]
+_data = {
+&"RESET": SubResource("Animation_pqoxl"),
+&"fade_in": SubResource("Animation_du446")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_neuhm"]
 size = Vector2(209.5, 29.9609)
@@ -318,31 +379,6 @@ _data = {
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ne3vj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2303.0
-offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117182, 0.0425973, 0.151198, 1)
-metadata/_edit_lock_ = true
-
-[node name="boy" type="TextureButton" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.031
-offset_left = 922.0
-offset_top = 375.0
-offset_right = 1391.0
-offset_bottom = 457.979
-disabled = true
-
-[node name="girl" type="TextureButton" parent="ColorRect"]
-layout_mode = 0
-offset_left = 920.0
-offset_top = 658.0
-offset_right = 1397.0
-offset_bottom = 785.0
-disabled = true
-
 [node name="TileMap2" type="TileMap" parent="."]
 modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1226, 874)
@@ -368,6 +404,7 @@ offset_left = -8.0
 offset_top = 1112.0
 offset_right = 2318.0
 offset_bottom = 1297.0
+mouse_filter = 2
 color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
@@ -397,6 +434,12 @@ script = ExtResource("5_jp4bq")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/Area2D"]
 polygon = PackedVector2Array(-15.8065, -31.0323, -9.09678, -33.5484, 9.41935, -33.4839, 15.0968, -31.3548, 20.4516, -23.5484, 21.3548, 30.3871, -21.6774, 30.7097, -21.3548, -21.5484)
 
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Area2D/CollisionShape2D3")
+libraries = {
+&"": SubResource("AnimationLibrary_0pdpl")
+}
+
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 z_index = 1
@@ -407,11 +450,13 @@ normal_texture = ExtResource("5_0u51k")
 hover_texture = ExtResource("6_jp4bq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
 texture = ExtResource("5_0u51k")
 
 [node name="Label" type="Label" parent="Area2D"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 offset_left = -26.1552
 offset_top = -0.183205
@@ -437,14 +482,16 @@ position = Vector2(1153, 682)
 scale = Vector2(3, 3)
 script = ExtResource("4_3w1wn")
 normal_texture = ExtResource("5_0u51k")
-hover_texture = ExtResource("5_0u51k")
+hover_texture = ExtResource("6_jp4bq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 scale = Vector2(2.26111, 2.26111)
 texture = ExtResource("5_0u51k")
 
 [node name="Label" type="Label" parent="Area2D2"]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 offset_left = -29.1552
 offset_top = 0.168945
@@ -663,10 +710,10 @@ text = "(SPACE to skip text)"
 
 [node name="CanvasPause" parent="." instance=ExtResource("17_du446")]
 
-[connection signal="pressed" from="ColorRect/boy" to="Area2D" method="_on_boy_pressed"]
-[connection signal="pressed" from="ColorRect/girl" to="Area2D" method="_on_girl_pressed"]
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_boy_pressed"]
 [connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Area2D/Label" to="Area2D" method="_on_label_mouse_entered"]
-[connection signal="mouse_entered" from="Area2D2" to="Area2D" method="_on_area_2d_2_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D2" to="Area2D" method="_on_area_2d_2_mouse_exited"]
+[connection signal="input_event" from="Area2D2" to="Area2D2" method="_on_girl_pressed"]
+[connection signal="mouse_entered" from="Area2D2" to="Area2D2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2" to="Area2D2" method="_on_mouse_exited"]
