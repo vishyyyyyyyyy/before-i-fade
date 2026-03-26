@@ -50,8 +50,8 @@ texture = ExtResource("4_yocy6")
 [sub_resource type="TileSet" id="TileSet_ecit3"]
 sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1534.67, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oxbo"]
+size = Vector2(1548.67, 157.334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
 size = Vector2(286, 393.5)
@@ -69,7 +69,7 @@ size = Vector2(2309.25, 174.25)
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 44)
+size = Vector2(361, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
 size = Vector2(422, 107.75)
@@ -722,12 +722,12 @@ texture = ExtResource("10_wv56w")
 [node name="scenecollisions" type="Node" parent="."]
 
 [node name="textcollision" type="StaticBody2D" parent="scenecollisions"]
-visible = false
 position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scenecollisions/textcollision"]
-shape = SubResource("RectangleShape2D_rggls")
+position = Vector2(1.66663, -20.9998)
+shape = SubResource("RectangleShape2D_4oxbo")
 
 [node name="DeskCollision" type="StaticBody2D" parent="scenecollisions"]
 
@@ -772,7 +772,7 @@ script = ExtResource("11_xnet5")
 target_scene = "res://scenes/hallway.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(-274.5, -106)
+position = Vector2(-274.5, -121)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 

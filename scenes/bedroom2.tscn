@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://brofe21jg5np5"]
+[gd_scene load_steps=97 format=3 uid="uid://brofe21jg5np5"]
 
 [ext_resource type="Script" uid="uid://co7niili7bdih" path="res://scripts/bedroom_2.gd" id="1_wfgsr"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_yahhj"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b74gfe8ws4dme" path="res://assets/safe.png" id="7_rme15"]
 [ext_resource type="Texture2D" uid="uid://bc1laofox1p8p" path="res://assets/window.png" id="8_r7ukq"]
 [ext_resource type="Texture2D" uid="uid://b4gesyrmhk2fq" path="res://assets/calendar.png" id="9_ij3ta"]
-[ext_resource type="Script" uid="uid://ch43gntrjf58v" path="res://scripts/scene_trigger.gd" id="10_tcvsn"]
 [ext_resource type="Texture2D" uid="uid://bef8ahp7djsg7" path="res://assets/calendar2.png" id="10_yahhj"]
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="11_flduu"]
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_0xrbb"]
@@ -56,9 +55,6 @@ texture = ExtResource("4_onm5g")
 [sub_resource type="TileSet" id="TileSet_ecit3"]
 sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1534.67, 128)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
 size = Vector2(286, 393.5)
 
@@ -71,8 +67,8 @@ size = Vector2(187, 104)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gd2a"]
 size = Vector2(2309.25, 174.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 27)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
+size = Vector2(1548.67, 157.334)
 
 [sub_resource type="Animation" id="Animation_vthm4"]
 length = 0.001
@@ -1517,12 +1513,6 @@ size = Vector2(422, 107.75)
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_wfgsr")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2303.0
-offset_bottom = 1291.0
-mouse_filter = 2
-color = Color(0.117182, 0.0425973, 0.151198, 1)
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="CanvasModulate2" type="CanvasModulate" parent="CanvasLayer2"]
@@ -1586,14 +1576,6 @@ position = Vector2(1896, 148)
 scale = Vector2(3, 3)
 texture = ExtResource("10_yahhj")
 
-[node name="textcollision" type="StaticBody2D" parent="."]
-position = Vector2(1151, 1204.5)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_rggls")
-
 [node name="DeskCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeskCollision"]
@@ -1618,15 +1600,13 @@ shape = SubResource("RectangleShape2D_jsnhi")
 position = Vector2(1165.38, 100.875)
 shape = SubResource("RectangleShape2D_8gd2a")
 
-[node name="SceneTrigger" type="Area2D" parent="."]
-position = Vector2(556, 1203)
-script = ExtResource("10_tcvsn")
-target_scene = "res://scenes/bathroom.tscn"
+[node name="textcollision" type="StaticBody2D" parent="."]
+position = Vector2(1151, 1204.5)
+scale = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(1462.5, -97.5)
-shape = SubResource("RectangleShape2D_lj4hb")
-disabled = true
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
+position = Vector2(1.66663, -20.9998)
+shape = SubResource("RectangleShape2D_rggls")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -2521,8 +2501,6 @@ disabled = true
 wait_time = 2.0
 one_shot = true
 
-[connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
-[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="mouse_entered" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node2/Area2D" to="Node2/Area2D" method="_on_mouse_exited"]
 

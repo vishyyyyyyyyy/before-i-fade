@@ -1629,7 +1629,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlnob"]
-size = Vector2(1534.67, 151.667)
+size = Vector2(1534.67, 182)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w57m6"]
 size = Vector2(169, 1323)
@@ -3175,9 +3175,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scenecollisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
+position = Vector2(-1582.33, -454.333)
 shape = SubResource("RectangleShape2D_nlnob")
-metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scenecollisions"]
 position = Vector2(-5.5, 21.5)

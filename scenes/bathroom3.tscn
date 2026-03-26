@@ -143,8 +143,8 @@ texture = ExtResource("3_kc3g8")
 [sub_resource type="TileSet" id="TileSet_q0btg"]
 sources/0 = SubResource("TileSetAtlasSource_3ouov")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
-size = Vector2(1534.67, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obg0h"]
+size = Vector2(1541.33, 176)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcjub"]
 radius = 100.359
@@ -1588,8 +1588,8 @@ size = Vector2(29.5, 319.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l23g3"]
-size = Vector2(2309.25, 620)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0e3o"]
+size = Vector2(2309.25, 560)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kc3g8")
@@ -1674,7 +1674,8 @@ position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_m8av8")
+position = Vector2(3.33252, -29)
+shape = SubResource("RectangleShape2D_obg0h")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 4
@@ -3115,18 +3116,17 @@ debug_color = Color(1, 1, 1, 0.42)
 position = Vector2(-74.5, 651.5)
 shape = SubResource("RectangleShape2D_2v03t")
 
+[node name="WallCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollision"]
+position = Vector2(1165.38, 263)
+shape = SubResource("RectangleShape2D_e0e3o")
+
 [node name="rightwallcollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
 position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_2v03t")
-
-[node name="WallCollision" type="StaticBody2D" parent="rightwallcollision"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision/WallCollision"]
-position = Vector2(1165.38, 293)
-shape = SubResource("RectangleShape2D_l23g3")
-metadata/_edit_lock_ = true
 
 [node name="CanvasPause" parent="." instance=ExtResource("54_obg0h")]
 

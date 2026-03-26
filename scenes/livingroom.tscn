@@ -2070,7 +2070,7 @@ height = 322.096
 size = Vector2(402.785, 187.964)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
-size = Vector2(1534.67, 151.667)
+size = Vector2(1538.67, 159.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ef23"]
 size = Vector2(169, 1323)
@@ -3895,9 +3895,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
+position = Vector2(-1580.33, -447)
 shape = SubResource("RectangleShape2D_1wnl2")
-metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)

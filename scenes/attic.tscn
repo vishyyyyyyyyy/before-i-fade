@@ -5691,6 +5691,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer"]
+visible = false
 z_index = 2
 offset_left = -8.0
 offset_top = -8.0
@@ -6064,7 +6065,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("35_gkdoc")
 theme_override_font_sizes/font_size = 32
-text = "Release the past."
+text = "Release the past"
 horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/choice"]
@@ -6100,7 +6101,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("35_gkdoc")
 theme_override_font_sizes/font_size = 32
-text = "Rewrite the past."
+text = "Rewrite the past"
 horizontal_alignment = 1
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/choice2"]

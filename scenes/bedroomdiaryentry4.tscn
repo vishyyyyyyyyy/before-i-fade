@@ -68,7 +68,7 @@ texture = ExtResource("4_2c3dm")
 sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 27)
+size = Vector2(361, 57)
 
 [sub_resource type="Animation" id="Animation_2c3dm"]
 length = 0.001
@@ -1884,8 +1884,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvaqh"]
 size = Vector2(126, 130.333)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1534.67, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k81dp"]
+size = Vector2(1548.67, 157.334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
 size = Vector2(286, 393.5)
@@ -2093,7 +2093,7 @@ script = ExtResource("11_lgyf2")
 target_scene = "res://scenes/hallway6.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(-274.5, -97.5)
+position = Vector2(-274.5, -112.5)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
@@ -3444,7 +3444,8 @@ position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scenecollisions/textcollision"]
-shape = SubResource("RectangleShape2D_rggls")
+position = Vector2(1.66663, -20.9998)
+shape = SubResource("RectangleShape2D_k81dp")
 
 [node name="DeskCollision" type="StaticBody2D" parent="scenecollisions"]
 

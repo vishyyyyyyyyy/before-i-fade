@@ -34,16 +34,16 @@ texture = ExtResource("3_ih4jt")
 sources/0 = SubResource("TileSetAtlasSource_3ouov")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
-size = Vector2(1534.67, 118)
+size = Vector2(1541.33, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgtk"]
-size = Vector2(29.5, 319.5)
+size = Vector2(60.5, 319.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l23g3"]
-size = Vector2(2309.25, 620)
+size = Vector2(2309.25, 560)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jjgtk")
@@ -139,6 +139,7 @@ position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.33252, -29)
 shape = SubResource("RectangleShape2D_m8av8")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
@@ -178,7 +179,7 @@ script = ExtResource("13_o21yg")
 target_scene = "res://scenes/bedroom2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(20.25, 962.75)
+position = Vector2(35.75, 962.75)
 shape = SubResource("RectangleShape2D_jjgtk")
 debug_color = Color(1, 1, 1, 0.42)
 
@@ -190,17 +191,17 @@ debug_color = Color(1, 1, 1, 0.42)
 position = Vector2(-74.5, 651.5)
 shape = SubResource("RectangleShape2D_2v03t")
 
+[node name="WallCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollision"]
+position = Vector2(1165.38, 263)
+shape = SubResource("RectangleShape2D_l23g3")
+
 [node name="rightwallcollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision"]
 position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_2v03t")
-
-[node name="WallCollision" type="StaticBody2D" parent="rightwallcollision"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwallcollision/WallCollision"]
-position = Vector2(1165.38, 293)
-shape = SubResource("RectangleShape2D_l23g3")
 
 [connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

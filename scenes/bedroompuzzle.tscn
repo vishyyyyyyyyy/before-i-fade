@@ -63,8 +63,8 @@ texture = ExtResource("3_n12it")
 [sub_resource type="TileSet" id="TileSet_ecit3"]
 sources/0 = SubResource("TileSetAtlasSource_wx2xb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rggls"]
-size = Vector2(1534.67, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyyxh"]
+size = Vector2(1548.67, 157.334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysy21"]
 size = Vector2(286, 393.5)
@@ -79,7 +79,7 @@ size = Vector2(187, 104)
 size = Vector2(2309.25, 174.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 42)
+size = Vector2(361, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
 size = Vector2(169, 1323)
@@ -762,7 +762,8 @@ position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="textcollision"]
-shape = SubResource("RectangleShape2D_rggls")
+position = Vector2(1.66663, -20.9998)
+shape = SubResource("RectangleShape2D_gyyxh")
 
 [node name="DeskCollision" type="StaticBody2D" parent="."]
 
@@ -794,7 +795,7 @@ script = ExtResource("13_g3xtp")
 target_scene = "res://scenes/bathroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(1462.5, -105)
+position = Vector2(1462.5, -119.5)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
 
