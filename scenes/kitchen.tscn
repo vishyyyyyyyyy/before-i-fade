@@ -1182,7 +1182,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wy14m"]
-size = Vector2(39, 330)
+size = Vector2(41, 330)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx1yq"]
 size = Vector2(73.9618, 91.2696)
@@ -1705,7 +1705,7 @@ size = Vector2(561, 74)
 size = Vector2(422.667, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
-size = Vector2(1534.67, 128.333)
+size = Vector2(1534.67, 162.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwf2y"]
 size = Vector2(169, 1323)
@@ -2417,7 +2417,7 @@ script = ExtResource("75_knauv")
 target_scene = "res://scenes/hallway2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
-position = Vector2(2274.5, 886)
+position = Vector2(2273.5, 886)
 shape = SubResource("RectangleShape2D_wy14m")
 disabled = true
 
@@ -3408,9 +3408,8 @@ position = Vector2(3523.5, 1854.5)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -431.5)
+position = Vector2(-1582.33, -453.833)
 shape = SubResource("RectangleShape2D_mwmjw")
-metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-9.5, 8)
