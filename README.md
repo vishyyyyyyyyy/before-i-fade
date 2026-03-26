@@ -1,13 +1,23 @@
-# 👻 Before I Fade
+# 👻 Before I Fade 👻
 
 <img width="1900" height="1100" alt="Screenshot 2026-03-07 100537" src="https://github.com/user-attachments/assets/977c6b43-aa4b-4bdc-ba54-bb440089ce4e" />
 
 
 **Before I Fade** is a murder mystery themed, 2D visual novel game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder _before you fade_.
 
+```⠀⠀⠀⠀
+      ⠀⢀⣴⣿⣿⣿⣦⠀
+⠀⠀⠀⠀⣰⣿⡟⢻⣿⡟⢻⣧
+⠀⠀⠀⣰⣿⣿⣇⣸⣿⣇⣸⣿
+⠀⠀⣴⣿⣿⣿⣿⠟⢻⣿⣿⣿
+⣠⣾⣿⣿⣿⣿⣿⣤⣼⣿⣿⠇  🕯️๋࣭ ⭑𓍯𓂃
+⢿⡿⢿⣿⣿⣿⣿⣿⣿⣿⡿⠀
+⠀⠀⠈⠿⠿⠋⠙⢿⣿⡿⠁⠀
+```
+
 ---
 
-## 🕯️ About the Game
+## About the Game
 You play as a ghost, and your goal is to collect diary pages to find clues about who murdered you and why. Explore the entire house and complete puzzles within time limits to find them. Visiting each room floods your memories, forcing you to relive fragments of what happened in the past, moving you one step closer towards solving this murder mystery.
 
 As the truth comes into focus, you’re faced with one final choice:  
@@ -17,7 +27,7 @@ There are **two possible endings**.
 
 ---
 
-## 🎮 Controls
+## Controls
 
 <img width="600" height="500" alt="Screenshot 2026-03-14 232730" src="https://github.com/user-attachments/assets/6c1bc373-018f-4aa4-9e75-872b902e4262" />
 
@@ -31,7 +41,7 @@ There are **two possible endings**.
 
 ---
 
-## ⚙️ Core Systems
+## Core Systems
 
 **Puzzles:**
 
@@ -83,7 +93,7 @@ There are **two possible endings**.
 
 ---
 
-## 💻Tools and Languages
+## Tools and Languages
 
 - Godot Engine
 - GDScript
@@ -91,7 +101,7 @@ There are **two possible endings**.
 - HTML5 build
 ---
 
-## 💭 Why We Made This
+## Why We Made This
 
 We wanted to make a game showcasing the theme, "changing of time",  through multiple ways
 
@@ -107,11 +117,11 @@ We included the "changing of time" through
 - Being able to travel between present and past memories with the obvious gloomy present color scheme vs the bright and joyful past color scheme
 - Calendar detailing
 - Timers in puzzles
-- Time loop paradox (iykyk😉)
+- Time loop paradox (iykyk >⩊<)
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 We are currently working on creating a new release with even better features to make the game more enjoyable! Expect these changes soon~
 - Adding camera properties for dramatic effects
@@ -122,7 +132,7 @@ We are currently working on creating a new release with even better features to 
 
 ---
 
-## 🎶 Credits
+## Credits
 
 Created by [Vishalya Sairam](https://github.com/vishyyyyyyyyy) and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
 
@@ -143,12 +153,14 @@ Music & Sound (from Pixabay):
 
 - Piano notes — u_c58whxla22
   
-- Explore the Universe and Beyond — Musictown
+- Horror — SoundGalleryByDmitryTaras
+
+- Horror Playhouse — geoffharvey Spooked — geoffharvey
 
 - Kerosene — LBDLPROD
 
 - Puzzle Game — Cyberwave-Orchestra
-
+  
 
 Video Overlay:
 - Damage Film Effects — Atomic Dreams
@@ -161,9 +173,8 @@ Engine:
 - Made with love in Godot💖
 ---
 
-## ▶️Where to play
+## Play now on itch.io! (´▽`ʃ♡ƪ)
 
-**Play directly on itch.io (´▽`ʃ♡ƪ):**  
 https://vishyyyyyyyyy.itch.io/before-i-fade
 
 ---
