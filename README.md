@@ -1,6 +1,7 @@
 # 👻 Before I Fade 👻
 
-<img width="1900" height="1100" alt="Screenshot 2026-03-07 100537" src="https://github.com/user-attachments/assets/977c6b43-aa4b-4bdc-ba54-bb440089ce4e" />
+<img width="1000" height="664" alt="Screenshot 2026-03-26 073152" src="https://github.com/user-attachments/assets/5a3b27b5-d658-456a-a573-74ae22a20009" />
+
 
 
 **Before I Fade** is a murder mystery themed, 2D visual novel game where you play as a ghost, waking up one month after your death. Explore your home to uncover memories and piece together the truth behind your murder _before you fade_.
