@@ -20,23 +20,31 @@ func _on_mouse_exited():
 	
 var selected_character := ""
 
-func _on_boy_pressed() -> void:
-	if selected_character == "boy":
-		Global.character = "boyGhost"
-		Global.pastChar = "pastBoy"
-		emit_signal("char_chosen")
-	else:
-		selected_character = "boy"
-		$"../BoyGhost".visible = true
-		$"../GirlGhost".visible = false
+func _on_boy_pressed(viewport, event, shape_idx):
+	if event is InputEventMouseButton \
+	and event.pressed \
+	and event.button_index == MOUSE_BUTTON_LEFT:
+		print("press")
+		if selected_character == "boy":
+			Global.character = "boyGhost"
+			Global.pastChar = "pastBoy"
+			emit_signal("char_chosen")
+		else:
+			selected_character = "boy"
+			$"../BoyGhost".visible = true
+			$"../GirlGhost".visible = false
 
-func _on_girl_pressed() -> void:
-	if selected_character == "girl":
-		Global.character = "girlGhost"
-		Global.pastChar = "pastGirl"
-		emit_signal("char_chosen")
-	else:
-		selected_character = "girl"
-		$"../BoyGhost".visible = false
-		$"../GirlGhost".visible = true
-		
+func _on_girl_pressed(viewport, event, shape_idx):
+	if event is InputEventMouseButton \
+	and event.pressed \
+	and event.button_index == MOUSE_BUTTON_LEFT:
+		print("press")
+		if selected_character == "girl":
+			Global.character = "girlGhost"
+			Global.pastChar = "pastGirl"
+			emit_signal("char_chosen")
+		else:
+			selected_character = "girl"
+			$"../BoyGhost".visible = false
+			$"../GirlGhost".visible = true
+			

@@ -40,10 +40,10 @@ func on_cleaned():
 	$"../../Sponge".visible=false
 	$"../../Label2".visible=false
 	$"../../Label3".visible=true
-	$"../../ColorRect/boy".disabled = false
-	$"../../ColorRect/girl".disabled = false
 	$"../../Area2D2".visible=true
 	$"../../Area2D".visible=true
+	$"../../AnimationPlayer3".play("fade_in")
+	await $"../../AnimationPlayer3".animation_finished
 	$"../../Area2D/CollisionShape2D3".disabled=false
 	$"../../Area2D2/CollisionShape2D3".disabled=false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
