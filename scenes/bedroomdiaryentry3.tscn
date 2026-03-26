@@ -63,7 +63,7 @@ size = Vector2(2309.25, 174.25)
 size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lj4hb"]
-size = Vector2(361, 60)
+size = Vector2(361, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xrbb"]
 size = Vector2(422, 107.75)
@@ -260,7 +260,6 @@ texture = ExtResource("10_uh46t")
 [node name="scenecollisions" type="Node" parent="."]
 
 [node name="textcollision" type="StaticBody2D" parent="scenecollisions"]
-visible = false
 position = Vector2(1151, 1204.5)
 scale = Vector2(1.5, 1.5)
 
@@ -311,9 +310,11 @@ script = ExtResource("11_i2gc4")
 target_scene = "res://scenes/hallway4.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(-274.5, -114)
+z_index = 2
+position = Vector2(-274.5, -121)
 shape = SubResource("RectangleShape2D_lj4hb")
 disabled = true
+debug_color = Color(0, 0, 0, 0.42)
 
 [node name="ghostlayer" type="CanvasLayer" parent="."]
 
