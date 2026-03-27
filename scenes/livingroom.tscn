@@ -2069,8 +2069,8 @@ height = 322.096
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nou7j"]
 size = Vector2(402.785, 187.964)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wnl2"]
-size = Vector2(1538.67, 159.333)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58in4"]
+size = Vector2(1534.67, 178.666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ef23"]
 size = Vector2(169, 1323)
@@ -2088,7 +2088,7 @@ size = Vector2(578.5, 32)
 size = Vector2(286, 84.499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24a1y"]
-size = Vector2(379, 168.438)
+size = Vector2(379, 50.4378)
 
 [node name="Node2D5" type="Node2D"]
 script = ExtResource("1_po3oh")
@@ -3895,8 +3895,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1580.33, -447)
-shape = SubResource("RectangleShape2D_1wnl2")
+position = Vector2(-1582.33, -456.667)
+shape = SubResource("RectangleShape2D_58in4")
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)
@@ -3948,10 +3948,9 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
-position = Vector2(67, 40.9063)
+position = Vector2(67, 60.573)
 scale = Vector2(0.333333, 0.333333)
 shape = SubResource("RectangleShape2D_24a1y")
-metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/pianokeys" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]

@@ -37,7 +37,7 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 size = Vector2(53, 318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1cff"]
-size = Vector2(1534.67, 151.667)
+size = Vector2(1534.67, 178.666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn81v"]
 size = Vector2(169, 1323)
@@ -54,8 +54,8 @@ size = Vector2(578.5, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxs1i"]
 size = Vector2(286, 84.999)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2063f"]
-size = Vector2(379, 106.438)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72jy3"]
+size = Vector2(379, 50.4378)
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_q1cff")
@@ -178,9 +178,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
+position = Vector2(-1582.33, -456.667)
 shape = SubResource("RectangleShape2D_q1cff")
-metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)
@@ -232,9 +231,9 @@ position = Vector2(1086.5, 880.5)
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene collisions/StaticBody2D2"]
-position = Vector2(67, 51.2396)
+position = Vector2(67, 60.573)
 scale = Vector2(0.333333, 0.333333)
-shape = SubResource("RectangleShape2D_2063f")
+shape = SubResource("RectangleShape2D_72jy3")
 
 [node name="CanvasPause" parent="." instance=ExtResource("16_72jy3")]
 

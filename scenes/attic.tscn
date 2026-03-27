@@ -3531,7 +3531,7 @@ size = Vector2(209.5, 49)
 size = Vector2(516, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qajrb"]
-size = Vector2(1534.67, 151.667)
+size = Vector2(1540.67, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pnpo"]
 size = Vector2(169, 1323)
@@ -3929,6 +3929,13 @@ scale = Vector2(4.45313, 4.45313)
 texture = ExtResource("16_6i1t2")
 metadata/_edit_lock_ = true
 
+[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
+offset_left = -5.0
+offset_top = 1117.0
+offset_right = 2312.0
+offset_bottom = 1307.0
+color = Color(0.117647, 0.0431373, 0.152941, 1)
+
 [node name="blobGhostPlayer" parent="ghostlayer" instance=ExtResource("9_5pnpo")]
 position = Vector2(2205, 913)
 scale = Vector2(3, 3)
@@ -4017,13 +4024,6 @@ modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1150, 470)
 scale = Vector2(0.781333, 0.674)
 texture = ExtResource("11_nhg3k")
-
-[node name="ColorRect2" type="ColorRect" parent="ghostlayer"]
-offset_left = -5.0
-offset_top = 1117.0
-offset_right = 2312.0
-offset_bottom = 1307.0
-color = Color(0.117647, 0.0431373, 0.152941, 1)
 
 [node name="ghosttext4" type="AnimationPlayer" parent="ghostlayer"]
 root_node = NodePath("../Bloodblanket")
@@ -6125,9 +6125,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
+position = Vector2(-1579.33, -457.333)
 shape = SubResource("RectangleShape2D_qajrb")
-metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)

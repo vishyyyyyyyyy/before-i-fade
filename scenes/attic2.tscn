@@ -1183,8 +1183,8 @@ _data = {
 &"modulate": SubResource("Animation_6awvt")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qajrb"]
-size = Vector2(1534.67, 151.667)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lubtl"]
+size = Vector2(1540.67, 180)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pnpo"]
 size = Vector2(169, 1323)
@@ -2187,9 +2187,8 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
-position = Vector2(-1582.33, -443.167)
-shape = SubResource("RectangleShape2D_qajrb")
-metadata/_edit_lock_ = true
+position = Vector2(-1579.33, -457.333)
+shape = SubResource("RectangleShape2D_lubtl")
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)
