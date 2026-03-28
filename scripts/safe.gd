@@ -70,6 +70,7 @@ func _process(delta: float) -> void:
 		$"../continue".visible = true
 		$"../continue/CollisionShape2D".disabled=false
 		
+	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
 	if time_left_seconds < 6:
 		if int(Time.get_ticks_msec() / 300) % 3 == 0:
 			$"../Label5".add_theme_color_override("font_color", Color(1,0,0))

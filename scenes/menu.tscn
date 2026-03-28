@@ -701,9 +701,8 @@ scale = Vector2(0.895561, 0.895561)
 theme_override_colors/font_color = Color(0.65098, 0.403922, 0.768627, 1)
 theme_override_fonts/font = ExtResource("7_6cdou")
 theme_override_font_sizes/font_size = 24
-text = "Press ESC key to access
-in game settings. SPACE
-to skip dialogue."
+text = "Press ESC key to pause. 
+SPACE to skip dialogue."
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="."]
