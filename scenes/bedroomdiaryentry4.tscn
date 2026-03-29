@@ -3183,15 +3183,15 @@ vertical_alignment = 1
 [node name="Label6" type="Label" parent="ghostlayer"]
 visible = false
 z_index = 5
-offset_left = 306.0
+offset_left = 187.0
 offset_top = 1176.0
-offset_right = 2002.0
+offset_right = 2119.0
 offset_bottom = 1249.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_wly0k")
 theme_override_font_sizes/font_size = 32
-text = "Unscramble the fridge magnets (A, F, E, D) and type it into the safe.
-press enter to save."
+text = "Enter the 4-letter code to unlock the safe.
+Press Enter to submit."
 horizontal_alignment = 1
 vertical_alignment = 1
 

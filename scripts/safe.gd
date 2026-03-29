@@ -56,12 +56,6 @@ func _process(delta: float) -> void:
 		$"../Safecloseup".visible = true
 		$"../TileMap3".visible = true
 		await start_dialogue(0)
-		if Global.character == "girlGhost":
-			$"../fridgememory".play("girl")
-		if Global.character == "boyGhost":
-			$"../fridgememory".play("boy")
-		await $"../fridgememory".animation_finished
-		await start_dialogue(1)
 		$"../ColorRect".visible = true
 		$"../Menucard".visible = true
 		$"../Label2".visible = true
@@ -109,6 +103,7 @@ func start_dialogue(index: int):
 	var anim_name := ""
 	
 	if anim_index == 0:
+		
 		if Global.character =="girlGhost":
 			anim_name = "girl"
 
@@ -118,6 +113,7 @@ func start_dialogue(index: int):
 			print("error animating text")
 	
 	if anim_index == 1:
+		$"../ghosttext3/skip".visible=false
 		$"../ghosttext2/skip".visible=false
 		$"../ghosttext2/BoyGhost".visible=false
 		$"../ghosttext2/GirlGhost".visible=false
@@ -245,6 +241,7 @@ func end_dialogue():
 		$"../ghosttext2/BoyGhost".visible=false
 		$"../ghosttext2/GirlGhost".visible=false
 		$"../ghosttext2/Label2".visible=false
+		$"../ghosttext3/skip".visible=false
 		
 			
 	if anim_index == 1:
@@ -426,12 +423,27 @@ func _on_timer_2_timeout() -> void:
 		
 		else:
 			return
-
+	$"../Timer2".stop()
 	await get_tree().create_timer(2).timeout
-	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
-	$"../Timer2".start()
 	reset()
 
 func reset():
+	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
+	$"../LineEdit".editable = false
+	$"../LineEdit".visible =false
+	$"../Label6".visible=false
 	$"../LineEdit".text = ""  
 	$"../Wrong".visible=false
+	$"../ghosttext3/skip".visible=false
+	if Global.character == "girlGhost":
+		$"../fridgememory".play("girl")
+	if Global.character == "boyGhost":
+		$"../fridgememory".play("boy")
+	await $"../fridgememory".animation_finished
+	await start_dialogue(1)
+	$"../Timer2".start()
+	$"../ghosttext3/skip".visible=false
+	$"../LineEdit".editable = true
+	$"../Label6".visible=true
+	$"../LineEdit".visible =true
+	$"../LineEdit".editable = true
