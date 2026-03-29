@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 290
+const speed = 295
 var current_dir = "none"
 var currentChar = Global.character
 var ghost_t := 0.0

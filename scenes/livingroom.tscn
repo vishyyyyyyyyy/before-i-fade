@@ -3538,11 +3538,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("34_bng4i")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("35_dg5mc")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="Label13" type="Label" parent="ghostlayer"]
 visible = false
@@ -3647,7 +3647,7 @@ grow_vertical = 0
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("18_rq2ij")
 theme_override_font_sizes/font_size = 32
-text = "\"Hi Sweety, I'll supervise ur $ for you.🖤\""
+text = "\"Hi Sweety, I'll supervise ur $ for you. <3\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -1970,7 +1970,7 @@ autowrap_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer/AnimationPlayer"]
 stream = ExtResource("14_82lia")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="ColorRect" type="ColorRect" parent="ghostlayer"]
 visible = false
@@ -2151,11 +2151,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("41_j8y3x")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("42_qjqex")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="ghostlayer"]
 modulate = Color(0.823936, 0.405335, 1, 1)

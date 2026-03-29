@@ -5943,8 +5943,8 @@ offset_bottom = 1249.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
-text = "Memorize the box layout in 10 seconds in the past, 
-then place them correctly in the next 10 seconds in the present."
+text = "Memorize which boxes are open and closed in 10 seconds.
+Then recreate them in the next 10 seconds."
 horizontal_alignment = 1
 vertical_alignment = 1
 
