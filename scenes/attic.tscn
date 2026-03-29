@@ -6012,11 +6012,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("42_p08rk")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("43_l4del")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="Label13" type="Label" parent="ghostlayer"]
 visible = false

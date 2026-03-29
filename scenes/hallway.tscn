@@ -2592,11 +2592,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
 stream = ExtResource("29_olmwx")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Node3"]
 stream = ExtResource("30_odr86")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="diarycontinue" type="Area2D" parent="CanvasLayer/Node3"]
 visible = false

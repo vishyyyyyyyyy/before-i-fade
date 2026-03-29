@@ -3258,11 +3258,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("31_6l7om")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ghostlayer"]
 stream = ExtResource("32_wly0k")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="Catrug" type="Sprite2D" parent="."]
 position = Vector2(1797, 651)

@@ -211,7 +211,7 @@ offset_bottom = -331.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ColorRect2/TextureButton"]
 position = Vector2(-1201, -455)
 stream = ExtResource("11_2v03t")
-volume_db = 24.0
+volume_db = 10.0
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 4

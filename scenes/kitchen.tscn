@@ -3207,11 +3207,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer4/Node3"]
 stream = ExtResource("29_w3dxo")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer4/Node3"]
 stream = ExtResource("30_cuqh1")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="Label11" type="Label" parent="CanvasLayer4/Node3"]
 visible = false

@@ -1486,11 +1486,11 @@ clear_button_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("36_nvjgw")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("37_a1ui7")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="Diaryentry1" type="Sprite2D" parent="."]
 visible = false

@@ -3030,11 +3030,11 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer3/Node3"]
 stream = ExtResource("40_vsaef")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer3/Node3"]
 stream = ExtResource("41_tq2xr")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer3"]
 root_node = NodePath("../..")
@@ -3134,7 +3134,7 @@ shape = SubResource("RectangleShape2D_2v03t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_25jch")
-volume_db = 20.0
+volume_db = 10.0
 
 [connection signal="timeout" from="CanvasLayer3/Node3/Timer2" to="CanvasLayer3/PresentTile" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer3/Node3/continue" to="CanvasLayer3/Node3/continue" method="_on_mouse_entered"]
