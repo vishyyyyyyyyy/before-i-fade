@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bcdar702q11ka"]
+[gd_scene load_steps=30 format=3 uid="uid://bcdar702q11ka"]
 
 [ext_resource type="Script" uid="uid://dj6wox3yyy2w" path="res://scripts/livingroom2-4.gd" id="1_8qimd"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="1_m7i4e"]
@@ -35,6 +35,9 @@ sources/0 = SubResource("TileSetAtlasSource_04r7s")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6klw"]
 size = Vector2(53, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t55am"]
+size = Vector2(112.501, 316)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otibe"]
 size = Vector2(1534.67, 178.666)
@@ -153,9 +156,10 @@ shape = SubResource("RectangleShape2D_x6klw")
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(2053, 1091)
+position = Vector2(2050, 1064.25)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_x6klw")
+shape = SubResource("RectangleShape2D_t55am")
+disabled = true
 
 [node name="Label" type="Label" parent="ghostlayer"]
 offset_left = 629.0

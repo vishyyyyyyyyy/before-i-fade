@@ -2041,7 +2041,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6klw"]
-size = Vector2(53, 318)
+size = Vector2(112.501, 316)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2anki"]
 size = Vector2(314, 533)
@@ -3724,7 +3724,7 @@ script = ExtResource("50_vl3qy")
 target_scene = "res://scenes/kitchen3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scentrigger"]
-position = Vector2(2051, 1094)
+position = Vector2(2050, 1064.25)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_x6klw")
 disabled = true
@@ -3895,8 +3895,10 @@ position = Vector2(3527.5, 1868)
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
+z_index = 4
 position = Vector2(-1582.33, -456.667)
 shape = SubResource("RectangleShape2D_58in4")
+debug_color = Color(0.384083, 0.886795, 1, 0.42)
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)

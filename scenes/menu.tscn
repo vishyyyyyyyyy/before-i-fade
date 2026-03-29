@@ -881,19 +881,19 @@ texture = ExtResource("24_g54pe")
 
 [node name="Heart" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(974, 660)
+position = Vector2(963, 660)
 scale = Vector2(7.52, 7.52)
 texture = ExtResource("25_48ryc")
 
 [node name="Heart2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1166, 660)
+position = Vector2(1155, 660)
 scale = Vector2(7.52, 7.52)
 texture = ExtResource("25_48ryc")
 
 [node name="Heart3" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1358, 660)
+position = Vector2(1347, 660)
 scale = Vector2(7.52, 7.52)
 texture = ExtResource("25_48ryc")
 
