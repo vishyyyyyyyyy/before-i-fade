@@ -3522,7 +3522,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhg3k"]
-size = Vector2(286, 38)
+size = Vector2(287, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsvsk"]
 size = Vector2(209.5, 49)
@@ -5665,7 +5665,7 @@ script = ExtResource("37_11ib6")
 target_scene = "res://scenes/livingroom3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ghostlayer/scenetrigger"]
-position = Vector2(2165, 1097)
+position = Vector2(2165.5, 1074.5)
 shape = SubResource("RectangleShape2D_nhg3k")
 disabled = true
 
