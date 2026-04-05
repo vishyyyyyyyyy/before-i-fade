@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://cw315cabul3qt"]
+[gd_scene load_steps=108 format=3 uid="uid://cw315cabul3qt"]
 
 [ext_resource type="Script" uid="uid://0vklsdl42mic" path="res://scripts/bedroomdiaryentry_4.gd" id="1_bne4e"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_ocxwn"]
@@ -46,8 +46,11 @@
 [ext_resource type="AudioStream" uid="uid://bqsvjyts304m3" path="res://assets/audio/incorrect.mp3" id="32_wly0k"]
 [ext_resource type="Texture2D" uid="uid://cg4ns28vkajar" path="res://assets/heart.png" id="33_i6cba"]
 [ext_resource type="Texture2D" uid="uid://djsvv82n8pnlc" path="res://assets/brokenheart.png" id="34_scnf6"]
+[ext_resource type="Texture2D" uid="uid://k1rwedfqgrba" path="res://assets/ghostarrow.png" id="44_01yvk"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="44_pf06f"]
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="45_fmoy4"]
+[ext_resource type="Texture2D" uid="uid://vqm3edpyvlhw" path="res://assets/diaryentry2.png" id="47_vxgxh"]
+[ext_resource type="Texture2D" uid="uid://8cbmphfxyax" path="res://assets/diaryentry4.png" id="48_n7hyu"]
 [ext_resource type="PackedScene" uid="uid://csh21yi1w5fea" path="res://scenes/pausemenu.tscn" id="48_y6fpv"]
 [ext_resource type="AudioStream" uid="uid://bualpxysfkfcp" path="res://assets/audio/page turn.mp3" id="50_k81dp"]
 
@@ -3272,6 +3275,43 @@ texture = ExtResource("13_ju714")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
+[node name="reread" type="Area2D" parent="CanvasLayer3"]
+
+[node name="left" type="CollisionPolygon2D" parent="CanvasLayer3/reread"]
+visible = false
+z_index = 5
+position = Vector2(-78, -140)
+scale = Vector2(1.22069, 1.22069)
+polygon = PackedVector2Array(365, 633, 413, 583, 415, 611, 540, 614, 571, 652, 414, 655, 411, 680)
+disabled = true
+
+[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread"]
+visible = false
+z_index = 4
+position = Vector2(484, 632)
+rotation = -1.5708
+scale = Vector2(3.54, 3.54)
+texture = ExtResource("44_01yvk")
+
+[node name="reread2" type="Area2D" parent="CanvasLayer3"]
+
+[node name="right" type="CollisionPolygon2D" parent="CanvasLayer3/reread2"]
+visible = false
+z_index = 5
+position = Vector2(2556, 1400)
+rotation = -3.14159
+scale = Vector2(1.22069, 1.22069)
+polygon = PackedVector2Array(386, 628, 436, 585, 440, 609, 564, 606, 592, 650, 537.175, 652.967, 438, 652, 435, 673)
+disabled = true
+
+[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread2"]
+visible = false
+z_index = 4
+position = Vector2(1967, 633)
+rotation = 1.5708
+scale = Vector2(3.54, 3.54)
+texture = ExtResource("44_01yvk")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
 position = Vector2(1797, 651)
 rotation = 1.5708
@@ -3291,6 +3331,22 @@ position = Vector2(-23.4965, 176.602)
 rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
 texture = ExtResource("45_fmoy4")
+
+[node name="Diaryentry2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("47_vxgxh")
+metadata/_edit_lock_ = true
+
+[node name="Diaryentry4" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("48_n7hyu")
+metadata/_edit_lock_ = true
 
 [node name="Diaryentry5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 visible = false
@@ -3603,6 +3659,8 @@ volume_db = 5.0
 [connection signal="timeout" from="ghostlayer/Timer2" to="ghostlayer/Area2D" method="_on_timer_2_timeout"]
 [connection signal="mouse_entered" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ghostlayer/continue" to="ghostlayer/continue" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasLayer3/reread" to="CanvasLayer4/Area2D" method="_on_left_input_event"]
+[connection signal="input_event" from="CanvasLayer3/reread2" to="CanvasLayer4/Area2D" method="_on_right_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_exited"]
 
