@@ -381,6 +381,7 @@ func check_code():
 	if count == 4:
 		
 		if code == "ypPg":
+			$desk/CollisionShape2D.disabled = true
 			Global.bedroomfail = false
 			MusicManager.play_scene_music("menu")
 			$Timer2.stop() 
