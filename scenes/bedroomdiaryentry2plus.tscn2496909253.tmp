@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://duys6vvguu221"]
+[gd_scene load_steps=67 format=3 uid="uid://duys6vvguu221"]
 
 [ext_resource type="Script" uid="uid://crl7ha43fopa5" path="res://scripts/bedroomdiaryentry_2.gd" id="1_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_4oxbo"]
@@ -16,7 +16,6 @@
 [ext_resource type="FontFile" uid="uid://ypiro7g7gq5h" path="res://fonts/PixelOperator8.ttf" id="13_kaovn"]
 [ext_resource type="Texture2D" uid="uid://gegj7ayo1ffm" path="res://assets/characters/ghostgirl.png" id="14_7ccer"]
 [ext_resource type="Texture2D" uid="uid://ybj4ngy520nu" path="res://assets/characters/ghost girl2.png" id="15_c20of"]
-[ext_resource type="Texture2D" uid="uid://k1rwedfqgrba" path="res://assets/ghostarrow.png" id="15_wppai"]
 [ext_resource type="Texture2D" uid="uid://fm7yrt1fdlcx" path="res://assets/characters/boyghost.png" id="16_dwit2"]
 [ext_resource type="Texture2D" uid="uid://k2cb8pisayga" path="res://assets/diaryblankpage.png" id="16_ryjlh"]
 [ext_resource type="Texture2D" uid="uid://bdl6a82of5gnp" path="res://assets/diaryentry3.png" id="17_3a4ms"]
@@ -801,39 +800,35 @@ texture = ExtResource("24_0hctn")
 [node name="reread" type="Area2D" parent="CanvasLayer3"]
 
 [node name="left" type="CollisionPolygon2D" parent="CanvasLayer3/reread"]
-visible = false
+modulate = Color(0.192556, 0.192556, 0.192556, 1)
 z_index = 5
-position = Vector2(-78, -140)
-scale = Vector2(1.22069, 1.22069)
+position = Vector2(25, -1)
 polygon = PackedVector2Array(365, 633, 413, 583, 415, 611, 540, 614, 571, 652, 414, 655, 411, 680)
-disabled = true
 
-[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread"]
-visible = false
+[node name="Node2D" parent="CanvasLayer3/reread" instance=ExtResource("12_dwit2")]
+position = Vector2(828, 749)
+
+[node name="Ghostarrow" parent="CanvasLayer3/reread/Node2D/arrow" index="0"]
 z_index = 4
 position = Vector2(484, 632)
-rotation = -1.5708
-scale = Vector2(3.54, 3.54)
-texture = ExtResource("15_wppai")
+rotation = 4.71239
 
 [node name="reread2" type="Area2D" parent="CanvasLayer3"]
 
 [node name="right" type="CollisionPolygon2D" parent="CanvasLayer3/reread2"]
-visible = false
+modulate = Color(0.192556, 0.192556, 0.192556, 1)
 z_index = 5
-position = Vector2(2556, 1400)
+position = Vector2(2449, 1262)
 rotation = -3.14159
-scale = Vector2(1.22069, 1.22069)
 polygon = PackedVector2Array(386, 628, 436, 585, 440, 609, 564, 606, 592, 650, 537.175, 652.967, 438, 652, 435, 673)
-disabled = true
 
-[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread2"]
-visible = false
+[node name="Node2D" parent="CanvasLayer3/reread2" instance=ExtResource("12_dwit2")]
+position = Vector2(828, 749)
+
+[node name="Ghostarrow" parent="CanvasLayer3/reread2/Node2D/arrow" index="0"]
 z_index = 4
-position = Vector2(1967, 633)
+position = Vector2(1964, 632)
 rotation = 1.5708
-scale = Vector2(3.54, 3.54)
-texture = ExtResource("15_wppai")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
 position = Vector2(1797, 651)
@@ -873,7 +868,6 @@ texture = ExtResource("25_ke1p7")
 metadata/_edit_lock_ = true
 
 [node name="Diaryentry3" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
-visible = false
 position = Vector2(-23.4965, 176.602)
 rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
@@ -1327,9 +1321,14 @@ volume_db = 5.0
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]
 [connection signal="input_event" from="CanvasLayer3/reread" to="CanvasLayer4/Area2D" method="_on_left_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer3/reread" to="CanvasLayer4/Area2D" method="_on_leftarrow_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer3/reread" to="CanvasLayer4/Area2D" method="_arrow_on_mouse_exited"]
 [connection signal="input_event" from="CanvasLayer3/reread2" to="CanvasLayer4/Area2D" method="_on_right_input_event"]
+[connection signal="mouse_entered" from="CanvasLayer3/reread2" to="CanvasLayer4/Area2D" method="_on_rightarrow_mouse_entered"]
 [connection signal="mouse_entered" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_exited"]
 
 [editable path="ghostlayer/Node2D"]
+[editable path="CanvasLayer3/reread/Node2D"]
+[editable path="CanvasLayer3/reread2/Node2D"]
 [editable path="desk/Node2D"]

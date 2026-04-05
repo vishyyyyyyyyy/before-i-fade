@@ -193,6 +193,8 @@ func diaryentry3():
 	$ghostlayer/blobGhostPlayer.position.y=602
 	$CanvasLayer4/Area2D.visible=true
 	$desk/CollisionPolygon2D.disabled=true
+	$CanvasLayer3/reread/Ghostarrow.visible=true
+	$CanvasLayer3/reread/left.disabled=false
 	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 	Global.reusablehallway = 1
 
@@ -207,5 +209,7 @@ func diaryentry4():
 	$CanvasLayer4/Area2D/CollisionShape2D.disabled=false
 	$CanvasLayer5/Label4.visible=true
 	$SceneTrigger/CollisionShape2D.disabled=true
+	$CanvasLayer3/reread/left.disabled=false
+	$CanvasLayer3/reread/Ghostarrow.visible=true
 	Global.reusablehallway = 4
 	
