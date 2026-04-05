@@ -113,6 +113,8 @@ func textskip():
 func diaryentry5():
 		await get_tree().create_timer(0.8).timeout
 		await start_dialogue(0)
+		$CanvasLayer3/reread/left.disabled=false
+		$CanvasLayer3/reread/Ghostarrow.visible=true
 		$ghostlayer/blobGhostPlayer.position.x=1907
 		$ghostlayer/blobGhostPlayer.position.y=602
 		$CanvasLayer4/Area2D.visible=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c2s68u53x2urt"]
+[gd_scene load_steps=48 format=3 uid="uid://c2s68u53x2urt"]
 
 [ext_resource type="Script" uid="uid://bbnovbfkyhpbv" path="res://scripts/bedroomdiaryentry_3.gd" id="1_k28sk"]
 [ext_resource type="Texture2D" uid="uid://cbywwsariihtc" path="res://assets/door.png" id="2_25v77"]
@@ -14,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://ddnbl1leq11wi" path="res://scenes/blob_ghost_player.tscn" id="12_vdrtn"]
 [ext_resource type="Texture2D" uid="uid://o0h5wrygm70t" path="res://assets/catrug.png" id="13_72ri4"]
 [ext_resource type="Texture2D" uid="uid://b13iitm0q6bvt" path="res://assets/diarynolock.png" id="14_l6478"]
+[ext_resource type="Texture2D" uid="uid://k1rwedfqgrba" path="res://assets/ghostarrow.png" id="14_xqchu"]
 [ext_resource type="Texture2D" uid="uid://k2cb8pisayga" path="res://assets/diaryblankpage.png" id="15_rmsc1"]
+[ext_resource type="Texture2D" uid="uid://vqm3edpyvlhw" path="res://assets/diaryentry2.png" id="17_2ji4l"]
 [ext_resource type="Script" uid="uid://wgsl8g0areyu" path="res://scripts/leavedeskdiary5.gd" id="17_i2gc4"]
 [ext_resource type="Texture2D" uid="uid://ck4lhijhxnh4d" path="res://assets/diaryentry5.png" id="18_bnqre"]
+[ext_resource type="Texture2D" uid="uid://8cbmphfxyax" path="res://assets/diaryentry4.png" id="18_fohiw"]
 [ext_resource type="Texture2D" uid="uid://b8nttmsvomuxd" path="res://assets/menubanner.png" id="21_0vequ"]
 [ext_resource type="FontFile" uid="uid://34moo7dyj82k" path="res://fonts/PixelOperator8-Bold.ttf" id="22_wdnfu"]
 [ext_resource type="PackedScene" uid="uid://7c345sanpqq6" path="res://scenes/ghostE.tscn" id="23_6hfgn"]
@@ -330,6 +333,43 @@ texture = ExtResource("13_72ri4")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
+[node name="reread" type="Area2D" parent="CanvasLayer3"]
+
+[node name="left" type="CollisionPolygon2D" parent="CanvasLayer3/reread"]
+visible = false
+z_index = 5
+position = Vector2(-78, -140)
+scale = Vector2(1.22069, 1.22069)
+polygon = PackedVector2Array(365, 633, 413, 583, 415, 611, 540, 614, 571, 652, 414, 655, 411, 680)
+disabled = true
+
+[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread"]
+visible = false
+z_index = 4
+position = Vector2(484, 632)
+rotation = -1.5708
+scale = Vector2(3.54, 3.54)
+texture = ExtResource("14_xqchu")
+
+[node name="reread2" type="Area2D" parent="CanvasLayer3"]
+
+[node name="right" type="CollisionPolygon2D" parent="CanvasLayer3/reread2"]
+visible = false
+z_index = 5
+position = Vector2(2556, 1400)
+rotation = -3.14159
+scale = Vector2(1.22069, 1.22069)
+polygon = PackedVector2Array(386, 628, 436, 585, 440, 609, 564, 606, 592, 650, 537.175, 652.967, 438, 652, 435, 673)
+disabled = true
+
+[node name="Ghostarrow" type="Sprite2D" parent="CanvasLayer3/reread2"]
+visible = false
+z_index = 4
+position = Vector2(1967, 633)
+rotation = 1.5708
+scale = Vector2(3.54, 3.54)
+texture = ExtResource("14_xqchu")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer3"]
 position = Vector2(1797, 651)
 rotation = 1.5708
@@ -349,6 +389,22 @@ position = Vector2(-23.4965, 176.602)
 rotation = -1.5708
 scale = Vector2(0.186486, 0.186486)
 texture = ExtResource("15_rmsc1")
+
+[node name="Diaryentry2" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("17_2ji4l")
+metadata/_edit_lock_ = true
+
+[node name="Diaryentry4" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
+visible = false
+position = Vector2(-23.4965, 176.602)
+rotation = -1.5708
+scale = Vector2(0.186486, 0.186486)
+texture = ExtResource("18_fohiw")
+metadata/_edit_lock_ = true
 
 [node name="Diaryentry5" type="Sprite2D" parent="CanvasLayer3/CanvasModulate"]
 visible = false
@@ -521,6 +577,8 @@ volume_db = 5.0
 [connection signal="body_entered" from="SceneTrigger" to="." method="_on_scene_trigger_body_entered"]
 [connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]
+[connection signal="input_event" from="CanvasLayer3/reread" to="CanvasLayer4/Area2D" method="_on_left_input_event"]
+[connection signal="input_event" from="CanvasLayer3/reread2" to="CanvasLayer4/Area2D" method="_on_right_input_event"]
 [connection signal="mouse_entered" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer4/Area2D" to="CanvasLayer4/Area2D" method="_on_mouse_exited"]
 
