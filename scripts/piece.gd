@@ -51,8 +51,10 @@ func snap_to_slot(slot):
 	global_position = slot.global_position
 	locked = true
 	slot.occupied = true
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	emit_signal("piece_snapped")  # ← Notify the Puzzle scene
 
 func reset():
 	locked = false
 	z_index = 0
+	mouse_filter = Control.MOUSE_FILTER_STOP
