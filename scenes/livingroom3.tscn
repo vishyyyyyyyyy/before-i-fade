@@ -159,7 +159,6 @@ disabled = true
 position = Vector2(2050, 1064.25)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_t55am")
-disabled = true
 
 [node name="Label" type="Label" parent="ghostlayer"]
 offset_left = 629.0
