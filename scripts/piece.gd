@@ -2,6 +2,7 @@ extends TextureRect
 
 @export var picture_id: int
 @export var correct_slot_id: int
+@export var drag_tint: Color = Color(0.8, 0.8, 1.0, 1.0) # light blue tint
 signal piece_snapped
 
 
@@ -19,9 +20,15 @@ func _gui_input(event):
 				dragging = true
 				drag_offset = global_position - get_global_mouse_position()
 				z_index = 100
+				
+				modulate = drag_tint  # 🎨 apply tint
+
 			else:
 				dragging = false
 				z_index = 0
+				
+				modulate = Color(1, 1, 1, 1)  # 🎨 remove tint
+				
 				try_snap()
 
 	elif event is InputEventMouseMotion and dragging:
@@ -51,10 +58,14 @@ func snap_to_slot(slot):
 	global_position = slot.global_position
 	locked = true
 	slot.occupied = true
+	
+	modulate = Color(1, 1, 1, 1)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	emit_signal("piece_snapped")  # ← Notify the Puzzle scene
+	
+	emit_signal("piece_snapped")
 
 func reset():
 	locked = false
 	z_index = 0
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	modulate = Color(1, 1, 1, 1)
