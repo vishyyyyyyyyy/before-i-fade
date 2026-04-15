@@ -656,7 +656,7 @@ func _on_timer_2_timeout():
 			$CanvasLayer/Node3/Heart4.visible=true
 			Global.hardmodefail=true
 			$CanvasLayer/Node3/Timer2.stop() 
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -678,13 +678,13 @@ func _on_timer_2_timeout():
 			$CanvasLayer/Node3/Heart4.visible=true
 			Global.hallwayfail = true
 			$CanvasLayer/Node3/Timer2.stop() 
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/hallway.tscn")
 			return
 		
 		else:
 			return
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$CanvasLayer/Node3/Wrong.visible=false
 	$CanvasLayer/Node3/Label5.add_theme_color_override("font_color", Color(0,0,0))
 	$CanvasLayer/Node3/Timer2.start()
@@ -713,7 +713,7 @@ func afterpuzzle():
 	$CanvasLayer3/CanvasModulate/Picturepiece3.visible=false
 	$CanvasLayer3/CanvasModulate/Picturepiece4.visible=false
 	$CanvasLayer/Label8.visible=false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$CanvasLayer/Node3/Timer.visible=false
 	$CanvasLayer/Node3/Heart.visible=false
 	$CanvasLayer/Node3/Heart2.visible=false

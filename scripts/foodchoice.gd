@@ -236,7 +236,7 @@ func _on_timer_2_timeout() -> void:
 			$"../Node3/Heart4".visible=true
 			Global.hardmodefail = true
 			$"../Node3/Timer2".stop()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		else:
@@ -257,14 +257,14 @@ func _on_timer_2_timeout() -> void:
 			$"../Node3/Heart4".visible=true
 			Global.kitchenfail=true
 			$"../Node3/Timer2".stop()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
 			return
 		else:
 			return
 		
 	$"../Node3/AudioStreamPlayer2".play()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Flour".visible = true
 	$"../Radish".visible = true
 	$"../Strawberry".visible = true
@@ -314,7 +314,7 @@ func correct():
 	$"../Node3/AudioStreamPlayer".play() 
 	$"../Node3/Timer2".stop()
 	$"../Node3/Label5".visible=false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Node3/Correct".visible = false
 	emit_signal("challengecompleted")
 
@@ -338,7 +338,7 @@ func incorrect():
 			$"../Node3/Heart4".visible=true
 			Global.hardmodefail=true
 			$"../Node3/Timer2".stop()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		else:
@@ -358,13 +358,13 @@ func incorrect():
 			$"../Node3/Heart4".visible=true
 			Global.kitchenfail = true
 			$"../Node3/Timer2".stop()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/kitchen.tscn")
 			return
 		else:
 			return
 		
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Sugar".visible = false
 	$"../Brocoli".visible = false
 	$"../Avocado".visible = false

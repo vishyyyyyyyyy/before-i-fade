@@ -393,7 +393,7 @@ func check_code():
 			$TextureRect/TextureButton2.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			$TextureRect/TextureButton3.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			$TextureRect/TextureButton4.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			$CanvasLayer5/Correct.visible = false
 			$AnimationPlayer/Label.visible=false
 			$AnimationPlayer/Label3.visible=false
@@ -401,7 +401,7 @@ func check_code():
 		else:
 			$CanvasLayer5/Wrong.visible = true
 			$AudioStreamPlayer2.play()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			$CanvasLayer5/Correct.visible = false
 			wrong()
 			
@@ -455,7 +455,7 @@ func wrong():
 			$Heart4.visible=true
 			$Timer2.stop()
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -485,7 +485,7 @@ func wrong():
 			
 			
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$CanvasLayer5/Wrong.visible = false
 	#$"Deskcloseup2".visible=false
 	#$"CanvasLayer".visible = false

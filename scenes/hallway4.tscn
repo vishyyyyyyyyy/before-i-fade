@@ -173,7 +173,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("14_g8go6")
 theme_override_font_sizes/font_size = 32
-text = "Enter the kitchen."
+text = "Continue exploring the house."
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer"]
@@ -183,7 +183,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("14_g8go6")
 theme_override_font_sizes/font_size = 32
-text = "Enter the attic."
+text = "Continue exploring the house."
 horizontal_alignment = 1
 
 [node name="scenetrigger" type="Area2D" parent="CanvasLayer"]

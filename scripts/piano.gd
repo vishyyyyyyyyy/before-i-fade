@@ -69,7 +69,7 @@ func check_solution():
 			$"../AudioStreamPlayer".play()
 			$"../Timer2".stop()
 			Global.livingroomfail = false
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			$"../Timer".visible=false
 			$"../Label8".visible=false
 			$"../Correct".visible=false
@@ -94,7 +94,7 @@ func check_solution():
 				$"../Heart".visible=false
 				$"../Heart4".visible=true
 				Global.hardmodefail=true
-				await get_tree().create_timer(2).timeout
+				await get_tree().create_timer(1.5).timeout
 				get_tree().change_scene_to_file("res://scenes/menu.tscn")
 				return
 				
@@ -114,14 +114,14 @@ func check_solution():
 				$"../Heart".visible=false
 				$"../Heart4".visible=true
 				Global.livingroomfail = true
-				await get_tree().create_timer(2).timeout
+				await get_tree().create_timer(1.5).timeout
 				get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
 				return
 				
 			else:
 				return
 			
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1.5).timeout
 		$"../Wrong".visible=false
 		start_solution()
 		
@@ -183,7 +183,7 @@ func _on_timer_2_timeout() -> void:
 			$"../Heart4".visible=true
 			$CanvasLayer/Node3/Timer2.stop() 
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 			
@@ -204,13 +204,13 @@ func _on_timer_2_timeout() -> void:
 			$"../Heart4".visible=true
 			$CanvasLayer/Node3/Timer2.stop() 
 			Global.livingroomfail = true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/livingroom.tscn")
 			return
 			
 		else:
 			return
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Label8".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()
 	$"../Wrong".visible = false

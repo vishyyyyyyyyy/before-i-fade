@@ -73,7 +73,7 @@ func _on_timer_2_timeout() -> void:
 			$"../../../ghostlayer/Heart".visible=false
 			$"../../../ghostlayer/Heart4".visible=true
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 
@@ -93,14 +93,14 @@ func _on_timer_2_timeout() -> void:
 			$"../../../ghostlayer/Heart".visible=false
 			$"../../../ghostlayer/Heart4".visible=true
 			Global.attic1fail = true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/attic.tscn")
 			return
 
 		else:
 			return
 
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../../../ghostlayer/Label8".add_theme_color_override("font_color", Color(0,0,0))
 	$"../../../ghostlayer/Timer2".start()
 	$"../../../ghostlayer/Wrong".visible=false

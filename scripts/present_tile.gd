@@ -89,7 +89,7 @@ func _on_timer_2_timeout() -> void:
 			$"../Heart".visible=false
 			$"../Heart3".visible=true
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -111,13 +111,13 @@ func _on_timer_2_timeout() -> void:
 			$"../Heart".visible=false
 			$"../Heart3".visible=true
 			Global.hallwayfail = true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/bathroom3.tscn")
 			return
 		
 		else:
 			return
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Node3/Wrong".visible=false
 	resetpuzzle()	
 

@@ -165,7 +165,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("13_r2l3s")
 theme_override_font_sizes/font_size = 32
-text = "Enter the kitchen."
+text = "Continue exploring the house."
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="CanvasLayer"]

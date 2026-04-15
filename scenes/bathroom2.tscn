@@ -33,11 +33,11 @@ texture = ExtResource("3_ih4jt")
 [sub_resource type="TileSet" id="TileSet_q0btg"]
 sources/0 = SubResource("TileSetAtlasSource_3ouov")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
-size = Vector2(1541.33, 176)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgtk"]
 size = Vector2(60.5, 319.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8av8"]
+size = Vector2(1541.33, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v03t"]
 size = Vector2(169, 1323)
@@ -48,73 +48,73 @@ size = Vector2(2309.25, 560)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jjgtk")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0.992157, 0.815686, 1)
-
-[node name="TileMap2" type="TileMap" parent="CanvasModulate"]
+[node name="TileMap2" type="TileMap" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(-70.895, 53.39)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_qfxnf")
 format = 2
 layer_0/tile_data = PackedInt32Array(131077, 0, 0, 131085, 0, 0, 131093, 0, 0, 131101, 0, 0, 131109, 0, 0, 131113, 0, 0, 327685, 0, 0, 131121, 0, 0, 655373, 0, 0, 655381, 0, 0, 655389, 0, 0, 655397, 0, 0, 655405, 0, 0, 655413, 0, 0, 1179701, 0, 0, 851973, 0, 0, 1179677, 0, 0, 1179685, 0, 0, 1179693, 0, 0, 1179661, 0, 0, 1179669, 0, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
-
-[node name="TileMap" type="TileMap" parent="CanvasLayer"]
+[node name="TileMap" type="TileMap" parent="."]
 position = Vector2(21, -740)
 scale = Vector2(2.5, 2.5)
 tile_set = SubResource("TileSet_q0btg")
 format = 2
 layer_0/tile_data = PackedInt32Array(2752515, 0, 0, 2752523, 0, 0, 2752531, 0, 0, 2752539, 0, 0, 2752547, 0, 0, 2752555, 0, 0, 2752563, 0, 0, 2752571, 0, 0)
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2"]
-color = Color(0, 0.992157, 0.815686, 1)
-
-[node name="Mirror2" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Mirror2" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(2030, 280)
 scale = Vector2(6.67188, 6.67188)
 texture = ExtResource("4_1hw0t")
 
-[node name="Sink" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Sink" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(2036, 656)
 scale = Vector2(5.34375, 5.34375)
 texture = ExtResource("5_ba3ts")
 
-[node name="Pinkrug" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Pinkrug" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1349, 926)
 scale = Vector2(5.43164, 1.99804)
 texture = ExtResource("6_s3kfb")
 
-[node name="Toliet" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Toliet" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(1349, 593)
 scale = Vector2(4.95508, 4.95508)
 texture = ExtResource("7_q0t8v")
 
-[node name="Bathtub" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Bathtub" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(499, 700)
 scale = Vector2(6.35938, 6.35938)
 texture = ExtResource("8_c1ghi")
 
-[node name="Flowerpainting" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Flowerpainting" type="Sprite2D" parent="."]
+modulate = Color(0, 0.992157, 0.815686, 1)
 position = Vector2(982, 265)
 scale = Vector2(3.10156, 3.10156)
 texture = ExtResource("9_bl63n")
 
-[node name="CanvasLayer4" type="CanvasLayer" parent="."]
-
-[node name="CanvasModulate2" type="CanvasModulate" parent="CanvasLayer4"]
-position = Vector2(2024, 1127)
-scale = Vector2(3.5, 3.5)
-color = Color(0.0938939, 0.322573, 0.279504, 1)
-
-[node name="Door" type="Sprite2D" parent="CanvasLayer4"]
+[node name="Door" type="Sprite2D" parent="."]
+modulate = Color(0.0941176, 0.321569, 0.278431, 1)
 position = Vector2(-4, 965.677)
 rotation = 1.5708
 scale = Vector2(3.08318, 3.5)
 texture = ExtResource("10_8tola")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1186.0
+offset_top = 459.0
+offset_right = 1516.0
+offset_bottom = 806.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TextureButton"]
+stream = ExtResource("11_ih4jt")
+volume_db = 10.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -17.0
@@ -122,25 +122,6 @@ offset_top = 1120.0
 offset_right = 2313.0
 offset_bottom = 1299.0
 color = Color(0.117647, 0.0431373, 0.152941, 1)
-
-[node name="TextureButton" type="TextureButton" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 1203.0
-offset_top = -661.0
-offset_right = 1533.0
-offset_bottom = -314.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ColorRect2/TextureButton"]
-stream = ExtResource("11_ih4jt")
-volume_db = 24.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1151, 1204.5)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3.33252, -29)
-shape = SubResource("RectangleShape2D_m8av8")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 4
@@ -185,6 +166,14 @@ debug_color = Color(1, 1, 1, 0.42)
 
 [node name="CanvasPause" parent="." instance=ExtResource("16_ypudf")]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1151, 1204.5)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.33252, -29)
+shape = SubResource("RectangleShape2D_m8av8")
+
 [node name="leftwallcollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftwallcollision"]
@@ -203,7 +192,7 @@ shape = SubResource("RectangleShape2D_l23g3")
 position = Vector2(2383, 642)
 shape = SubResource("RectangleShape2D_2v03t")
 
-[connection signal="pressed" from="ColorRect2/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -230,7 +230,7 @@ func correct():
 	$"../AudioStreamPlayer".play() 
 	$"../Timer2".stop()
 	$"../phone instructions".visible=false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	$"../AnimationPlayer2/unlockphone".visible=false
 	$"../Correct".visible = false
@@ -263,7 +263,7 @@ func incorrect1():
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -283,14 +283,14 @@ func incorrect1():
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.attic2fail = true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/attic2.tscn")
 			return
 		
 		else:
 			return
 
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Wrong".visible=false
 	$"../phonemusic".visible=false
 	$"../recphone".visible=false
@@ -320,7 +320,7 @@ func incorrect2():
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -337,12 +337,12 @@ func incorrect2():
 		$"../Heart".visible=false
 		$"../Heart4".visible=true
 		Global.attic2fail = true
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/attic2.tscn")
 		return
 
 		
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Wrong".visible=false
 	$"../phonemusic".visible=false
 	$"../recphone".visible=false
@@ -403,7 +403,7 @@ func _on_timer_2_timeout():
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.hardmodefail=true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
 		
@@ -423,14 +423,14 @@ func _on_timer_2_timeout():
 			$"../Heart".visible=false
 			$"../Heart4".visible=true
 			Global.attic2fail = true
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/attic2.tscn")
 			return
 		
 		else:
 			return
 		
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../Label5".add_theme_color_override("font_color", Color(0,0,0))
 	$"../Timer2".start()
 	$"../Wrong".visible=false

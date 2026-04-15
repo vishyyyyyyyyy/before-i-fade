@@ -446,7 +446,7 @@ func afterpuzzle():
 	$CanvasLayer3/comb/Comb.visible=true
 	$CanvasLayer3/Node3/Label5.visible=true
 	$CanvasLayer3/Label4.visible=false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$CanvasLayer3/Heart.visible=false
 	$CanvasLayer3/Heart2.visible=false
 	$CanvasLayer3/Heart3.visible=false

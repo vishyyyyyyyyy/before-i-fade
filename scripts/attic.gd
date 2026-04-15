@@ -1026,7 +1026,7 @@ func presentbox():
 func challengecompleted():
 	MusicManager.music_player.pitch_scale = 0.75
 	MusicManager.play_scene_music("menu")
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	$ghostlayer/Heart.visible=false
 	$ghostlayer/Heart2.visible=false
 	$ghostlayer/Heart3.visible=false

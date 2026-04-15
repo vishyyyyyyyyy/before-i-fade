@@ -160,7 +160,7 @@ offset_right = 1481.0
 offset_bottom = 1228.0
 theme_override_fonts/font = ExtResource("10_83m3q")
 theme_override_font_sizes/font_size = 32
-text = "Enter the livingroom."
+text = "Continue exploring the house."
 horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="ghostlayer"]

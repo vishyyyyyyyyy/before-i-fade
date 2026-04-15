@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	$ColorRect2/TextureButton/AudioStreamPlayer2D.play()
+	$TextureButton/AudioStreamPlayer2D.play()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

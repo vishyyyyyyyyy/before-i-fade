@@ -8,7 +8,7 @@ var player_inside := false
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	#Global.reusabledesk = 2
+	#Global.reusabledesk = 3
 
 func _on_body_entered(body):
 	if body.name == "blobGhostPlayer":
