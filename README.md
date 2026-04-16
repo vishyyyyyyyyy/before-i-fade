@@ -122,17 +122,6 @@ We included the "changing of time" through
 
 ---
 
-## Future Improvements
-
-We are currently working on creating a new release with even better features to make the game more enjoyable! Expect these changes soon~
-- Adding camera properties for dramatic effects
-- Rereading diary page entries
-- Mobile support c:
-- More SFX!
-- Separate music and SFX settings
-
----
-
 ## Credits
 
 Created by [Vishalya Sairam](https://github.com/vishyyyyyyyyy) and [Aadityan Anbumani](https://github.com/AadityanAnbumani)
