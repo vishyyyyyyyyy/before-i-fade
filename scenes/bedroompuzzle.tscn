@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ude0i3qr7e54"]
+[gd_scene load_steps=73 format=3 uid="uid://ude0i3qr7e54"]
 
 [ext_resource type="Script" uid="uid://ca7nkynimscco" path="res://scripts/bedroompuzzle.gd" id="1_rrknc"]
 [ext_resource type="Texture2D" uid="uid://bm6wrerb7anvl" path="res://assets/wallpaper.png" id="2_knt1j"]
@@ -86,9 +86,6 @@ size = Vector2(169, 1323)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6olq"]
 size = Vector2(262.666, 270.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcvsn"]
-size = Vector2(723.864, 714.932)
 
 [sub_resource type="Animation" id="Animation_u3ufv"]
 length = 0.001
@@ -687,7 +684,7 @@ _data = {
 &"girldiaryentry1": SubResource("Animation_u1h6i")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_rrknc")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -839,16 +836,8 @@ position = Vector2(1173, 643)
 scale = Vector2(0.88, 0.663)
 texture = ExtResource("15_l2bps")
 
-[node name="familyphoto" type="Area2D" parent="Node"]
-position = Vector2(1173, 643)
-scale = Vector2(0.88, 0.663)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/familyphoto"]
-position = Vector2(-965.341, -372.549)
-shape = SubResource("RectangleShape2D_tcvsn")
-disabled = true
-
 [node name="diary" type="Area2D" parent="Node"]
+visible = false
 position = Vector2(1173, 643)
 scale = Vector2(0.88, 0.663)
 

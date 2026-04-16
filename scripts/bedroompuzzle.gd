@@ -39,6 +39,9 @@ signal dialogue_finished(index)
 
 
 func _ready():
+	print("MODE:", Global.hardmode)
+	print("GLOBAL HEARTS:", Global.hearts)
+	print("GLOBAL HEARTS:", hearts)
 	MusicManager.music_player.pitch_scale = 1.0
 	$Node3/Label2.visible=true
 	$Node3/Label.visible=true
@@ -84,6 +87,7 @@ func end_dialogue():
 		$AnimationPlayer/Label4.visible=false
 		$Timer.visible=true
 		if Global.hardmode == true:
+			#Global.save_data()
 			if Global.hearts ==3:
 				$Heart.visible=true
 				$Heart2.visible=true
@@ -320,7 +324,7 @@ func _on_timer_2_timeout():
 	$AudioStreamPlayer2.play()
 	
 	MusicManager.music_player.pitch_scale = 1.0
-	if Global.hardmode:
+	if Global.hardmode == true:
 		Global.hearts -=1
 		if Global.hearts  ==2:
 			$Heart3.visible=false
@@ -439,6 +443,9 @@ func wrong():
 	count = 0
 	$CanvasLayer5/Wrong.visible = true
 	$CanvasLayer5/Correct.visible = false
+	print("MODE:", Global.hardmode)
+	print("GLOBAL HEARTS:", Global.hearts)
+	print("GLOBAL HEARTS:", hearts)
 	if Global.hardmode:
 		Global.hearts -=1
 		print(Global.hearts)
@@ -458,9 +465,7 @@ func wrong():
 			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 			return
-		
-		else:
-			return
+			
 	else:
 		hearts -= 1
 		if hearts  ==2:
@@ -478,12 +483,7 @@ func wrong():
 			await get_tree().create_timer(1).timeout
 			Global.bedroomfail = true
 			get_tree().change_scene_to_file("res://scenes/bedroom2.tscn")
-			return
-		
-		else:
-			return
-			
-			
+			return	
 	
 	await get_tree().create_timer(1.5).timeout
 	$CanvasLayer5/Wrong.visible = false

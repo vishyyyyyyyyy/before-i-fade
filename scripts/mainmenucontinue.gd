@@ -97,7 +97,11 @@ func easymode():
 	$"../AnimationPlayer/Label".visible=true
 
 func hardmode():
-	Global.hardmode == true
+	Global.hardmode = true
+	Global.hearts = 3
+	print("HARDMODE FUNCTION CALLED")
+	print("MODE:", Global.hardmode)
+	print("GLOBAL HEARTS:", Global.hearts)
 	$"../easy".visible=false
 	$"../hard".visible=false
 	$"../hard/CollisionShape2D".disabled=true
@@ -119,3 +123,4 @@ func hardmode():
 	$".".visible=true
 	$CollisionShape2D.disabled=false
 	$"../AnimationPlayer/Label".visible=true
+	
