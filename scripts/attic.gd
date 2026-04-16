@@ -16,7 +16,7 @@ var segment_data := [
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
 	{ "starts": [0.0, 4.0, 8.0, 12.0], "ends": [2.0, 6.0, 10.0, 14.0] }, 
 	{ "starts": [0.0], "ends": [2.0] }, #pastchar1
-	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0] }, #pastchar2
+	{ "starts": [0.0, 4.0, 8.0, 12.0, 16.0, 20.0, 24.0], "ends": [2.0, 6.0, 10.0, 14.0, 18.0, 22.0, 26.0] }, #pastchar2
 	{ "starts": [0.0], "ends": [2.0] }, #fail puzzle
 	
 ]
@@ -686,6 +686,10 @@ func end_dialogue():
 		$ghostlayer/pastchar2/Girl5.visible=false
 		$ghostlayer/pastchar2/Girl6.visible=false
 		$"ghostlayer/pastchar2/Ex label".visible=false
+		$ghostlayer/pastchar2/Girl6.visible=false
+		$ghostlayer/pastchar2/Boy3.visible=false
+		$ghostlayer/pastchar2/Label7.visible=false
+		
 		
 	if anim_index == 9:
 		$ghostlayer/bedroomfailghost/Label.visible=false

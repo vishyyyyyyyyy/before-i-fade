@@ -2457,7 +2457,7 @@ length = 0.001
 
 [sub_resource type="Animation" id="Animation_nbw0u"]
 resource_name = "boy"
-length = 24.0
+length = 28.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2465,10 +2465,10 @@ tracks/0/path = NodePath("ghostlayer/pastchar2/Ex label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8, 12, 16, 20, 24, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false, true, false, true, false, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2489,10 +2489,10 @@ tracks/2/path = NodePath("ghostlayer/pastchar2/Girl2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4, 8, 24),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8, 24, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false, true, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2698,10 +2698,46 @@ tracks/19/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ghostlayer/pastchar2/Label7:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(24, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ghostlayer/pastchar2/Label7:visible_ratio")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(24, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("ghostlayer/pastchar2/Boy3:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(24, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_cswo8"]
 resource_name = "girl"
-length = 24.0
+length = 28.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2709,10 +2745,10 @@ tracks/0/path = NodePath("ghostlayer/pastchar2/Ex label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8, 12, 16, 20, 24, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false]
+"values": [true, false, true, false, true, false, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2877,10 +2913,10 @@ tracks/14/path = NodePath("ghostlayer/pastchar2/Boy5:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 4, 8, 12, 16, 24),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8, 12, 16, 24, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false, true, false]
+"values": [true, false, true, false, true, true, false]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -2938,6 +2974,42 @@ tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ghostlayer/pastchar2/Label7:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(24, 28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ghostlayer/pastchar2/Label7:visible_ratio")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(24, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("ghostlayer/pastchar2/Girl6:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(24, 28),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -3964,7 +4036,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="ghostlayer/bedroomfailghost"]
-visible = false
 z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -5266,8 +5337,6 @@ text = "\"Hey.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -5290,8 +5359,6 @@ text = "\"What are you doing here?\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -5314,8 +5381,6 @@ text = "\"I need money. NOW.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="ghostlayer/pastchar2"]
 visible = false
@@ -5383,6 +5448,30 @@ theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("11_7xawx")
 theme_override_font_sizes/font_size = 32
 text = "\"S..Stay away f..from m..me.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label7" type="Label" parent="ghostlayer/pastchar2"]
+visible = false
+z_index = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -852.0
+offset_top = -123.0
+offset_right = 756.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("11_7xawx")
+theme_override_font_sizes/font_size = 32
+text = "“Don’t worry… I hid the pages. No one will know.”"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -6127,6 +6216,7 @@ scale = Vector2(1.5, 1.5)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="scene collisions/textcollision"]
 position = Vector2(-1579.33, -457.333)
 shape = SubResource("RectangleShape2D_qajrb")
+metadata/_edit_lock_ = true
 
 [node name="rightwallcollision" type="StaticBody2D" parent="scene collisions"]
 position = Vector2(-5.5, 21.5)
