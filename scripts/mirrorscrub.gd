@@ -13,7 +13,7 @@ func _ready():
 	clean_sprite.modulate.a = 0.0
 	dirty_sprite.modulate.a = 1.0
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if cleaned:
 		return
 

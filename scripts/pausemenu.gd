@@ -22,7 +22,7 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel") and !get_tree().paused:
 		toggle_pause()
 		
-func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_resume_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			get_tree().paused = false
 			$PauseMenu.visible = false
@@ -32,7 +32,7 @@ func _on_resume_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 			print("pressed") 
 
 
-func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_music_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		MusicManager.toggle_music()
 
@@ -42,13 +42,13 @@ func _on_music_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 			$PauseMenu/music/Label.text = "Music: OFF"
 
 
-func _on_controls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_controls_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		$settingsControl.visible=true
 		$PauseMenu.visible=false
 
 
-func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_main_menu_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = false
 		Global.hardmodefail=false
@@ -56,7 +56,7 @@ func _on_main_menu_input_event(viewport: Node, event: InputEvent, shape_idx: int
 	
  
 
-func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_close_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().paused = !get_tree().paused
 		pause_menu.visible = get_tree().paused
@@ -65,7 +65,7 @@ func _on_close_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 		$Menucard2.visible=false
 
 
-func _on_settingsclose_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_settingsclose_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		$settingsControl.visible=false
 		$PauseMenu.visible=true

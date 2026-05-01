@@ -10,8 +10,6 @@ var kitchen = 0
 var livingroom = 0
 var charName = ""
 
-
-
 var ending= 0
 var bedroomfail= false
 var bathroomfail= false

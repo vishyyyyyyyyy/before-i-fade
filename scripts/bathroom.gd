@@ -23,14 +23,13 @@ func _on_texture_button_pressed() -> void:
 
 
 func _process(_delta):
-	if animating and anim.current_animation_position >= segment_ends[segment_index]:
+	if animating and anim.is_playing() and anim.current_animation_position >= segment_ends[segment_index]:
 		anim.pause()
 		animating = false
 	if player_in_area and Input.is_action_just_pressed("interact"):
 		get_tree().change_scene_to_file("res://scenes/mirror.tscn")
 
 func _input(event):
-		
 	if not dialogue_active:
 		return
 
@@ -58,7 +57,6 @@ func textskip():
 			animating = true
 		else:
 			end_dialogue()
-			
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "blobGhostPlayer":

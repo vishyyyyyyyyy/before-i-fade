@@ -21,7 +21,7 @@ func _on_body_exited(body):
 	if body is CharacterBody2D:
 		player_inside = false
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, shape_idx):
 	if requires_interaction and event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			change_scene()

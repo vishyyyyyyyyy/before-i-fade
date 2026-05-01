@@ -23,21 +23,18 @@ func _ready():
 	$CanvasLayer/blobGhostPlayer.position.y = 528.0
 	$CanvasLayer/AnimationPlayer.play("type_text")
 	dialogue_active = true  
-	
-
+		
 func _process(_delta):
-	if animating and anim.current_animation_position >= segment_ends[segment_index]:
+	if animating and anim.is_playing() and anim.current_animation_position >= segment_ends[segment_index]:
 		anim.pause()
 		animating = false
 
 func _input(event):
-
 	if not dialogue_active:
 		return
 
 	if event.is_action_pressed("ui_accept"):
 		textskip()
-	
 
 func end_dialogue():
 	dialogue_active = false
@@ -62,4 +59,3 @@ func textskip():
 			animating = true
 		else:
 			end_dialogue()
-			

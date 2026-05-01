@@ -45,7 +45,6 @@ var repeat_lines = [
 	'"Something isn\'t right..."'
 ]
 
-	
 func _ready():
 	MusicManager.music_player.volume_db = -10
 	reset_timer.timeout.connect(_on_reset_timeout)
@@ -146,7 +145,6 @@ func start_dialogue(index: int):
 	
 	if anim_index == 1:
 		print("2nd anim6")
-		
 		$CanvasLayer/bedroomfailghost/Label.visible=false
 		$CanvasLayer/bedroomfailghost/GirlGhost.visible=false
 		$CanvasLayer/bedroomfailghost/BoyGhost.visible=false
@@ -251,7 +249,6 @@ func start_dialogue(index: int):
 			print("error animating text")
 		
 	anim.play(anim_name) 
-	   
 	await dialogue_finished 
 
 func _input(event):
@@ -278,8 +275,7 @@ func end_dialogue():
 		$CanvasLayer/AnimationPlayer2/BoyGhost3.visible=false
 		$CanvasLayer/AnimationPlayer2/skip.visible=false
 		friendwalkin()
-		
-			
+
 	if anim_index ==1:
 		$CanvasLayer/AnimationPlayer/skip.visible=false
 		$CanvasLayer/AnimationPlayer/Label.visible=false
@@ -322,7 +318,6 @@ func end_dialogue():
 		
 	emit_signal("dialogue_finished", anim_index)
 
-
 func textskip():
 	if animating:
 		anim.seek(segment_ends[segment_index], true)
@@ -339,7 +334,6 @@ func textskip():
 			print("call end dialogue")
 			end_dialogue()
 
-	
 func modulate():
 	$CanvasLayer/Camera2D.shake(2, 1.4)
 	if Global.character == "girlGhost":
@@ -362,8 +356,7 @@ func modulate():
 			await start_dialogue(4)
 		start_dialogue(0)
 		dialogue_active = true
-	 
-		
+
 	if Global.character == "boyGhost":
 		await get_tree().create_timer(0.5).timeout
 		$CanvasLayer/AnimationPlayer3/boyIdle.visible = true
@@ -416,7 +409,6 @@ func leaveroomandexplore():
 		
 func unlock_explore():
 	# Enable collisions
-	
 	$explore/safe/CollisionShape2D.disabled = false
 	$explore/bed/CollisionShape2D.disabled = false
 	$explore/window/CollisionShape2D.disabled = false
@@ -442,7 +434,7 @@ func unlock_explore():
 			area_node.clicked.connect(func(text):
 				_on_object_clicked(text, name)
 			)
-	
+
 var is_interacting = false
 		
 func _on_object_clicked(text: String, area_name: String):
@@ -469,13 +461,11 @@ func _on_object_clicked(text: String, area_name: String):
 		narration_label.text= 'Investigate the desk by clicking objects.'
 		diaryOverlay()
 		return
-		
 
-		
 func _on_reset_timeout():
 	if not is_interacting:
 		narration_label.text = 'Investigate the bedroom by pressing "E" to interact with objects.'
-		
+
 func all_non_desk_clicked() -> bool:
 	var non_desk = ["safe", "bed", "window", "calendar", "rug"]
 	for name in non_desk:
@@ -498,19 +488,16 @@ func diaryOverlay():
 	$explore/calendar/CollisionShape2D.disabled=true
 	$explore/desk/CollisionShape2D.disabled=true
 	$explore/rug/CollisionShape2D.disabled=true
-	
 	#enable photo and diary collisions
 	$Node/familyphoto/CollisionShape2D.disabled =false
 	$Node/diary/CollisionPolygon2D.disabled=false
 
-
-func _on_area_clicked(area, event, shape_idx, area_name):
+func _on_area_clicked(area, event, _shape_idx, area_name):
 	narration_label.text = 'Investigate the desk by clicking objects.'
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		narration_label.text = 'Investigate the desk by clicking objects.'
 		match area_name:
 			"familyphoto":
-				
 				$Node/familyphoto/CollisionShape2D.disabled=true
 				$Node/diary/CollisionPolygon2D.disabled=true
 				if Global.character == "boyGhost":
@@ -642,7 +629,6 @@ func _on_area_clicked(area, event, shape_idx, area_name):
 			$Node2/Area2D/CollisionShape2D.disabled=false
 			$Node2/Area2D.visible=true
 
-
 func _on_desk_area_pressed():
 	$Node/Deskcloseup.visible = false
 	$Node2/Area2D/CollisionShape2D.disabled = true
@@ -650,4 +636,3 @@ func _on_desk_area_pressed():
 	$Node/familyphoto/CollisionShape2D.disabled=true
 	$Node/diary/CollisionPolygon2D.disabled=true
 	get_tree().change_scene_to_file("res://scenes/bedroompuzzle.tscn")
-	

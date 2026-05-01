@@ -21,7 +21,7 @@ var girlcounter = 0
 var boycounter = 0
 
 
-func _on_boy_pressed(viewport, event, shape_idx):
+func _on_boy_pressed(_viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:
@@ -42,7 +42,7 @@ func _on_boy_pressed(viewport, event, shape_idx):
 
 
 
-func _on_girl_pressed(viewport, event, shape_idx):
+func _on_girl_pressed(_viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT:

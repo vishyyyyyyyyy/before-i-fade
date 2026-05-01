@@ -445,7 +445,7 @@ func wrong():
 	$CanvasLayer5/Correct.visible = false
 	print("MODE:", Global.hardmode)
 	print("GLOBAL HEARTS:", Global.hearts)
-	print("GLOBAL HEARTS:", hearts)
+	print("SCENE HEARTS:", hearts)
 	if Global.hardmode:
 		Global.hearts -=1
 		print(Global.hearts)
